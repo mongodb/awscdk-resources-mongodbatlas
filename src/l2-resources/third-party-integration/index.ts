@@ -12,12 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// L2 Constructors
-export * as encryptionAtRest from './l2-resources/encryption-at-rest';
-export * as thirdPartyIntegration from './l2-resources/third-party-integration';
-
-
-// L3 Constructors
-export * as atlasBasic from './l3-resources/atlas-basic';
-export * as atlasBasicPrivateEndpoint from './l3-resources/atlas-basic-private-endpoint';
-export * as atlasEncryptionAtRestExpress from './l3-resources/encryption-at-rest-express';
+export * from './thirdPartyIntegrationBase';
+export * from './microsoftTeamsIntegration';
+export * from './datadogIntegration';
+export * from './pagerDutyIntegration';

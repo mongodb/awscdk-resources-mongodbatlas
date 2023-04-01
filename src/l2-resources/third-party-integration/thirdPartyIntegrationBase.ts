@@ -11,13 +11,15 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+export interface ThirdPartyIntegrationProps {
 
-// L2 Constructors
-export * as encryptionAtRest from './l2-resources/encryption-at-rest';
-export * as thirdPartyIntegration from './l2-resources/third-party-integration';
+  /**
+   * Unique 24-hexadecimal digit string that identifies your project.
+   */
+  readonly projectId: string;
 
-
-// L3 Constructors
-export * as atlasBasic from './l3-resources/atlas-basic';
-export * as atlasBasicPrivateEndpoint from './l3-resources/atlas-basic-private-endpoint';
-export * as atlasEncryptionAtRestExpress from './l3-resources/encryption-at-rest-express';
+  /**
+   * Atlas API keys.
+   */
+  readonly profile?: string;
+}
