@@ -39,5 +39,5 @@ We're here to help! This is simply a reminder of what we are going to look for b
 - [ ] I have added any necessary documentation (if appropriate)
 - [ ] I have run `make fmt` and formatted my code
 - [ ] I have tested the CDK constructor in a CFN stack. See [TESTING.md](../TESTING.md)
-## Further comments
 
+## Further comments
