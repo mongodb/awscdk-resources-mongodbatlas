@@ -1,8 +1,8 @@
-import { App, Stack } from 'aws-cdk-lib';
-import { atlasBasicPrivateEndpoint } from '../../../src';
 import { AtlasBasicProps } from '@mongodbatlas-awscdk/atlas-basic';
-import { PrivateEndpointProps } from '../../../src/l3-resources/atlas-basic-private-endpoint';
+import { App, Stack } from 'aws-cdk-lib';
 import { Match, Template } from 'aws-cdk-lib/assertions';
+import { atlasBasicPrivateEndpoint } from '../../../src';
+import { PrivateEndpointProps } from '../../../src/l3-resources/atlas-basic-private-endpoint';
 
 const RESOURCE_NAME_PROJECT = 'MongoDB::Atlas::Project';
 const RESOURCE_NAME_CLUSTER = 'MongoDB::Atlas::Cluster';
