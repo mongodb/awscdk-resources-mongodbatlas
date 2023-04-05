@@ -91,6 +91,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   ],
   stability: 'experimental',
   pullRequestTemplateContents: [pullRequestTeamplateString],
+  githubOptions: { workflows: false },
 });
 
 new JsonFile(project, 'cdk.json', {
