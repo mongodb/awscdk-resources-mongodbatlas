@@ -623,11 +623,6 @@
   dependencies:
     ajv "^8.12.0"
 
-"@mongodbatlas-awscdk/atlas-basic@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@mongodbatlas-awscdk/atlas-basic/-/atlas-basic-1.1.0.tgz"
-  integrity sha512-jxsydR1Igwmtl0f6nN5u9H7edA0sOz680dDIjOt2zkZp2Fkljix9Y3p8uDtSqelMk7DLidx7Efmv7JiYOjPTtQ==
-
 "@mongodbatlas-awscdk/cluster@1.1.0":
   version "1.1.0"
   resolved "https://registry.npmjs.org/@mongodbatlas-awscdk/cluster/-/cluster-1.1.0.tgz"
