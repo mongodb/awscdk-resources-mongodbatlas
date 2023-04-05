@@ -159,7 +159,21 @@
     },
     "package-all": {
       "name": "package-all",
-      "description": "Packages artifacts for all target languages"
+      "description": "Packages artifacts for all target languages",
+      "steps": [
+        {
+          "spawn": "package:js"
+        }
+      ]
+    },
+    "package:js": {
+      "name": "package:js",
+      "description": "Create js language bindings",
+      "steps": [
+        {
+          "exec": "jsii-pacmak -v --target js"
+        }
+      ]
     },
     "post-compile": {
       "name": "post-compile",
