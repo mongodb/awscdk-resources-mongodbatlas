@@ -1,7 +1,6 @@
-import { AtlasBasicProps } from '@mongodbatlas-awscdk/atlas-basic';
 import { App, Stack } from 'aws-cdk-lib';
 import { Match, Template } from 'aws-cdk-lib/assertions';
-import { atlasBasicPrivateEndpoint } from '../../../src';
+import * as l3 from '../../../src';
 import { PrivateEndpointProps } from '../../../src/l3-resources/atlas-basic-private-endpoint';
 
 const RESOURCE_NAME_PROJECT = 'MongoDB::Atlas::Project';
@@ -27,7 +26,7 @@ test('AtlasBasicPrivateEndpoint construct should contain default properties', ()
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  const atlasBasicProps: AtlasBasicProps = {
+  const atlasBasicProps: l3.AtlasBasicProps = {
     clusterProps: {
       replicationSpecs: [
         {
@@ -64,7 +63,7 @@ test('AtlasBasicPrivateEndpoint construct should contain default properties', ()
     }],
   };
 
-  new atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint(stack, 'testing-stack', {
+  new l3.AtlasBasicPrivateEndpoint(stack, 'testing-stack', {
     atlasBasicProps: atlasBasicProps,
     privateEndpointProps: privateEndpointProps,
     region: REGION,

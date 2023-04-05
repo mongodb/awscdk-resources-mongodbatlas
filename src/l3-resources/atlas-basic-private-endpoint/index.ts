@@ -12,12 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
-import { AtlasBasic, AtlasBasicProps } from '@mongodbatlas-awscdk/atlas-basic';
 import {
-  CfnPrivateEndpoint, PrivateEndpoint,
+  CfnPrivateEndpoint,
+  PrivateEndpoint,
 } from '@mongodbatlas-awscdk/private-endpoint';
 import { Construct } from 'constructs';
+import { AtlasBasic } from '../atlas-basic';
+import { AtlasBasicProps } from '../common/props';
 
 /** @type {*} */
 const privateEndpointDefaults = {
@@ -31,40 +32,46 @@ const privateEndpointDefaults = {
  * @extends {Construct}
  */
 export class AtlasBasicPrivateEndpoint extends Construct {
-
-  readonly atlasBasic : AtlasBasic;
-  readonly privateEndpoint : CfnPrivateEndpoint;
+  readonly atlasBasic: AtlasBasic;
+  readonly privateEndpoint: CfnPrivateEndpoint;
 
   /**
-     * Creates an instance of AtlasBasicPrivateEndpoint.
-     * @param {Construct} scope
-     * @param {string} id
-     * @param {AtlasBasicPrivateEndpointProps} props
-     * @memberof AtlasBasicPrivateEndpoint
-     */
-  constructor(scope: Construct, id: string, props: AtlasBasicPrivateEndpointProps) {
+   * Creates an instance of AtlasBasicPrivateEndpoint.
+   * @param {Construct} scope
+   * @param {string} id
+   * @param {AtlasBasicPrivateEndpointProps} props
+   * @memberof AtlasBasicPrivateEndpoint
+   */
+  constructor(
+    scope: Construct,
+    id: string,
+    props: AtlasBasicPrivateEndpointProps,
+  ) {
     super(scope, id);
     validate(props);
     // Validation for atlas basic would be delegated to the library
-    this.atlasBasic = new AtlasBasic(this, 'atlas-basic-'.concat(id),
-      {
-        profile: props.profile,
-        ...props.atlasBasicProps,
-      });
-    this.privateEndpoint = new CfnPrivateEndpoint(this, 'private-endpoint-'.concat(id),
+    this.atlasBasic = new AtlasBasic(this, 'atlas-basic-'.concat(id), {
+      profile: props.profile,
+      ...props.atlasBasicProps,
+    });
+    this.privateEndpoint = new CfnPrivateEndpoint(
+      this,
+      'private-endpoint-'.concat(id),
       {
         profile: props.profile,
         groupId: this.atlasBasic.mProject.attrId,
         region: props.region || privateEndpointDefaults.region,
         ...props.privateEndpointProps,
-      });
+      },
+    );
   }
 }
 
 const validate = (props: AtlasBasicPrivateEndpointProps) => {
-  if (!props.atlasBasicProps.projectProps.orgId) {throw Error('Validation error: orgId is not defined');}
+  if (!props.atlasBasicProps.projectProps.orgId) {
+    throw Error('Validation error: orgId is not defined');
+  }
 };
-
 
 /**
  * @description
@@ -72,27 +79,26 @@ const validate = (props: AtlasBasicPrivateEndpointProps) => {
  * @interface AtlasBasicPrivateEndpointProps
  */
 export interface AtlasBasicPrivateEndpointProps {
-
   readonly profile?: string;
 
   /**
-     * @description
-     * @type {string}
-     * @default us-east-1
-     * @memberof AtlasPrivateEndpointProps
-     */
+   * @description
+   * @type {string}
+   * @default us-east-1
+   * @memberof AtlasPrivateEndpointProps
+   */
   readonly region?: string;
   /**
-     * @description
-     * @type {AtlasBasicProps}
-     * @memberof AtlasPrivateEndpointProps
-     */
-  readonly atlasBasicProps : AtlasBasicProps;
+   * @description
+   * @type {AtlasBasicProps}
+   * @memberof AtlasPrivateEndpointProps
+   */
+  readonly atlasBasicProps: AtlasBasicProps;
   /**
-     * @description
-     * @type {CfnPrivateEndpointProps}
-     * @memberof AtlasPrivateEndpointProps
-     */
+   * @description
+   * @type {CfnPrivateEndpointProps}
+   * @memberof AtlasPrivateEndpointProps
+   */
   readonly privateEndpointProps: PrivateEndpointProps;
 }
 
@@ -103,40 +109,39 @@ export interface AtlasBasicPrivateEndpointProps {
  */
 export interface PrivateEndpointProps {
   /**
-     * @description
-     * @type {string}
-     * @memberof PrivateEndpointProps
-     */
+   * @description
+   * @type {string}
+   * @memberof PrivateEndpointProps
+   */
   readonly endpointServiceName?: string;
   /**
-     * @description
-     * @type {string}
-     * @memberof PrivateEndpointProps
-     */
+   * @description
+   * @type {string}
+   * @memberof PrivateEndpointProps
+   */
   readonly errorMessage?: string;
   /**
-     * @description
-     * @type {string}
-     * @memberof PrivateEndpointProps
-     */
+   * @description
+   * @type {string}
+   * @memberof PrivateEndpointProps
+   */
   readonly status?: string;
   /**
-     * @description
-     * @type {string}
-     * @memberof PrivateEndpointProps
-     */
+   * @description
+   * @type {string}
+   * @memberof PrivateEndpointProps
+   */
   readonly groupId?: string;
   /**
-     * @description
-     * @type {string}
-     * @memberof PrivateEndpointProps
-     */
+   * @description
+   * @type {string}
+   * @memberof PrivateEndpointProps
+   */
   readonly region?: string;
   /**
-     * @description
-     * @type {PrivateEndpoint[]}
-     * @memberof PrivateEndpointProps
-     */
+   * @description
+   * @type {PrivateEndpoint[]}
+   * @memberof PrivateEndpointProps
+   */
   readonly privateEndpoints?: PrivateEndpoint[];
-
 }

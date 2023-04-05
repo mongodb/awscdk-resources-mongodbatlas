@@ -13,9 +13,9 @@
 // limitations under the License.
 
 
-import { AtlasBasicProps } from '@mongodbatlas-awscdk/atlas-basic';
 import * as cdk from 'aws-cdk-lib';
 import { AtlasBasicPrivateEndpoint, PrivateEndpointProps } from './index';
+import { AtlasBasicProps } from '../common/props';
 
 const app = new cdk.App();
 

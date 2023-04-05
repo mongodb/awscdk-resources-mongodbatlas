@@ -14,7 +14,7 @@
 
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { encryptionAtRest } from '../../../src';
+import * as l2 from '../../../src';
 
 
 const RESOURCE_NAME = 'MongoDB::Atlas::EncryptionAtRest';
@@ -28,7 +28,7 @@ test('AtlasEncryptionAtRest construct should contain default properties', () => 
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new encryptionAtRest.AtlasEncryptionAtRest(stack, 'testing-stack', {
+  new l2.AtlasEncryptionAtRest(stack, 'testing-stack', {
     projectId: PROJECT_ID,
     roleId: ROLE_ID,
     customerMasterKeyId: CUSTOMER_MASTER_KEY_ID,
@@ -53,7 +53,7 @@ test('AtlasEncryptionAtRest construct should contain all the properties', () => 
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new encryptionAtRest.AtlasEncryptionAtRest(stack, 'testing-stack', {
+  new l2.AtlasEncryptionAtRest(stack, 'testing-stack', {
     profile: PROFILE,
     projectId: PROJECT_ID,
     roleId: ROLE_ID,
@@ -81,7 +81,7 @@ test('AtlasEncryptionAtRest construct should thorow exceptions when required par
   const stack = new Stack(mockApp);
 
   expect(() => {
-    new encryptionAtRest.AtlasEncryptionAtRest(stack, 'testing-stack-no-project-id', {
+    new l2.AtlasEncryptionAtRest(stack, 'testing-stack-no-project-id', {
       profile: PROFILE,
       projectId: '',
       roleId: ROLE_ID,
@@ -92,7 +92,7 @@ test('AtlasEncryptionAtRest construct should thorow exceptions when required par
   }).toThrow('Validation error: projectId is not defined');
 
   expect(() => {
-    new encryptionAtRest.AtlasEncryptionAtRest(stack, 'testing-stack-no-role-id', {
+    new l2.AtlasEncryptionAtRest(stack, 'testing-stack-no-role-id', {
       profile: PROFILE,
       projectId: PROJECT_ID,
       roleId: '',
@@ -103,7 +103,7 @@ test('AtlasEncryptionAtRest construct should thorow exceptions when required par
   }).toThrow('Validation error: roleId is not defined');
 
   expect(() => {
-    new encryptionAtRest.AtlasEncryptionAtRest(stack, 'testing-stack-no-customer-master-key-id', {
+    new l2.AtlasEncryptionAtRest(stack, 'testing-stack-no-customer-master-key-id', {
       profile: PROFILE,
       projectId: PROJECT_ID,
       roleId: ROLE_ID,
