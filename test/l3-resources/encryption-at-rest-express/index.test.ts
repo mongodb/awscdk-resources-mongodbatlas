@@ -14,8 +14,7 @@
 
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { atlasEncryptionAtRestExpress } from '../../../src';
-
+import * as l3 from '../../../src';
 
 const PROJECT_ID = 'PROJ_ID';
 const PROJECT_NAME = 'TEST';
@@ -40,7 +39,7 @@ test('Encryption at rest express construct should contain default properties', (
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress(stack, 'testing-stack', {
+  new l3.AtlasEncryptionAtRestExpress(stack, 'testing-stack', {
     cluster: {
       name: PROJECT_NAME,
     },

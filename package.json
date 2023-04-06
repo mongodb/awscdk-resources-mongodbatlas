@@ -35,7 +35,6 @@
     "organization": false
   },
   "devDependencies": {
-    "@mongodbatlas-awscdk/atlas-basic": "1.1.0",
     "@mongodbatlas-awscdk/cluster": "1.1.0",
     "@mongodbatlas-awscdk/database-user": "1.1.0",
     "@mongodbatlas-awscdk/encryption-at-rest": "1.0.2",
@@ -66,7 +65,6 @@
     "typescript": "^5.0.3"
   },
   "peerDependencies": {
-    "@mongodbatlas-awscdk/atlas-basic": "1.1.0",
     "@mongodbatlas-awscdk/cluster": "1.1.0",
     "@mongodbatlas-awscdk/database-user": "1.1.0",
     "@mongodbatlas-awscdk/encryption-at-rest": "1.0.2",
