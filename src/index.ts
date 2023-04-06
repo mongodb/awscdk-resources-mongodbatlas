@@ -13,14 +13,148 @@
 // limitations under the License.
 
 // L1 Constructors
-export * from './l1-resources/clusters';
-export * from './l1-resources/database-user';
-export * from './l1-resources/encryption-at-rest';
-export * from './l1-resources/project';
-export * from './l1-resources/project-ip-access-list';
-export * from './l1-resources/third-party-integration';
+export {
+  AlertView, AlertViewEventTypeName, AlertViewMetricName,
+  AlertViewStatus, ApiKeyDefinition, CfnAlertConfiguration,
+  CfnAlertConfigurationProps, CfnAlertConfigurationPropsEventTypeName,
+  CurrentValue, CurrentValueUnits, IntegerThresholdView, IntegerThresholdViewOperator,
+  IntegerThresholdViewUnits, Link, Matcher, MatcherFieldName, MatcherOperator, MetricThresholdView,
+  MetricThresholdViewMetricName, MetricThresholdViewMode, MetricThresholdViewOperator,
+  MetricThresholdViewUnits, NotificationView, NotificationViewDatadogRegion,
+  NotificationViewOpsGenieRegion, NotificationViewRoles, NotificationViewSeverity,
+  NotificationViewTypeName,
+} from './l1-resources/alert-configuration';
+
+export { CfnAuditing, CfnAuditingProps } from './l1-resources/auditing';
+
+export {
+  CfnCloudBackUpRestoreJobs, CfnCloudBackUpRestoreJobsProps,
+  CfnCloudBackUpRestoreJobsPropsDeliveryType,
+} from './l1-resources/cloud-backup-restore-jobs';
+
+export {
+  ApiAtlasDiskBackupCopySettingView, ApiDeleteCopiedBackupsView,
+  ApiPolicyItemView, ApiPolicyView, CfnCloudBackupSchedule,
+  CfnCloudBackupScheduleProps, Export,
+} from './l1-resources/cloud-backup-schedule';
+
+export {
+  ApiAtlasDiskBackupShardedClusterSnapshotMemberView, ApiAtlasDiskBackupShardedClusterSnapshotMemberViewCloudProvider,
+  ApiAtlasDiskBackupShardedClusterSnapshotView, ApiAtlasDiskBackupShardedClusterSnapshotViewFrequencyType,
+  ApiAtlasDiskBackupShardedClusterSnapshotViewSnapshotType, ApiAtlasDiskBackupShardedClusterSnapshotViewStatus,
+  ApiAtlasDiskBackupShardedClusterSnapshotViewType, CfnCloudBackupSnapshot,
+  CfnCloudBackupSnapshotProps, CfnCloudBackupSnapshotPropsFrequencyType,
+  CfnCloudBackupSnapshotPropsSnapshotType,
+} from './l1-resources/cloud-backup-snapshot';
+
+export { CfnCloudBackupSnapshotExportBucket, CfnCloudBackupSnapshotExportBucketProps } from './l1-resources/cloud-backup-snapshot-export-bucket';
+
+export {
+  CfnClusterProps, ProcessArgs, CfnClusterPropsBiConnector,
+  CfnClusterPropsLabels, ConnectionStrings, AdvancedReplicationSpec,
+  Endpoint, AdvancedAutoScaling, Specs, DiskGb,
+  Compute, AdvancedRegionConfig, CfnCluster,
+  CfnClusterPropsEncryptionAtRestProvider,
+} from './l1-resources/clusters';
+
+export {
+  Action, CfnCustomDbRole, CfnCustomDbRoleProps,
+  InheritedRole, Resource,
+} from './l1-resources/custom-db-role';
+
+export { CfnCustomDnsConfigurationClusterAws, CfnCustomDnsConfigurationClusterAwsProps } from './l1-resources/custom-dns-configuration-cluster-aws';
+
+export {
+  CfnDatabaseUser, CfnDatabaseUserProps, LabelDefinition,
+  RoleDefinition, ScopeDefinition, CfnDatabaseUserPropsX509Type,
+  CfnDatabaseUserPropsAwsiamType, CfnDatabaseUserPropsLdapAuthType,
+  ScopeDefinitionType,
+} from './l1-resources/database-user';
+
+export {
+  CfnDataLakes, CfnDataLakesProps, DataLakeAwsCloudProviderConfigView,
+  DataLakeCloudProviderConfigView, DataLakeDataProcessRegionView,
+  DataLakeDataProcessRegionViewCloudProvider, DataLakeDataProcessRegionViewRegion,
+  DataLakeDatabaseCollectionView, DataLakeDatabaseDataSourceView, DataLakeDatabaseDataSourceViewDefaultFormat,
+  DataLakeDatabaseView, DataLakeStorageView, DataLakeViewView, StoreDetail,
+} from './l1-resources/datalakes';
+
+export { AwsKmsConfiguration, CfnEncryptionAtRest, CfnEncryptionAtRestProps } from './l1-resources/encryption-at-rest';
+
+export {
+  CfnFederatedSettingsOrgRoleMapping, CfnFederatedSettingsOrgRoleMappingProps,
+  RoleAssignment,
+} from './l1-resources/federated-settings-org-role-mapping';
+
+export {
+  CfnGlobalClusterConfig, CfnGlobalClusterConfigProps, ManagedNamespace,
+  ZoneMapping,
+} from './l1-resources/global-cluster-config';
+
+export { ApiAtlasNdsUserToDnMappingView, CfnLdapConfiguration, CfnLdapConfigurationProps } from './l1-resources/ldap-configuration';
+
+export { CfnLdapVerify, CfnLdapVerifyProps, Validation } from './l1-resources/ldap-verify';
+
+export { CfnMaintenanceWindow, CfnMaintenanceWindowProps } from './l1-resources/maintenance-window';
+
+export { CfnNetworkContainer, CfnNetworkContainerProps } from './l1-resources/network-container';
+
+export { CfnNetworkPeering, CfnNetworkPeeringProps } from './l1-resources/network-peering';
+
+export { CfnOrgInvitation, CfnOrgInvitationProps, CfnOrgInvitationPropsRoles } from './l1-resources/org-invitation';
+
 export { CfnPrivateEndpointProps, CfnPrivateEndpoint, PrivateEndpoint } from './l1-resources/private-endpoint';
 
+export { CfnPrivateEndpointAdl, CfnPrivateEndpointAdlProps } from './l1-resources/private-endpoint-adl';
+
+export { CfnPrivateEndPointRegionalMode, CfnPrivateEndPointRegionalModeProps } from './l1-resources/private-endpoint-regional-mode';
+
+export {
+  CfnProject, CfnProjectProps, ProjectApiKey,
+  ProjectSettings, ProjectTeam,
+} from './l1-resources/project';
+
+export { CfnProjectInvitation, CfnProjectInvitationProps, CfnProjectInvitationPropsRoles } from './l1-resources/project-invitation';
+
+export {
+  AccessListDefinition, CfnProjectIpAccessList, CfnProjectIpAccessListProps,
+  ListOptions,
+} from './l1-resources/project-ip-access-list';
+
+
+export {
+  ApiAtlasFtsAnalyzersViewManual, ApiAtlasFtsMappingsViewManual,
+  ApiAtlasFtsSynonymMappingDefinitionView, CfnSearchIndex, CfnSearchIndexProps,
+  SynonymSource,
+} from './l1-resources/search-index';
+
+export {
+  CfnServerlessInstance, CfnServerlessInstanceProps, ServerlessInstanceConnectionStrings,
+  ServerlessInstancePrivateEndpoint, ServerlessInstancePrivateEndpointEndpoint,
+  ServerlessInstancePrivateEndpointType, ServerlessInstanceProviderSettings,
+  ServerlessInstanceProviderSettingsProviderName,
+} from './l1-resources/serverless-instance';
+
+export { CfnTeams, CfnTeamsProps, CfnTeamsPropsRoleNames } from './l1-resources/teams';
+
+export {
+  AuthConfig, AuthConfigOperationType, AuthConfigProviders,
+  CfnTrigger, CfnTriggerProps, DatabaseConfig,
+  DatabaseConfigOperationTypes, Event, EventAwseventbridge,
+  EventAwseventbridgeAwsConfig, EventFunction, EventFunctionFuncConfig,
+  ScheduleConfig,
+} from './l1-resources/trigger';
+
+export {
+  CfnThirdPartyIntegration, CfnThirdPartyIntegrationProps, CfnThirdPartyIntegrationPropsScheme,
+  CfnThirdPartyIntegrationPropsServiceDiscovery, CfnThirdPartyIntegrationPropsType,
+} from './l1-resources/third-party-integration';
+
+export { CfnX509AuthenticationDatabaseUser, CfnX509AuthenticationDatabaseUserProps, CustomerX509 } from './l1-resources/x509-authentication-database-user';
+
+export { CfnOnlineArchive, CfnOnlineArchiveProps, CfnOnlineArchivePropsCollectionType, 
+    CriteriaView, CriteriaViewDateFormat, CriteriaViewType, PartitionFieldView, 
+    PartitionFieldViewFieldType, ScheduleView, ScheduleViewType } from './l1-resources/online-archive';
 
 // L2 Constructors
 export * from './l2-resources/encryption-at-rest';
