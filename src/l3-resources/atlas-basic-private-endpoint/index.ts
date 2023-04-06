@@ -12,11 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// import {
+//   CfnPrivateEndpoint,
+//   PrivateEndpoint,
+// } from '@mongodbatlas-awscdk/private-endpoint';
+import { Construct } from 'constructs';
 import {
   CfnPrivateEndpoint,
   PrivateEndpoint,
-} from '@mongodbatlas-awscdk/private-endpoint';
-import { Construct } from 'constructs';
+} from '../../index';
 import { AtlasBasic } from '../atlas-basic';
 import { AtlasBasicProps } from '../common/props';
 
