@@ -27,7 +27,7 @@ If applicable, add screenshots to help explain your problem.
  - CFN resource version 
  - AWS region where you are running the CFN stack
  - CDK constructor type and version
- - Copy of the output of `CDK synth`
+ - Copy of the output of `cdk synth`
 
 **Additional context**
 Add any other context about the problem here.
