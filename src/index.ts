@@ -152,9 +152,11 @@ export {
 
 export { CfnX509AuthenticationDatabaseUser, CfnX509AuthenticationDatabaseUserProps, CustomerX509 } from './l1-resources/x509-authentication-database-user';
 
-export { CfnOnlineArchive, CfnOnlineArchiveProps, CfnOnlineArchivePropsCollectionType, 
-    CriteriaView, CriteriaViewDateFormat, CriteriaViewType, PartitionFieldView, 
-    PartitionFieldViewFieldType, ScheduleView, ScheduleViewType } from './l1-resources/online-archive';
+export {
+  CfnOnlineArchive, CfnOnlineArchiveProps, CfnOnlineArchivePropsCollectionType,
+  CriteriaView, CriteriaViewDateFormat, CriteriaViewType, PartitionFieldView,
+  PartitionFieldViewFieldType, ScheduleView, ScheduleViewType,
+} from './l1-resources/online-archive';
 
 // L2 Constructors
 export * from './l2-resources/encryption-at-rest';
