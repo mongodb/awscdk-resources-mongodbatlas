@@ -68,6 +68,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'atlas'],
   npmAccess: javascript.NpmAccess.PUBLIC,
   releaseToNpm: true,
+  publishToGo: {
+    moduleName: 'github.com/mongodb/awscdk-resources-mongodbatlas-go',
+  },
   publishToNuget: {
     dotNetNamespace: 'MongoDB.AWSCDKResourcesMongoDBAtlas',
     packageId: 'MongoDB.AWSCDKResourcesMongoDBAtlas',
@@ -76,10 +79,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     javaPackage: 'org.mongodb.awscdk.resources.mongodbatlas',
     mavenArtifactId: 'awscdk-resources-mongodbatlas',
     mavenGroupId: 'org.mongodb',
-  },
-  publishToGo: {
-    moduleName: 'github.com/mongodb',
-    packageName: 'awscdkresourcesmongodbatlas',
   },
   publishToPypi: {
     distName: 'awscdk-resources-mongodbatlas',

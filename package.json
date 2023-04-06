@@ -144,8 +144,7 @@
         "packageId": "MongoDB.AWSCDKResourcesMongoDBAtlas"
       },
       "go": {
-        "moduleName": "github.com/mongodb",
-        "packageName": "awscdkresourcesmongodbatlas"
+        "moduleName": "github.com/mongodb/awscdk-resources-mongodbatlas-go"
       }
     },
     "tsc": {
