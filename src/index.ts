@@ -12,6 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// L1 Constructors
+export * from './l1-resources/clusters';
+export * from './l1-resources/database-user';
+export * from './l1-resources/encryption-at-rest';
+export * from './l1-resources/project';
+export * from './l1-resources/project-ip-access-list';
+export * from './l1-resources/third-party-integration';
+export { CfnPrivateEndpointProps, CfnPrivateEndpoint, PrivateEndpoint } from './l1-resources/private-endpoint';
+
+
 // L2 Constructors
 export * from './l2-resources/encryption-at-rest';
 export * from './l2-resources/third-party-integration';

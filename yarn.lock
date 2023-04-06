@@ -623,41 +623,6 @@
   dependencies:
     ajv "^8.12.0"
 
-"@mongodbatlas-awscdk/cluster@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@mongodbatlas-awscdk/cluster/-/cluster-1.1.0.tgz"
-  integrity sha512-gkf2uaA8AuxHy9lR0PwyMoln0bZd7+4GnAL0BEq2O2pcsWdKKOHrZ0Db/0OMkISIFPQLjlKqf4O1ton01Xwvpw==
-
-"@mongodbatlas-awscdk/database-user@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@mongodbatlas-awscdk/database-user/-/database-user-1.1.0.tgz"
-  integrity sha512-M5IR++bt2xzBNPW7iZCl0r/KynRYnYqsHtuLC5cjr1yMxK9kHByo1TEZXiaDb++VwNrnb6sA1rZ/1IJrN7ryVA==
-
-"@mongodbatlas-awscdk/encryption-at-rest@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@mongodbatlas-awscdk/encryption-at-rest/-/encryption-at-rest-1.0.2.tgz"
-  integrity sha512-4i07V4xVVGf7yTX/3xYqNbRT8ADzUNt7CuNDI0hmdjlsozyu97VJgHVojRmo0zZw8mmplob5+x1CkarSNvoEqA==
-
-"@mongodbatlas-awscdk/private-endpoint@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@mongodbatlas-awscdk/private-endpoint/-/private-endpoint-1.1.0.tgz"
-  integrity sha512-GTgPS7SiuR/ZcxrIf6QL+EooYsAFHY6Ah5fd+PCmwvpzbtFL7WjbafVJEfw/xyHhjgptMZnzei32jjngWYyvPg==
-
-"@mongodbatlas-awscdk/project-ip-access-list@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@mongodbatlas-awscdk/project-ip-access-list/-/project-ip-access-list-1.1.0.tgz"
-  integrity sha512-apkeYX7LgyOXIN8mrLf2D7i/GrdbfAr4jU1FgJw41lf4JQ8GMYGFTKmUfNDDMH538m8W0kVriWEHpNeK/xRdog==
-
-"@mongodbatlas-awscdk/project@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@mongodbatlas-awscdk/project/-/project-1.1.0.tgz"
-  integrity sha512-M55FTxTmH9D7+fAKr41/OSR9K0kFqz12d/GO/u7bi9X2gZ+uFihl7LIgCDbc48ppBp6QzYYfzCq+59D9DoXmVg==
-
-"@mongodbatlas-awscdk/third-party-integration@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/@mongodbatlas-awscdk/third-party-integration/-/third-party-integration-1.1.0.tgz"
-  integrity sha512-G9RSRMnG3+mZwGkUSKTXN0Y1nuUFhYodRstM9TASXwUIYkWD2kI7K4y0GLkDjikLFL3WEXUEXzf0rw3n661Gbg==
-
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz"

@@ -12,11 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import * as cluster from '@mongodbatlas-awscdk/cluster';
-import * as databaseUser from '@mongodbatlas-awscdk/database-user';
-import * as encryption from '@mongodbatlas-awscdk/encryption-at-rest';
-import * as accessList from '@mongodbatlas-awscdk/project-ip-access-list';
 import { Construct } from 'constructs';
+import * as atlas from '../../index';
 import {
   ClusterProps,
   DatabaseUserProps,
@@ -29,7 +26,7 @@ const BACKUP_ENABLED = true;
 const INSTANCE_SIZE = 'M30';
 const MONGODB_VERSION = '5.0';
 const ENCRYPTION_AT_REST_PROVIDER =
-  cluster.CfnClusterPropsEncryptionAtRestProvider.AWS;
+  atlas.CfnClusterPropsEncryptionAtRestProvider.AWS;
 const REGION = 'US_EAST_1';
 const EBS_VOLUME_TYPE = 'STANDARD';
 const ENABLE_ENCRYPTION_AT_REST = true;
@@ -51,7 +48,7 @@ function randomNumber() {
 
 function getClusterProps(
   inputClusterProps: ClusterProps,
-): cluster.CfnClusterProps {
+): atlas.CfnClusterProps {
   return {
     name:
       inputClusterProps.name || 'atlas-cluster-'.concat(String(randomNumber())),
@@ -78,7 +75,7 @@ function getClusterProps(
   };
 }
 
-function getDefaultClusterReplicationSpec(): cluster.AdvancedReplicationSpec[] {
+function getDefaultClusterReplicationSpec(): atlas.AdvancedReplicationSpec[] {
   return [
     {
       numShards: 1,
@@ -140,10 +137,10 @@ export interface AtlasEncryptionAtRestExpressProps {
 }
 
 export class AtlasEncryptionAtRestExpress extends Construct {
-  readonly encryptionAtRest: encryption.CfnEncryptionAtRest;
-  readonly cluster?: cluster.CfnCluster;
-  readonly accessList?: accessList.CfnProjectIpAccessList;
-  readonly databaseUser?: databaseUser.CfnDatabaseUser;
+  readonly encryptionAtRest: atlas.CfnEncryptionAtRest;
+  readonly cluster?: atlas.CfnCluster;
+  readonly accessList?: atlas.CfnProjectIpAccessList;
+  readonly databaseUser?: atlas.CfnDatabaseUser;
 
   constructor(
     scope: Construct,
@@ -152,7 +149,7 @@ export class AtlasEncryptionAtRestExpress extends Construct {
   ) {
     super(scope, id);
 
-    this.encryptionAtRest = new encryption.CfnEncryptionAtRest(
+    this.encryptionAtRest = new atlas.CfnEncryptionAtRest(
       this,
       'encryption-at-rest-'.concat(id),
       {
@@ -172,7 +169,7 @@ export class AtlasEncryptionAtRestExpress extends Construct {
     if (props.cluster) {
       // Create a new MongoDB Atlas Cluster and pass project ID
       const clusterProps = getClusterProps(props.cluster);
-      this.cluster = new cluster.CfnCluster(this, 'cluster-'.concat(id), {
+      this.cluster = new atlas.CfnCluster(this, 'cluster-'.concat(id), {
         ...clusterProps,
         profile: props.profile,
         projectId: props.projectId,
@@ -181,7 +178,7 @@ export class AtlasEncryptionAtRestExpress extends Construct {
 
     if (props.databaseUser) {
       // Create a new MongoDB Atlas Database User
-      this.databaseUser = new databaseUser.CfnDatabaseUser(
+      this.databaseUser = new atlas.CfnDatabaseUser(
         this,
         'db-user-'.concat(id),
         {
@@ -198,7 +195,7 @@ export class AtlasEncryptionAtRestExpress extends Construct {
 
     if (props.accessList) {
       // Create a new MongoDB Atlas Project IP Access List
-      this.accessList = new accessList.CfnProjectIpAccessList(
+      this.accessList = new atlas.CfnProjectIpAccessList(
         this,
         'access-list-'.concat(id),
         {

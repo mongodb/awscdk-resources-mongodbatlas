@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import * as atlas_tpi from '@mongodbatlas-awscdk/third-party-integration';
 import { App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
 import * as constants from './constants';
 import * as l2 from '../../../src';
+import * as atlas_tpi from '../../../src/l1-resources/third-party-integration';
 import * as util from '../../../src/l2-resources/third-party-integration/util';
 
 test('MicrosoftTeamsIntegration construct should be configured with properties', () => {

@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import { Construct } from 'constructs';
 import {
   CfnEncryptionAtRest,
-} from '@mongodbatlas-awscdk/encryption-at-rest';
-import { Construct } from 'constructs';
+} from '../../index';
 
 const US_EAST_1 = 'US_EAST_1';
 
