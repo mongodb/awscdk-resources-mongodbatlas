@@ -43,6 +43,7 @@ resource=$1
 echo "Generating L1 CDK resource"
 dir="../submodules/mongodbatlas-cloudformation-resources/cfn-resources/${resource}"
 
+
 for file in "${dir}"/mongodb-atlas-*.json; do
 	if [[ -f $file ]]; then
 		src=$(jq -r '.typeName' "${file}")
@@ -58,3 +59,5 @@ for file in "${dir}"/mongodb-atlas-*.json; do
 		mv "src/l1-resources/${path}/mongodb-atlas-${path//-/}.ts" "src/l1-resources/${path}/index.ts"
 	fi
 done
+
+echo "Done"
