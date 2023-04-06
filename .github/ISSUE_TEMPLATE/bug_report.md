@@ -23,7 +23,7 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-** Please complete the following information:**
+**Please complete the following information:**
  - CFN resource version 
  - AWS region where you are running the CFN stack
  - CDK constructor type and version
