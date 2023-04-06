@@ -1,7 +1,4 @@
-import * as atlas from '@mongodbatlas-awscdk/cluster';
-import * as user from '@mongodbatlas-awscdk/database-user';
-import * as project from '@mongodbatlas-awscdk/project';
-import * as ipAccessList from '@mongodbatlas-awscdk/project-ip-access-list';
+import * as atlas from '../../index';
 
 /**
  * @description
@@ -84,19 +81,19 @@ export interface ProjectProps {
    * @type {project.ProjectSettings}
    * @memberof ProjectProps
    */
-  readonly projectSettings?: project.ProjectSettings;
+  readonly projectSettings?: atlas.ProjectSettings;
   /**
    * @description
    * @type {project.ProjectTeam[]}
    * @memberof ProjectProps
    */
-  readonly projectTeams?: project.ProjectTeam[];
+  readonly projectTeams?: atlas.ProjectTeam[];
   /**
    * @description
    * @type {project.ProjectApiKey[]}
    * @memberof ProjectProps
    */
-  readonly projectApiKeys?: project.ProjectApiKey[];
+  readonly projectApiKeys?: atlas.ProjectApiKey[];
 }
 /**
  * @description
@@ -226,7 +223,7 @@ export interface DatabaseUserProps {
    * @type {user.CfnDatabaseUserPropsAwsiamType}
    * @memberof DatabaseUserProps
    */
-  readonly awsiamType?: user.CfnDatabaseUserPropsAwsiamType;
+  readonly awsiamType?: atlas.CfnDatabaseUserPropsAwsiamType;
   /**
    * @description
    * @type {string}
@@ -239,19 +236,19 @@ export interface DatabaseUserProps {
    * @memberof DatabaseUserProps
    * @default admin
    */
-  readonly labels?: user.LabelDefinition[];
+  readonly labels?: atlas.LabelDefinition[];
   /**
    * @description
    * @type {user.CfnDatabaseUserPropsLdapAuthType}
    * @memberof DatabaseUserProps
    */
-  readonly ldapAuthType?: user.CfnDatabaseUserPropsLdapAuthType;
+  readonly ldapAuthType?: atlas.CfnDatabaseUserPropsLdapAuthType;
   /**
    * @description
    * @type {user.CfnDatabaseUserPropsX509Type}
    * @memberof DatabaseUserProps
    */
-  readonly x509Type?: user.CfnDatabaseUserPropsX509Type;
+  readonly x509Type?: atlas.CfnDatabaseUserPropsX509Type;
   /**
    * @description
    * @type {string}
@@ -270,13 +267,13 @@ export interface DatabaseUserProps {
    * @type {user.RoleDefinition[]}
    * @memberof DatabaseUserProps
    */
-  readonly roles?: user.RoleDefinition[];
+  readonly roles?: atlas.RoleDefinition[];
   /**
    * @description
    * @type {user.ScopeDefinition[]}
    * @memberof DatabaseUserProps
    */
-  readonly scopes?: user.ScopeDefinition[];
+  readonly scopes?: atlas.ScopeDefinition[];
   /**
    * @description
    * @type {string}
@@ -296,7 +293,7 @@ export interface IpAccessListProps {
    * @type {ipAccessList.AccessListDefinition[]}
    * @memberof IpAccessListProps
    */
-  readonly accessList: ipAccessList.AccessListDefinition[];
+  readonly accessList: atlas.AccessListDefinition[];
   /**
    * @description
    * @type {string}
@@ -315,5 +312,5 @@ export interface IpAccessListProps {
    * @type {ipAccessList.ListOptions}
    * @memberof IpAccessListProps
    */
-  readonly listOptions?: ipAccessList.ListOptions;
+  readonly listOptions?: atlas.ListOptions;
 }

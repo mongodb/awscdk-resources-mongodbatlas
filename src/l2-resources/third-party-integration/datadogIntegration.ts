@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import {
-  CfnThirdPartyIntegration,
-  CfnThirdPartyIntegrationPropsType,
-} from '@mongodbatlas-awscdk/third-party-integration';
 import { Construct } from 'constructs';
 import { ThirdPartyIntegrationProps } from './thirdPartyIntegrationBase';
 import * as util from './util';
+import {
+  CfnThirdPartyIntegration,
+  CfnThirdPartyIntegrationPropsType,
+} from '../../index';
 
 export enum DatadogRegion {
   US = 'US',
