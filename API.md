@@ -2,39 +2,39 @@
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
 
-### AtlasBasic <a name="AtlasBasic" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic"></a>
+### AtlasBasic <a name="AtlasBasic" id="awscdk-resources-mongodbatlas.AtlasBasic"></a>
 
-#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.Initializer"></a>
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.AtlasBasic.Initializer"></a>
 
 ```typescript
-import { atlasBasic } from 'awscdk-resources-mongodbatlas'
+import { AtlasBasic } from 'awscdk-resources-mongodbatlas'
 
-new atlasBasic.AtlasBasic(scope: Construct, id: string, props: AtlasBasicProps)
+new AtlasBasic(scope: Construct, id: string, props: AtlasBasicProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.Initializer.parameter.props">props</a></code> | <code>awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasic.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasic.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasic.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicProps">AtlasBasicProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.AtlasBasic.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.AtlasBasic.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.AtlasBasic.Initializer.parameter.props"></a>
 
-- *Type:* awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AtlasBasicProps">AtlasBasicProps</a>
 
 ---
 
@@ -42,11 +42,11 @@ new atlasBasic.AtlasBasic(scope: Construct, id: string, props: AtlasBasicProps)
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasic.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.toString"></a>
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.AtlasBasic.toString"></a>
 
 ```typescript
 public toString(): string
@@ -58,21 +58,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasic.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasBasic.isConstruct"></a>
 
 ```typescript
-import { atlasBasic } from 'awscdk-resources-mongodbatlas'
+import { AtlasBasic } from 'awscdk-resources-mongodbatlas'
 
-atlasBasic.AtlasBasic.isConstruct(x: any)
+AtlasBasic.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.AtlasBasic.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -84,15 +84,15 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.property.ipAccessList">ipAccessList</a></code> | <code>@mongodbatlas-awscdk/project-ip-access-list.CfnProjectIpAccessList</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.property.mCluster">mCluster</a></code> | <code>@mongodbatlas-awscdk/cluster.CfnCluster</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.property.mDBUser">mDBUser</a></code> | <code>@mongodbatlas-awscdk/database-user.CfnDatabaseUser</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.property.mProject">mProject</a></code> | <code>@mongodbatlas-awscdk/project.CfnProject</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasic.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasic.property.ipAccessList">ipAccessList</a></code> | <code>@mongodbatlas-awscdk/project-ip-access-list.CfnProjectIpAccessList</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasic.property.mCluster">mCluster</a></code> | <code>@mongodbatlas-awscdk/cluster.CfnCluster</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasic.property.mDBUser">mDBUser</a></code> | <code>@mongodbatlas-awscdk/database-user.CfnDatabaseUser</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasic.property.mProject">mProject</a></code> | <code>@mongodbatlas-awscdk/project.CfnProject</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.AtlasBasic.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -104,7 +104,7 @@ The tree node.
 
 ---
 
-##### `ipAccessList`<sup>Required</sup> <a name="ipAccessList" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.property.ipAccessList"></a>
+##### `ipAccessList`<sup>Required</sup> <a name="ipAccessList" id="awscdk-resources-mongodbatlas.AtlasBasic.property.ipAccessList"></a>
 
 ```typescript
 public readonly ipAccessList: CfnProjectIpAccessList;
@@ -114,7 +114,7 @@ public readonly ipAccessList: CfnProjectIpAccessList;
 
 ---
 
-##### `mCluster`<sup>Required</sup> <a name="mCluster" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.property.mCluster"></a>
+##### `mCluster`<sup>Required</sup> <a name="mCluster" id="awscdk-resources-mongodbatlas.AtlasBasic.property.mCluster"></a>
 
 ```typescript
 public readonly mCluster: CfnCluster;
@@ -124,7 +124,7 @@ public readonly mCluster: CfnCluster;
 
 ---
 
-##### `mDBUser`<sup>Required</sup> <a name="mDBUser" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.property.mDBUser"></a>
+##### `mDBUser`<sup>Required</sup> <a name="mDBUser" id="awscdk-resources-mongodbatlas.AtlasBasic.property.mDBUser"></a>
 
 ```typescript
 public readonly mDBUser: CfnDatabaseUser;
@@ -134,7 +134,7 @@ public readonly mDBUser: CfnDatabaseUser;
 
 ---
 
-##### `mProject`<sup>Required</sup> <a name="mProject" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasic.property.mProject"></a>
+##### `mProject`<sup>Required</sup> <a name="mProject" id="awscdk-resources-mongodbatlas.AtlasBasic.property.mProject"></a>
 
 ```typescript
 public readonly mProject: CfnProject;
@@ -145,39 +145,39 @@ public readonly mProject: CfnProject;
 ---
 
 
-### AtlasBasicPrivateEndpoint <a name="AtlasBasicPrivateEndpoint" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint"></a>
+### AtlasBasicPrivateEndpoint <a name="AtlasBasicPrivateEndpoint" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint"></a>
 
-#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.Initializer"></a>
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.Initializer"></a>
 
 ```typescript
-import { atlasBasicPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
+import { AtlasBasicPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
 
-new atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint(scope: Construct, id: string, props: AtlasBasicPrivateEndpointProps)
+new AtlasBasicPrivateEndpoint(scope: Construct, id: string, props: AtlasBasicPrivateEndpointProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.Initializer.parameter.props">props</a></code> | <code>awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpointProps</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps">AtlasBasicPrivateEndpointProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.Initializer.parameter.props"></a>
 
-- *Type:* awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpointProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps">AtlasBasicPrivateEndpointProps</a>
 
 ---
 
@@ -185,11 +185,11 @@ new atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint(scope: Construct, id: st
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.toString"></a>
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.toString"></a>
 
 ```typescript
 public toString(): string
@@ -201,21 +201,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.isConstruct"></a>
 
 ```typescript
-import { atlasBasicPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
+import { AtlasBasicPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
 
-atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.isConstruct(x: any)
+AtlasBasicPrivateEndpoint.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -227,13 +227,13 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.property.atlasBasic">atlasBasic</a></code> | <code>@mongodbatlas-awscdk/atlas-basic.AtlasBasic</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.property.privateEndpoint">privateEndpoint</a></code> | <code>@mongodbatlas-awscdk/private-endpoint.CfnPrivateEndpoint</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.property.atlasBasic">atlasBasic</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AtlasBasic">AtlasBasic</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.property.privateEndpoint">privateEndpoint</a></code> | <code>@mongodbatlas-awscdk/private-endpoint.CfnPrivateEndpoint</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -245,17 +245,17 @@ The tree node.
 
 ---
 
-##### `atlasBasic`<sup>Required</sup> <a name="atlasBasic" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.property.atlasBasic"></a>
+##### `atlasBasic`<sup>Required</sup> <a name="atlasBasic" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.property.atlasBasic"></a>
 
 ```typescript
 public readonly atlasBasic: AtlasBasic;
 ```
 
-- *Type:* @mongodbatlas-awscdk/atlas-basic.AtlasBasic
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AtlasBasic">AtlasBasic</a>
 
 ---
 
-##### `privateEndpoint`<sup>Required</sup> <a name="privateEndpoint" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpoint.property.privateEndpoint"></a>
+##### `privateEndpoint`<sup>Required</sup> <a name="privateEndpoint" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.property.privateEndpoint"></a>
 
 ```typescript
 public readonly privateEndpoint: CfnPrivateEndpoint;
@@ -266,39 +266,39 @@ public readonly privateEndpoint: CfnPrivateEndpoint;
 ---
 
 
-### AtlasEncryptionAtRest <a name="AtlasEncryptionAtRest" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest"></a>
+### AtlasEncryptionAtRest <a name="AtlasEncryptionAtRest" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest"></a>
 
-#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.Initializer"></a>
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.Initializer"></a>
 
 ```typescript
-import { encryptionAtRest } from 'awscdk-resources-mongodbatlas'
+import { AtlasEncryptionAtRest } from 'awscdk-resources-mongodbatlas'
 
-new encryptionAtRest.AtlasEncryptionAtRest(scope: Construct, id: string, props: AtlasEncryptionAtRestProps)
+new AtlasEncryptionAtRest(scope: Construct, id: string, props: AtlasEncryptionAtRestProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.Initializer.parameter.props">props</a></code> | <code>awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps">AtlasEncryptionAtRestProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.Initializer.parameter.props"></a>
 
-- *Type:* awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps">AtlasEncryptionAtRestProps</a>
 
 ---
 
@@ -306,11 +306,11 @@ new encryptionAtRest.AtlasEncryptionAtRest(scope: Construct, id: string, props: 
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.toString"></a>
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.toString"></a>
 
 ```typescript
 public toString(): string
@@ -322,21 +322,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.isConstruct"></a>
 
 ```typescript
-import { encryptionAtRest } from 'awscdk-resources-mongodbatlas'
+import { AtlasEncryptionAtRest } from 'awscdk-resources-mongodbatlas'
 
-encryptionAtRest.AtlasEncryptionAtRest.isConstruct(x: any)
+AtlasEncryptionAtRest.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -348,12 +348,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.property.cfnEncryptionAtRest">cfnEncryptionAtRest</a></code> | <code>@mongodbatlas-awscdk/encryption-at-rest.CfnEncryptionAtRest</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.property.cfnEncryptionAtRest">cfnEncryptionAtRest</a></code> | <code>@mongodbatlas-awscdk/encryption-at-rest.CfnEncryptionAtRest</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -365,7 +365,7 @@ The tree node.
 
 ---
 
-##### `cfnEncryptionAtRest`<sup>Required</sup> <a name="cfnEncryptionAtRest" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRest.property.cfnEncryptionAtRest"></a>
+##### `cfnEncryptionAtRest`<sup>Required</sup> <a name="cfnEncryptionAtRest" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.property.cfnEncryptionAtRest"></a>
 
 ```typescript
 public readonly cfnEncryptionAtRest: CfnEncryptionAtRest;
@@ -376,39 +376,39 @@ public readonly cfnEncryptionAtRest: CfnEncryptionAtRest;
 ---
 
 
-### AtlasEncryptionAtRestExpress <a name="AtlasEncryptionAtRestExpress" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress"></a>
+### AtlasEncryptionAtRestExpress <a name="AtlasEncryptionAtRestExpress" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress"></a>
 
-#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.Initializer"></a>
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.Initializer"></a>
 
 ```typescript
-import { atlasEncryptionAtRestExpress } from 'awscdk-resources-mongodbatlas'
+import { AtlasEncryptionAtRestExpress } from 'awscdk-resources-mongodbatlas'
 
-new atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress(scope: Construct, id: string, props: AtlasEncryptionAtRestExpressProps)
+new AtlasEncryptionAtRestExpress(scope: Construct, id: string, props: AtlasEncryptionAtRestExpressProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.Initializer.parameter.props">props</a></code> | <code>awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps">AtlasEncryptionAtRestExpressProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.Initializer.parameter.props"></a>
 
-- *Type:* awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps">AtlasEncryptionAtRestExpressProps</a>
 
 ---
 
@@ -416,11 +416,11 @@ new atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress(scope: Construct, 
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.toString"></a>
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.toString"></a>
 
 ```typescript
 public toString(): string
@@ -432,21 +432,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.isConstruct"></a>
 
 ```typescript
-import { atlasEncryptionAtRestExpress } from 'awscdk-resources-mongodbatlas'
+import { AtlasEncryptionAtRestExpress } from 'awscdk-resources-mongodbatlas'
 
-atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.isConstruct(x: any)
+AtlasEncryptionAtRestExpress.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -458,15 +458,15 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.property.encryptionAtRest">encryptionAtRest</a></code> | <code>@mongodbatlas-awscdk/encryption-at-rest.CfnEncryptionAtRest</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.property.accessList">accessList</a></code> | <code>@mongodbatlas-awscdk/project-ip-access-list.CfnProjectIpAccessList</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.property.cluster">cluster</a></code> | <code>@mongodbatlas-awscdk/cluster.CfnCluster</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.property.databaseUser">databaseUser</a></code> | <code>@mongodbatlas-awscdk/database-user.CfnDatabaseUser</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.property.encryptionAtRest">encryptionAtRest</a></code> | <code>@mongodbatlas-awscdk/encryption-at-rest.CfnEncryptionAtRest</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.property.accessList">accessList</a></code> | <code>@mongodbatlas-awscdk/project-ip-access-list.CfnProjectIpAccessList</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.property.cluster">cluster</a></code> | <code>@mongodbatlas-awscdk/cluster.CfnCluster</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.property.databaseUser">databaseUser</a></code> | <code>@mongodbatlas-awscdk/database-user.CfnDatabaseUser</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -478,7 +478,7 @@ The tree node.
 
 ---
 
-##### `encryptionAtRest`<sup>Required</sup> <a name="encryptionAtRest" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.property.encryptionAtRest"></a>
+##### `encryptionAtRest`<sup>Required</sup> <a name="encryptionAtRest" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.property.encryptionAtRest"></a>
 
 ```typescript
 public readonly encryptionAtRest: CfnEncryptionAtRest;
@@ -488,7 +488,7 @@ public readonly encryptionAtRest: CfnEncryptionAtRest;
 
 ---
 
-##### `accessList`<sup>Optional</sup> <a name="accessList" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.property.accessList"></a>
+##### `accessList`<sup>Optional</sup> <a name="accessList" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.property.accessList"></a>
 
 ```typescript
 public readonly accessList: CfnProjectIpAccessList;
@@ -498,7 +498,7 @@ public readonly accessList: CfnProjectIpAccessList;
 
 ---
 
-##### `cluster`<sup>Optional</sup> <a name="cluster" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.property.cluster"></a>
+##### `cluster`<sup>Optional</sup> <a name="cluster" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.property.cluster"></a>
 
 ```typescript
 public readonly cluster: CfnCluster;
@@ -508,7 +508,7 @@ public readonly cluster: CfnCluster;
 
 ---
 
-##### `databaseUser`<sup>Optional</sup> <a name="databaseUser" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpress.property.databaseUser"></a>
+##### `databaseUser`<sup>Optional</sup> <a name="databaseUser" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.property.databaseUser"></a>
 
 ```typescript
 public readonly databaseUser: CfnDatabaseUser;
@@ -519,39 +519,39 @@ public readonly databaseUser: CfnDatabaseUser;
 ---
 
 
-### DatadogIntegration <a name="DatadogIntegration" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration"></a>
+### DatadogIntegration <a name="DatadogIntegration" id="awscdk-resources-mongodbatlas.DatadogIntegration"></a>
 
-#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.Initializer"></a>
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.DatadogIntegration.Initializer"></a>
 
 ```typescript
-import { thirdPartyIntegration } from 'awscdk-resources-mongodbatlas'
+import { DatadogIntegration } from 'awscdk-resources-mongodbatlas'
 
-new thirdPartyIntegration.DatadogIntegration(scope: Construct, id: string, props: DatadogIntegrationProps)
+new DatadogIntegration(scope: Construct, id: string, props: DatadogIntegrationProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.Initializer.parameter.props">props</a></code> | <code>awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegrationProps</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegration.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegration.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegration.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegrationProps">DatadogIntegrationProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.DatadogIntegration.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.DatadogIntegration.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.DatadogIntegration.Initializer.parameter.props"></a>
 
-- *Type:* awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegrationProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.DatadogIntegrationProps">DatadogIntegrationProps</a>
 
 ---
 
@@ -559,11 +559,11 @@ new thirdPartyIntegration.DatadogIntegration(scope: Construct, id: string, props
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegration.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.toString"></a>
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.DatadogIntegration.toString"></a>
 
 ```typescript
 public toString(): string
@@ -575,21 +575,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegration.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.DatadogIntegration.isConstruct"></a>
 
 ```typescript
-import { thirdPartyIntegration } from 'awscdk-resources-mongodbatlas'
+import { DatadogIntegration } from 'awscdk-resources-mongodbatlas'
 
-thirdPartyIntegration.DatadogIntegration.isConstruct(x: any)
+DatadogIntegration.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.DatadogIntegration.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -601,12 +601,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.property.cfnThirdPartyIntegration">cfnThirdPartyIntegration</a></code> | <code>@mongodbatlas-awscdk/third-party-integration.CfnThirdPartyIntegration</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegration.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegration.property.cfnThirdPartyIntegration">cfnThirdPartyIntegration</a></code> | <code>@mongodbatlas-awscdk/third-party-integration.CfnThirdPartyIntegration</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.DatadogIntegration.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -618,7 +618,7 @@ The tree node.
 
 ---
 
-##### `cfnThirdPartyIntegration`<sup>Required</sup> <a name="cfnThirdPartyIntegration" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegration.property.cfnThirdPartyIntegration"></a>
+##### `cfnThirdPartyIntegration`<sup>Required</sup> <a name="cfnThirdPartyIntegration" id="awscdk-resources-mongodbatlas.DatadogIntegration.property.cfnThirdPartyIntegration"></a>
 
 ```typescript
 public readonly cfnThirdPartyIntegration: CfnThirdPartyIntegration;
@@ -629,39 +629,39 @@ public readonly cfnThirdPartyIntegration: CfnThirdPartyIntegration;
 ---
 
 
-### MicrosoftTeamsIntegration <a name="MicrosoftTeamsIntegration" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration"></a>
+### MicrosoftTeamsIntegration <a name="MicrosoftTeamsIntegration" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration"></a>
 
-#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.Initializer"></a>
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.Initializer"></a>
 
 ```typescript
-import { thirdPartyIntegration } from 'awscdk-resources-mongodbatlas'
+import { MicrosoftTeamsIntegration } from 'awscdk-resources-mongodbatlas'
 
-new thirdPartyIntegration.MicrosoftTeamsIntegration(scope: Construct, id: string, props: MicrosoftTeamsIntegrationProps)
+new MicrosoftTeamsIntegration(scope: Construct, id: string, props: MicrosoftTeamsIntegrationProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.Initializer.parameter.props">props</a></code> | <code>awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegrationProps</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegrationProps">MicrosoftTeamsIntegrationProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.Initializer.parameter.props"></a>
 
-- *Type:* awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegrationProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegrationProps">MicrosoftTeamsIntegrationProps</a>
 
 ---
 
@@ -669,11 +669,11 @@ new thirdPartyIntegration.MicrosoftTeamsIntegration(scope: Construct, id: string
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.toString"></a>
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.toString"></a>
 
 ```typescript
 public toString(): string
@@ -685,21 +685,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.isConstruct"></a>
 
 ```typescript
-import { thirdPartyIntegration } from 'awscdk-resources-mongodbatlas'
+import { MicrosoftTeamsIntegration } from 'awscdk-resources-mongodbatlas'
 
-thirdPartyIntegration.MicrosoftTeamsIntegration.isConstruct(x: any)
+MicrosoftTeamsIntegration.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -711,12 +711,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.property.cfnThirdPartyIntegration">cfnThirdPartyIntegration</a></code> | <code>@mongodbatlas-awscdk/third-party-integration.CfnThirdPartyIntegration</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.property.cfnThirdPartyIntegration">cfnThirdPartyIntegration</a></code> | <code>@mongodbatlas-awscdk/third-party-integration.CfnThirdPartyIntegration</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -728,7 +728,7 @@ The tree node.
 
 ---
 
-##### `cfnThirdPartyIntegration`<sup>Required</sup> <a name="cfnThirdPartyIntegration" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegration.property.cfnThirdPartyIntegration"></a>
+##### `cfnThirdPartyIntegration`<sup>Required</sup> <a name="cfnThirdPartyIntegration" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.property.cfnThirdPartyIntegration"></a>
 
 ```typescript
 public readonly cfnThirdPartyIntegration: CfnThirdPartyIntegration;
@@ -739,39 +739,39 @@ public readonly cfnThirdPartyIntegration: CfnThirdPartyIntegration;
 ---
 
 
-### PagerDutyIntegration <a name="PagerDutyIntegration" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration"></a>
+### PagerDutyIntegration <a name="PagerDutyIntegration" id="awscdk-resources-mongodbatlas.PagerDutyIntegration"></a>
 
-#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.Initializer"></a>
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.Initializer"></a>
 
 ```typescript
-import { thirdPartyIntegration } from 'awscdk-resources-mongodbatlas'
+import { PagerDutyIntegration } from 'awscdk-resources-mongodbatlas'
 
-new thirdPartyIntegration.PagerDutyIntegration(scope: Construct, id: string, props: PagerDutyIntegrationProps)
+new PagerDutyIntegration(scope: Construct, id: string, props: PagerDutyIntegrationProps)
 ```
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.Initializer.parameter.props">props</a></code> | <code>awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegrationProps</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegration.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegration.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegration.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegrationProps">PagerDutyIntegrationProps</a></code> | *No description.* |
 
 ---
 
-##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.Initializer.parameter.scope"></a>
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.Initializer.parameter.scope"></a>
 
 - *Type:* constructs.Construct
 
 ---
 
-##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.Initializer.parameter.id"></a>
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.Initializer.parameter.id"></a>
 
 - *Type:* string
 
 ---
 
-##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.Initializer.parameter.props"></a>
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.Initializer.parameter.props"></a>
 
-- *Type:* awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegrationProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.PagerDutyIntegrationProps">PagerDutyIntegrationProps</a>
 
 ---
 
@@ -779,11 +779,11 @@ new thirdPartyIntegration.PagerDutyIntegration(scope: Construct, id: string, pro
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegration.toString">toString</a></code> | Returns a string representation of this construct. |
 
 ---
 
-##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.toString"></a>
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.toString"></a>
 
 ```typescript
 public toString(): string
@@ -795,21 +795,21 @@ Returns a string representation of this construct.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegration.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.isConstruct"></a>
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.isConstruct"></a>
 
 ```typescript
-import { thirdPartyIntegration } from 'awscdk-resources-mongodbatlas'
+import { PagerDutyIntegration } from 'awscdk-resources-mongodbatlas'
 
-thirdPartyIntegration.PagerDutyIntegration.isConstruct(x: any)
+PagerDutyIntegration.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
 
-###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.isConstruct.parameter.x"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.isConstruct.parameter.x"></a>
 
 - *Type:* any
 
@@ -821,12 +821,12 @@ Any object.
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.property.cfnThirdPartyIntegration">cfnThirdPartyIntegration</a></code> | <code>@mongodbatlas-awscdk/third-party-integration.CfnThirdPartyIntegration</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegration.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegration.property.cfnThirdPartyIntegration">cfnThirdPartyIntegration</a></code> | <code>@mongodbatlas-awscdk/third-party-integration.CfnThirdPartyIntegration</code> | *No description.* |
 
 ---
 
-##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.property.node"></a>
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.property.node"></a>
 
 ```typescript
 public readonly node: Node;
@@ -838,7 +838,7 @@ The tree node.
 
 ---
 
-##### `cfnThirdPartyIntegration`<sup>Required</sup> <a name="cfnThirdPartyIntegration" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegration.property.cfnThirdPartyIntegration"></a>
+##### `cfnThirdPartyIntegration`<sup>Required</sup> <a name="cfnThirdPartyIntegration" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.property.cfnThirdPartyIntegration"></a>
 
 ```typescript
 public readonly cfnThirdPartyIntegration: CfnThirdPartyIntegration;
@@ -851,48 +851,48 @@ public readonly cfnThirdPartyIntegration: CfnThirdPartyIntegration;
 
 ## Structs <a name="Structs" id="Structs"></a>
 
-### AtlasBasicPrivateEndpointProps <a name="AtlasBasicPrivateEndpointProps" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpointProps"></a>
+### AtlasBasicPrivateEndpointProps <a name="AtlasBasicPrivateEndpointProps" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpointProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.Initializer"></a>
 
 ```typescript
-import { atlasBasicPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
+import { AtlasBasicPrivateEndpointProps } from 'awscdk-resources-mongodbatlas'
 
-const atlasBasicPrivateEndpointProps: atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpointProps = { ... }
+const atlasBasicPrivateEndpointProps: AtlasBasicPrivateEndpointProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpointProps.property.atlasBasicProps">atlasBasicProps</a></code> | <code>@mongodbatlas-awscdk/atlas-basic.AtlasBasicProps</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpointProps.property.privateEndpointProps">privateEndpointProps</a></code> | <code>awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpointProps.property.profile">profile</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpointProps.property.region">region</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.atlasBasicProps">atlasBasicProps</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicProps">AtlasBasicProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.privateEndpointProps">privateEndpointProps</a></code> | <code><a href="#awscdk-resources-mongodbatlas.PrivateEndpointProps">PrivateEndpointProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.profile">profile</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.region">region</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `atlasBasicProps`<sup>Required</sup> <a name="atlasBasicProps" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpointProps.property.atlasBasicProps"></a>
+##### `atlasBasicProps`<sup>Required</sup> <a name="atlasBasicProps" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.atlasBasicProps"></a>
 
 ```typescript
 public readonly atlasBasicProps: AtlasBasicProps;
 ```
 
-- *Type:* @mongodbatlas-awscdk/atlas-basic.AtlasBasicProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AtlasBasicProps">AtlasBasicProps</a>
 
 ---
 
-##### `privateEndpointProps`<sup>Required</sup> <a name="privateEndpointProps" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpointProps.property.privateEndpointProps"></a>
+##### `privateEndpointProps`<sup>Required</sup> <a name="privateEndpointProps" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.privateEndpointProps"></a>
 
 ```typescript
 public readonly privateEndpointProps: PrivateEndpointProps;
 ```
 
-- *Type:* awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.PrivateEndpointProps">PrivateEndpointProps</a>
 
 ---
 
-##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpointProps.property.profile"></a>
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.profile"></a>
 
 ```typescript
 public readonly profile: string;
@@ -902,7 +902,7 @@ public readonly profile: string;
 
 ---
 
-##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.AtlasBasicPrivateEndpointProps.property.region"></a>
+##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.region"></a>
 
 ```typescript
 public readonly region: string;
@@ -913,69 +913,69 @@ public readonly region: string;
 
 ---
 
-### AtlasBasicProps <a name="AtlasBasicProps" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps"></a>
+### AtlasBasicProps <a name="AtlasBasicProps" id="awscdk-resources-mongodbatlas.AtlasBasicProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.AtlasBasicProps.Initializer"></a>
 
 ```typescript
-import { atlasBasic } from 'awscdk-resources-mongodbatlas'
+import { AtlasBasicProps } from 'awscdk-resources-mongodbatlas'
 
-const atlasBasicProps: atlasBasic.AtlasBasicProps = { ... }
+const atlasBasicProps: AtlasBasicProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps.property.clusterProps">clusterProps</a></code> | <code>awscdk-resources-mongodbatlas.atlasBasic.ClusterProps</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps.property.projectProps">projectProps</a></code> | <code>awscdk-resources-mongodbatlas.atlasBasic.ProjectProps</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps.property.dbUserProps">dbUserProps</a></code> | <code>awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps.property.ipAccessListProps">ipAccessListProps</a></code> | <code>awscdk-resources-mongodbatlas.atlasBasic.IpAccessListProps</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps.property.profile">profile</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicProps.property.clusterProps">clusterProps</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ClusterProps">ClusterProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicProps.property.projectProps">projectProps</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectProps">ProjectProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicProps.property.dbUserProps">dbUserProps</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps">DatabaseUserProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicProps.property.ipAccessListProps">ipAccessListProps</a></code> | <code><a href="#awscdk-resources-mongodbatlas.IpAccessListProps">IpAccessListProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicProps.property.profile">profile</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `clusterProps`<sup>Required</sup> <a name="clusterProps" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps.property.clusterProps"></a>
+##### `clusterProps`<sup>Required</sup> <a name="clusterProps" id="awscdk-resources-mongodbatlas.AtlasBasicProps.property.clusterProps"></a>
 
 ```typescript
 public readonly clusterProps: ClusterProps;
 ```
 
-- *Type:* awscdk-resources-mongodbatlas.atlasBasic.ClusterProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.ClusterProps">ClusterProps</a>
 
 ---
 
-##### `projectProps`<sup>Required</sup> <a name="projectProps" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps.property.projectProps"></a>
+##### `projectProps`<sup>Required</sup> <a name="projectProps" id="awscdk-resources-mongodbatlas.AtlasBasicProps.property.projectProps"></a>
 
 ```typescript
 public readonly projectProps: ProjectProps;
 ```
 
-- *Type:* awscdk-resources-mongodbatlas.atlasBasic.ProjectProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.ProjectProps">ProjectProps</a>
 
 ---
 
-##### `dbUserProps`<sup>Optional</sup> <a name="dbUserProps" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps.property.dbUserProps"></a>
+##### `dbUserProps`<sup>Optional</sup> <a name="dbUserProps" id="awscdk-resources-mongodbatlas.AtlasBasicProps.property.dbUserProps"></a>
 
 ```typescript
 public readonly dbUserProps: DatabaseUserProps;
 ```
 
-- *Type:* awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.DatabaseUserProps">DatabaseUserProps</a>
 
 ---
 
-##### `ipAccessListProps`<sup>Optional</sup> <a name="ipAccessListProps" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps.property.ipAccessListProps"></a>
+##### `ipAccessListProps`<sup>Optional</sup> <a name="ipAccessListProps" id="awscdk-resources-mongodbatlas.AtlasBasicProps.property.ipAccessListProps"></a>
 
 ```typescript
 public readonly ipAccessListProps: IpAccessListProps;
 ```
 
-- *Type:* awscdk-resources-mongodbatlas.atlasBasic.IpAccessListProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.IpAccessListProps">IpAccessListProps</a>
 
 ---
 
-##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.atlasBasic.AtlasBasicProps.property.profile"></a>
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.AtlasBasicProps.property.profile"></a>
 
 ```typescript
 public readonly profile: string;
@@ -985,40 +985,40 @@ public readonly profile: string;
 
 ---
 
-### AtlasEncryptionAtRestExpressProps <a name="AtlasEncryptionAtRestExpressProps" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps"></a>
+### AtlasEncryptionAtRestExpressProps <a name="AtlasEncryptionAtRestExpressProps" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps.Initializer"></a>
 
 ```typescript
-import { atlasEncryptionAtRestExpress } from 'awscdk-resources-mongodbatlas'
+import { AtlasEncryptionAtRestExpressProps } from 'awscdk-resources-mongodbatlas'
 
-const atlasEncryptionAtRestExpressProps: atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps = { ... }
+const atlasEncryptionAtRestExpressProps: AtlasEncryptionAtRestExpressProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps.property.encryptionAtRest">encryptionAtRest</a></code> | <code>awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestProps</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps.property.projectId">projectId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps.property.accessList">accessList</a></code> | <code>@mongodbatlas-awscdk/atlas-basic.IpAccessListProps</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps.property.cluster">cluster</a></code> | <code>@mongodbatlas-awscdk/atlas-basic.ClusterProps</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps.property.databaseUser">databaseUser</a></code> | <code>@mongodbatlas-awscdk/atlas-basic.DatabaseUserProps</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps.property.profile">profile</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps.property.encryptionAtRest">encryptionAtRest</a></code> | <code><a href="#awscdk-resources-mongodbatlas.EncryptionAtRestProps">EncryptionAtRestProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps.property.projectId">projectId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps.property.accessList">accessList</a></code> | <code><a href="#awscdk-resources-mongodbatlas.IpAccessListProps">IpAccessListProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps.property.cluster">cluster</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ClusterProps">ClusterProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps.property.databaseUser">databaseUser</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps">DatabaseUserProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps.property.profile">profile</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `encryptionAtRest`<sup>Required</sup> <a name="encryptionAtRest" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps.property.encryptionAtRest"></a>
+##### `encryptionAtRest`<sup>Required</sup> <a name="encryptionAtRest" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps.property.encryptionAtRest"></a>
 
 ```typescript
-public readonly encryptionAtRest: AtlasEncryptionAtRestProps;
+public readonly encryptionAtRest: EncryptionAtRestProps;
 ```
 
-- *Type:* awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.EncryptionAtRestProps">EncryptionAtRestProps</a>
 
 ---
 
-##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps.property.projectId"></a>
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps.property.projectId"></a>
 
 ```typescript
 public readonly projectId: string;
@@ -1028,37 +1028,37 @@ public readonly projectId: string;
 
 ---
 
-##### `accessList`<sup>Optional</sup> <a name="accessList" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps.property.accessList"></a>
+##### `accessList`<sup>Optional</sup> <a name="accessList" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps.property.accessList"></a>
 
 ```typescript
 public readonly accessList: IpAccessListProps;
 ```
 
-- *Type:* @mongodbatlas-awscdk/atlas-basic.IpAccessListProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.IpAccessListProps">IpAccessListProps</a>
 
 ---
 
-##### `cluster`<sup>Optional</sup> <a name="cluster" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps.property.cluster"></a>
+##### `cluster`<sup>Optional</sup> <a name="cluster" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps.property.cluster"></a>
 
 ```typescript
 public readonly cluster: ClusterProps;
 ```
 
-- *Type:* @mongodbatlas-awscdk/atlas-basic.ClusterProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.ClusterProps">ClusterProps</a>
 
 ---
 
-##### `databaseUser`<sup>Optional</sup> <a name="databaseUser" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps.property.databaseUser"></a>
+##### `databaseUser`<sup>Optional</sup> <a name="databaseUser" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps.property.databaseUser"></a>
 
 ```typescript
 public readonly databaseUser: DatabaseUserProps;
 ```
 
-- *Type:* @mongodbatlas-awscdk/atlas-basic.DatabaseUserProps
+- *Type:* <a href="#awscdk-resources-mongodbatlas.DatabaseUserProps">DatabaseUserProps</a>
 
 ---
 
-##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestExpressProps.property.profile"></a>
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpressProps.property.profile"></a>
 
 ```typescript
 public readonly profile: string;
@@ -1068,28 +1068,30 @@ public readonly profile: string;
 
 ---
 
-### AtlasEncryptionAtRestProps <a name="AtlasEncryptionAtRestProps" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestProps"></a>
+### AtlasEncryptionAtRestProps <a name="AtlasEncryptionAtRestProps" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps.Initializer"></a>
 
 ```typescript
-import { atlasEncryptionAtRestExpress } from 'awscdk-resources-mongodbatlas'
+import { AtlasEncryptionAtRestProps } from 'awscdk-resources-mongodbatlas'
 
-const atlasEncryptionAtRestProps: atlasEncryptionAtRestExpress.AtlasEncryptionAtRestProps = { ... }
+const atlasEncryptionAtRestProps: AtlasEncryptionAtRestProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestProps.property.customerMasterKeyId">customerMasterKeyId</a></code> | <code>string</code> | The AWS customer master key used to encrypt and decrypt the MongoDB master keys. |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestProps.property.roleId">roleId</a></code> | <code>string</code> | ID of an AWS IAM role authorized to manage an AWS customer master key. |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestProps.property.enabledEncryptionAtRest">enabledEncryptionAtRest</a></code> | <code>boolean</code> | Specifies whether Encryption at Rest is enabled for an Atlas project. |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestProps.property.region">region</a></code> | <code>string</code> | The AWS region in which the AWS customer master key exists. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps.property.customerMasterKeyId">customerMasterKeyId</a></code> | <code>string</code> | The AWS customer master key used to encrypt and decrypt the MongoDB master keys. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps.property.projectId">projectId</a></code> | <code>string</code> | Unique identifier of the Atlas project to which the user belongs. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps.property.roleId">roleId</a></code> | <code>string</code> | ID of an AWS IAM role authorized to manage an AWS customer master key. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps.property.enabled">enabled</a></code> | <code>boolean</code> | Specifies whether Encryption at Rest is enabled for an Atlas project. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps.property.region">region</a></code> | <code>string</code> | The AWS region in which the AWS customer master key exists. |
 
 ---
 
-##### `customerMasterKeyId`<sup>Required</sup> <a name="customerMasterKeyId" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestProps.property.customerMasterKeyId"></a>
+##### `customerMasterKeyId`<sup>Required</sup> <a name="customerMasterKeyId" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps.property.customerMasterKeyId"></a>
 
 ```typescript
 public readonly customerMasterKeyId: string;
@@ -1101,81 +1103,7 @@ The AWS customer master key used to encrypt and decrypt the MongoDB master keys.
 
 ---
 
-##### `roleId`<sup>Required</sup> <a name="roleId" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestProps.property.roleId"></a>
-
-```typescript
-public readonly roleId: string;
-```
-
-- *Type:* string
-
-ID of an AWS IAM role authorized to manage an AWS customer master key.
-
----
-
-##### `enabledEncryptionAtRest`<sup>Optional</sup> <a name="enabledEncryptionAtRest" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestProps.property.enabledEncryptionAtRest"></a>
-
-```typescript
-public readonly enabledEncryptionAtRest: boolean;
-```
-
-- *Type:* boolean
-
-Specifies whether Encryption at Rest is enabled for an Atlas project.
-
-To disable Encryption at Rest, pass only this parameter with a value of false. When you disable Encryption at Rest, Atlas also removes the configuration details.
-Default Value: true
-
----
-
-##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.atlasEncryptionAtRestExpress.AtlasEncryptionAtRestProps.property.region"></a>
-
-```typescript
-public readonly region: string;
-```
-
-- *Type:* string
-
-The AWS region in which the AWS customer master key exists.
-
----
-
-### AtlasEncryptionAtRestProps <a name="AtlasEncryptionAtRestProps" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps"></a>
-
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps.Initializer"></a>
-
-```typescript
-import { encryptionAtRest } from 'awscdk-resources-mongodbatlas'
-
-const atlasEncryptionAtRestProps: encryptionAtRest.AtlasEncryptionAtRestProps = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps.property.customerMasterKeyId">customerMasterKeyId</a></code> | <code>string</code> | The AWS customer master key used to encrypt and decrypt the MongoDB master keys. |
-| <code><a href="#awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps.property.projectId">projectId</a></code> | <code>string</code> | Unique identifier of the Atlas project to which the user belongs. |
-| <code><a href="#awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps.property.roleId">roleId</a></code> | <code>string</code> | ID of an AWS IAM role authorized to manage an AWS customer master key. |
-| <code><a href="#awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps.property.enabled">enabled</a></code> | <code>boolean</code> | Specifies whether Encryption at Rest is enabled for an Atlas project. |
-| <code><a href="#awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
-| <code><a href="#awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps.property.region">region</a></code> | <code>string</code> | The AWS region in which the AWS customer master key exists. |
-
----
-
-##### `customerMasterKeyId`<sup>Required</sup> <a name="customerMasterKeyId" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps.property.customerMasterKeyId"></a>
-
-```typescript
-public readonly customerMasterKeyId: string;
-```
-
-- *Type:* string
-
-The AWS customer master key used to encrypt and decrypt the MongoDB master keys.
-
----
-
-##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps.property.projectId"></a>
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps.property.projectId"></a>
 
 ```typescript
 public readonly projectId: string;
@@ -1187,7 +1115,7 @@ Unique identifier of the Atlas project to which the user belongs.
 
 ---
 
-##### `roleId`<sup>Required</sup> <a name="roleId" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps.property.roleId"></a>
+##### `roleId`<sup>Required</sup> <a name="roleId" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps.property.roleId"></a>
 
 ```typescript
 public readonly roleId: string;
@@ -1199,7 +1127,7 @@ ID of an AWS IAM role authorized to manage an AWS customer master key.
 
 ---
 
-##### `enabled`<sup>Optional</sup> <a name="enabled" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps.property.enabled"></a>
+##### `enabled`<sup>Optional</sup> <a name="enabled" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps.property.enabled"></a>
 
 ```typescript
 public readonly enabled: boolean;
@@ -1214,7 +1142,7 @@ Default Value: true
 
 ---
 
-##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps.property.profile"></a>
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps.property.profile"></a>
 
 ```typescript
 public readonly profile: string;
@@ -1228,7 +1156,7 @@ See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
 
 ---
 
-##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.encryptionAtRest.AtlasEncryptionAtRestProps.property.region"></a>
+##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestProps.property.region"></a>
 
 ```typescript
 public readonly region: string;
@@ -1242,41 +1170,41 @@ Default Value: US_EAST_1
 
 ---
 
-### ClusterProps <a name="ClusterProps" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps"></a>
+### ClusterProps <a name="ClusterProps" id="awscdk-resources-mongodbatlas.ClusterProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.ClusterProps.Initializer"></a>
 
 ```typescript
-import { atlasBasic } from 'awscdk-resources-mongodbatlas'
+import { ClusterProps } from 'awscdk-resources-mongodbatlas'
 
-const clusterProps: atlasBasic.ClusterProps = { ... }
+const clusterProps: ClusterProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.advancedSettings">advancedSettings</a></code> | <code>@mongodbatlas-awscdk/cluster.ProcessArgs</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.backupEnabled">backupEnabled</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.biConnector">biConnector</a></code> | <code>@mongodbatlas-awscdk/cluster.CfnClusterPropsBiConnector</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.clusterType">clusterType</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.connectionStrings">connectionStrings</a></code> | <code>@mongodbatlas-awscdk/cluster.ConnectionStrings</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.diskSizeGb">diskSizeGb</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.encryptionAtRestProvider">encryptionAtRestProvider</a></code> | <code>@mongodbatlas-awscdk/cluster.CfnClusterPropsEncryptionAtRestProvider</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.labels">labels</a></code> | <code>@mongodbatlas-awscdk/cluster.CfnClusterPropsLabels[]</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.mongoDbMajorVersion">mongoDbMajorVersion</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.paused">paused</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.pitEnabled">pitEnabled</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.projectId">projectId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.replicationSpecs">replicationSpecs</a></code> | <code>@mongodbatlas-awscdk/cluster.AdvancedReplicationSpec[]</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.rootCertType">rootCertType</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.terminationProtectionEnabled">terminationProtectionEnabled</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.versionReleaseSystem">versionReleaseSystem</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.advancedSettings">advancedSettings</a></code> | <code>@mongodbatlas-awscdk/cluster.ProcessArgs</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.backupEnabled">backupEnabled</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.biConnector">biConnector</a></code> | <code>@mongodbatlas-awscdk/cluster.CfnClusterPropsBiConnector</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.clusterType">clusterType</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.connectionStrings">connectionStrings</a></code> | <code>@mongodbatlas-awscdk/cluster.ConnectionStrings</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.diskSizeGb">diskSizeGb</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.encryptionAtRestProvider">encryptionAtRestProvider</a></code> | <code>@mongodbatlas-awscdk/cluster.CfnClusterPropsEncryptionAtRestProvider</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.labels">labels</a></code> | <code>@mongodbatlas-awscdk/cluster.CfnClusterPropsLabels[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.mongoDbMajorVersion">mongoDbMajorVersion</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.paused">paused</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.pitEnabled">pitEnabled</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.projectId">projectId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.replicationSpecs">replicationSpecs</a></code> | <code>@mongodbatlas-awscdk/cluster.AdvancedReplicationSpec[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.rootCertType">rootCertType</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.terminationProtectionEnabled">terminationProtectionEnabled</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ClusterProps.property.versionReleaseSystem">versionReleaseSystem</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `advancedSettings`<sup>Optional</sup> <a name="advancedSettings" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.advancedSettings"></a>
+##### `advancedSettings`<sup>Optional</sup> <a name="advancedSettings" id="awscdk-resources-mongodbatlas.ClusterProps.property.advancedSettings"></a>
 
 ```typescript
 public readonly advancedSettings: ProcessArgs;
@@ -1286,7 +1214,7 @@ public readonly advancedSettings: ProcessArgs;
 
 ---
 
-##### `backupEnabled`<sup>Optional</sup> <a name="backupEnabled" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.backupEnabled"></a>
+##### `backupEnabled`<sup>Optional</sup> <a name="backupEnabled" id="awscdk-resources-mongodbatlas.ClusterProps.property.backupEnabled"></a>
 
 ```typescript
 public readonly backupEnabled: boolean;
@@ -1296,7 +1224,7 @@ public readonly backupEnabled: boolean;
 
 ---
 
-##### `biConnector`<sup>Optional</sup> <a name="biConnector" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.biConnector"></a>
+##### `biConnector`<sup>Optional</sup> <a name="biConnector" id="awscdk-resources-mongodbatlas.ClusterProps.property.biConnector"></a>
 
 ```typescript
 public readonly biConnector: CfnClusterPropsBiConnector;
@@ -1306,7 +1234,7 @@ public readonly biConnector: CfnClusterPropsBiConnector;
 
 ---
 
-##### `clusterType`<sup>Optional</sup> <a name="clusterType" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.clusterType"></a>
+##### `clusterType`<sup>Optional</sup> <a name="clusterType" id="awscdk-resources-mongodbatlas.ClusterProps.property.clusterType"></a>
 
 ```typescript
 public readonly clusterType: string;
@@ -1316,7 +1244,7 @@ public readonly clusterType: string;
 
 ---
 
-##### `connectionStrings`<sup>Optional</sup> <a name="connectionStrings" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.connectionStrings"></a>
+##### `connectionStrings`<sup>Optional</sup> <a name="connectionStrings" id="awscdk-resources-mongodbatlas.ClusterProps.property.connectionStrings"></a>
 
 ```typescript
 public readonly connectionStrings: ConnectionStrings;
@@ -1327,7 +1255,7 @@ public readonly connectionStrings: ConnectionStrings;
 
 ---
 
-##### `diskSizeGb`<sup>Optional</sup> <a name="diskSizeGb" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.diskSizeGb"></a>
+##### `diskSizeGb`<sup>Optional</sup> <a name="diskSizeGb" id="awscdk-resources-mongodbatlas.ClusterProps.property.diskSizeGb"></a>
 
 ```typescript
 public readonly diskSizeGb: number;
@@ -1337,7 +1265,7 @@ public readonly diskSizeGb: number;
 
 ---
 
-##### `encryptionAtRestProvider`<sup>Optional</sup> <a name="encryptionAtRestProvider" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.encryptionAtRestProvider"></a>
+##### `encryptionAtRestProvider`<sup>Optional</sup> <a name="encryptionAtRestProvider" id="awscdk-resources-mongodbatlas.ClusterProps.property.encryptionAtRestProvider"></a>
 
 ```typescript
 public readonly encryptionAtRestProvider: CfnClusterPropsEncryptionAtRestProvider;
@@ -1347,7 +1275,7 @@ public readonly encryptionAtRestProvider: CfnClusterPropsEncryptionAtRestProvide
 
 ---
 
-##### `labels`<sup>Optional</sup> <a name="labels" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.labels"></a>
+##### `labels`<sup>Optional</sup> <a name="labels" id="awscdk-resources-mongodbatlas.ClusterProps.property.labels"></a>
 
 ```typescript
 public readonly labels: CfnClusterPropsLabels[];
@@ -1357,7 +1285,7 @@ public readonly labels: CfnClusterPropsLabels[];
 
 ---
 
-##### `mongoDbMajorVersion`<sup>Optional</sup> <a name="mongoDbMajorVersion" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.mongoDbMajorVersion"></a>
+##### `mongoDbMajorVersion`<sup>Optional</sup> <a name="mongoDbMajorVersion" id="awscdk-resources-mongodbatlas.ClusterProps.property.mongoDbMajorVersion"></a>
 
 ```typescript
 public readonly mongoDbMajorVersion: string;
@@ -1367,7 +1295,7 @@ public readonly mongoDbMajorVersion: string;
 
 ---
 
-##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.name"></a>
+##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.ClusterProps.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -1377,7 +1305,7 @@ public readonly name: string;
 
 ---
 
-##### `paused`<sup>Optional</sup> <a name="paused" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.paused"></a>
+##### `paused`<sup>Optional</sup> <a name="paused" id="awscdk-resources-mongodbatlas.ClusterProps.property.paused"></a>
 
 ```typescript
 public readonly paused: boolean;
@@ -1388,7 +1316,7 @@ public readonly paused: boolean;
 
 ---
 
-##### `pitEnabled`<sup>Optional</sup> <a name="pitEnabled" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.pitEnabled"></a>
+##### `pitEnabled`<sup>Optional</sup> <a name="pitEnabled" id="awscdk-resources-mongodbatlas.ClusterProps.property.pitEnabled"></a>
 
 ```typescript
 public readonly pitEnabled: boolean;
@@ -1398,7 +1326,7 @@ public readonly pitEnabled: boolean;
 
 ---
 
-##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.projectId"></a>
+##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.ClusterProps.property.projectId"></a>
 
 ```typescript
 public readonly projectId: string;
@@ -1408,7 +1336,7 @@ public readonly projectId: string;
 
 ---
 
-##### `replicationSpecs`<sup>Optional</sup> <a name="replicationSpecs" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.replicationSpecs"></a>
+##### `replicationSpecs`<sup>Optional</sup> <a name="replicationSpecs" id="awscdk-resources-mongodbatlas.ClusterProps.property.replicationSpecs"></a>
 
 ```typescript
 public readonly replicationSpecs: AdvancedReplicationSpec[];
@@ -1418,7 +1346,7 @@ public readonly replicationSpecs: AdvancedReplicationSpec[];
 
 ---
 
-##### `rootCertType`<sup>Optional</sup> <a name="rootCertType" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.rootCertType"></a>
+##### `rootCertType`<sup>Optional</sup> <a name="rootCertType" id="awscdk-resources-mongodbatlas.ClusterProps.property.rootCertType"></a>
 
 ```typescript
 public readonly rootCertType: string;
@@ -1428,7 +1356,7 @@ public readonly rootCertType: string;
 
 ---
 
-##### `terminationProtectionEnabled`<sup>Optional</sup> <a name="terminationProtectionEnabled" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.terminationProtectionEnabled"></a>
+##### `terminationProtectionEnabled`<sup>Optional</sup> <a name="terminationProtectionEnabled" id="awscdk-resources-mongodbatlas.ClusterProps.property.terminationProtectionEnabled"></a>
 
 ```typescript
 public readonly terminationProtectionEnabled: boolean;
@@ -1438,7 +1366,7 @@ public readonly terminationProtectionEnabled: boolean;
 
 ---
 
-##### `versionReleaseSystem`<sup>Optional</sup> <a name="versionReleaseSystem" id="awscdk-resources-mongodbatlas.atlasBasic.ClusterProps.property.versionReleaseSystem"></a>
+##### `versionReleaseSystem`<sup>Optional</sup> <a name="versionReleaseSystem" id="awscdk-resources-mongodbatlas.ClusterProps.property.versionReleaseSystem"></a>
 
 ```typescript
 public readonly versionReleaseSystem: string;
@@ -1448,35 +1376,35 @@ public readonly versionReleaseSystem: string;
 
 ---
 
-### DatabaseUserProps <a name="DatabaseUserProps" id="awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps"></a>
+### DatabaseUserProps <a name="DatabaseUserProps" id="awscdk-resources-mongodbatlas.DatabaseUserProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.DatabaseUserProps.Initializer"></a>
 
 ```typescript
-import { atlasBasic } from 'awscdk-resources-mongodbatlas'
+import { DatabaseUserProps } from 'awscdk-resources-mongodbatlas'
 
-const databaseUserProps: atlasBasic.DatabaseUserProps = { ... }
+const databaseUserProps: DatabaseUserProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.awsiamType">awsiamType</a></code> | <code>@mongodbatlas-awscdk/database-user.CfnDatabaseUserPropsAwsiamType</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.databaseName">databaseName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.deleteAfterDate">deleteAfterDate</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.labels">labels</a></code> | <code>@mongodbatlas-awscdk/database-user.LabelDefinition[]</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.ldapAuthType">ldapAuthType</a></code> | <code>@mongodbatlas-awscdk/database-user.CfnDatabaseUserPropsLdapAuthType</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.password">password</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.projectId">projectId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.roles">roles</a></code> | <code>@mongodbatlas-awscdk/database-user.RoleDefinition[]</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.scopes">scopes</a></code> | <code>@mongodbatlas-awscdk/database-user.ScopeDefinition[]</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.username">username</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.x509Type">x509Type</a></code> | <code>@mongodbatlas-awscdk/database-user.CfnDatabaseUserPropsX509Type</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps.property.awsiamType">awsiamType</a></code> | <code>@mongodbatlas-awscdk/database-user.CfnDatabaseUserPropsAwsiamType</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps.property.databaseName">databaseName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps.property.deleteAfterDate">deleteAfterDate</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps.property.labels">labels</a></code> | <code>@mongodbatlas-awscdk/database-user.LabelDefinition[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps.property.ldapAuthType">ldapAuthType</a></code> | <code>@mongodbatlas-awscdk/database-user.CfnDatabaseUserPropsLdapAuthType</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps.property.password">password</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps.property.projectId">projectId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps.property.roles">roles</a></code> | <code>@mongodbatlas-awscdk/database-user.RoleDefinition[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps.property.scopes">scopes</a></code> | <code>@mongodbatlas-awscdk/database-user.ScopeDefinition[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps.property.username">username</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps.property.x509Type">x509Type</a></code> | <code>@mongodbatlas-awscdk/database-user.CfnDatabaseUserPropsX509Type</code> | *No description.* |
 
 ---
 
-##### `awsiamType`<sup>Optional</sup> <a name="awsiamType" id="awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.awsiamType"></a>
+##### `awsiamType`<sup>Optional</sup> <a name="awsiamType" id="awscdk-resources-mongodbatlas.DatabaseUserProps.property.awsiamType"></a>
 
 ```typescript
 public readonly awsiamType: CfnDatabaseUserPropsAwsiamType;
@@ -1486,7 +1414,7 @@ public readonly awsiamType: CfnDatabaseUserPropsAwsiamType;
 
 ---
 
-##### `databaseName`<sup>Optional</sup> <a name="databaseName" id="awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.databaseName"></a>
+##### `databaseName`<sup>Optional</sup> <a name="databaseName" id="awscdk-resources-mongodbatlas.DatabaseUserProps.property.databaseName"></a>
 
 ```typescript
 public readonly databaseName: string;
@@ -1496,7 +1424,7 @@ public readonly databaseName: string;
 
 ---
 
-##### `deleteAfterDate`<sup>Optional</sup> <a name="deleteAfterDate" id="awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.deleteAfterDate"></a>
+##### `deleteAfterDate`<sup>Optional</sup> <a name="deleteAfterDate" id="awscdk-resources-mongodbatlas.DatabaseUserProps.property.deleteAfterDate"></a>
 
 ```typescript
 public readonly deleteAfterDate: string;
@@ -1506,7 +1434,7 @@ public readonly deleteAfterDate: string;
 
 ---
 
-##### `labels`<sup>Optional</sup> <a name="labels" id="awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.labels"></a>
+##### `labels`<sup>Optional</sup> <a name="labels" id="awscdk-resources-mongodbatlas.DatabaseUserProps.property.labels"></a>
 
 ```typescript
 public readonly labels: LabelDefinition[];
@@ -1517,7 +1445,7 @@ public readonly labels: LabelDefinition[];
 
 ---
 
-##### `ldapAuthType`<sup>Optional</sup> <a name="ldapAuthType" id="awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.ldapAuthType"></a>
+##### `ldapAuthType`<sup>Optional</sup> <a name="ldapAuthType" id="awscdk-resources-mongodbatlas.DatabaseUserProps.property.ldapAuthType"></a>
 
 ```typescript
 public readonly ldapAuthType: CfnDatabaseUserPropsLdapAuthType;
@@ -1527,7 +1455,7 @@ public readonly ldapAuthType: CfnDatabaseUserPropsLdapAuthType;
 
 ---
 
-##### `password`<sup>Optional</sup> <a name="password" id="awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.password"></a>
+##### `password`<sup>Optional</sup> <a name="password" id="awscdk-resources-mongodbatlas.DatabaseUserProps.property.password"></a>
 
 ```typescript
 public readonly password: string;
@@ -1537,7 +1465,7 @@ public readonly password: string;
 
 ---
 
-##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.projectId"></a>
+##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.DatabaseUserProps.property.projectId"></a>
 
 ```typescript
 public readonly projectId: string;
@@ -1548,7 +1476,7 @@ public readonly projectId: string;
 
 ---
 
-##### `roles`<sup>Optional</sup> <a name="roles" id="awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.roles"></a>
+##### `roles`<sup>Optional</sup> <a name="roles" id="awscdk-resources-mongodbatlas.DatabaseUserProps.property.roles"></a>
 
 ```typescript
 public readonly roles: RoleDefinition[];
@@ -1558,7 +1486,7 @@ public readonly roles: RoleDefinition[];
 
 ---
 
-##### `scopes`<sup>Optional</sup> <a name="scopes" id="awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.scopes"></a>
+##### `scopes`<sup>Optional</sup> <a name="scopes" id="awscdk-resources-mongodbatlas.DatabaseUserProps.property.scopes"></a>
 
 ```typescript
 public readonly scopes: ScopeDefinition[];
@@ -1568,7 +1496,7 @@ public readonly scopes: ScopeDefinition[];
 
 ---
 
-##### `username`<sup>Optional</sup> <a name="username" id="awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.username"></a>
+##### `username`<sup>Optional</sup> <a name="username" id="awscdk-resources-mongodbatlas.DatabaseUserProps.property.username"></a>
 
 ```typescript
 public readonly username: string;
@@ -1579,7 +1507,7 @@ public readonly username: string;
 
 ---
 
-##### `x509Type`<sup>Optional</sup> <a name="x509Type" id="awscdk-resources-mongodbatlas.atlasBasic.DatabaseUserProps.property.x509Type"></a>
+##### `x509Type`<sup>Optional</sup> <a name="x509Type" id="awscdk-resources-mongodbatlas.DatabaseUserProps.property.x509Type"></a>
 
 ```typescript
 public readonly x509Type: CfnDatabaseUserPropsX509Type;
@@ -1589,28 +1517,28 @@ public readonly x509Type: CfnDatabaseUserPropsX509Type;
 
 ---
 
-### DatadogIntegrationProps <a name="DatadogIntegrationProps" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegrationProps"></a>
+### DatadogIntegrationProps <a name="DatadogIntegrationProps" id="awscdk-resources-mongodbatlas.DatadogIntegrationProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegrationProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.DatadogIntegrationProps.Initializer"></a>
 
 ```typescript
-import { thirdPartyIntegration } from 'awscdk-resources-mongodbatlas'
+import { DatadogIntegrationProps } from 'awscdk-resources-mongodbatlas'
 
-const datadogIntegrationProps: thirdPartyIntegration.DatadogIntegrationProps = { ... }
+const datadogIntegrationProps: DatadogIntegrationProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegrationProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegrationProps.property.profile">profile</a></code> | <code>string</code> | Atlas API keys. |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegrationProps.property.apiKey">apiKey</a></code> | <code>string</code> | Key that allows MongoDB Cloud to access your Datadog account. |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegrationProps.property.region">region</a></code> | <code>awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogRegion</code> | Two-letter code that indicates which regional URL MongoDB uses to access the Datadog API. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegrationProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegrationProps.property.profile">profile</a></code> | <code>string</code> | Atlas API keys. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegrationProps.property.apiKey">apiKey</a></code> | <code>string</code> | Key that allows MongoDB Cloud to access your Datadog account. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegrationProps.property.region">region</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DatadogRegion">DatadogRegion</a></code> | Two-letter code that indicates which regional URL MongoDB uses to access the Datadog API. |
 
 ---
 
-##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegrationProps.property.projectId"></a>
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.DatadogIntegrationProps.property.projectId"></a>
 
 ```typescript
 public readonly projectId: string;
@@ -1622,7 +1550,7 @@ Unique 24-hexadecimal digit string that identifies your project.
 
 ---
 
-##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegrationProps.property.profile"></a>
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.DatadogIntegrationProps.property.profile"></a>
 
 ```typescript
 public readonly profile: string;
@@ -1634,7 +1562,7 @@ Atlas API keys.
 
 ---
 
-##### `apiKey`<sup>Required</sup> <a name="apiKey" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegrationProps.property.apiKey"></a>
+##### `apiKey`<sup>Required</sup> <a name="apiKey" id="awscdk-resources-mongodbatlas.DatadogIntegrationProps.property.apiKey"></a>
 
 ```typescript
 public readonly apiKey: string;
@@ -1646,40 +1574,112 @@ Key that allows MongoDB Cloud to access your Datadog account.
 
 ---
 
-##### `region`<sup>Required</sup> <a name="region" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogIntegrationProps.property.region"></a>
+##### `region`<sup>Required</sup> <a name="region" id="awscdk-resources-mongodbatlas.DatadogIntegrationProps.property.region"></a>
 
 ```typescript
 public readonly region: DatadogRegion;
 ```
 
-- *Type:* awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogRegion
+- *Type:* <a href="#awscdk-resources-mongodbatlas.DatadogRegion">DatadogRegion</a>
 
 Two-letter code that indicates which regional URL MongoDB uses to access the Datadog API.
 
 ---
 
-### IpAccessListProps <a name="IpAccessListProps" id="awscdk-resources-mongodbatlas.atlasBasic.IpAccessListProps"></a>
+### EncryptionAtRestProps <a name="EncryptionAtRestProps" id="awscdk-resources-mongodbatlas.EncryptionAtRestProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.atlasBasic.IpAccessListProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.EncryptionAtRestProps.Initializer"></a>
 
 ```typescript
-import { atlasBasic } from 'awscdk-resources-mongodbatlas'
+import { EncryptionAtRestProps } from 'awscdk-resources-mongodbatlas'
 
-const ipAccessListProps: atlasBasic.IpAccessListProps = { ... }
+const encryptionAtRestProps: EncryptionAtRestProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.IpAccessListProps.property.accessList">accessList</a></code> | <code>@mongodbatlas-awscdk/project-ip-access-list.AccessListDefinition[]</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.IpAccessListProps.property.listOptions">listOptions</a></code> | <code>@mongodbatlas-awscdk/project-ip-access-list.ListOptions</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.IpAccessListProps.property.projectId">projectId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.IpAccessListProps.property.totalCount">totalCount</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.EncryptionAtRestProps.property.customerMasterKeyId">customerMasterKeyId</a></code> | <code>string</code> | The AWS customer master key used to encrypt and decrypt the MongoDB master keys. |
+| <code><a href="#awscdk-resources-mongodbatlas.EncryptionAtRestProps.property.roleId">roleId</a></code> | <code>string</code> | ID of an AWS IAM role authorized to manage an AWS customer master key. |
+| <code><a href="#awscdk-resources-mongodbatlas.EncryptionAtRestProps.property.enabledEncryptionAtRest">enabledEncryptionAtRest</a></code> | <code>boolean</code> | Specifies whether Encryption at Rest is enabled for an Atlas project. |
+| <code><a href="#awscdk-resources-mongodbatlas.EncryptionAtRestProps.property.region">region</a></code> | <code>string</code> | The AWS region in which the AWS customer master key exists. |
 
 ---
 
-##### `accessList`<sup>Required</sup> <a name="accessList" id="awscdk-resources-mongodbatlas.atlasBasic.IpAccessListProps.property.accessList"></a>
+##### `customerMasterKeyId`<sup>Required</sup> <a name="customerMasterKeyId" id="awscdk-resources-mongodbatlas.EncryptionAtRestProps.property.customerMasterKeyId"></a>
+
+```typescript
+public readonly customerMasterKeyId: string;
+```
+
+- *Type:* string
+
+The AWS customer master key used to encrypt and decrypt the MongoDB master keys.
+
+---
+
+##### `roleId`<sup>Required</sup> <a name="roleId" id="awscdk-resources-mongodbatlas.EncryptionAtRestProps.property.roleId"></a>
+
+```typescript
+public readonly roleId: string;
+```
+
+- *Type:* string
+
+ID of an AWS IAM role authorized to manage an AWS customer master key.
+
+---
+
+##### `enabledEncryptionAtRest`<sup>Optional</sup> <a name="enabledEncryptionAtRest" id="awscdk-resources-mongodbatlas.EncryptionAtRestProps.property.enabledEncryptionAtRest"></a>
+
+```typescript
+public readonly enabledEncryptionAtRest: boolean;
+```
+
+- *Type:* boolean
+
+Specifies whether Encryption at Rest is enabled for an Atlas project.
+
+To disable Encryption at Rest, pass only this parameter with a value of false. When you disable Encryption at Rest, Atlas also removes the configuration details.
+Default Value: true
+
+---
+
+##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.EncryptionAtRestProps.property.region"></a>
+
+```typescript
+public readonly region: string;
+```
+
+- *Type:* string
+
+The AWS region in which the AWS customer master key exists.
+
+---
+
+### IpAccessListProps <a name="IpAccessListProps" id="awscdk-resources-mongodbatlas.IpAccessListProps"></a>
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.IpAccessListProps.Initializer"></a>
+
+```typescript
+import { IpAccessListProps } from 'awscdk-resources-mongodbatlas'
+
+const ipAccessListProps: IpAccessListProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.IpAccessListProps.property.accessList">accessList</a></code> | <code>@mongodbatlas-awscdk/project-ip-access-list.AccessListDefinition[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.IpAccessListProps.property.listOptions">listOptions</a></code> | <code>@mongodbatlas-awscdk/project-ip-access-list.ListOptions</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.IpAccessListProps.property.projectId">projectId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.IpAccessListProps.property.totalCount">totalCount</a></code> | <code>number</code> | *No description.* |
+
+---
+
+##### `accessList`<sup>Required</sup> <a name="accessList" id="awscdk-resources-mongodbatlas.IpAccessListProps.property.accessList"></a>
 
 ```typescript
 public readonly accessList: AccessListDefinition[];
@@ -1689,7 +1689,7 @@ public readonly accessList: AccessListDefinition[];
 
 ---
 
-##### `listOptions`<sup>Optional</sup> <a name="listOptions" id="awscdk-resources-mongodbatlas.atlasBasic.IpAccessListProps.property.listOptions"></a>
+##### `listOptions`<sup>Optional</sup> <a name="listOptions" id="awscdk-resources-mongodbatlas.IpAccessListProps.property.listOptions"></a>
 
 ```typescript
 public readonly listOptions: ListOptions;
@@ -1699,7 +1699,7 @@ public readonly listOptions: ListOptions;
 
 ---
 
-##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.atlasBasic.IpAccessListProps.property.projectId"></a>
+##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.IpAccessListProps.property.projectId"></a>
 
 ```typescript
 public readonly projectId: string;
@@ -1710,7 +1710,7 @@ public readonly projectId: string;
 
 ---
 
-##### `totalCount`<sup>Optional</sup> <a name="totalCount" id="awscdk-resources-mongodbatlas.atlasBasic.IpAccessListProps.property.totalCount"></a>
+##### `totalCount`<sup>Optional</sup> <a name="totalCount" id="awscdk-resources-mongodbatlas.IpAccessListProps.property.totalCount"></a>
 
 ```typescript
 public readonly totalCount: number;
@@ -1720,27 +1720,27 @@ public readonly totalCount: number;
 
 ---
 
-### MicrosoftTeamsIntegrationProps <a name="MicrosoftTeamsIntegrationProps" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegrationProps"></a>
+### MicrosoftTeamsIntegrationProps <a name="MicrosoftTeamsIntegrationProps" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegrationProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegrationProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegrationProps.Initializer"></a>
 
 ```typescript
-import { thirdPartyIntegration } from 'awscdk-resources-mongodbatlas'
+import { MicrosoftTeamsIntegrationProps } from 'awscdk-resources-mongodbatlas'
 
-const microsoftTeamsIntegrationProps: thirdPartyIntegration.MicrosoftTeamsIntegrationProps = { ... }
+const microsoftTeamsIntegrationProps: MicrosoftTeamsIntegrationProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegrationProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegrationProps.property.profile">profile</a></code> | <code>string</code> | Atlas API keys. |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegrationProps.property.microsoftTeamsWebhookUrl">microsoftTeamsWebhookUrl</a></code> | <code>string</code> | Endpoint web address of the Microsoft Teams webhook to which MongoDB Cloud sends notifications. |
+| <code><a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegrationProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
+| <code><a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegrationProps.property.profile">profile</a></code> | <code>string</code> | Atlas API keys. |
+| <code><a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegrationProps.property.microsoftTeamsWebhookUrl">microsoftTeamsWebhookUrl</a></code> | <code>string</code> | Endpoint web address of the Microsoft Teams webhook to which MongoDB Cloud sends notifications. |
 
 ---
 
-##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegrationProps.property.projectId"></a>
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegrationProps.property.projectId"></a>
 
 ```typescript
 public readonly projectId: string;
@@ -1752,7 +1752,7 @@ Unique 24-hexadecimal digit string that identifies your project.
 
 ---
 
-##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegrationProps.property.profile"></a>
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegrationProps.property.profile"></a>
 
 ```typescript
 public readonly profile: string;
@@ -1764,7 +1764,7 @@ Atlas API keys.
 
 ---
 
-##### `microsoftTeamsWebhookUrl`<sup>Required</sup> <a name="microsoftTeamsWebhookUrl" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.MicrosoftTeamsIntegrationProps.property.microsoftTeamsWebhookUrl"></a>
+##### `microsoftTeamsWebhookUrl`<sup>Required</sup> <a name="microsoftTeamsWebhookUrl" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegrationProps.property.microsoftTeamsWebhookUrl"></a>
 
 ```typescript
 public readonly microsoftTeamsWebhookUrl: string;
@@ -1776,28 +1776,28 @@ Endpoint web address of the Microsoft Teams webhook to which MongoDB Cloud sends
 
 ---
 
-### PagerDutyIntegrationProps <a name="PagerDutyIntegrationProps" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegrationProps"></a>
+### PagerDutyIntegrationProps <a name="PagerDutyIntegrationProps" id="awscdk-resources-mongodbatlas.PagerDutyIntegrationProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegrationProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.PagerDutyIntegrationProps.Initializer"></a>
 
 ```typescript
-import { thirdPartyIntegration } from 'awscdk-resources-mongodbatlas'
+import { PagerDutyIntegrationProps } from 'awscdk-resources-mongodbatlas'
 
-const pagerDutyIntegrationProps: thirdPartyIntegration.PagerDutyIntegrationProps = { ... }
+const pagerDutyIntegrationProps: PagerDutyIntegrationProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegrationProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegrationProps.property.profile">profile</a></code> | <code>string</code> | Atlas API keys. |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegrationProps.property.region">region</a></code> | <code>awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyRegion</code> | PagerDuty region that indicates the API Uniform Resource Locator (URL) to use. |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegrationProps.property.serviceKey">serviceKey</a></code> | <code>string</code> | Service key associated with your PagerDuty account. |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegrationProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegrationProps.property.profile">profile</a></code> | <code>string</code> | Atlas API keys. |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegrationProps.property.region">region</a></code> | <code><a href="#awscdk-resources-mongodbatlas.PagerDutyRegion">PagerDutyRegion</a></code> | PagerDuty region that indicates the API Uniform Resource Locator (URL) to use. |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegrationProps.property.serviceKey">serviceKey</a></code> | <code>string</code> | Service key associated with your PagerDuty account. |
 
 ---
 
-##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegrationProps.property.projectId"></a>
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.PagerDutyIntegrationProps.property.projectId"></a>
 
 ```typescript
 public readonly projectId: string;
@@ -1809,7 +1809,7 @@ Unique 24-hexadecimal digit string that identifies your project.
 
 ---
 
-##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegrationProps.property.profile"></a>
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.PagerDutyIntegrationProps.property.profile"></a>
 
 ```typescript
 public readonly profile: string;
@@ -1821,19 +1821,19 @@ Atlas API keys.
 
 ---
 
-##### `region`<sup>Required</sup> <a name="region" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegrationProps.property.region"></a>
+##### `region`<sup>Required</sup> <a name="region" id="awscdk-resources-mongodbatlas.PagerDutyIntegrationProps.property.region"></a>
 
 ```typescript
 public readonly region: PagerDutyRegion;
 ```
 
-- *Type:* awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyRegion
+- *Type:* <a href="#awscdk-resources-mongodbatlas.PagerDutyRegion">PagerDutyRegion</a>
 
 PagerDuty region that indicates the API Uniform Resource Locator (URL) to use.
 
 ---
 
-##### `serviceKey`<sup>Required</sup> <a name="serviceKey" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyIntegrationProps.property.serviceKey"></a>
+##### `serviceKey`<sup>Required</sup> <a name="serviceKey" id="awscdk-resources-mongodbatlas.PagerDutyIntegrationProps.property.serviceKey"></a>
 
 ```typescript
 public readonly serviceKey: string;
@@ -1845,30 +1845,30 @@ Service key associated with your PagerDuty account.
 
 ---
 
-### PrivateEndpointProps <a name="PrivateEndpointProps" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps"></a>
+### PrivateEndpointProps <a name="PrivateEndpointProps" id="awscdk-resources-mongodbatlas.PrivateEndpointProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.PrivateEndpointProps.Initializer"></a>
 
 ```typescript
-import { atlasBasicPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
+import { PrivateEndpointProps } from 'awscdk-resources-mongodbatlas'
 
-const privateEndpointProps: atlasBasicPrivateEndpoint.PrivateEndpointProps = { ... }
+const privateEndpointProps: PrivateEndpointProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps.property.endpointServiceName">endpointServiceName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps.property.errorMessage">errorMessage</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps.property.groupId">groupId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps.property.privateEndpoints">privateEndpoints</a></code> | <code>@mongodbatlas-awscdk/private-endpoint.PrivateEndpoint[]</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps.property.region">region</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps.property.status">status</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.PrivateEndpointProps.property.endpointServiceName">endpointServiceName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.PrivateEndpointProps.property.errorMessage">errorMessage</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.PrivateEndpointProps.property.groupId">groupId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.PrivateEndpointProps.property.privateEndpoints">privateEndpoints</a></code> | <code>@mongodbatlas-awscdk/private-endpoint.PrivateEndpoint[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.PrivateEndpointProps.property.region">region</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.PrivateEndpointProps.property.status">status</a></code> | <code>string</code> | *No description.* |
 
 ---
 
-##### `endpointServiceName`<sup>Optional</sup> <a name="endpointServiceName" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps.property.endpointServiceName"></a>
+##### `endpointServiceName`<sup>Optional</sup> <a name="endpointServiceName" id="awscdk-resources-mongodbatlas.PrivateEndpointProps.property.endpointServiceName"></a>
 
 ```typescript
 public readonly endpointServiceName: string;
@@ -1878,7 +1878,7 @@ public readonly endpointServiceName: string;
 
 ---
 
-##### `errorMessage`<sup>Optional</sup> <a name="errorMessage" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps.property.errorMessage"></a>
+##### `errorMessage`<sup>Optional</sup> <a name="errorMessage" id="awscdk-resources-mongodbatlas.PrivateEndpointProps.property.errorMessage"></a>
 
 ```typescript
 public readonly errorMessage: string;
@@ -1888,7 +1888,7 @@ public readonly errorMessage: string;
 
 ---
 
-##### `groupId`<sup>Optional</sup> <a name="groupId" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps.property.groupId"></a>
+##### `groupId`<sup>Optional</sup> <a name="groupId" id="awscdk-resources-mongodbatlas.PrivateEndpointProps.property.groupId"></a>
 
 ```typescript
 public readonly groupId: string;
@@ -1898,7 +1898,7 @@ public readonly groupId: string;
 
 ---
 
-##### `privateEndpoints`<sup>Optional</sup> <a name="privateEndpoints" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps.property.privateEndpoints"></a>
+##### `privateEndpoints`<sup>Optional</sup> <a name="privateEndpoints" id="awscdk-resources-mongodbatlas.PrivateEndpointProps.property.privateEndpoints"></a>
 
 ```typescript
 public readonly privateEndpoints: PrivateEndpoint[];
@@ -1908,7 +1908,7 @@ public readonly privateEndpoints: PrivateEndpoint[];
 
 ---
 
-##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps.property.region"></a>
+##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.PrivateEndpointProps.property.region"></a>
 
 ```typescript
 public readonly region: string;
@@ -1918,7 +1918,7 @@ public readonly region: string;
 
 ---
 
-##### `status`<sup>Optional</sup> <a name="status" id="awscdk-resources-mongodbatlas.atlasBasicPrivateEndpoint.PrivateEndpointProps.property.status"></a>
+##### `status`<sup>Optional</sup> <a name="status" id="awscdk-resources-mongodbatlas.PrivateEndpointProps.property.status"></a>
 
 ```typescript
 public readonly status: string;
@@ -1928,32 +1928,32 @@ public readonly status: string;
 
 ---
 
-### ProjectProps <a name="ProjectProps" id="awscdk-resources-mongodbatlas.atlasBasic.ProjectProps"></a>
+### ProjectProps <a name="ProjectProps" id="awscdk-resources-mongodbatlas.ProjectProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.ProjectProps.Initializer"></a>
 
 ```typescript
-import { atlasBasic } from 'awscdk-resources-mongodbatlas'
+import { ProjectProps } from 'awscdk-resources-mongodbatlas'
 
-const projectProps: atlasBasic.ProjectProps = { ... }
+const projectProps: ProjectProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.orgId">orgId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.clusterCount">clusterCount</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.name">name</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.projectApiKeys">projectApiKeys</a></code> | <code>@mongodbatlas-awscdk/project.ProjectApiKey[]</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.projectOwnerId">projectOwnerId</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.projectSettings">projectSettings</a></code> | <code>@mongodbatlas-awscdk/project.ProjectSettings</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.projectTeams">projectTeams</a></code> | <code>@mongodbatlas-awscdk/project.ProjectTeam[]</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.withDefaultAlertsSettings">withDefaultAlertsSettings</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectProps.property.orgId">orgId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectProps.property.clusterCount">clusterCount</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectProps.property.name">name</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectProps.property.projectApiKeys">projectApiKeys</a></code> | <code>@mongodbatlas-awscdk/project.ProjectApiKey[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectProps.property.projectOwnerId">projectOwnerId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectProps.property.projectSettings">projectSettings</a></code> | <code>@mongodbatlas-awscdk/project.ProjectSettings</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectProps.property.projectTeams">projectTeams</a></code> | <code>@mongodbatlas-awscdk/project.ProjectTeam[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectProps.property.withDefaultAlertsSettings">withDefaultAlertsSettings</a></code> | <code>boolean</code> | *No description.* |
 
 ---
 
-##### `orgId`<sup>Required</sup> <a name="orgId" id="awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.orgId"></a>
+##### `orgId`<sup>Required</sup> <a name="orgId" id="awscdk-resources-mongodbatlas.ProjectProps.property.orgId"></a>
 
 ```typescript
 public readonly orgId: string;
@@ -1964,7 +1964,7 @@ public readonly orgId: string;
 
 ---
 
-##### `clusterCount`<sup>Optional</sup> <a name="clusterCount" id="awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.clusterCount"></a>
+##### `clusterCount`<sup>Optional</sup> <a name="clusterCount" id="awscdk-resources-mongodbatlas.ProjectProps.property.clusterCount"></a>
 
 ```typescript
 public readonly clusterCount: number;
@@ -1974,7 +1974,7 @@ public readonly clusterCount: number;
 
 ---
 
-##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.name"></a>
+##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.ProjectProps.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -1984,7 +1984,7 @@ public readonly name: string;
 
 ---
 
-##### `projectApiKeys`<sup>Optional</sup> <a name="projectApiKeys" id="awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.projectApiKeys"></a>
+##### `projectApiKeys`<sup>Optional</sup> <a name="projectApiKeys" id="awscdk-resources-mongodbatlas.ProjectProps.property.projectApiKeys"></a>
 
 ```typescript
 public readonly projectApiKeys: ProjectApiKey[];
@@ -1994,7 +1994,7 @@ public readonly projectApiKeys: ProjectApiKey[];
 
 ---
 
-##### `projectOwnerId`<sup>Optional</sup> <a name="projectOwnerId" id="awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.projectOwnerId"></a>
+##### `projectOwnerId`<sup>Optional</sup> <a name="projectOwnerId" id="awscdk-resources-mongodbatlas.ProjectProps.property.projectOwnerId"></a>
 
 ```typescript
 public readonly projectOwnerId: string;
@@ -2004,7 +2004,7 @@ public readonly projectOwnerId: string;
 
 ---
 
-##### `projectSettings`<sup>Optional</sup> <a name="projectSettings" id="awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.projectSettings"></a>
+##### `projectSettings`<sup>Optional</sup> <a name="projectSettings" id="awscdk-resources-mongodbatlas.ProjectProps.property.projectSettings"></a>
 
 ```typescript
 public readonly projectSettings: ProjectSettings;
@@ -2014,7 +2014,7 @@ public readonly projectSettings: ProjectSettings;
 
 ---
 
-##### `projectTeams`<sup>Optional</sup> <a name="projectTeams" id="awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.projectTeams"></a>
+##### `projectTeams`<sup>Optional</sup> <a name="projectTeams" id="awscdk-resources-mongodbatlas.ProjectProps.property.projectTeams"></a>
 
 ```typescript
 public readonly projectTeams: ProjectTeam[];
@@ -2024,7 +2024,7 @@ public readonly projectTeams: ProjectTeam[];
 
 ---
 
-##### `withDefaultAlertsSettings`<sup>Optional</sup> <a name="withDefaultAlertsSettings" id="awscdk-resources-mongodbatlas.atlasBasic.ProjectProps.property.withDefaultAlertsSettings"></a>
+##### `withDefaultAlertsSettings`<sup>Optional</sup> <a name="withDefaultAlertsSettings" id="awscdk-resources-mongodbatlas.ProjectProps.property.withDefaultAlertsSettings"></a>
 
 ```typescript
 public readonly withDefaultAlertsSettings: boolean;
@@ -2034,26 +2034,26 @@ public readonly withDefaultAlertsSettings: boolean;
 
 ---
 
-### ThirdPartyIntegrationProps <a name="ThirdPartyIntegrationProps" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.ThirdPartyIntegrationProps"></a>
+### ThirdPartyIntegrationProps <a name="ThirdPartyIntegrationProps" id="awscdk-resources-mongodbatlas.ThirdPartyIntegrationProps"></a>
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.ThirdPartyIntegrationProps.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.ThirdPartyIntegrationProps.Initializer"></a>
 
 ```typescript
-import { thirdPartyIntegration } from 'awscdk-resources-mongodbatlas'
+import { ThirdPartyIntegrationProps } from 'awscdk-resources-mongodbatlas'
 
-const thirdPartyIntegrationProps: thirdPartyIntegration.ThirdPartyIntegrationProps = { ... }
+const thirdPartyIntegrationProps: ThirdPartyIntegrationProps = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.ThirdPartyIntegrationProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.ThirdPartyIntegrationProps.property.profile">profile</a></code> | <code>string</code> | Atlas API keys. |
+| <code><a href="#awscdk-resources-mongodbatlas.ThirdPartyIntegrationProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
+| <code><a href="#awscdk-resources-mongodbatlas.ThirdPartyIntegrationProps.property.profile">profile</a></code> | <code>string</code> | Atlas API keys. |
 
 ---
 
-##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.ThirdPartyIntegrationProps.property.projectId"></a>
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.ThirdPartyIntegrationProps.property.projectId"></a>
 
 ```typescript
 public readonly projectId: string;
@@ -2065,7 +2065,7 @@ Unique 24-hexadecimal digit string that identifies your project.
 
 ---
 
-##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.ThirdPartyIntegrationProps.property.profile"></a>
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.ThirdPartyIntegrationProps.property.profile"></a>
 
 ```typescript
 public readonly profile: string;
@@ -2081,56 +2081,56 @@ Atlas API keys.
 
 ## Enums <a name="Enums" id="Enums"></a>
 
-### DatadogRegion <a name="DatadogRegion" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogRegion"></a>
+### DatadogRegion <a name="DatadogRegion" id="awscdk-resources-mongodbatlas.DatadogRegion"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogRegion.US">US</a></code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogRegion.EU">EU</a></code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogRegion.US3">US3</a></code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogRegion.US5">US5</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogRegion.US">US</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogRegion.EU">EU</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogRegion.US3">US3</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogRegion.US5">US5</a></code> | *No description.* |
 
 ---
 
-##### `US` <a name="US" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogRegion.US"></a>
-
----
-
-
-##### `EU` <a name="EU" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogRegion.EU"></a>
+##### `US` <a name="US" id="awscdk-resources-mongodbatlas.DatadogRegion.US"></a>
 
 ---
 
 
-##### `US3` <a name="US3" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogRegion.US3"></a>
+##### `EU` <a name="EU" id="awscdk-resources-mongodbatlas.DatadogRegion.EU"></a>
 
 ---
 
 
-##### `US5` <a name="US5" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.DatadogRegion.US5"></a>
+##### `US3` <a name="US3" id="awscdk-resources-mongodbatlas.DatadogRegion.US3"></a>
 
 ---
 
 
-### PagerDutyRegion <a name="PagerDutyRegion" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyRegion"></a>
+##### `US5` <a name="US5" id="awscdk-resources-mongodbatlas.DatadogRegion.US5"></a>
+
+---
+
+
+### PagerDutyRegion <a name="PagerDutyRegion" id="awscdk-resources-mongodbatlas.PagerDutyRegion"></a>
 
 #### Members <a name="Members" id="Members"></a>
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyRegion.US">US</a></code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyRegion.EU">EU</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyRegion.US">US</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyRegion.EU">EU</a></code> | *No description.* |
 
 ---
 
-##### `US` <a name="US" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyRegion.US"></a>
+##### `US` <a name="US" id="awscdk-resources-mongodbatlas.PagerDutyRegion.US"></a>
 
 ---
 
 
-##### `EU` <a name="EU" id="awscdk-resources-mongodbatlas.thirdPartyIntegration.PagerDutyRegion.EU"></a>
+##### `EU` <a name="EU" id="awscdk-resources-mongodbatlas.PagerDutyRegion.EU"></a>
 
 ---
 

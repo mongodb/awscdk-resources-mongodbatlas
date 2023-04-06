@@ -70,7 +70,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
   releaseToNpm: true,
   sampleCode: false,
   peerDeps: [
-    '@mongodbatlas-awscdk/atlas-basic@1.1.0',
     '@mongodbatlas-awscdk/encryption-at-rest@1.0.2',
     '@mongodbatlas-awscdk/cluster@1.1.0',
     '@mongodbatlas-awscdk/database-user@1.1.0',
@@ -80,7 +79,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     '@mongodbatlas-awscdk/private-endpoint@1.1.0',
   ],
   devDeps: [
-    '@mongodbatlas-awscdk/atlas-basic@1.1.0',
     '@mongodbatlas-awscdk/encryption-at-rest@1.0.2',
     '@mongodbatlas-awscdk/cluster@1.1.0',
     '@mongodbatlas-awscdk/database-user@1.1.0',

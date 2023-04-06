@@ -265,19 +265,19 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='@mongodbatlas-awscdk/atlas-basic,@mongodbatlas-awscdk/cluster,@mongodbatlas-awscdk/database-user,@mongodbatlas-awscdk/encryption-at-rest,@mongodbatlas-awscdk/private-endpoint,@mongodbatlas-awscdk/project-ip-access-list,@mongodbatlas-awscdk/project,@mongodbatlas-awscdk/third-party-integration,aws-cdk-lib,constructs,jsii'"
+          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='@mongodbatlas-awscdk/cluster,@mongodbatlas-awscdk/database-user,@mongodbatlas-awscdk/encryption-at-rest,@mongodbatlas-awscdk/private-endpoint,@mongodbatlas-awscdk/project-ip-access-list,@mongodbatlas-awscdk/project,@mongodbatlas-awscdk/third-party-integration,aws-cdk-lib,constructs,jsii'"
         },
         {
-          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='@mongodbatlas-awscdk/atlas-basic,@mongodbatlas-awscdk/cluster,@mongodbatlas-awscdk/database-user,@mongodbatlas-awscdk/encryption-at-rest,@mongodbatlas-awscdk/private-endpoint,@mongodbatlas-awscdk/project-ip-access-list,@mongodbatlas-awscdk/project,@mongodbatlas-awscdk/third-party-integration,aws-cdk-lib,constructs,jsii'"
+          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='@mongodbatlas-awscdk/cluster,@mongodbatlas-awscdk/database-user,@mongodbatlas-awscdk/encryption-at-rest,@mongodbatlas-awscdk/private-endpoint,@mongodbatlas-awscdk/project-ip-access-list,@mongodbatlas-awscdk/project,@mongodbatlas-awscdk/third-party-integration,aws-cdk-lib,constructs,jsii'"
         },
         {
-          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='@mongodbatlas-awscdk/atlas-basic,@mongodbatlas-awscdk/cluster,@mongodbatlas-awscdk/database-user,@mongodbatlas-awscdk/encryption-at-rest,@mongodbatlas-awscdk/private-endpoint,@mongodbatlas-awscdk/project-ip-access-list,@mongodbatlas-awscdk/project,@mongodbatlas-awscdk/third-party-integration,aws-cdk-lib,constructs,jsii'"
+          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='@mongodbatlas-awscdk/cluster,@mongodbatlas-awscdk/database-user,@mongodbatlas-awscdk/encryption-at-rest,@mongodbatlas-awscdk/private-endpoint,@mongodbatlas-awscdk/project-ip-access-list,@mongodbatlas-awscdk/project,@mongodbatlas-awscdk/third-party-integration,aws-cdk-lib,constructs,jsii'"
         },
         {
-          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='@mongodbatlas-awscdk/atlas-basic,@mongodbatlas-awscdk/cluster,@mongodbatlas-awscdk/database-user,@mongodbatlas-awscdk/encryption-at-rest,@mongodbatlas-awscdk/private-endpoint,@mongodbatlas-awscdk/project-ip-access-list,@mongodbatlas-awscdk/project,@mongodbatlas-awscdk/third-party-integration,aws-cdk-lib,constructs,jsii'"
+          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='@mongodbatlas-awscdk/cluster,@mongodbatlas-awscdk/database-user,@mongodbatlas-awscdk/encryption-at-rest,@mongodbatlas-awscdk/private-endpoint,@mongodbatlas-awscdk/project-ip-access-list,@mongodbatlas-awscdk/project,@mongodbatlas-awscdk/third-party-integration,aws-cdk-lib,constructs,jsii'"
         },
         {
-          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='@mongodbatlas-awscdk/atlas-basic,@mongodbatlas-awscdk/cluster,@mongodbatlas-awscdk/database-user,@mongodbatlas-awscdk/encryption-at-rest,@mongodbatlas-awscdk/private-endpoint,@mongodbatlas-awscdk/project-ip-access-list,@mongodbatlas-awscdk/project,@mongodbatlas-awscdk/third-party-integration,aws-cdk-lib,constructs,jsii'"
+          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='@mongodbatlas-awscdk/cluster,@mongodbatlas-awscdk/database-user,@mongodbatlas-awscdk/encryption-at-rest,@mongodbatlas-awscdk/private-endpoint,@mongodbatlas-awscdk/project-ip-access-list,@mongodbatlas-awscdk/project,@mongodbatlas-awscdk/third-party-integration,aws-cdk-lib,constructs,jsii'"
         },
         {
           "exec": "yarn install --check-files"

@@ -1,11 +1,6 @@
 {
   "dependencies": [
     {
-      "name": "@mongodbatlas-awscdk/atlas-basic",
-      "version": "1.1.0",
-      "type": "build"
-    },
-    {
       "name": "@mongodbatlas-awscdk/cluster",
       "version": "1.1.0",
       "type": "build"
@@ -146,11 +141,6 @@
       "name": "@types/prettier",
       "version": "2.6.0",
       "type": "override"
-    },
-    {
-      "name": "@mongodbatlas-awscdk/atlas-basic",
-      "version": "1.1.0",
-      "type": "peer"
     },
     {
       "name": "@mongodbatlas-awscdk/cluster",
