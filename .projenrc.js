@@ -99,7 +99,7 @@ new JsonFile(project, 'cdk.json', {
   },
 });
 
-const common_exclude = ['cdk.out', 'cdk.context.json', 'yarn-error.log'];
+const common_exclude = ['cdk.out', 'cdk.context.json', 'yarn-error.log', '*.DS_Store'];
 project.npmignore.exclude(...common_exclude);
 project.gitignore.exclude(...common_exclude);
 
