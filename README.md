@@ -6,7 +6,7 @@ Use MongoDB Atlas [AWS CDK](https://aws.amazon.com/cdk/) (or Cloud Development K
 ### Go
 The go package is generated into the [github.com/mongodb/awscdk-resources-mongodbatlas-go](https://github.com/mongodb/awscdk-resources-mongodbatlas-go) package.
 ```
-go get github.com/mongodb/awscdk-resources-mongodbatlas-go/mongodbatlas
+go get github.com/mongodb/awscdk-resources-mongodbatlas-go/awscdkresourcesmongodbatlas
 ```
 
 ## Getting Started
