@@ -84,6 +84,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   publishToGo: {
     moduleName: 'github.com/mongodb/awscdk-resources-mongodbatlas-go',
+    packageName: 'mongodbatlas',
   },
   sampleCode: false,
   peerDeps: [],
