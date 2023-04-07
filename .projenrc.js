@@ -62,15 +62,13 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'constructs',
     'cfn-resources',
     'cloudformation-registry',
+    'l1',
     'l2',
     'l3',
     'mongodb',
     'atlas'],
   npmAccess: javascript.NpmAccess.PUBLIC,
   releaseToNpm: true,
-  publishToGo: {
-    moduleName: 'github.com/mongodb/awscdk-resources-mongodbatlas-go',
-  },
   publishToNuget: {
     dotNetNamespace: 'MongoDB.AWSCDKResourcesMongoDBAtlas',
     packageId: 'MongoDB.AWSCDKResourcesMongoDBAtlas',
@@ -84,10 +82,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
     distName: 'awscdk-resources-mongodbatlas',
     module: 'awscdk-resources-mongodbatlas',
   },
+  publishToGo: {
+    moduleName: 'github.com/mongodb/awscdk-resources-mongodbatlas-go',
+  },
   sampleCode: false,
   peerDeps: [],
   devDeps: [],
-  stability: 'experimental',
   pullRequestTemplateContents: [pullRequestTeamplateString],
   githubOptions: { workflows: false },
 });

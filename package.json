@@ -76,6 +76,7 @@
     "cloudformation-registry",
     "constructs",
     "extensions",
+    "l1",
     "l2",
     "l3",
     "mongodb"
@@ -124,7 +125,7 @@
     }
   },
   "types": "lib/index.d.ts",
-  "stability": "experimental",
+  "stability": "stable",
   "jsii": {
     "outdir": "dist",
     "targets": {
