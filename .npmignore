@@ -9,7 +9,6 @@ permissions-backup.acl
 /.mergify.yml
 /test/
 /tsconfig.dev.json
-/src/
 !/lib/
 !/lib/**/*.js
 !/lib/**/*.d.ts
@@ -26,3 +25,12 @@ cdk.out
 cdk.context.json
 yarn-error.log
 *.DS_Store
+/submodules/
+/src/
+CONTRIBUTING.md
+TESTING.md
+CODE_OF_CONDUCT.md
+SECURITY.md
+cdk.json
+/scripts/
+/examples/
