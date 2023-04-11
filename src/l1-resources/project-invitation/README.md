@@ -9,7 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-Returns, adds, and edits collections of clusters and users in MongoDB Cloud.
+Returns, send project invitations.
 
 ## MongoDB Atlas API Docs
 

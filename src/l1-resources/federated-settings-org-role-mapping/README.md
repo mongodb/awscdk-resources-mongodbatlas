@@ -37,7 +37,7 @@ aws cloudformation activate-type \
 
 You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
 
-## Example:
+## Example: [federation-settings-org-role-mapping.ts](../../../examples/l1-resources/federation-settings-org-role-mapping.ts)
 ```ts
 import { CfnEncryptionAtRest } from 'awscdk-resources-mongodbatlas';
 

@@ -9,7 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-An example resource schema demonstrating some basic constructs and validation rules.
+This resource manages the private enpoint regional mode.
 
 ## MongoDB Atlas API Docs
 
