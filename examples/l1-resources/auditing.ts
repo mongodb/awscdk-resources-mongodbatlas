@@ -1,4 +1,4 @@
-// This example creates a project in Atlas using the L1 resources.
+// This example sets up auditing in Atlas using the L1 resources.
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { CfnAuditing } from 'awscdk-resources-mongodbatlas';

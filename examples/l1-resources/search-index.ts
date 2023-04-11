@@ -1,4 +1,3 @@
-// This example creates a project in Atlas using the L1 resources.
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { CfnSearchIndex } from 'awscdk-resources-mongodbatlas';

@@ -1,4 +1,4 @@
-// This example creates a project and a cluster in Atlas using the L1 resources.
+// This example creates an alert in Atlas using the L1 resources.
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { CfnAlertConfiguration, CfnAlertConfigurationPropsEventTypeName, 
