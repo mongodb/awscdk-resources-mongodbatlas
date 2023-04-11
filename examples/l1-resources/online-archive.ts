@@ -1,0 +1,50 @@
+// This example creates a database user in Atlas using the L1 resources.
+import * as cdk from 'aws-cdk-lib';
+import { Construct } from 'constructs';
+import { CfnOnlineArchive, CriteriaViewType } from 'awscdk-resources-mongodbatlas';
+
+interface AtlasStackProps {
+  readonly projId: string;
+  readonly profile: string;
+  readonly collName: string;
+  readonly dbName: string;
+}
+
+export class CdkTestingStack extends cdk.Stack {
+  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
+
+    const atlasProps = this.getContextProps();
+
+    const myOnlineArchive = new CfnOnlineArchive(this, 'MyOnlineArchive', {
+      projectId: atlasProps.projId,
+      profile: atlasProps.profile,
+      collName: atlasProps.collName,
+      dbName: atlasProps.dbName,
+      criteria: {
+        type: CriteriaViewType.DATE,
+        dateFormat: 'ISODATE',
+        dateField: "created",
+        expireAfterDays: 30
+      }
+    });
+  }
+
+  getContextProps(): AtlasStackProps {
+    const projId = this.node.tryGetContext('projId');
+    if (!projId){
+      throw "No context value specified for projId. Please specify via the cdk context."
+    }
+    const collName = this.node.tryGetContext('collName');
+    const profile = this.node.tryGetContext('profile') ?? 'default';
+    const dbName = this.node.tryGetContext('dbName');
+
+
+    return {
+      projId,
+      profile,
+      collName,
+      dbName
+    }
+  }
+}
