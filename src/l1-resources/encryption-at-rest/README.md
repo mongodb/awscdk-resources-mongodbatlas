@@ -37,11 +37,19 @@ aws cloudformation activate-type \
 
 You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
 
-## Example
+## Example: [encryption-at-rest.ts](../../../examples/l1-resources/encryption-at-rest.ts)
 ```ts
+import { CfnEncryptionAtRest } from 'awscdk-resources-mongodbatlas';
 
-
-
+const encryptionAtRest = new CfnEncryptionAtRest(this, 'EncryptionAtRest', {
+    projectId: atlasProps.projId,
+    profile:  atlasProps.profile,
+    awsKms: {
+    enabled: true,
+    region: atlasProps.region,
+    customerMasterKeyId: atlasProps.customerMasterKeyId
+    }
+});
 ```
 
 
