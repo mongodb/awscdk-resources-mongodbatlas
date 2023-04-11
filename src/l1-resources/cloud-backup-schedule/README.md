@@ -37,7 +37,7 @@ aws cloudformation activate-type \
 
 You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
 
-Example: []()
+Example: [cloud-backup-schedule.ts](../../../examples/l1-resources/cloud-backup-schedule.ts)
 ```ts
 import { CfnCloudBackupSchedule } from 'awscdk-resources-mongodbatlas';
 
