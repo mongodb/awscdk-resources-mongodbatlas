@@ -37,7 +37,7 @@ aws cloudformation activate-type \
 
 You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
 
-## Example
+## Example: [online-archive.ts](../../../examples/l1-resources/online-archive.ts)
 ```ts
 import { CfnOnlineArchive, CriteriaViewType} from 'awscdk-resources-mongodbatlas';
 
