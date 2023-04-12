@@ -40,7 +40,7 @@ export {
   ApiAtlasDiskBackupShardedClusterSnapshotViewSnapshotType, ApiAtlasDiskBackupShardedClusterSnapshotViewStatus,
   ApiAtlasDiskBackupShardedClusterSnapshotViewType, CfnCloudBackupSnapshot,
   CfnCloudBackupSnapshotProps, CfnCloudBackupSnapshotPropsFrequencyType,
-  CfnCloudBackupSnapshotPropsSnapshotType,
+  CfnCloudBackupSnapshotPropsSnapshotType, Link,
 } from './l1-resources/cloud-backup-snapshot';
 
 export { CfnCloudBackupSnapshotExportBucket, CfnCloudBackupSnapshotExportBucketProps } from './l1-resources/cloud-backup-snapshot-export-bucket';
