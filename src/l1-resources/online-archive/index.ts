@@ -410,10 +410,6 @@ export class CfnOnlineArchive extends cdk.CfnResource {
    * Attribute `MongoDB::Atlas::OnlineArchive.ArchiveId`
    */
   public readonly attrArchiveId: string;
-  /**
-   * Attribute `MongoDB::Atlas::OnlineArchive.State`
-   */
-  public readonly attrState: string;
 
   /**
    * Create a new `MongoDB::Atlas::OnlineArchive`.
@@ -430,6 +426,5 @@ export class CfnOnlineArchive extends cdk.CfnResource {
     this.attrState = cdk.Token.asString(this.getAtt('State'));
     this.attrTotalCount = cdk.Token.asNumber(this.getAtt('TotalCount'));
     this.attrArchiveId = cdk.Token.asString(this.getAtt('ArchiveId'));
-    this.attrState = cdk.Token.asString(this.getAtt('State'));
   }
 }
