@@ -57,6 +57,13 @@ export interface CfnOnlineArchiveProps {
   readonly dbName?: string;
 
   /**
+   * Unique 24-hexadecimal digit string that identifies your project.
+   *
+   * @schema CfnOnlineArchiveProps#ProjectId
+   */
+  readonly projectId?: string;
+
+  /**
    * Flag that indicates whether the response returns the total number of items (**totalCount**) in the response.
    *
    * @schema CfnOnlineArchiveProps#IncludeCount
@@ -106,6 +113,7 @@ export function toJson_CfnOnlineArchiveProps(obj: CfnOnlineArchiveProps | undefi
     'CollectionType': obj.collectionType,
     'Criteria': toJson_CriteriaView(obj.criteria),
     'DbName': obj.dbName,
+    'ProjectId': obj.projectId,
     'IncludeCount': obj.includeCount,
     'ItemsPerPage': obj.itemsPerPage,
     'PageNum': obj.pageNum,
@@ -126,9 +134,9 @@ export function toJson_CfnOnlineArchiveProps(obj: CfnOnlineArchiveProps | undefi
  */
 export enum CfnOnlineArchivePropsCollectionType {
   /** STANDARD */
-  STANDARD = 'STANDARD',
+  STANDARD = "STANDARD",
   /** TIMESERIES */
-  TIMESERIES = 'TIMESERIES',
+  TIMESERIES = "TIMESERIES",
 }
 
 /**
@@ -317,9 +325,9 @@ export function toJson_ScheduleView(obj: ScheduleView | undefined): Record<strin
  */
 export enum CriteriaViewType {
   /** DATE */
-  DATE = 'DATE',
+  DATE = "DATE",
   /** CUSTOM */
-  CUSTOM = 'CUSTOM',
+  CUSTOM = "CUSTOM",
 }
 
 /**
@@ -329,13 +337,13 @@ export enum CriteriaViewType {
  */
 export enum CriteriaViewDateFormat {
   /** ISODATE */
-  ISODATE = 'ISODATE',
+  ISODATE = "ISODATE",
   /** EPOCH_SECONDS */
-  EPOCH_SECONDS = 'EPOCH_SECONDS',
+  EPOCH_SECONDS = "EPOCH_SECONDS",
   /** EPOCH_MILLIS */
-  EPOCH_MILLIS = 'EPOCH_MILLIS',
+  EPOCH_MILLIS = "EPOCH_MILLIS",
   /** EPOCH_NANOSECONDS */
-  EPOCH_NANOSECONDS = 'EPOCH_NANOSECONDS',
+  EPOCH_NANOSECONDS = "EPOCH_NANOSECONDS",
 }
 
 /**
@@ -345,17 +353,17 @@ export enum CriteriaViewDateFormat {
  */
 export enum PartitionFieldViewFieldType {
   /** date */
-  DATE = 'date',
+  DATE = "date",
   /** int */
-  INT = 'int',
+  INT = "int",
   /** long */
-  LONG = 'long',
+  LONG = "long",
   /** objectId */
-  OBJECT_ID = 'objectId',
+  OBJECT_ID = "objectId",
   /** string */
-  STRING = 'string',
+  STRING = "string",
   /** uuid */
-  UUID = 'uuid',
+  UUID = "uuid",
 }
 
 /**
@@ -363,13 +371,13 @@ export enum PartitionFieldViewFieldType {
  */
 export enum ScheduleViewType {
   /** DAILY */
-  DAILY = 'DAILY',
+  DAILY = "DAILY",
   /** MONTHLY */
-  MONTHLY = 'MONTHLY',
+  MONTHLY = "MONTHLY",
   /** DEFAULT */
-  DEFAULT = 'DEFAULT',
+  DEFAULT = "DEFAULT",
   /** WEEKLY */
-  WEEKLY = 'WEEKLY',
+  WEEKLY = "WEEKLY",
 }
 
 
@@ -383,7 +391,7 @@ export class CfnOnlineArchive extends cdk.CfnResource {
   /**
   * The CloudFormation resource type name for this resource class.
   */
-  public static readonly CFN_RESOURCE_TYPE_NAME = 'MongoDB::Atlas::OnlineArchive';
+  public static readonly CFN_RESOURCE_TYPE_NAME = "MongoDB::Atlas::OnlineArchive";
 
   /**
    * Resource props.
@@ -403,9 +411,9 @@ export class CfnOnlineArchive extends cdk.CfnResource {
    */
   public readonly attrArchiveId: string;
   /**
-   * Attribute `MongoDB::Atlas::OnlineArchive.ProjectId`
+   * Attribute `MongoDB::Atlas::OnlineArchive.State`
    */
-  public readonly attrProjectId: string;
+  public readonly attrState: string;
 
   /**
    * Create a new `MongoDB::Atlas::OnlineArchive`.
@@ -422,6 +430,6 @@ export class CfnOnlineArchive extends cdk.CfnResource {
     this.attrState = cdk.Token.asString(this.getAtt('State'));
     this.attrTotalCount = cdk.Token.asNumber(this.getAtt('TotalCount'));
     this.attrArchiveId = cdk.Token.asString(this.getAtt('ArchiveId'));
-    this.attrProjectId = cdk.Token.asString(this.getAtt('ProjectId'));
+    this.attrState = cdk.Token.asString(this.getAtt('State'));
   }
 }
