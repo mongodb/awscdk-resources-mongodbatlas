@@ -14,15 +14,11 @@
 
 // L1 Constructors
 export {
-  AlertView, AlertViewEventTypeName, AlertViewMetricName,
-  AlertViewStatus, ApiKeyDefinition, CfnAlertConfiguration,
-  CfnAlertConfigurationProps, CfnAlertConfigurationPropsEventTypeName,
-  CurrentValue, CurrentValueUnits, IntegerThresholdView, IntegerThresholdViewOperator,
-  IntegerThresholdViewUnits, Link, Matcher, MatcherFieldName, MatcherOperator, MetricThresholdView,
-  MetricThresholdViewMetricName, MetricThresholdViewMode, MetricThresholdViewOperator,
-  MetricThresholdViewUnits, NotificationView, NotificationViewDatadogRegion,
+  CfnAlertConfiguration, CfnAlertConfigurationProps, IntegerThresholdView, 
+  IntegerThresholdViewOperator, Matcher, MatcherFieldName, MatcherOperator, 
+  MetricThresholdView,MetricThresholdViewMode, MetricThresholdViewOperator, 
+  NotificationView, NotificationViewDatadogRegion, NotificationViewTypeName,
   NotificationViewOpsGenieRegion, NotificationViewRoles, NotificationViewSeverity,
-  NotificationViewTypeName,
 } from './l1-resources/alert-configuration';
 
 export { CfnAuditing, CfnAuditingProps } from './l1-resources/auditing';
