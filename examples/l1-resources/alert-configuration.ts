@@ -12,7 +12,7 @@ interface AtlasStackProps {
 
 export class CdkTestingStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+    super(scope, id, props); // Make sure that props contains "GroupId".
 
     const atlasProps = this.getContextProps();
 
