@@ -1,7 +1,17 @@
-package golang
+package l3_resources
 
 import (
 	mdb "github.com/mongodb/awscdk-resources-mongodbatlas-go/awscdkresourcesmongodbatlas"
+)
+
+const (
+	ORG_ID     = "ORG_ID_HERE"
+	PROFILE    = "PROFILE_HERE"
+	PROJECT_ID = "PROJECT_ID_HERE"
+	API_KEY    = "API_KEY_HERE"
+	IP_ADDRESS = "IP_ADDRESS_HERE"
+	IP_COMMENT = "COMMENT_HERE"
+	REGION     = "REGION_HERE"
 )
 
 type CdkTestAppGoStackProps struct {
@@ -15,6 +25,12 @@ func NewCdkTestAppGoStack(scope constructs.Construct, id string, props *CdkTestA
 	}
 	stack := awscdk.NewStack(scope, &id, &sprops)
 
+	profile := getContextProp(stack.Node(), PROFILE)
+	orgId := getContextProp(stack.Node(), ORG_ID)
+	ipAddr := getContextProp(stack.Node(), IP_ADDRESS)
+	ipComment := getContextProp(stack.Node(), IP_COMMENT)
+	region := getContextProp(stack.Node(), REGION)
+
 	regionConfig := &mdb.AdvancedRegionConfig{
 		AnalyticsSpecs: &mdb.Specs{
 			EbsVolumeType: jsii.String("STANDARD"),
@@ -27,7 +43,7 @@ func NewCdkTestAppGoStack(scope constructs.Construct, id string, props *CdkTestA
 			NodeCount:     jsii.Number(3),
 		},
 		Priority:   jsii.Number(7),
-		RegionName: jsii.String("US_EAST_1"),
+		RegionName: jsii.String(region),
 	}
 
 	regionConfigs := &[]*mdb.AdvancedRegionConfig{regionConfig}
@@ -41,8 +57,8 @@ func NewCdkTestAppGoStack(scope constructs.Construct, id string, props *CdkTestA
 	ipAccessListProps := mdb.IpAccessListProps{
 		AccessList: &[]*mdb.AccessListDefinition{
 			{
-				Comment:   jsii.String("Open comment"),
-				IpAddress: jsii.String("10.10.0.0/24"),
+				Comment:   jsii.String(ipComment),
+				IpAddress: jsii.String(ipAddr),
 			},
 		},
 	}
@@ -52,11 +68,19 @@ func NewCdkTestAppGoStack(scope constructs.Construct, id string, props *CdkTestA
 			ReplicationSpecs: replicationSpecs,
 		},
 		ProjectProps: &mdb.ProjectProps{
-			OrgId: jsii.String("63be77777777777705e"),
+			OrgId: jsii.String(orgId),
 		},
 		IpAccessListProps: &ipAccessListProps,
-		Profile:           jsii.String("atlas-secret-profile-name"),
+		Profile:           jsii.String(profile),
 	})
 
 	return stack
+}
+
+func getContextProp(pNode constructs.Node, propName string) string {
+	ctxValue := pNode.TryGetContext(jsii.String(propName))
+	if v, ok := ctxValue.(string); ok {
+		return v
+	}
+	return ""
 }
