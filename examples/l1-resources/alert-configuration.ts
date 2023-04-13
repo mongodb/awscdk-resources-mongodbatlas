@@ -6,19 +6,21 @@ import { CfnAlertConfiguration, CfnAlertConfigurationPropsEventTypeName,
   MetricThresholdViewUnits, MetricThresholdViewMode} from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
+  readonly projectId: string;
   readonly profile: string;
   readonly email: string;
 }
 
 export class CdkTestingStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props); // Make sure that props contains "GroupId".
+    super(scope, id, props);
 
     const atlasProps = this.getContextProps();
 
 
     const alert = new CfnAlertConfiguration(this, 'MyAlert', {
       profile: atlasProps.profile,
+      projectId: atlasProps.projectId,
       eventTypeName: CfnAlertConfigurationPropsEventTypeName.OUTSIDE_METRIC_THRESHOLD, 
       notifications: [{
         typeName: NotificationViewTypeName.EMAIL,
@@ -41,8 +43,10 @@ export class CdkTestingStack extends cdk.Stack {
   getContextProps(): AtlasStackProps {
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const email = this.node.tryGetContext('email') ?? 'test@test.com';
+    const projectId = this.node.tryGetContext('projectId')
 
     return {
+      projectId,
       profile,
       email
     }
