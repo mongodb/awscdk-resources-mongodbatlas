@@ -32,7 +32,7 @@ namespace CdkTestAppCsharp
              var accessListDef = new AccessListDefinition { IpAddress = ipAddr, Comment = ipComment };
              var ipAccessListProps = new IpAccessListProps { AccessList = new AccessListDefinition[1] { accessListDef } };
 
-             var atlasBasic = new AtlasBasic(this, "atlasBasic-csharp", new AtlasBasicProps
+             var atlasBasic = new AtlasBasic(this, "AtlasBasic-l3", new AtlasBasicProps
                     {
                         ClusterProps = new ClusterProps { ReplicationSpecs = replicationSpecs },
                         ProjectProps = new ProjectProps { OrgId = orgId },
