@@ -12,12 +12,13 @@ interface AtlasStackProps {
 
 export class CdkTestingStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props); // Make sure that props contains "ProjectId".
+    super(scope, id, props);
 
     const atlasProps = this.getContextProps();
 
     const myOnlineArchive = new CfnOnlineArchive(this, 'MyOnlineArchive', {
       profile: atlasProps.profile,
+      projectId: atlasProps.projId,
       collName: atlasProps.collName,
       dbName: atlasProps.dbName,
       criteria: {

@@ -79,8 +79,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     mavenGroupId: 'org.mongodb',
   },
   publishToPypi: {
-    distName: 'awscdk-resources-mongodbatlas',
-    module: 'awscdk-resources-mongodbatlas',
+    distName: 'awscdk_resources_mongodbatlas',
+    module: 'awscdk_resources_mongodbatlas',
   },
   publishToGo: {
     moduleName: 'github.com/mongodb/awscdk-resources-mongodbatlas-go',
