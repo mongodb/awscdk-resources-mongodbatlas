@@ -5,9 +5,9 @@ import (
 )
 
 const (
-	ORG_ID       = "ORG_ID"
-	PROFILE      = "PROFILE"
-	PROJECT_NAME = "PROJECT_NAME"
+	ORG_ID       = "ORG_ID_HERE"
+	PROFILE      = "PROFILE_HERE"
+	PROJECT_NAME = "PROJECT_NAME_HERE"
 )
 
 type CdkTestAppGoStackProps struct {
