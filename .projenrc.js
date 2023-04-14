@@ -84,7 +84,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   publishToPypi: {
     distName: 'awscdk_resources_mongodbatlas',
     module: 'awscdk_resources_mongodbatlas',
-    homepage: 'https://github.com/mongodb/awscdk-resources-mongodbatlas'
+    homepage: 'https://github.com/mongodb/awscdk-resources-mongodbatlas',
   },
   publishToGo: {
     moduleName: 'github.com/mongodb/awscdk-resources-mongodbatlas-go',
