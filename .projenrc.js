@@ -53,7 +53,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   cdkVersion: '2.64.0',
   defaultReleaseBranch: 'main',
   name: 'awscdk-resources-mongodbatlas',
-  repositoryUrl: 'git@github.com:mongodb/awscdk-resources-mongodbatlas.git',
+  repositoryUrl: 'https://github.com/mongodb/awscdk-resources-mongodbatlas.git',
   keywords: ['cdk',
     'aws-cdk',
     'awscdk',
