@@ -134,9 +134,9 @@ export function toJson_CfnOnlineArchiveProps(obj: CfnOnlineArchiveProps | undefi
  */
 export enum CfnOnlineArchivePropsCollectionType {
   /** STANDARD */
-  STANDARD = "STANDARD",
+  STANDARD = 'STANDARD',
   /** TIMESERIES */
-  TIMESERIES = "TIMESERIES",
+  TIMESERIES = 'TIMESERIES',
 }
 
 /**
@@ -325,9 +325,9 @@ export function toJson_ScheduleView(obj: ScheduleView | undefined): Record<strin
  */
 export enum CriteriaViewType {
   /** DATE */
-  DATE = "DATE",
+  DATE = 'DATE',
   /** CUSTOM */
-  CUSTOM = "CUSTOM",
+  CUSTOM = 'CUSTOM',
 }
 
 /**
@@ -337,13 +337,13 @@ export enum CriteriaViewType {
  */
 export enum CriteriaViewDateFormat {
   /** ISODATE */
-  ISODATE = "ISODATE",
+  ISODATE = 'ISODATE',
   /** EPOCH_SECONDS */
-  EPOCH_SECONDS = "EPOCH_SECONDS",
+  EPOCH_SECONDS = 'EPOCH_SECONDS',
   /** EPOCH_MILLIS */
-  EPOCH_MILLIS = "EPOCH_MILLIS",
+  EPOCH_MILLIS = 'EPOCH_MILLIS',
   /** EPOCH_NANOSECONDS */
-  EPOCH_NANOSECONDS = "EPOCH_NANOSECONDS",
+  EPOCH_NANOSECONDS = 'EPOCH_NANOSECONDS',
 }
 
 /**
@@ -353,17 +353,17 @@ export enum CriteriaViewDateFormat {
  */
 export enum PartitionFieldViewFieldType {
   /** date */
-  DATE = "date",
+  DATE = 'date',
   /** int */
-  INT = "int",
+  INT = 'int',
   /** long */
-  LONG = "long",
+  LONG = 'long',
   /** objectId */
-  OBJECT_ID = "objectId",
+  OBJECT_ID = 'objectId',
   /** string */
-  STRING = "string",
+  STRING = 'string',
   /** uuid */
-  UUID = "uuid",
+  UUID = 'uuid',
 }
 
 /**
@@ -371,13 +371,13 @@ export enum PartitionFieldViewFieldType {
  */
 export enum ScheduleViewType {
   /** DAILY */
-  DAILY = "DAILY",
+  DAILY = 'DAILY',
   /** MONTHLY */
-  MONTHLY = "MONTHLY",
+  MONTHLY = 'MONTHLY',
   /** DEFAULT */
-  DEFAULT = "DEFAULT",
+  DEFAULT = 'DEFAULT',
   /** WEEKLY */
-  WEEKLY = "WEEKLY",
+  WEEKLY = 'WEEKLY',
 }
 
 
@@ -391,7 +391,7 @@ export class CfnOnlineArchive extends cdk.CfnResource {
   /**
   * The CloudFormation resource type name for this resource class.
   */
-  public static readonly CFN_RESOURCE_TYPE_NAME = "MongoDB::Atlas::OnlineArchive";
+  public static readonly CFN_RESOURCE_TYPE_NAME = 'MongoDB::Atlas::OnlineArchive';
 
   /**
    * Resource props.
