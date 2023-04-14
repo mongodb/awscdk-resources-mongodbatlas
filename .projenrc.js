@@ -45,6 +45,7 @@ We're here to help! This is simply a reminder of what we are going to look for b
 
 
 const { awscdk, javascript, JsonFile } = require('projen');
+const { ReleaseTrigger } = require('projen/lib/release');
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'MongoDB',
   authorAddress: 'https://www.mongodb.com/',
@@ -68,6 +69,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'mongodb',
     'atlas'],
   npmAccess: javascript.NpmAccess.PUBLIC,
+  majorVersion: 1,
+  releaseTrigger: ReleaseTrigger.manual(),
   releaseToNpm: true,
   publishToNuget: {
     dotNetNamespace: 'MongoDB.AWSCDKResourcesMongoDBAtlas',
