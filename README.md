@@ -3,6 +3,11 @@ Use MongoDB Atlas [AWS CDK](https://aws.amazon.com/cdk/) (or Cloud Development K
 
 ## Available Packages
 
+### NPM
+The npm package is available at [awscdk-resources-mongodbatlas](https://www.npmjs.com/package/awscdk-resources-mongodbatlas)
+```
+npm i awscdk-resources-mongodbatlas
+```
 ### Go
 The go package is generated into the [github.com/mongodb/awscdk-resources-mongodbatlas-go](https://github.com/mongodb/awscdk-resources-mongodbatlas-go) package.
 ```
