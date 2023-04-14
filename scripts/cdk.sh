@@ -39,9 +39,12 @@ if [ "$#" -ne 1 ]; then
 	exit 1
 fi
 
+script_dir="$(cd "$(dirname "$0")" && pwd)"
+root_dir="$(cd "${script_dir}/.." && pwd)"
+
 resource=$1
 echo "Generating L1 CDK resource"
-dir="../submodules/mongodbatlas-cloudformation-resources/cfn-resources/${resource}"
+dir="${root_dir}/submodules/mongodbatlas-cloudformation-resources/cfn-resources/${resource}"
 
 
 for file in "${dir}"/mongodb-atlas-*.json; do
