@@ -3,7 +3,7 @@
   "description": "MongoDB Atlas CDK Construct Library for AWS CloudFormation Resources",
   "repository": {
     "type": "git",
-    "url": "git@github.com:mongodb/awscdk-resources-mongodbatlas.git"
+    "url": "https://github.com/mongodb/awscdk-resources-mongodbatlas.git"
   },
   "scripts": {
     "build": "npx projen build",
