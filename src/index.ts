@@ -14,9 +14,9 @@
 
 // L1 Constructors
 export {
-  CfnAlertConfiguration, CfnAlertConfigurationProps, IntegerThresholdView, 
-  IntegerThresholdViewOperator, Matcher, MatcherFieldName, MatcherOperator, 
-  MetricThresholdView,MetricThresholdViewMode, MetricThresholdViewOperator, 
+  CfnAlertConfiguration, CfnAlertConfigurationProps, IntegerThresholdView,
+  IntegerThresholdViewOperator, Matcher, MatcherFieldName, MatcherOperator,
+  MetricThresholdView, MetricThresholdViewMode, MetricThresholdViewOperator,
   NotificationView, NotificationViewDatadogRegion, NotificationViewTypeName,
   NotificationViewOpsGenieRegion, NotificationViewRoles, NotificationViewSeverity,
 } from './l1-resources/alert-configuration';
