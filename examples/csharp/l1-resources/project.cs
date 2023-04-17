@@ -16,6 +16,11 @@ namespace CdkTestAppCsharp
             var profile = (string) this.Node.TryGetContext("profile");
             var orgId = (string) this.Node.TryGetContext("orgId");
             var projectName = (string) this.Node.TryGetContext("projectName");
+
+            var proj = new CfnProject(this, "CfnProject-l1",
+                                        new CfnProjectProps { Name = projectName,
+                                                              Profile = profile,
+                                                              OrgId = orgId });
         }
     }
 }
