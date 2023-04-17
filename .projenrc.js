@@ -45,6 +45,7 @@ We're here to help! This is simply a reminder of what we are going to look for b
 
 
 const { awscdk, javascript, JsonFile } = require('projen');
+const { ReleaseTrigger } = require('projen/lib/release');
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'MongoDB',
   authorAddress: 'https://www.mongodb.com/',
@@ -52,7 +53,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   cdkVersion: '2.64.0',
   defaultReleaseBranch: 'main',
   name: 'awscdk-resources-mongodbatlas',
-  repositoryUrl: 'git@github.com:mongodb/awscdk-resources-mongodbatlas.git',
+  repositoryUrl: 'https://github.com/mongodb/awscdk-resources-mongodbatlas.git',
   keywords: ['cdk',
     'aws-cdk',
     'awscdk',
@@ -68,6 +69,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'mongodb',
     'atlas'],
   npmAccess: javascript.NpmAccess.PUBLIC,
+  majorVersion: 1,
+  releaseTrigger: ReleaseTrigger.manual(),
   releaseToNpm: true,
   publishToNuget: {
     dotNetNamespace: 'MongoDB.AWSCDKResourcesMongoDBAtlas',
@@ -81,6 +84,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   publishToPypi: {
     distName: 'awscdk_resources_mongodbatlas',
     module: 'awscdk_resources_mongodbatlas',
+    homepage: 'https://github.com/mongodb/awscdk-resources-mongodbatlas',
   },
   publishToGo: {
     moduleName: 'github.com/mongodb/awscdk-resources-mongodbatlas-go',

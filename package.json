@@ -3,7 +3,7 @@
   "description": "MongoDB Atlas CDK Construct Library for AWS CloudFormation Resources",
   "repository": {
     "type": "git",
-    "url": "git@github.com:mongodb/awscdk-resources-mongodbatlas.git"
+    "url": "https://github.com/mongodb/awscdk-resources-mongodbatlas.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -25,6 +25,7 @@
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
+    "publish:git": "npx projen publish:git",
     "release": "npx projen release",
     "test": "npx projen test",
     "test:watch": "npx projen test:watch",
@@ -137,8 +138,8 @@
         }
       },
       "python": {
-        "distName": "awscdk-resources-mongodbatlas",
-        "module": "awscdk-resources-mongodbatlas"
+        "distName": "awscdk_resources_mongodbatlas",
+        "module": "awscdk_resources_mongodbatlas"
       },
       "dotnet": {
         "namespace": "MongoDB.AWSCDKResourcesMongoDBAtlas",
