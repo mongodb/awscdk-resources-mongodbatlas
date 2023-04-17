@@ -58,7 +58,6 @@ function getClusterProps(
     diskSizeGb: inputClusterProps.diskSizeGb,
     clusterType: inputClusterProps.clusterType || CLUSTER_TYPE,
     biConnector: inputClusterProps.biConnector,
-    connectionStrings: inputClusterProps.connectionStrings,
     encryptionAtRestProvider:
       inputClusterProps.encryptionAtRestProvider || ENCRYPTION_AT_REST_PROVIDER,
     labels: inputClusterProps.labels,

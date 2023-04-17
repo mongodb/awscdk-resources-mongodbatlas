@@ -5121,6 +5121,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Cluster.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.property.attrMongoDBVersion">attrMongoDBVersion</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Cluster.MongoDBVersion`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.property.attrStateName">attrStateName</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Cluster.StateName`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.property.connectionStrings">connectionStrings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings">ConnectionStrings</a></code> | Attribute `MongoDB::Atlas::Cluster.ConnectionStrings`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps">CfnClusterProps</a></code> | Resource props. |
 
 ---
@@ -5262,6 +5263,18 @@ public readonly attrStateName: string;
 - *Type:* string
 
 Attribute `MongoDB::Atlas::Cluster.StateName`.
+
+---
+
+##### `connectionStrings`<sup>Required</sup> <a name="connectionStrings" id="awscdk-resources-mongodbatlas.CfnCluster.property.connectionStrings"></a>
+
+```typescript
+public readonly connectionStrings: ConnectionStrings;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.ConnectionStrings">ConnectionStrings</a>
+
+Attribute `MongoDB::Atlas::Cluster.ConnectionStrings`.
 
 ---
 
@@ -24978,7 +24991,6 @@ const cfnClusterProps: CfnClusterProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.backupEnabled">backupEnabled</a></code> | <code>boolean</code> | Flag that indicates whether the cluster can perform backups. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.biConnector">biConnector</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterPropsBiConnector">CfnClusterPropsBiConnector</a></code> | Settings needed to configure the MongoDB Connector for Business Intelligence for this cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.clusterType">clusterType</a></code> | <code>string</code> | Configuration of nodes that comprise the cluster. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.connectionStrings">connectionStrings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings">ConnectionStrings</a></code> | Set of connection strings that your applications use to connect to this cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.diskSizeGb">diskSizeGb</a></code> | <code>number</code> | Storage capacity that the host's root volume possesses expressed in gigabytes. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.encryptionAtRestProvider">encryptionAtRestProvider</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterPropsEncryptionAtRestProvider">CfnClusterPropsEncryptionAtRestProvider</a></code> | Cloud service provider that manages your customer keys to provide an additional layer of encryption at rest for the cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.labels">labels</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterPropsLabels">CfnClusterPropsLabels</a>[]</code> | Collection of key-value pairs between 1 to 255 characters in length that tag and categorize the cluster. |
@@ -25062,20 +25074,6 @@ public readonly clusterType: string;
 - *Type:* string
 
 Configuration of nodes that comprise the cluster.
-
----
-
-##### `connectionStrings`<sup>Optional</sup> <a name="connectionStrings" id="awscdk-resources-mongodbatlas.CfnClusterProps.property.connectionStrings"></a>
-
-```typescript
-public readonly connectionStrings: ConnectionStrings;
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.ConnectionStrings">ConnectionStrings</a>
-
-Set of connection strings that your applications use to connect to this cluster.
-
-Use the parameters in this object to connect your applications to this cluster. See the MongoDB [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/) reference for further details.
 
 ---
 
