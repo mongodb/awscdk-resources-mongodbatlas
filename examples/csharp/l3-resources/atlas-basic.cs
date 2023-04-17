@@ -1,8 +1,9 @@
 using System;
-using System.Security.Cryptography;
 using Amazon.CDK;
 using Constructs;
 using MongoDB.AWSCDKResourcesMongoDBAtlas;
+using MongoDB.AWSCDKResourcesMongoDBAtlas;
+using ProjectProps = MongoDB.AWSCDKResourcesMongoDBAtlas.ProjectProps;
 
 
 namespace CdkTestAppCsharp
@@ -11,11 +12,11 @@ namespace CdkTestAppCsharp
     {
         internal CdkTestAppCsharpStack(Construct scope, string id, IStackProps props = null) : base(scope, id, props)
         {
-            profile = this.Node.TryGetContext("profile");
-            orgId = this.Node.TryGetContext("orgId");
-            ipAddr = this.Node.TryGetContext("ipAddr");
-            ipComment = this.Node.TryGetContext("ipComment");
-            region = this.Node.TryGetContext("region");
+            var profile = (string) this.Node.TryGetContext("profile");
+            var orgId = (string) this.Node.TryGetContext("orgId");
+            var ipAddr = (string) this.Node.TryGetContext("ipAddr");
+            var ipComment = (string) this.Node.TryGetContext("ipComment");
+            var region = (string) this.Node.TryGetContext("region");
 
              var regionConfig = new AdvancedRegionConfig
                      {

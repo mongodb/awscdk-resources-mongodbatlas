@@ -1,8 +1,10 @@
 using System;
-using System.Security.Cryptography;
 using Amazon.CDK;
 using Constructs;
 using MongoDB.AWSCDKResourcesMongoDBAtlas;
+using CfnProject = MongoDB.AWSCDKResourcesMongoDBAtlas.CfnProject;
+using CfnProjectProps = MongoDB.AWSCDKResourcesMongoDBAtlas.CfnProjectProps;
+using ProjectProps = MongoDB.AWSCDKResourcesMongoDBAtlas.ProjectProps;
 
 
 namespace CdkTestAppCsharp
@@ -11,14 +13,9 @@ namespace CdkTestAppCsharp
     {
         internal CdkTestAppCsharpStack(Construct scope, string id, IStackProps props = null) : base(scope, id, props)
         {
-            profile = this.Node.TryGetContext("profile");
-            orgId = this.Node.TryGetContext("orgId");
-            projectName = this.Node.TryGetContext("projectName");
-
-            var proj = new CfnProject(this, "CfnProject-l1",
-                            new CfnProjectProps { Name = projectName,
-                                                  Profile = profile,
-                                                  OrgId = orgId });
+            var profile = (string) this.Node.TryGetContext("profile");
+            var orgId = (string) this.Node.TryGetContext("orgId");
+            var projectName = (string) this.Node.TryGetContext("projectName");
         }
     }
 }
