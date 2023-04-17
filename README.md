@@ -3,11 +3,42 @@ Use MongoDB Atlas [AWS CDK](https://aws.amazon.com/cdk/) (or Cloud Development K
 
 ## Available Packages
 
+### NPM
+The npm package is available at [awscdk-resources-mongodbatlas](https://www.npmjs.com/package/awscdk-resources-mongodbatlas)
+```bash
+npm i awscdk-resources-mongodbatlas
+```
+
+### PyPI
+The PyPI package is available at [awscdk-resources-mongodbatlas](https://pypi.org/project/awscdk-resources-mongodbatlas/)
+```bash
+pip install awscdk-resources-mongodbatlas
+```
+
+### Nuget
+The Nuget package is available at [MongoDB.AWSCDKResourcesMongoDBAtlas](https://www.nuget.org/packages/MongoDB.AWSCDKResourcesMongoDBAtlas)
+```bash
+dotnet add package MongoDB.AWSCDKResourcesMongoDBAtlas --version 1.0.0
+```
+
+### Maven
+The Maven package is available at [awscdk-resources-mongodbatlas](https://central.sonatype.com/artifact/org.mongodb/awscdk-resources-mongodbatlas/1.0.0)
+
+```Maven
+<dependency>
+    <groupId>org.mongodb</groupId>
+    <artifactId>awscdk-resources-mongodbatlas</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 ### Go
 The go package is generated into the [github.com/mongodb/awscdk-resources-mongodbatlas-go](https://github.com/mongodb/awscdk-resources-mongodbatlas-go) package.
-```
+```bash
 go get github.com/mongodb/awscdk-resources-mongodbatlas-go/awscdkresourcesmongodbatlas
-```                                                
+```   
+
+
 
 ## Available Constructors
 MongoDB Atlas AWS CDK Resources provides L1, L2 and L3 CDK constructors. Please, have a look at [README.md](src/README.md#cdk-constructors) for a full lists of constructors and examples.
