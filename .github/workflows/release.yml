@@ -4,6 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      issues: write
     outputs:
       latest_commit: ${{ steps.git_remote.outputs.latest_commit }}
     env:
@@ -78,8 +79,6 @@ jobs:
       - name: Create Issue
         if: ${{ failure() }}
         uses: imjohnbo/issue-bot@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           labels: failed-release
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to npm failed
@@ -131,8 +130,6 @@ jobs:
       - name: Create Issue
         if: ${{ failure() }}
         uses: imjohnbo/issue-bot@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           labels: failed-release
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to Maven Central failed
@@ -180,8 +177,6 @@ jobs:
       - name: Create Issue
         if: ${{ failure() }}
         uses: imjohnbo/issue-bot@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           labels: failed-release
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to PyPI failed
@@ -228,8 +223,6 @@ jobs:
       - name: Create Issue
         if: ${{ failure() }}
         uses: imjohnbo/issue-bot@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           labels: failed-release
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to NuGet Gallery failed
@@ -278,8 +271,6 @@ jobs:
       - name: Create Issue
         if: ${{ failure() }}
         uses: imjohnbo/issue-bot@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           labels: failed-release
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to GitHub Go Module Repository failed
