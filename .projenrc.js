@@ -71,6 +71,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   npmAccess: javascript.NpmAccess.PUBLIC,
   majorVersion: 1,
   releaseTrigger: ReleaseTrigger.manual(),
+  docgen: true,
   releaseToNpm: true,
   publishToNuget: {
     dotNetNamespace: 'MongoDB.AWSCDKResourcesMongoDBAtlas',
