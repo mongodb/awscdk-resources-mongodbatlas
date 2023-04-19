@@ -246,13 +246,10 @@
       "env": {
         "CHANGELOG": "dist/changelog.md",
         "RELEASE_TAG_FILE": "dist/releasetag.txt",
-        "PROJECT_CHANGELOG_FILE": "CHANGELOG.md",
+        "PROJECT_CHANGELOG_FILE": "",
         "VERSION_FILE": "dist/version.txt"
       },
       "steps": [
-        {
-          "builtin": "release/update-changelog"
-        },
         {
           "builtin": "release/tag-version"
         }

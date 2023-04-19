@@ -70,7 +70,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'atlas'],
   npmAccess: javascript.NpmAccess.PUBLIC,
   majorVersion: 1,
-  releaseTrigger: ReleaseTrigger.manual({ gitPushCommand: '' }),
+  releaseTrigger: ReleaseTrigger.manual({ gitPushCommand: '', changelog: false }),
   docgen: true,
   releaseToNpm: true,
   publishToNuget: {
