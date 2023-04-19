@@ -255,9 +255,6 @@
         },
         {
           "builtin": "release/tag-version"
-        },
-        {
-          "exec": "git push --follow-tags origin main"
         }
       ],
       "condition": "! git log --oneline -1 | grep -q \"chore(release):\""
