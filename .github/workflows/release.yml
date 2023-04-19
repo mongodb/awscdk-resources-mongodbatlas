@@ -30,11 +30,9 @@ jobs:
       - name: release
         run: npx projen release
       - name: Backup artifact permissions
-        if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
         run: cd dist && getfacl -R . > permissions-backup.acl
         continue-on-error: true
       - name: Upload artifact
-        if: ${{ steps.git_remote.outputs.latest_commit == github.sha }}
         uses: actions/upload-artifact@v3
         with:
           name: build-artifact
@@ -46,7 +44,6 @@ jobs:
     permissions:
       contents: read
       issues: write
-    if: needs.release.outputs.latest_commit == github.sha
     steps:
       - uses: actions/setup-node@v3
         with:
@@ -91,7 +88,6 @@ jobs:
     permissions:
       contents: read
       issues: write
-    if: needs.release.outputs.latest_commit == github.sha
     steps:
       - uses: actions/setup-java@v3
         with:
@@ -142,7 +138,6 @@ jobs:
     permissions:
       contents: read
       issues: write
-    if: needs.release.outputs.latest_commit == github.sha
     steps:
       - uses: actions/setup-node@v3
         with:
@@ -189,7 +184,6 @@ jobs:
     permissions:
       contents: read
       issues: write
-    if: needs.release.outputs.latest_commit == github.sha
     steps:
       - uses: actions/setup-node@v3
         with:
@@ -235,7 +229,6 @@ jobs:
     permissions:
       contents: read
       issues: write
-    if: needs.release.outputs.latest_commit == github.sha
     steps:
       - uses: actions/setup-node@v3
         with:
