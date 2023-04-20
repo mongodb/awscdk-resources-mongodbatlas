@@ -9,7 +9,7 @@ devtools:  ## Install dev tools
 	bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
 	npm install projen
 	npm install publib 
-	npm install -g npx
+	npm install npx
 
 .PHONY: build
 build:
