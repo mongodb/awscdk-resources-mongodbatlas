@@ -256,7 +256,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GO_GITHUB_TOKEN }}
           GIT_USER_NAME: ${{ secrets.GO_GIT_USER_NAME }}
-          GIT_USER_NAME: ${{ secrets.GO_GIT_USER_EMAIL }}
+          GIT_USER_EMAIL: ${{ secrets.GO_GIT_USER_EMAIL }}
         run: npx -p publib@latest publib-golang
       - name: Extract Version
         id: extract-version
