@@ -12,15 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Construct } from 'constructs';
-import { ThirdPartyIntegrationProps } from './thirdPartyIntegrationBase';
-import * as util from './util';
+import { Construct } from "constructs";
+import { ThirdPartyIntegrationProps } from "./thirdPartyIntegrationBase";
+import * as util from "./util";
 import {
   CfnThirdPartyIntegration,
   CfnThirdPartyIntegrationPropsType,
-} from '../../index';
+} from "../../index";
 
-export interface MicrosoftTeamsIntegrationProps extends ThirdPartyIntegrationProps {
+export interface MicrosoftTeamsIntegrationProps
+  extends ThirdPartyIntegrationProps {
   /**
    * Endpoint web address of the Microsoft Teams webhook to which MongoDB Cloud sends notifications.
    */
@@ -29,21 +30,29 @@ export interface MicrosoftTeamsIntegrationProps extends ThirdPartyIntegrationPro
 
 const validate = (props: MicrosoftTeamsIntegrationProps) => {
   util.validate(props);
-  if (!props.microsoftTeamsWebhookUrl) { throw Error(util.getPropUndefinedMsg('microsoftTeamsWebhookUrl')); }
+  if (!props.microsoftTeamsWebhookUrl) {
+    throw Error(util.getPropUndefinedMsg("microsoftTeamsWebhookUrl"));
+  }
 };
 
 export class MicrosoftTeamsIntegration extends Construct {
   readonly cfnThirdPartyIntegration: CfnThirdPartyIntegration;
 
-  constructor(scope: Construct, id: string, props: MicrosoftTeamsIntegrationProps) {
+  constructor(
+    scope: Construct,
+    id: string,
+    props: MicrosoftTeamsIntegrationProps
+  ) {
     super(scope, id);
     validate(props);
 
-    this.cfnThirdPartyIntegration = new CfnThirdPartyIntegration(this,
-      'MICROSOFT_TEAMS_Integration',
+    this.cfnThirdPartyIntegration = new CfnThirdPartyIntegration(
+      this,
+      "MICROSOFT_TEAMS_Integration",
       {
         ...props,
         type: CfnThirdPartyIntegrationPropsType.MICROSOFT_TEAMS,
-      });
+      }
+    );
   }
 }

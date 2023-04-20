@@ -12,16 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import * as cdk from 'aws-cdk-lib';
-import { AtlasBasic } from './index';
+import * as cdk from "aws-cdk-lib";
+import { AtlasBasic } from "./index";
 
 const app = new cdk.App();
-const stack = new cdk.Stack(app, 'atlas-basic-default', {
-  env: { region: process.env.CDK_DEFAULT_REGION, account: process.env.CDK_DEFAULT_ACCOUNT },
+const stack = new cdk.Stack(app, "atlas-basic-default", {
+  env: {
+    region: process.env.CDK_DEFAULT_REGION,
+    account: process.env.CDK_DEFAULT_ACCOUNT,
+  },
 });
 
-
-const orgId = stack.node.tryGetContext('MONGODB_ATLAS_ORG_ID') || process.env.MONGODB_ATLAS_ORG_ID;
+const orgId =
+  stack.node.tryGetContext("MONGODB_ATLAS_ORG_ID") ||
+  process.env.MONGODB_ATLAS_ORG_ID;
 
 const replicationSpecs = [
   {
@@ -29,23 +33,23 @@ const replicationSpecs = [
     advancedRegionConfigs: [
       {
         analyticsSpecs: {
-          ebsVolumeType: 'STANDARD',
-          instanceSize: 'M10',
+          ebsVolumeType: "STANDARD",
+          instanceSize: "M10",
           nodeCount: 1,
         },
         electableSpecs: {
-          ebsVolumeType: 'STANDARD',
-          instanceSize: 'M10',
+          ebsVolumeType: "STANDARD",
+          instanceSize: "M10",
           nodeCount: 3,
         },
         priority: 7,
-        regionName: 'US_EAST_1',
+        regionName: "US_EAST_1",
       },
     ],
   },
 ];
 
-new AtlasBasic(stack, 'atlas-basic', {
+new AtlasBasic(stack, "atlas-basic", {
   clusterProps: {
     replicationSpecs: replicationSpecs,
   },
@@ -55,8 +59,8 @@ new AtlasBasic(stack, 'atlas-basic', {
   ipAccessListProps: {
     accessList: [
       {
-        ipAddress: '10.10.0.0/24',
-        comment: 'open ip subnet',
+        ipAddress: "10.10.0.0/24",
+        comment: "open ip subnet",
       },
     ],
   },

@@ -12,19 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Construct } from 'constructs';
-import { ThirdPartyIntegrationProps } from './thirdPartyIntegrationBase';
-import * as util from './util';
+import { Construct } from "constructs";
+import { ThirdPartyIntegrationProps } from "./thirdPartyIntegrationBase";
+import * as util from "./util";
 import {
   CfnThirdPartyIntegration,
   CfnThirdPartyIntegrationPropsType,
-} from '../../index';
+} from "../../index";
 
 export enum DatadogRegion {
-  US = 'US',
-  EU = 'EU',
-  US3 = 'US3',
-  US5 = 'US5'
+  US = "US",
+  EU = "EU",
+  US3 = "US3",
+  US5 = "US5",
 }
 
 export interface DatadogIntegrationProps extends ThirdPartyIntegrationProps {
@@ -41,8 +41,12 @@ export interface DatadogIntegrationProps extends ThirdPartyIntegrationProps {
 
 const validate = (props: DatadogIntegrationProps) => {
   util.validate(props);
-  if (!props.apiKey) { throw Error(util.getPropUndefinedMsg('apiKey')); }
-  if (!props.region) { throw Error(util.getPropUndefinedMsg('region')); }
+  if (!props.apiKey) {
+    throw Error(util.getPropUndefinedMsg("apiKey"));
+  }
+  if (!props.region) {
+    throw Error(util.getPropUndefinedMsg("region"));
+  }
 };
 
 export class DatadogIntegration extends Construct {
@@ -52,11 +56,13 @@ export class DatadogIntegration extends Construct {
     super(scope, id);
     validate(props);
 
-    this.cfnThirdPartyIntegration = new CfnThirdPartyIntegration(this,
-      'DATADOG_Integration',
+    this.cfnThirdPartyIntegration = new CfnThirdPartyIntegration(
+      this,
+      "DATADOG_Integration",
       {
         ...props,
         type: CfnThirdPartyIntegrationPropsType.DATADOG,
-      });
+      }
+    );
   }
 }

@@ -12,23 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import { CfnLdapConfiguration } from '../../../src/l1-resources/ldap-configuration';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { CfnLdapConfiguration } from "../../../src/l1-resources/ldap-configuration";
 
+const RESOURCE_NAME = "MongoDB::Atlas::LDAPConfiguration";
+const PROJECT_ID = "testProjectId";
+const HOST_NAME = "test_host_name";
+const BIND_USER_NAME = "test_user_name";
+const BIND_USER_PASSWORD = "test_bind";
+const PORT = 9090;
 
-const RESOURCE_NAME = 'MongoDB::Atlas::LDAPConfiguration';
-const PROJECT_ID= 'testProjectId';
-const HOST_NAME = 'test_host_name';
-const BIND_USER_NAME = 'test_user_name';
-const BIND_USER_PASSWORD='test_bind';
-const PORT=9090;
-
-test('AtlasLdapVerify construct should contain default properties', () => {
+test("AtlasLdapVerify construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new CfnLdapConfiguration(stack, 'testing-stack', {
+  new CfnLdapConfiguration(stack, "testing-stack", {
     projectId: PROJECT_ID,
     bindUsername: BIND_USER_NAME,
     bindPassword: BIND_USER_PASSWORD,

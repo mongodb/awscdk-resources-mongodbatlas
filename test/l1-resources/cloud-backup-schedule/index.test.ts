@@ -12,21 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import { CfnCloudBackupSchedule } from '../../../src/l1-resources/cloud-backup-schedule';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { CfnCloudBackupSchedule } from "../../../src/l1-resources/cloud-backup-schedule";
 
+const RESOURCE_NAME = "MongoDB::Atlas::CloudBackupSchedule";
+const PROJECT_ID = "testProjectId";
+const CLUSTER_NAME = "test_host_name";
+const PROFILE = "default";
 
-const RESOURCE_NAME = 'MongoDB::Atlas::CloudBackupSchedule';
-const PROJECT_ID= 'testProjectId';
-const CLUSTER_NAME = 'test_host_name';
-const PROFILE = 'default';
-
-test('CloudBackupSchedule construct should contain default properties', () => {
+test("CloudBackupSchedule construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new CfnCloudBackupSchedule(stack, 'testing-stack', {
+  new CfnCloudBackupSchedule(stack, "testing-stack", {
     projectId: PROJECT_ID,
     clusterName: CLUSTER_NAME,
     profile: PROFILE,

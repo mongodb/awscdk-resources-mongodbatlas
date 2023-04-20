@@ -12,19 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import { CfnPrivateEndPointRegionalMode } from '../../../src/l1-resources/private-endpoint-regional-mode';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { CfnPrivateEndPointRegionalMode } from "../../../src/l1-resources/private-endpoint-regional-mode";
 
+const RESOURCE_NAME = "MongoDB::Atlas::PrivateEndPointRegionalMode";
+const PROJECT_ID = "testProjectId";
 
-const RESOURCE_NAME = 'MongoDB::Atlas::PrivateEndPointRegionalMode';
-const PROJECT_ID= 'testProjectId';
-
-test('CfnPrivateEndPointRegionalMode construct should contain default properties', () => {
+test("CfnPrivateEndPointRegionalMode construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new CfnPrivateEndPointRegionalMode(stack, 'testing-stack', {
+  new CfnPrivateEndPointRegionalMode(stack, "testing-stack", {
     projectId: PROJECT_ID,
   });
 

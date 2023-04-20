@@ -12,23 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import { CfnEncryptionAtRest } from '../../../src/l1-resources/encryption-at-rest';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { CfnEncryptionAtRest } from "../../../src/l1-resources/encryption-at-rest";
 
+const RESOURCE_NAME = "MongoDB::Atlas::EncryptionAtRest";
+const PROFILE = "default";
+const PROJECT_ID = "testProjectId";
+const ROLE_ID = "roleId";
+const REGION = "US_EAST_1";
+const CUSTOMER_MASTER_KEY_ID = "customerMasterKeyId";
 
-const RESOURCE_NAME = 'MongoDB::Atlas::EncryptionAtRest';
-const PROFILE= 'default';
-const PROJECT_ID= 'testProjectId';
-const ROLE_ID = 'roleId';
-const REGION = 'US_EAST_1';
-const CUSTOMER_MASTER_KEY_ID='customerMasterKeyId';
-
-test('AtlasEncryptionAtRest construct should contain default properties', () => {
+test("AtlasEncryptionAtRest construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new CfnEncryptionAtRest(stack, 'testing-stack', {
+  new CfnEncryptionAtRest(stack, "testing-stack", {
     profile: PROFILE,
     projectId: PROJECT_ID,
     awsKms: {

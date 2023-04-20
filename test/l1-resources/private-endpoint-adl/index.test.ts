@@ -12,20 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import { CfnPrivateEndpointAdl } from '../../../src/l1-resources/private-endpoint-adl';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { CfnPrivateEndpointAdl } from "../../../src/l1-resources/private-endpoint-adl";
 
+const RESOURCE_NAME = "MongoDB::Atlas::PrivateEndpointADL";
+const PROJECT_ID = "testProjectId";
+const PROVIDER = "AWS";
 
-const RESOURCE_NAME = 'MongoDB::Atlas::PrivateEndpointADL';
-const PROJECT_ID= 'testProjectId';
-const PROVIDER = 'AWS';
-
-test('CfnPrivateEndpointAdl construct should contain default properties', () => {
+test("CfnPrivateEndpointAdl construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new CfnPrivateEndpointAdl(stack, 'testing-stack', {
+  new CfnPrivateEndpointAdl(stack, "testing-stack", {
     projectId: PROJECT_ID,
     provider: PROVIDER,
   });

@@ -12,20 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import { CfnTrigger } from '../../../src/l1-resources/trigger';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { CfnTrigger } from "../../../src/l1-resources/trigger";
 
+const RESOURCE_NAME = "MongoDB::Atlas::Trigger";
+const PROJECT_ID = "testProjectId";
+const APPID = "appId";
 
-const RESOURCE_NAME = 'MongoDB::Atlas::Trigger';
-const PROJECT_ID= 'testProjectId';
-const APPID= 'appId';
-
-test('Trigger construct should contain default properties', () => {
+test("Trigger construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new CfnTrigger(stack, 'testing-stack', {
+  new CfnTrigger(stack, "testing-stack", {
     projectId: PROJECT_ID,
     appId: APPID,
   });

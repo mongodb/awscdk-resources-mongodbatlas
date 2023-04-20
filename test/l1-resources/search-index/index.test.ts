@@ -12,21 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import { CfnSearchIndex } from '../../../src/l1-resources/search-index';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { CfnSearchIndex } from "../../../src/l1-resources/search-index";
 
+const RESOURCE_NAME = "MongoDB::Atlas::SearchIndex";
+const CLUSTER_NAME = "testCluster";
+const COLLECTION_NAME = "testCluster";
+const DATABASE = "databaseName";
 
-const RESOURCE_NAME = 'MongoDB::Atlas::SearchIndex';
-const CLUSTER_NAME= 'testCluster';
-const COLLECTION_NAME= 'testCluster';
-const DATABASE= 'databaseName';
-
-test('CfnProjectInvitation construct should contain default properties', () => {
+test("CfnProjectInvitation construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new CfnSearchIndex(stack, 'testing-stack', {
+  new CfnSearchIndex(stack, "testing-stack", {
     clusterName: CLUSTER_NAME,
     collectionName: COLLECTION_NAME,
     database: DATABASE,
