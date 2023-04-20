@@ -12,5 +12,5 @@ devtools:  ## Install dev tools
 	npm install -g npx
 
 .PHONY: build
-build: ## Run linter
+build:
 	npx projen build
