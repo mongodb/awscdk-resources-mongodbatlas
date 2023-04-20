@@ -12,21 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import { CfnProjectInvitation } from '../../../src/l1-resources/project-invitation';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { CfnProjectInvitation } from "../../../src/l1-resources/project-invitation";
 
+const RESOURCE_NAME = "MongoDB::Atlas::ProjectInvitation";
+const PROFILE = "default";
 
-const RESOURCE_NAME = 'MongoDB::Atlas::ProjectInvitation';
-const PROFILE= 'default';
-
-test('CfnProjectInvitation construct should contain default properties', () => {
+test("CfnProjectInvitation construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new CfnProjectInvitation(stack, 'testing-stack', {
+  new CfnProjectInvitation(stack, "testing-stack", {
     profile: PROFILE,
-
   });
 
   const template = Template.fromStack(stack);

@@ -12,7 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export const THIRD_PARTY_INTEGRATION_RESOURCE_NAME: string = 'MongoDB::Atlas::ThirdPartyIntegration';
-export const TEST_PROJECT_ID: string = 'testProjectId';
-export const TEST_WEBHOOK_URL: string = 'https://testwebhook.com/tst';
-export const TEST_KEY: string = 'testKey';
+export const THIRD_PARTY_INTEGRATION_RESOURCE_NAME: string =
+  "MongoDB::Atlas::ThirdPartyIntegration";
+export const TEST_PROJECT_ID: string = "testProjectId";
+export const TEST_WEBHOOK_URL: string = "https://testwebhook.com/tst";
+export const TEST_KEY: string = "testKey";

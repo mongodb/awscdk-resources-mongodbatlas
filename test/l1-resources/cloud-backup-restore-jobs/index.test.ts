@@ -12,20 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import { CfnCloudBackUpRestoreJobs } from '../../../src/l1-resources/cloud-backup-restore-jobs';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { CfnCloudBackUpRestoreJobs } from "../../../src/l1-resources/cloud-backup-restore-jobs";
 
+const RESOURCE_NAME = "MongoDB::Atlas::CloudBackUpRestoreJobs";
+const CLUSTER_NAME = "testCluster";
+const PROJECT_NAME = "projtest";
 
-const RESOURCE_NAME = 'MongoDB::Atlas::CloudBackUpRestoreJobs';
-const CLUSTER_NAME= 'testCluster';
-const PROJECT_NAME= 'projtest';
-
-test('CfnCloudBackUpRestoreJobs construct should contain default properties', () => {
+test("CfnCloudBackUpRestoreJobs construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new CfnCloudBackUpRestoreJobs(stack, 'testing-stack', {
+  new CfnCloudBackUpRestoreJobs(stack, "testing-stack", {
     projectId: CLUSTER_NAME,
     clusterName: PROJECT_NAME,
   });

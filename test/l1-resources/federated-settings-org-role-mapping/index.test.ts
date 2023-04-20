@@ -12,24 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import { CfnFederatedSettingsOrgRoleMapping } from '../../../src/l1-resources/federated-settings-org-role-mapping';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { CfnFederatedSettingsOrgRoleMapping } from "../../../src/l1-resources/federated-settings-org-role-mapping";
 
+const RESOURCE_NAME = "MongoDB::Atlas::FederatedSettingsOrgRoleMapping";
+const PROJECT_ID = "97498392039231";
+const ORG_ID = "987498392039";
+const PROFILE = "default";
+const FEDERATION_SETTINGS_ID = "fedSettingsID";
+const EXTERNAL_GROUP_NAME = "customerExternalGroupName";
+const ROLE = "GROUP_DATA_ACCESS_READ_WRITE";
 
-const RESOURCE_NAME = 'MongoDB::Atlas::FederatedSettingsOrgRoleMapping';
-const PROJECT_ID= '97498392039231';
-const ORG_ID= '987498392039';
-const PROFILE = 'default';
-const FEDERATION_SETTINGS_ID = 'fedSettingsID';
-const EXTERNAL_GROUP_NAME='customerExternalGroupName';
-const ROLE = 'GROUP_DATA_ACCESS_READ_WRITE';
-
-test('AtlasFederatedSettingsOrgRoleMapping construct should contain default properties', () => {
+test("AtlasFederatedSettingsOrgRoleMapping construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new CfnFederatedSettingsOrgRoleMapping(stack, 'testing-stack', {
+  new CfnFederatedSettingsOrgRoleMapping(stack, "testing-stack", {
     profile: PROFILE,
     externalGroupName: EXTERNAL_GROUP_NAME,
     orgId: ORG_ID,

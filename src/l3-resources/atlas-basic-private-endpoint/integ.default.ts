@@ -12,21 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
-import * as cdk from 'aws-cdk-lib';
-import { AtlasBasicPrivateEndpoint, PrivateEndpointProps } from './index';
-import { AtlasBasicProps } from '../common/props';
+import * as cdk from "aws-cdk-lib";
+import { AtlasBasicPrivateEndpoint, PrivateEndpointProps } from "./index";
+import { AtlasBasicProps } from "../common/props";
 
 const app = new cdk.App();
 
-const stack = new cdk.Stack(app, 'atlas-basic-private-endpoint', {
-  env: { region: process.env.CDK_DEFAULT_REGION, account: process.env.CDK_DEFAULT_ACCOUNT },
+const stack = new cdk.Stack(app, "atlas-basic-private-endpoint", {
+  env: {
+    region: process.env.CDK_DEFAULT_REGION,
+    account: process.env.CDK_DEFAULT_ACCOUNT,
+  },
 });
 
-const orgId = stack.node.tryGetContext('MONGODB_ATLAS_ORG_ID') || process.env.MONGODB_ATLAS_ORG_ID;
-const vpcId = stack.node.tryGetContext('AWS_VPC_ID') || process.env.AWS_VPC_ID;
-const subnetId = stack.node.tryGetContext('AWS_SUBNET_ID') || process.env.AWS_SUBNET_ID;
-const awsRegion = stack.node.tryGetContext('AWS_REGION') || process.env.AWS_REGION;
+const orgId =
+  stack.node.tryGetContext("MONGODB_ATLAS_ORG_ID") ||
+  process.env.MONGODB_ATLAS_ORG_ID;
+const vpcId = stack.node.tryGetContext("AWS_VPC_ID") || process.env.AWS_VPC_ID;
+const subnetId =
+  stack.node.tryGetContext("AWS_SUBNET_ID") || process.env.AWS_SUBNET_ID;
+const awsRegion =
+  stack.node.tryGetContext("AWS_REGION") || process.env.AWS_REGION;
 
 const replicationSpecs = [
   {
@@ -34,23 +40,23 @@ const replicationSpecs = [
     advancedRegionConfigs: [
       {
         analyticsSpecs: {
-          ebsVolumeType: 'STANDARD',
-          instanceSize: 'M10',
+          ebsVolumeType: "STANDARD",
+          instanceSize: "M10",
           nodeCount: 1,
         },
         electableSpecs: {
-          ebsVolumeType: 'STANDARD',
-          instanceSize: 'M10',
+          ebsVolumeType: "STANDARD",
+          instanceSize: "M10",
           nodeCount: 3,
         },
         priority: 7,
-        regionName: 'US_EAST_1',
+        regionName: "US_EAST_1",
       },
     ],
   },
 ];
 
-const atlasBasicProps : AtlasBasicProps = {
+const atlasBasicProps: AtlasBasicProps = {
   clusterProps: {
     replicationSpecs: replicationSpecs,
   },
@@ -60,18 +66,20 @@ const atlasBasicProps : AtlasBasicProps = {
   ipAccessListProps: {
     accessList: [
       {
-        ipAddress: '10.10.0.0/24',
-        comment: 'Open Subnets',
+        ipAddress: "10.10.0.0/24",
+        comment: "Open Subnets",
       },
     ],
   },
 };
 
-const privateEndpointProps : PrivateEndpointProps = {
-  privateEndpoints: [{
-    vpcId: vpcId,
-    subnetIds: [subnetId],
-  }],
+const privateEndpointProps: PrivateEndpointProps = {
+  privateEndpoints: [
+    {
+      vpcId: vpcId,
+      subnetIds: [subnetId],
+    },
+  ],
 };
 
 const props = {
@@ -80,6 +88,4 @@ const props = {
   region: awsRegion,
 };
 
-new AtlasBasicPrivateEndpoint(stack, 'private-endpoint', props);
-
-
+new AtlasBasicPrivateEndpoint(stack, "private-endpoint", props);

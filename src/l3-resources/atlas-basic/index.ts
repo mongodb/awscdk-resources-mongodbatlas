@@ -12,32 +12,31 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Construct } from 'constructs';
-import * as atlas from '../../index';
-import { AtlasBasicProps } from '../common/props';
+import { Construct } from "constructs";
+import * as atlas from "../../index";
+import { AtlasBasicProps } from "../common/props";
 
 /** @type {*} */
 const projectDefaults = {
-  projectName: 'atlas-project-',
+  projectName: "atlas-project-",
 };
 /** @type {*} */
 const dbDefaults = {
-  dbName: 'admin',
-  username: 'atlas-user',
-  password: 'atlas-pwd',
+  dbName: "admin",
+  username: "atlas-user",
+  password: "atlas-pwd",
   roles: [
     {
-      roleName: 'atlasAdmin',
-      databaseName: 'admin',
+      roleName: "atlasAdmin",
+      databaseName: "admin",
     },
   ],
 };
 /** @type {*} */
 const clusterDefaults = {
-  clusterName: 'atlas-cluster-',
-  clusterType: 'REPLICASET',
+  clusterName: "atlas-cluster-",
+  clusterType: "REPLICASET",
 };
-
 
 /**
  * @description
@@ -81,7 +80,7 @@ export class AtlasBasic extends Construct {
   constructor(scope: Construct, id: string, props: AtlasBasicProps) {
     super(scope, id);
     //Create a new MongoDB Atlas Project
-    this.mProject = new atlas.CfnProject(this, 'project-'.concat(id), {
+    this.mProject = new atlas.CfnProject(this, "project-".concat(id), {
       profile: props.profile,
       name:
         props.projectProps.name ||
@@ -89,7 +88,7 @@ export class AtlasBasic extends Construct {
       ...props.projectProps,
     });
     // Create a new MongoDB Atlas Cluster and pass project ID
-    this.mCluster = new atlas.CfnCluster(this, 'cluster-'.concat(id), {
+    this.mCluster = new atlas.CfnCluster(this, "cluster-".concat(id), {
       profile: props.profile,
       name:
         props.clusterProps.name ||
@@ -99,7 +98,7 @@ export class AtlasBasic extends Construct {
       ...props.clusterProps,
     });
     // Create a new MongoDB Atlas Database User
-    this.mDBUser = new atlas.CfnDatabaseUser(this, 'db-user-'.concat(id), {
+    this.mDBUser = new atlas.CfnDatabaseUser(this, "db-user-".concat(id), {
       profile: props.profile,
       databaseName: props.dbUserProps?.databaseName || dbDefaults.dbName,
       projectId: this.mProject.attrId,
@@ -111,13 +110,13 @@ export class AtlasBasic extends Construct {
     // Create a new MongoDB Atlas Project IP Access List
     this.ipAccessList = new atlas.CfnProjectIpAccessList(
       this,
-      'ip-access-list-'.concat(id),
+      "ip-access-list-".concat(id),
       {
         profile: props.profile,
         projectId: this.mProject.attrId,
         accessList: props.ipAccessListProps?.accessList,
         ...props.ipAccessListProps,
-      },
+      }
     );
   }
 }
