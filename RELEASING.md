@@ -9,7 +9,8 @@ Stable releases are managed by the [Release GitHub Action](https://github.com/mo
 
 
 
-Use the instructions bellow as a fallback.
+## Versioning
+The release version is determinated based on the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) in that release.
 
 
 ## Manual Release
