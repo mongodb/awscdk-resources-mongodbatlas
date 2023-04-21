@@ -3,10 +3,10 @@ name: Upgrade Dependencies
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: * * * * 2
-  permissions:
-    contents: read
-    pull-requests: write
+    - cron: 0 9 * * 2 # every Tuesday at 9am
+permissions:
+  contents: read
+  pull-requests: write
 jobs:
   upgrade:
     name: Upgrade
@@ -30,7 +30,7 @@ jobs:
         id: create_patch
         run: |-
           git add .
-          git diff --staged --patch --exit-code > .repo.patch || echo "patch_created=true" >> $GITHUB_OUTPUT
+          git diff --staged --patch --exit-code > .repo.patch || echo "patch_created=true" >> "${GITHUB_OUTPUT}"
       - name: Upload patch
         if: steps.create_patch.outputs.patch_created
         uses: actions/upload-artifact@v3
