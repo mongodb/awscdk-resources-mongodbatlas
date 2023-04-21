@@ -1,0 +1,15 @@
+# dependency-review-action scans pull requests for dependency changes, 
+# and will raise an error if any vulnerabilities or invalid licenses are being introduced.
+# This action does not work for pushes to the main branch.
+---
+name: Dependency Review
+on:
+  pull_request: {}
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Dependency Review
+        uses: actions/dependency-review-action@v3

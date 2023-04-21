@@ -43,14 +43,6 @@ jobs:
         run: yarn install --check-files
       - name: lint
         run: npx projen eslint
-  dependency-review:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-      - name: Dependency Review
-        uses: actions/dependency-review-action@v3
   shellcheck:
     name: shellcheck
     runs-on: ubuntu-latest
