@@ -6,6 +6,11 @@ on:
       - main
   workflow_dispatch: {}
   workflow_call: {}
+  pull_request: {}
+  workflow_run:
+    workflows: [Code Health]
+    types:
+      - completed
 jobs:
   build:
     runs-on: ubuntu-latest
