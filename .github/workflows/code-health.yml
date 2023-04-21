@@ -50,4 +50,11 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run ShellCheck
         uses: bewuethr/shellcheck-action@v2
+  call-package-workflow:
+    needs: [compile, lint, dependency-review, shellcheck]
+    secrets: inherit
+    permissions:
+      contents: write
+      pull-requests: read
+    uses: ./.github/workflows/package.yml
 
