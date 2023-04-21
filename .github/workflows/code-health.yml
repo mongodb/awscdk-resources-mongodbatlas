@@ -51,7 +51,7 @@ jobs:
       - name: Run ShellCheck
         uses: bewuethr/shellcheck-action@v2
   call-package-workflow:
-    needs: [compile, lint, dependency-review, shellcheck]
+    needs: [compile, lint, shellcheck]
     secrets: inherit
     permissions:
       contents: write
