@@ -1,15 +1,9 @@
 ---
 name: 'Package CDK'
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch: {}
-  workflow_call: {}
   workflow_run:
     workflows: [Code Health]
-    types:
-      - completed
+    types: [completed]
 jobs:
   build:
     runs-on: ubuntu-latest
