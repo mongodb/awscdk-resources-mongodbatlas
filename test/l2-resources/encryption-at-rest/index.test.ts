@@ -12,23 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import * as l2 from '../../../src';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import * as l2 from "../../../src";
 
+const RESOURCE_NAME = "MongoDB::Atlas::EncryptionAtRest";
+const PROFILE = "testProfile";
+const PROJECT_ID = "testProjectId";
+const ROLE_ID = "roleId";
+const REGION = "region";
+const CUSTOMER_MASTER_KEY_ID = "customerMasterKeyId";
 
-const RESOURCE_NAME = 'MongoDB::Atlas::EncryptionAtRest';
-const PROFILE = 'testProfile';
-const PROJECT_ID= 'testProjectId';
-const ROLE_ID = 'roleId';
-const REGION = 'region';
-const CUSTOMER_MASTER_KEY_ID='customerMasterKeyId';
-
-test('AtlasEncryptionAtRest construct should contain default properties', () => {
+test("AtlasEncryptionAtRest construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new l2.AtlasEncryptionAtRest(stack, 'testing-stack', {
+  new l2.AtlasEncryptionAtRest(stack, "testing-stack", {
     projectId: PROJECT_ID,
     roleId: ROLE_ID,
     customerMasterKeyId: CUSTOMER_MASTER_KEY_ID,
@@ -44,16 +43,16 @@ test('AtlasEncryptionAtRest construct should contain default properties', () => 
       RoleID: ROLE_ID,
       CustomerMasterKeyID: CUSTOMER_MASTER_KEY_ID,
       Enabled: true,
-      Region: 'US_EAST_1',
+      Region: "US_EAST_1",
     },
   });
 });
 
-test('AtlasEncryptionAtRest construct should contain all the properties', () => {
+test("AtlasEncryptionAtRest construct should contain all the properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new l2.AtlasEncryptionAtRest(stack, 'testing-stack', {
+  new l2.AtlasEncryptionAtRest(stack, "testing-stack", {
     profile: PROFILE,
     projectId: PROJECT_ID,
     roleId: ROLE_ID,
@@ -76,40 +75,44 @@ test('AtlasEncryptionAtRest construct should contain all the properties', () => 
   });
 });
 
-test('AtlasEncryptionAtRest construct should thorow exceptions when required params are not provided', () => {
+test("AtlasEncryptionAtRest construct should thorow exceptions when required params are not provided", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
   expect(() => {
-    new l2.AtlasEncryptionAtRest(stack, 'testing-stack-no-project-id', {
+    new l2.AtlasEncryptionAtRest(stack, "testing-stack-no-project-id", {
       profile: PROFILE,
-      projectId: '',
+      projectId: "",
       roleId: ROLE_ID,
       customerMasterKeyId: CUSTOMER_MASTER_KEY_ID,
       region: REGION,
       enabled: false,
     });
-  }).toThrow('Validation error: projectId is not defined');
+  }).toThrow("Validation error: projectId is not defined");
 
   expect(() => {
-    new l2.AtlasEncryptionAtRest(stack, 'testing-stack-no-role-id', {
+    new l2.AtlasEncryptionAtRest(stack, "testing-stack-no-role-id", {
       profile: PROFILE,
       projectId: PROJECT_ID,
-      roleId: '',
+      roleId: "",
       customerMasterKeyId: CUSTOMER_MASTER_KEY_ID,
       region: REGION,
       enabled: false,
     });
-  }).toThrow('Validation error: roleId is not defined');
+  }).toThrow("Validation error: roleId is not defined");
 
   expect(() => {
-    new l2.AtlasEncryptionAtRest(stack, 'testing-stack-no-customer-master-key-id', {
-      profile: PROFILE,
-      projectId: PROJECT_ID,
-      roleId: ROLE_ID,
-      customerMasterKeyId: '',
-      region: REGION,
-      enabled: false,
-    });
-  }).toThrow('Validation error: customerMasterKeyId is not defined');
+    new l2.AtlasEncryptionAtRest(
+      stack,
+      "testing-stack-no-customer-master-key-id",
+      {
+        profile: PROFILE,
+        projectId: PROJECT_ID,
+        roleId: ROLE_ID,
+        customerMasterKeyId: "",
+        region: REGION,
+        enabled: false,
+      }
+    );
+  }).toThrow("Validation error: customerMasterKeyId is not defined");
 });

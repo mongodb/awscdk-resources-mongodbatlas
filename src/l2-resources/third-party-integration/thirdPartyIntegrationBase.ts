@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 export interface ThirdPartyIntegrationProps {
-
   /**
    * Unique 24-hexadecimal digit string that identifies your project.
    */

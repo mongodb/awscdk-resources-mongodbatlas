@@ -43,52 +43,55 @@ We're here to help! This is simply a reminder of what we are going to look for b
 ## Further comments
 `;
 
-
-const { awscdk, javascript, JsonFile } = require('projen');
-const { ReleaseTrigger } = require('projen/lib/release');
+const { awscdk, javascript, JsonFile } = require("projen");
+const { ReleaseTrigger } = require("projen/lib/release");
 const project = new awscdk.AwsCdkConstructLibrary({
-  author: 'MongoDB',
-  authorAddress: 'https://www.mongodb.com/',
-  description: 'MongoDB Atlas CDK Construct Library for AWS CloudFormation Resources',
-  cdkVersion: '2.64.0',
-  defaultReleaseBranch: 'main',
-  name: 'awscdk-resources-mongodbatlas',
-  repositoryUrl: 'https://github.com/mongodb/awscdk-resources-mongodbatlas.git',
-  keywords: ['cdk',
-    'aws-cdk',
-    'awscdk',
-    'cloudformation',
-    'cfn',
-    'extensions',
-    'constructs',
-    'cfn-resources',
-    'cloudformation-registry',
-    'l1',
-    'l2',
-    'l3',
-    'mongodb',
-    'atlas'],
+  author: "MongoDB",
+  authorAddress: "https://www.mongodb.com/",
+  description:
+    "MongoDB Atlas CDK Construct Library for AWS CloudFormation Resources",
+  cdkVersion: "2.64.0",
+  defaultReleaseBranch: "main",
+  name: "awscdk-resources-mongodbatlas",
+  repositoryUrl: "https://github.com/mongodb/awscdk-resources-mongodbatlas.git",
+  keywords: [
+    "cdk",
+    "aws-cdk",
+    "awscdk",
+    "cloudformation",
+    "cfn",
+    "extensions",
+    "constructs",
+    "cfn-resources",
+    "cloudformation-registry",
+    "l1",
+    "l2",
+    "l3",
+    "mongodb",
+    "atlas",
+  ],
   npmAccess: javascript.NpmAccess.PUBLIC,
   majorVersion: 1,
+  prettier: true,
   docgen: true,
   releaseToNpm: true,
   publishToNuget: {
-    dotNetNamespace: 'MongoDB.AWSCDKResourcesMongoDBAtlas',
-    packageId: 'MongoDB.AWSCDKResourcesMongoDBAtlas',
+    dotNetNamespace: "MongoDB.AWSCDKResourcesMongoDBAtlas",
+    packageId: "MongoDB.AWSCDKResourcesMongoDBAtlas",
   },
   publishToMaven: {
-    javaPackage: 'org.mongodb.awscdk.resources.mongodbatlas',
-    mavenArtifactId: 'awscdk-resources-mongodbatlas',
-    mavenGroupId: 'org.mongodb',
+    javaPackage: "org.mongodb.awscdk.resources.mongodbatlas",
+    mavenArtifactId: "awscdk-resources-mongodbatlas",
+    mavenGroupId: "org.mongodb",
   },
   publishToPypi: {
-    distName: 'awscdk_resources_mongodbatlas',
-    module: 'awscdk_resources_mongodbatlas',
-    homepage: 'https://github.com/mongodb/awscdk-resources-mongodbatlas',
+    distName: "awscdk_resources_mongodbatlas",
+    module: "awscdk_resources_mongodbatlas",
+    homepage: "https://github.com/mongodb/awscdk-resources-mongodbatlas",
   },
   publishToGo: {
-    moduleName: 'github.com/mongodb/awscdk-resources-mongodbatlas-go',
-    packageName: 'awscdkresourcesmongodbatlas',
+    moduleName: "github.com/mongodb/awscdk-resources-mongodbatlas-go",
+    packageName: "awscdkresourcesmongodbatlas",
   },
   sampleCode: false,
   peerDeps: [],
@@ -97,14 +100,29 @@ const project = new awscdk.AwsCdkConstructLibrary({
   githubOptions: { workflows: false },
 });
 
-new JsonFile(project, 'cdk.json', {
+new JsonFile(project, "cdk.json", {
   obj: {
-    app: 'npx ts-node --prefer-ts-exts src/integ.default.ts',
+    app: "npx ts-node --prefer-ts-exts src/integ.default.ts",
   },
 });
 
-const common_exclude = ['cdk.out', 'cdk.context.json', 'yarn-error.log', '*.DS_Store'];
+const common_exclude = [
+  "cdk.out",
+  "cdk.context.json",
+  "yarn-error.log",
+  "*.DS_Store",
+];
 project.gitignore.exclude(...common_exclude);
-project.npmignore.exclude(...common_exclude, '/submodules/', '/src/', 'CONTRIBUTING.md', 'TESTING.md',
-  'CODE_OF_CONDUCT.md', 'SECURITY.md', 'cdk.json', '/scripts/', '/examples/');
+project.npmignore.exclude(
+  ...common_exclude,
+  "/submodules/",
+  "/src/",
+  "CONTRIBUTING.md",
+  "TESTING.md",
+  "CODE_OF_CONDUCT.md",
+  "SECURITY.md",
+  "cdk.json",
+  "/scripts/",
+  "/examples/"
+);
 project.synth();

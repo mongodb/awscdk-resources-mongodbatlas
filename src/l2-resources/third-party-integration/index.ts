@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export * from './thirdPartyIntegrationBase';
-export * from './microsoftTeamsIntegration';
-export * from './datadogIntegration';
-export * from './pagerDutyIntegration';
+export * from "./thirdPartyIntegrationBase";
+export * from "./microsoftTeamsIntegration";
+export * from "./datadogIntegration";
+export * from "./pagerDutyIntegration";

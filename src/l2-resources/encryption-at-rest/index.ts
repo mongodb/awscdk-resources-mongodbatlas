@@ -12,92 +12,94 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Construct } from 'constructs';
-import {
-  CfnEncryptionAtRest,
-} from '../../index';
+import { Construct } from "constructs";
+import { CfnEncryptionAtRest } from "../../index";
 
-const US_EAST_1 = 'US_EAST_1';
-
+const US_EAST_1 = "US_EAST_1";
 
 export interface AtlasEncryptionAtRestProps {
   /**
-       * ID of an AWS IAM role authorized to manage an AWS customer master key.
-       *
-       * @schema AwsKms#RoleID
-       */
+   * ID of an AWS IAM role authorized to manage an AWS customer master key.
+   *
+   * @schema AwsKms#RoleID
+   */
   readonly roleId: string;
   /**
-       * The AWS customer master key used to encrypt and decrypt the MongoDB master keys.
-       *
-       * @schema AwsKms#CustomerMasterKeyID
-       */
+   * The AWS customer master key used to encrypt and decrypt the MongoDB master keys.
+   *
+   * @schema AwsKms#CustomerMasterKeyID
+   */
   readonly customerMasterKeyId: string;
   /**
-       * Specifies whether Encryption at Rest is enabled for an Atlas project. To disable Encryption at Rest, pass only this parameter with a value of false. When you disable Encryption at Rest, Atlas also removes the configuration details.
-       * Default Value: true
-       * @schema AwsKms#Enabled
-       */
+   * Specifies whether Encryption at Rest is enabled for an Atlas project. To disable Encryption at Rest, pass only this parameter with a value of false. When you disable Encryption at Rest, Atlas also removes the configuration details.
+   * Default Value: true
+   * @schema AwsKms#Enabled
+   */
   readonly enabled?: boolean;
   /**
-       * The AWS region in which the AWS customer master key exists.
-       * Default Value: US_EAST_1
-       * @schema AwsKms#Region
-       */
+   * The AWS region in which the AWS customer master key exists.
+   * Default Value: US_EAST_1
+   * @schema AwsKms#Region
+   */
   readonly region?: string;
 
   /**
-       * Unique identifier of the Atlas project to which the user belongs.
-       *
-       * @schema CfnEncryptionAtRestProps#ProjectId
-       */
+   * Unique identifier of the Atlas project to which the user belongs.
+   *
+   * @schema CfnEncryptionAtRestProps#ProjectId
+   */
   readonly projectId: string;
 
   /**
-     * The profile is defined in AWS Secret manager.
-     * See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
-     *
-     * @schema CfnEncryptionAtRestProps#Profile
-     */
+   * The profile is defined in AWS Secret manager.
+   * See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
+   *
+   * @schema CfnEncryptionAtRestProps#Profile
+   */
   readonly profile?: string;
 }
 
-
 /**
-   * It throws an error if any of the required properties are not defined
-   * @param {AtlasEncryptionAtRestProps} props - AtlasEncryptionAtRestProps
-   */
+ * It throws an error if any of the required properties are not defined
+ * @param {AtlasEncryptionAtRestProps} props - AtlasEncryptionAtRestProps
+ */
 const validate = (props: AtlasEncryptionAtRestProps) => {
-  if (!props.projectId) { throw Error('Validation error: projectId is not defined'); }
+  if (!props.projectId) {
+    throw Error("Validation error: projectId is not defined");
+  }
 
-  if (!props.customerMasterKeyId) { throw Error('Validation error: customerMasterKeyId is not defined'); }
+  if (!props.customerMasterKeyId) {
+    throw Error("Validation error: customerMasterKeyId is not defined");
+  }
 
-  if (!props.roleId) { throw Error('Validation error: roleId is not defined'); }
+  if (!props.roleId) {
+    throw Error("Validation error: roleId is not defined");
+  }
 };
 
 /**
-   *
-   *
-   * @export
-   * @class AtlasEncryptionAtRest
-   * @extends {Construct}
-   */
+ *
+ *
+ * @export
+ * @class AtlasEncryptionAtRest
+ * @extends {Construct}
+ */
 export class AtlasEncryptionAtRest extends Construct {
-
   /**
-     *
-     *
-     * @type {CfnEncryptionAtRest}
-     * @memberof AtlasEncryptionAtRest
-     */
+   *
+   *
+   * @type {CfnEncryptionAtRest}
+   * @memberof AtlasEncryptionAtRest
+   */
   readonly cfnEncryptionAtRest: CfnEncryptionAtRest;
 
   constructor(scope: Construct, id: string, props: AtlasEncryptionAtRestProps) {
     super(scope, id);
 
     validate(props);
-    this.cfnEncryptionAtRest = new CfnEncryptionAtRest(this,
-      'AtlasEncryptionAtRest',
+    this.cfnEncryptionAtRest = new CfnEncryptionAtRest(
+      this,
+      "AtlasEncryptionAtRest",
       {
         awsKms: {
           enabled: props.enabled == undefined ? true : props.enabled,
@@ -107,7 +109,7 @@ export class AtlasEncryptionAtRest extends Construct {
         },
         profile: props.profile,
         projectId: props.projectId,
-      });
+      }
+    );
   }
 }
-

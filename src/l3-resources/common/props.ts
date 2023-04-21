@@ -1,4 +1,4 @@
-import * as atlas from '../../index';
+import * as atlas from "../../index";
 
 /**
  * @description

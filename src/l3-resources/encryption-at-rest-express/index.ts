@@ -12,31 +12,31 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Construct } from 'constructs';
-import * as atlas from '../../index';
+import { Construct } from "constructs";
+import * as atlas from "../../index";
 import {
   ClusterProps,
   DatabaseUserProps,
   IpAccessListProps,
-} from '../common/props';
+} from "../common/props";
 
 const NODE_COUNT = 3;
 const NODE_COUNT_ANALYTICS = 1;
 const BACKUP_ENABLED = true;
-const INSTANCE_SIZE = 'M30';
-const MONGODB_VERSION = '5.0';
+const INSTANCE_SIZE = "M30";
+const MONGODB_VERSION = "5.0";
 const ENCRYPTION_AT_REST_PROVIDER =
   atlas.CfnClusterPropsEncryptionAtRestProvider.AWS;
-const REGION = 'US_EAST_1';
-const EBS_VOLUME_TYPE = 'STANDARD';
+const REGION = "US_EAST_1";
+const EBS_VOLUME_TYPE = "STANDARD";
 const ENABLE_ENCRYPTION_AT_REST = true;
-const CLUSTER_TYPE = 'REPLICASET';
-const DB_NAME = 'admin';
-const USERNAME = 'cdkUser';
+const CLUSTER_TYPE = "REPLICASET";
+const DB_NAME = "admin";
+const USERNAME = "cdkUser";
 const ROLE = [
   {
-    roleName: 'atlasAdmin',
-    databaseName: 'admin',
+    roleName: "atlasAdmin",
+    databaseName: "admin",
   },
 ];
 
@@ -47,11 +47,11 @@ function randomNumber() {
 }
 
 function getClusterProps(
-  inputClusterProps: ClusterProps,
+  inputClusterProps: ClusterProps
 ): atlas.CfnClusterProps {
   return {
     name:
-      inputClusterProps.name || 'atlas-cluster-'.concat(String(randomNumber())),
+      inputClusterProps.name || "atlas-cluster-".concat(String(randomNumber())),
     mongoDbMajorVersion:
       inputClusterProps.mongoDbMajorVersion || MONGODB_VERSION,
     backupEnabled: inputClusterProps.backupEnabled || BACKUP_ENABLED,
@@ -70,7 +70,7 @@ function getClusterProps(
     advancedSettings: inputClusterProps.advancedSettings,
     replicationSpecs:
       inputClusterProps.replicationSpecs || getDefaultClusterReplicationSpec(),
-    projectId: '',
+    projectId: "",
   };
 }
 
@@ -144,13 +144,13 @@ export class AtlasEncryptionAtRestExpress extends Construct {
   constructor(
     scope: Construct,
     id: string,
-    props: AtlasEncryptionAtRestExpressProps,
+    props: AtlasEncryptionAtRestExpressProps
   ) {
     super(scope, id);
 
     this.encryptionAtRest = new atlas.CfnEncryptionAtRest(
       this,
-      'encryption-at-rest-'.concat(id),
+      "encryption-at-rest-".concat(id),
       {
         awsKms: {
           customerMasterKeyId: props.encryptionAtRest.customerMasterKeyId,
@@ -162,13 +162,13 @@ export class AtlasEncryptionAtRestExpress extends Construct {
         },
         projectId: props.projectId,
         profile: props.profile,
-      },
+      }
     );
 
     if (props.cluster) {
       // Create a new MongoDB Atlas Cluster and pass project ID
       const clusterProps = getClusterProps(props.cluster);
-      this.cluster = new atlas.CfnCluster(this, 'cluster-'.concat(id), {
+      this.cluster = new atlas.CfnCluster(this, "cluster-".concat(id), {
         ...clusterProps,
         profile: props.profile,
         projectId: props.projectId,
@@ -179,7 +179,7 @@ export class AtlasEncryptionAtRestExpress extends Construct {
       // Create a new MongoDB Atlas Database User
       this.databaseUser = new atlas.CfnDatabaseUser(
         this,
-        'db-user-'.concat(id),
+        "db-user-".concat(id),
         {
           ...props.databaseUser,
           profile: props.profile,
@@ -188,7 +188,7 @@ export class AtlasEncryptionAtRestExpress extends Construct {
           username: props.databaseUser?.username || USERNAME,
           roles: props.databaseUser?.roles || ROLE,
           password: props.databaseUser.password,
-        },
+        }
       );
     }
 
@@ -196,12 +196,12 @@ export class AtlasEncryptionAtRestExpress extends Construct {
       // Create a new MongoDB Atlas Project IP Access List
       this.accessList = new atlas.CfnProjectIpAccessList(
         this,
-        'access-list-'.concat(id),
+        "access-list-".concat(id),
         {
           ...props.accessList,
           profile: props.profile,
           projectId: props.projectId,
-        },
+        }
       );
     }
   }

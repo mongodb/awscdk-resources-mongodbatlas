@@ -12,29 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import * as l3 from '../../../src';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import * as l3 from "../../../src";
 
-const RESOURCE_NAME_PROJECT = 'MongoDB::Atlas::Project';
-const RESOURCE_NAME_CLUSTER = 'MongoDB::Atlas::Cluster';
-const RESOURCE_NAME_DB_USER = 'MongoDB::Atlas::DatabaseUser';
-const PROJECT_ID = 'testProjectId';
-const ORG_ID = 'testProjectId';
-const PROJECT_NAME = 'test';
-const INSTANCE_SIZE = 'M30';
-const REGION = 'US_EAST_1';
-const DATABASE_NAME = 'test';
-const DATABASE_USER_NAME = 'atlas-user';
-const ADMIN_DB = 'admin';
-const ROLE_NAME = 'atlasAdmin';
-const PWD = 'test';
+const RESOURCE_NAME_PROJECT = "MongoDB::Atlas::Project";
+const RESOURCE_NAME_CLUSTER = "MongoDB::Atlas::Cluster";
+const RESOURCE_NAME_DB_USER = "MongoDB::Atlas::DatabaseUser";
+const PROJECT_ID = "testProjectId";
+const ORG_ID = "testProjectId";
+const PROJECT_NAME = "test";
+const INSTANCE_SIZE = "M30";
+const REGION = "US_EAST_1";
+const DATABASE_NAME = "test";
+const DATABASE_USER_NAME = "atlas-user";
+const ADMIN_DB = "admin";
+const ROLE_NAME = "atlasAdmin";
+const PWD = "test";
 
-test('AtlasBasis construct should contain default properties', () => {
+test("AtlasBasis construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new l3.AtlasBasic(stack, 'testing-stack', {
+  new l3.AtlasBasic(stack, "testing-stack", {
     clusterProps: {
       replicationSpecs: [
         {
@@ -71,7 +71,7 @@ test('AtlasBasis construct should contain default properties', () => {
   });
 
   template.hasResourceProperties(RESOURCE_NAME_CLUSTER, {
-    ClusterType: 'REPLICASET',
+    ClusterType: "REPLICASET",
     Name: PROJECT_NAME,
     ReplicationSpecs: [
       {

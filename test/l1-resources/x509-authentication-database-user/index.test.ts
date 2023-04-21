@@ -12,19 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import { CfnX509AuthenticationDatabaseUser } from '../../../src/l1-resources/x509-authentication-database-user';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { CfnX509AuthenticationDatabaseUser } from "../../../src/l1-resources/x509-authentication-database-user";
 
+const RESOURCE_NAME = "MongoDB::Atlas::X509AuthenticationDatabaseUser";
+const PROJECT_ID = "testProjectId";
 
-const RESOURCE_NAME = 'MongoDB::Atlas::X509AuthenticationDatabaseUser';
-const PROJECT_ID= 'testProjectId';
-
-test('X509AuthenticationDatabaseUser construct should contain default properties', () => {
+test("X509AuthenticationDatabaseUser construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new CfnX509AuthenticationDatabaseUser(stack, 'testing-stack', {
+  new CfnX509AuthenticationDatabaseUser(stack, "testing-stack", {
     projectId: PROJECT_ID,
   });
 

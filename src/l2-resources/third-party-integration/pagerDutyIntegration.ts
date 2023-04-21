@@ -12,17 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Construct } from 'constructs';
-import { ThirdPartyIntegrationProps } from './thirdPartyIntegrationBase';
-import * as util from './util';
+import { Construct } from "constructs";
+import { ThirdPartyIntegrationProps } from "./thirdPartyIntegrationBase";
+import * as util from "./util";
 import {
   CfnThirdPartyIntegration,
   CfnThirdPartyIntegrationPropsType,
-} from '../../index';
+} from "../../index";
 
 export enum PagerDutyRegion {
-  US = 'US',
-  EU = 'EU',
+  US = "US",
+  EU = "EU",
 }
 
 export interface PagerDutyIntegrationProps extends ThirdPartyIntegrationProps {
@@ -39,8 +39,12 @@ export interface PagerDutyIntegrationProps extends ThirdPartyIntegrationProps {
 
 const validate = (props: PagerDutyIntegrationProps) => {
   util.validate(props);
-  if (!props.serviceKey) { throw Error(util.getPropUndefinedMsg('serviceKey')); }
-  if (!props.region) { throw Error(util.getPropUndefinedMsg('region')); }
+  if (!props.serviceKey) {
+    throw Error(util.getPropUndefinedMsg("serviceKey"));
+  }
+  if (!props.region) {
+    throw Error(util.getPropUndefinedMsg("region"));
+  }
 };
 
 export class PagerDutyIntegration extends Construct {
@@ -50,11 +54,13 @@ export class PagerDutyIntegration extends Construct {
     super(scope, id);
     validate(props);
 
-    this.cfnThirdPartyIntegration = new CfnThirdPartyIntegration(this,
-      'PAGER_DUTY_Integration',
+    this.cfnThirdPartyIntegration = new CfnThirdPartyIntegration(
+      this,
+      "PAGER_DUTY_Integration",
       {
         ...props,
         type: CfnThirdPartyIntegrationPropsType.PAGER_DUTY,
-      });
+      }
+    );
   }
 }

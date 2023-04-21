@@ -12,21 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack } from 'aws-cdk-lib';
-import { Template } from 'aws-cdk-lib/assertions';
-import { CfnTeams } from '../../../src/l1-resources/teams';
+import { App, Stack } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
+import { CfnTeams } from "../../../src/l1-resources/teams";
 
+const RESOURCE_NAME = "MongoDB::Atlas::Teams";
+const PROFILE = "default";
 
-const RESOURCE_NAME = 'MongoDB::Atlas::Teams';
-const PROFILE= 'default';
-
-test('Teams construct should contain default properties', () => {
+test("Teams construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new CfnTeams(stack, 'testing-stack', {
+  new CfnTeams(stack, "testing-stack", {
     profile: PROFILE,
-
   });
 
   const template = Template.fromStack(stack);

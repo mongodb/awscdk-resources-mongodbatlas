@@ -12,17 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Construct } from 'constructs';
-import {
-  CfnPrivateEndpoint,
-  PrivateEndpoint,
-} from '../../index';
-import { AtlasBasic } from '../atlas-basic';
-import { AtlasBasicProps } from '../common/props';
+import { Construct } from "constructs";
+import { CfnPrivateEndpoint, PrivateEndpoint } from "../../index";
+import { AtlasBasic } from "../atlas-basic";
+import { AtlasBasicProps } from "../common/props";
 
 /** @type {*} */
 const privateEndpointDefaults = {
-  region: 'us-east-1',
+  region: "us-east-1",
 };
 
 /**
@@ -45,31 +42,31 @@ export class AtlasBasicPrivateEndpoint extends Construct {
   constructor(
     scope: Construct,
     id: string,
-    props: AtlasBasicPrivateEndpointProps,
+    props: AtlasBasicPrivateEndpointProps
   ) {
     super(scope, id);
     validate(props);
     // Validation for atlas basic would be delegated to the library
-    this.atlasBasic = new AtlasBasic(this, 'atlas-basic-'.concat(id), {
+    this.atlasBasic = new AtlasBasic(this, "atlas-basic-".concat(id), {
       profile: props.profile,
       ...props.atlasBasicProps,
     });
     this.privateEndpoint = new CfnPrivateEndpoint(
       this,
-      'private-endpoint-'.concat(id),
+      "private-endpoint-".concat(id),
       {
         profile: props.profile,
         groupId: this.atlasBasic.mProject.attrId,
         region: props.region || privateEndpointDefaults.region,
         ...props.privateEndpointProps,
-      },
+      }
     );
   }
 }
 
 const validate = (props: AtlasBasicPrivateEndpointProps) => {
   if (!props.atlasBasicProps.projectProps.orgId) {
-    throw Error('Validation error: orgId is not defined');
+    throw Error("Validation error: orgId is not defined");
   }
 };
 

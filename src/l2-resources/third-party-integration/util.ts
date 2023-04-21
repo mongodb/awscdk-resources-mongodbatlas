@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { ThirdPartyIntegrationProps } from './thirdPartyIntegrationBase';
+import { ThirdPartyIntegrationProps } from "./thirdPartyIntegrationBase";
 
 /**
  * This method validates that all required properties are present.
@@ -20,10 +20,10 @@ import { ThirdPartyIntegrationProps } from './thirdPartyIntegrationBase';
  */
 export const validate = (props: ThirdPartyIntegrationProps) => {
   if (!props.projectId) {
-    throw Error(getPropUndefinedMsg('projectId'));
+    throw Error(getPropUndefinedMsg("projectId"));
   }
 };
 
 export const getPropUndefinedMsg = (prop: string) => {
-  return 'Validation error: ' + prop + ' is not defined';
+  return "Validation error: " + prop + " is not defined";
 };
