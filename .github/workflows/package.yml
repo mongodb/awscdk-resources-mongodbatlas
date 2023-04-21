@@ -78,8 +78,6 @@ jobs:
         run: cd .repo && yarn install --check-files --frozen-lockfile
       - name: Create js artifact
         run: cd .repo && npx projen package:js
-      - name: Collect js Artifact
-        run: mv .repo/dist dist
   package-java:
     needs: build
     runs-on: ubuntu-latest
@@ -107,8 +105,6 @@ jobs:
         run: cd .repo && yarn install --check-files --frozen-lockfile
       - name: Create java artifact
         run: cd .repo && npx projen package:java
-      - name: Collect java Artifact
-        run: mv .repo/dist dist
   package-python:
     needs: build
     runs-on: ubuntu-latest
@@ -135,8 +131,6 @@ jobs:
         run: cd .repo && yarn install --check-files --frozen-lockfile
       - name: Create python artifact
         run: cd .repo && npx projen package:python
-      - name: Collect python Artifact
-        run: mv .repo/dist dist
   package-dotnet:
     needs: build
     runs-on: ubuntu-latest
@@ -163,8 +157,6 @@ jobs:
         run: cd .repo && yarn install --check-files --frozen-lockfile
       - name: Create dotnet artifact
         run: cd .repo && npx projen package:dotnet
-      - name: Collect dotnet Artifact
-        run: mv .repo/dist dist
   package-go:
     needs: build
     runs-on: ubuntu-latest
@@ -191,5 +183,4 @@ jobs:
         run: cd .repo && yarn install --check-files --frozen-lockfile
       - name: Create go artifact
         run: cd .repo && npx projen package:go
-      - name: Collect go Artifact
-        run: mv .repo/dist dist
+
