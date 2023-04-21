@@ -1,9 +1,10 @@
 ---
-name: 'Package CDK'
+name: Package CDK
 on:
   workflow_run:
     workflows: [Code Health]
-    types: [completed]
+    types:
+      - completed
 jobs:
   build:
     runs-on: ubuntu-latest
