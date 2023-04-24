@@ -23,4 +23,4 @@ These CFN resources must be active in your AWS account while using this construc
 
 ![image](https://user-images.githubusercontent.com/122359335/228263944-f4b35480-7cc3-4b6d-afbb-cd8975ecab19.png)
 
-2. Ensure general [CDK resource success criteria](../../../TESTING.md#success-criteria-to-be-satisfied-when-testing-a-construct) for this resource is met.
+2. Ensure general [CDK resource success criteria](../../../TESTING.md) for this resource is met.

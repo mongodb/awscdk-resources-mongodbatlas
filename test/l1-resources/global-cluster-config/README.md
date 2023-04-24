@@ -13,7 +13,7 @@ These resources are created as part of `cfn-testing-helper.sh`
 
 ## Manual QA
 - Follow prerequisite steps for testing a CDK construct in [TESTING.md](../../../TESTING.md).
-- Follow prerequisite steps for the corresponding [GlobalClusterConfig CFN resource](../../../../cfn-resources/global-cluster-config/test/README.md).
+- Follow prerequisite steps for the corresponding [GlobalClusterConfig CFN resource](https://github.com/mongodb/mongodbatlas-cloudformation-resources/blob/master/cfn-resources/global-cluster-config/test/README.md).
 - Set any additional required configuration options/parameters as per your needs.
 - Please follow the steps in [TESTING.md](../../../TESTING.md).
 
@@ -26,7 +26,7 @@ This can be validated via GET API call at URL:
 
 ![image](https://user-images.githubusercontent.com/122359335/229160264-92715616-656e-4e7c-bd33-b6241041f9ae.png)
 
-2. Ensure general [CDK resource success criteria](../../../TESTING.md#success-criteria-to-be-satisfied-when-testing-a-construct) for this resource is met.
+2. Ensure general [CDK resource success criteria](../../../TESTING.md) for this resource is met.
 
 ## Important Links
 - [API Documentation](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Global-Clusters)

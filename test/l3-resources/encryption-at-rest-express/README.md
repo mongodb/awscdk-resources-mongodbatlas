@@ -69,7 +69,7 @@ RequestBody:
 
 ![image](https://user-images.githubusercontent.com/122359335/228582032-14ef9f65-dc8d-4bb4-b7b0-1ab77a6257e6.png)
 
-2. Ensure general [CDK resource success criteria](../../../TESTING.md#success-criteria-to-be-satisfied-when-testing-a-construct) for this resource is met.
+2. Ensure general [CDK resource success criteria](../../../TESTING.md) for this resource is met.
 
 ## Important links
 - [Resource Usage Documentation](https://www.mongodb.com/docs/atlas/security-aws-kms/#std-label-security-aws-kms)

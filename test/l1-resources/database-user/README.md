@@ -17,7 +17,7 @@ This CFN resource must be active in your AWS account while using this constructo
 
 ## Manual QA
 - Follow prerequisite steps for testing a CDK construct in [TESTING.md](../../../TESTING.md).
-- Follow prerequisite steps for the corresponding [Database User CFN resource](../../../../cfn-resources/database-user/test/README.md).
+- Follow prerequisite steps for the corresponding [Database User CFN resource](https://github.com/mongodb/mongodbatlas-cloudformation-resources/blob/master/cfn-resources/database-user/test/README.md).
 - Set any additional required configuration options/parameters as per your needs.
 - Please, follows the steps in [TESTING.md](../../../TESTING.md).
 
