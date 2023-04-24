@@ -7,7 +7,7 @@ This CFN resource must be active in your AWS account while using this constructo
 
 ## Manual QA
 - Follow prerequisite steps for testing a CDK construct in [TESTING.md](../../../TESTING.md).
-- Follow prerequisite steps for the corresponding [Online Archive CFN resource](../../../../cfn-resources/online-archive/test/README.md).
+- Follow prerequisite steps for the corresponding [Online Archive CFN resource](https://github.com/mongodb/mongodbatlas-cloudformation-resources/blob/master/cfn-resources/online-archive/test/README.md).
 - Set any additional required configuration options/parameters as per your needs.
 - Please follow the steps in [TESTING.md](../../../TESTING.md).
 
@@ -17,7 +17,7 @@ This CFN resource must be active in your AWS account while using this constructo
 
 ![image](https://user-images.githubusercontent.com/122359335/227655088-8c1d44d3-da02-4413-af2a-5d814ab113a8.png)
 
-2. Ensure general [CDK resource success criteria](../../../TESTING.md#success-criteria-to-be-satisfied-when-testing-a-construct) for this resource is met.
+2. Ensure general [CDK resource success criteria](../../../TESTING.md) for this resource is met.
 
 ## Important Links
 - [API Documentation](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Online-Archive)

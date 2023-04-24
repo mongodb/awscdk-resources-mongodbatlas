@@ -7,7 +7,7 @@ This CFN resource must be active in your AWS account while using this constructo
 
 ## Manual QA
 - Follow prerequisite steps for testing a CDK construct in [TESTING.md](../../../TESTING.md).
-- Follow prerequisite steps for the corresponding [Trigger CFN resource](../../../../cfn-resources/trigger/test/README.md).
+- Follow prerequisite steps for the corresponding [Trigger CFN resource](https://github.com/mongodb/mongodbatlas-cloudformation-resources/blob/master/cfn-resources/trigger/test/README.md).
 - Set any additional required configuration options/parameters as per your needs.
 - Please follow the steps in [TESTING.md](../../../TESTING.md).
 
@@ -17,7 +17,7 @@ This CFN resource must be active in your AWS account while using this constructo
 
    ![image](https://user-images.githubusercontent.com/122359335/227495196-59063691-c475-449c-b6b1-f206f4404715.png)
 
-2. Ensure general [CDK resource success criteria](../../../TESTING.md#success-criteria-to-be-satisfied-when-testing-a-construct) for this resource is met.
+2. Ensure general [CDK resource success criteria](../../../TESTING.md) for this resource is met.
 
 ## Important Links
 - [API Documentation](https://www.mongodb.com/docs/atlas/app-services/admin/api/v3/#tag/triggers)

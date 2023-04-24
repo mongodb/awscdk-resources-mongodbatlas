@@ -14,7 +14,7 @@ This CFN resource must be active in your AWS account while using this constructo
 
 ## Manual QA
 - Follow prerequisite steps for testing a CDK construct in [TESTING.md](../../../TESTING.md).
-- Follow prerequisite steps for the corresponding [Encryption At Rest CFN resource](../../../../cfn-resources/encryption-at-rest/test/README.md).
+- Follow prerequisite steps for the corresponding [Encryption At Rest CFN resource](https://github.com/mongodb/mongodbatlas-cloudformation-resources/blob/master/cfn-resources/encryption-at-rest/test/README.md).
 - Set any additional required configuration options/parameters as per your needs.
 - Please, follows the steps in [TESTING.md](../../../TESTING.md).
 
