@@ -60,7 +60,7 @@ jobs:
           git config user.email "github-actions@github.com"
       - name: Create Pull Request
         id: create-pr
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: |-
@@ -73,7 +73,6 @@ jobs:
             ------
 
             *Automatically created by projen via the "upgrade-main" workflow*
-          branch: github-actions/upgrade-main
           title: "chore(deps): upgrade dependencies"
           body: |-
             Upgrades project dependencies. See details in [workflow run].
@@ -86,3 +85,4 @@ jobs:
           author: github-actions <github-actions@github.com>
           committer: github-actions <github-actions@github.com>
           signoff: true
+
