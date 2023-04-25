@@ -62,6 +62,7 @@ jobs:
         id: create-pr
         uses: peter-evans/create-pull-request@v5
         with:
+          token: ${{ secrets.TOKEN_TO_OPEN_PR }}
           commit-message: |-
             chore(deps): upgrade dependencies
 
