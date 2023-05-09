@@ -16,14 +16,14 @@ export interface CfnDatabaseUserProps {
   readonly deleteAfterDate?: string;
 
   /**
-   * Human-readable label that indicates whether the new database user authenticates with the Amazon Web Services (AWS) Identity and Access Management (IAM) credentials associated with the user or the user's role.
+   * Human-readable label that indicates whether the new database user authenticates with the Amazon Web Services (AWS) Identity and Access Management (IAM) credentials associated with the user or the user's role. Default value is `NONE`.
    *
    * @schema CfnDatabaseUserProps#AWSIAMType
    */
   readonly awsiamType?: CfnDatabaseUserPropsAwsiamType;
 
   /**
-   * MongoDB database against which the MongoDB database user authenticates. MongoDB database users must provide both a username and authentication database to log into MongoDB.
+   * MongoDB database against which the MongoDB database user authenticates. MongoDB database users must provide both a username and authentication database to log into MongoDB.  Default value is `admin`.
    *
    * @schema CfnDatabaseUserProps#DatabaseName
    */
@@ -37,14 +37,14 @@ export interface CfnDatabaseUserProps {
   readonly labels?: LabelDefinition[];
 
   /**
-   * Method by which the provided username is authenticated. If no value is given, Atlas uses the default value of NONE.
+   * Method by which the provided username is authenticated. Default value is `NONE`.
    *
    * @schema CfnDatabaseUserProps#LdapAuthType
    */
   readonly ldapAuthType?: CfnDatabaseUserPropsLdapAuthType;
 
   /**
-   * Method that briefs who owns the certificate provided. If no value is given while using X509Type, Atlas uses the default value of MANAGED.
+   * Method that briefs who owns the certificate provided. Default value is `NONE`.
    *
    * @schema CfnDatabaseUserProps#X509Type
    */
@@ -58,7 +58,7 @@ export interface CfnDatabaseUserProps {
   readonly password?: string;
 
   /**
-   * Unique identifier of the Atlas project to which the user belongs.
+   * Unique 24-hexadecimal digit string that identifies your Atlas Project.
    *
    * @schema CfnDatabaseUserProps#ProjectId
    */
@@ -79,14 +79,14 @@ export interface CfnDatabaseUserProps {
   readonly scopes?: ScopeDefinition[];
 
   /**
-   * Human-readable label that represents the user that authenticates to MongoDB.
+   * Human-readable label that represents the user that authenticates to MongoDB. The format of this label depends on the method of authentication. This will be USER_ARN or ROLE_ARN if AWSIAMType is USER or ROLE. Refer https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Database-Users/operation/createDatabaseUser for details.
    *
    * @schema CfnDatabaseUserProps#Username
    */
   readonly username: string;
 
   /**
-   * Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used
+   * Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided `default` is used
    *
    * @schema CfnDatabaseUserProps#Profile
    */
@@ -177,7 +177,7 @@ export function toJson_LabelDefinition(
 /* eslint-enable max-len, quote-props */
 
 /**
- * Method by which the provided username is authenticated. If no value is given, Atlas uses the default value of NONE.
+ * Method by which the provided username is authenticated. Default value is `NONE`.
  *
  * @schema CfnDatabaseUserPropsLdapAuthType
  */
@@ -191,7 +191,7 @@ export enum CfnDatabaseUserPropsLdapAuthType {
 }
 
 /**
- * Method that briefs who owns the certificate provided. If no value is given while using X509Type, Atlas uses the default value of MANAGED.
+ * Method that briefs who owns the certificate provided. Default value is `NONE`.
  *
  * @schema CfnDatabaseUserPropsX509Type
  */
