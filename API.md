@@ -25572,7 +25572,7 @@ const cfnDatabaseUserProps: CfnDatabaseUserProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.databaseName">databaseName</a></code> | <code>string</code> | MongoDB database against which the MongoDB database user authenticates. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.projectId">projectId</a></code> | <code>string</code> | Unique identifier of the Atlas project to which the user belongs. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your Atlas Project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.roles">roles</a></code> | <code><a href="#awscdk-resources-mongodbatlas.RoleDefinition">RoleDefinition</a>[]</code> | List that provides the pairings of one role with one applicable database. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.username">username</a></code> | <code>string</code> | Human-readable label that represents the user that authenticates to MongoDB. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.awsiamType">awsiamType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsAwsiamType">CfnDatabaseUserPropsAwsiamType</a></code> | Human-readable label that indicates whether the new database user authenticates with the Amazon Web Services (AWS) Identity and Access Management (IAM) credentials associated with the user or the user's role. |
@@ -25580,7 +25580,7 @@ const cfnDatabaseUserProps: CfnDatabaseUserProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.labels">labels</a></code> | <code><a href="#awscdk-resources-mongodbatlas.LabelDefinition">LabelDefinition</a>[]</code> | List that contains the key-value pairs for tagging and categorizing the MongoDB database user. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.ldapAuthType">ldapAuthType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsLdapAuthType">CfnDatabaseUserPropsLdapAuthType</a></code> | Method by which the provided username is authenticated. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.password">password</a></code> | <code>string</code> | The user’s password. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided `default` is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.scopes">scopes</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ScopeDefinition">ScopeDefinition</a>[]</code> | List that contains clusters and MongoDB Atlas Data Lakes that this database user can access. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.x509Type">x509Type</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsX509Type">CfnDatabaseUserPropsX509Type</a></code> | Method that briefs who owns the certificate provided. |
 
@@ -25596,7 +25596,7 @@ public readonly databaseName: string;
 
 MongoDB database against which the MongoDB database user authenticates.
 
-MongoDB database users must provide both a username and authentication database to log into MongoDB.
+MongoDB database users must provide both a username and authentication database to log into MongoDB.  Default value is `admin`.
 
 ---
 
@@ -25608,7 +25608,7 @@ public readonly projectId: string;
 
 - *Type:* string
 
-Unique identifier of the Atlas project to which the user belongs.
+Unique 24-hexadecimal digit string that identifies your Atlas Project.
 
 ---
 
@@ -25634,6 +25634,8 @@ public readonly username: string;
 
 Human-readable label that represents the user that authenticates to MongoDB.
 
+The format of this label depends on the method of authentication. This will be USER_ARN or ROLE_ARN if AWSIAMType is USER or ROLE. Refer https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Database-Users/operation/createDatabaseUser for details.
+
 ---
 
 ##### `awsiamType`<sup>Optional</sup> <a name="awsiamType" id="awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.awsiamType"></a>
@@ -25645,6 +25647,8 @@ public readonly awsiamType: CfnDatabaseUserPropsAwsiamType;
 - *Type:* <a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsAwsiamType">CfnDatabaseUserPropsAwsiamType</a>
 
 Human-readable label that indicates whether the new database user authenticates with the Amazon Web Services (AWS) Identity and Access Management (IAM) credentials associated with the user or the user's role.
+
+Default value is `NONE`.
 
 ---
 
@@ -25686,7 +25690,7 @@ public readonly ldapAuthType: CfnDatabaseUserPropsLdapAuthType;
 
 Method by which the provided username is authenticated.
 
-If no value is given, Atlas uses the default value of NONE.
+Default value is `NONE`.
 
 ---
 
@@ -25712,7 +25716,7 @@ public readonly profile: string;
 
 - *Type:* string
 
-Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
+Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided `default` is used.
 
 ---
 
@@ -25740,7 +25744,7 @@ public readonly x509Type: CfnDatabaseUserPropsX509Type;
 
 Method that briefs who owns the certificate provided.
 
-If no value is given while using X509Type, Atlas uses the default value of MANAGED.
+Default value is `NONE`.
 
 ---
 
@@ -33677,7 +33681,7 @@ ROLE.
 
 Method by which the provided username is authenticated.
 
-If no value is given, Atlas uses the default value of NONE.
+Default value is `NONE`.
 
 #### Members <a name="Members" id="Members"></a>
 
@@ -33714,7 +33718,7 @@ GROUP.
 
 Method that briefs who owns the certificate provided.
 
-If no value is given while using X509Type, Atlas uses the default value of MANAGED.
+Default value is `NONE`.
 
 #### Members <a name="Members" id="Members"></a>
 

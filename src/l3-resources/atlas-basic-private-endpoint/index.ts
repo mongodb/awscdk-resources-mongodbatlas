@@ -79,7 +79,7 @@ export interface AtlasBasicPrivateEndpointProps {
   readonly profile?: string;
 
   /**
-   * @description
+   * @description AWS Region
    * @type {string}
    * @default us-east-1
    * @memberof AtlasPrivateEndpointProps
@@ -106,25 +106,25 @@ export interface AtlasBasicPrivateEndpointProps {
  */
 export interface PrivateEndpointProps {
   /**
-   * @description
+   * @description Name of the AWS PrivateLink endpoint service. Atlas returns null while it is creating the endpoint service.
    * @type {string}
    * @memberof PrivateEndpointProps
    */
   readonly endpointServiceName?: string;
   /**
-   * @description
+   * @description Error message pertaining to the AWS PrivateLink connection. Returns null if there are no errors.
    * @type {string}
    * @memberof PrivateEndpointProps
    */
   readonly errorMessage?: string;
   /**
-   * @description
+   * @description Status of the Atlas PrivateEndpoint service connection
    * @type {string}
    * @memberof PrivateEndpointProps
    */
   readonly status?: string;
   /**
-   * @description
+   * @description Unique 24-hexadecimal digit string that identifies your project.
    * @type {string}
    * @memberof PrivateEndpointProps
    */

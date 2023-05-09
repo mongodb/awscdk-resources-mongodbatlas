@@ -21,24 +21,24 @@ MongoDB::Atlas::AlertConfiguration \
   --execution-role-arn <role-arn>
 ```
 ### Running unit tests:
-5. Ensure unit tests for each resource (located in `[resource-folder]/test/index.test.ts)` are updated and successful.
+5. Ensure unit tests for each resource (located in `/test/[resource-folder]/index.test.ts)` are updated and successful.
  - Run unit tests with `npx projen test` inside the resource folder
 ```
 # if you created an L1 resource
-cd cdk/cdk-resouces/[resource-folder]
+cd test/l1-resources/[resource-folder]
 
 # if you created an L2 resource
-cd cdk/l2-cdk-resources/[resource-folder]
+cd test/l2-resources/[resource-folder]
 
 # if you created an L3 resource
-cd cdk/l3-cdk-resources/[resource-folder]
+cd test/l3-resources/[resource-folder]
 
 npx projen test 
 ```
 
 ## Testing the resource in a CFN stack:
-1. Build the construct by running `npx projen build` inside the `[resource-folder]`.
-2. Navigate inside `/[resource-folder]/dist/js` and copy the`.tgz` file. You will use this in the next steps.
+1. Build the construct by running `npx projen build`.
+2. Navigate inside `/dist/js` and copy the`.tgz` file. You will use this in the next steps.
 3. Create a CDK test app: We will be using a CDK app to test our construct by using the app to create, update and delete AWS CloudFormation stacks.
 Create the CDK app by running the following in a terminal: ([refer AWS walkthrough for details](https://docs.aws.amazon.com/cdk/v2/guide/hello_world.html#hello_world_tutorial_create_app)):
 ```
