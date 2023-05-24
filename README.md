@@ -1,6 +1,13 @@
 # MongoDB Atlas AWS CDK Resources
 [![Code Health](https://github.com/mongodb/awscdk-resources-mongodbatlas/actions/workflows/code-health.yml/badge.svg?event=push)](https://github.com/mongodb/awscdk-resources-mongodbatlas/actions/workflows/code-health.yml)
 [![Package CDK](https://github.com/mongodb/awscdk-resources-mongodbatlas/actions/workflows/package.yml/badge.svg?branch=main)](https://github.com/mongodb/awscdk-resources-mongodbatlas/actions/workflows/package.yml)
+[![npm version](https://badge.fury.io/js/awscdk-resources-mongodbatlas.svg)](https://badge.fury.io/js/awscdk-resources-mongodbatlas)
+[![PyPI version](https://badge.fury.io/py/awscdk-resources-mongodbatlas.svg)](https://badge.fury.io/py/awscdk-resources-mongodbatlas)
+[![NuGet version](https://badge.fury.io/nu/MongoDB.AWSCDKResourcesMongoDBAtlas.svg)](https://badge.fury.io/nu/MongoDB.AWSCDKResourcesMongoDBAtlas)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.mongodb/awscdk-resources-mongodbatlas/badge.svg)](https://central.sonatype.com/artifact/org.mongodb/awscdk-resources-mongodbatlas)
+[![Go Reference](https://pkg.go.dev/badge/github.com/mongodb/awscdk-resources-mongodbatlas-go/awscdkresourcesmongodbatlas.svg)](https://pkg.go.dev/github.com/mongodb/awscdk-resources-mongodbatlas-go/awscdkresourcesmongodbatlas)
+
+[![View on Construct Hub](https://constructs.dev/badge?package=aws-cdk-lib)](https://constructs.dev/packages/awscdk-resources-mongodbatlas)
 
 Use MongoDB Atlas [AWS CDK](https://aws.amazon.com/cdk/) (or Cloud Development Kit) constructs to manage [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). The AWS CDK is a framework for defining infrastructure as code (IaC). It allows developers to write code in their preferred programming language, such as TypeScript for example, to define and deploy infrastructure. AWS CDK gets synthesized down into [AWS CloudFormation](https://aws.amazon.com/cloudformation/) templates at deployment so users no longer have to write or maintain YAML/JSON based CloudFormation templates. 
 
