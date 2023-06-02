@@ -63,7 +63,7 @@ export class CdkTestingStack extends cdk.Stack {
     const clusterName = this.node.tryGetContext('clusterName') ?? 'test-cluster';
     const region = this.node.tryGetContext('region') ?? "US_EAST_1";
     const ip = this.node.tryGetContext('ip');
-    if (!orgId){
+    if (!ip){
       throw "No context value specified for ip. Please specify via the cdk context."
     }
 
