@@ -1,4 +1,4 @@
-// This example creates a project and a cluster in Atlas using the L1 resources.
+// This CDK L3 example creates a MongoDB Atlas project, cluster, databaseUser, and projectIpAccessList
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { AtlasBasic } from 'awscdk-resources-mongodbatlas';
