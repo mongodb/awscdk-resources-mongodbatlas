@@ -595,6 +595,11 @@ export interface AdvancedRegionConfig {
   readonly regionName?: string;
 
   /**
+   * @schema advancedRegionConfig#ProviderName
+   */
+  readonly providerName?: AdvancedRegionConfigProviderName;
+
+  /**
    * @schema advancedRegionConfig#AnalyticsSpecs
    */
   readonly analyticsSpecs?: Specs;
@@ -629,6 +634,7 @@ export function toJson_AdvancedRegionConfig(
     AnalyticsAutoScaling: toJson_AdvancedAutoScaling(obj.analyticsAutoScaling),
     AutoScaling: toJson_AdvancedAutoScaling(obj.autoScaling),
     RegionName: obj.regionName,
+    ProviderName: obj.providerName,
     AnalyticsSpecs: toJson_Specs(obj.analyticsSpecs),
     ElectableSpecs: toJson_Specs(obj.electableSpecs),
     Priority: obj.priority,
@@ -729,6 +735,18 @@ export function toJson_AdvancedAutoScaling(
   );
 }
 /* eslint-enable max-len, quote-props */
+
+/**
+ * @schema AdvancedRegionConfigProviderName
+ */
+export enum AdvancedRegionConfigProviderName {
+  /** AWS */
+  AWS = 'AWS',
+  /** GCP */
+  GCP = 'GCP',
+  /** AZURE */
+  AZURE = 'AZURE',
+}
 
 /**
  * @schema specs
