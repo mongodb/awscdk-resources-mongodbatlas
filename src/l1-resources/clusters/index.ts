@@ -597,7 +597,7 @@ export interface AdvancedRegionConfig {
   /**
    * @schema advancedRegionConfig#ProviderName
    */
-  readonly providerName?: string;
+  readonly providerName?: AdvancedRegionConfigProviderName;
 
   /**
    * @schema advancedRegionConfig#AnalyticsSpecs
@@ -735,6 +735,18 @@ export function toJson_AdvancedAutoScaling(
   );
 }
 /* eslint-enable max-len, quote-props */
+
+/**
+ * @schema AdvancedRegionConfigProviderName
+ */
+export enum AdvancedRegionConfigProviderName {
+  /** AWS */
+  AWS = "AWS",
+  /** GCP */
+  GCP = "GCP",
+  /** AZURE */
+  AZURE = "AZURE",
+}
 
 /**
  * @schema specs
