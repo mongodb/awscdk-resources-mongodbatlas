@@ -741,11 +741,11 @@ export function toJson_AdvancedAutoScaling(
  */
 export enum AdvancedRegionConfigProviderName {
   /** AWS */
-  AWS = 'AWS',
+  AWS = "AWS",
   /** GCP */
-  GCP = 'GCP',
+  GCP = "GCP",
   /** AZURE */
-  AZURE = 'AZURE',
+  AZURE = "AZURE",
 }
 
 /**
