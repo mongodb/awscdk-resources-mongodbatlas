@@ -22767,6 +22767,7 @@ const advancedRegionConfig: AdvancedRegionConfig = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.autoScaling">autoScaling</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AdvancedAutoScaling">AdvancedAutoScaling</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.electableSpecs">electableSpecs</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Specs">Specs</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.priority">priority</a></code> | <code>number</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.providerName">providerName</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName">AdvancedRegionConfigProviderName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.readOnlySpecs">readOnlySpecs</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Specs">Specs</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.regionName">regionName</a></code> | <code>string</code> | *No description.* |
 
@@ -22819,6 +22820,16 @@ public readonly priority: number;
 ```
 
 - *Type:* number
+
+---
+
+##### `providerName`<sup>Optional</sup> <a name="providerName" id="awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.providerName"></a>
+
+```typescript
+public readonly providerName: AdvancedRegionConfigProviderName;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName">AdvancedRegionConfigProviderName</a>
 
 ---
 
@@ -33213,6 +33224,39 @@ This zone maps to a location code.
 
 
 ## Enums <a name="Enums" id="Enums"></a>
+
+### AdvancedRegionConfigProviderName <a name="AdvancedRegionConfigProviderName" id="awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName"></a>
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.AWS">AWS</a></code> | AWS. |
+| <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.GCP">GCP</a></code> | GCP. |
+| <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.AZURE">AZURE</a></code> | AZURE. |
+
+---
+
+##### `AWS` <a name="AWS" id="awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.AWS"></a>
+
+AWS.
+
+---
+
+
+##### `GCP` <a name="GCP" id="awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.GCP"></a>
+
+GCP.
+
+---
+
+
+##### `AZURE` <a name="AZURE" id="awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.AZURE"></a>
+
+AZURE.
+
+---
+
 
 ### ApiAtlasDiskBackupShardedClusterSnapshotMemberViewCloudProvider <a name="ApiAtlasDiskBackupShardedClusterSnapshotMemberViewCloudProvider" id="awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotMemberViewCloudProvider"></a>
 
