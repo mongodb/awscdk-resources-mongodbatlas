@@ -65,13 +65,6 @@ export interface CfnCloudBackupSnapshotProps {
   readonly itemsPerPage?: number;
 
   /**
-   * List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both. RFC 5988 outlines these relationships.
-   *
-   * @schema CfnCloudBackupSnapshotProps#Links
-   */
-  readonly links?: Link[];
-
-  /**
    * List that includes the snapshots and the cloud provider that stores the snapshots. The resource returns this parameter when `"type" : "SHARDED_CLUSTER"`.
    *
    * @schema CfnCloudBackupSnapshotProps#Members
@@ -140,7 +133,6 @@ export function toJson_CfnCloudBackupSnapshotProps(
     ProjectId: obj.projectId,
     IncludeCount: obj.includeCount,
     ItemsPerPage: obj.itemsPerPage,
-    Links: obj.links?.map((y) => toJson_Link(y)),
     Members: obj.members?.map((y) =>
       toJson_ApiAtlasDiskBackupShardedClusterSnapshotMemberView(y)
     ),
@@ -176,47 +168,6 @@ export enum CfnCloudBackupSnapshotPropsFrequencyType {
   /** monthly */
   MONTHLY = "monthly",
 }
-
-/**
- * @schema Link
- */
-export interface Link {
-  /**
-   * Uniform Resource Locator (URL) that points another API resource to which this response has some relationship. This URL often begins with `https://mms.mongodb.com`.
-   *
-   * @schema Link#Href
-   */
-  readonly href?: string;
-
-  /**
-   * Uniform Resource Locator (URL) that defines the semantic relationship between this resource and another API resource. This URL often begins with `https://mms.mongodb.com`.
-   *
-   * @schema Link#Rel
-   */
-  readonly rel?: string;
-}
-
-/**
- * Converts an object of type 'Link' to JSON representation.
- */
-/* eslint-disable max-len, quote-props */
-export function toJson_Link(
-  obj: Link | undefined
-): Record<string, any> | undefined {
-  if (obj === undefined) {
-    return undefined;
-  }
-  const result = {
-    Href: obj.href,
-    Rel: obj.rel,
-  };
-  // filter undefined values
-  return Object.entries(result).reduce(
-    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
-    {}
-  );
-}
-/* eslint-enable max-len, quote-props */
 
 /**
  * @schema ApiAtlasDiskBackupShardedClusterSnapshotMemberView
@@ -307,13 +258,6 @@ export interface ApiAtlasDiskBackupShardedClusterSnapshotView {
   readonly id?: string;
 
   /**
-   * List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both. RFC 5988 outlines these relationships.
-   *
-   * @schema ApiAtlasDiskBackupShardedClusterSnapshotView#Links
-   */
-  readonly links?: Link[];
-
-  /**
    * Unique string that identifies the Amazon Web Services (AWS) Key Management Service (KMS) Customer Master Key (CMK) used to encrypt the snapshot. The resource returns this value when `"encryptionEnabled" : true`.
    *
    * @schema ApiAtlasDiskBackupShardedClusterSnapshotView#MasterKeyUUID
@@ -393,7 +337,6 @@ export function toJson_ApiAtlasDiskBackupShardedClusterSnapshotView(
     ExpiresAt: obj.expiresAt,
     FrequencyType: obj.frequencyType,
     Id: obj.id,
-    Links: obj.links?.map((y) => toJson_Link(y)),
     MasterKeyUUID: obj.masterKeyUuid,
     Members: obj.members?.map((y) =>
       toJson_ApiAtlasDiskBackupShardedClusterSnapshotMemberView(y)
