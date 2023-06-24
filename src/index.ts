@@ -48,6 +48,7 @@ export {
   CfnCloudBackupSchedule,
   CfnCloudBackupScheduleProps,
   Export,
+  Link,
 } from "./l1-resources/cloud-backup-schedule";
 
 export {
