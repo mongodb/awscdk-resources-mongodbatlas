@@ -37,13 +37,6 @@ export interface CfnServerlessInstanceProps {
   readonly itemsPerPage?: number;
 
   /**
-   * List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both. RFC 5988 outlines these relationships.
-   *
-   * @schema CfnServerlessInstanceProps#Links
-   */
-  readonly links?: Link[];
-
-  /**
    * Human-readable label that identifies the serverless instance.
    *
    * @schema CfnServerlessInstanceProps#Name
@@ -103,7 +96,6 @@ export function toJson_CfnServerlessInstanceProps(
     ContinuousBackupEnabled: obj.continuousBackupEnabled,
     IncludeCount: obj.includeCount,
     ItemsPerPage: obj.itemsPerPage,
-    Links: obj.links?.map((y) => toJson_Link(y)),
     Name: obj.name,
     PageNum: obj.pageNum,
     ProjectID: obj.projectId,
@@ -162,47 +154,7 @@ export function toJson_ServerlessInstanceConnectionStrings(
     {}
   );
 }
-/* eslint-enable max-len, quote-props */
 
-/**
- * @schema Link
- */
-export interface Link {
-  /**
-   * Uniform Resource Locator (URL) that points another API resource to which this response has some relationship. This URL often begins with `https://mms.mongodb.com`.
-   *
-   * @schema Link#Href
-   */
-  readonly href?: string;
-
-  /**
-   * Uniform Resource Locator (URL) that defines the semantic relationship between this resource and another API resource. This URL often begins with `https://mms.mongodb.com`.
-   *
-   * @schema Link#Rel
-   */
-  readonly rel?: string;
-}
-
-/**
- * Converts an object of type 'Link' to JSON representation.
- */
-/* eslint-disable max-len, quote-props */
-export function toJson_Link(
-  obj: Link | undefined
-): Record<string, any> | undefined {
-  if (obj === undefined) {
-    return undefined;
-  }
-  const result = {
-    Href: obj.href,
-    Rel: obj.rel,
-  };
-  // filter undefined values
-  return Object.entries(result).reduce(
-    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
-    {}
-  );
-}
 /* eslint-enable max-len, quote-props */
 
 /**

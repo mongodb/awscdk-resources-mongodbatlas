@@ -48,6 +48,7 @@ export {
   CfnCloudBackupSchedule,
   CfnCloudBackupScheduleProps,
   Export,
+  Link,
 } from "./l1-resources/cloud-backup-schedule";
 
 export {
@@ -62,7 +63,6 @@ export {
   CfnCloudBackupSnapshotProps,
   CfnCloudBackupSnapshotPropsFrequencyType,
   CfnCloudBackupSnapshotPropsSnapshotType,
-  Link,
 } from "./l1-resources/cloud-backup-snapshot";
 
 export {
