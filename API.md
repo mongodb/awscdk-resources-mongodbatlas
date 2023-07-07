@@ -29458,7 +29458,7 @@ const databaseConfig: DatabaseConfig = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.database">database</a></code> | <code>string</code> | The name of a database in the linked data source. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.fullDocument">fullDocument</a></code> | <code>boolean</code> | If `true`, indicates that `UPDATE` change events should include the most current [majority-committed](https://www.mongodb.com/docs/manual/reference/read-concern-majority/) version of the modified document in the `fullDocument` field. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.fullDocumentBeforeChange">fullDocumentBeforeChange</a></code> | <code>boolean</code> | If true, indicates that `UPDATE` change events should include a snapshot of the modified document from immediately before the update was applied. |
-| <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.match">match</a></code> | <code>any</code> | A [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.match">match</a></code> | <code>string</code> | stringify version of a [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.operationTypes">operationTypes</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfigOperationTypes">DatabaseConfigOperationTypes</a>[]</code> | The type(s) of MongoDB change event that the trigger listens for. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.serviceId">serviceId</a></code> | <code>string</code> | The _id value of a linked MongoDB data source. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.skipCatchupEvents">skipCatchupEvents</a></code> | <code>boolean</code> | If `true`, enabling the Trigger after it was disabled will not invoke events that occurred while the Trigger was disabled. |
@@ -29525,12 +29525,12 @@ for your cluster to include these snapshots.
 ##### `match`<sup>Optional</sup> <a name="match" id="awscdk-resources-mongodbatlas.DatabaseConfig.property.match"></a>
 
 ```typescript
-public readonly match: any;
+public readonly match: string;
 ```
 
-- *Type:* any
+- *Type:* string
 
-A [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event.
+stringify version of a [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event.
 
 ---
 

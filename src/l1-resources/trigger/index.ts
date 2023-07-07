@@ -173,14 +173,11 @@ export interface DatabaseConfig {
   readonly operationTypes?: DatabaseConfigOperationTypes[];
 
   /**
-   * A [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match)
-   * expression filters change events. The trigger will only
-   * fire if the expression evaluates to true for a given
-   * change event.
+   * stringify version of a [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event.
    *
    * @schema DatabaseConfig#Match
    */
-  readonly match?: any;
+  readonly match?: string;
 
   /**
    * If `true`, indicates that `UPDATE` change events should
