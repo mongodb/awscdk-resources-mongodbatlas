@@ -22067,8 +22067,6 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.attrLinks">attrLinks</a></code> | <code>any[]</code> | Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.Links`. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.attrResults">attrResults</a></code> | <code>any[]</code> | Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.Results`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUserProps">CfnX509AuthenticationDatabaseUserProps</a></code> | Resource props. |
 
 ---
@@ -22162,30 +22160,6 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
-
----
-
-##### `attrLinks`<sup>Required</sup> <a name="attrLinks" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.attrLinks"></a>
-
-```typescript
-public readonly attrLinks: any[];
-```
-
-- *Type:* any[]
-
-Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.Links`.
-
----
-
-##### `attrResults`<sup>Required</sup> <a name="attrResults" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.attrResults"></a>
-
-```typescript
-public readonly attrResults: any[];
-```
-
-- *Type:* any[]
-
-Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.Results`.
 
 ---
 
@@ -23097,7 +23071,6 @@ const apiAtlasDiskBackupShardedClusterSnapshotView: ApiAtlasDiskBackupShardedClu
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotView.property.expiresAt">expiresAt</a></code> | <code>string</code> | Date and time when MongoDB Cloud deletes the snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotView.property.frequencyType">frequencyType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotViewFrequencyType">ApiAtlasDiskBackupShardedClusterSnapshotViewFrequencyType</a></code> | Human-readable label that identifies how often this snapshot triggers. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotView.property.id">id</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the snapshot. |
-| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotView.property.links">links</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Link">Link</a>[]</code> | List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotView.property.masterKeyUuid">masterKeyUuid</a></code> | <code>string</code> | Unique string that identifies the Amazon Web Services (AWS) Key Management Service (KMS) Customer Master Key (CMK) used to encrypt the snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotView.property.members">members</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotMemberView">ApiAtlasDiskBackupShardedClusterSnapshotMemberView</a>[]</code> | List that includes the snapshots and the cloud provider that stores the snapshots. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotView.property.mongodVersion">mongodVersion</a></code> | <code>string</code> | Version of the MongoDB host that this snapshot backs up. |
@@ -23173,20 +23146,6 @@ public readonly id: string;
 - *Type:* string
 
 Unique 24-hexadecimal digit string that identifies the snapshot.
-
----
-
-##### `links`<sup>Optional</sup> <a name="links" id="awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotView.property.links"></a>
-
-```typescript
-public readonly links: Link[];
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.Link">Link</a>[]
-
-List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both.
-
-RFC 5988 outlines these relationships.
 
 ---
 
@@ -24866,7 +24825,6 @@ const cfnCloudBackupSnapshotProps: CfnCloudBackupSnapshotProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.includeCount">includeCount</a></code> | <code>boolean</code> | Flag that indicates whether the response returns the total number of items (**totalCount**) in the response. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.instanceName">instanceName</a></code> | <code>string</code> | Human-readable label that identifies the serverless instance. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.itemsPerPage">itemsPerPage</a></code> | <code>number</code> | Number of items that the response returns per page. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.links">links</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Link">Link</a>[]</code> | List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.members">members</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotMemberView">ApiAtlasDiskBackupShardedClusterSnapshotMemberView</a>[]</code> | List that includes the snapshots and the cloud provider that stores the snapshots. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.pageNum">pageNum</a></code> | <code>number</code> | Number of the page that displays the current set of the total objects that the response returns. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.policyItems">policyItems</a></code> | <code>string[]</code> | List that contains unique identifiers for the policy items. |
@@ -24961,20 +24919,6 @@ public readonly itemsPerPage: number;
 - *Type:* number
 
 Number of items that the response returns per page.
-
----
-
-##### `links`<sup>Optional</sup> <a name="links" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.links"></a>
-
-```typescript
-public readonly links: Link[];
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.Link">Link</a>[]
-
-List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both.
-
-RFC 5988 outlines these relationships.
 
 ---
 
@@ -27906,7 +27850,6 @@ const cfnServerlessInstanceProps: CfnServerlessInstanceProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessInstanceProps.property.continuousBackupEnabled">continuousBackupEnabled</a></code> | <code>boolean</code> | Flag that indicates whether the serverless instances uses Serverless Continuous Backup. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessInstanceProps.property.includeCount">includeCount</a></code> | <code>boolean</code> | Flag that indicates whether the response returns the total number of items (**totalCount**) in the response. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessInstanceProps.property.itemsPerPage">itemsPerPage</a></code> | <code>number</code> | Number of items that the response returns per page. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessInstanceProps.property.links">links</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Link">Link</a>[]</code> | List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessInstanceProps.property.name">name</a></code> | <code>string</code> | Human-readable label that identifies the serverless instance. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessInstanceProps.property.pageNum">pageNum</a></code> | <code>number</code> | Number of the page that displays the current set of the total objects that the response returns. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessInstanceProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
@@ -27963,20 +27906,6 @@ public readonly itemsPerPage: number;
 - *Type:* number
 
 Number of items that the response returns per page.
-
----
-
-##### `links`<sup>Optional</sup> <a name="links" id="awscdk-resources-mongodbatlas.CfnServerlessInstanceProps.property.links"></a>
-
-```typescript
-public readonly links: Link[];
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.Link">Link</a>[]
-
-List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both.
-
-RFC 5988 outlines these relationships.
 
 ---
 
@@ -29282,7 +29211,7 @@ const databaseConfig: DatabaseConfig = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.database">database</a></code> | <code>string</code> | The name of a database in the linked data source. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.fullDocument">fullDocument</a></code> | <code>boolean</code> | If `true`, indicates that `UPDATE` change events should include the most current [majority-committed](https://www.mongodb.com/docs/manual/reference/read-concern-majority/) version of the modified document in the `fullDocument` field. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.fullDocumentBeforeChange">fullDocumentBeforeChange</a></code> | <code>boolean</code> | If true, indicates that `UPDATE` change events should include a snapshot of the modified document from immediately before the update was applied. |
-| <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.match">match</a></code> | <code>any</code> | A [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.match">match</a></code> | <code>string</code> | stringify version of a [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.operationTypes">operationTypes</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfigOperationTypes">DatabaseConfigOperationTypes</a>[]</code> | The type(s) of MongoDB change event that the trigger listens for. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.serviceId">serviceId</a></code> | <code>string</code> | The _id value of a linked MongoDB data source. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.skipCatchupEvents">skipCatchupEvents</a></code> | <code>boolean</code> | If `true`, enabling the Trigger after it was disabled will not invoke events that occurred while the Trigger was disabled. |
@@ -29349,12 +29278,12 @@ for your cluster to include these snapshots.
 ##### `match`<sup>Optional</sup> <a name="match" id="awscdk-resources-mongodbatlas.DatabaseConfig.property.match"></a>
 
 ```typescript
-public readonly match: any;
+public readonly match: string;
 ```
 
-- *Type:* any
+- *Type:* string
 
-A [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event.
+stringify version of a [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event.
 
 ---
 

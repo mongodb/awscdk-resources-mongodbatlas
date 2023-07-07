@@ -133,15 +133,6 @@ export class CfnX509AuthenticationDatabaseUser extends cdk.CfnResource {
   public readonly props: CfnX509AuthenticationDatabaseUserProps;
 
   /**
-   * Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.Links`
-   */
-  public readonly attrLinks: any[];
-  /**
-   * Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.Results`
-   */
-  public readonly attrResults: any[];
-
-  /**
    * Create a new `MongoDB::Atlas::X509AuthenticationDatabaseUser`.
    *
    * @param scope - scope in which this resource is defined
@@ -159,8 +150,5 @@ export class CfnX509AuthenticationDatabaseUser extends cdk.CfnResource {
     });
 
     this.props = props;
-
-    this.attrLinks = cdk.Token.asList(this.getAtt("Links"));
-    this.attrResults = cdk.Token.asList(this.getAtt("Results"));
   }
 }
