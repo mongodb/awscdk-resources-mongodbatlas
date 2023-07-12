@@ -22713,6 +22713,7 @@ const advancedRegionConfig: AdvancedRegionConfig = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.analyticsAutoScaling">analyticsAutoScaling</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AdvancedAutoScaling">AdvancedAutoScaling</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.analyticsSpecs">analyticsSpecs</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Specs">Specs</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.autoScaling">autoScaling</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AdvancedAutoScaling">AdvancedAutoScaling</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.backingProviderName">backingProviderName</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.electableSpecs">electableSpecs</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Specs">Specs</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.priority">priority</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.providerName">providerName</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName">AdvancedRegionConfigProviderName</a></code> | *No description.* |
@@ -22748,6 +22749,16 @@ public readonly autoScaling: AdvancedAutoScaling;
 ```
 
 - *Type:* <a href="#awscdk-resources-mongodbatlas.AdvancedAutoScaling">AdvancedAutoScaling</a>
+
+---
+
+##### `backingProviderName`<sup>Optional</sup> <a name="backingProviderName" id="awscdk-resources-mongodbatlas.AdvancedRegionConfig.property.backingProviderName"></a>
+
+```typescript
+public readonly backingProviderName: string;
+```
+
+- *Type:* string
 
 ---
 
@@ -32085,6 +32096,7 @@ const processArgs: ProcessArgs = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.javascriptEnabled">javascriptEnabled</a></code> | <code>boolean</code> | Flag that indicates whether the cluster allows execution of operations that perform server-side executions of JavaScript. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.minimumEnabledTlsProtocol">minimumEnabledTlsProtocol</a></code> | <code>string</code> | Minimum Transport Layer Security (TLS) version that the cluster accepts for incoming connections. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.noTableScan">noTableScan</a></code> | <code>boolean</code> | Flag that indicates whether the cluster disables executing any query that requires a collection scan to return results. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.oplogMinRetentionHours">oplogMinRetentionHours</a></code> | <code>number</code> | Minimum retention window for cluster's oplog expressed in hours. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.oplogSizeMb">oplogSizeMb</a></code> | <code>number</code> | Storage limit of cluster's oplog expressed in megabytes. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.sampleRefreshIntervalBiConnector">sampleRefreshIntervalBiConnector</a></code> | <code>number</code> | Number of documents per database to sample when gathering schema information. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.sampleSizeBiConnector">sampleSizeBiConnector</a></code> | <code>number</code> | Interval in seconds at which the mongosqld process re-samples data to create its relational schema. |
@@ -32164,6 +32176,20 @@ public readonly noTableScan: boolean;
 - *Type:* boolean
 
 Flag that indicates whether the cluster disables executing any query that requires a collection scan to return results.
+
+---
+
+##### `oplogMinRetentionHours`<sup>Optional</sup> <a name="oplogMinRetentionHours" id="awscdk-resources-mongodbatlas.ProcessArgs.property.oplogMinRetentionHours"></a>
+
+```typescript
+public readonly oplogMinRetentionHours: number;
+```
+
+- *Type:* number
+
+Minimum retention window for cluster's oplog expressed in hours.
+
+A value of null indicates that the cluster uses the default minimum oplog window that MongoDB Cloud calculates.
 
 ---
 
@@ -33410,6 +33436,7 @@ This zone maps to a location code.
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.AWS">AWS</a></code> | AWS. |
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.GCP">GCP</a></code> | GCP. |
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.AZURE">AZURE</a></code> | AZURE. |
+| <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.TENANT">TENANT</a></code> | TENANT. |
 
 ---
 
@@ -33430,6 +33457,13 @@ GCP.
 ##### `AZURE` <a name="AZURE" id="awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.AZURE"></a>
 
 AZURE.
+
+---
+
+
+##### `TENANT` <a name="TENANT" id="awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.TENANT"></a>
+
+TENANT.
 
 ---
 
