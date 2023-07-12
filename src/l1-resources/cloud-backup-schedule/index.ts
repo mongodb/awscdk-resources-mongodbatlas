@@ -104,7 +104,7 @@ export interface CfnCloudBackupScheduleProps {
    *
    * @schema CfnCloudBackupScheduleProps#Profile
    */
-  readonly profile: string;
+  readonly profile?: string;
 
   /**
    * List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both. RFC 5988 outlines these relationships.
