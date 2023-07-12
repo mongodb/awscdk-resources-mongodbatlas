@@ -233,6 +233,13 @@ export interface ProcessArgs {
    * @schema processArgs#SampleRefreshIntervalBIConnector
    */
   readonly sampleRefreshIntervalBiConnector?: number;
+
+  /**
+   * Minimum retention window for cluster's oplog expressed in hours. A value of null indicates that the cluster uses the default minimum oplog window that MongoDB Cloud calculates.
+   *
+   * @schema processArgs#OplogMinRetentionHours
+   */
+  readonly oplogMinRetentionHours?: number;
 }
 
 /**
@@ -255,6 +262,7 @@ export function toJson_ProcessArgs(
     OplogSizeMB: obj.oplogSizeMb,
     SampleSizeBIConnector: obj.sampleSizeBiConnector,
     SampleRefreshIntervalBIConnector: obj.sampleRefreshIntervalBiConnector,
+    OplogMinRetentionHours: obj.oplogMinRetentionHours,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -595,6 +603,11 @@ export interface AdvancedRegionConfig {
   readonly regionName?: string;
 
   /**
+   * @schema advancedRegionConfig#BackingProviderName
+   */
+  readonly backingProviderName?: string;
+
+  /**
    * @schema advancedRegionConfig#ProviderName
    */
   readonly providerName?: AdvancedRegionConfigProviderName;
@@ -634,6 +647,7 @@ export function toJson_AdvancedRegionConfig(
     AnalyticsAutoScaling: toJson_AdvancedAutoScaling(obj.analyticsAutoScaling),
     AutoScaling: toJson_AdvancedAutoScaling(obj.autoScaling),
     RegionName: obj.regionName,
+    BackingProviderName: obj.backingProviderName,
     ProviderName: obj.providerName,
     AnalyticsSpecs: toJson_Specs(obj.analyticsSpecs),
     ElectableSpecs: toJson_Specs(obj.electableSpecs),
@@ -746,6 +760,8 @@ export enum AdvancedRegionConfigProviderName {
   GCP = "GCP",
   /** AZURE */
   AZURE = "AZURE",
+  /** TENANT */
+  TENANT = "TENANT",
 }
 
 /**
