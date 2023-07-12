@@ -9737,7 +9737,6 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.attrRemoveAllZoneMapping">attrRemoveAllZoneMapping</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::GlobalClusterConfig.RemoveAllZoneMapping`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps">CfnGlobalClusterConfigProps</a></code> | Resource props. |
 
 ---
@@ -9831,18 +9830,6 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
-
----
-
-##### `attrRemoveAllZoneMapping`<sup>Required</sup> <a name="attrRemoveAllZoneMapping" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.attrRemoveAllZoneMapping"></a>
-
-```typescript
-public readonly attrRemoveAllZoneMapping: IResolvable;
-```
-
-- *Type:* aws-cdk-lib.IResolvable
-
-Attribute `MongoDB::Atlas::GlobalClusterConfig.RemoveAllZoneMapping`.
 
 ---
 
@@ -20154,7 +20141,6 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.property.attrTeamId">attrTeamId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Teams.TeamId`. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.property.attrUsers">attrUsers</a></code> | <code>any[]</code> | Attribute `MongoDB::Atlas::Teams.Users`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps">CfnTeamsProps</a></code> | Resource props. |
 
 ---
@@ -20260,18 +20246,6 @@ public readonly attrTeamId: string;
 - *Type:* string
 
 Attribute `MongoDB::Atlas::Teams.TeamId`.
-
----
-
-##### `attrUsers`<sup>Required</sup> <a name="attrUsers" id="awscdk-resources-mongodbatlas.CfnTeams.property.attrUsers"></a>
-
-```typescript
-public readonly attrUsers: any[];
-```
-
-- *Type:* any[]
-
-Attribute `MongoDB::Atlas::Teams.Users`.
 
 ---
 
@@ -24019,6 +23993,253 @@ Default Value: US_EAST_1
 
 ---
 
+### AtlasRole <a name="AtlasRole" id="awscdk-resources-mongodbatlas.AtlasRole"></a>
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.AtlasRole.Initializer"></a>
+
+```typescript
+import { AtlasRole } from 'awscdk-resources-mongodbatlas'
+
+const atlasRole: AtlasRole = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRole.property.orgId">orgId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the organization to which this role belongs. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRole.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the project to which this role belongs. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRole.property.roleName">roleName</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AtlasRoleRoleName">AtlasRoleRoleName</a></code> | Human-readable label that identifies the collection of privileges that MongoDB Cloud grants a specific API key, MongoDB Cloud user, or MongoDB Cloud team. |
+
+---
+
+##### `orgId`<sup>Optional</sup> <a name="orgId" id="awscdk-resources-mongodbatlas.AtlasRole.property.orgId"></a>
+
+```typescript
+public readonly orgId: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies the organization to which this role belongs.
+
+You can set a value for this parameter or **groupId** but not both in the same request
+
+---
+
+##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.AtlasRole.property.projectId"></a>
+
+```typescript
+public readonly projectId: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies the project to which this role belongs.
+
+You can set a value for this parameter or **orgId** but not both in the same request.
+
+---
+
+##### `roleName`<sup>Optional</sup> <a name="roleName" id="awscdk-resources-mongodbatlas.AtlasRole.property.roleName"></a>
+
+```typescript
+public readonly roleName: AtlasRoleRoleName;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AtlasRoleRoleName">AtlasRoleRoleName</a>
+
+Human-readable label that identifies the collection of privileges that MongoDB Cloud grants a specific API key, MongoDB Cloud user, or MongoDB Cloud team.
+
+These roles include organization- and project-level roles.
+
+Organization Roles
+
+* ORG_OWNER
+* ORG_MEMBER
+* ORG_GROUP_CREATOR
+* ORG_BILLING_ADMIN
+* ORG_READ_ONLY
+
+Project Roles
+
+* GROUP_CLUSTER_MANAGER
+* GROUP_DATA_ACCESS_ADMIN
+* GROUP_DATA_ACCESS_READ_ONLY
+* GROUP_DATA_ACCESS_READ_WRITE
+* GROUP_OWNER
+* GROUP_READ_ONLY
+
+---
+
+### AtlasUser <a name="AtlasUser" id="awscdk-resources-mongodbatlas.AtlasUser"></a>
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.AtlasUser.Initializer"></a>
+
+```typescript
+import { AtlasUser } from 'awscdk-resources-mongodbatlas'
+
+const atlasUser: AtlasUser = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasUser.property.country">country</a></code> | <code>string</code> | Two alphabet characters that identifies MongoDB Cloud user's geographic location. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasUser.property.emailAddress">emailAddress</a></code> | <code>string</code> | Email address that belongs to the MongoDB Cloud user. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasUser.property.firstName">firstName</a></code> | <code>string</code> | First or given name that belongs to the MongoDB Cloud user. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasUser.property.id">id</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the MongoDB Cloud user. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasUser.property.lastName">lastName</a></code> | <code>string</code> | Last name, family name, or surname that belongs to the MongoDB Cloud user. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasUser.property.links">links</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Link">Link</a>[]</code> | List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasUser.property.mobileNumber">mobileNumber</a></code> | <code>string</code> | Mobile phone number that belongs to the MongoDB Cloud user. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasUser.property.password">password</a></code> | <code>string</code> | Password applied with the username to log in to MongoDB Cloud. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasUser.property.roles">roles</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AtlasRole">AtlasRole</a>[]</code> | List of objects that display the MongoDB Cloud user's roles and the corresponding organization or project to which that role applies. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasUser.property.teamIds">teamIds</a></code> | <code>string[]</code> | List of unique 24-hexadecimal digit strings that identifies the teams to which this MongoDB Cloud user belongs. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasUser.property.username">username</a></code> | <code>string</code> | Email address that represents the username of the MongoDB Cloud user. |
+
+---
+
+##### `country`<sup>Optional</sup> <a name="country" id="awscdk-resources-mongodbatlas.AtlasUser.property.country"></a>
+
+```typescript
+public readonly country: string;
+```
+
+- *Type:* string
+
+Two alphabet characters that identifies MongoDB Cloud user's geographic location.
+
+This parameter uses the ISO 3166-1a2 code format.
+
+---
+
+##### `emailAddress`<sup>Optional</sup> <a name="emailAddress" id="awscdk-resources-mongodbatlas.AtlasUser.property.emailAddress"></a>
+
+```typescript
+public readonly emailAddress: string;
+```
+
+- *Type:* string
+
+Email address that belongs to the MongoDB Cloud user.
+
+---
+
+##### `firstName`<sup>Optional</sup> <a name="firstName" id="awscdk-resources-mongodbatlas.AtlasUser.property.firstName"></a>
+
+```typescript
+public readonly firstName: string;
+```
+
+- *Type:* string
+
+First or given name that belongs to the MongoDB Cloud user.
+
+---
+
+##### `id`<sup>Optional</sup> <a name="id" id="awscdk-resources-mongodbatlas.AtlasUser.property.id"></a>
+
+```typescript
+public readonly id: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies the MongoDB Cloud user.
+
+---
+
+##### `lastName`<sup>Optional</sup> <a name="lastName" id="awscdk-resources-mongodbatlas.AtlasUser.property.lastName"></a>
+
+```typescript
+public readonly lastName: string;
+```
+
+- *Type:* string
+
+Last name, family name, or surname that belongs to the MongoDB Cloud user.
+
+---
+
+##### `links`<sup>Optional</sup> <a name="links" id="awscdk-resources-mongodbatlas.AtlasUser.property.links"></a>
+
+```typescript
+public readonly links: Link[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.Link">Link</a>[]
+
+List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both.
+
+RFC 5988 outlines these relationships.
+
+---
+
+##### `mobileNumber`<sup>Optional</sup> <a name="mobileNumber" id="awscdk-resources-mongodbatlas.AtlasUser.property.mobileNumber"></a>
+
+```typescript
+public readonly mobileNumber: string;
+```
+
+- *Type:* string
+
+Mobile phone number that belongs to the MongoDB Cloud user.
+
+---
+
+##### `password`<sup>Optional</sup> <a name="password" id="awscdk-resources-mongodbatlas.AtlasUser.property.password"></a>
+
+```typescript
+public readonly password: string;
+```
+
+- *Type:* string
+
+Password applied with the username to log in to MongoDB Cloud.
+
+MongoDB Cloud does not return this parameter except in response to creating a new MongoDB Cloud user. Only the MongoDB Cloud user can update their password after it has been set from the MongoDB Cloud console.
+
+---
+
+##### `roles`<sup>Optional</sup> <a name="roles" id="awscdk-resources-mongodbatlas.AtlasUser.property.roles"></a>
+
+```typescript
+public readonly roles: AtlasRole[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AtlasRole">AtlasRole</a>[]
+
+List of objects that display the MongoDB Cloud user's roles and the corresponding organization or project to which that role applies.
+
+A role can apply to one organization or one project but not both.
+
+---
+
+##### `teamIds`<sup>Optional</sup> <a name="teamIds" id="awscdk-resources-mongodbatlas.AtlasUser.property.teamIds"></a>
+
+```typescript
+public readonly teamIds: string[];
+```
+
+- *Type:* string[]
+
+List of unique 24-hexadecimal digit strings that identifies the teams to which this MongoDB Cloud user belongs.
+
+---
+
+##### `username`<sup>Optional</sup> <a name="username" id="awscdk-resources-mongodbatlas.AtlasUser.property.username"></a>
+
+```typescript
+public readonly username: string;
+```
+
+- *Type:* string
+
+Email address that represents the username of the MongoDB Cloud user.
+
+---
+
 ### AuthConfig <a name="AuthConfig" id="awscdk-resources-mongodbatlas.AuthConfig"></a>
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.AuthConfig.Initializer"></a>
@@ -26013,14 +26234,15 @@ const cfnGlobalClusterConfigProps: CfnGlobalClusterConfigProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.clusterName">clusterName</a></code> | <code>string</code> | The name of the Atlas cluster that contains the snapshots you want to retrieve. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.projectId">projectId</a></code> | <code>string</code> | The unique identifier of the project for the Atlas cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.customZoneMappings">customZoneMappings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ZoneMapping">ZoneMapping</a>[]</code> | List that contains comma-separated key value pairs to map zones to geographic regions. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.managedNamespaces">managedNamespaces</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ManagedNamespace">ManagedNamespace</a>[]</code> | List that contains comma-separated key value pairs to map zones to geographic regions. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.projectId">projectId</a></code> | <code>string</code> | The unique identifier of the project for the Atlas cluster. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.removeAllZoneMapping">removeAllZoneMapping</a></code> | <code>boolean</code> | Flag that indicates whether all custom zone mapping to be deleted during delete. |
 
 ---
 
-##### `clusterName`<sup>Optional</sup> <a name="clusterName" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.clusterName"></a>
+##### `clusterName`<sup>Required</sup> <a name="clusterName" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.clusterName"></a>
 
 ```typescript
 public readonly clusterName: string;
@@ -26029,6 +26251,18 @@ public readonly clusterName: string;
 - *Type:* string
 
 The name of the Atlas cluster that contains the snapshots you want to retrieve.
+
+---
+
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.projectId"></a>
+
+```typescript
+public readonly projectId: string;
+```
+
+- *Type:* string
+
+The unique identifier of the project for the Atlas cluster.
 
 ---
 
@@ -26078,15 +26312,15 @@ See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
 
 ---
 
-##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.projectId"></a>
+##### `removeAllZoneMapping`<sup>Optional</sup> <a name="removeAllZoneMapping" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.removeAllZoneMapping"></a>
 
 ```typescript
-public readonly projectId: string;
+public readonly removeAllZoneMapping: boolean;
 ```
 
-- *Type:* string
+- *Type:* boolean
 
-The unique identifier of the project for the Atlas cluster.
+Flag that indicates whether all custom zone mapping to be deleted during delete.
 
 ---
 
@@ -28020,6 +28254,7 @@ const cfnTeamsProps: CfnTeamsProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal character string that identifies the project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.roleNames">roleNames</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsPropsRoleNames">CfnTeamsPropsRoleNames</a>[]</code> | One or more organization- or project-level roles to assign to the MongoDB Cloud user. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.usernames">usernames</a></code> | <code>string[]</code> | One or more organization- or project-level roles to assign to the MongoDB Cloud user. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.users">users</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AtlasUser">AtlasUser</a>[]</code> | List of returned documents that MongoDB Cloud provides when completing this request. |
 
 ---
 
@@ -28094,6 +28329,18 @@ public readonly usernames: string[];
 - *Type:* string[]
 
 One or more organization- or project-level roles to assign to the MongoDB Cloud user.
+
+---
+
+##### `users`<sup>Optional</sup> <a name="users" id="awscdk-resources-mongodbatlas.CfnTeamsProps.property.users"></a>
+
+```typescript
+public readonly users: AtlasUser[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AtlasUser">AtlasUser</a>[]
+
+List of returned documents that MongoDB Cloud provides when completing this request.
 
 ---
 
@@ -33394,6 +33641,124 @@ REPLICA_SET.
 ##### `SHARDED_CLUSTER` <a name="SHARDED_CLUSTER" id="awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotViewType.SHARDED_CLUSTER"></a>
 
 SHARDED_CLUSTER.
+
+---
+
+
+### AtlasRoleRoleName <a name="AtlasRoleRoleName" id="awscdk-resources-mongodbatlas.AtlasRoleRoleName"></a>
+
+Human-readable label that identifies the collection of privileges that MongoDB Cloud grants a specific API key, MongoDB Cloud user, or MongoDB Cloud team.
+
+These roles include organization- and project-level roles.
+
+Organization Roles
+
+* ORG_OWNER
+* ORG_MEMBER
+* ORG_GROUP_CREATOR
+* ORG_BILLING_ADMIN
+* ORG_READ_ONLY
+
+Project Roles
+
+* GROUP_CLUSTER_MANAGER
+* GROUP_DATA_ACCESS_ADMIN
+* GROUP_DATA_ACCESS_READ_ONLY
+* GROUP_DATA_ACCESS_READ_WRITE
+* GROUP_OWNER
+* GROUP_READ_ONLY
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRoleRoleName.ORG_OWNER">ORG_OWNER</a></code> | ORG_OWNER. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRoleRoleName.ORG_MEMBER">ORG_MEMBER</a></code> | ORG_MEMBER. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRoleRoleName.ORG_GROUP_CREATOR">ORG_GROUP_CREATOR</a></code> | ORG_GROUP_CREATOR. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRoleRoleName.ORG_BILLING_ADMIN">ORG_BILLING_ADMIN</a></code> | ORG_BILLING_ADMIN. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRoleRoleName.ORG_READ_ONLY">ORG_READ_ONLY</a></code> | ORG_READ_ONLY. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRoleRoleName.GROUP_CLUSTER_MANAGER">GROUP_CLUSTER_MANAGER</a></code> | GROUP_CLUSTER_MANAGER. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRoleRoleName.GROUP_DATA_ACCESS_ADMIN">GROUP_DATA_ACCESS_ADMIN</a></code> | GROUP_DATA_ACCESS_ADMIN. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRoleRoleName.GROUP_DATA_ACCESS_READ_ONLY">GROUP_DATA_ACCESS_READ_ONLY</a></code> | GROUP_DATA_ACCESS_READ_ONLY. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRoleRoleName.GROUP_DATA_ACCESS_READ_WRITE">GROUP_DATA_ACCESS_READ_WRITE</a></code> | GROUP_DATA_ACCESS_READ_WRITE. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRoleRoleName.GROUP_OWNER">GROUP_OWNER</a></code> | GROUP_OWNER. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasRoleRoleName.GROUP_READ_ONLY">GROUP_READ_ONLY</a></code> | GROUP_READ_ONLY. |
+
+---
+
+##### `ORG_OWNER` <a name="ORG_OWNER" id="awscdk-resources-mongodbatlas.AtlasRoleRoleName.ORG_OWNER"></a>
+
+ORG_OWNER.
+
+---
+
+
+##### `ORG_MEMBER` <a name="ORG_MEMBER" id="awscdk-resources-mongodbatlas.AtlasRoleRoleName.ORG_MEMBER"></a>
+
+ORG_MEMBER.
+
+---
+
+
+##### `ORG_GROUP_CREATOR` <a name="ORG_GROUP_CREATOR" id="awscdk-resources-mongodbatlas.AtlasRoleRoleName.ORG_GROUP_CREATOR"></a>
+
+ORG_GROUP_CREATOR.
+
+---
+
+
+##### `ORG_BILLING_ADMIN` <a name="ORG_BILLING_ADMIN" id="awscdk-resources-mongodbatlas.AtlasRoleRoleName.ORG_BILLING_ADMIN"></a>
+
+ORG_BILLING_ADMIN.
+
+---
+
+
+##### `ORG_READ_ONLY` <a name="ORG_READ_ONLY" id="awscdk-resources-mongodbatlas.AtlasRoleRoleName.ORG_READ_ONLY"></a>
+
+ORG_READ_ONLY.
+
+---
+
+
+##### `GROUP_CLUSTER_MANAGER` <a name="GROUP_CLUSTER_MANAGER" id="awscdk-resources-mongodbatlas.AtlasRoleRoleName.GROUP_CLUSTER_MANAGER"></a>
+
+GROUP_CLUSTER_MANAGER.
+
+---
+
+
+##### `GROUP_DATA_ACCESS_ADMIN` <a name="GROUP_DATA_ACCESS_ADMIN" id="awscdk-resources-mongodbatlas.AtlasRoleRoleName.GROUP_DATA_ACCESS_ADMIN"></a>
+
+GROUP_DATA_ACCESS_ADMIN.
+
+---
+
+
+##### `GROUP_DATA_ACCESS_READ_ONLY` <a name="GROUP_DATA_ACCESS_READ_ONLY" id="awscdk-resources-mongodbatlas.AtlasRoleRoleName.GROUP_DATA_ACCESS_READ_ONLY"></a>
+
+GROUP_DATA_ACCESS_READ_ONLY.
+
+---
+
+
+##### `GROUP_DATA_ACCESS_READ_WRITE` <a name="GROUP_DATA_ACCESS_READ_WRITE" id="awscdk-resources-mongodbatlas.AtlasRoleRoleName.GROUP_DATA_ACCESS_READ_WRITE"></a>
+
+GROUP_DATA_ACCESS_READ_WRITE.
+
+---
+
+
+##### `GROUP_OWNER` <a name="GROUP_OWNER" id="awscdk-resources-mongodbatlas.AtlasRoleRoleName.GROUP_OWNER"></a>
+
+GROUP_OWNER.
+
+---
+
+
+##### `GROUP_READ_ONLY` <a name="GROUP_READ_ONLY" id="awscdk-resources-mongodbatlas.AtlasRoleRoleName.GROUP_READ_ONLY"></a>
+
+GROUP_READ_ONLY.
 
 ---
 
