@@ -243,6 +243,9 @@ export {
   CfnTeams,
   CfnTeamsProps,
   CfnTeamsPropsRoleNames,
+  AtlasRoleRoleName,
+  AtlasRole,
+  AtlasUser,
 } from "./l1-resources/teams";
 
 export {
