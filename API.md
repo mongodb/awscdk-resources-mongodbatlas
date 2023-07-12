@@ -24760,7 +24760,6 @@ const cfnCloudBackupScheduleProps: CfnCloudBackupScheduleProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.clusterName">clusterName</a></code> | <code>string</code> | The name of the Atlas cluster that contains the snapshots you want to retrieve. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.autoExportEnabled">autoExportEnabled</a></code> | <code>boolean</code> | Flag that indicates whether automatic export of cloud backup snapshots to the AWS bucket is enabled. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.copySettings">copySettings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasDiskBackupCopySettingView">ApiAtlasDiskBackupCopySettingView</a>[]</code> | List that contains a document for each copy setting item in the desired backup policy. |
@@ -24769,6 +24768,7 @@ const cfnCloudBackupScheduleProps: CfnCloudBackupScheduleProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.id">id</a></code> | <code>string</code> | Unique identifier of the snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.links">links</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Link">Link</a>[]</code> | List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.policies">policies</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiPolicyView">ApiPolicyView</a>[]</code> | Rules set for this backup schedule. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.referenceHourOfDay">referenceHourOfDay</a></code> | <code>number</code> | UTC Hour of day between 0 and 23 representing which hour of the day that Atlas takes a snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.referenceMinuteOfHour">referenceMinuteOfHour</a></code> | <code>number</code> | UTC Minute of day between 0 and 59 representing which minute of the referenceHourOfDay that Atlas takes the snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.restoreWindowDays">restoreWindowDays</a></code> | <code>number</code> | Number of days back in time you can restore to with Continuous Cloud Backup accuracy. |
@@ -24786,18 +24786,6 @@ public readonly clusterName: string;
 - *Type:* string
 
 The name of the Atlas cluster that contains the snapshots you want to retrieve.
-
----
-
-##### `profile`<sup>Required</sup> <a name="profile" id="awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.profile"></a>
-
-```typescript
-public readonly profile: string;
-```
-
-- *Type:* string
-
-Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
 
 ---
 
@@ -24896,6 +24884,18 @@ public readonly policies: ApiPolicyView[];
 - *Type:* <a href="#awscdk-resources-mongodbatlas.ApiPolicyView">ApiPolicyView</a>[]
 
 Rules set for this backup schedule.
+
+---
+
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.profile"></a>
+
+```typescript
+public readonly profile: string;
+```
+
+- *Type:* string
+
+Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
 
 ---
 
