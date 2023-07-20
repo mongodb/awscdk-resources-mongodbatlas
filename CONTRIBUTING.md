@@ -12,14 +12,15 @@ After the above steps are completed and we've agreed on a path forward:
 5. A repo maintainer will review the your pull request, and may either request additional changes or merge the pull request.
 
 ## PR Title Format
+We use [*Conventional Commits*](https://www.conventionalcommits.org/):
 - `fix(INTMDB-/CLOUDP-): description of the ticket`: a commit of the type fix patches a bug in your codebase (this correlates with PATCH in Semantic Versioning).
 - `feat(INTMDB-/CLOUDP-): description of the ticket`: a commit of the type feat introduces a new feature to the codebase (this correlates with MINOR in Semantic Versioning).
 - `BREAKING CHANGE`: a commit that has a footer BREAKING CHANGE:, or appends a ! after the type/scope, introduces a breaking API change (correlating with MAJOR in Semantic Versioning). A BREAKING CHANGE can be part of commits of any type.
 Examples:
-  - fix(INTMDB-12345/CLOUDP-12345)!: description of the ticket
-  - fix!(INTMDB-12345/CLOUDP-12345): description of the ticket
-  - feat(INTMDB-12345/CLOUDP-12345)!: description of the ticket
-  - feat!(INTMDB-12345/CLOUDP-12345): description of the ticket
+  - `fix(INTMDB-12345/CLOUDP-12345)!: description of the ticket`
+  - `fix!(INTMDB-12345/CLOUDP-12345): description of the ticket`
+  - `feat(INTMDB-12345/CLOUDP-12345)!: description of the ticket`
+  - `feat!(INTMDB-12345/CLOUDP-12345): description of the ticket`
   - If the PR has `BREAKING CHANGE`: in its description is a breaking change
 
 ## Autoclose stale issues and PRs
