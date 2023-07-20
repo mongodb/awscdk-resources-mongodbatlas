@@ -25,6 +25,10 @@ jobs:
             chore
             doc
             test
+            security
+            remove
+            deprecate
+            change
           requireScope: true
           scopes: |
             INTMDB-\d+
