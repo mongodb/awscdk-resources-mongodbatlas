@@ -29,6 +29,11 @@ jobs:
             remove
             deprecate
             change
+            refactor
+            perf
+            ci
+            revert
+            style
           requireScope: true
           scopes: |
             INTMDB-\d+
