@@ -23,6 +23,8 @@ jobs:
             feat
             fix
             chore
+            doc
+            test
           requireScope: true
           scopes: |
             INTMDB-\d+
