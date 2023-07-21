@@ -29,7 +29,6 @@ jobs:
             security
             remove
             deprecate
-            change
             refactor
             perf
             ci
