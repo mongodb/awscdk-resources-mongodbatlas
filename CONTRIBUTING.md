@@ -12,7 +12,7 @@ After the above steps are completed and we've agreed on a path forward:
 5. A repo maintainer will review the your pull request, and may either request additional changes or merge the pull request.
 
 ## Autoclose stale issues and PRs
-- After 30 days of no activity (no comments or commits are on an issue or PR) we automatically tag it as “stale” and add a message: "This issue has gone 30 days without any activity and meets the project’s definition of ‘stale’. This will be auto-closed if there is no new activity over the next 30 days. If the issue is still relevant and active, you can simply comment with a “bump” to keep it open, or add the “[Status] Not Stale” label. Thanks for keeping our repository healthy!"
+- After 30 days of no activity (no comments or commits are on an issue or PR) we automatically tag it as “stale” and add a message: "Thi issue has gone 30 days without any activity and meets the project’s definition of ‘stale’. This will be auto-closed if there is no new activity over the next 30 days. If the issue is still relevant and active, you can simply comment with a “bump” to keep it open, or add the “[Status] Not Stale” label. Thanks for keeping our repository healthy!"
 - After 30 more days of no activity we automatically close the issue / PR.
 
 ## Release and Publishing
