@@ -17,10 +17,10 @@ We use [*Conventional Commits*](https://www.conventionalcommits.org/):
 - `feat(INTMDB-/CLOUDP-): description of the ticket`: a commit of the type feat introduces a new feature to the codebase (this correlates with MINOR in Semantic Versioning).
 - `BREAKING CHANGE`: a commit that has a footer BREAKING CHANGE:, or appends a ! after the type/scope, introduces a breaking API change (correlating with MAJOR in Semantic Versioning). A BREAKING CHANGE can be part of commits of any type.
 Examples:
-  - `fix(INTMDB-12345/CLOUDP-12345)!: description of the ticket`
-  - `fix!(INTMDB-12345/CLOUDP-12345): description of the ticket`
-  - `feat(INTMDB-12345/CLOUDP-12345)!: description of the ticket`
-  - `feat!(INTMDB-12345/CLOUDP-12345): description of the ticket`
+  - `fix(CLOUDP-12345)!: description of the ticket`
+  - `fix!(INTMDB-12345): description of the ticket`
+  - `feat(CLOUDP-12345)!: description of the ticket`
+  - `feat!(CLOUDP-12345): description of the ticket`
   - If the PR has `BREAKING CHANGE`: in its description is a breaking change
 
 ## Autoclose stale issues and PRs
