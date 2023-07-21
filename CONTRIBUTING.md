@@ -16,7 +16,7 @@ After the above steps are completed and we've agreed on a path forward:
 - After 30 more days of no activity we automatically close the issue / PR.
 
 ## Release and Publishing
-### Manual Release
+### Manual Release TEST
 1. `projenrc` is set to do manual release.
 2. The release process is based on *Semantic Versioning* and *Conventional Commits* (https://www.conventionalcommits.org/).
 3. Make sure to follow the above guidelines in order to bump appropriate part of the version (*MAJOR, MINOR, PATCH*).
