@@ -1,7 +1,7 @@
 #  MongoDB Atlas AWS CDK construct examples
 This folder contains examples of using MongoDB Atlas AWS CDK constructs that will help you get started and quickly build your own applications.
 
-## Prerequisites
+## Prereqfuisites
 ### MongoDB Atlas
 #### Programmatic API Key
 You must [configure API keys](https://www.mongodb.com/docs/atlas/configure-api-access/#std-label-atlas-admin-api-access) to authenticate with your MongoDB Atlas organization.
