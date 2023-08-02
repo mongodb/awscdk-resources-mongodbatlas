@@ -1,20 +1,27 @@
 import {
   CfnOutput,
-  SecretValue,
   aws_iam as iam,
   aws_secretsmanager as secretsmanager,
   aws_cloudformation as cloudformation,
+  SecretValue,
+  CfnParameter,
 } from "aws-cdk-lib";
 import { Construct } from "constructs";
+
+export const AtlasBasicResources: string[] = [
+  "Cluster",
+  "Project",
+  "DatabaseUser",
+  "ProjectIpAccessList",
+];
 
 export class MongoAtlasBootstrapProps {
   /**
    * The IAM role name for CloudFormation Extension Execution.
    * @see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html
-   *
    * @default auto generat the name.
    */
-  readonly roleName?: string;
+  readonly roleName!: string;
   /**
    * The secret profile name for MongoDB Atlas.
    * @default generate a dummy secret.
@@ -22,20 +29,26 @@ export class MongoAtlasBootstrapProps {
    */
   readonly secretProfile!: string;
   /**
-   * MongoDB Atlas Public Key: the public key acts as the username when making API requests.
-   * @see https://www.mongodb.com/docs/atlas/configure-api-access/#:~:text=API%20keys%20have%20two%20parts,Atlas%20through%20the%20user%20interface.
-   */
-  readonly mongoDBAtlasPublicKey!: string;
-  /**
-   * MongoDB Atlas Private Key: The private key acts as the password when making API requests.
-   * @see https://www.mongodb.com/docs/atlas/configure-api-access/#:~:text=API%20keys%20have%20two%20parts,Atlas%20through%20the%20user%20interface.
-   */
-  readonly mongoDBAtlasPrivateKey!: string;
-  /**
    * List of strings representing mongoDB atlas types to activate.
-   * @default ["Cluster","Project","DatabaseUser","ProjectIpAccessList"]
+   * the exported AtlasBasicResources can be used for AtlasBasic resources
+   * if not provided non resources will be activated
+   * @example typesToActivate=["Cluster","Project"] this will actiate MongoDB::Atlas::Project && MongoDB::Atlas::Cluster
    */
   readonly typesToActivate?: string[];
+  /**
+   * MongoDB Atlas Public Key: the public key acts as the username when making API requests. Input as CFNParameter and allways use noEcho: true for safety.
+   * @example new cdk.CfnParameter(stack, "atlasPrivateKey", {noEcho: true,type: "String",});
+   * @see https://www.mongodb.com/docs/atlas/configure-api-access/#:~:text=API%20keys%20have%20two%20parts,Atlas%20through%20the%20user%20interface.
+   * @see https://docs.aws.amazon.com/cdk/v2/guide/parameters.html
+   */
+  readonly atlasPublicKey!: CfnParameter;
+  /**
+   * MongoDB Atlas Public Key: the public key acts as the username when making API requests. Input as CFNParameter and allways use noEcho: true for safety.
+   * @example new cdk.CfnParameter(stack, "atlasPrivateKey", {noEcho: true,type: "String",});
+   * @see https://www.mongodb.com/docs/atlas/configure-api-access/#:~:text=API%20keys%20have%20two%20parts,Atlas%20through%20the%20user%20interface.
+   * @see https://docs.aws.amazon.com/cdk/v2/guide/parameters.html
+   */
+  readonly atlasPrivateKey!: CfnParameter;
 }
 
 /**
@@ -95,23 +108,19 @@ export class MongoAtlasBootstrap extends Construct {
         this,
         "MongoSecretProfile",
         props?.secretProfile,
-        props?.mongoDBAtlasPrivateKey,
-        props?.mongoDBAtlasPublicKey
+        props.atlasPublicKey,
+        props.atlasPublicKey
       );
     }
 
     if (props?.typesToActivate) {
       for (let type of props?.typesToActivate) {
-        new cloudformation.CfnTypeActivation(
-          this,
-          `${type}TypeActivation`,
-          /* all optional props */ {
-            executionRoleArn: this.role.roleArn,
-            type: `RESOURCE`,
-            typeName: `MongoDB::Atlas::${type}`,
-            publisherId: "bb989456c78c398a858fef18f2ca1bfc1fbba082",
-          }
-        );
+        new cloudformation.CfnTypeActivation(this, `${type}TypeActivation`, {
+          executionRoleArn: this.role.roleArn,
+          type: `RESOURCE`,
+          typeName: `MongoDB::Atlas::${type}`,
+          publisherId: "bb989456c78c398a858fef18f2ca1bfc1fbba082",
+        });
       }
     }
   }
@@ -122,24 +131,25 @@ export class MongoSecretProfile extends Construct {
     scope: Construct,
     id: string,
     profileName: string,
-    publicKey: string,
-    privateKey: string
+    atlasPublicKey: CfnParameter,
+    atlasPrivateKey: CfnParameter
   ) {
     super(scope, id);
 
     const secretValue = {
-      PublicKey: publicKey,
-      PrivateKey: privateKey,
+      PublicKey: atlasPublicKey.valueAsString,
+      PrivateKey: atlasPrivateKey.valueAsString,
     };
+
+    const secretVal = SecretValue.unsafePlainText(JSON.stringify(secretValue));
 
     // create a secret
     const secret = new secretsmanager.Secret(this, profileName, {
       secretName: `cfn/atlas/profile/${profileName}`,
       description: "Secret used for MongoDB Atlas Cloud Formation api keys",
-      secretStringValue: SecretValue.unsafePlainText(
-        JSON.stringify(secretValue)
-      ),
+      secretStringValue: secretVal,
     });
+
     new CfnOutput(this, "SecretName", { value: secret.secretName });
   }
 }

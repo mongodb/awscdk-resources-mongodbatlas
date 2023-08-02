@@ -13,7 +13,11 @@
 // limitations under the License.
 
 import * as cdk from "aws-cdk-lib";
-import { MongoAtlasBootstrap, MongoAtlasBootstrapProps } from "./index";
+import {
+  MongoAtlasBootstrap,
+  MongoAtlasBootstrapProps,
+  AtlasBasicResources,
+} from "./index";
 
 const app = new cdk.App();
 
@@ -26,14 +30,22 @@ const stack = new cdk.Stack(app, "atlas-cdk-bootstrap", {
 
 const mongoDBProfile = "development";
 const roleName = "MongoDB-Atlas-CDK-Excecution";
-const typesToActivate = ["Project"];
+
+const publicKey = new cdk.CfnParameter(stack, "atlasPublicKey", {
+  noEcho: true,
+  type: "String",
+});
+const privateKey = new cdk.CfnParameter(stack, "atlasPrivateKey", {
+  noEcho: true,
+  type: "String",
+});
 
 const bootstrapProperties: MongoAtlasBootstrapProps = {
   roleName: roleName,
   secretProfile: mongoDBProfile,
-  typesToActivate: typesToActivate,
-  mongoDBAtlasPublicKey: "THISISAPUBLICKEY",
-  mongoDBAtlasPrivateKey: "THISISAPRIVATEKEY",
+  typesToActivate: AtlasBasicResources,
+  atlasPublicKey: publicKey,
+  atlasPrivateKey: privateKey,
 };
 
 new MongoAtlasBootstrap(stack, "cdk-bootstrap", bootstrapProperties);
