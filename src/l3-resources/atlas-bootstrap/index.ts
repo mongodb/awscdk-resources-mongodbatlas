@@ -109,7 +109,7 @@ export class MongoAtlasBootstrap extends Construct {
         "MongoSecretProfile",
         props?.secretProfile,
         props.atlasPublicKey,
-        props.atlasPublicKey
+        props.atlasPrivateKey
       );
     }
 
