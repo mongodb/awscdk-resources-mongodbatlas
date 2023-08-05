@@ -5,6 +5,7 @@ import {
   aws_cloudformation as cloudformation,
   SecretValue,
   CfnParameter,
+  Duration,
 } from "aws-cdk-lib";
 import { Construct } from "constructs";
 
@@ -61,9 +62,13 @@ export class MongoAtlasBootstrap extends Construct {
     super(scope, id);
 
     this.role = new iam.Role(this, "mongoDBAtlasCFNExecutionRole", {
-      assumedBy: new iam.ServicePrincipal(
-        "resources.cloudformation.amazonaws.com"
+      maxSessionDuration: Duration.seconds(8400),
+      assumedBy: new iam.CompositePrincipal(
+        new iam.ServicePrincipal("cloudformation.amazonaws.com"),
+        new iam.ServicePrincipal("resources.cloudformation.amazonaws.com"),
+        new iam.ServicePrincipal("lambda.amazonaws.com")
       ),
+      path: "/",
       roleName: props?.roleName,
     });
 
