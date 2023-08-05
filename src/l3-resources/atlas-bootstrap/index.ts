@@ -73,8 +73,6 @@ export class MongoAtlasBootstrap extends Construct {
         new iam.PolicyStatement({
           effect: iam.Effect.ALLOW,
           actions: [
-            "secretsmanager:CreateSecret",
-            "secretsmanager:CreateSecretInput",
             "secretsmanager:DescribeSecret",
             "secretsmanager:GetSecretValue",
             "secretsmanager:PutSecretValue",
