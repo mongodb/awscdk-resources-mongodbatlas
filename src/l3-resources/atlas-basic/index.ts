@@ -12,117 +12,168 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import * as path from "path";
+import {
+  Stack,
+  CfnOutput,
+  CustomResource,
+  Aws,
+  aws_iam as iam,
+  aws_ec2 as ec2,
+  aws_lambda as lambda,
+  custom_resources as cr,
+} from "aws-cdk-lib";
 import { Construct } from "constructs";
 import * as atlas from "../../index";
 import { AtlasBasicProps } from "../common/props";
 
-/** @type {*} */
-const projectDefaults = {
-  projectName: "atlas-project-",
-};
-/** @type {*} */
-const dbDefaults = {
-  dbName: "admin",
-  username: "atlas-user",
-  password: "atlas-pwd",
-  roles: [
-    {
-      roleName: "atlasAdmin",
-      databaseName: "admin",
-    },
-  ],
-};
-/** @type {*} */
-const clusterDefaults = {
-  clusterName: "atlas-cluster-",
-  clusterType: "REPLICASET",
-};
-
 /**
- * @description
- * @export
- * @class AtlasBasic
- * @extends {Construct}
+ * L3 construct to created a dedicated cluster.
  */
 export class AtlasBasic extends Construct {
-  /**
-   * @description
-   * @type {project.CfnProject}
-   * @memberof AtlasBasic
-   */
-  readonly mProject: atlas.CfnProject;
-  /**
-   * @description
-   * @type {atlas.CfnCluster}
-   * @memberof AtlasBasic
-   */
-  readonly mCluster: atlas.CfnCluster;
-  /**
-   * @description
-   * @type {user.CfnDatabaseUser}
-   * @memberof AtlasBasic
-   */
-  readonly mDBUser: atlas.CfnDatabaseUser;
-  /**
-   * @description
-   * @type {ipAccessList.CfnProjectIpAccessList}
-   * @memberof AtlasBasic
-   */
-  readonly ipAccessList: atlas.CfnProjectIpAccessList;
+  readonly project: atlas.IProject;
+  readonly projectIpAccessList: atlas.IProjectIpAccessList;
+  readonly databaseUser: atlas.IDatabaseUser;
+  readonly cluster: atlas.Cluster;
+  private readonly props: AtlasBasicProps;
+  private readonly id: string;
+  private readonly vpc?: ec2.IVpc;
 
-  /**
-   * Creates an instance of AtlasBasic.
-   * @param {Construct} scope
-   * @param {string} id
-   * @param {AtlasBasicProps} props
-   * @memberof AtlasBasic
-   */
   constructor(scope: Construct, id: string, props: AtlasBasicProps) {
     super(scope, id);
-    //Create a new MongoDB Atlas Project
-    this.mProject = new atlas.CfnProject(this, "project-".concat(id), {
-      profile: props.profile,
-      name:
-        props.projectProps.name ||
-        projectDefaults.projectName.concat(String(randomNumber())),
-      ...props.projectProps,
+
+    this.props = props;
+    this.id = id;
+    this.project = props.project ?? this.createProject();
+    this.projectIpAccessList = this.createIpAccessList();
+    this.databaseUser = this.createDatabaseUser();
+    this.vpc = props.peering?.vpc;
+
+    this.cluster = new atlas.Cluster(this, `cluster${this.id}`, {
+      profile: this.props.profile,
+      project: this.project,
     });
-    // Create a new MongoDB Atlas Cluster and pass project ID
-    this.mCluster = new atlas.CfnCluster(this, "cluster-".concat(id), {
-      profile: props.profile,
-      name:
-        props.clusterProps.name ||
-        clusterDefaults.clusterName.concat(String(randomNumber())),
-      projectId: this.mProject.attrId,
-      clusterType: clusterDefaults.clusterType,
-      ...props.clusterProps,
+
+    if (props.peering) {
+      this.createVpcPeering();
+    }
+  }
+  private createProject(): atlas.IProject {
+    return new atlas.Project(this, `project${this.id}`, {
+      orgId: this.props.orgId,
+      profile: this.props.profile,
     });
-    // Create a new MongoDB Atlas Database User
-    this.mDBUser = new atlas.CfnDatabaseUser(this, "db-user-".concat(id), {
-      profile: props.profile,
-      databaseName: props.dbUserProps?.databaseName || dbDefaults.dbName,
-      projectId: this.mProject.attrId,
-      username: props.dbUserProps?.username || dbDefaults.username,
-      roles: props.dbUserProps?.roles || dbDefaults.roles,
-      password: props.dbUserProps?.password || dbDefaults.password,
-      ...props.dbUserProps,
+  }
+  private createIpAccessList(): atlas.ProjectIpAccessList {
+    return new atlas.ProjectIpAccessList(this, `accessList${this.id}`, {
+      profile: this.props.profile,
+      project: this.project,
+      accessList: this.props.accessList,
     });
-    // Create a new MongoDB Atlas Project IP Access List
-    this.ipAccessList = new atlas.CfnProjectIpAccessList(
+  }
+  private createDatabaseUser(): atlas.DatabaseUser {
+    return new atlas.DatabaseUser(this, `user${this.id}`, {
+      profile: this.props.profile,
+      project: this.project,
+    });
+  }
+  /**
+   * Create a VPC peering for this cluster.
+   */
+  public createVpcPeering() {
+    // create network container
+    const container = new atlas.CfnNetworkContainer(
       this,
-      "ip-access-list-".concat(id),
+      `networkcontainer${this.id}`,
       {
-        profile: props.profile,
-        projectId: this.mProject.attrId,
-        accessList: props.ipAccessListProps?.accessList,
-        ...props.ipAccessListProps,
+        projectId: this.project.projectId,
+        regionName: this.props.peering!.acceptRegionName ?? "US_EAST_1",
+        profile: this.props.profile,
+        vpcId: this.vpc?.vpcId,
+        atlasCidrBlock: this.props.peering!.cidr,
+        provisioned: true,
       }
     );
-  }
-}
+    // create the peering
+    const peering = new atlas.CfnNetworkPeering(this, `peering${this.id}`, {
+      containerId: container.attrId,
+      projectId: this.project.projectId,
+      vpcId: this.props.peering!.vpc.vpcId,
+      profile: this.props.profile,
+      routeTableCidrBlock: this.vpc?.vpcCidrBlock,
+      accepterRegionName: this.props.peering!.acceptRegionName ?? Aws.REGION,
+      awsAccountId: this.props.peering!.accountId ?? Aws.ACCOUNT_ID,
+    });
+    new CfnOutput(this, "VpcPeeringConnectionId", {
+      value: peering.attrConnectionId,
+    });
+    this.cluster.node.addDependency(container);
 
-function randomNumber() {
-  const min = 10;
-  const max = 9999999;
-  return Math.floor(Math.random() * (max - min + 1) + min);
+    // create the custom resource to accept the peering request
+    const provider = new cr.Provider(this, "VpcPeeringProvider", {
+      onEventHandler: new lambda.Function(this, "VpcPeeringHandler", {
+        runtime: lambda.Runtime.PYTHON_3_9,
+        code: lambda.Code.fromAsset(path.join(__dirname, "../lambda")),
+        handler: "vpc-peering-handler.on_event",
+      }),
+    });
+    provider.onEventHandler.addToRolePolicy(
+      new iam.PolicyStatement({
+        actions: [
+          "ec2:AcceptVpcPeeringConnection",
+          "ec2:DescribeVpcPeeringConnections",
+          "ec2:DeleteVpcPeeringConnection",
+        ],
+        resources: [
+          Stack.of(this).formatArn({
+            service: "ec2",
+            resource: "vpc-peering-connection",
+            account: this.props.peering!.accountId ?? Aws.ACCOUNT_ID,
+            resourceName: peering.attrConnectionId,
+          }),
+          Stack.of(this).formatArn({
+            service: "ec2",
+            resource: "vpc",
+            account: this.props.peering!.accountId ?? Aws.ACCOUNT_ID,
+            resourceName: this.vpc?.vpcId,
+          }),
+        ],
+      })
+    );
+    provider.onEventHandler.addToRolePolicy(
+      new iam.PolicyStatement({
+        actions: [
+          "ec2:AcceptVpcPeeringConnection",
+          "ec2:DescribeVpcPeeringConnections",
+          "ec2:DeleteVpcPeeringConnection",
+        ],
+        resources: [
+          Stack.of(this).formatArn({
+            service: "ec2",
+            resource: "vpc-peering-connection",
+            account: this.props.peering!.accountId ?? Aws.ACCOUNT_ID,
+            resourceName: peering.attrConnectionId,
+          }),
+          Stack.of(this).formatArn({
+            service: "ec2",
+            resource: "vpc",
+            account: this.props.peering!.accountId ?? Aws.ACCOUNT_ID,
+            resourceName: this.vpc?.vpcId,
+          }),
+        ],
+      })
+    );
+    const peeringHandlerResource = new CustomResource(
+      this,
+      "CustomResourceVpcPeeringHandler",
+      {
+        serviceToken: provider.serviceToken,
+        resourceType: "Custom::VpcPeeringHandler",
+        properties: {
+          ConnectionId: peering.attrConnectionId,
+        },
+      }
+    );
+    peeringHandlerResource.node.addDependency(peering);
+  }
 }

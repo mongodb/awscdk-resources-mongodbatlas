@@ -294,6 +294,10 @@ export {
 // L2 Constructors
 export * from "./l2-resources/encryption-at-rest";
 export * from "./l2-resources/third-party-integration";
+export * from "./l2-resources/project";
+export * from "./l2-resources/project-ip-access-list";
+export * from "./l2-resources/database-user";
+export * from "./l2-resources/cluster";
 
 // L3 Constructors
 export * from "./l3-resources/atlas-basic";

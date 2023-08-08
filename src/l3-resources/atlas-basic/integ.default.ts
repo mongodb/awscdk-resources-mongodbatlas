@@ -53,9 +53,10 @@ new AtlasBasic(stack, "atlas-basic", {
   clusterProps: {
     replicationSpecs: replicationSpecs,
   },
-  projectProps: {
-    orgId: orgId,
-  },
+//
+  // projectProps: {
+  //   orgId: orgId,
+  // },
   ipAccessListProps: {
     accessList: [
       {

@@ -1,4 +1,26 @@
+import { aws_ec2 as ec2 } from "aws-cdk-lib";
 import * as atlas from "../../index";
+
+export interface PeeringProps {
+  /**
+   * The AWS VPC to peer with.
+   */
+  readonly vpc: ec2.IVpc;
+  /**
+   * The Atlas CIDR block for the network container.
+   */
+  readonly cidr: string;
+  /**
+   * The AWS region name to accept the peering.
+   * @default - current region name.
+   */
+  readonly acceptRegionName?: string;
+  /**
+   * The AWS account ID.
+   * @default - current account ID.
+   */
+  readonly accountId?: string;
+}
 
 /**
  * @description
@@ -11,198 +33,214 @@ export interface AtlasBasicProps {
    * @type {string}
    * @memberof AtlasBasicProps
    */
-  readonly profile?: string;
+  readonly profile: string;
+
+  readonly orgId: string;
 
   /**
    * @description
-   * @type {ProjectProps}
+   * @type {AtlasProjectProps}
    * @memberof AtlasBasicProps
+   *
+   * @default - create a new project.
    */
-  readonly projectProps: ProjectProps;
+  readonly project?: atlas.IProject;
   /**
    * @description
-   * @type {ClusterProps}
+   * @type {AtlasClusterProps}
    * @memberof AtlasBasicProps
    */
-  readonly clusterProps: ClusterProps;
+  readonly clusterProps: AtlasClusterProps;
   /**
    * @description
    * @type {DatabaseUserProps}
    * @memberof AtlasBasicProps
    */
-  readonly dbUserProps?: DatabaseUserProps;
+  readonly dbUserProps?: AtlasDatabaseUserProps;
   /**
    * @description
    * @type {IpAccessListProps}
    * @memberof AtlasBasicProps
    */
-  readonly ipAccessListProps?: IpAccessListProps;
+  // readonly ipAccessListProps?: AtlasIpAccessListProps;
+  readonly accessList: atlas.AccessList[];
+
+  /**
+   * VPC peering options with AWS. If you enable this option, the network container and network peering with AWS VPC
+   * will be provisioned and the VPC peering request will be auto accepted.
+   *
+   * @see https://www.mongodb.com/docs/atlas/security-vpc-peering/
+   *
+   * @default - no vpc peering.
+   */
+  readonly peering?: PeeringProps;
 }
 
 /**
  * @description
  * @export
- * @interface ProjectProps
+ * @interface AtlasProjectProps
  */
-export interface ProjectProps {
+export interface AtlasProjectProps {
   /**
    * @description Name of the project to create.
    * @type {string}
-   * @memberof ProjectProps
+   * @memberof AtlasProjectProps
    */
   readonly name?: string;
   /**
    * @description Unique identifier of the organization within which to create the project.
    * @type {string}
-   * @memberof ProjectProps
+   * @memberof AtlasProjectProps
    * @default auto-generated
    */
   readonly orgId: string;
   /**
    * @description Unique 24-hexadecimal digit string that identifies the Atlas user account to be granted the `Project Owner` role on the specified project. If you set this parameter, it overrides the default value of the oldest `Organization Owner`.
    * @type {string}
-   * @memberof ProjectProps
+   * @memberof AtlasProjectProps
    */
   readonly projectOwnerId?: string;
   /**
    * @description Flag that indicates whether to create the project with default alert settings.
    * @type {boolean}
-   * @memberof ProjectProps
+   * @memberof AtlasProjectProps
    */
   readonly withDefaultAlertsSettings?: boolean;
   /**
    * @description The number of Atlas clusters deployed in the project.
    * @type {number}
-   * @memberof ProjectProps
+   * @memberof AtlasProjectProps
    */
   readonly clusterCount?: number;
   /**
    * @description
    * @type {project.ProjectSettings}
-   * @memberof ProjectProps
+   * @memberof AtlasProjectProps
    */
   readonly projectSettings?: atlas.ProjectSettings;
   /**
    * @description
    * @type {project.ProjectTeam[]}
-   * @memberof ProjectProps
+   * @memberof AtlasProjectProps
    */
   readonly projectTeams?: atlas.ProjectTeam[];
   /**
    * @description
    * @type {project.ProjectApiKey[]}
-   * @memberof ProjectProps
+   * @memberof AtlasProjectProps
    */
   readonly projectApiKeys?: atlas.ProjectApiKey[];
 }
+
 /**
  * @description
  * @export
  * @interface ClusterProps
  */
-export interface ClusterProps {
+export interface AtlasClusterProps {
   /**
    * @description Advanced configuration details to add for one cluster in the specified project.
    * @type {atlas.ProcessArgs}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly advancedSettings?: atlas.ProcessArgs;
   /**
    * @description Flag that indicates whether the cluster can perform backups. If set to true, the cluster can perform backups. You must set this value to true for NVMe clusters. Backup uses Cloud Backups for dedicated clusters and Shared Cluster Backups for tenant clusters. If set to false, the cluster doesn't use backups.
    * @type {boolean}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly backupEnabled?: boolean;
   /**
    * @description Settings needed to configure the MongoDB Connector for Business Intelligence for this cluster.
    * @type {atlas.CfnClusterPropsBiConnector}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly biConnector?: atlas.CfnClusterPropsBiConnector;
   /**
    * @description Configuration of nodes that comprise the cluster. Atlas accepts: `REPLICASET`, `SHARDED`, `GEOSHARDED`.
    * @type {string}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly clusterType?: string;
   /**
    * @description Set of connection strings that your applications use to connect to this cluster. Use the parameters in this object to connect your applications to this cluster. See the MongoDB [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/) reference for further details.
    * @type {atlas.ConnectionStrings}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    * @default REPLICASET
    */
   readonly connectionStrings?: atlas.ConnectionStrings;
   /**
    * @description Storage capacity that the host's root volume possesses expressed in gigabytes. Increase this number to add capacity. MongoDB Cloud requires this parameter if you set replicationSpecs. If you specify a disk size below the minimum (10 GB), this parameter defaults to the minimum disk size value. Storage charge calculations depend on whether you choose the default value or a custom value. The maximum value for disk storage cannot exceed 50 times the maximum RAM for the selected cluster. If you require more storage space, consider upgrading your cluster to a higher tier.
    * @type {number}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly diskSizeGb?: number;
   /**
    * @description Cloud service provider that manages your customer keys to provide an additional layer of encryption at rest for the cluster. To enable customer key management for encryption at rest, the cluster replicationSpecs[n].regionConfigs[m].{type}Specs.instanceSize setting must be M10 or higher and "backupEnabled" : false or omitted entirely.
    * @type {atlas.CfnClusterPropsEncryptionAtRestProvider}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly encryptionAtRestProvider?: atlas.CfnClusterPropsEncryptionAtRestProvider;
   /**
    * @description
    * @type {string}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly projectId?: string;
   /**
    * @description Collection of key-value pairs between 1 and 255 characters in length that tag and categorize the cluster. The MongoDB Cloud console doesn't display your labels.
    * @type {atlas.CfnClusterPropsLabels[]}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly labels?: atlas.CfnClusterPropsLabels[];
   /**
    * @description Major MongoDB version of the cluster. MongoDB Cloud deploys the cluster with the latest stable release of the specified version.
    * @type {string}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly mongoDbMajorVersion?: string;
   /**
    * @description Human-readable label that identifies the advanced cluster.
    * @type {string}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly name?: string;
   /**
    * @description Flag that indicates whether the cluster is paused or not.
    * @type {boolean}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    * @default auto-generated
    */
   readonly paused?: boolean;
   /**
    * @description Flag that indicates whether the cluster uses continuous cloud backups.
    * @type {boolean}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly pitEnabled?: boolean;
   /**
    * @description List of settings that configure your cluster regions. For Global Clusters, each object in the array represents a zone where your clusters nodes deploy. For non-Global replica sets and sharded clusters, this array has one object representing where your clusters nodes deploy.
    * @type {atlas.AdvancedReplicationSpec[]}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly replicationSpecs?: atlas.AdvancedReplicationSpec[];
   /**
    * @description Root Certificate Authority that MongoDB Cloud cluster uses. MongoDB Cloud supports Internet Security Research Group.
    * @type {string}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly rootCertType?: string;
   /**
    * @description Method by which the cluster maintains the MongoDB versions. If value is CONTINUOUS, you must not specify mongoDBMajorVersion
    * @type {string}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly versionReleaseSystem?: string;
   /**
    * @description Flag that indicates whether termination protection is enabled on the cluster. If set to true, MongoDB Cloud won't delete the cluster. If set to false, MongoDB Cloud will delete the cluster.
    * @type {boolean}
-   * @memberof ClusterProps
+   * @memberof AtlasClusterProps
    */
   readonly terminationProtectionEnabled?: boolean;
 }
@@ -211,7 +249,7 @@ export interface ClusterProps {
  * @export
  * @interface DatabaseUserProps
  */
-export interface DatabaseUserProps {
+export interface AtlasDatabaseUserProps {
   /**
    * @description Date and time when MongoDB Cloud deletes the user. This parameter expresses its value in the ISO 8601 timestamp format in UTC and can include the time zone designation. You must specify a future date that falls within one week of making the Application Programming Interface (API) request.
    * @type {string}
@@ -287,7 +325,7 @@ export interface DatabaseUserProps {
  * @export
  * @interface IpAccessListProps
  */
-export interface IpAccessListProps {
+export interface AtlasIpAccessListProps {
   /**
    * @description
    * @type {ipAccessList.AccessListDefinition[]}
