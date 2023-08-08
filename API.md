@@ -29471,6 +29471,7 @@ const databaseConfig: DatabaseConfig = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.fullDocumentBeforeChange">fullDocumentBeforeChange</a></code> | <code>boolean</code> | If true, indicates that `UPDATE` change events should include a snapshot of the modified document from immediately before the update was applied. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.match">match</a></code> | <code>string</code> | stringify version of a [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.operationTypes">operationTypes</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfigOperationTypes">DatabaseConfigOperationTypes</a>[]</code> | The type(s) of MongoDB change event that the trigger listens for. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.project">project</a></code> | <code>string</code> | stringify version of a [$project](https://www.mongodb.com/docs/manual/reference/operator/aggregation/project/) expressions to limit the data included in each event. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.serviceId">serviceId</a></code> | <code>string</code> | The _id value of a linked MongoDB data source. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.skipCatchupEvents">skipCatchupEvents</a></code> | <code>boolean</code> | If `true`, enabling the Trigger after it was disabled will not invoke events that occurred while the Trigger was disabled. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.tolerateResumeErrors">tolerateResumeErrors</a></code> | <code>boolean</code> | If `true`, when this Trigger's resume token cannot be found in the cluster's oplog, the Trigger automatically resumes processing events at the next relevant change stream event. |
@@ -29554,6 +29555,18 @@ public readonly operationTypes: DatabaseConfigOperationTypes[];
 - *Type:* <a href="#awscdk-resources-mongodbatlas.DatabaseConfigOperationTypes">DatabaseConfigOperationTypes</a>[]
 
 The type(s) of MongoDB change event that the trigger listens for.
+
+---
+
+##### `project`<sup>Optional</sup> <a name="project" id="awscdk-resources-mongodbatlas.DatabaseConfig.property.project"></a>
+
+```typescript
+public readonly project: string;
+```
+
+- *Type:* string
+
+stringify version of a [$project](https://www.mongodb.com/docs/manual/reference/operator/aggregation/project/) expressions to limit the data included in each event.
 
 ---
 
