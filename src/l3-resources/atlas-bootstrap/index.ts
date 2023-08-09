@@ -4,7 +4,6 @@ import {
   aws_secretsmanager as secretsmanager,
   aws_cloudformation as cloudformation,
   SecretValue,
-  CfnParameter,
   Duration,
 } from "aws-cdk-lib";
 import { Construct } from "constructs";
@@ -36,20 +35,6 @@ export class MongoAtlasBootstrapProps {
    * @example typesToActivate=["Cluster","Project"] this will actiate MongoDB::Atlas::Project && MongoDB::Atlas::Cluster
    */
   readonly typesToActivate?: string[];
-  /**
-   * MongoDB Atlas Public Key: the public key acts as the username when making API requests. Input as CFNParameter and allways use noEcho: true for safety.
-   * @example new cdk.CfnParameter(stack, "atlasPrivateKey", {noEcho: true,type: "String",});
-   * @see https://www.mongodb.com/docs/atlas/configure-api-access/#:~:text=API%20keys%20have%20two%20parts,Atlas%20through%20the%20user%20interface.
-   * @see https://docs.aws.amazon.com/cdk/v2/guide/parameters.html
-   */
-  readonly atlasPublicKey!: CfnParameter;
-  /**
-   * MongoDB Atlas Public Key: the public key acts as the username when making API requests. Input as CFNParameter and allways use noEcho: true for safety.
-   * @example new cdk.CfnParameter(stack, "atlasPrivateKey", {noEcho: true,type: "String",});
-   * @see https://www.mongodb.com/docs/atlas/configure-api-access/#:~:text=API%20keys%20have%20two%20parts,Atlas%20through%20the%20user%20interface.
-   * @see https://docs.aws.amazon.com/cdk/v2/guide/parameters.html
-   */
-  readonly atlasPrivateKey!: CfnParameter;
 }
 
 /**
@@ -80,8 +65,6 @@ export class MongoAtlasBootstrap extends Construct {
           actions: [
             "secretsmanager:DescribeSecret",
             "secretsmanager:GetSecretValue",
-            "secretsmanager:PutSecretValue",
-            "secretsmanager:UpdateSecretVersionStage",
             "ec2:CreateVpcEndpoint",
             "ec2:DeleteVpcEndpoints",
             "cloudformation:CreateResource",
@@ -107,13 +90,7 @@ export class MongoAtlasBootstrap extends Construct {
     this.role.attachInlinePolicy(atlasCdkPolicy);
 
     if (props?.secretProfile) {
-      new MongoSecretProfile(
-        this,
-        "MongoSecretProfile",
-        props?.secretProfile,
-        props.atlasPublicKey,
-        props.atlasPrivateKey
-      );
+      new MongoSecretProfile(this, "MongoSecretProfile", props?.secretProfile);
     }
 
     if (props?.typesToActivate) {
@@ -130,29 +107,23 @@ export class MongoAtlasBootstrap extends Construct {
 }
 
 export class MongoSecretProfile extends Construct {
-  constructor(
-    scope: Construct,
-    id: string,
-    profileName: string,
-    atlasPublicKey: CfnParameter,
-    atlasPrivateKey: CfnParameter
-  ) {
+  constructor(scope: Construct, id: string, profileName: string) {
     super(scope, id);
-
-    const secretValue = {
-      PublicKey: atlasPublicKey.valueAsString,
-      PrivateKey: atlasPrivateKey.valueAsString,
-    };
-
-    const secretVal = SecretValue.unsafePlainText(JSON.stringify(secretValue));
 
     // create a secret
     const secret = new secretsmanager.Secret(this, profileName, {
       secretName: `cfn/atlas/profile/${profileName}`,
       description: "Secret used for MongoDB Atlas Cloud Formation api keys",
-      secretStringValue: secretVal,
+      secretStringValue: SecretValue.unsafePlainText(
+        '{"PublicKey":"yourAtlasPublicKey", "PrivateKey": "yourAtlasPrivateKey"}'
+      ),
     });
 
     new CfnOutput(this, "SecretName", { value: secret.secretName });
+    new CfnOutput(this, "UpdateSecretCommand", {
+      value:
+        `aws secretsmanager update-secret --secret-id ${secret.secretName}` +
+        ' --secret-string "{\\"PublicKey\\":\\"${MONGO_ATLAS_PUBLIC_KEY}\\",\\"PrivateKey\\":\\"${MONGO_ATLAS_PRIVATE_KEY}\\"}"',
+    });
   }
 }

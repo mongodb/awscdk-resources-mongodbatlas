@@ -31,21 +31,10 @@ const stack = new cdk.Stack(app, "atlas-cdk-bootstrap", {
 const mongoDBProfile = "development";
 const roleName = "MongoDB-Atlas-CDK-Excecution";
 
-const publicKey = new cdk.CfnParameter(stack, "atlasPublicKey", {
-  noEcho: true,
-  type: "String",
-});
-const privateKey = new cdk.CfnParameter(stack, "atlasPrivateKey", {
-  noEcho: true,
-  type: "String",
-});
-
 const bootstrapProperties: MongoAtlasBootstrapProps = {
   roleName: roleName,
   secretProfile: mongoDBProfile,
   typesToActivate: AtlasBasicResources,
-  atlasPublicKey: publicKey,
-  atlasPrivateKey: privateKey,
 };
 
 new MongoAtlasBootstrap(stack, "cdk-bootstrap", bootstrapProperties);
