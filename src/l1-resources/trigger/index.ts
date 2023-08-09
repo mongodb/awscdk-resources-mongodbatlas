@@ -180,6 +180,13 @@ export interface DatabaseConfig {
   readonly match?: string;
 
   /**
+   * stringify version of a [$project](https://www.mongodb.com/docs/manual/reference/operator/aggregation/project/) expressions to limit the data included in each event.
+   *
+   * @schema DatabaseConfig#Project
+   */
+  readonly project?: string;
+
+  /**
    * If `true`, indicates that `UPDATE` change events should
    * include the most current
    * [majority-committed](https://www.mongodb.com/docs/manual/reference/read-concern-majority/)
@@ -250,6 +257,7 @@ export function toJson_DatabaseConfig(
     Collection: obj.collection,
     OperationTypes: obj.operationTypes?.map((y) => y),
     Match: obj.match,
+    Project: obj.project,
     FullDocument: obj.fullDocument,
     FullDocumentBeforeChange: obj.fullDocumentBeforeChange,
     SkipCatchupEvents: obj.skipCatchupEvents,
