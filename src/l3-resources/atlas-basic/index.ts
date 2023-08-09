@@ -12,23 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import * as path from "path";
-import {
-  Stack,
-  CfnOutput,
-  CustomResource,
-  Aws,
-  aws_iam as iam,
-  aws_ec2 as ec2,
-  aws_lambda as lambda,
-  custom_resources as cr,
-} from "aws-cdk-lib";
+import { CfnOutput, Aws } from "aws-cdk-lib";
 import { Construct } from "constructs";
 import * as atlas from "../../index";
+import { PrivateEndpoint } from "../../l2-resources/private-endpoint";
 import { AtlasBasicProps } from "../common/props";
 
 /**
- * L3 construct to created a dedicated cluster.
+ * L3 construct to create a dedicated cluster.
  */
 export class AtlasBasic extends Construct {
   readonly project: atlas.IProject;
@@ -37,60 +28,67 @@ export class AtlasBasic extends Construct {
   readonly cluster: atlas.Cluster;
   private readonly props: AtlasBasicProps;
   private readonly id: string;
-  private readonly vpc?: ec2.IVpc;
+  private vpcPeering: boolean = false;
+  private privateEndpoint: boolean = false;
 
   constructor(scope: Construct, id: string, props: AtlasBasicProps) {
     super(scope, id);
 
     this.props = props;
     this.id = id;
-    this.project = props.project ?? this.createProject();
-    this.projectIpAccessList = this.createIpAccessList();
-    this.databaseUser = this.createDatabaseUser();
-    this.vpc = props.peering?.vpc;
+    this.project = props.project ?? this.addProject();
+    this.projectIpAccessList = this.addIpAccessList();
+    this.databaseUser = this.addDatabaseUser(props.databaseUserOptions);
 
     this.cluster = new atlas.Cluster(this, `cluster${this.id}`, {
+      ...props.clusterOptions,
       profile: this.props.profile,
       project: this.project,
     });
-
-    if (props.peering) {
-      this.createVpcPeering();
-    }
   }
-  private createProject(): atlas.IProject {
+  private addProject(): atlas.IProject {
     return new atlas.Project(this, `project${this.id}`, {
       orgId: this.props.orgId,
       profile: this.props.profile,
     });
   }
-  private createIpAccessList(): atlas.ProjectIpAccessList {
+  private addIpAccessList(): atlas.ProjectIpAccessList {
     return new atlas.ProjectIpAccessList(this, `accessList${this.id}`, {
       profile: this.props.profile,
       project: this.project,
       accessList: this.props.accessList,
     });
   }
-  private createDatabaseUser(): atlas.DatabaseUser {
+  private addDatabaseUser(
+    options?: atlas.DatabaseUserCommonOptions
+  ): atlas.DatabaseUser {
     return new atlas.DatabaseUser(this, `user${this.id}`, {
       profile: this.props.profile,
       project: this.project,
+      databaseName: options?.databaseName,
+      username: options?.username,
+      password: options?.password,
+      roles: options?.roles,
     });
   }
   /**
-   * Create a VPC peering for this cluster.
+   * Add a VPC peering for this cluster.
    */
-  public createVpcPeering() {
+  public addVpcPeering(options: atlas.VpcPeeringOptions) {
+    if (this.privateEndpoint) {
+      throw new Error("Cannot create both VPC peering and private endpoint");
+    }
+    this.vpcPeering = true;
     // create network container
     const container = new atlas.CfnNetworkContainer(
       this,
       `networkcontainer${this.id}`,
       {
         projectId: this.project.projectId,
-        regionName: this.props.peering!.acceptRegionName ?? "US_EAST_1",
+        regionName: options.acceptRegionName ?? atlas.AtlasRegion.US_EAST_1,
         profile: this.props.profile,
-        vpcId: this.vpc?.vpcId,
-        atlasCidrBlock: this.props.peering!.cidr,
+        vpcId: options.vpc.vpcId,
+        atlasCidrBlock: options.cidr,
         provisioned: true,
       }
     );
@@ -98,82 +96,32 @@ export class AtlasBasic extends Construct {
     const peering = new atlas.CfnNetworkPeering(this, `peering${this.id}`, {
       containerId: container.attrId,
       projectId: this.project.projectId,
-      vpcId: this.props.peering!.vpc.vpcId,
+      vpcId: options.vpc.vpcId,
       profile: this.props.profile,
-      routeTableCidrBlock: this.vpc?.vpcCidrBlock,
-      accepterRegionName: this.props.peering!.acceptRegionName ?? Aws.REGION,
-      awsAccountId: this.props.peering!.accountId ?? Aws.ACCOUNT_ID,
+      routeTableCidrBlock: options.vpc.vpcCidrBlock,
+      accepterRegionName: options.acceptRegionName ?? Aws.REGION,
+      awsAccountId: options.accountId ?? Aws.ACCOUNT_ID,
     });
     new CfnOutput(this, "VpcPeeringConnectionId", {
       value: peering.attrConnectionId,
     });
     this.cluster.node.addDependency(container);
-
-    // create the custom resource to accept the peering request
-    const provider = new cr.Provider(this, "VpcPeeringProvider", {
-      onEventHandler: new lambda.Function(this, "VpcPeeringHandler", {
-        runtime: lambda.Runtime.PYTHON_3_9,
-        code: lambda.Code.fromAsset(path.join(__dirname, "../lambda")),
-        handler: "vpc-peering-handler.on_event",
-      }),
+    peering.addDependency(container);
+  }
+  /**
+   * Add a private endpoint for this cluster.
+   */
+  public addPrivateEndpoint(options: atlas.PrivateEndpointVpcOptions) {
+    if (this.vpcPeering) {
+      throw new Error("Cannot create both VPC peering and private endpoint");
+    }
+    this.privateEndpoint = true;
+    return new PrivateEndpoint(this, `private-endpoint-${this.id}`, {
+      profile: this.props.profile,
+      project: this.project,
+      region: this.props.region ?? atlas.AtlasRegion.US_EAST_1,
+      vpc: options.vpc,
+      vpcSubnets: options.vpcSubnets,
     });
-    provider.onEventHandler.addToRolePolicy(
-      new iam.PolicyStatement({
-        actions: [
-          "ec2:AcceptVpcPeeringConnection",
-          "ec2:DescribeVpcPeeringConnections",
-          "ec2:DeleteVpcPeeringConnection",
-        ],
-        resources: [
-          Stack.of(this).formatArn({
-            service: "ec2",
-            resource: "vpc-peering-connection",
-            account: this.props.peering!.accountId ?? Aws.ACCOUNT_ID,
-            resourceName: peering.attrConnectionId,
-          }),
-          Stack.of(this).formatArn({
-            service: "ec2",
-            resource: "vpc",
-            account: this.props.peering!.accountId ?? Aws.ACCOUNT_ID,
-            resourceName: this.vpc?.vpcId,
-          }),
-        ],
-      })
-    );
-    provider.onEventHandler.addToRolePolicy(
-      new iam.PolicyStatement({
-        actions: [
-          "ec2:AcceptVpcPeeringConnection",
-          "ec2:DescribeVpcPeeringConnections",
-          "ec2:DeleteVpcPeeringConnection",
-        ],
-        resources: [
-          Stack.of(this).formatArn({
-            service: "ec2",
-            resource: "vpc-peering-connection",
-            account: this.props.peering!.accountId ?? Aws.ACCOUNT_ID,
-            resourceName: peering.attrConnectionId,
-          }),
-          Stack.of(this).formatArn({
-            service: "ec2",
-            resource: "vpc",
-            account: this.props.peering!.accountId ?? Aws.ACCOUNT_ID,
-            resourceName: this.vpc?.vpcId,
-          }),
-        ],
-      })
-    );
-    const peeringHandlerResource = new CustomResource(
-      this,
-      "CustomResourceVpcPeeringHandler",
-      {
-        serviceToken: provider.serviceToken,
-        resourceType: "Custom::VpcPeeringHandler",
-        properties: {
-          ConnectionId: peering.attrConnectionId,
-        },
-      }
-    );
-    peeringHandlerResource.node.addDependency(peering);
   }
 }

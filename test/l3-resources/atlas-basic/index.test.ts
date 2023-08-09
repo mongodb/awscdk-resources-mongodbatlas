@@ -14,13 +14,13 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import * as l3 from "../../../src";
+import { AtlasBasic, Project } from "../../../src";
 
 const RESOURCE_NAME_PROJECT = "MongoDB::Atlas::Project";
 const RESOURCE_NAME_CLUSTER = "MongoDB::Atlas::Cluster";
 const RESOURCE_NAME_DB_USER = "MongoDB::Atlas::DatabaseUser";
-const PROJECT_ID = "testProjectId";
-const ORG_ID = "testProjectId";
+const PROJECT_ID = "test";
+const ORG_ID = "test";
 const PROJECT_NAME = "test";
 const INSTANCE_SIZE = "M30";
 const REGION = "US_EAST_1";
@@ -34,8 +34,18 @@ test("AtlasBasis construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new l3.AtlasBasic(stack, "testing-stack", {
-    clusterProps: {
+  const project = new Project(stack, "Project", {
+    projectName: PROJECT_ID,
+    profile: "default",
+    orgId: ORG_ID,
+  });
+
+  new AtlasBasic(stack, "testing-stack", {
+    profile: "default",
+    project,
+    orgId: ORG_ID,
+    accessList: [{ ipAddress: "0.0.0.0/0", comment: "public to all" }],
+    clusterOptions: {
       replicationSpecs: [
         {
           numShards: 3,
@@ -52,14 +62,11 @@ test("AtlasBasis construct should contain default properties", () => {
       ],
       name: PROJECT_NAME,
     },
-    projectProps: {
-      orgId: ORG_ID,
-      name: PROJECT_NAME,
-    },
-    dbUserProps: {
-      projectId: PROJECT_ID,
+    databaseUserOptions: {
       databaseName: DATABASE_NAME,
+      username: DATABASE_USER_NAME,
       password: PWD,
+      roles: [{ roleName: ROLE_NAME, databaseName: ADMIN_DB }],
     },
   });
 
@@ -72,7 +79,7 @@ test("AtlasBasis construct should contain default properties", () => {
 
   template.hasResourceProperties(RESOURCE_NAME_CLUSTER, {
     ClusterType: "REPLICASET",
-    Name: PROJECT_NAME,
+    Name: "clusterclustertesting-stack",
     ReplicationSpecs: [
       {
         NumShards: 3,
@@ -90,7 +97,9 @@ test("AtlasBasis construct should contain default properties", () => {
   });
 
   template.hasResourceProperties(RESOURCE_NAME_DB_USER, {
-    ProjectId: PROJECT_ID,
+    ProjectId: {
+      "Fn::GetAtt": ["ProjectC78D97AD", "Id"],
+    },
     DatabaseName: DATABASE_NAME,
     Password: PWD,
     Username: DATABASE_USER_NAME,

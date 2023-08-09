@@ -1,7 +1,20 @@
 import { aws_ec2 as ec2 } from "aws-cdk-lib";
 import * as atlas from "../../index";
 
-export interface PeeringProps {
+/**
+ * Atlas region codes for AWS.
+ * @see https://www.mongodb.com/docs/atlas/reference/amazon-aws/
+ */
+export enum AtlasRegion {
+  US_EAST_1 = "US_EAST_1",
+  US_WEST_2 = "US_WEST_2",
+  CA_CENTRAL_1 = "CA_CENTRAL_1",
+  US_EAST_2 = "US_EAST_2",
+  US_WEST_1 = "US_WEST_1",
+  SA_EAST_1 = "SA_EAST_1",
+}
+
+export interface VpcPeeringOptions {
   /**
    * The AWS VPC to peer with.
    */
@@ -46,17 +59,17 @@ export interface AtlasBasicProps {
    */
   readonly project?: atlas.IProject;
   /**
-   * @description
+   * @description options for the cluster.
    * @type {AtlasClusterProps}
    * @memberof AtlasBasicProps
    */
-  readonly clusterProps: AtlasClusterProps;
-  /**
-   * @description
-   * @type {DatabaseUserProps}
-   * @memberof AtlasBasicProps
-   */
-  readonly dbUserProps?: AtlasDatabaseUserProps;
+  readonly clusterOptions?: AtlasClusterProps;
+  // /**
+  //  * @description
+  //  * @type {DatabaseUserProps}
+  //  * @memberof AtlasBasicProps
+  //  */
+  // readonly dbUserProps?: AtlasDatabaseUserProps;
   /**
    * @description
    * @type {IpAccessListProps}
@@ -66,14 +79,12 @@ export interface AtlasBasicProps {
   readonly accessList: atlas.AccessList[];
 
   /**
-   * VPC peering options with AWS. If you enable this option, the network container and network peering with AWS VPC
-   * will be provisioned and the VPC peering request will be auto accepted.
-   *
-   * @see https://www.mongodb.com/docs/atlas/security-vpc-peering/
-   *
-   * @default - no vpc peering.
+   * MongoDB Atlas region.
+   * @default AtlasRegion.US_EAST_1
    */
-  readonly peering?: PeeringProps;
+  readonly region?: AtlasRegion;
+
+  readonly databaseUserOptions?: atlas.DatabaseUserCommonOptions;
 }
 
 /**
@@ -161,13 +172,13 @@ export interface AtlasClusterProps {
    * @description Configuration of nodes that comprise the cluster. Atlas accepts: `REPLICASET`, `SHARDED`, `GEOSHARDED`.
    * @type {string}
    * @memberof AtlasClusterProps
+   * @default atlas.ClusterType.REPLICASET
    */
-  readonly clusterType?: string;
+  readonly clusterType?: atlas.ClusterType;
   /**
    * @description Set of connection strings that your applications use to connect to this cluster. Use the parameters in this object to connect your applications to this cluster. See the MongoDB [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/) reference for further details.
    * @type {atlas.ConnectionStrings}
    * @memberof AtlasClusterProps
-   * @default REPLICASET
    */
   readonly connectionStrings?: atlas.ConnectionStrings;
   /**

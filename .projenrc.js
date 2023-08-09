@@ -95,7 +95,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   sampleCode: false,
   peerDeps: [],
-  devDeps: [],
+  devDeps: ["ts-node"],
   pullRequestTemplateContents: [pullRequestTeamplateString],
   githubOptions: { workflows: false },
 });

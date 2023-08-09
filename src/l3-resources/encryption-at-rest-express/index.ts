@@ -15,9 +15,9 @@
 import { Construct } from "constructs";
 import * as atlas from "../../index";
 import {
-  ClusterProps,
-  DatabaseUserProps,
-  IpAccessListProps,
+  AtlasClusterProps,
+  AtlasDatabaseUserProps,
+  AtlasIpAccessListProps,
 } from "../common/props";
 
 const NODE_COUNT = 3;
@@ -47,7 +47,7 @@ function randomNumber() {
 }
 
 function getClusterProps(
-  inputClusterProps: ClusterProps
+  inputClusterProps: AtlasClusterProps
 ): atlas.CfnClusterProps {
   return {
     name:
@@ -127,10 +127,10 @@ export interface EncryptionAtRestProps {
 }
 
 export interface AtlasEncryptionAtRestExpressProps {
-  readonly cluster?: ClusterProps;
-  readonly accessList?: IpAccessListProps;
+  readonly cluster?: AtlasClusterProps;
+  readonly accessList?: AtlasIpAccessListProps;
   readonly encryptionAtRest: EncryptionAtRestProps;
-  readonly databaseUser?: DatabaseUserProps;
+  readonly databaseUser?: AtlasDatabaseUserProps;
   readonly profile?: string;
   readonly projectId: string;
 }

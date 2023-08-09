@@ -12,8 +12,6 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 The cluster basic resource provides access to your cluster configurations. 
 The resource lets you create Project, Cluster, DB User and configures IpAccesslist. 
 
-
-
 ## MongoDB Atlas API Docs
 
 For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/atlas/reference/api-resources-spec)
@@ -45,8 +43,7 @@ aws cloudformation activate-type \
   --type-name MongoDB::Atlas::ProjectIpAccessList \
   --publisher-id bb989456c78c398a858fef18f2ca1bfc1fbba082 \
   --type RESOURCE \
-  --execution-role-arn ROLE-ARN  
-    
+  --execution-role-arn ROLE-ARN   
 ```
 
 Alternatively:
@@ -67,7 +64,6 @@ aws cloudformation activate-type \
 aws cloudformation activate-type \
   --public-type-arn arn:aws:cloudformation:us-east-1::type/resource/bb989456c78c398a858fef18f2ca1bfc1fbba082/MongoDB-Atlas-ProjectIpAccessList \
   --execution-role-arn ROLE-ARN
-    
 ```
 
 ## Example: [atlas-basic.ts](../../../examples/l3-resources/atlas-basic.ts)
@@ -92,71 +88,72 @@ export class L3CdksStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    const orgId = this.node.tryGetContext('MONGODB_ATLAS_ORG_ID') || process.env.MONGODB_ATLAS_ORG_ID;
 
-  const orgId = this.node.tryGetContext('MONGODB_ATLAS_ORG_ID') || process.env.MONGODB_ATLAS_ORG_ID;
+    const replicationSpecs = [
+        {
+            "numShards": 1,
+            "advancedRegionConfigs": [
+                {
+                    "analyticsSpecs": {
+                        "ebsVolumeType": "STANDARD",
+                        "instanceSize": "M10",
+                        "nodeCount": 1
+                    },
+                    "electableSpecs": {
+                        "ebsVolumeType": "STANDARD",
+                        "instanceSize": "M10",
+                        "nodeCount": 3
+                    },
+                    "priority":  7,
+                    "regionName": "US_EAST_1"
+                }
+            ]
+        }
+    ]
 
-  const replicationSpecs = [
-      {
-          "numShards": 1,
-          "advancedRegionConfigs": [
-              {
-                  "analyticsSpecs": {
-                      "ebsVolumeType": "STANDARD",
-                      "instanceSize": "M10",
-                      "nodeCount": 1
-                  },
-                  "electableSpecs": {
-                      "ebsVolumeType": "STANDARD",
-                      "instanceSize": "M10",
-                      "nodeCount": 3
-                  },
-                  "priority":  7,
-                  "regionName": "US_EAST_1"
-              }
-          ]
-      }
-  ]
-
-
-  new AtlasBasic(this, 'atlas-basic', {
-      clusterProps: {
-          replicationSpecs : replicationSpecs
+    const cluster = new AtlasBasic(stack, "atlas-basic-cluster", {
+      orgId,
+      accessList: [{ ipAddress: "0.0.0.0/0", comment: "public to all" }],
+      profile: "my-mongo-profile",
+      region: AtlasRegion.US_EAST_1,
+      clusterOptions: {
+        replicationSpecs,
       },
-      projectProps: {
-          orgId: orgId,
-      },
-      ipAccessListProps:{
-        accessList:[
-          { ipAddress: '0.0.0.0/0', comment: 'My first IP address' }
-        ]
-      }
     });
   }
 }
 ```
 
-The library also defines some default values for individual L1s.
+To create a VPC peering for the cluster:
 
-```typescript
+```ts
+cluster.addVpcPeering({ vpc, cidr: "192.168.248.0/21" });
+```
 
-const projectDefaults = {
-        projectName: 'atlas-project-{random_num}',
-    };
+To create a private endpoint for the cluster:
 
+```ts
+cluster.addPrivateEndpoint({
+  vpc,
+  vpcSubnets: [
+    { subnetType: ec2.SubnetType.PRIVATE_WITH_EGRESS, onePerAz: true },
+  ],
+});
+```
 
-const dbDefaults = {
-    dbName: 'admin',
-    username: 'atlas-user',
-    password: 'atlas-pwd',
-    roles: [{
-        roleName: 'atlasAdmin',
-        databaseName: 'admin',
-    }],
-}
-const clusterDefaults = {
-    clusterName: 'atlas-cluster-{random_num}',
-    clusterType: 'REPLICASET',
-}
+Use `databaseUserOptions` to customize the user database options:
+
+```ts
+new AtlasBasic(stack, "atlas-basic-cluster", {
+  ...,
+  databaseUserOptions: {
+    databaseName: "admin",
+    username: "atlas-user",
+    password: "atlas-pwd",
+    roles: [{ roleName: "atlasAdmin", databaseName: "admin" }],
+  },
+});
 ```
 
 You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
