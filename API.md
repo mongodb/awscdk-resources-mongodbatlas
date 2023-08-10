@@ -29221,41 +29221,13 @@ const connectionStrings: ConnectionStrings = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.awsPrivateLink">awsPrivateLink</a></code> | <code>string</code> | Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink. |
-| <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.awsPrivateLinkSrv">awsPrivateLinkSrv</a></code> | <code>string</code> | Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink. |
 | <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.private">private</a></code> | <code>string</code> | Network peering connection strings for each interface Virtual Private Cloud (VPC) endpoint that you configured to connect to this cluster. |
-| <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.privateEndpoint">privateEndpoint</a></code> | <code><a href="#awscdk-resources-mongodbatlas.PrivateEndpoint">PrivateEndpoint</a>[]</code> | List of private endpoint connection strings that you can use to connect to this cluster through a private endpoint. |
+| <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.privateEndpoints">privateEndpoints</a></code> | <code>string[]</code> | Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink. |
+| <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.privateEndpointsSrv">privateEndpointsSrv</a></code> | <code>string[]</code> | Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink. |
 | <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.privateSrv">privateSrv</a></code> | <code>string</code> | Network peering connection strings for each interface Virtual Private Cloud (VPC) endpoint that you configured to connect to this cluster. |
+| <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.srvShardOptimizedConnectionString">srvShardOptimizedConnectionString</a></code> | <code>string[]</code> | Private endpoint-aware connection string optimized for sharded clusters that uses the `mongodb+srv://` protocol to connect to MongoDB Cloud through a private endpoint. |
 | <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.standard">standard</a></code> | <code>string</code> | Public connection string that you can use to connect to this cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.standardSrv">standardSrv</a></code> | <code>string</code> | Public connection string that you can use to connect to this cluster. |
-
----
-
-##### `awsPrivateLink`<sup>Optional</sup> <a name="awsPrivateLink" id="awscdk-resources-mongodbatlas.ConnectionStrings.property.awsPrivateLink"></a>
-
-```typescript
-public readonly awsPrivateLink: string;
-```
-
-- *Type:* string
-
-Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink.
-
-Each key identifies an Amazon Web Services (AWS) interface endpoint. Each value identifies the related mongodb:// connection string that you use to connect to MongoDB Cloud through the interface endpoint that the key names.
-
----
-
-##### `awsPrivateLinkSrv`<sup>Optional</sup> <a name="awsPrivateLinkSrv" id="awscdk-resources-mongodbatlas.ConnectionStrings.property.awsPrivateLinkSrv"></a>
-
-```typescript
-public readonly awsPrivateLinkSrv: string;
-```
-
-- *Type:* string
-
-Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink.
-
-Each key identifies an Amazon Web Services (AWS) interface endpoint. Each value identifies the related mongodb:// connection string that you use to connect to Atlas through the interface endpoint that the key names.
 
 ---
 
@@ -29273,17 +29245,31 @@ This connection string uses the mongodb+srv:// protocol. The resource returns th
 
 ---
 
-##### `privateEndpoint`<sup>Optional</sup> <a name="privateEndpoint" id="awscdk-resources-mongodbatlas.ConnectionStrings.property.privateEndpoint"></a>
+##### `privateEndpoints`<sup>Optional</sup> <a name="privateEndpoints" id="awscdk-resources-mongodbatlas.ConnectionStrings.property.privateEndpoints"></a>
 
 ```typescript
-public readonly privateEndpoint: PrivateEndpoint[];
+public readonly privateEndpoints: string[];
 ```
 
-- *Type:* <a href="#awscdk-resources-mongodbatlas.PrivateEndpoint">PrivateEndpoint</a>[]
+- *Type:* string[]
 
-List of private endpoint connection strings that you can use to connect to this cluster through a private endpoint.
+Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink.
 
-This parameter returns only if you deployed a private endpoint to all regions to which you deployed this clusters' nodes.
+Each key identifies an Amazon Web Services (AWS) interface endpoint. Each value identifies the related mongodb:// connection string that you use to connect to MongoDB Cloud through the interface endpoint that the key names.
+
+---
+
+##### `privateEndpointsSrv`<sup>Optional</sup> <a name="privateEndpointsSrv" id="awscdk-resources-mongodbatlas.ConnectionStrings.property.privateEndpointsSrv"></a>
+
+```typescript
+public readonly privateEndpointsSrv: string[];
+```
+
+- *Type:* string[]
+
+Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink.
+
+Each key identifies an Amazon Web Services (AWS) interface endpoint. Each value identifies the related mongodb:// connection string that you use to connect to Atlas through the interface endpoint that the key names.
 
 ---
 
@@ -29298,6 +29284,20 @@ public readonly privateSrv: string;
 Network peering connection strings for each interface Virtual Private Cloud (VPC) endpoint that you configured to connect to this cluster.
 
 This connection string uses the mongodb+srv:// protocol. The resource returns this parameter when someone creates a network peering connection to this cluster. This protocol tells the application to look up the host seed list in the Domain Name System (DNS). This list synchronizes with the nodes in a cluster. If the connection string uses this Uniform Resource Identifier (URI) format, you don't need to append the seed list or change the Uniform Resource Identifier (URI) if the nodes change. Use this Uniform Resource Identifier (URI) format if your driver supports it. If it doesn't, use connectionStrings.private. For Amazon Web Services (AWS) clusters, this parameter returns only if you enable custom DNS.
+
+---
+
+##### `srvShardOptimizedConnectionString`<sup>Optional</sup> <a name="srvShardOptimizedConnectionString" id="awscdk-resources-mongodbatlas.ConnectionStrings.property.srvShardOptimizedConnectionString"></a>
+
+```typescript
+public readonly srvShardOptimizedConnectionString: string[];
+```
+
+- *Type:* string[]
+
+Private endpoint-aware connection string optimized for sharded clusters that uses the `mongodb+srv://` protocol to connect to MongoDB Cloud through a private endpoint.
+
+If the connection string uses this Uniform Resource Identifier (URI) format, you don't need to change the Uniform Resource Identifier (URI) if the nodes change. Use this Uniform Resource Identifier (URI) format if your application and Atlas cluster supports it. If it doesn't, use and consult the documentation for connectionStrings.privateEndpoint[n].srvConnectionString.
 
 ---
 
@@ -30441,62 +30441,6 @@ public readonly region: string;
 - *Type:* string
 
 The AWS region in which the AWS customer master key exists.
-
----
-
-### Endpoint <a name="Endpoint" id="awscdk-resources-mongodbatlas.Endpoint"></a>
-
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.Endpoint.Initializer"></a>
-
-```typescript
-import { Endpoint } from 'awscdk-resources-mongodbatlas'
-
-const endpoint: Endpoint = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.Endpoint.property.endpointId">endpointId</a></code> | <code>string</code> | Unique string that the cloud provider uses to identify the private endpoint. |
-| <code><a href="#awscdk-resources-mongodbatlas.Endpoint.property.providerName">providerName</a></code> | <code>string</code> | Cloud provider in which MongoDB Cloud deploys the private endpoint. |
-| <code><a href="#awscdk-resources-mongodbatlas.Endpoint.property.region">region</a></code> | <code>string</code> | Region in which MongoDB Cloud deploys the private endpoint. |
-
----
-
-##### `endpointId`<sup>Optional</sup> <a name="endpointId" id="awscdk-resources-mongodbatlas.Endpoint.property.endpointId"></a>
-
-```typescript
-public readonly endpointId: string;
-```
-
-- *Type:* string
-
-Unique string that the cloud provider uses to identify the private endpoint.
-
----
-
-##### `providerName`<sup>Optional</sup> <a name="providerName" id="awscdk-resources-mongodbatlas.Endpoint.property.providerName"></a>
-
-```typescript
-public readonly providerName: string;
-```
-
-- *Type:* string
-
-Cloud provider in which MongoDB Cloud deploys the private endpoint.
-
----
-
-##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.Endpoint.property.region"></a>
-
-```typescript
-public readonly region: string;
-```
-
-- *Type:* string
-
-Region in which MongoDB Cloud deploys the private endpoint.
 
 ---
 
@@ -32113,6 +32057,7 @@ const processArgs: ProcessArgs = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.oplogSizeMb">oplogSizeMb</a></code> | <code>number</code> | Storage limit of cluster's oplog expressed in megabytes. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.sampleRefreshIntervalBiConnector">sampleRefreshIntervalBiConnector</a></code> | <code>number</code> | Number of documents per database to sample when gathering schema information. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.sampleSizeBiConnector">sampleSizeBiConnector</a></code> | <code>number</code> | Interval in seconds at which the mongosqld process re-samples data to create its relational schema. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.transactionLifetimeLimitSeconds">transactionLifetimeLimitSeconds</a></code> | <code>number</code> | Lifetime, in seconds, of multi-document transactions. |
 
 ---
 
@@ -32241,6 +32186,20 @@ public readonly sampleSizeBiConnector: number;
 - *Type:* number
 
 Interval in seconds at which the mongosqld process re-samples data to create its relational schema.
+
+---
+
+##### `transactionLifetimeLimitSeconds`<sup>Optional</sup> <a name="transactionLifetimeLimitSeconds" id="awscdk-resources-mongodbatlas.ProcessArgs.property.transactionLifetimeLimitSeconds"></a>
+
+```typescript
+public readonly transactionLifetimeLimitSeconds: number;
+```
+
+- *Type:* number
+
+Lifetime, in seconds, of multi-document transactions.
+
+Atlas considers the transactions that exceed this limit as expired and so aborts them through a periodic cleanup process.
 
 ---
 
