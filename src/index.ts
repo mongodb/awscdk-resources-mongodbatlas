@@ -77,7 +77,6 @@ export {
   CfnClusterPropsLabels,
   ConnectionStrings,
   AdvancedReplicationSpec,
-  Endpoint,
   AdvancedAutoScaling,
   Specs,
   DiskGb,
