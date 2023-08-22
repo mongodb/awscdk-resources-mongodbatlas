@@ -27811,9 +27811,9 @@ const cfnProjectProps: CfnProjectProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.name">name</a></code> | <code>string</code> | Name of the project to create. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.orgId">orgId</a></code> | <code>string</code> | Unique identifier of the organization within which to create the project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectApiKeys">projectApiKeys</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectApiKey">ProjectApiKey</a>[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectApiKeys">projectApiKeys</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectApiKey">ProjectApiKey</a>[]</code> | API keys that you assigned to the specified project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectSettings">projectSettings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings">ProjectSettings</a></code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectTeams">projectTeams</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectTeam">ProjectTeam</a>[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectTeams">projectTeams</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectTeam">ProjectTeam</a>[]</code> | Teams to which the authenticated user has access in the project specified using its unique 24-hexadecimal digit identifier. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.withDefaultAlertsSettings">withDefaultAlertsSettings</a></code> | <code>boolean</code> | Flag that indicates whether to create the project with default alert settings. |
 
 ---
@@ -27862,6 +27862,8 @@ public readonly projectApiKeys: ProjectApiKey[];
 
 - *Type:* <a href="#awscdk-resources-mongodbatlas.ProjectApiKey">ProjectApiKey</a>[]
 
+API keys that you assigned to the specified project.
+
 ---
 
 ##### `projectSettings`<sup>Optional</sup> <a name="projectSettings" id="awscdk-resources-mongodbatlas.CfnProjectProps.property.projectSettings"></a>
@@ -27881,6 +27883,8 @@ public readonly projectTeams: ProjectTeam[];
 ```
 
 - *Type:* <a href="#awscdk-resources-mongodbatlas.ProjectTeam">ProjectTeam</a>[]
+
+Teams to which the authenticated user has access in the project specified using its unique 24-hexadecimal digit identifier.
 
 ---
 
@@ -32217,8 +32221,8 @@ const projectApiKey: ProjectApiKey = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.ProjectApiKey.property.key">key</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.ProjectApiKey.property.roleNames">roleNames</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectApiKey.property.key">key</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies this organization API key assigned to this project. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectApiKey.property.roleNames">roleNames</a></code> | <code>string[]</code> | List of roles to grant this API key. |
 
 ---
 
@@ -32230,6 +32234,8 @@ public readonly key: string;
 
 - *Type:* string
 
+Unique 24-hexadecimal digit string that identifies this organization API key assigned to this project.
+
 ---
 
 ##### `roleNames`<sup>Optional</sup> <a name="roleNames" id="awscdk-resources-mongodbatlas.ProjectApiKey.property.roleNames"></a>
@@ -32239,6 +32245,10 @@ public readonly roleNames: string[];
 ```
 
 - *Type:* string[]
+
+List of roles to grant this API key.
+
+If you provide this list, provide a minimum of one role and ensure each role applies to this project.Items Enum: "ORG_OWNER" "ORG_MEMBER" "ORG_GROUP_CREATOR" "ORG_BILLING_ADMIN" "ORG_READ_ONLY" "ORG_TEAM_MEMBERS_ADMIN" "GROUP_ATLAS_ADMIN" "GROUP_AUTOMATION_ADMIN" "GROUP_BACKUP_ADMIN" "GROUP_MONITORING_ADMIN" "GROUP_OWNER" "GROUP_READ_ONLY" "GROUP_USER_ADMIN" "GROUP_BILLING_ADMIN" "GROUP_DATA_ACCESS_ADMIN" "GROUP_DATA_ACCESS_READ_ONLY" "GROUP_DATA_ACCESS_READ_WRITE" "GROUP_CHARTS_ADMIN" "GROUP_CLUSTER_MANAGER" "GROUP_SEARCH_INDEX_EDITOR"
 
 ---
 
@@ -32362,11 +32372,12 @@ const projectSettings: ProjectSettings = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings.property.isCollectDatabaseSpecificsStatisticsEnabled">isCollectDatabaseSpecificsStatisticsEnabled</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings.property.isDataExplorerEnabled">isDataExplorerEnabled</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings.property.isPerformanceAdvisorEnabled">isPerformanceAdvisorEnabled</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings.property.isRealtimePerformancePanelEnabled">isRealtimePerformancePanelEnabled</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings.property.isSchemaAdvisorEnabled">isSchemaAdvisorEnabled</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings.property.isCollectDatabaseSpecificsStatisticsEnabled">isCollectDatabaseSpecificsStatisticsEnabled</a></code> | <code>boolean</code> | Flag that indicates whether to collect database-specific metrics for the specified project. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings.property.isDataExplorerEnabled">isDataExplorerEnabled</a></code> | <code>boolean</code> | Flag that indicates whether to enable the Data Explorer for the specified project. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings.property.isExtendedStorageSizesEnabled">isExtendedStorageSizesEnabled</a></code> | <code>boolean</code> | Flag that indicates whether to enable extended storage sizes for the specified project. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings.property.isPerformanceAdvisorEnabled">isPerformanceAdvisorEnabled</a></code> | <code>boolean</code> | Flag that indicates whether to enable the Performance Advisor and Profiler for the specified project. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings.property.isRealtimePerformancePanelEnabled">isRealtimePerformancePanelEnabled</a></code> | <code>boolean</code> | Flag that indicates whether to enable the Real Time Performance Panel for the specified project. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings.property.isSchemaAdvisorEnabled">isSchemaAdvisorEnabled</a></code> | <code>boolean</code> | Flag that indicates whether to enable the Schema Advisor for the specified project. |
 
 ---
 
@@ -32378,6 +32389,8 @@ public readonly isCollectDatabaseSpecificsStatisticsEnabled: boolean;
 
 - *Type:* boolean
 
+Flag that indicates whether to collect database-specific metrics for the specified project.
+
 ---
 
 ##### `isDataExplorerEnabled`<sup>Optional</sup> <a name="isDataExplorerEnabled" id="awscdk-resources-mongodbatlas.ProjectSettings.property.isDataExplorerEnabled"></a>
@@ -32387,6 +32400,20 @@ public readonly isDataExplorerEnabled: boolean;
 ```
 
 - *Type:* boolean
+
+Flag that indicates whether to enable the Data Explorer for the specified project.
+
+---
+
+##### `isExtendedStorageSizesEnabled`<sup>Optional</sup> <a name="isExtendedStorageSizesEnabled" id="awscdk-resources-mongodbatlas.ProjectSettings.property.isExtendedStorageSizesEnabled"></a>
+
+```typescript
+public readonly isExtendedStorageSizesEnabled: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether to enable extended storage sizes for the specified project.
 
 ---
 
@@ -32398,6 +32425,8 @@ public readonly isPerformanceAdvisorEnabled: boolean;
 
 - *Type:* boolean
 
+Flag that indicates whether to enable the Performance Advisor and Profiler for the specified project.
+
 ---
 
 ##### `isRealtimePerformancePanelEnabled`<sup>Optional</sup> <a name="isRealtimePerformancePanelEnabled" id="awscdk-resources-mongodbatlas.ProjectSettings.property.isRealtimePerformancePanelEnabled"></a>
@@ -32408,6 +32437,8 @@ public readonly isRealtimePerformancePanelEnabled: boolean;
 
 - *Type:* boolean
 
+Flag that indicates whether to enable the Real Time Performance Panel for the specified project.
+
 ---
 
 ##### `isSchemaAdvisorEnabled`<sup>Optional</sup> <a name="isSchemaAdvisorEnabled" id="awscdk-resources-mongodbatlas.ProjectSettings.property.isSchemaAdvisorEnabled"></a>
@@ -32417,6 +32448,8 @@ public readonly isSchemaAdvisorEnabled: boolean;
 ```
 
 - *Type:* boolean
+
+Flag that indicates whether to enable the Schema Advisor for the specified project.
 
 ---
 
@@ -32434,8 +32467,8 @@ const projectTeam: ProjectTeam = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.ProjectTeam.property.roleNames">roleNames</a></code> | <code>string[]</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.ProjectTeam.property.teamId">teamId</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectTeam.property.roleNames">roleNames</a></code> | <code>string[]</code> | One or more organization- or project-level roles to assign to the MongoDB Cloud user. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProjectTeam.property.teamId">teamId</a></code> | <code>string</code> | Unique 24-hexadecimal character string that identifies the team. |
 
 ---
 
@@ -32447,6 +32480,10 @@ public readonly roleNames: string[];
 
 - *Type:* string[]
 
+One or more organization- or project-level roles to assign to the MongoDB Cloud user.
+
+tems Enum: "GROUP_CLUSTER_MANAGER" "GROUP_DATA_ACCESS_ADMIN" "GROUP_DATA_ACCESS_READ_ONLY" "GROUP_DATA_ACCESS_READ_WRITE" "GROUP_OWNER" "GROUP_READ_ONLY"
+
 ---
 
 ##### `teamId`<sup>Optional</sup> <a name="teamId" id="awscdk-resources-mongodbatlas.ProjectTeam.property.teamId"></a>
@@ -32456,6 +32493,10 @@ public readonly teamId: string;
 ```
 
 - *Type:* string
+
+Unique 24-hexadecimal character string that identifies the team.
+
+string = 24 characters ^([a-f0-9]{24})$
 
 ---
 
