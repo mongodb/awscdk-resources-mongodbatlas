@@ -42,11 +42,15 @@ export interface CfnProjectProps {
   readonly profile?: string;
 
   /**
+   * Teams to which the authenticated user has access in the project specified using its unique 24-hexadecimal digit identifier.
+   *
    * @schema CfnProjectProps#ProjectTeams
    */
   readonly projectTeams?: ProjectTeam[];
 
   /**
+   * API keys that you assigned to the specified project.
+   *
    * @schema CfnProjectProps#ProjectApiKeys
    */
   readonly projectApiKeys?: ProjectApiKey[];
@@ -84,26 +88,43 @@ export function toJson_CfnProjectProps(
  */
 export interface ProjectSettings {
   /**
+   * Flag that indicates whether to collect database-specific metrics for the specified project.
+   *
    * @schema projectSettings#IsCollectDatabaseSpecificsStatisticsEnabled
    */
   readonly isCollectDatabaseSpecificsStatisticsEnabled?: boolean;
 
   /**
+   * Flag that indicates whether to enable the Data Explorer for the specified project.
+   *
    * @schema projectSettings#IsDataExplorerEnabled
    */
   readonly isDataExplorerEnabled?: boolean;
 
   /**
+   * Flag that indicates whether to enable extended storage sizes for the specified project.
+   *
+   * @schema projectSettings#IsExtendedStorageSizesEnabled
+   */
+  readonly isExtendedStorageSizesEnabled?: boolean;
+
+  /**
+   * Flag that indicates whether to enable the Performance Advisor and Profiler for the specified project.
+   *
    * @schema projectSettings#IsPerformanceAdvisorEnabled
    */
   readonly isPerformanceAdvisorEnabled?: boolean;
 
   /**
+   * Flag that indicates whether to enable the Real Time Performance Panel for the specified project.
+   *
    * @schema projectSettings#IsRealtimePerformancePanelEnabled
    */
   readonly isRealtimePerformancePanelEnabled?: boolean;
 
   /**
+   * Flag that indicates whether to enable the Schema Advisor for the specified project.
+   *
    * @schema projectSettings#IsSchemaAdvisorEnabled
    */
   readonly isSchemaAdvisorEnabled?: boolean;
@@ -123,6 +144,7 @@ export function toJson_ProjectSettings(
     IsCollectDatabaseSpecificsStatisticsEnabled:
       obj.isCollectDatabaseSpecificsStatisticsEnabled,
     IsDataExplorerEnabled: obj.isDataExplorerEnabled,
+    IsExtendedStorageSizesEnabled: obj.isExtendedStorageSizesEnabled,
     IsPerformanceAdvisorEnabled: obj.isPerformanceAdvisorEnabled,
     IsRealtimePerformancePanelEnabled: obj.isRealtimePerformancePanelEnabled,
     IsSchemaAdvisorEnabled: obj.isSchemaAdvisorEnabled,
@@ -140,11 +162,15 @@ export function toJson_ProjectSettings(
  */
 export interface ProjectTeam {
   /**
+   * Unique 24-hexadecimal character string that identifies the team. string = 24 characters ^([a-f0-9]{24})$
+   *
    * @schema projectTeam#TeamId
    */
   readonly teamId?: string;
 
   /**
+   * One or more organization- or project-level roles to assign to the MongoDB Cloud user. tems Enum: "GROUP_CLUSTER_MANAGER" "GROUP_DATA_ACCESS_ADMIN" "GROUP_DATA_ACCESS_READ_ONLY" "GROUP_DATA_ACCESS_READ_WRITE" "GROUP_OWNER" "GROUP_READ_ONLY"
+   *
    * @schema projectTeam#RoleNames
    */
   readonly roleNames?: string[];
@@ -177,11 +203,15 @@ export function toJson_ProjectTeam(
  */
 export interface ProjectApiKey {
   /**
+   * Unique 24-hexadecimal digit string that identifies this organization API key assigned to this project.
+   *
    * @schema projectApiKey#Key
    */
   readonly key?: string;
 
   /**
+   * List of roles to grant this API key. If you provide this list, provide a minimum of one role and ensure each role applies to this project.Items Enum: "ORG_OWNER" "ORG_MEMBER" "ORG_GROUP_CREATOR" "ORG_BILLING_ADMIN" "ORG_READ_ONLY" "ORG_TEAM_MEMBERS_ADMIN" "GROUP_ATLAS_ADMIN" "GROUP_AUTOMATION_ADMIN" "GROUP_BACKUP_ADMIN" "GROUP_MONITORING_ADMIN" "GROUP_OWNER" "GROUP_READ_ONLY" "GROUP_USER_ADMIN" "GROUP_BILLING_ADMIN" "GROUP_DATA_ACCESS_ADMIN" "GROUP_DATA_ACCESS_READ_ONLY" "GROUP_DATA_ACCESS_READ_WRITE" "GROUP_CHARTS_ADMIN" "GROUP_CLUSTER_MANAGER" "GROUP_SEARCH_INDEX_EDITOR"
+   *
    * @schema projectApiKey#RoleNames
    */
   readonly roleNames?: string[];
