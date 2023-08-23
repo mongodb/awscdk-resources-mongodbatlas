@@ -55,6 +55,16 @@ MongoDB Atlas AWS CDK Resources provides L1, L2 and L3 CDK constructors. Please,
 ## Getting Started
 See the [cdk examples](examples/README.md) for how to setup prerequisites & get started with your first cluster, using our AWS CDK sample code. We also provide a quick guide on [How to Deploy MongoDB Atlas with AWS CDK in TypeScript](https://www.mongodb.com/developer/products/atlas/deploy-mongodb-atlas-aws-cdk-typescript/).
 
+## Limitations
+1. [Resource import](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html) is not supported for third-party resources.
+
+2. CloudFormation support for any third-party resource requires that the third-party resource support all CRUD operations. For this reason, the following resources are not supported: 
+
+* cloud-backup-snapshot-export-job
+* cloud-provider-access
+* federated-settings-identity-provider
+* federated-settings-org-configs
+
 ## Support, Bugs, Feature Requests
 Feature requests can be submitted at [feedback.mongodb.com](https://feedback.mongodb.com/forums/924145-atlas/category/392596-atlas-cloudformation-resources) - just select "Atlas CloudFormation Resources" as the category or vote for an already suggested feature.
 
