@@ -16,65 +16,37 @@ import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
 import { CfnPrivatelinkEndpointServiceDataFederationOnlineArchive } from "../../../src/l1-resources/privatelink-endpoint-service-data-federation-online-archive";
 
-const RESOURCE_NAME = "MongoDB::Atlas::FederatedDatabaseInstance";
+const RESOURCE_NAME =
+  "MongoDB::Atlas::PrivatelinkEndpointServiceDataFederationOnlineArchive";
 const PROJECT_ID = "testProjectId";
-const ROLE_ID = "test_host_name";
-const TESTS3_BUCKET = "cfn-boto-data-federation-test1-us-east-1";
+const ENDPOINT_ID = "test_host_name";
 const PROFILE = "default";
-const TENANT_NAME = "cfn-test-data-federation-2";
-const REGION = "VIRGINIA_USA";
-const MAX_WILDCARD_COLLECTIONS = "50";
-const NAME = "cfn-df-dbs";
+const COMMENT = "cfn-boto-data-federation-test1-us-east-1";
+const TYPE = "DATA_LAKE";
 
 test("Cluster construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
-  new CfnFederatedDatabaseInstance(
+  new CfnPrivatelinkEndpointServiceDataFederationOnlineArchive(
     stack,
     "Federated-Database-Instance-testing-stack",
     {
-      tenantName: TENANT_NAME,
       projectId: PROJECT_ID,
+      endpointId: ENDPOINT_ID,
+      type: TYPE,
+      comment: COMMENT,
       profile: PROFILE,
-      cloudProviderConfig: {
-        roleId: ROLE_ID,
-        testS3Bucket: TESTS3_BUCKET,
-      },
-      dataProcessRegion: {
-        region: REGION,
-      },
-      storage: {
-        databases: [
-          {
-            maxWildcardCollections: MAX_WILDCARD_COLLECTIONS,
-            name: NAME,
-          },
-        ],
-      },
     }
   );
 
   const template = Template.fromStack(stack);
 
   template.hasResourceProperties(RESOURCE_NAME, {
-    TenantName: TENANT_NAME,
     ProjectId: PROJECT_ID,
+    EndpointId: ENDPOINT_ID,
+    Type: TYPE,
+    Comment: COMMENT,
     Profile: PROFILE,
-    CloudProviderConfig: {
-      RoleId: ROLE_ID,
-      TestS3Bucket: TESTS3_BUCKET,
-    },
-    DataProcessRegion: {
-      Region: REGION,
-    },
-    Storage: {
-      Databases: [
-        {
-          MaxWildcardCollections: MAX_WILDCARD_COLLECTIONS,
-          Name: NAME,
-        },
-      ],
-    },
   });
 });

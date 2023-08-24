@@ -680,7 +680,7 @@ export class CfnFederatedDatabaseInstance extends cdk.CfnResource {
    */
   public readonly attrExternalId: string;
 
-   /**
+  /**
    * Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamAssumedRoleARN`
    */
   public readonly attrIamAssumedRoleARNN: string;
@@ -688,7 +688,7 @@ export class CfnFederatedDatabaseInstance extends cdk.CfnResource {
   /**
    * Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamUserARN`
    */
-   public readonly attrIamUserARN: string;
+  public readonly attrIamUserARN: string;
 
   /**
    * Create a new `MongoDB::Atlas::FederatedDatabaseInstance`.
