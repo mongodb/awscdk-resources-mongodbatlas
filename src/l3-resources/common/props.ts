@@ -1,4 +1,5 @@
 import * as atlas from "../../index";
+import {ServerlessInstanceConnectionStrings, ServerlessInstanceProviderSettings} from "../../index"
 
 /**
  * @description
@@ -39,6 +40,39 @@ export interface AtlasBasicProps {
   readonly ipAccessListProps?: IpAccessListProps;
 }
 
+export interface AtlasServerlessBasicProps {
+  /**
+   * @description Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided `default` is used
+   * @type {string}
+   * @memberof AtlasServerlessBasicProps
+   */
+  readonly profile?: string;
+
+  /**
+   * @description
+   * @type {ProjectProps}
+   * @memberof AtlasServerlessBasicProps
+   */
+  readonly projectProps: ProjectProps;
+  /**
+   * @description
+   * @type {serverlessProps}
+   * @memberof AtlasServerlessBasicProps
+   */
+  readonly serverlessProps: CfnServerlessInstanceProps;
+  /**
+   * @description
+   * @type {DatabaseUserProps}
+   * @memberof AtlasServerlessBasicProps
+   */
+  readonly dbUserProps?: DatabaseUserProps;
+  /**
+   * @description
+   * @type {IpAccessListProps}
+   * @memberof AtlasServerlessBasicProps
+   */
+  readonly ipAccessListProps?: IpAccessListProps;
+}
 /**
  * @description
  * @export
@@ -313,4 +347,81 @@ export interface IpAccessListProps {
    * @memberof IpAccessListProps
    */
   readonly listOptions?: atlas.ListOptions;
+}
+
+/**
+ * Returns, adds, edits, and removes serverless instances.
+ *
+ * @schema CfnServerlessInstanceProps
+ */
+export interface CfnServerlessInstanceProps {
+  /**
+   * Collection of Uniform Resource Locators that point to the MongoDB database.
+   *
+   * @schema CfnServerlessInstanceProps#ConnectionStrings
+   */
+  readonly connectionStrings?: ServerlessInstanceConnectionStrings;
+
+  /**
+   * Flag that indicates whether the serverless instances uses Serverless Continuous Backup. If this parameter is false, the serverless instance uses Basic Backup. | Option | Description | |---|---| | Serverless Continuous Backup | Atlas takes incremental snapshots of the data in your serverless instance every six hours and lets you restore the data from a selected point in time within the last 72 hours. Atlas also takes daily snapshots and retains these daily snapshots for 35 days. To learn more, see Serverless Instance Costs. | | Basic Backup | Atlas takes incremental snapshots of the data in your serverless instance every six hours and retains only the two most recent snapshots. You can use this option for free.
+   *
+   * @schema CfnServerlessInstanceProps#ContinuousBackupEnabled
+   */
+  readonly continuousBackupEnabled?: boolean;
+
+  /**
+   * Flag that indicates whether the response returns the total number of items (**totalCount**) in the response.
+   *
+   * @schema CfnServerlessInstanceProps#IncludeCount
+   */
+  readonly includeCount?: boolean;
+
+  /**
+   * Number of items that the response returns per page.
+   *
+   * @schema CfnServerlessInstanceProps#ItemsPerPage
+   */
+  readonly itemsPerPage?: number;
+
+  /**
+   * Human-readable label that identifies the serverless instance.
+   *
+   * @schema CfnServerlessInstanceProps#Name
+   */
+  readonly name?: string;
+
+  /**
+   * Number of the page that displays the current set of the total objects that the response returns.
+   *
+   * @schema CfnServerlessInstanceProps#PageNum
+   */
+  readonly pageNum?: number;
+
+  /**
+   * Unique 24-hexadecimal digit string that identifies your project.
+   *
+   * @schema CfnServerlessInstanceProps#ProjectID
+   */
+  readonly projectId?: string;
+
+  /**
+   * Group of settings that configure the provisioned MongoDB serverless instance. The options available relate to the cloud service provider.
+   *
+   * @schema CfnServerlessInstanceProps#ProviderSettings
+   */
+  readonly providerSettings?: ServerlessInstanceProviderSettings;
+
+  /**
+   * Flag that indicates whether termination protection is enabled on the serverless instance. If set to true, MongoDB Cloud won't delete the serverless instance. If set to false, MongoDB cloud will delete the serverless instance."
+   *
+   * @schema CfnServerlessInstanceProps#TerminationProtectionEnabled
+   */
+  readonly terminationProtectionEnabled?: boolean;
+
+  /**
+   * Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used
+   *
+   * @schema CfnServerlessInstanceProps#Profile
+   */
+  readonly profile?: string;
 }
