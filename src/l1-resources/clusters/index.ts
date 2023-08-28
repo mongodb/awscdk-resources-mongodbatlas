@@ -35,6 +35,13 @@ export interface CfnClusterProps {
   readonly clusterType?: string;
 
   /**
+   * Set of connection strings that your applications use to connect to this cluster. Use the parameters in this object to connect your applications to this cluster. See the MongoDB [Connection String URI Format](https://docs.mongodb.com/manual/reference/connection-string/) reference for further details.
+   *
+   * @schema CfnClusterProps#ConnectionStrings
+   */
+  readonly connectionStrings?: ConnectionStrings;
+
+  /**
    * Storage capacity that the host's root volume possesses expressed in gigabytes. Increase this number to add capacity. MongoDB Cloud requires this parameter if you set replicationSpecs. If you specify a disk size below the minimum (10 GB), this parameter defaults to the minimum disk size value. Storage charge calculations depend on whether you choose the default value or a custom value. The maximum value for disk storage cannot exceed 50 times the maximum RAM for the selected cluster. If you require more storage space, consider upgrading your cluster to a higher tier.
    *
    * @schema CfnClusterProps#DiskSizeGB
@@ -124,6 +131,13 @@ export interface CfnClusterProps {
    * @schema CfnClusterProps#TerminationProtectionEnabled
    */
   readonly terminationProtectionEnabled?: boolean;
+
+  /**
+   * List of settings that configure your cluster regions. For Global Clusters, each object in the array represents a zone where your clusters nodes deploy. For non-Global replica sets and sharded clusters, this array has one object representing where your clusters nodes deploy.
+   *
+   * @schema CfnClusterProps#Tags
+   */
+  readonly tags?: Tag[];
 }
 
 /**
@@ -141,6 +155,7 @@ export function toJson_CfnClusterProps(
     BackupEnabled: obj.backupEnabled,
     BiConnector: toJson_CfnClusterPropsBiConnector(obj.biConnector),
     ClusterType: obj.clusterType,
+    ConnectionStrings: toJson_ConnectionStrings(obj.connectionStrings),
     DiskSizeGB: obj.diskSizeGb,
     EncryptionAtRestProvider: obj.encryptionAtRestProvider,
     Profile: obj.profile,
@@ -156,6 +171,7 @@ export function toJson_CfnClusterProps(
     RootCertType: obj.rootCertType,
     VersionReleaseSystem: obj.versionReleaseSystem,
     TerminationProtectionEnabled: obj.terminationProtectionEnabled,
+    Tags: obj.tags?.map((y) => toJson_Tag(y)),
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -527,6 +543,49 @@ export function toJson_AdvancedReplicationSpec(
 /* eslint-enable max-len, quote-props */
 
 /**
+ * Advanced configuration details to add for one cluster in the specified project.
+ *
+ * @schema tag
+ */
+export interface Tag {
+  /**
+   * Constant that defines the set of the tag. For example, environment in the environment : production tag.
+   *
+   * @schema tag#Key
+   */
+  readonly key?: string;
+
+  /**
+   * Variable that belongs to the set of the tag. For example, production in the environment : production tag.
+   *
+   * @schema tag#Value
+   */
+  readonly value?: string;
+}
+
+/**
+ * Converts an object of type 'Tag' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_Tag(
+  obj: Tag | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    Key: obj.key,
+    Value: obj.value,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
+
+/**
  * Hardware specifications for nodes set for a given region. Each regionConfigs object describes the region's priority in elections and the number and type of MongoDB nodes that MongoDB Cloud deploys to the region. Each regionConfigs object must have either an analyticsSpecs object, electableSpecs object, or readOnlySpecs object. Tenant clusters only require electableSpecs. Dedicated clusters can specify any of these specifications, but must have at least one electableSpecs object within a replicationSpec. Every hardware specification must use the same instanceSize.
  *
  * Example:
@@ -866,7 +925,7 @@ export class CfnCluster extends cdk.CfnResource {
   /**
    * Attribute `MongoDB::Atlas::Cluster.ConnectionStrings`
    */
-  public readonly connectionStrings: ConnectionStrings;
+  public readonly connectionStrings: ConnectionStrings; <<-- review this one
 
   /**
    * Create a new `MongoDB::Atlas::Cluster`.
