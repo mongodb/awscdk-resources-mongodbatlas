@@ -24,23 +24,23 @@ const stack = new cdk.Stack(app, "atlas-basic-default", {
   },
 });
 
-const orgId = "63350255419cf25e3d511c95"
-
-
+const orgId = "63350255419cf25e3d511c95";
 
 new AtlasServerlessBasic(stack, "atlas-basic", {
   serverlessProps: {
-    providerSettings : {
-      providerName: atlas.ServerlessInstanceProviderSettingsProviderName.SERVERLESS
-      },
-    continuousBackupEnabled : false,
-    terminationProtectionEnabled: true
+    providerSettings: {
+      providerName:
+        atlas.ServerlessInstanceProviderSettingsProviderName.SERVERLESS,
+      regionName: "US_EAST_1",
     },
-  projectProps: {
-  orgId: orgId,
-  name : "AtlasServerlessBasicTest"
+    continuousBackupEnabled: false,
+    terminationProtectionEnabled: true,
   },
-  profile : "default",
+  projectProps: {
+    orgId: orgId,
+    name: "AtlasServerlessBasicTest",
+  },
+  profile: "default",
   ipAccessListProps: {
     accessList: [
       {

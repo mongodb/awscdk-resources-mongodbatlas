@@ -14,11 +14,15 @@
 
 import { Construct } from "constructs";
 import * as atlas from "../../index";
-import { AtlasServerlessBasicProps} from "../common/props";
+import { AtlasServerlessBasicProps } from "../common/props";
 
 /** @type {*} */
 const projectDefaults = {
   projectName: "atlas-project-",
+};
+/** @type {*} */
+const serverlessDefaults = {
+  serverlessName: "atlas-serverless-",
 };
 /** @type {*} */
 const dbDefaults = {
@@ -77,22 +81,36 @@ export class AtlasServerlessBasic extends Construct {
     //Create a new MongoDB Atlas Project
     this.mProject = new atlas.CfnProject(this, "project-".concat(id), {
       profile: props.profile,
-      name: "AtlasServerlessBasicTest",
+      name:
+        props.projectProps.name ||
+        projectDefaults.projectName.concat(String(randomNumber())),
       ...props.projectProps,
     });
     // Create a new serverless Instance and pass project ID
-    this.mserverless = new atlas.CfnServerlessInstance(this, "serverless-".concat(id), {
-      projectId: this.mProject.attrId,
-      providerSettings: {
-        providerName: atlas.ServerlessInstanceProviderSettingsProviderName.SERVERLESS,
-        regionName: 'us-east-1'
-      },
-      profile :props.profile,
-      terminationProtectionEnabled: this.node.tryGetContext('terminationProtectionEnabled'),
-      continuousBackupEnabled :this.node.tryGetContext('continuousBackupEnabled'),
-      ...props.serverlessProps
-    });
-    this.mserverless.addDependency(this.mProject)
+    this.mserverless = new atlas.CfnServerlessInstance(
+      this,
+      "serverless-".concat(id),
+      {
+        projectId: this.mProject.attrId,
+        name:
+          props.serverlessProps.name ||
+          serverlessDefaults.serverlessName.concat(String(randomNumber())),
+        providerSettings: {
+          providerName:
+            atlas.ServerlessInstanceProviderSettingsProviderName.SERVERLESS,
+          regionName: "us-east-1",
+        },
+        profile: props.profile,
+        terminationProtectionEnabled: this.node.tryGetContext(
+          "terminationProtectionEnabled"
+        ),
+        continuousBackupEnabled: this.node.tryGetContext(
+          "continuousBackupEnabled"
+        ),
+        ...props.serverlessProps,
+      }
+    );
+    this.mserverless.addDependency(this.mProject);
     // Create a new MongoDB Atlas Database User
     this.mDBUser = new atlas.CfnDatabaseUser(this, "db-user-".concat(id), {
       profile: props.profile,
@@ -103,7 +121,7 @@ export class AtlasServerlessBasic extends Construct {
       password: props.dbUserProps?.password || dbDefaults.password,
       ...props.dbUserProps,
     });
-    this.mDBUser.addDependency(this.mProject)
+    this.mDBUser.addDependency(this.mProject);
     // Create a new MongoDB Atlas Project IP Access List
     this.ipAccessList = new atlas.CfnProjectIpAccessList(
       this,
@@ -115,7 +133,7 @@ export class AtlasServerlessBasic extends Construct {
         ...props.ipAccessListProps,
       }
     );
-    this.ipAccessList.addDependency(this.mProject)
+    this.ipAccessList.addDependency(this.mProject);
   }
 }
 
