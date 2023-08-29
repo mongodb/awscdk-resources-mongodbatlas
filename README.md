@@ -46,7 +46,7 @@ The Maven package is available at [awscdk-resources-mongodbatlas](https://centra
 The go package is generated into the [github.com/mongodb/awscdk-resources-mongodbatlas-go](https://github.com/mongodb/awscdk-resources-mongodbatlas-go) package.
 ```bash
 go get github.com/mongodb/awscdk-resources-mongodbatlas-go/awscdkresourcesmongodbatlas
-```   
+```
 
 ## Available Constructors
 MongoDB Atlas AWS CDK Resources provides L1, L2 and L3 CDK constructors. Please, have a look at [README.md](src/README.md#cdk-constructors) for a full lists of constructors and examples.
