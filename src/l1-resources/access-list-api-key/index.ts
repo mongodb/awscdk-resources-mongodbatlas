@@ -63,7 +63,7 @@ export function toJson_CfnAccessListApiKeyProps(
   }
   const result = {
     OrgId: obj.orgId,
-    ApiUserId: obj.apiUserId,
+    APIUserId: obj.apiUserId,
     Profile: obj.profile,
     CidrBlock: obj.cidrBlock,
     IpAddress: obj.ipAddress,
