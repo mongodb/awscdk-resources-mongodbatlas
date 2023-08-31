@@ -101,9 +101,6 @@ export class AtlasServerlessBasic extends Construct {
           regionName: "us-east-1",
         },
         profile: props.profile,
-        terminationProtectionEnabled: this.node.tryGetContext(
-          "terminationProtectionEnabled"
-        ),
         continuousBackupEnabled: this.node.tryGetContext(
           "continuousBackupEnabled"
         ),

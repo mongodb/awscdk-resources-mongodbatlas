@@ -1,6 +1,7 @@
-# @awscdk-resources-mongodbatlas/atlas-basic
+# @awscdk-resources-mongodbatlas/atlas-basic-serverless
 
 ## CFN resource type used
+
 - MongoDB::Atlas::Project
 - MongoDB::Atlas::ServerlessInstance
 - MongoDB::Atlas::DatabaseUser
@@ -9,12 +10,13 @@
 These CFN resources must be active in your AWS account while using this constructor.
 
 ## Manual QA
+
 - Follow prerequisite steps for testing a CDK construct in [TESTING.md](https://github.com/mongodb/mongodbatlas-cloudformation-resources/tree/master/TESTING.md).
 - Set any additional required configuration options/parameters as per your needs.
 - Please follow the steps in [TESTING.md](../../../TESTING.md).
 
-
 ### Success criteria when testing the resource
+
 1. Ensure all underlying resources are configured correctly as specified (Atlas Project, ServerlessInstance, Network IPAccessList and DatabaseUser):
 
 ![image](https://user-images.githubusercontent.com/122359335/228263898-9d9c3a8a-ddc5-4cf6-9f7e-256b7c976b54.png)

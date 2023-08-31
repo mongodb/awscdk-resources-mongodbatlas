@@ -13,8 +13,8 @@
 // limitations under the License.
 
 import * as cdk from "aws-cdk-lib";
-import * as atlas from "../../index";
 import { AtlasServerlessBasic } from "./index";
+import * as atlas from "../../index";
 
 const app = new cdk.App();
 const stack = new cdk.Stack(app, "atlas-basic-default", {
@@ -34,7 +34,7 @@ new AtlasServerlessBasic(stack, "atlas-basic", {
       regionName: "US_EAST_1",
     },
     continuousBackupEnabled: false,
-    terminationProtectionEnabled: true,
+    terminationProtectionEnabled: false,
   },
   projectProps: {
     orgId: orgId,
