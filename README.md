@@ -46,7 +46,8 @@ The Maven package is available at [awscdk-resources-mongodbatlas](https://centra
 The go package is generated into the [github.com/mongodb/awscdk-resources-mongodbatlas-go](https://github.com/mongodb/awscdk-resources-mongodbatlas-go) package.
 ```bash
 go get github.com/mongodb/awscdk-resources-mongodbatlas-go/awscdkresourcesmongodbatlas
-```
+```   
+
 
 
 ## Available Constructors
