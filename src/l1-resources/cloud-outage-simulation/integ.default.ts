@@ -1,7 +1,9 @@
 import * as cdk from "aws-cdk-lib";
-import {CfnCloudOutageSimulation,CfnCloudOutageSimulationProps,Filter,FilterCloudProvider 
+import {
+  CfnCloudOutageSimulation,
+  CfnCloudOutageSimulationProps,
+  FilterCloudProvider,
 } from "./index";
-
 
 const app = new cdk.App();
 const stack = new cdk.Stack(app, "cloud-outstage-simulation", {
@@ -11,19 +13,21 @@ const stack = new cdk.Stack(app, "cloud-outstage-simulation", {
   },
 });
 
-
 const cloudOutstageProps: CfnCloudOutageSimulationProps = {
-    profile : "default",
-    outageFilters : [
-        {
-          "cloudProvider": FilterCloudProvider.AWS,
-          "region": "US_WEST_1",
-          "type": "REGION"
-        }
-      ],
-      projectId:"64f0bd2b25d67547f35ab3c7",
-      clusterName:"testcloudoutstagesimulation"
+  profile: "default",
+  outageFilters: [
+    {
+      cloudProvider: FilterCloudProvider.AWS,
+      region: "US_WEST_1",
+      type: "REGION",
+    },
+  ],
+  projectId: "",
+  clusterName: "testcloudoutstagesimulation",
 };
 
-new CfnCloudOutageSimulation(stack, "cloud-outstage-simulation", cloudOutstageProps);
-
+new CfnCloudOutageSimulation(
+  stack,
+  "cloud-outstage-simulation",
+  cloudOutstageProps
+);

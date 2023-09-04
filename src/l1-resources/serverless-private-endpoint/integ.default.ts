@@ -1,7 +1,9 @@
 import * as cdk from "aws-cdk-lib";
-import {CfnServerlessPrivateEndpoint, CfnServerlessPrivateEndpointProps, AwsPrivateEndpointConfig
+import {
+  CfnServerlessPrivateEndpoint,
+  CfnServerlessPrivateEndpointProps,
+  AwsPrivateEndpointConfig,
 } from "./index";
-
 
 const app = new cdk.App();
 const stack = new cdk.Stack(app, "serverless-private-endpoint-with-aws", {
@@ -11,20 +13,23 @@ const stack = new cdk.Stack(app, "serverless-private-endpoint-with-aws", {
   },
 });
 
-const awsPrivateEndpointConfig : AwsPrivateEndpointConfig = {
-    vpcId: "vpc-078fe50fc2313c001",
-    subnetIds:["subnet-0a2f7a198e5d6d6a6"],
-    region:""
-}
-
-const serverlessPrivateEndpointProps: CfnServerlessPrivateEndpointProps = {
-    profile : "default",
-    instanceName: "testserverlessprivateendpoint",
-    projectId:"64f0d46e7d714b7c26d984d8",
-    comment : "this is a comment",
-    createAndAssignAwsPrivateEndpoint:false,
-    awsPrivateEndpointConfigurationProperties: awsPrivateEndpointConfig
+const awsPrivateEndpointConfig: AwsPrivateEndpointConfig = {
+  vpcId: "vpc-",
+  subnetIds: ["subnet-"],
+  region: "us-east-1",
 };
 
+const serverlessPrivateEndpointProps: CfnServerlessPrivateEndpointProps = {
+  profile: "default",
+  instanceName: "ServerlessInstance0",
+  projectId: "",
+  comment: "this is a comment",
+  createAndAssignAwsPrivateEndpoint: true,
+  awsPrivateEndpointConfigurationProperties: awsPrivateEndpointConfig,
+};
 
-new CfnServerlessPrivateEndpoint(stack, "cloud-outstage-simulation", serverlessPrivateEndpointProps);
+new CfnServerlessPrivateEndpoint(
+  stack,
+  "cloud-outstage-simulation",
+  serverlessPrivateEndpointProps
+);
