@@ -49,6 +49,12 @@ const clusterRes = new CfnCluster(this, 'ClusterResource', {
       clusterType: atlasProps.clusterType,
       backupEnabled: true,
       pitEnabled: false,
+      tags: [
+        {
+          key: "env",
+          value: "development",
+        },
+      ],
       replicationSpecs: [{
         numShards: 1,
         advancedRegionConfigs: [{
