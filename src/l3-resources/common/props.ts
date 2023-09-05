@@ -1,5 +1,8 @@
 import * as atlas from "../../index";
-import {ServerlessInstanceConnectionStrings, ServerlessInstanceProviderSettings} from "../../index"
+import {
+  ServerlessInstanceConnectionStrings,
+  ServerlessInstanceProviderSettings,
+} from "../../index";
 
 /**
  * @description

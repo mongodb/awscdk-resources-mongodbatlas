@@ -621,6 +621,149 @@ public readonly databaseUser: CfnDatabaseUser;
 ---
 
 
+### AtlasServerlessBasic <a name="AtlasServerlessBasic" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic"></a>
+
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.Initializer"></a>
+
+```typescript
+import { AtlasServerlessBasic } from 'awscdk-resources-mongodbatlas'
+
+new AtlasServerlessBasic(scope: Construct, id: string, props: AtlasServerlessBasicProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasic.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasic.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasic.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasicProps">AtlasServerlessBasicProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasicProps">AtlasServerlessBasicProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasic.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasic.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.isConstruct"></a>
+
+```typescript
+import { AtlasServerlessBasic } from 'awscdk-resources-mongodbatlas'
+
+AtlasServerlessBasic.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasic.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasic.property.ipAccessList">ipAccessList</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList">CfnProjectIpAccessList</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasic.property.mDBUser">mDBUser</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser">CfnDatabaseUser</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasic.property.mProject">mProject</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnProject">CfnProject</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasic.property.mserverless">mserverless</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessInstance">CfnServerlessInstance</a></code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `ipAccessList`<sup>Required</sup> <a name="ipAccessList" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.property.ipAccessList"></a>
+
+```typescript
+public readonly ipAccessList: CfnProjectIpAccessList;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList">CfnProjectIpAccessList</a>
+
+---
+
+##### `mDBUser`<sup>Required</sup> <a name="mDBUser" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.property.mDBUser"></a>
+
+```typescript
+public readonly mDBUser: CfnDatabaseUser;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser">CfnDatabaseUser</a>
+
+---
+
+##### `mProject`<sup>Required</sup> <a name="mProject" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.property.mProject"></a>
+
+```typescript
+public readonly mProject: CfnProject;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnProject">CfnProject</a>
+
+---
+
+##### `mserverless`<sup>Required</sup> <a name="mserverless" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.property.mserverless"></a>
+
+```typescript
+public readonly mserverless: CfnServerlessInstance;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnServerlessInstance">CfnServerlessInstance</a>
+
+---
+
+
 ### CfnAlertConfiguration <a name="CfnAlertConfiguration" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration"></a>
 
 A CloudFormation `MongoDB::Atlas::AlertConfiguration`.
@@ -24069,6 +24212,78 @@ Project Roles
 * GROUP_DATA_ACCESS_READ_WRITE
 * GROUP_OWNER
 * GROUP_READ_ONLY
+
+---
+
+### AtlasServerlessBasicProps <a name="AtlasServerlessBasicProps" id="awscdk-resources-mongodbatlas.AtlasServerlessBasicProps"></a>
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.AtlasServerlessBasicProps.Initializer"></a>
+
+```typescript
+import { AtlasServerlessBasicProps } from 'awscdk-resources-mongodbatlas'
+
+const atlasServerlessBasicProps: AtlasServerlessBasicProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasicProps.property.projectProps">projectProps</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectProps">ProjectProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasicProps.property.serverlessProps">serverlessProps</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessInstanceProps">CfnServerlessInstanceProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasicProps.property.dbUserProps">dbUserProps</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DatabaseUserProps">DatabaseUserProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasicProps.property.ipAccessListProps">ipAccessListProps</a></code> | <code><a href="#awscdk-resources-mongodbatlas.IpAccessListProps">IpAccessListProps</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasServerlessBasicProps.property.profile">profile</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `projectProps`<sup>Required</sup> <a name="projectProps" id="awscdk-resources-mongodbatlas.AtlasServerlessBasicProps.property.projectProps"></a>
+
+```typescript
+public readonly projectProps: ProjectProps;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.ProjectProps">ProjectProps</a>
+
+---
+
+##### `serverlessProps`<sup>Required</sup> <a name="serverlessProps" id="awscdk-resources-mongodbatlas.AtlasServerlessBasicProps.property.serverlessProps"></a>
+
+```typescript
+public readonly serverlessProps: CfnServerlessInstanceProps;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnServerlessInstanceProps">CfnServerlessInstanceProps</a>
+
+---
+
+##### `dbUserProps`<sup>Optional</sup> <a name="dbUserProps" id="awscdk-resources-mongodbatlas.AtlasServerlessBasicProps.property.dbUserProps"></a>
+
+```typescript
+public readonly dbUserProps: DatabaseUserProps;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.DatabaseUserProps">DatabaseUserProps</a>
+
+---
+
+##### `ipAccessListProps`<sup>Optional</sup> <a name="ipAccessListProps" id="awscdk-resources-mongodbatlas.AtlasServerlessBasicProps.property.ipAccessListProps"></a>
+
+```typescript
+public readonly ipAccessListProps: IpAccessListProps;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.IpAccessListProps">IpAccessListProps</a>
+
+---
+
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.AtlasServerlessBasicProps.property.profile"></a>
+
+```typescript
+public readonly profile: string;
+```
+
+- *Type:* string
 
 ---
 

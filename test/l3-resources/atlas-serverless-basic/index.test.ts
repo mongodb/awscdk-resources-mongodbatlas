@@ -15,7 +15,7 @@
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
 import * as l3 from "../../../src";
-import {ServerlessInstanceProviderSettingsProviderName} from "../../../src/index";
+import { ServerlessInstanceProviderSettingsProviderName } from "../../../src/index";
 
 const RESOURCE_NAME_PROJECT = "MongoDB::Atlas::Project";
 const RESOURCE_NAME_SERVERLESS_INSTANCE = "MongoDB::Atlas::ServerlessInstance";
@@ -35,13 +35,13 @@ test("AtlasBasis construct should contain default properties", () => {
 
   new l3.AtlasServerlessBasic(stack, "testing-stack", {
     serverlessProps: {
-      profile:"default",
+      profile: "default",
       projectId: PROJECT_ID,
-      providerSettings : {
-        providerName: ServerlessInstanceProviderSettingsProviderName.SERVERLESS
-        },
-      continuousBackupEnabled : false,
-      terminationProtectionEnabled: true
+      providerSettings: {
+        providerName: ServerlessInstanceProviderSettingsProviderName.SERVERLESS,
+      },
+      continuousBackupEnabled: false,
+      terminationProtectionEnabled: true,
     },
     projectProps: {
       orgId: ORG_ID,
@@ -62,13 +62,13 @@ test("AtlasBasis construct should contain default properties", () => {
   });
 
   template.hasResourceProperties(RESOURCE_NAME_SERVERLESS_INSTANCE, {
-      Profile:"default",
-      ProjectID: PROJECT_ID,
-      ProviderSettings : {
-        ProviderName: ServerlessInstanceProviderSettingsProviderName.SERVERLESS
-        },
-      ContinuousBackupEnabled : false,
-      TerminationProtectionEnabled: true
+    Profile: "default",
+    ProjectID: PROJECT_ID,
+    ProviderSettings: {
+      ProviderName: ServerlessInstanceProviderSettingsProviderName.SERVERLESS,
+    },
+    ContinuousBackupEnabled: false,
+    TerminationProtectionEnabled: true,
   });
 
   template.hasResourceProperties(RESOURCE_NAME_DB_USER, {
