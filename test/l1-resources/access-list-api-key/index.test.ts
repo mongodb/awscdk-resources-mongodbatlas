@@ -27,7 +27,7 @@ test("CfnAccessListApiKey construct should contain default properties", () => {
   template.hasResourceProperties(RESOURCE_NAME, {
     Profile: PROFILE,
     OrgId: ORG_ID,
-    APIUserId: "64ee342d64e8fb3e38181aab",
-    IpAddress: "192.168.1.27",
+    APIUserId: "64ef512fab473831c9e73b58",
+    IpAddress: "203.0.113.11",
   });
 });
