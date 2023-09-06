@@ -4,11 +4,13 @@ import { CfnFederatedSettingsOrgRoleMapping } from 'awscdk-resources-mongodbatla
 
 interface AtlasStackProps {
   readonly tenantName: string;
-  readonly projId: string;
+  readonly projectId: string;
   readonly profile: string;
   readonly roleId: string;
   readonly testS3Bucket: string;
 }
+
+const UNDEFINED = "UNDEFINED";
 
 export class CDKFederatedDatabaseInstanceExample extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -17,7 +19,7 @@ export class CDKFederatedDatabaseInstanceExample extends cdk.Stack {
     const atlasProps = this.getContextProps();
     const federatedDatabaseInstance = new CfnFederatedSettingsOrgRoleMapping(this, 'FederatedDatabaseInstance', {
       tenantName: atlasProps.tenantName,
-      projectId: atlasProps.projId,
+      projectId: atlasProps.projectId,
       profile: atlasProps.profile,
       cloudProviderConfig: {
         roleId: atlasProps.roleId,
@@ -37,21 +39,21 @@ export class CDKFederatedDatabaseInstanceExample extends cdk.Stack {
     });
 
     new cdk.CfnOutput(this, "externalID", {
-      value: (federatedDatabaseInstance.attrExternalId ?? "UNDEFINED").toString(),
+      value: (federatedDatabaseInstance.attrExternalId ?? UNDEFINED).toString(),
       exportName: "externalId",
     });
     
     new cdk.CfnOutput(this, "HostName", {
       value: (
-        cdk.Fn.select(0, federatedDatabaseInstance.attrHostNames) ?? "UNDEFINED"
+        cdk.Fn.select(0, federatedDatabaseInstance.attrHostNames) ?? UNDEFINED
       ).toString(),
       exportName: "HostName",
     });
   }
 
   getContextProps(): AtlasStackProps {
-    const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    const projectId = this.node.tryGetContext('projId');
+    if (!projectId){
       throw "No context value specified for projId. Please specify via the cdk context."
     }
 
@@ -62,7 +64,7 @@ export class CDKFederatedDatabaseInstanceExample extends cdk.Stack {
 
     return {
       tenantName,
-      projId,
+      projectId,
       profile,
       roleId,
       testS3Bucket

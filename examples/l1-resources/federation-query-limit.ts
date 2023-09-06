@@ -3,7 +3,7 @@ import { Construct } from 'constructs';
 import { CfnFederatedQueryLimit, CfnFederatedQueryLimitPropsLimitName} from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
-  readonly projId: string;
+  readonly projectId: string;
   readonly profile: string;
   readonly role: string;
   readonly tenantName: string;
@@ -16,9 +16,9 @@ export class CdkTestingStack extends cdk.Stack {
     super(scope, id, props);
 
     const atlasProps = this.getContextProps();
-    const federationQueryLimit = new CfnFederatedQueryLimit(this, 'Federation', {
+    new CfnFederatedQueryLimit(this, 'Federation', {
       profile: atlasProps.profile,
-      projectId: atlasProps.projId,
+      projectId: atlasProps.projectId,
       tenantName: atlasProps.tenantName,
       limitName : atlasProps.limitName,
       value: atlasProps.value
@@ -26,8 +26,8 @@ export class CdkTestingStack extends cdk.Stack {
   }
 
   getContextProps(): AtlasStackProps {
-    const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    const projectId = this.node.tryGetContext('projId');
+    if (!projectId){
       throw "No context value specified for projId. Please specify via the cdk context."
     }
 
@@ -37,7 +37,7 @@ export class CdkTestingStack extends cdk.Stack {
     const limitName=  this.node.tryGetContext('limitName') ?? CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_QUERY;
     const value= this.node.tryGetContext("value") ?? "2000000000"
     return {
-      projId,
+      projectId,
       profile,
       role,
       tenantName,
