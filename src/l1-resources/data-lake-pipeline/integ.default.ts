@@ -3,7 +3,7 @@ import {
   CfnDataLakePipeline,
   CfnDataLakePipelineProps,
   Sink,
-  Source
+  Source,
 } from "./index";
 
 const app = new cdk.App();

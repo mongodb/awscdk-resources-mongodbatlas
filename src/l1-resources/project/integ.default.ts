@@ -20,20 +20,20 @@ const projectProps: CfnProjectProps = {
     isPerformanceAdvisorEnabled: false,
     isRealtimePerformancePanelEnabled: false,
     isSchemaAdvisorEnabled: true,
-    isExtendedStorageSizesEnabled: true
-},
-projectApiKeys: [
+    isExtendedStorageSizesEnabled: true,
+  },
+  projectApiKeys: [
     {
-        key: "64f75b66e205b21647ae1e58",
-        roleNames: ["GROUP_CLUSTER_MANAGER"]
-    }
-],
-projectTeams: [
+      key: "64f75b66e205b21647ae1e58",
+      roleNames: ["GROUP_CLUSTER_MANAGER"],
+    },
+  ],
+  projectTeams: [
     {
-        teamId: "647a04045878135ce0e8bfff",
-        roleNames: ["GROUP_OWNER"]
-    }
-]
+      teamId: "647a04045878135ce0e8bfff",
+      roleNames: ["GROUP_OWNER"],
+    },
+  ],
 };
 
 new CfnProject(stack, "project-region-usage-restriction", projectProps);

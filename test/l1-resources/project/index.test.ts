@@ -31,25 +31,25 @@ test("Projects construct should contain default properties", () => {
     profile: PROFILE,
     regionUsageRestrictions: "NONE",
     projectSettings: {
-        isCollectDatabaseSpecificsStatisticsEnabled: false,
-        isDataExplorerEnabled: false,
-        isPerformanceAdvisorEnabled: false,
-        isRealtimePerformancePanelEnabled: false,
-        isSchemaAdvisorEnabled: true,
-        isExtendedStorageSizesEnabled: true
+      isCollectDatabaseSpecificsStatisticsEnabled: false,
+      isDataExplorerEnabled: false,
+      isPerformanceAdvisorEnabled: false,
+      isRealtimePerformancePanelEnabled: false,
+      isSchemaAdvisorEnabled: true,
+      isExtendedStorageSizesEnabled: true,
     },
     projectApiKeys: [
-        {
-            key: "64f75b66e205b21647ae1e58",
-            roleNames: ["GROUP_CLUSTER_MANAGER"]
-        }
+      {
+        key: "64f75b66e205b21647ae1e58",
+        roleNames: ["GROUP_CLUSTER_MANAGER"],
+      },
     ],
     projectTeams: [
-        {
-            teamId: "647a04045878135ce0e8bfff",
-            roleNames: ["GROUP_OWNER"]
-        }
-    ]
+      {
+        teamId: "647a04045878135ce0e8bfff",
+        roleNames: ["GROUP_OWNER"],
+      },
+    ],
   });
 
   const template = Template.fromStack(stack);
@@ -60,24 +60,24 @@ test("Projects construct should contain default properties", () => {
     Profile: PROFILE,
     RegionUsageRestrictions: "NONE",
     ProjectSettings: {
-        IsCollectDatabaseSpecificsStatisticsEnabled: false,
-        IsDataExplorerEnabled: false,
-        IsPerformanceAdvisorEnabled: false,
-        IsRealtimePerformancePanelEnabled: false,
-        IsSchemaAdvisorEnabled: true,
-        IsExtendedStorageSizesEnabled: true
+      IsCollectDatabaseSpecificsStatisticsEnabled: false,
+      IsDataExplorerEnabled: false,
+      IsPerformanceAdvisorEnabled: false,
+      IsRealtimePerformancePanelEnabled: false,
+      IsSchemaAdvisorEnabled: true,
+      IsExtendedStorageSizesEnabled: true,
     },
     ProjectApiKeys: [
-        {
-            Key: "64f75b66e205b21647ae1e58",
-            RoleNames: ["GROUP_CLUSTER_MANAGER"]
-        }
+      {
+        Key: "64f75b66e205b21647ae1e58",
+        RoleNames: ["GROUP_CLUSTER_MANAGER"],
+      },
     ],
     ProjectTeams: [
-        {
-            TeamId: "647a04045878135ce0e8bfff",
-            RoleNames: ["GROUP_OWNER"]
-        }
-    ]
+      {
+        TeamId: "647a04045878135ce0e8bfff",
+        RoleNames: ["GROUP_OWNER"],
+      },
+    ],
   });
 });
