@@ -2,7 +2,6 @@ import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
 import {
   CfnServerlessPrivateEndpoint,
-  CfnServerlessPrivateEndpointProps,
   AwsPrivateEndpointConfig,
 } from "../../../src/l1-resources/serverless-private-endpoint";
 
@@ -38,10 +37,14 @@ test("CfnCloudOutageSimulation construct should contain default properties", () 
 
   template.hasResourceProperties(RESOURCE_NAME, {
     ProjectId: PROJECT_ID,
-    profile: PROFILE,
+    Profile: PROFILE,
     InstanceName: INSTANCE_NAME,
-    CreateAndAssignAwsPrivateEndpoint: false,
+    CreateAndAssignAWSPrivateEndpoint: false,
     Comment: "this is a comment",
-    AwsPrivateEndpointConfigurationProperties: awsPrivateEndpointConfig,
+    AwsPrivateEndpointConfigurationProperties: {
+      VpcId: "vpc-078fe50fc2313c001",
+      SubnetIds: ["subnet-0a2f7a198e5d6d6a6"],
+      Region: "",
+    },
   });
 });

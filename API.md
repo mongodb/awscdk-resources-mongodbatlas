@@ -25289,6 +25289,7 @@ const cfnClusterProps: CfnClusterProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.replicationSpecs">replicationSpecs</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AdvancedReplicationSpec">AdvancedReplicationSpec</a>[]</code> | List of settings that configure your cluster regions. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.rootCertType">rootCertType</a></code> | <code>string</code> | Root Certificate Authority that MongoDB Cloud cluster uses. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.tags">tags</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Tag">Tag</a>[]</code> | List of settings that configure your cluster regions. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.terminationProtectionEnabled">terminationProtectionEnabled</a></code> | <code>boolean</code> | Flag that indicates whether termination protection is enabled on the cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.versionReleaseSystem">versionReleaseSystem</a></code> | <code>string</code> | Method by which the cluster maintains the MongoDB versions. |
 
@@ -25483,6 +25484,20 @@ public readonly rootCertType: string;
 Root Certificate Authority that MongoDB Cloud cluster uses.
 
 MongoDB Cloud supports Internet Security Research Group.
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="awscdk-resources-mongodbatlas.CfnClusterProps.property.tags"></a>
+
+```typescript
+public readonly tags: Tag[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.Tag">Tag</a>[]
+
+List of settings that configure your cluster regions.
+
+For Global Clusters, each object in the array represents a zone where your clusters nodes deploy. For non-Global replica sets and sharded clusters, this array has one object representing where your clusters nodes deploy.
 
 ---
 
@@ -33304,6 +33319,55 @@ public readonly collection: string;
 - *Type:* string
 
 Human-readable label that identifies the MongoDB collection that stores words and their applicable synonyms.
+
+---
+
+### Tag <a name="Tag" id="awscdk-resources-mongodbatlas.Tag"></a>
+
+Advanced configuration details to add for one cluster in the specified project.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.Tag.Initializer"></a>
+
+```typescript
+import { Tag } from 'awscdk-resources-mongodbatlas'
+
+const tag: Tag = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.Tag.property.key">key</a></code> | <code>string</code> | Constant that defines the set of the tag. |
+| <code><a href="#awscdk-resources-mongodbatlas.Tag.property.value">value</a></code> | <code>string</code> | Variable that belongs to the set of the tag. |
+
+---
+
+##### `key`<sup>Optional</sup> <a name="key" id="awscdk-resources-mongodbatlas.Tag.property.key"></a>
+
+```typescript
+public readonly key: string;
+```
+
+- *Type:* string
+
+Constant that defines the set of the tag.
+
+For example, environment in the environment : production tag.
+
+---
+
+##### `value`<sup>Optional</sup> <a name="value" id="awscdk-resources-mongodbatlas.Tag.property.value"></a>
+
+```typescript
+public readonly value: string;
+```
+
+- *Type:* string
+
+Variable that belongs to the set of the tag.
+
+For example, production in the environment : production tag.
 
 ---
 
