@@ -8745,6 +8745,1373 @@ The CloudFormation resource type name for this resource class.
 
 ---
 
+### CfnFederatedDatabaseInstance <a name="CfnFederatedDatabaseInstance" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance"></a>
+
+A CloudFormation `MongoDB::Atlas::FederatedDatabaseInstance`.
+
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.Initializer"></a>
+
+```typescript
+import { CfnFederatedDatabaseInstance } from 'awscdk-resources-mongodbatlas'
+
+new CfnFederatedDatabaseInstance(scope: Construct, id: string, props: CfnFederatedDatabaseInstanceProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | - scope in which this resource is defined. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.Initializer.parameter.id">id</a></code> | <code>string</code> | - scoped id of the resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps">CfnFederatedDatabaseInstanceProps</a></code> | - resource properties. |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+scope in which this resource is defined.
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+scoped id of the resource.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps">CfnFederatedDatabaseInstanceProps</a>
+
+resource properties.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDependsOn">addDependsOn</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addMetadata">addMetadata</a></code> | Add a value to the CloudFormation Resource Metadata. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
+
+---
+
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.overrideLogicalId"></a>
+
+```typescript
+public overrideLogicalId(newLogicalId: string): void
+```
+
+Overrides the auto-generated logical ID with a specific ID.
+
+###### `newLogicalId`<sup>Required</sup> <a name="newLogicalId" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.overrideLogicalId.parameter.newLogicalId"></a>
+
+- *Type:* string
+
+The new logical ID to use for this stack element.
+
+---
+
+##### `addDeletionOverride` <a name="addDeletionOverride" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDeletionOverride"></a>
+
+```typescript
+public addDeletionOverride(path: string): void
+```
+
+Syntactic sugar for `addOverride(path, undefined)`.
+
+###### `path`<sup>Required</sup> <a name="path" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDeletionOverride.parameter.path"></a>
+
+- *Type:* string
+
+The path of the value to delete.
+
+---
+
+##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDependency"></a>
+
+```typescript
+public addDependency(target: CfnResource): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### ~~`addDependsOn`~~ <a name="addDependsOn" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDependsOn"></a>
+
+```typescript
+public addDependsOn(target: CfnResource): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDependsOn.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `addMetadata` <a name="addMetadata" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addMetadata"></a>
+
+```typescript
+public addMetadata(key: string, value: any): void
+```
+
+Add a value to the CloudFormation Resource Metadata.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.)
+
+###### `key`<sup>Required</sup> <a name="key" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addMetadata.parameter.key"></a>
+
+- *Type:* string
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addMetadata.parameter.value"></a>
+
+- *Type:* any
+
+---
+
+##### `addOverride` <a name="addOverride" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addOverride"></a>
+
+```typescript
+public addOverride(path: string, value: any): void
+```
+
+Adds an override to the synthesized CloudFormation resource.
+
+To add a
+property override, either use `addPropertyOverride` or prefix `path` with
+"Properties." (i.e. `Properties.TopicName`).
+
+If the override is nested, separate each nested level using a dot (.) in the path parameter.
+If there is an array as part of the nesting, specify the index in the path.
+
+To include a literal `.` in the property name, prefix with a `\`. In most
+programming languages you will need to write this as `"\\."` because the
+`\` itself will need to be escaped.
+
+For example,
+```typescript
+cfnResource.addOverride('Properties.GlobalSecondaryIndexes.0.Projection.NonKeyAttributes', ['myattribute']);
+cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'INCLUDE');
+```
+would add the overrides
+```json
+"Properties": {
+   "GlobalSecondaryIndexes": [
+     {
+       "Projection": {
+         "NonKeyAttributes": [ "myattribute" ]
+         ...
+       }
+       ...
+     },
+     {
+       "ProjectionType": "INCLUDE"
+       ...
+     },
+   ]
+   ...
+}
+```
+
+The `value` argument to `addOverride` will not be processed or translated
+in any way. Pass raw JSON values in here with the correct capitalization
+for CloudFormation. If you pass CDK classes or structs, they will be
+rendered with lowercased key names, and CloudFormation will reject the
+template.
+
+###### `path`<sup>Required</sup> <a name="path" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addOverride.parameter.path"></a>
+
+- *Type:* string
+
+The path of the property, you can use dot notation to override values in complex types.
+
+Any intermdediate keys
+will be created as needed.
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addOverride.parameter.value"></a>
+
+- *Type:* any
+
+The value.
+
+Could be primitive or complex.
+
+---
+
+##### `addPropertyDeletionOverride` <a name="addPropertyDeletionOverride" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addPropertyDeletionOverride"></a>
+
+```typescript
+public addPropertyDeletionOverride(propertyPath: string): void
+```
+
+Adds an override that deletes the value of a property from the resource definition.
+
+###### `propertyPath`<sup>Required</sup> <a name="propertyPath" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addPropertyDeletionOverride.parameter.propertyPath"></a>
+
+- *Type:* string
+
+The path to the property.
+
+---
+
+##### `addPropertyOverride` <a name="addPropertyOverride" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addPropertyOverride"></a>
+
+```typescript
+public addPropertyOverride(propertyPath: string, value: any): void
+```
+
+Adds an override to a resource property.
+
+Syntactic sugar for `addOverride("Properties.<...>", value)`.
+
+###### `propertyPath`<sup>Required</sup> <a name="propertyPath" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addPropertyOverride.parameter.propertyPath"></a>
+
+- *Type:* string
+
+The path of the property.
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addPropertyOverride.parameter.value"></a>
+
+- *Type:* any
+
+The value.
+
+---
+
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.applyRemovalPolicy"></a>
+
+```typescript
+public applyRemovalPolicy(policy?: RemovalPolicy, options?: RemovalPolicyOptions): void
+```
+
+Sets the deletion policy of the resource based on the removal policy specified.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
+account for data recovery and cleanup later (`RemovalPolicy.RETAIN`). In some
+cases, a snapshot can be taken of the resource prior to deletion
+(`RemovalPolicy.SNAPSHOT`). A list of resources that support this policy
+can be found in the following link:
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html#aws-attribute-deletionpolicy-options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html#aws-attribute-deletionpolicy-options)
+
+###### `policy`<sup>Optional</sup> <a name="policy" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.applyRemovalPolicy.parameter.options"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `getAtt` <a name="getAtt" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.getAtt"></a>
+
+```typescript
+public getAtt(attributeName: string, typeHint?: ResolutionTypeHint): Reference
+```
+
+Returns a token for an runtime attribute of this resource.
+
+Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
+in case there is no generated attribute.
+
+###### `attributeName`<sup>Required</sup> <a name="attributeName" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.getAtt.parameter.attributeName"></a>
+
+- *Type:* string
+
+The name of the attribute.
+
+---
+
+###### `typeHint`<sup>Optional</sup> <a name="typeHint" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.getAtt.parameter.typeHint"></a>
+
+- *Type:* aws-cdk-lib.ResolutionTypeHint
+
+---
+
+##### `getMetadata` <a name="getMetadata" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.getMetadata"></a>
+
+```typescript
+public getMetadata(key: string): any
+```
+
+Retrieve a value value from the CloudFormation Resource Metadata.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.)
+
+###### `key`<sup>Required</sup> <a name="key" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.getMetadata.parameter.key"></a>
+
+- *Type:* string
+
+---
+
+##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.obtainDependencies"></a>
+
+```typescript
+public obtainDependencies(): CfnResource | Stack[]
+```
+
+Retrieves an array of resources this resource depends on.
+
+This assembles dependencies on resources across stacks (including nested stacks)
+automatically.
+
+##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.obtainResourceDependencies"></a>
+
+```typescript
+public obtainResourceDependencies(): CfnResource[]
+```
+
+Get a shallow copy of dependencies between this resource and other resources in the same stack.
+
+##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.removeDependency"></a>
+
+```typescript
+public removeDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `replaceDependency` <a name="replaceDependency" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.replaceDependency"></a>
+
+```typescript
+public replaceDependency(target: CfnResource, newTarget: CfnResource): void
+```
+
+Replaces one dependency with another.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.replaceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+The dependency to replace.
+
+---
+
+###### `newTarget`<sup>Required</sup> <a name="newTarget" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.replaceDependency.parameter.newTarget"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+The new dependency to add.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isConstruct"></a>
+
+```typescript
+import { CfnFederatedDatabaseInstance } from 'awscdk-resources-mongodbatlas'
+
+CfnFederatedDatabaseInstance.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isCfnElement` <a name="isCfnElement" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isCfnElement"></a>
+
+```typescript
+import { CfnFederatedDatabaseInstance } from 'awscdk-resources-mongodbatlas'
+
+CfnFederatedDatabaseInstance.isCfnElement(x: any)
+```
+
+Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template).
+
+Uses duck-typing instead of `instanceof` to allow stack elements from different
+versions of this library to be included in the same stack.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isCfnElement.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `isCfnResource` <a name="isCfnResource" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isCfnResource"></a>
+
+```typescript
+import { CfnFederatedDatabaseInstance } from 'awscdk-resources-mongodbatlas'
+
+CfnFederatedDatabaseInstance.isCfnResource(construct: IConstruct)
+```
+
+Check whether the given construct is a CfnResource.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isCfnResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.creationStack">creationStack</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.logicalId">logicalId</a></code> | <code>string</code> | The logical ID for this CloudFormation stack element. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this element is defined. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrExternalId">attrExternalId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.ExternalId`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrHostNames">attrHostNames</a></code> | <code>string[]</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.HostNames`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrIamAssumedRoleARNN">attrIamAssumedRoleARNN</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamAssumedRoleARN`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrIamUserARN">attrIamUserARN</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamUserARN`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrState">attrState</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.State`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps">CfnFederatedDatabaseInstanceProps</a></code> | Resource props. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `creationStack`<sup>Required</sup> <a name="creationStack" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.creationStack"></a>
+
+```typescript
+public readonly creationStack: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `logicalId`<sup>Required</sup> <a name="logicalId" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.logicalId"></a>
+
+```typescript
+public readonly logicalId: string;
+```
+
+- *Type:* string
+
+The logical ID for this CloudFormation stack element.
+
+The logical ID of the element
+is calculated from the path of the resource node in the construct tree.
+
+To override this value, use `overrideLogicalId(newLogicalId)`.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this element is defined.
+
+CfnElements must be defined within a stack scope (directly or indirectly).
+
+---
+
+##### `ref`<sup>Required</sup> <a name="ref" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.ref"></a>
+
+```typescript
+public readonly ref: string;
+```
+
+- *Type:* string
+
+Return a string that will be resolved to a CloudFormation `{ Ref }` for this element.
+
+If, by any chance, the intrinsic reference of a resource is not a string, you could
+coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
+
+---
+
+##### `cfnOptions`<sup>Required</sup> <a name="cfnOptions" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.cfnOptions"></a>
+
+```typescript
+public readonly cfnOptions: ICfnResourceOptions;
+```
+
+- *Type:* aws-cdk-lib.ICfnResourceOptions
+
+Options for this resource, such as condition, update policy etc.
+
+---
+
+##### `cfnResourceType`<sup>Required</sup> <a name="cfnResourceType" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.cfnResourceType"></a>
+
+```typescript
+public readonly cfnResourceType: string;
+```
+
+- *Type:* string
+
+AWS resource type.
+
+---
+
+##### `attrExternalId`<sup>Required</sup> <a name="attrExternalId" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrExternalId"></a>
+
+```typescript
+public readonly attrExternalId: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.ExternalId`.
+
+---
+
+##### `attrHostNames`<sup>Required</sup> <a name="attrHostNames" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrHostNames"></a>
+
+```typescript
+public readonly attrHostNames: string[];
+```
+
+- *Type:* string[]
+
+Attribute `MongoDB::Atlas::FederatedDatabaseInstance.HostNames`.
+
+---
+
+##### `attrIamAssumedRoleARNN`<sup>Required</sup> <a name="attrIamAssumedRoleARNN" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrIamAssumedRoleARNN"></a>
+
+```typescript
+public readonly attrIamAssumedRoleARNN: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamAssumedRoleARN`.
+
+---
+
+##### `attrIamUserARN`<sup>Required</sup> <a name="attrIamUserARN" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrIamUserARN"></a>
+
+```typescript
+public readonly attrIamUserARN: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamUserARN`.
+
+---
+
+##### `attrState`<sup>Required</sup> <a name="attrState" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrState"></a>
+
+```typescript
+public readonly attrState: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FederatedDatabaseInstance.State`.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.props"></a>
+
+```typescript
+public readonly props: CfnFederatedDatabaseInstanceProps;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps">CfnFederatedDatabaseInstanceProps</a>
+
+Resource props.
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.CFN_RESOURCE_TYPE_NAME">CFN_RESOURCE_TYPE_NAME</a></code> | <code>string</code> | The CloudFormation resource type name for this resource class. |
+
+---
+
+##### `CFN_RESOURCE_TYPE_NAME`<sup>Required</sup> <a name="CFN_RESOURCE_TYPE_NAME" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.CFN_RESOURCE_TYPE_NAME"></a>
+
+```typescript
+public readonly CFN_RESOURCE_TYPE_NAME: string;
+```
+
+- *Type:* string
+
+The CloudFormation resource type name for this resource class.
+
+---
+
+### CfnFederatedQueryLimit <a name="CfnFederatedQueryLimit" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit"></a>
+
+A CloudFormation `MongoDB::Atlas::FederatedQueryLimit`.
+
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.Initializer"></a>
+
+```typescript
+import { CfnFederatedQueryLimit } from 'awscdk-resources-mongodbatlas'
+
+new CfnFederatedQueryLimit(scope: Construct, id: string, props: CfnFederatedQueryLimitProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | - scope in which this resource is defined. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.Initializer.parameter.id">id</a></code> | <code>string</code> | - scoped id of the resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps">CfnFederatedQueryLimitProps</a></code> | - resource properties. |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+scope in which this resource is defined.
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+scoped id of the resource.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps">CfnFederatedQueryLimitProps</a>
+
+resource properties.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDependsOn">addDependsOn</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addMetadata">addMetadata</a></code> | Add a value to the CloudFormation Resource Metadata. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
+
+---
+
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.overrideLogicalId"></a>
+
+```typescript
+public overrideLogicalId(newLogicalId: string): void
+```
+
+Overrides the auto-generated logical ID with a specific ID.
+
+###### `newLogicalId`<sup>Required</sup> <a name="newLogicalId" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.overrideLogicalId.parameter.newLogicalId"></a>
+
+- *Type:* string
+
+The new logical ID to use for this stack element.
+
+---
+
+##### `addDeletionOverride` <a name="addDeletionOverride" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDeletionOverride"></a>
+
+```typescript
+public addDeletionOverride(path: string): void
+```
+
+Syntactic sugar for `addOverride(path, undefined)`.
+
+###### `path`<sup>Required</sup> <a name="path" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDeletionOverride.parameter.path"></a>
+
+- *Type:* string
+
+The path of the value to delete.
+
+---
+
+##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDependency"></a>
+
+```typescript
+public addDependency(target: CfnResource): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### ~~`addDependsOn`~~ <a name="addDependsOn" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDependsOn"></a>
+
+```typescript
+public addDependsOn(target: CfnResource): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDependsOn.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `addMetadata` <a name="addMetadata" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addMetadata"></a>
+
+```typescript
+public addMetadata(key: string, value: any): void
+```
+
+Add a value to the CloudFormation Resource Metadata.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.)
+
+###### `key`<sup>Required</sup> <a name="key" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addMetadata.parameter.key"></a>
+
+- *Type:* string
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addMetadata.parameter.value"></a>
+
+- *Type:* any
+
+---
+
+##### `addOverride` <a name="addOverride" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addOverride"></a>
+
+```typescript
+public addOverride(path: string, value: any): void
+```
+
+Adds an override to the synthesized CloudFormation resource.
+
+To add a
+property override, either use `addPropertyOverride` or prefix `path` with
+"Properties." (i.e. `Properties.TopicName`).
+
+If the override is nested, separate each nested level using a dot (.) in the path parameter.
+If there is an array as part of the nesting, specify the index in the path.
+
+To include a literal `.` in the property name, prefix with a `\`. In most
+programming languages you will need to write this as `"\\."` because the
+`\` itself will need to be escaped.
+
+For example,
+```typescript
+cfnResource.addOverride('Properties.GlobalSecondaryIndexes.0.Projection.NonKeyAttributes', ['myattribute']);
+cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'INCLUDE');
+```
+would add the overrides
+```json
+"Properties": {
+   "GlobalSecondaryIndexes": [
+     {
+       "Projection": {
+         "NonKeyAttributes": [ "myattribute" ]
+         ...
+       }
+       ...
+     },
+     {
+       "ProjectionType": "INCLUDE"
+       ...
+     },
+   ]
+   ...
+}
+```
+
+The `value` argument to `addOverride` will not be processed or translated
+in any way. Pass raw JSON values in here with the correct capitalization
+for CloudFormation. If you pass CDK classes or structs, they will be
+rendered with lowercased key names, and CloudFormation will reject the
+template.
+
+###### `path`<sup>Required</sup> <a name="path" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addOverride.parameter.path"></a>
+
+- *Type:* string
+
+The path of the property, you can use dot notation to override values in complex types.
+
+Any intermdediate keys
+will be created as needed.
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addOverride.parameter.value"></a>
+
+- *Type:* any
+
+The value.
+
+Could be primitive or complex.
+
+---
+
+##### `addPropertyDeletionOverride` <a name="addPropertyDeletionOverride" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addPropertyDeletionOverride"></a>
+
+```typescript
+public addPropertyDeletionOverride(propertyPath: string): void
+```
+
+Adds an override that deletes the value of a property from the resource definition.
+
+###### `propertyPath`<sup>Required</sup> <a name="propertyPath" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addPropertyDeletionOverride.parameter.propertyPath"></a>
+
+- *Type:* string
+
+The path to the property.
+
+---
+
+##### `addPropertyOverride` <a name="addPropertyOverride" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addPropertyOverride"></a>
+
+```typescript
+public addPropertyOverride(propertyPath: string, value: any): void
+```
+
+Adds an override to a resource property.
+
+Syntactic sugar for `addOverride("Properties.<...>", value)`.
+
+###### `propertyPath`<sup>Required</sup> <a name="propertyPath" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addPropertyOverride.parameter.propertyPath"></a>
+
+- *Type:* string
+
+The path of the property.
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addPropertyOverride.parameter.value"></a>
+
+- *Type:* any
+
+The value.
+
+---
+
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.applyRemovalPolicy"></a>
+
+```typescript
+public applyRemovalPolicy(policy?: RemovalPolicy, options?: RemovalPolicyOptions): void
+```
+
+Sets the deletion policy of the resource based on the removal policy specified.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
+account for data recovery and cleanup later (`RemovalPolicy.RETAIN`). In some
+cases, a snapshot can be taken of the resource prior to deletion
+(`RemovalPolicy.SNAPSHOT`). A list of resources that support this policy
+can be found in the following link:
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html#aws-attribute-deletionpolicy-options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html#aws-attribute-deletionpolicy-options)
+
+###### `policy`<sup>Optional</sup> <a name="policy" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.applyRemovalPolicy.parameter.options"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `getAtt` <a name="getAtt" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.getAtt"></a>
+
+```typescript
+public getAtt(attributeName: string, typeHint?: ResolutionTypeHint): Reference
+```
+
+Returns a token for an runtime attribute of this resource.
+
+Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
+in case there is no generated attribute.
+
+###### `attributeName`<sup>Required</sup> <a name="attributeName" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.getAtt.parameter.attributeName"></a>
+
+- *Type:* string
+
+The name of the attribute.
+
+---
+
+###### `typeHint`<sup>Optional</sup> <a name="typeHint" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.getAtt.parameter.typeHint"></a>
+
+- *Type:* aws-cdk-lib.ResolutionTypeHint
+
+---
+
+##### `getMetadata` <a name="getMetadata" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.getMetadata"></a>
+
+```typescript
+public getMetadata(key: string): any
+```
+
+Retrieve a value value from the CloudFormation Resource Metadata.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.)
+
+###### `key`<sup>Required</sup> <a name="key" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.getMetadata.parameter.key"></a>
+
+- *Type:* string
+
+---
+
+##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.obtainDependencies"></a>
+
+```typescript
+public obtainDependencies(): CfnResource | Stack[]
+```
+
+Retrieves an array of resources this resource depends on.
+
+This assembles dependencies on resources across stacks (including nested stacks)
+automatically.
+
+##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.obtainResourceDependencies"></a>
+
+```typescript
+public obtainResourceDependencies(): CfnResource[]
+```
+
+Get a shallow copy of dependencies between this resource and other resources in the same stack.
+
+##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.removeDependency"></a>
+
+```typescript
+public removeDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `replaceDependency` <a name="replaceDependency" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.replaceDependency"></a>
+
+```typescript
+public replaceDependency(target: CfnResource, newTarget: CfnResource): void
+```
+
+Replaces one dependency with another.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.replaceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+The dependency to replace.
+
+---
+
+###### `newTarget`<sup>Required</sup> <a name="newTarget" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.replaceDependency.parameter.newTarget"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+The new dependency to add.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isConstruct"></a>
+
+```typescript
+import { CfnFederatedQueryLimit } from 'awscdk-resources-mongodbatlas'
+
+CfnFederatedQueryLimit.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isCfnElement` <a name="isCfnElement" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isCfnElement"></a>
+
+```typescript
+import { CfnFederatedQueryLimit } from 'awscdk-resources-mongodbatlas'
+
+CfnFederatedQueryLimit.isCfnElement(x: any)
+```
+
+Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template).
+
+Uses duck-typing instead of `instanceof` to allow stack elements from different
+versions of this library to be included in the same stack.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isCfnElement.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `isCfnResource` <a name="isCfnResource" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isCfnResource"></a>
+
+```typescript
+import { CfnFederatedQueryLimit } from 'awscdk-resources-mongodbatlas'
+
+CfnFederatedQueryLimit.isCfnResource(construct: IConstruct)
+```
+
+Check whether the given construct is a CfnResource.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isCfnResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.creationStack">creationStack</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.logicalId">logicalId</a></code> | <code>string</code> | The logical ID for this CloudFormation stack element. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this element is defined. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.attrCurrentUsage">attrCurrentUsage</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedQueryLimit.CurrentUsage`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.attrDefaultLimit">attrDefaultLimit</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedQueryLimit.DefaultLimit`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.attrLastModifiedDate">attrLastModifiedDate</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedQueryLimit.LastModifiedDate`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.attrMaximumLimit">attrMaximumLimit</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedQueryLimit.MaximumLimit`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps">CfnFederatedQueryLimitProps</a></code> | Resource props. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `creationStack`<sup>Required</sup> <a name="creationStack" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.creationStack"></a>
+
+```typescript
+public readonly creationStack: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `logicalId`<sup>Required</sup> <a name="logicalId" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.logicalId"></a>
+
+```typescript
+public readonly logicalId: string;
+```
+
+- *Type:* string
+
+The logical ID for this CloudFormation stack element.
+
+The logical ID of the element
+is calculated from the path of the resource node in the construct tree.
+
+To override this value, use `overrideLogicalId(newLogicalId)`.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this element is defined.
+
+CfnElements must be defined within a stack scope (directly or indirectly).
+
+---
+
+##### `ref`<sup>Required</sup> <a name="ref" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.ref"></a>
+
+```typescript
+public readonly ref: string;
+```
+
+- *Type:* string
+
+Return a string that will be resolved to a CloudFormation `{ Ref }` for this element.
+
+If, by any chance, the intrinsic reference of a resource is not a string, you could
+coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
+
+---
+
+##### `cfnOptions`<sup>Required</sup> <a name="cfnOptions" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.cfnOptions"></a>
+
+```typescript
+public readonly cfnOptions: ICfnResourceOptions;
+```
+
+- *Type:* aws-cdk-lib.ICfnResourceOptions
+
+Options for this resource, such as condition, update policy etc.
+
+---
+
+##### `cfnResourceType`<sup>Required</sup> <a name="cfnResourceType" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.cfnResourceType"></a>
+
+```typescript
+public readonly cfnResourceType: string;
+```
+
+- *Type:* string
+
+AWS resource type.
+
+---
+
+##### `attrCurrentUsage`<sup>Required</sup> <a name="attrCurrentUsage" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.attrCurrentUsage"></a>
+
+```typescript
+public readonly attrCurrentUsage: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FederatedQueryLimit.CurrentUsage`.
+
+---
+
+##### `attrDefaultLimit`<sup>Required</sup> <a name="attrDefaultLimit" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.attrDefaultLimit"></a>
+
+```typescript
+public readonly attrDefaultLimit: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FederatedQueryLimit.DefaultLimit`.
+
+---
+
+##### `attrLastModifiedDate`<sup>Required</sup> <a name="attrLastModifiedDate" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.attrLastModifiedDate"></a>
+
+```typescript
+public readonly attrLastModifiedDate: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FederatedQueryLimit.LastModifiedDate`.
+
+---
+
+##### `attrMaximumLimit`<sup>Required</sup> <a name="attrMaximumLimit" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.attrMaximumLimit"></a>
+
+```typescript
+public readonly attrMaximumLimit: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FederatedQueryLimit.MaximumLimit`.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.props"></a>
+
+```typescript
+public readonly props: CfnFederatedQueryLimitProps;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps">CfnFederatedQueryLimitProps</a>
+
+Resource props.
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.CFN_RESOURCE_TYPE_NAME">CFN_RESOURCE_TYPE_NAME</a></code> | <code>string</code> | The CloudFormation resource type name for this resource class. |
+
+---
+
+##### `CFN_RESOURCE_TYPE_NAME`<sup>Required</sup> <a name="CFN_RESOURCE_TYPE_NAME" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.CFN_RESOURCE_TYPE_NAME"></a>
+
+```typescript
+public readonly CFN_RESOURCE_TYPE_NAME: string;
+```
+
+- *Type:* string
+
+The CloudFormation resource type name for this resource class.
+
+---
+
 ### CfnFederatedSettingsOrgRoleMapping <a name="CfnFederatedSettingsOrgRoleMapping" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping"></a>
 
 A CloudFormation `MongoDB::Atlas::FederatedSettingsOrgRoleMapping`.
@@ -16455,6 +17822,631 @@ Resource props.
 ---
 
 ##### `CFN_RESOURCE_TYPE_NAME`<sup>Required</sup> <a name="CFN_RESOURCE_TYPE_NAME" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.property.CFN_RESOURCE_TYPE_NAME"></a>
+
+```typescript
+public readonly CFN_RESOURCE_TYPE_NAME: string;
+```
+
+- *Type:* string
+
+The CloudFormation resource type name for this resource class.
+
+---
+
+### CfnPrivatelinkEndpointServiceDataFederationOnlineArchive <a name="CfnPrivatelinkEndpointServiceDataFederationOnlineArchive" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive"></a>
+
+A CloudFormation `MongoDB::Atlas::PrivatelinkEndpointServiceDataFederationOnlineArchive`.
+
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.Initializer"></a>
+
+```typescript
+import { CfnPrivatelinkEndpointServiceDataFederationOnlineArchive } from 'awscdk-resources-mongodbatlas'
+
+new CfnPrivatelinkEndpointServiceDataFederationOnlineArchive(scope: Construct, id: string, props: CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | - scope in which this resource is defined. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.Initializer.parameter.id">id</a></code> | <code>string</code> | - scoped id of the resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps">CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps</a></code> | - resource properties. |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+scope in which this resource is defined.
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+scoped id of the resource.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps">CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps</a>
+
+resource properties.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDependsOn">addDependsOn</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addMetadata">addMetadata</a></code> | Add a value to the CloudFormation Resource Metadata. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
+
+---
+
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.overrideLogicalId"></a>
+
+```typescript
+public overrideLogicalId(newLogicalId: string): void
+```
+
+Overrides the auto-generated logical ID with a specific ID.
+
+###### `newLogicalId`<sup>Required</sup> <a name="newLogicalId" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.overrideLogicalId.parameter.newLogicalId"></a>
+
+- *Type:* string
+
+The new logical ID to use for this stack element.
+
+---
+
+##### `addDeletionOverride` <a name="addDeletionOverride" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDeletionOverride"></a>
+
+```typescript
+public addDeletionOverride(path: string): void
+```
+
+Syntactic sugar for `addOverride(path, undefined)`.
+
+###### `path`<sup>Required</sup> <a name="path" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDeletionOverride.parameter.path"></a>
+
+- *Type:* string
+
+The path of the value to delete.
+
+---
+
+##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDependency"></a>
+
+```typescript
+public addDependency(target: CfnResource): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### ~~`addDependsOn`~~ <a name="addDependsOn" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDependsOn"></a>
+
+```typescript
+public addDependsOn(target: CfnResource): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDependsOn.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `addMetadata` <a name="addMetadata" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addMetadata"></a>
+
+```typescript
+public addMetadata(key: string, value: any): void
+```
+
+Add a value to the CloudFormation Resource Metadata.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.)
+
+###### `key`<sup>Required</sup> <a name="key" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addMetadata.parameter.key"></a>
+
+- *Type:* string
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addMetadata.parameter.value"></a>
+
+- *Type:* any
+
+---
+
+##### `addOverride` <a name="addOverride" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addOverride"></a>
+
+```typescript
+public addOverride(path: string, value: any): void
+```
+
+Adds an override to the synthesized CloudFormation resource.
+
+To add a
+property override, either use `addPropertyOverride` or prefix `path` with
+"Properties." (i.e. `Properties.TopicName`).
+
+If the override is nested, separate each nested level using a dot (.) in the path parameter.
+If there is an array as part of the nesting, specify the index in the path.
+
+To include a literal `.` in the property name, prefix with a `\`. In most
+programming languages you will need to write this as `"\\."` because the
+`\` itself will need to be escaped.
+
+For example,
+```typescript
+cfnResource.addOverride('Properties.GlobalSecondaryIndexes.0.Projection.NonKeyAttributes', ['myattribute']);
+cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'INCLUDE');
+```
+would add the overrides
+```json
+"Properties": {
+   "GlobalSecondaryIndexes": [
+     {
+       "Projection": {
+         "NonKeyAttributes": [ "myattribute" ]
+         ...
+       }
+       ...
+     },
+     {
+       "ProjectionType": "INCLUDE"
+       ...
+     },
+   ]
+   ...
+}
+```
+
+The `value` argument to `addOverride` will not be processed or translated
+in any way. Pass raw JSON values in here with the correct capitalization
+for CloudFormation. If you pass CDK classes or structs, they will be
+rendered with lowercased key names, and CloudFormation will reject the
+template.
+
+###### `path`<sup>Required</sup> <a name="path" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addOverride.parameter.path"></a>
+
+- *Type:* string
+
+The path of the property, you can use dot notation to override values in complex types.
+
+Any intermdediate keys
+will be created as needed.
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addOverride.parameter.value"></a>
+
+- *Type:* any
+
+The value.
+
+Could be primitive or complex.
+
+---
+
+##### `addPropertyDeletionOverride` <a name="addPropertyDeletionOverride" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addPropertyDeletionOverride"></a>
+
+```typescript
+public addPropertyDeletionOverride(propertyPath: string): void
+```
+
+Adds an override that deletes the value of a property from the resource definition.
+
+###### `propertyPath`<sup>Required</sup> <a name="propertyPath" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addPropertyDeletionOverride.parameter.propertyPath"></a>
+
+- *Type:* string
+
+The path to the property.
+
+---
+
+##### `addPropertyOverride` <a name="addPropertyOverride" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addPropertyOverride"></a>
+
+```typescript
+public addPropertyOverride(propertyPath: string, value: any): void
+```
+
+Adds an override to a resource property.
+
+Syntactic sugar for `addOverride("Properties.<...>", value)`.
+
+###### `propertyPath`<sup>Required</sup> <a name="propertyPath" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addPropertyOverride.parameter.propertyPath"></a>
+
+- *Type:* string
+
+The path of the property.
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addPropertyOverride.parameter.value"></a>
+
+- *Type:* any
+
+The value.
+
+---
+
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.applyRemovalPolicy"></a>
+
+```typescript
+public applyRemovalPolicy(policy?: RemovalPolicy, options?: RemovalPolicyOptions): void
+```
+
+Sets the deletion policy of the resource based on the removal policy specified.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
+account for data recovery and cleanup later (`RemovalPolicy.RETAIN`). In some
+cases, a snapshot can be taken of the resource prior to deletion
+(`RemovalPolicy.SNAPSHOT`). A list of resources that support this policy
+can be found in the following link:
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html#aws-attribute-deletionpolicy-options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html#aws-attribute-deletionpolicy-options)
+
+###### `policy`<sup>Optional</sup> <a name="policy" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.applyRemovalPolicy.parameter.options"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `getAtt` <a name="getAtt" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.getAtt"></a>
+
+```typescript
+public getAtt(attributeName: string, typeHint?: ResolutionTypeHint): Reference
+```
+
+Returns a token for an runtime attribute of this resource.
+
+Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
+in case there is no generated attribute.
+
+###### `attributeName`<sup>Required</sup> <a name="attributeName" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.getAtt.parameter.attributeName"></a>
+
+- *Type:* string
+
+The name of the attribute.
+
+---
+
+###### `typeHint`<sup>Optional</sup> <a name="typeHint" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.getAtt.parameter.typeHint"></a>
+
+- *Type:* aws-cdk-lib.ResolutionTypeHint
+
+---
+
+##### `getMetadata` <a name="getMetadata" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.getMetadata"></a>
+
+```typescript
+public getMetadata(key: string): any
+```
+
+Retrieve a value value from the CloudFormation Resource Metadata.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.)
+
+###### `key`<sup>Required</sup> <a name="key" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.getMetadata.parameter.key"></a>
+
+- *Type:* string
+
+---
+
+##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.obtainDependencies"></a>
+
+```typescript
+public obtainDependencies(): CfnResource | Stack[]
+```
+
+Retrieves an array of resources this resource depends on.
+
+This assembles dependencies on resources across stacks (including nested stacks)
+automatically.
+
+##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.obtainResourceDependencies"></a>
+
+```typescript
+public obtainResourceDependencies(): CfnResource[]
+```
+
+Get a shallow copy of dependencies between this resource and other resources in the same stack.
+
+##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.removeDependency"></a>
+
+```typescript
+public removeDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `replaceDependency` <a name="replaceDependency" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.replaceDependency"></a>
+
+```typescript
+public replaceDependency(target: CfnResource, newTarget: CfnResource): void
+```
+
+Replaces one dependency with another.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.replaceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+The dependency to replace.
+
+---
+
+###### `newTarget`<sup>Required</sup> <a name="newTarget" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.replaceDependency.parameter.newTarget"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+The new dependency to add.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isConstruct"></a>
+
+```typescript
+import { CfnPrivatelinkEndpointServiceDataFederationOnlineArchive } from 'awscdk-resources-mongodbatlas'
+
+CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isCfnElement` <a name="isCfnElement" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnElement"></a>
+
+```typescript
+import { CfnPrivatelinkEndpointServiceDataFederationOnlineArchive } from 'awscdk-resources-mongodbatlas'
+
+CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnElement(x: any)
+```
+
+Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template).
+
+Uses duck-typing instead of `instanceof` to allow stack elements from different
+versions of this library to be included in the same stack.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnElement.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `isCfnResource` <a name="isCfnResource" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnResource"></a>
+
+```typescript
+import { CfnPrivatelinkEndpointServiceDataFederationOnlineArchive } from 'awscdk-resources-mongodbatlas'
+
+CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnResource(construct: IConstruct)
+```
+
+Check whether the given construct is a CfnResource.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.creationStack">creationStack</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.logicalId">logicalId</a></code> | <code>string</code> | The logical ID for this CloudFormation stack element. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this element is defined. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps">CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps</a></code> | Resource props. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `creationStack`<sup>Required</sup> <a name="creationStack" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.creationStack"></a>
+
+```typescript
+public readonly creationStack: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `logicalId`<sup>Required</sup> <a name="logicalId" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.logicalId"></a>
+
+```typescript
+public readonly logicalId: string;
+```
+
+- *Type:* string
+
+The logical ID for this CloudFormation stack element.
+
+The logical ID of the element
+is calculated from the path of the resource node in the construct tree.
+
+To override this value, use `overrideLogicalId(newLogicalId)`.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this element is defined.
+
+CfnElements must be defined within a stack scope (directly or indirectly).
+
+---
+
+##### `ref`<sup>Required</sup> <a name="ref" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.ref"></a>
+
+```typescript
+public readonly ref: string;
+```
+
+- *Type:* string
+
+Return a string that will be resolved to a CloudFormation `{ Ref }` for this element.
+
+If, by any chance, the intrinsic reference of a resource is not a string, you could
+coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
+
+---
+
+##### `cfnOptions`<sup>Required</sup> <a name="cfnOptions" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.cfnOptions"></a>
+
+```typescript
+public readonly cfnOptions: ICfnResourceOptions;
+```
+
+- *Type:* aws-cdk-lib.ICfnResourceOptions
+
+Options for this resource, such as condition, update policy etc.
+
+---
+
+##### `cfnResourceType`<sup>Required</sup> <a name="cfnResourceType" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.cfnResourceType"></a>
+
+```typescript
+public readonly cfnResourceType: string;
+```
+
+- *Type:* string
+
+AWS resource type.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.props"></a>
+
+```typescript
+public readonly props: CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps">CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps</a>
+
+Resource props.
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.CFN_RESOURCE_TYPE_NAME">CFN_RESOURCE_TYPE_NAME</a></code> | <code>string</code> | The CloudFormation resource type name for this resource class. |
+
+---
+
+##### `CFN_RESOURCE_TYPE_NAME`<sup>Required</sup> <a name="CFN_RESOURCE_TYPE_NAME" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.CFN_RESOURCE_TYPE_NAME"></a>
 
 ```typescript
 public readonly CFN_RESOURCE_TYPE_NAME: string;
@@ -26346,6 +28338,221 @@ See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
 
 ---
 
+### CfnFederatedDatabaseInstanceProps <a name="CfnFederatedDatabaseInstanceProps" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps"></a>
+
+Returns, adds, edits, and removes Federated Database Instances.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.Initializer"></a>
+
+```typescript
+import { CfnFederatedDatabaseInstanceProps } from 'awscdk-resources-mongodbatlas'
+
+const cfnFederatedDatabaseInstanceProps: CfnFederatedDatabaseInstanceProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.tenantName">tenantName</a></code> | <code>string</code> | Human-readable label that identifies the data federation. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.cloudProviderConfig">cloudProviderConfig</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CloudProviderConfig">CloudProviderConfig</a></code> | Cloud provider linked to this data lake. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.dataProcessRegion">dataProcessRegion</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DataProcessRegion">DataProcessRegion</a></code> | Information about the cloud provider region to which the data lake routes client connections. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.skipRoleValidation">skipRoleValidation</a></code> | <code>boolean</code> | Flag that indicates whether this request should check if the requesting IAM role can read from the S3 bucket. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.storage">storage</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Storage">Storage</a></code> | Configuration information for each data store and its mapping to MongoDB Cloud databases. |
+
+---
+
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.projectId"></a>
+
+```typescript
+public readonly projectId: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies your project.
+
+---
+
+##### `tenantName`<sup>Required</sup> <a name="tenantName" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.tenantName"></a>
+
+```typescript
+public readonly tenantName: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the data federation.
+
+---
+
+##### `cloudProviderConfig`<sup>Optional</sup> <a name="cloudProviderConfig" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.cloudProviderConfig"></a>
+
+```typescript
+public readonly cloudProviderConfig: CloudProviderConfig;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CloudProviderConfig">CloudProviderConfig</a>
+
+Cloud provider linked to this data lake.
+
+---
+
+##### `dataProcessRegion`<sup>Optional</sup> <a name="dataProcessRegion" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.dataProcessRegion"></a>
+
+```typescript
+public readonly dataProcessRegion: DataProcessRegion;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.DataProcessRegion">DataProcessRegion</a>
+
+Information about the cloud provider region to which the data lake routes client connections.
+
+MongoDB Cloud supports AWS only.
+
+---
+
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.profile"></a>
+
+```typescript
+public readonly profile: string;
+```
+
+- *Type:* string
+
+The profile is defined in AWS Secret manager.
+
+See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
+
+---
+
+##### `skipRoleValidation`<sup>Optional</sup> <a name="skipRoleValidation" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.skipRoleValidation"></a>
+
+```typescript
+public readonly skipRoleValidation: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether this request should check if the requesting IAM role can read from the S3 bucket.
+
+AWS checks if the role can list the objects in the bucket before writing to it. Some IAM roles only need write permissions. This flag allows you to skip that check.
+
+---
+
+##### `storage`<sup>Optional</sup> <a name="storage" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps.property.storage"></a>
+
+```typescript
+public readonly storage: Storage;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.Storage">Storage</a>
+
+Configuration information for each data store and its mapping to MongoDB Cloud databases.
+
+---
+
+### CfnFederatedQueryLimitProps <a name="CfnFederatedQueryLimitProps" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps"></a>
+
+Query limit for one federated database instance.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.Initializer"></a>
+
+```typescript
+import { CfnFederatedQueryLimitProps } from 'awscdk-resources-mongodbatlas'
+
+const cfnFederatedQueryLimitProps: CfnFederatedQueryLimitProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.limitName">limitName</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitPropsLimitName">CfnFederatedQueryLimitPropsLimitName</a></code> | Human-readable label that identifies this data federation instance limit. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.tenantName">tenantName</a></code> | <code>string</code> | Human-readable label that identifies the data federated database instance to which the query limit applies. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.value">value</a></code> | <code>string</code> | Amount to set the limit to. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.overrunPolicy">overrunPolicy</a></code> | <code>string</code> | Only used for Data Federation limits. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
+
+---
+
+##### `limitName`<sup>Required</sup> <a name="limitName" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.limitName"></a>
+
+```typescript
+public readonly limitName: CfnFederatedQueryLimitPropsLimitName;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitPropsLimitName">CfnFederatedQueryLimitPropsLimitName</a>
+
+Human-readable label that identifies this data federation instance limit.
+
+---
+
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.projectId"></a>
+
+```typescript
+public readonly projectId: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies your project.
+
+---
+
+##### `tenantName`<sup>Required</sup> <a name="tenantName" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.tenantName"></a>
+
+```typescript
+public readonly tenantName: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the data federated database instance to which the query limit applies.
+
+---
+
+##### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.value"></a>
+
+```typescript
+public readonly value: string;
+```
+
+- *Type:* string
+
+Amount to set the limit to.
+
+---
+
+##### `overrunPolicy`<sup>Optional</sup> <a name="overrunPolicy" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.overrunPolicy"></a>
+
+```typescript
+public readonly overrunPolicy: string;
+```
+
+- *Type:* string
+
+Only used for Data Federation limits.
+
+Action to take when the usage limit is exceeded. If limit span is set to QUERY, this is ignored because MongoDB Cloud stops the query when it exceeds the usage limit. "enum" : [ "BLOCK", "BLOCK_AND_KILL" ]
+
+---
+
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.profile"></a>
+
+```typescript
+public readonly profile: string;
+```
+
+- *Type:* string
+
+Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
+
+---
+
 ### CfnFederatedSettingsOrgRoleMappingProps <a name="CfnFederatedSettingsOrgRoleMappingProps" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMappingProps"></a>
 
 Returns, adds, edits, and removes federation-related features such as role mappings and connected organization configurations.
@@ -27815,6 +30022,92 @@ Profile used to provide credentials information, (a secret with the cfn/atlas/pr
 
 ---
 
+### CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps <a name="CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps"></a>
+
+Adds one private endpoint for Federated Database Instances and Online Archives to the specified projects.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps.Initializer"></a>
+
+```typescript
+import { CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps } from 'awscdk-resources-mongodbatlas'
+
+const cfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps: CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps.property.endpointId">endpointId</a></code> | <code>string</code> | Unique 22-character alphanumeric string that identifies the private endpoint.Reg ex ^vpce-[0-9a-f]{17}$ . |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps.property.comment">comment</a></code> | <code>string</code> | Human-readable string to associate with this private endpoint. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps.property.type">type</a></code> | <code>string</code> | Human-readable label that identifies the resource type associated with this private endpoint. |
+
+---
+
+##### `endpointId`<sup>Required</sup> <a name="endpointId" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps.property.endpointId"></a>
+
+```typescript
+public readonly endpointId: string;
+```
+
+- *Type:* string
+
+Unique 22-character alphanumeric string that identifies the private endpoint.Reg ex ^vpce-[0-9a-f]{17}$ .
+
+Atlas Data Lake supports Amazon Web Services private endpoints using the AWS PrivateLink feature.
+
+---
+
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps.property.projectId"></a>
+
+```typescript
+public readonly projectId: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies your project.
+
+---
+
+##### `comment`<sup>Optional</sup> <a name="comment" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps.property.comment"></a>
+
+```typescript
+public readonly comment: string;
+```
+
+- *Type:* string
+
+Human-readable string to associate with this private endpoint.
+
+---
+
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps.property.profile"></a>
+
+```typescript
+public readonly profile: string;
+```
+
+- *Type:* string
+
+Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
+
+---
+
+##### `type`<sup>Optional</sup> <a name="type" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the resource type associated with this private endpoint.
+
+---
+
 ### CfnProjectInvitationProps <a name="CfnProjectInvitationProps" id="awscdk-resources-mongodbatlas.CfnProjectInvitationProps"></a>
 
 Returns, adds, and edits collections of clusters and users in MongoDB Cloud.
@@ -29138,6 +31431,90 @@ Username of the database user to create a certificate for.
 
 ---
 
+### CloudProviderConfig <a name="CloudProviderConfig" id="awscdk-resources-mongodbatlas.CloudProviderConfig"></a>
+
+Cloud provider linked to this data lake..
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CloudProviderConfig.Initializer"></a>
+
+```typescript
+import { CloudProviderConfig } from 'awscdk-resources-mongodbatlas'
+
+const cloudProviderConfig: CloudProviderConfig = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CloudProviderConfig.property.externalId">externalId</a></code> | <code>string</code> | Unique identifier of the role that the data lake can use to access the data stores.Required if specifying cloudProviderConfig. |
+| <code><a href="#awscdk-resources-mongodbatlas.CloudProviderConfig.property.iamAssumedRoleArn">iamAssumedRoleArn</a></code> | <code>string</code> | Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the data lake assumes when accessing data stores. |
+| <code><a href="#awscdk-resources-mongodbatlas.CloudProviderConfig.property.iamUserArn">iamUserArn</a></code> | <code>string</code> | Amazon Resource Name (ARN) of the user that the data lake assumes when accessing data stores. |
+| <code><a href="#awscdk-resources-mongodbatlas.CloudProviderConfig.property.roleId">roleId</a></code> | <code>string</code> | Unique identifier of the role that the data lake can use to access the data stores.Required if specifying cloudProviderConfig. |
+| <code><a href="#awscdk-resources-mongodbatlas.CloudProviderConfig.property.testS3Bucket">testS3Bucket</a></code> | <code>string</code> | Name of the S3 data bucket that the provided role ID is authorized to access.Required if specifying cloudProviderConfig. |
+
+---
+
+##### `externalId`<sup>Optional</sup> <a name="externalId" id="awscdk-resources-mongodbatlas.CloudProviderConfig.property.externalId"></a>
+
+```typescript
+public readonly externalId: string;
+```
+
+- *Type:* string
+
+Unique identifier of the role that the data lake can use to access the data stores.Required if specifying cloudProviderConfig.
+
+---
+
+##### `iamAssumedRoleArn`<sup>Optional</sup> <a name="iamAssumedRoleArn" id="awscdk-resources-mongodbatlas.CloudProviderConfig.property.iamAssumedRoleArn"></a>
+
+```typescript
+public readonly iamAssumedRoleArn: string;
+```
+
+- *Type:* string
+
+Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the data lake assumes when accessing data stores.
+
+---
+
+##### `iamUserArn`<sup>Optional</sup> <a name="iamUserArn" id="awscdk-resources-mongodbatlas.CloudProviderConfig.property.iamUserArn"></a>
+
+```typescript
+public readonly iamUserArn: string;
+```
+
+- *Type:* string
+
+Amazon Resource Name (ARN) of the user that the data lake assumes when accessing data stores.
+
+---
+
+##### `roleId`<sup>Optional</sup> <a name="roleId" id="awscdk-resources-mongodbatlas.CloudProviderConfig.property.roleId"></a>
+
+```typescript
+public readonly roleId: string;
+```
+
+- *Type:* string
+
+Unique identifier of the role that the data lake can use to access the data stores.Required if specifying cloudProviderConfig.
+
+---
+
+##### `testS3Bucket`<sup>Optional</sup> <a name="testS3Bucket" id="awscdk-resources-mongodbatlas.CloudProviderConfig.property.testS3Bucket"></a>
+
+```typescript
+public readonly testS3Bucket: string;
+```
+
+- *Type:* string
+
+Name of the S3 data bucket that the provided role ID is authorized to access.Required if specifying cloudProviderConfig.
+
+---
+
 ### ClusterProps <a name="ClusterProps" id="awscdk-resources-mongodbatlas.ClusterProps"></a>
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.ClusterProps.Initializer"></a>
@@ -29338,6 +31715,49 @@ public readonly terminationProtectionEnabled: boolean;
 
 ```typescript
 public readonly versionReleaseSystem: string;
+```
+
+- *Type:* string
+
+---
+
+### Collection <a name="Collection" id="awscdk-resources-mongodbatlas.Collection"></a>
+
+Array of collections and data sources that map to a stores data store.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.Collection.Initializer"></a>
+
+```typescript
+import { Collection } from 'awscdk-resources-mongodbatlas'
+
+const collection: Collection = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.Collection.property.dataSources">dataSources</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DataSource">DataSource</a>[]</code> | Array that contains the data stores that map to a collection for this data lake. |
+| <code><a href="#awscdk-resources-mongodbatlas.Collection.property.name">name</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `dataSources`<sup>Optional</sup> <a name="dataSources" id="awscdk-resources-mongodbatlas.Collection.property.dataSources"></a>
+
+```typescript
+public readonly dataSources: DataSource[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.DataSource">DataSource</a>[]
+
+Array that contains the data stores that map to a collection for this data lake.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.Collection.property.name"></a>
+
+```typescript
+public readonly name: string;
 ```
 
 - *Type:* string
@@ -29667,6 +32087,79 @@ public readonly cas: string;
 - *Type:* string
 
 PEM string containing one or more customer CAs for database user authentication.
+
+---
+
+### Database <a name="Database" id="awscdk-resources-mongodbatlas.Database"></a>
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.Database.Initializer"></a>
+
+```typescript
+import { Database } from 'awscdk-resources-mongodbatlas'
+
+const database: Database = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.Database.property.collections">collections</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Collection">Collection</a>[]</code> | Array of collections and data sources that map to a stores data store. |
+| <code><a href="#awscdk-resources-mongodbatlas.Database.property.maxWildcardCollections">maxWildcardCollections</a></code> | <code>string</code> | Maximum number of wildcard collections in the database. |
+| <code><a href="#awscdk-resources-mongodbatlas.Database.property.name">name</a></code> | <code>string</code> | Human-readable label that identifies the database to which the data lake maps data. |
+| <code><a href="#awscdk-resources-mongodbatlas.Database.property.views">views</a></code> | <code><a href="#awscdk-resources-mongodbatlas.View">View</a>[]</code> | Array of aggregation pipelines that apply to the collection. |
+
+---
+
+##### `collections`<sup>Optional</sup> <a name="collections" id="awscdk-resources-mongodbatlas.Database.property.collections"></a>
+
+```typescript
+public readonly collections: Collection[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.Collection">Collection</a>[]
+
+Array of collections and data sources that map to a stores data store.
+
+---
+
+##### `maxWildcardCollections`<sup>Optional</sup> <a name="maxWildcardCollections" id="awscdk-resources-mongodbatlas.Database.property.maxWildcardCollections"></a>
+
+```typescript
+public readonly maxWildcardCollections: string;
+```
+
+- *Type:* string
+
+Maximum number of wildcard collections in the database.
+
+This only applies to S3 data sources.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.Database.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the database to which the data lake maps data.
+
+---
+
+##### `views`<sup>Optional</sup> <a name="views" id="awscdk-resources-mongodbatlas.Database.property.views"></a>
+
+```typescript
+public readonly views: View[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.View">View</a>[]
+
+Array of aggregation pipelines that apply to the collection.
+
+This only applies to S3 data sources.
 
 ---
 
@@ -30554,6 +33047,214 @@ public readonly source: string;
 - *Type:* string
 
 Human-readable label that identifies the source collection for the view.
+
+---
+
+### DataProcessRegion <a name="DataProcessRegion" id="awscdk-resources-mongodbatlas.DataProcessRegion"></a>
+
+Information about the cloud provider region to which the data lake routes client connections.
+
+MongoDB Cloud supports AWS only.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.DataProcessRegion.Initializer"></a>
+
+```typescript
+import { DataProcessRegion } from 'awscdk-resources-mongodbatlas'
+
+const dataProcessRegion: DataProcessRegion = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.DataProcessRegion.property.cloudProvider">cloudProvider</a></code> | <code>string</code> | Name of the cloud service that hosts the data lake's data stores. |
+| <code><a href="#awscdk-resources-mongodbatlas.DataProcessRegion.property.region">region</a></code> | <code>string</code> | Name of the region to which the data lake routes client connections. |
+
+---
+
+##### `cloudProvider`<sup>Optional</sup> <a name="cloudProvider" id="awscdk-resources-mongodbatlas.DataProcessRegion.property.cloudProvider"></a>
+
+```typescript
+public readonly cloudProvider: string;
+```
+
+- *Type:* string
+
+Name of the cloud service that hosts the data lake's data stores.
+
+---
+
+##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.DataProcessRegion.property.region"></a>
+
+```typescript
+public readonly region: string;
+```
+
+- *Type:* string
+
+Name of the region to which the data lake routes client connections.
+
+---
+
+### DataSource <a name="DataSource" id="awscdk-resources-mongodbatlas.DataSource"></a>
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.DataSource.Initializer"></a>
+
+```typescript
+import { DataSource } from 'awscdk-resources-mongodbatlas'
+
+const dataSource: DataSource = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.DataSource.property.allowInsecure">allowInsecure</a></code> | <code>boolean</code> | Flag that validates the scheme in the specified URLs. |
+| <code><a href="#awscdk-resources-mongodbatlas.DataSource.property.collection">collection</a></code> | <code>string</code> | Human-readable label that identifies the collection in the database. |
+| <code><a href="#awscdk-resources-mongodbatlas.DataSource.property.collectionRegex">collectionRegex</a></code> | <code>string</code> | Regex pattern to use for creating the wildcard (*) collection. |
+| <code><a href="#awscdk-resources-mongodbatlas.DataSource.property.database">database</a></code> | <code>string</code> | Human-readable label that identifies the database, which contains the collection in the cluster. |
+| <code><a href="#awscdk-resources-mongodbatlas.DataSource.property.databaseRegex">databaseRegex</a></code> | <code>string</code> | Regex pattern to use for creating the wildcard (*) collection. |
+| <code><a href="#awscdk-resources-mongodbatlas.DataSource.property.defaultFormat">defaultFormat</a></code> | <code>string</code> | File format that MongoDB Cloud uses if it encounters a file without a file extension while searching storeName.Enum: ".avro" ".avro.bz2" ".avro.gz" ".bson" ".bson.bz2" ".bson.gz" ".bsonx" ".csv" ".csv.bz2" ".csv.gz" ".json" ".json.bz2" ".json.gz" ".orc" ".parquet" ".tsv" ".tsv.bz2" ".tsv.gz". |
+| <code><a href="#awscdk-resources-mongodbatlas.DataSource.property.path">path</a></code> | <code>string</code> | File path that controls how MongoDB Cloud searches for and parses files in the storeName before mapping them to a collection.Specify / to capture all files and folders from the prefix path. |
+| <code><a href="#awscdk-resources-mongodbatlas.DataSource.property.provenanceFieldName">provenanceFieldName</a></code> | <code>string</code> | Name for the field that includes the provenance of the documents in the results. |
+| <code><a href="#awscdk-resources-mongodbatlas.DataSource.property.storeName">storeName</a></code> | <code>string</code> | Human-readable label that identifies the data store that MongoDB Cloud maps to the collection. |
+| <code><a href="#awscdk-resources-mongodbatlas.DataSource.property.urls">urls</a></code> | <code>string[]</code> | URLs of the publicly accessible data files. |
+
+---
+
+##### `allowInsecure`<sup>Optional</sup> <a name="allowInsecure" id="awscdk-resources-mongodbatlas.DataSource.property.allowInsecure"></a>
+
+```typescript
+public readonly allowInsecure: boolean;
+```
+
+- *Type:* boolean
+
+Flag that validates the scheme in the specified URLs.
+
+If true, allows insecure HTTP scheme, doesn't verify the server's certificate chain and hostname, and accepts any certificate with any hostname presented by the server. If false, allows secure HTTPS scheme only.
+
+---
+
+##### `collection`<sup>Optional</sup> <a name="collection" id="awscdk-resources-mongodbatlas.DataSource.property.collection"></a>
+
+```typescript
+public readonly collection: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the collection in the database.
+
+For creating a wildcard (*) collection, you must omit this parameter.
+
+---
+
+##### `collectionRegex`<sup>Optional</sup> <a name="collectionRegex" id="awscdk-resources-mongodbatlas.DataSource.property.collectionRegex"></a>
+
+```typescript
+public readonly collectionRegex: string;
+```
+
+- *Type:* string
+
+Regex pattern to use for creating the wildcard (*) collection.
+
+To learn more about the regex syntax, see Go programming language.( https://pkg.go.dev/regexp ).
+
+---
+
+##### `database`<sup>Optional</sup> <a name="database" id="awscdk-resources-mongodbatlas.DataSource.property.database"></a>
+
+```typescript
+public readonly database: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the database, which contains the collection in the cluster.
+
+You must omit this parameter to generate wildcard (*) collections for dynamically generated databases.
+
+---
+
+##### `databaseRegex`<sup>Optional</sup> <a name="databaseRegex" id="awscdk-resources-mongodbatlas.DataSource.property.databaseRegex"></a>
+
+```typescript
+public readonly databaseRegex: string;
+```
+
+- *Type:* string
+
+Regex pattern to use for creating the wildcard (*) collection.
+
+To learn more about the regex syntax, see Go programming language.( https://pkg.go.dev/regexp ).
+
+---
+
+##### `defaultFormat`<sup>Optional</sup> <a name="defaultFormat" id="awscdk-resources-mongodbatlas.DataSource.property.defaultFormat"></a>
+
+```typescript
+public readonly defaultFormat: string;
+```
+
+- *Type:* string
+
+File format that MongoDB Cloud uses if it encounters a file without a file extension while searching storeName.Enum: ".avro" ".avro.bz2" ".avro.gz" ".bson" ".bson.bz2" ".bson.gz" ".bsonx" ".csv" ".csv.bz2" ".csv.gz" ".json" ".json.bz2" ".json.gz" ".orc" ".parquet" ".tsv" ".tsv.bz2" ".tsv.gz".
+
+---
+
+##### `path`<sup>Optional</sup> <a name="path" id="awscdk-resources-mongodbatlas.DataSource.property.path"></a>
+
+```typescript
+public readonly path: string;
+```
+
+- *Type:* string
+
+File path that controls how MongoDB Cloud searches for and parses files in the storeName before mapping them to a collection.Specify / to capture all files and folders from the prefix path.
+
+---
+
+##### `provenanceFieldName`<sup>Optional</sup> <a name="provenanceFieldName" id="awscdk-resources-mongodbatlas.DataSource.property.provenanceFieldName"></a>
+
+```typescript
+public readonly provenanceFieldName: string;
+```
+
+- *Type:* string
+
+Name for the field that includes the provenance of the documents in the results.
+
+MongoDB Cloud returns different fields in the results for each supported provider.
+
+---
+
+##### `storeName`<sup>Optional</sup> <a name="storeName" id="awscdk-resources-mongodbatlas.DataSource.property.storeName"></a>
+
+```typescript
+public readonly storeName: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the data store that MongoDB Cloud maps to the collection.
+
+---
+
+##### `urls`<sup>Optional</sup> <a name="urls" id="awscdk-resources-mongodbatlas.DataSource.property.urls"></a>
+
+```typescript
+public readonly urls: string[];
+```
+
+- *Type:* string[]
+
+URLs of the publicly accessible data files.
+
+You can't specify URLs that require authentication. Atlas Data Lake creates a partition for each URL. If empty or omitted, Data Lake uses the URLs from the store specified in the dataSources.storeName parameter.
 
 ---
 
@@ -32715,6 +35416,64 @@ string = 24 characters ^([a-f0-9]{24})$
 
 ---
 
+### ReadPreference <a name="ReadPreference" id="awscdk-resources-mongodbatlas.ReadPreference"></a>
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.ReadPreference.Initializer"></a>
+
+```typescript
+import { ReadPreference } from 'awscdk-resources-mongodbatlas'
+
+const readPreference: ReadPreference = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.ReadPreference.property.maxStalenessSeconds">maxStalenessSeconds</a></code> | <code>string</code> | Maximum replication lag, or staleness, for reads from secondaries. |
+| <code><a href="#awscdk-resources-mongodbatlas.ReadPreference.property.mode">mode</a></code> | <code>string</code> | "primary" "primaryPreferred" "secondary" "secondaryPreferred" "nearest" Read preference mode that specifies to which replica set member to route the read requests. |
+| <code><a href="#awscdk-resources-mongodbatlas.ReadPreference.property.tagSets">tagSets</a></code> | <code><a href="#awscdk-resources-mongodbatlas.TagSet">TagSet</a>[][]</code> | List that contains tag sets or tag specification documents. |
+
+---
+
+##### `maxStalenessSeconds`<sup>Optional</sup> <a name="maxStalenessSeconds" id="awscdk-resources-mongodbatlas.ReadPreference.property.maxStalenessSeconds"></a>
+
+```typescript
+public readonly maxStalenessSeconds: string;
+```
+
+- *Type:* string
+
+Maximum replication lag, or staleness, for reads from secondaries.
+
+---
+
+##### `mode`<sup>Optional</sup> <a name="mode" id="awscdk-resources-mongodbatlas.ReadPreference.property.mode"></a>
+
+```typescript
+public readonly mode: string;
+```
+
+- *Type:* string
+
+"primary" "primaryPreferred" "secondary" "secondaryPreferred" "nearest" Read preference mode that specifies to which replica set member to route the read requests.
+
+---
+
+##### `tagSets`<sup>Optional</sup> <a name="tagSets" id="awscdk-resources-mongodbatlas.ReadPreference.property.tagSets"></a>
+
+```typescript
+public readonly tagSets: TagSet[][];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.TagSet">TagSet</a>[][]
+
+List that contains tag sets or tag specification documents.
+
+If specified, Atlas Data Lake routes read requests to replica set member or members that are associated with the specified tags.
+
+---
+
 ### Resource <a name="Resource" id="awscdk-resources-mongodbatlas.Resource"></a>
 
 List of resources on which you grant the action.
@@ -33369,6 +36128,137 @@ Read-only nodes can never become the primary, but can enable local reads.
 
 ---
 
+### Storage <a name="Storage" id="awscdk-resources-mongodbatlas.Storage"></a>
+
+Configuration information for each data store and its mapping to MongoDB Cloud databases.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.Storage.Initializer"></a>
+
+```typescript
+import { Storage } from 'awscdk-resources-mongodbatlas'
+
+const storage: Storage = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.Storage.property.databases">databases</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Database">Database</a>[]</code> | Array that contains the queryable databases and collections for this data lake. |
+| <code><a href="#awscdk-resources-mongodbatlas.Storage.property.stores">stores</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Store">Store</a>[]</code> | Array that contains the data stores for the data lake. |
+
+---
+
+##### `databases`<sup>Optional</sup> <a name="databases" id="awscdk-resources-mongodbatlas.Storage.property.databases"></a>
+
+```typescript
+public readonly databases: Database[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.Database">Database</a>[]
+
+Array that contains the queryable databases and collections for this data lake.
+
+---
+
+##### `stores`<sup>Optional</sup> <a name="stores" id="awscdk-resources-mongodbatlas.Storage.property.stores"></a>
+
+```typescript
+public readonly stores: Store[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.Store">Store</a>[]
+
+Array that contains the data stores for the data lake.
+
+---
+
+### Store <a name="Store" id="awscdk-resources-mongodbatlas.Store"></a>
+
+Array that contains the data stores for the data lake.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.Store.Initializer"></a>
+
+```typescript
+import { Store } from 'awscdk-resources-mongodbatlas'
+
+const store: Store = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.Store.property.clusterName">clusterName</a></code> | <code>string</code> | Human-readable label of the MongoDB Cloud cluster on which the store is based. |
+| <code><a href="#awscdk-resources-mongodbatlas.Store.property.name">name</a></code> | <code>string</code> | Human-readable label that identifies the data store. |
+| <code><a href="#awscdk-resources-mongodbatlas.Store.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the project.Regex ^([a-f0-9]{24})$ . |
+| <code><a href="#awscdk-resources-mongodbatlas.Store.property.provider">provider</a></code> | <code>string</code> | Allowed values atlas, http, online_archive, s3 and DataLakeAzureBlobStore. |
+| <code><a href="#awscdk-resources-mongodbatlas.Store.property.readPreference">readPreference</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ReadPreference">ReadPreference</a></code> | MongoDB Cloud cluster read preference, which describes how to route read requests to the cluster. |
+
+---
+
+##### `clusterName`<sup>Optional</sup> <a name="clusterName" id="awscdk-resources-mongodbatlas.Store.property.clusterName"></a>
+
+```typescript
+public readonly clusterName: string;
+```
+
+- *Type:* string
+
+Human-readable label of the MongoDB Cloud cluster on which the store is based.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.Store.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the data store.
+
+The databases.[n].collections.[n].dataSources.[n].storeName field references this values as part of the mapping configuration. To use MongoDB Cloud as a data store, the data lake requires a serverless instance or an M10 or higher cluster.
+
+---
+
+##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.Store.property.projectId"></a>
+
+```typescript
+public readonly projectId: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies the project.Regex ^([a-f0-9]{24})$ .
+
+---
+
+##### `provider`<sup>Optional</sup> <a name="provider" id="awscdk-resources-mongodbatlas.Store.property.provider"></a>
+
+```typescript
+public readonly provider: string;
+```
+
+- *Type:* string
+
+Allowed values atlas, http, online_archive, s3 and DataLakeAzureBlobStore.
+
+---
+
+##### `readPreference`<sup>Optional</sup> <a name="readPreference" id="awscdk-resources-mongodbatlas.Store.property.readPreference"></a>
+
+```typescript
+public readonly readPreference: ReadPreference;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.ReadPreference">ReadPreference</a>
+
+MongoDB Cloud cluster read preference, which describes how to route read requests to the cluster.
+
+---
+
 ### StoreDetail <a name="StoreDetail" id="awscdk-resources-mongodbatlas.StoreDetail"></a>
 
 Configuration information for each data store and its mapping to MongoDB Cloud databases.
@@ -33522,6 +36412,49 @@ Human-readable label that identifies the MongoDB collection that stores words an
 
 ---
 
+### TagSet <a name="TagSet" id="awscdk-resources-mongodbatlas.TagSet"></a>
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.TagSet.Initializer"></a>
+
+```typescript
+import { TagSet } from 'awscdk-resources-mongodbatlas'
+
+const tagSet: TagSet = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.TagSet.property.name">name</a></code> | <code>string</code> | Human-readable label of the tag. |
+| <code><a href="#awscdk-resources-mongodbatlas.TagSet.property.value">value</a></code> | <code>string</code> | Human-readable label of the tag. |
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.TagSet.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Human-readable label of the tag.
+
+---
+
+##### `value`<sup>Optional</sup> <a name="value" id="awscdk-resources-mongodbatlas.TagSet.property.value"></a>
+
+```typescript
+public readonly value: string;
+```
+
+- *Type:* string
+
+Human-readable label of the tag.
+
+---
+
 ### ThirdPartyIntegrationProps <a name="ThirdPartyIntegrationProps" id="awscdk-resources-mongodbatlas.ThirdPartyIntegrationProps"></a>
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.ThirdPartyIntegrationProps.Initializer"></a>
@@ -33601,6 +36534,62 @@ public readonly validationType: string;
 ```
 
 - *Type:* string
+
+---
+
+### View <a name="View" id="awscdk-resources-mongodbatlas.View"></a>
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.View.Initializer"></a>
+
+```typescript
+import { View } from 'awscdk-resources-mongodbatlas'
+
+const view: View = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.View.property.name">name</a></code> | <code>string</code> | Human-readable label that identifies the view, which corresponds to an aggregation pipeline on a collection. |
+| <code><a href="#awscdk-resources-mongodbatlas.View.property.pipeline">pipeline</a></code> | <code>string</code> | Aggregation pipeline stages to apply to the source collection. |
+| <code><a href="#awscdk-resources-mongodbatlas.View.property.source">source</a></code> | <code>string</code> | Human-readable label that identifies the source collection for the view. |
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.View.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the view, which corresponds to an aggregation pipeline on a collection.
+
+---
+
+##### `pipeline`<sup>Optional</sup> <a name="pipeline" id="awscdk-resources-mongodbatlas.View.property.pipeline"></a>
+
+```typescript
+public readonly pipeline: string;
+```
+
+- *Type:* string
+
+Aggregation pipeline stages to apply to the source collection.
+
+---
+
+##### `source`<sup>Optional</sup> <a name="source" id="awscdk-resources-mongodbatlas.View.property.source"></a>
+
+```typescript
+public readonly source: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the source collection for the view.
 
 ---
 
@@ -34354,6 +37343,49 @@ MANAGED.
 ##### `CUSTOMER` <a name="CUSTOMER" id="awscdk-resources-mongodbatlas.CfnDatabaseUserPropsX509Type.CUSTOMER"></a>
 
 CUSTOMER.
+
+---
+
+
+### CfnFederatedQueryLimitPropsLimitName <a name="CfnFederatedQueryLimitPropsLimitName" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimitPropsLimitName"></a>
+
+Human-readable label that identifies this data federation instance limit.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_QUERY">BYTES_PROCESSED_QUERY</a></code> | bytesProcessed.query. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_DAILY">BYTES_PROCESSED_DAILY</a></code> | bytesProcessed.daily. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_WEEKLY">BYTES_PROCESSED_WEEKLY</a></code> | bytesProcessed.weekly. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_MONTHLY">BYTES_PROCESSED_MONTHLY</a></code> | bytesProcessed.monthly. |
+
+---
+
+##### `BYTES_PROCESSED_QUERY` <a name="BYTES_PROCESSED_QUERY" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_QUERY"></a>
+
+bytesProcessed.query.
+
+---
+
+
+##### `BYTES_PROCESSED_DAILY` <a name="BYTES_PROCESSED_DAILY" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_DAILY"></a>
+
+bytesProcessed.daily.
+
+---
+
+
+##### `BYTES_PROCESSED_WEEKLY` <a name="BYTES_PROCESSED_WEEKLY" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_WEEKLY"></a>
+
+bytesProcessed.weekly.
+
+---
+
+
+##### `BYTES_PROCESSED_MONTHLY` <a name="BYTES_PROCESSED_MONTHLY" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_MONTHLY"></a>
+
+bytesProcessed.monthly.
 
 ---
 
