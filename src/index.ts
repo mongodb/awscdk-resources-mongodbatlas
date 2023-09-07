@@ -35,6 +35,32 @@ export {
 export { CfnAuditing, CfnAuditingProps } from "./l1-resources/auditing";
 
 export {
+  CfnFederatedQueryLimit,
+  CfnFederatedQueryLimitProps,
+  CfnFederatedQueryLimitPropsLimitName,
+} from "./l1-resources/federated-query-limit";
+
+export {
+  CfnFederatedDatabaseInstance,
+  CfnFederatedDatabaseInstanceProps,
+  CloudProviderConfig,
+  DataProcessRegion,
+  Storage,
+  Database,
+  Store,
+  Collection,
+  DataSource,
+  ReadPreference,
+  TagSet,
+  View,
+} from "./l1-resources/federated-database-instance";
+
+export {
+  CfnPrivatelinkEndpointServiceDataFederationOnlineArchive,
+  CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps,
+} from "./l1-resources/privatelink-endpoint-service-data-federation-online-archive";
+
+export {
   CfnCloudBackUpRestoreJobs,
   CfnCloudBackUpRestoreJobsProps,
   CfnCloudBackUpRestoreJobsPropsDeliveryType,
