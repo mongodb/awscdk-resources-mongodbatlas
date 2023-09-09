@@ -10,7 +10,7 @@ const INSTANCE_NAME = "testserverlessprivateendpoint";
 const PROJECT_ID = "64f0d46e7d714b7c26d984d8";
 const PROFILE = "default";
 
-test("CfnCloudOutageSimulation construct should contain default properties", () => {
+test("CfnServerlessPrivateEndpoint construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 

@@ -30,6 +30,6 @@ const serverlessPrivateEndpointProps: CfnServerlessPrivateEndpointProps = {
 
 new CfnServerlessPrivateEndpoint(
   stack,
-  "cloud-outstage-simulation",
+  "serverless-private-endpoint",
   serverlessPrivateEndpointProps
 );
