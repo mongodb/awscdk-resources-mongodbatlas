@@ -124,6 +124,13 @@ export interface CfnClusterProps {
    * @schema CfnClusterProps#TerminationProtectionEnabled
    */
   readonly terminationProtectionEnabled?: boolean;
+
+  /**
+   * List of settings that configure your cluster regions. For Global Clusters, each object in the array represents a zone where your clusters nodes deploy. For non-Global replica sets and sharded clusters, this array has one object representing where your clusters nodes deploy.
+   *
+   * @schema CfnClusterProps#Tags
+   */
+  readonly tags?: Tag[];
 }
 
 /**
@@ -156,6 +163,7 @@ export function toJson_CfnClusterProps(
     RootCertType: obj.rootCertType,
     VersionReleaseSystem: obj.versionReleaseSystem,
     TerminationProtectionEnabled: obj.terminationProtectionEnabled,
+    Tags: obj.tags?.map((y) => toJson_Tag(y)),
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -517,6 +525,49 @@ export function toJson_AdvancedReplicationSpec(
       toJson_AdvancedRegionConfig(y)
     ),
     ZoneName: obj.zoneName,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
+
+/**
+ * Advanced configuration details to add for one cluster in the specified project.
+ *
+ * @schema tag
+ */
+export interface Tag {
+  /**
+   * Constant that defines the set of the tag. For example, environment in the environment : production tag.
+   *
+   * @schema tag#Key
+   */
+  readonly key?: string;
+
+  /**
+   * Variable that belongs to the set of the tag. For example, production in the environment : production tag.
+   *
+   * @schema tag#Value
+   */
+  readonly value?: string;
+}
+
+/**
+ * Converts an object of type 'Tag' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_Tag(
+  obj: Tag | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    Key: obj.key,
+    Value: obj.value,
   };
   // filter undefined values
   return Object.entries(result).reduce(
