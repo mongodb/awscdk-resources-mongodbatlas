@@ -48,7 +48,15 @@ The go package is generated into the [github.com/mongodb/awscdk-resources-mongod
 go get github.com/mongodb/awscdk-resources-mongodbatlas-go/awscdkresourcesmongodbatlas
 ```   
 
+## Limitations
+1. [Resource import](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html) is not supported for third-party resources.
 
+2. Any third-party resource must support all CRUD operations. MongoDB Atlas for CloudFormation does not support the following MongoDB Atlas resources because they do not support all CRUD operations:
+
+* cloud-backup-snapshot-export-job
+* cloud-provider-access
+* federated-settings-identity-provider
+* federated-settings-org-configs
 
 ## Available Constructors
 MongoDB Atlas AWS CDK Resources provides L1, L2 and L3 CDK constructors. Please, have a look at [README.md](src/README.md#cdk-constructors) for a full lists of constructors and examples.
