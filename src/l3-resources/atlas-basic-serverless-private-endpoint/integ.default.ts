@@ -33,14 +33,22 @@ export const stack = new cdk.Stack(
   }
 );
 
+// const orgId =
+//   stack.node.tryGetContext("MONGODB_ATLAS_ORG_ID") ||
+//   "process.env.MONGODB_ATLAS_ORG_ID";
+// const vpcId =
+//   stack.node.tryGetContext("AWS_VPC_ID") || "process.env.AWS_VPC_ID";
+// const subnetId =
+//   stack.node.tryGetContext("AWS_SUBNET_ID") || process.env.AWS_SUBNET_ID;
+// const awsRegion =
+//   stack.node.tryGetContext("AWS_REGION") || process.env.AWS_REGION;
 const orgId =
   stack.node.tryGetContext("MONGODB_ATLAS_ORG_ID") ||
-  "process.env.MONGODB_ATLAS_ORG_ID";
-const vpcId = stack.node.tryGetContext("AWS_VPC_ID") || "process.env.AWS_VPC_ID";
+  "63350255419cf25e3d511c95";
+const vpcId = stack.node.tryGetContext("AWS_VPC_ID") || "vpc-078fe50fc2313c001";
 const subnetId =
-  stack.node.tryGetContext("AWS_SUBNET_ID") || process.env.AWS_SUBNET_ID;
-const awsRegion =
-  stack.node.tryGetContext("AWS_REGION") || process.env.AWS_REGION;
+  stack.node.tryGetContext("AWS_SUBNET_ID") || "subnet-0b0dae95ee22d6dd2";
+const awsRegion = stack.node.tryGetContext("AWS_REGION") || "us-east-1";
 const instanceName = "aws-quickstart-serverless-pe";
 
 const atlasServerlessBasicProps: AtlasServerlessBasicProps = {
@@ -69,20 +77,18 @@ const atlasServerlessBasicProps: AtlasServerlessBasicProps = {
 };
 
 const serverlessPrivateEndpointProps: ServerlessPrivateEndpointProps = {
-  privateEndpoints: [
-    {
-      vpcId: vpcId,
-      subnetIds: [subnetId],
-      createAndAssignAWSPrivateEndpoint: true,
-    },
-  ],
+  awsPrivateEndpointConfigurationProperties: {
+    vpcId: vpcId,
+    subnetIds: [subnetId],
+    region: awsRegion,
+  },
+  createAndAssignAwsPrivateEndpoint: true,
+  comment: "This is a Serverless Private endpoint, created by CDK",
 };
 
 export const props: AtlasServerlessBasicPrivateEndpointProps = {
-  comment: "",
   atlasServerlessBasicProps: atlasServerlessBasicProps,
   serverlessPrivateEndpointProps: serverlessPrivateEndpointProps,
-  region: awsRegion,
   instanceName: instanceName,
 };
 

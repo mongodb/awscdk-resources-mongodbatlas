@@ -17,6 +17,7 @@ import {
   CfnServerlessPrivateEndpoint,
   ServerlessPrivateEndpoint,
 } from "../../index";
+import { AwsPrivateEndpointConfig } from "../../l1-resources/serverless-private-endpoint";
 import { AtlasServerlessBasic } from "../atlas-serverless-basic";
 import { AtlasServerlessBasicProps } from "../common/props";
 
@@ -65,8 +66,6 @@ export class AtlasBasicServerlessPrivateEndpoint extends Construct {
         profile: props.profile,
         instanceName: props.instanceName,
         projectId: this.atlasServerlessBasic.mProject.attrId,
-        region: props.region || serverlessPrivateEndpointDefaults.region,
-        comment: props.comment,
         ...props.serverlessPrivateEndpointProps,
       }
     );
@@ -90,7 +89,6 @@ const validate = (props: AtlasServerlessBasicPrivateEndpointProps) => {
 export interface AtlasServerlessBasicPrivateEndpointProps {
   readonly profile?: string;
   readonly instanceName: string;
-  readonly comment: string;
   /**
    * @description AWS Region
    * @type {string}
@@ -113,45 +111,26 @@ export interface AtlasServerlessBasicPrivateEndpointProps {
 }
 
 /**
- * @description
- * @export
- * @interface ServerlessPrivateEndpointProps
+ * @schema PrivateEndpoint
  */
 export interface ServerlessPrivateEndpointProps {
   /**
-   * @description Name of the AWS PrivateLink endpoint service. Atlas returns null while it is creating the endpoint service.
-   * @type {string}
-   * @memberof PrivateEndpointProps
+   * string to represent the comment
+   * @schema PrivateEndpoint#comment
    */
-  readonly endpointServiceName?: string;
+  readonly comment?: string;
+
   /**
-   * @description Error message pertaining to the AWS PrivateLink connection. Returns null if there are no errors.
-   * @type {string}
-   * @memberof ServerlessPrivateEndpointProps
+   * If true the resource will create the aws private endpoint and assign the Endpoint ID
+   *
+   * @schema CfnServerlessPrivateEndpointProps#CreateAndAssignAWSPrivateEndpoint
    */
-  readonly errorMessage?: string;
+  readonly createAndAssignAwsPrivateEndpoint?: boolean;
+
   /**
-   * @description Status of the Atlas ServerlessPrivateEndpoint service connection
-   * @type {string}
-   * @memberof ServerlessPrivateEndpointProps
+   * Properties used to configure Aws private endpoint
+   *
+   * @schema CfnServerlessPrivateEndpointProps#AwsPrivateEndpointConfigurationProperties
    */
-  readonly status?: string;
-  /**
-   * @description Unique 24-hexadecimal digit string that identifies your project.
-   * @type {string}
-   * @memberof ServerlessPrivateEndpointProps
-   */
-  readonly projectId?: string;
-  /**
-   * @description
-   * @type {string}
-   * @memberof ServerlessPrivateEndpointProps
-   */
-  readonly region?: string;
-  /**
-   * @description
-   * @type {ServerlessPrivateEndpoint[]}
-   * @memberof ServerlessPrivateEndpointProps
-   */
-  readonly privateEndpoints?: ServerlessPrivateEndpoint[];
+  readonly awsPrivateEndpointConfigurationProperties?: AwsPrivateEndpointConfig;
 }
