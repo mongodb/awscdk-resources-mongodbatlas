@@ -35,9 +35,8 @@ export const stack = new cdk.Stack(
 
 const orgId =
   stack.node.tryGetContext("MONGODB_ATLAS_ORG_ID") ||
-  "process.env.MONGODB_ATLAS_ORG_ID";
-const vpcId =
-  stack.node.tryGetContext("AWS_VPC_ID") || "process.env.AWS_VPC_ID";
+  process.env.MONGODB_ATLAS_ORG_ID;
+const vpcId = stack.node.tryGetContext("AWS_VPC_ID") || process.env.AWS_VPC_ID;
 const subnetId =
   stack.node.tryGetContext("AWS_SUBNET_ID") || process.env.AWS_SUBNET_ID;
 const awsRegion =
