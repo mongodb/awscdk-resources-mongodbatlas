@@ -76,7 +76,7 @@ const serverlessPrivateEndpointProps: ServerlessPrivateEndpointProps = {
     region: awsRegion,
   },
   createAndAssignAwsPrivateEndpoint: true,
-  comment: "This is a Serverless Private endpoint, created by CDK",
+  comment: "Serverless Private endpoint by CDK",
 };
 
 export const props: AtlasServerlessBasicPrivateEndpointProps = {
