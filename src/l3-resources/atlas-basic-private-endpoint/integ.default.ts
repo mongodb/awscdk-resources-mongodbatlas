@@ -28,9 +28,6 @@ const stack = new cdk.Stack(app, "atlas-basic-private-endpoint", {
 const orgId =
   stack.node.tryGetContext("MONGODB_ATLAS_ORG_ID") ||
   process.env.MONGODB_ATLAS_ORG_ID;
-const vpcId = stack.node.tryGetContext("AWS_VPC_ID") || process.env.AWS_VPC_ID;
-const subnetId =
-  stack.node.tryGetContext("AWS_SUBNET_ID") || process.env.AWS_SUBNET_ID;
 const awsRegion =
   stack.node.tryGetContext("AWS_REGION") || process.env.AWS_REGION;
 
@@ -74,12 +71,8 @@ const atlasBasicProps: AtlasBasicProps = {
 };
 
 const privateEndpointProps: PrivateEndpointProps = {
-  privateEndpoints: [
-    {
-      vpcId: vpcId,
-      subnetIds: [subnetId],
-    },
-  ],
+  awsVpcId: "vpc-078fe50fc2313c001",
+  awsSubnetId: "subnet-0a2f7a198e5d6d6a6",
 };
 
 const props = {

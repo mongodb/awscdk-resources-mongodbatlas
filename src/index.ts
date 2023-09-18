@@ -211,8 +211,12 @@ export {
 export {
   CfnPrivateEndpointProps,
   CfnPrivateEndpoint,
-  PrivateEndpoint,
 } from "./l1-resources/private-endpoint";
+
+export {
+  CfnPrivateEndpointService,
+  CfnPrivateEndpointServiceProps,
+} from "./l1-resources/private-endpoint-service";
 
 export {
   CfnPrivateEndpointAdl,
