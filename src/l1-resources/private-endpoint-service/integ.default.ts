@@ -11,9 +11,9 @@ const stack = new cdk.Stack(app, "atlas-test-cdk-test", {
   },
 });
 
-const atlasProject = "64bad960538ae76ec5c70050";
-const vpcId = "vpc-078fe50fc2313c001";
-const subnetId = "subnet-0a2f7a198e5d6d6a6";
+const atlasProject = "";
+const vpcId = "";
+const subnetId = "";
 
 const atlasService = new CfnPrivateEndpointService(stack, "AtlasCluster", {
   projectId: atlasProject,

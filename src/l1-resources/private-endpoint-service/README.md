@@ -1,8 +1,8 @@
-# private-endpoint
+# private-endpoint-service
 
 The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node.js.
 
-> AWS CDK [L1 construct] and data structures for the [AWS CloudFormation Registry] type `MongoDB::Atlas::PrivateEndpoint` v1.0.0.
+> AWS CDK [L1 construct] and data structures for the [AWS CloudFormation Registry] type `MongoDB::Atlas::PrivateEndpointService` v1.0.0.
 
 [l1 construct]: https://docs.aws.amazon.com/cdk/latest/guide/constructs.html
 [aws cloudformation registry]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html
@@ -40,15 +40,16 @@ You can find more information about activating this type in the [AWS CloudFormat
 ## Example: [private-endpoint.ts](../../../examples/l1-resources/private-endpoint.ts)
 
 ```ts
-import { CfnPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
+import { CfnPrivateEndpointService } from 'awscdk-resources-mongodbatlas'
 
-const myPrivateEndpoint = new CfnPrivateEndpoint(this, 'privateEndpoint', {
-  projectId: atlasProject,
-  endpointServiceId: 'endpointServiceId' /*Id of the PrivateEndpointService*/,
-  profile: 'default',
-  interfaceEndpointId: '',
-  cloudProvider: 'AWS'
-})
+const myPrivateEndpoint = new CfnPrivateEndpointService(
+  this,
+  'privateEndpointService',
+  {
+    projectId: atlasProject,
+    region: 'US_EAST_1'
+  }
+)
 ```
 
 ## Feedback
