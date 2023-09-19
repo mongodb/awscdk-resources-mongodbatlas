@@ -18955,7 +18955,6 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrClusterCount">attrClusterCount</a></code> | <code>number</code> | Attribute `MongoDB::Atlas::Project.ClusterCount`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrCreated">attrCreated</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Project.Created`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Project.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrProjectOwnerId">attrProjectOwnerId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Project.ProjectOwnerId`. |
@@ -19052,18 +19051,6 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
-
----
-
-##### `attrClusterCount`<sup>Required</sup> <a name="attrClusterCount" id="awscdk-resources-mongodbatlas.CfnProject.property.attrClusterCount"></a>
-
-```typescript
-public readonly attrClusterCount: number;
-```
-
-- *Type:* number
-
-Attribute `MongoDB::Atlas::Project.ClusterCount`.
 
 ---
 
@@ -30333,10 +30320,12 @@ const cfnProjectProps: CfnProjectProps = { ... }
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.name">name</a></code> | <code>string</code> | Name of the project to create. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.orgId">orgId</a></code> | <code>string</code> | Unique identifier of the organization within which to create the project. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.clusterCount">clusterCount</a></code> | <code>number</code> | The number of Atlas clusters deployed in the project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectApiKeys">projectApiKeys</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectApiKey">ProjectApiKey</a>[]</code> | API keys that you assigned to the specified project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectSettings">projectSettings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings">ProjectSettings</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectTeams">projectTeams</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectTeam">ProjectTeam</a>[]</code> | Teams to which the authenticated user has access in the project specified using its unique 24-hexadecimal digit identifier. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.regionUsageRestrictions">regionUsageRestrictions</a></code> | <code>string</code> | Region usage restrictions that designate the project's AWS region.Enum: "GOV_REGIONS_ONLY" "COMMERCIAL_FEDRAMP_REGIONS_ONLY" "NONE". |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.withDefaultAlertsSettings">withDefaultAlertsSettings</a></code> | <code>boolean</code> | Flag that indicates whether to create the project with default alert settings. |
 
 ---
@@ -30362,6 +30351,18 @@ public readonly orgId: string;
 - *Type:* string
 
 Unique identifier of the organization within which to create the project.
+
+---
+
+##### `clusterCount`<sup>Optional</sup> <a name="clusterCount" id="awscdk-resources-mongodbatlas.CfnProjectProps.property.clusterCount"></a>
+
+```typescript
+public readonly clusterCount: number;
+```
+
+- *Type:* number
+
+The number of Atlas clusters deployed in the project.
 
 ---
 
@@ -30408,6 +30409,18 @@ public readonly projectTeams: ProjectTeam[];
 - *Type:* <a href="#awscdk-resources-mongodbatlas.ProjectTeam">ProjectTeam</a>[]
 
 Teams to which the authenticated user has access in the project specified using its unique 24-hexadecimal digit identifier.
+
+---
+
+##### `regionUsageRestrictions`<sup>Optional</sup> <a name="regionUsageRestrictions" id="awscdk-resources-mongodbatlas.CfnProjectProps.property.regionUsageRestrictions"></a>
+
+```typescript
+public readonly regionUsageRestrictions: string;
+```
+
+- *Type:* string
+
+Region usage restrictions that designate the project's AWS region.Enum: "GOV_REGIONS_ONLY" "COMMERCIAL_FEDRAMP_REGIONS_ONLY" "NONE".
 
 ---
 
