@@ -31,7 +31,7 @@ Alternatively:
 
 ```sh
 aws cloudformation activate-type \
-  --public-type-arn arn:aws:cloudformation:us-east-1::type/resource/bb989456c78c398a858fef18f2ca1bfc1fbba082/MongoDB-Atlas-PrivateEndpoint \
+  --public-type-arn arn:aws:cloudformation:us-east-1::type/resource/bb989456c78c398a858fef18f2ca1bfc1fbba082/MongoDB-Atlas-PrivateEndpointService \
   --execution-role-arn ROLE-ARN
 ```
 
@@ -54,10 +54,10 @@ const myPrivateEndpoint = new CfnPrivateEndpointService(
 
 ## Feedback
 
-This library is auto-generated and published to all supported programming languages by the [cdklabs/cdk-cloudformation] project based on the API schema published for `MongoDB::Atlas::PrivateEndpoint`.
+This library is auto-generated and published to all supported programming languages by the [cdklabs/cdk-cloudformation] project based on the API schema published for `MongoDB::Atlas::PrivateEndpointService`.
 
 - Issues related to this generated library should be [reported here](https://github.com/cdklabs/cdk-cloudformation/issues/new?title=Issue+with+%40cdk-cloudformation%2Fmongodb-atlas-privateendpoint+v1.0.0).
-- Issues related to `MongoDB::Atlas::PrivateEndpoint` should be reported to the [publisher](https://github.com/mongodb/mongodbatlas-cloudformation-resources/issues).
+- Issues related to `MongoDB::Atlas::PrivateEndpointSerice` should be reported to the [publisher](https://github.com/mongodb/mongodbatlas-cloudformation-resources/issues).
 - Feature requests should be [reported here](https://feedback.mongodb.com/forums/924145-atlas?category_id=392596)
 
 [cdklabs/cdk-cloudformation]: https://github.com/cdklabs/cdk-cloudformation
