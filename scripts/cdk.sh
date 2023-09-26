@@ -58,6 +58,7 @@ for file in "${dir}"/mongodb-atlas-*.json; do
 		fi
 
                 # NOTE: known_issue MODULE_NOT_FOUND error.
+		# When the Resource is not merged to main branch of submodule, you see the above error. 
 		cdk-import cfn -l typescript -s "${file}" -o "src/l1-resources/${path}" "${src}"
 		# need rename resource file to index.ts file
 		mv "src/l1-resources/${path}/mongodb-atlas-${path//-/}.ts" "src/l1-resources/${path}/index.ts"
