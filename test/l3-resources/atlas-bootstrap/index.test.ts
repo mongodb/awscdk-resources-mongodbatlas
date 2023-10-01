@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { App, Stack, CfnParameter } from "aws-cdk-lib";
+import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
 import * as l3 from "../../../src";
 
@@ -26,15 +26,6 @@ const RESOURCE_NAME_SECRET = "AWS::SecretsManager::Secret";
 test("AtlasBasis construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
-
-  const publicKey = new CfnParameter(stack, "atlasPublicKey", {
-    noEcho: true,
-    type: "String",
-  });
-  const privateKey = new CfnParameter(stack, "atlasPrivateKey", {
-    noEcho: true,
-    type: "String",
-  });
 
   new l3.MongoAtlasBootstrap(stack, "testing-stack", {
     roleName: roleName,
@@ -53,12 +44,8 @@ test("AtlasBasis construct should contain default properties", () => {
       Statement: [
         {
           Action: [
-            "secretsmanager:CreateSecret",
-            "secretsmanager:CreateSecretInput",
             "secretsmanager:DescribeSecret",
             "secretsmanager:GetSecretValue",
-            "secretsmanager:PutSecretValue",
-            "secretsmanager:UpdateSecretVersionStage",
             "ec2:CreateVpcEndpoint",
             "ec2:DeleteVpcEndpoints",
             "cloudformation:CreateResource",

@@ -39,9 +39,7 @@ export class AtlasBoostrapExample extends cdk.Stack {
     const bootstrapProperties: MongoAtlasBootstrapProps = {
         roleName: roleName,
         secretProfile: mongoDBProfile,
-        typesToActivate: AtlasBasicResources,
-        atlasPublicKey: publicKey,
-        atlasPrivateKey: privateKey,
+        typesToActivate: AtlasBasicResources
     };
 
     new MongoAtlasBootstrap(this, "cdk-bootstrap", bootstrapProperties);
