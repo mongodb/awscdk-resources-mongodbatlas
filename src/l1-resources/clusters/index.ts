@@ -124,6 +124,13 @@ export interface CfnClusterProps {
    * @schema CfnClusterProps#TerminationProtectionEnabled
    */
   readonly terminationProtectionEnabled?: boolean;
+
+  /**
+   * List of settings that configure your cluster regions. For Global Clusters, each object in the array represents a zone where your clusters nodes deploy. For non-Global replica sets and sharded clusters, this array has one object representing where your clusters nodes deploy.
+   *
+   * @schema CfnClusterProps#Tags
+   */
+  readonly tags?: Tag[];
 }
 
 /**
@@ -156,6 +163,7 @@ export function toJson_CfnClusterProps(
     RootCertType: obj.rootCertType,
     VersionReleaseSystem: obj.versionReleaseSystem,
     TerminationProtectionEnabled: obj.terminationProtectionEnabled,
+    Tags: obj.tags?.map((y) => toJson_Tag(y)),
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -240,6 +248,13 @@ export interface ProcessArgs {
    * @schema processArgs#OplogMinRetentionHours
    */
   readonly oplogMinRetentionHours?: number;
+
+  /**
+   * Lifetime, in seconds, of multi-document transactions. Atlas considers the transactions that exceed this limit as expired and so aborts them through a periodic cleanup process.
+   *
+   * @schema processArgs#TransactionLifetimeLimitSeconds
+   */
+  readonly transactionLifetimeLimitSeconds?: number;
 }
 
 /**
@@ -263,6 +278,7 @@ export function toJson_ProcessArgs(
     SampleSizeBIConnector: obj.sampleSizeBiConnector,
     SampleRefreshIntervalBIConnector: obj.sampleRefreshIntervalBiConnector,
     OplogMinRetentionHours: obj.oplogMinRetentionHours,
+    TransactionLifetimeLimitSeconds: obj.transactionLifetimeLimitSeconds,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -351,25 +367,25 @@ export interface ConnectionStrings {
   readonly privateSrv?: string;
 
   /**
-   * List of private endpoint connection strings that you can use to connect to this cluster through a private endpoint. This parameter returns only if you deployed a private endpoint to all regions to which you deployed this clusters' nodes.
+   * Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink. Each key identifies an Amazon Web Services (AWS) interface endpoint. Each value identifies the related mongodb:// connection string that you use to connect to MongoDB Cloud through the interface endpoint that the key names.
    *
-   * @schema connectionStrings#PrivateEndpoint
+   * @schema connectionStrings#PrivateEndpoints
    */
-  readonly privateEndpoint?: PrivateEndpoint[];
+  readonly privateEndpoints?: string[];
 
   /**
    * Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink. Each key identifies an Amazon Web Services (AWS) interface endpoint. Each value identifies the related mongodb:// connection string that you use to connect to Atlas through the interface endpoint that the key names.
    *
-   * @schema connectionStrings#AwsPrivateLinkSrv
+   * @schema connectionStrings#PrivateEndpointsSrv
    */
-  readonly awsPrivateLinkSrv?: string;
+  readonly privateEndpointsSrv?: string[];
 
   /**
-   * Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink. Each key identifies an Amazon Web Services (AWS) interface endpoint. Each value identifies the related mongodb:// connection string that you use to connect to MongoDB Cloud through the interface endpoint that the key names.
+   * Private endpoint-aware connection string optimized for sharded clusters that uses the `mongodb+srv://` protocol to connect to MongoDB Cloud through a private endpoint. If the connection string uses this Uniform Resource Identifier (URI) format, you don't need to change the Uniform Resource Identifier (URI) if the nodes change. Use this Uniform Resource Identifier (URI) format if your application and Atlas cluster supports it. If it doesn't, use and consult the documentation for connectionStrings.privateEndpoint[n].srvConnectionString.
    *
-   * @schema connectionStrings#AwsPrivateLink
+   * @schema connectionStrings#SRVShardOptimizedConnectionString
    */
-  readonly awsPrivateLink?: string;
+  readonly srvShardOptimizedConnectionString?: string[];
 }
 
 /**
@@ -387,9 +403,10 @@ export function toJson_ConnectionStrings(
     StandardSrv: obj.standardSrv,
     Private: obj.private,
     PrivateSrv: obj.privateSrv,
-    PrivateEndpoint: obj.privateEndpoint?.map((y) => toJson_PrivateEndpoint(y)),
-    AwsPrivateLinkSrv: obj.awsPrivateLinkSrv,
-    AwsPrivateLink: obj.awsPrivateLink,
+    PrivateEndpoints: obj.privateEndpoints?.map((y) => y),
+    PrivateEndpointsSrv: obj.privateEndpointsSrv?.map((y) => y),
+    SRVShardOptimizedConnectionString:
+      obj.srvShardOptimizedConnectionString?.map((y) => y),
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -518,56 +535,39 @@ export function toJson_AdvancedReplicationSpec(
 /* eslint-enable max-len, quote-props */
 
 /**
- * List of private endpoint connection strings that you can use to connect to this cluster through a private endpoint. This parameter returns only if you deployed a private endpoint to all regions to which you deployed this clusters' nodes.
+ * Advanced configuration details to add for one cluster in the specified project.
  *
- * @schema privateEndpoint
+ * @schema tag
  */
-export interface PrivateEndpoint {
+export interface Tag {
   /**
-   * Private endpoint-aware connection string that uses the mongodb:// protocol to connect to MongoDB Cloud through a private endpoint.
+   * Constant that defines the set of the tag. For example, environment in the environment : production tag.
    *
-   * @schema privateEndpoint#ConnectionString
+   * @schema tag#Key
    */
-  readonly connectionString?: string;
+  readonly key?: string;
 
   /**
-   * List that contains the private endpoints through which you connect to MongoDB Cloud when you use connectionStrings.privateEndpoint[n].connectionString or connectionStrings.privateEndpoint[n].srvConnectionString.
+   * Variable that belongs to the set of the tag. For example, production in the environment : production tag.
    *
-   * @schema privateEndpoint#Endpoints
+   * @schema tag#Value
    */
-  readonly endpoints?: Endpoint[];
-
-  /**
-   * Private endpoint-aware connection string that uses the mongodb+srv:// protocol to connect to MongoDB Cloud through a private endpoint. The mongodb+srv protocol tells the driver to look up the seed list of hosts in the Domain Name System (DNS). This list synchronizes with the nodes in a cluster. If the connection string uses this Uniform Resource Identifier (URI) format, you don't need to append the seed list or change the Uniform Resource Identifier (URI) if the nodes change. Use this Uniform Resource Identifier (URI) format if your application supports it. If it doesn't, use connectionStrings.privateEndpoint[n].connectionString.
-   *
-   * @schema privateEndpoint#SRVConnectionString
-   */
-  readonly srvConnectionString?: string;
-
-  /**
-   * Enum: "MONGOD" "MONGOS"
-   * MongoDB process type to which your application connects. Use MONGOD for replica sets and MONGOS for sharded clusters.
-   *
-   * @schema privateEndpoint#Type
-   */
-  readonly type?: string;
+  readonly value?: string;
 }
 
 /**
- * Converts an object of type 'PrivateEndpoint' to JSON representation.
+ * Converts an object of type 'Tag' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_PrivateEndpoint(
-  obj: PrivateEndpoint | undefined
+export function toJson_Tag(
+  obj: Tag | undefined
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
   }
   const result = {
-    ConnectionString: obj.connectionString,
-    Endpoints: obj.endpoints?.map((y) => toJson_Endpoint(y)),
-    SRVConnectionString: obj.srvConnectionString,
-    Type: obj.type,
+    Key: obj.key,
+    Value: obj.value,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -653,55 +653,6 @@ export function toJson_AdvancedRegionConfig(
     ElectableSpecs: toJson_Specs(obj.electableSpecs),
     Priority: obj.priority,
     ReadOnlySpecs: toJson_Specs(obj.readOnlySpecs),
-  };
-  // filter undefined values
-  return Object.entries(result).reduce(
-    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
-    {}
-  );
-}
-/* eslint-enable max-len, quote-props */
-
-/**
- * @schema endpoint
- */
-export interface Endpoint {
-  /**
-   * Unique string that the cloud provider uses to identify the private endpoint.
-   *
-   * @schema endpoint#EndpointID
-   */
-  readonly endpointId?: string;
-
-  /**
-   * Cloud provider in which MongoDB Cloud deploys the private endpoint.
-   *
-   * @schema endpoint#ProviderName
-   */
-  readonly providerName?: string;
-
-  /**
-   * Region in which MongoDB Cloud deploys the private endpoint.
-   *
-   * @schema endpoint#Region
-   */
-  readonly region?: string;
-}
-
-/**
- * Converts an object of type 'Endpoint' to JSON representation.
- */
-/* eslint-disable max-len, quote-props */
-export function toJson_Endpoint(
-  obj: Endpoint | undefined
-): Record<string, any> | undefined {
-  if (obj === undefined) {
-    return undefined;
-  }
-  const result = {
-    EndpointID: obj.endpointId,
-    ProviderName: obj.providerName,
-    Region: obj.region,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -996,6 +947,18 @@ export class CfnCluster extends cdk.CfnResource {
       this.getAtt("ConnectionStrings.PrivateSrv")
     );
 
+    const privateEndpoints = cdk.Token.asList(
+      this.getAtt("ConnectionStrings.PrivateEndpoints")
+    );
+
+    const privateEndpointsSrv = cdk.Token.asList(
+      this.getAtt("ConnectionStrings.PrivateEndpointsSrv")
+    );
+
+    const srvShardOptimizedConnectionString = cdk.Token.asList(
+      this.getAtt("ConnectionStrings.SrvShardOptimizedConnectionString")
+    );
+
     this.attrStateName = cdk.Token.asString(this.getAtt("StateName"));
     this.attrMongoDBVersion = cdk.Token.asString(this.getAtt("MongoDBVersion"));
     this.attrCreatedDate = cdk.Token.asString(this.getAtt("CreatedDate"));
@@ -1005,6 +968,9 @@ export class CfnCluster extends cdk.CfnResource {
       standardSrv: connStringsStandardSrv,
       private: connStringsPrivate,
       privateSrv: connStringsPrivateSrv,
+      privateEndpoints: privateEndpoints,
+      privateEndpointsSrv: privateEndpointsSrv,
+      srvShardOptimizedConnectionString: srvShardOptimizedConnectionString,
     };
   }
 }

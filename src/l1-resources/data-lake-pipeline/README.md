@@ -9,11 +9,11 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-The cluster resource provides access to your cluster configurations. The resource lets you create, edit and delete clusters. The resource requires your Project ID.
+Atlas Data Lake takes snapshots of your Atlas cluster, so you can easily analyze data over time. As data is ingested, Atlas Data Lake reformats, creates partition indexes, and partitions data, creating an isolated workload ready to support large and complex queries without impacting your production application.
 
 ## MongoDB Atlas API Docs
 
-For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Clusters)
+For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/v2/#tag/Data-Lake-Pipelines/operation/createPipeline)
 
 ## Usage
 
@@ -21,7 +21,7 @@ In order to use this library, you will need to activate this AWS CloudFormation 
 
 ```sh
 aws cloudformation activate-type \
-  --type-name MongoDB::Atlas::Cluster \
+  --type-name MongoDB::Atlas::DataLakePipeline \
   --publisher-id bb989456c78c398a858fef18f2ca1bfc1fbba082 \
   --type RESOURCE \
   --execution-role-arn ROLE-ARN
@@ -38,23 +38,17 @@ aws cloudformation activate-type \
 You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
 
 
-## Example: [cluster.ts](../../../examples/l1-resources/cluster.ts)
+## Example: [cluster.ts](../../../examples/l1-resources/dataLakePipeline.ts)
 ```ts
-import { CfnCluster } from 'awscdk-resources-mongodbatlas';
+import { CfnDataLakePipeline } from 'awscdk-resources-mongodbatlas';
 
-const clusterRes = new CfnCluster(this, 'ClusterResource', {
+const clusterRes = new CfnDataLakePipeline(this, 'ClusterResource', {
       name: atlasProps.clusterName,
       projectId: projectRes.attrId,
       profile: atlasProps.profile,
       clusterType: atlasProps.clusterType,
       backupEnabled: true,
       pitEnabled: false,
-      tags: [
-        {
-          key: "env",
-          value: "development",
-        },
-      ],
       replicationSpecs: [{
         numShards: 1,
         advancedRegionConfigs: [{
