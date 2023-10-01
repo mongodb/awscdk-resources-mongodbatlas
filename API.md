@@ -24632,7 +24632,7 @@ public readonly role: IRole;
 ```typescript
 import { MongoSecretProfile } from 'awscdk-resources-mongodbatlas'
 
-new MongoSecretProfile(scope: Construct, id: string, profileName: string, atlasPublicKey: CfnParameter, atlasPrivateKey: CfnParameter)
+new MongoSecretProfile(scope: Construct, id: string, profileName: string)
 ```
 
 | **Name** | **Type** | **Description** |
@@ -24640,8 +24640,6 @@ new MongoSecretProfile(scope: Construct, id: string, profileName: string, atlasP
 | <code><a href="#awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.profileName">profileName</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.atlasPublicKey">atlasPublicKey</a></code> | <code>aws-cdk-lib.CfnParameter</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.atlasPrivateKey">atlasPrivateKey</a></code> | <code>aws-cdk-lib.CfnParameter</code> | *No description.* |
 
 ---
 
@@ -24660,18 +24658,6 @@ new MongoSecretProfile(scope: Construct, id: string, profileName: string, atlasP
 ##### `profileName`<sup>Required</sup> <a name="profileName" id="awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.profileName"></a>
 
 - *Type:* string
-
----
-
-##### `atlasPublicKey`<sup>Required</sup> <a name="atlasPublicKey" id="awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.atlasPublicKey"></a>
-
-- *Type:* aws-cdk-lib.CfnParameter
-
----
-
-##### `atlasPrivateKey`<sup>Required</sup> <a name="atlasPrivateKey" id="awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.atlasPrivateKey"></a>
-
-- *Type:* aws-cdk-lib.CfnParameter
 
 ---
 
@@ -36967,59 +36953,11 @@ new MongoAtlasBootstrapProps()
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.atlasPrivateKey">atlasPrivateKey</a></code> | <code>aws-cdk-lib.CfnParameter</code> | MongoDB Atlas Public Key: the public key acts as the username when making API requests. |
-| <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.atlasPublicKey">atlasPublicKey</a></code> | <code>aws-cdk-lib.CfnParameter</code> | MongoDB Atlas Public Key: the public key acts as the username when making API requests. |
 | <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.roleName">roleName</a></code> | <code>string</code> | The IAM role name for CloudFormation Extension Execution. |
 | <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.secretProfile">secretProfile</a></code> | <code>string</code> | The secret profile name for MongoDB Atlas. |
 | <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.typesToActivate">typesToActivate</a></code> | <code>string[]</code> | List of strings representing mongoDB atlas types to activate. |
 
 ---
-
-##### `atlasPrivateKey`<sup>Required</sup> <a name="atlasPrivateKey" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.atlasPrivateKey"></a>
-
-```typescript
-public readonly atlasPrivateKey: CfnParameter;
-```
-
-- *Type:* aws-cdk-lib.CfnParameter
-
-MongoDB Atlas Public Key: the public key acts as the username when making API requests.
-
-Input as CFNParameter and allways use noEcho: true for safety.
-
-> [https://docs.aws.amazon.com/cdk/v2/guide/parameters.html](https://docs.aws.amazon.com/cdk/v2/guide/parameters.html)
-
----
-
-*Example*
-
-```typescript
-new cdk.CfnParameter(stack, "atlasPrivateKey", {noEcho: true,type: "String",});
-```
-
-
-##### `atlasPublicKey`<sup>Required</sup> <a name="atlasPublicKey" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.atlasPublicKey"></a>
-
-```typescript
-public readonly atlasPublicKey: CfnParameter;
-```
-
-- *Type:* aws-cdk-lib.CfnParameter
-
-MongoDB Atlas Public Key: the public key acts as the username when making API requests.
-
-Input as CFNParameter and allways use noEcho: true for safety.
-
-> [https://docs.aws.amazon.com/cdk/v2/guide/parameters.html](https://docs.aws.amazon.com/cdk/v2/guide/parameters.html)
-
----
-
-*Example*
-
-```typescript
-new cdk.CfnParameter(stack, "atlasPrivateKey", {noEcho: true,type: "String",});
-```
-
 
 ##### `roleName`<sup>Required</sup> <a name="roleName" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.roleName"></a>
 
