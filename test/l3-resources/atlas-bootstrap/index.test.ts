@@ -40,8 +40,6 @@ test("AtlasBasis construct should contain default properties", () => {
     roleName: roleName,
     secretProfile: mongoDBProfile,
     typesToActivate: ["Project"],
-    atlasPublicKey: publicKey,
-    atlasPrivateKey: privateKey,
   });
 
   const template = Template.fromStack(stack);
