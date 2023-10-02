@@ -49,6 +49,13 @@ export interface CfnTeamsProps {
    * @schema CfnTeamsProps#Usernames
    */
   readonly usernames?: string[];
+
+  /**
+   * List of returned documents that MongoDB Cloud provides when completing this request.
+   *
+   * @schema CfnTeamsProps#Users
+   */
+  readonly users?: AtlasUser[];
 }
 
 /**
@@ -68,6 +75,7 @@ export function toJson_CfnTeamsProps(
     ProjectId: obj.projectId,
     Name: obj.name,
     Usernames: obj.usernames?.map((y) => y),
+    Users: obj.users?.map((y) => toJson_AtlasUser(y)),
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -81,6 +89,275 @@ export function toJson_CfnTeamsProps(
  * @schema CfnTeamsPropsRoleNames
  */
 export enum CfnTeamsPropsRoleNames {
+  /** GROUP_CLUSTER_MANAGER */
+  GROUP_CLUSTER_MANAGER = "GROUP_CLUSTER_MANAGER",
+  /** GROUP_DATA_ACCESS_ADMIN */
+  GROUP_DATA_ACCESS_ADMIN = "GROUP_DATA_ACCESS_ADMIN",
+  /** GROUP_DATA_ACCESS_READ_ONLY */
+  GROUP_DATA_ACCESS_READ_ONLY = "GROUP_DATA_ACCESS_READ_ONLY",
+  /** GROUP_DATA_ACCESS_READ_WRITE */
+  GROUP_DATA_ACCESS_READ_WRITE = "GROUP_DATA_ACCESS_READ_WRITE",
+  /** GROUP_OWNER */
+  GROUP_OWNER = "GROUP_OWNER",
+  /** GROUP_READ_ONLY */
+  GROUP_READ_ONLY = "GROUP_READ_ONLY",
+}
+
+/**
+ * @schema AtlasUser
+ */
+export interface AtlasUser {
+  /**
+   * Two alphabet characters that identifies MongoDB Cloud user's geographic location. This parameter uses the ISO 3166-1a2 code format.
+   *
+   * @schema AtlasUser#Country
+   */
+  readonly country?: string;
+
+  /**
+   * Email address that belongs to the MongoDB Cloud user.
+   *
+   * @schema AtlasUser#EmailAddress
+   */
+  readonly emailAddress?: string;
+
+  /**
+   * First or given name that belongs to the MongoDB Cloud user.
+   *
+   * @schema AtlasUser#FirstName
+   */
+  readonly firstName?: string;
+
+  /**
+   * Unique 24-hexadecimal digit string that identifies the MongoDB Cloud user.
+   *
+   * @schema AtlasUser#Id
+   */
+  readonly id?: string;
+
+  /**
+   * Last name, family name, or surname that belongs to the MongoDB Cloud user.
+   *
+   * @schema AtlasUser#LastName
+   */
+  readonly lastName?: string;
+
+  /**
+   * List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both. RFC 5988 outlines these relationships.
+   *
+   * @schema AtlasUser#Links
+   */
+  readonly links?: Link[];
+
+  /**
+   * Mobile phone number that belongs to the MongoDB Cloud user.
+   *
+   * @schema AtlasUser#MobileNumber
+   */
+  readonly mobileNumber?: string;
+
+  /**
+   * Password applied with the username to log in to MongoDB Cloud. MongoDB Cloud does not return this parameter except in response to creating a new MongoDB Cloud user. Only the MongoDB Cloud user can update their password after it has been set from the MongoDB Cloud console.
+   *
+   * @schema AtlasUser#Password
+   */
+  readonly password?: string;
+
+  /**
+   * List of objects that display the MongoDB Cloud user's roles and the corresponding organization or project to which that role applies. A role can apply to one organization or one project but not both.
+   *
+   * @schema AtlasUser#Roles
+   */
+  readonly roles?: AtlasRole[];
+
+  /**
+   * List of unique 24-hexadecimal digit strings that identifies the teams to which this MongoDB Cloud user belongs.
+   *
+   * @schema AtlasUser#TeamIds
+   */
+  readonly teamIds?: string[];
+
+  /**
+   * Email address that represents the username of the MongoDB Cloud user.
+   *
+   * @schema AtlasUser#Username
+   */
+  readonly username?: string;
+}
+
+/**
+ * Converts an object of type 'AtlasUser' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_AtlasUser(
+  obj: AtlasUser | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    Country: obj.country,
+    EmailAddress: obj.emailAddress,
+    FirstName: obj.firstName,
+    Id: obj.id,
+    LastName: obj.lastName,
+    Links: obj.links?.map((y) => toJson_Link(y)),
+    MobileNumber: obj.mobileNumber,
+    Password: obj.password,
+    Roles: obj.roles?.map((y) => toJson_AtlasRole(y)),
+    TeamIds: obj.teamIds?.map((y) => y),
+    Username: obj.username,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
+
+/**
+ * One or more links to sub-resources and/or related resources.
+ *
+ * @schema Link
+ */
+export interface Link {
+  /**
+   * @schema Link#Rel
+   */
+  readonly rel?: string;
+
+  /**
+   * @schema Link#Href
+   */
+  readonly href?: string;
+}
+
+/**
+ * Converts an object of type 'Link' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_Link(
+  obj: Link | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    Rel: obj.rel,
+    Href: obj.href,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
+
+/**
+ * @schema AtlasRole
+ */
+export interface AtlasRole {
+  /**
+   * Unique 24-hexadecimal digit string that identifies the project to which this role belongs. You can set a value for this parameter or **orgId** but not both in the same request.
+   *
+   * @schema AtlasRole#ProjectId
+   */
+  readonly projectId?: string;
+
+  /**
+   * Unique 24-hexadecimal digit string that identifies the organization to which this role belongs. You can set a value for this parameter or **groupId** but not both in the same request
+   *
+   * @schema AtlasRole#OrgId
+   */
+  readonly orgId?: string;
+
+  /**
+   * Human-readable label that identifies the collection of privileges that MongoDB Cloud grants a specific API key, MongoDB Cloud user, or MongoDB Cloud team. These roles include organization- and project-level roles.
+   *
+   * Organization Roles
+   *
+   * * ORG_OWNER
+   * * ORG_MEMBER
+   * * ORG_GROUP_CREATOR
+   * * ORG_BILLING_ADMIN
+   * * ORG_READ_ONLY
+   *
+   * Project Roles
+   *
+   * * GROUP_CLUSTER_MANAGER
+   * * GROUP_DATA_ACCESS_ADMIN
+   * * GROUP_DATA_ACCESS_READ_ONLY
+   * * GROUP_DATA_ACCESS_READ_WRITE
+   * * GROUP_OWNER
+   * * GROUP_READ_ONLY
+   *
+   *
+   *
+   * @schema AtlasRole#RoleName
+   */
+  readonly roleName?: AtlasRoleRoleName;
+}
+
+/**
+ * Converts an object of type 'AtlasRole' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_AtlasRole(
+  obj: AtlasRole | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    ProjectId: obj.projectId,
+    OrgId: obj.orgId,
+    RoleName: obj.roleName,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
+
+/**
+ * Human-readable label that identifies the collection of privileges that MongoDB Cloud grants a specific API key, MongoDB Cloud user, or MongoDB Cloud team. These roles include organization- and project-level roles.
+ *
+ * Organization Roles
+ *
+ * * ORG_OWNER
+ * * ORG_MEMBER
+ * * ORG_GROUP_CREATOR
+ * * ORG_BILLING_ADMIN
+ * * ORG_READ_ONLY
+ *
+ * Project Roles
+ *
+ * * GROUP_CLUSTER_MANAGER
+ * * GROUP_DATA_ACCESS_ADMIN
+ * * GROUP_DATA_ACCESS_READ_ONLY
+ * * GROUP_DATA_ACCESS_READ_WRITE
+ * * GROUP_OWNER
+ * * GROUP_READ_ONLY
+ *
+ *
+ *
+ * @schema AtlasRoleRoleName
+ */
+export enum AtlasRoleRoleName {
+  /** ORG_OWNER */
+  ORG_OWNER = "ORG_OWNER",
+  /** ORG_MEMBER */
+  ORG_MEMBER = "ORG_MEMBER",
+  /** ORG_GROUP_CREATOR */
+  ORG_GROUP_CREATOR = "ORG_GROUP_CREATOR",
+  /** ORG_BILLING_ADMIN */
+  ORG_BILLING_ADMIN = "ORG_BILLING_ADMIN",
+  /** ORG_READ_ONLY */
+  ORG_READ_ONLY = "ORG_READ_ONLY",
   /** GROUP_CLUSTER_MANAGER */
   GROUP_CLUSTER_MANAGER = "GROUP_CLUSTER_MANAGER",
   /** GROUP_DATA_ACCESS_ADMIN */
@@ -116,10 +393,6 @@ export class CfnTeams extends cdk.CfnResource {
    * Attribute `MongoDB::Atlas::Teams.TeamId`
    */
   public readonly attrTeamId: string;
-  /**
-   * Attribute `MongoDB::Atlas::Teams.Users`
-   */
-  public readonly attrUsers: any[];
 
   /**
    * Create a new `MongoDB::Atlas::Teams`.
@@ -137,6 +410,5 @@ export class CfnTeams extends cdk.CfnResource {
     this.props = props;
 
     this.attrTeamId = cdk.Token.asString(this.getAtt("TeamId"));
-    this.attrUsers = cdk.Token.asList(this.getAtt("Users"));
   }
 }
