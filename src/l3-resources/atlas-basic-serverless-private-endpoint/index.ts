@@ -13,18 +13,10 @@
 // limitations under the License.
 
 import { Construct } from "constructs";
-import {
-  CfnServerlessPrivateEndpoint,
-  ServerlessPrivateEndpoint,
-} from "../../index";
+import { CfnServerlessPrivateEndpoint } from "../../index";
 import { AwsPrivateEndpointConfig } from "../../l1-resources/serverless-private-endpoint";
 import { AtlasServerlessBasic } from "../atlas-serverless-basic";
 import { AtlasServerlessBasicProps } from "../common/props";
-
-/** @type {*} */
-const serverlessPrivateEndpointDefaults = {
-  region: "us-east-1",
-};
 
 /**
  * @description
