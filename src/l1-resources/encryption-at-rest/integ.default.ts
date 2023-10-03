@@ -11,7 +11,7 @@ const stack = new cdk.Stack(app, "atlas-EncAtRest-cdk-test", {
 
 const projectId =
   stack.node.tryGetContext("MONGODB_PROJECT_ID") ||
-  process.env.MONGODB_ATLAS_ORG_ID;
+  process.env.MONGODB_ATLAS_PROJECT_ID;
 const customerMasterKeyId =
   stack.node.tryGetContext("CUSTOMER_MASTER_KEY_ID") ||
   process.env.CUSTOMER_MASTER_KEY_ID;
