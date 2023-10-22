@@ -19,24 +19,23 @@ const app = new cdk.App();
 const stack = new cdk.Stack(app, "sagemaker-cdk-default", {
   env: {
     region: process.env.CDK_DEFAULT_REGION ?? "us-east-1",
-    account: process.env.CDK_DEFAULT_ACCOUNT ?? "",
+    account: process.env.CDK_DEFAULT_ACCOUNT ?? "711489243244",
   },
 });
 
-const orgId = "";
-
 new SageMakerIntegration(stack, "sagemaker-integration", {
-  appId: "",
+  appId: "<appId>",
   collectionName: "sagemaker-coll",
   databaseName: "sagemaker-db",
-  mongoDBEndpoint: "",
+  mongoDBEndpoint:
+    "mongodb+srv://<username>:<pwd>@clusternEndpoint/?retryWrites=true&w=majority",
   profile: "default",
-  projectID: "",
-  pullLambdaImageURI: "process-mdb-change-event",
-  pushLambdaImageURI: "process-result",
+  projectID: "<projectId>",
+  pullLambdaImageRepo: "process-mdb-change-event",
+  pushLambdaImageRepo: "process-result",
   sagemakerInstanceType: "ml.c5.large",
-  sagemakerModelS3URI: "",
+  sagemakerModelS3URI: "<s3ModelUrl>",
   sagemakerModelImageURL:
     "683313688378.dkr.ecr.us-east-1.amazonaws.com/sagemaker-scikit-learn:0.23-1-cpu-py3",
-  serviceId: "",
+  serviceId: "<serviceId>",
 });

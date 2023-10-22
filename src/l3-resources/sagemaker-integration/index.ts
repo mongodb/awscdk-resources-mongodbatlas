@@ -21,8 +21,8 @@ export interface SageMakerIntegrationProps {
   readonly mongoDBEndpoint: string;
   readonly profile: string;
   readonly projectID: string;
-  readonly pullLambdaImageURI: string;
-  readonly pushLambdaImageURI: string;
+  readonly pullLambdaImageRepo: string;
+  readonly pushLambdaImageRepo: string;
   readonly sagemakerInstanceType: string;
   readonly sagemakerModelS3URI: string;
   readonly sagemakerModelImageURL: string;
@@ -148,7 +148,7 @@ export class SageMakerIntegration extends Construct {
     this.eventTrigger = new atlas.CfnTrigger(this, "ThirdPartyIntegration", {
       projectId: props.projectID,
       profile: props.profile,
-      name: "sagemaker-trigger",
+      name: "sagemaker-trigger".concat(String(randomNumber())),
       type: "DATABASE",
       appId: props.appId,
       databaseTrigger: {
@@ -214,7 +214,7 @@ export class SageMakerIntegration extends Construct {
       "SageMakerEndpoint",
       {
         endpointConfigName: this.sagemakerEndpointConfig.attrEndpointConfigName,
-        endpointName: "sagemaker-endpoint",
+        endpointName: "cdk-sagemaker-endpoint".concat(String(randomNumber())),
       }
     );
     // Create MDB Event Bus
@@ -228,7 +228,6 @@ export class SageMakerIntegration extends Construct {
     this.eventBusForCapturingMDBEvents.applyRemovalPolicy(
       cdk.RemovalPolicy.DESTROY
     );
-
     // Create a SageMaker Event Bus
     this.eventbusForSagemakerResults = new eventbus.EventBus(
       this,
@@ -256,7 +255,7 @@ export class SageMakerIntegration extends Construct {
     const pushRepo = ecr.Repository.fromRepositoryName(
       this,
       "PushRepository",
-      props.pushLambdaImageURI
+      props.pushLambdaImageRepo
     );
 
     // Create a Lambda function to push results to MongoDB
@@ -277,9 +276,9 @@ export class SageMakerIntegration extends Construct {
         timeout: cdk.Duration.seconds(300),
       }
     );
-    const sagemakerEPName = this.sagemakerEndpoint.endpointName ?? "";
-
-    console.log("sagemakerEPName: ", sagemakerEPName);
+    const sagemakerEPArn = `arn:aws:sagemaker:${cdk.Stack.of(this).region}:${
+      cdk.Stack.of(this).account
+    }:endpoint/${this.sagemakerEndpoint.endpointName}`;
     // Create a Role for Event Bridge to invoke Lambda to read MongoDB events
     this.pullLambdaFunctionRole = new iam.Role(this, "PullLambdaFunctionRole", {
       assumedBy: new iam.ServicePrincipal("lambda.amazonaws.com"),
@@ -295,7 +294,7 @@ export class SageMakerIntegration extends Construct {
             new iam.PolicyStatement({
               effect: iam.Effect.ALLOW,
               actions: ["sagemaker:InvokeEndpoint"],
-              resources: ["*"], // Replace with your SageMaker endpoint ARN
+              resources: [sagemakerEPArn], // Replace with your SageMaker endpoint ARN
             }),
             new iam.PolicyStatement({
               effect: iam.Effect.ALLOW,
@@ -310,11 +309,12 @@ export class SageMakerIntegration extends Construct {
     const pullRepo = ecr.Repository.fromRepositoryName(
       this,
       "PullRepository",
-      props.pullLambdaImageURI
+      props.pullLambdaImageRepo
     );
     // const pullRepo = new ecr.Repository(this, "PullRepository", {
     //   repositoryName: props.pullLambdaImageURI,
     // });
+    const endpointName = this.sagemakerEndpoint.endpointName ?? "";
     // Create a Lambda function to pull results from SageMaker
     this.lambdaFunctionToReadMDBEvents = new lambda.Function(
       this,
@@ -325,7 +325,7 @@ export class SageMakerIntegration extends Construct {
         handler: aws_lambda.Handler.FROM_IMAGE,
         role: this.pullLambdaFunctionRole,
         environment: {
-          model_endpoint: sagemakerEPName, // Use an existing resource or replace with your model endpoint
+          model_endpoint: endpointName, // Use an existing resource or replace with your model endpoint
           region_name: cdk.Aws.REGION,
           eventbus_name: this.eventbusForSagemakerResults.eventBusName, // Use an existing resource or replace with your event bus
         },
@@ -388,4 +388,10 @@ export class SageMakerIntegration extends Construct {
       }
     );
   }
+}
+
+function randomNumber() {
+  const min = 10;
+  const max = 9999999;
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
