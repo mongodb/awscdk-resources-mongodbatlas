@@ -60,4 +60,10 @@
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
+            Thanks for opening this issue! Please make sure to provide the following information to help us reproduce the issue:
+              - CDK code used by the customer
+              - The output of [cdk synth](https://cdkworkshop.com/30-python/20-create-project/400-synth.html)
+              - List of Public CFN Resources that are activated in the AWS account with their release version
+              - AWS Region where the CFN stack is running
+
             Thanks for opening this issue. The ticket [${{ steps.create.outputs.jira-ticket-id }}](https://jira.mongodb.org/browse/${{ steps.create.outputs.jira-ticket-id }}) was created for internal tracking.
