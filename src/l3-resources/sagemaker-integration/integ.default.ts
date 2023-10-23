@@ -14,7 +14,6 @@
 
 import * as cdk from "aws-cdk-lib";
 import { SageMakerIntegration } from "./index";
-import { AtlasBasic } from "../atlas-basic";
 const app = new cdk.App();
 const stack = new cdk.Stack(app, "sagemaker-cdk-default", {
   env: {
