@@ -42,7 +42,7 @@ aws cloudformation activate-type \
 You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
 
 
-## Example: [atlas-basic.ts](../../../examples/l3-resources/atlas-basic.ts)
+## Example: 
 
 ### Minimal configuration to use this app
 
@@ -53,6 +53,14 @@ cdk init app --language=typescript
 ```
 
 locate the stack typescript file in this example (lib/l3_cdks-stack.ts)
+
+### Pre-requisite
+create atlas basic infrastructure using [atlas-basic.ts](../../../examples/l3-resources/atlas-basic.ts)
+and pass the mongodb input params to the sagemaker integration construct
+(or) 
+you can create both constructs together.
+
+```ts
 
 use the next code to create a new stack
 ```ts
