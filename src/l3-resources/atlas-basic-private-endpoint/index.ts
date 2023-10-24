@@ -14,7 +14,7 @@
 
 import * as ec2 from "aws-cdk-lib/aws-ec2";
 import { Construct } from "constructs";
-import { CfnPrivateEndpoint, CfnPrivateEndpointService } from "../../index";
+import { CfnPrivateEndpointAws, CfnPrivateEndpointService } from "../../index";
 import { AtlasBasic } from "../atlas-basic";
 import { AtlasBasicProps } from "../common/props";
 
@@ -35,7 +35,7 @@ export class AtlasBasicPrivateEndpoint extends Construct {
   readonly atlasBasic: AtlasBasic;
   readonly privateEndpointService: CfnPrivateEndpointService;
   readonly awsPrivateEndpoint: ec2.CfnVPCEndpoint;
-  readonly privateEndpoint: CfnPrivateEndpoint;
+  readonly privateEndpointAws: CfnPrivateEndpointAws;
 
   /**
    * Creates an instance of AtlasBasicPrivateEndpoint.
@@ -79,18 +79,17 @@ export class AtlasBasicPrivateEndpoint extends Construct {
 
     this.awsPrivateEndpoint.addDependency(this.privateEndpointService);
 
-    this.privateEndpoint = new CfnPrivateEndpoint(
+    this.privateEndpointAws = new CfnPrivateEndpointAws(
       this,
       "atlas-private-endpoint-".concat(id),
       {
         projectId: this.atlasBasic.mProject.attrId,
         endpointServiceId: this.privateEndpointService.attrId,
-        cloudProvider: privateEndpointDefaults.cloudProvider,
-        interfaceEndpointId: this.awsPrivateEndpoint.ref,
+        id: this.awsPrivateEndpoint.ref,
       }
     );
 
-    this.privateEndpoint.addDependency(this.awsPrivateEndpoint);
+    this.privateEndpointAws.addDependency(this.awsPrivateEndpoint);
   }
 }
 

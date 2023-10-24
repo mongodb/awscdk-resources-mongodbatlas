@@ -45,7 +45,7 @@ aws cloudformation activate-type \
   --execution-role-arn ROLE-ARN
 
 aws cloudformation activate-type \
-  --type-name MongoDB::Atlas::PrivateEndpoint \
+  --type-name MongoDB::Atlas::PrivateEndpointAWS \
   --publisher-id bb989456c78c398a858fef18f2ca1bfc1fbba082 \
   --type RESOURCE \
   --execution-role-arn ROLE-ARN

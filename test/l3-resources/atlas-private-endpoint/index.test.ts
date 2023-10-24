@@ -8,7 +8,7 @@ const RESOURCE_NAME_CLUSTER = "MongoDB::Atlas::Cluster";
 const RESOURCE_NAME_DB_USER = "MongoDB::Atlas::DatabaseUser";
 const RESOURCE_NAME_PROJECT_IP_ACCESS_LIST =
   "MongoDB::Atlas::ProjectIpAccessList";
-const RESOURCE_NAME_PRIVATE_ENDPOINT = "MongoDB::Atlas::PrivateEndpoint";
+const RESOURCE_NAME_PRIVATE_ENDPOINT_AWS = "MongoDB::Atlas::PrivateEndpointAWS";
 const RESOURCE_NAME_PRIVATE_ENDPOINT_SERVICE =
   "MongoDB::Atlas::PrivateEndpointService";
 const ORG_ID = "testProjectId";
@@ -127,8 +127,7 @@ test("AtlasBasicPrivateEndpoint construct should contain default properties", ()
     Region: REGION,
   });
 
-  template.hasResourceProperties(RESOURCE_NAME_PRIVATE_ENDPOINT, {
+  template.hasResourceProperties(RESOURCE_NAME_PRIVATE_ENDPOINT_AWS, {
     ProjectId: { "Fn::GetAtt": [Match.anyValue(), "Id"] },
-    CloudProvider: CLOUD_PROVIDER,
   });
 });
