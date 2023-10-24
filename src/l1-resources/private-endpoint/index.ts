@@ -16,53 +16,46 @@ export interface CfnPrivateEndpointProps {
   readonly profile?: string;
 
   /**
-   * Unique 24-hexadecimal digit string that identifies your project.
+   * Name of the AWS PrivateLink endpoint service. Atlas returns null while it is creating the endpoint service.
    *
-   * @schema CfnPrivateEndpointProps#ProjectId
+   * @schema CfnPrivateEndpointProps#EndpointServiceName
    */
-  readonly projectId?: string;
+  readonly endpointServiceName?: string;
 
   /**
-   * Unique 24-hexadecimal digit string that identifies the private endpoint service for which you want to create a private endpoint.
-   *
-   * @schema CfnPrivateEndpointProps#EndpointServiceId
-   */
-  readonly endpointServiceId?: string;
-
-  /**
-   * Unique 24-hexadecimal digit string that identifies the private endpoint service for which you want to create a private endpoint.
-   *
-   * @schema CfnPrivateEndpointProps#InterfaceEndpointId
-   */
-  readonly interfaceEndpointId?: string;
-
-  /**
-   * Cloud service provider that manages this private endpoint.
-   *
-   * @schema CfnPrivateEndpointProps#CloudProvider
-   */
-  readonly cloudProvider?: string;
-
-  /**
-   * If this proper is set to TRUE, the cloud formation resource will return success Only if the private connection is Succeeded
-   *
-   * @schema CfnPrivateEndpointProps#EnforceConnectionSuccess
-   */
-  readonly enforceConnectionSuccess?: boolean;
-
-  /**
-   * State of the Amazon Web Service PrivateLink connection when MongoDB Cloud received this request.
-   *
-   * @schema CfnPrivateEndpointProps#ConnectionStatus
-   */
-  readonly connectionStatus?: string;
-
-  /**
-   * Error message returned when requesting private connection resource. The resource returns null if the request succeeded.
+   * Error message pertaining to the AWS PrivateLink connection. Returns null if there are no errors.
    *
    * @schema CfnPrivateEndpointProps#ErrorMessage
    */
   readonly errorMessage?: string;
+
+  /**
+   * Status of the Atlas PrivateEndpoint service connection
+   *
+   * @schema CfnPrivateEndpointProps#Status
+   */
+  readonly status?: string;
+
+  /**
+   * Unique 24-hexadecimal digit string that identifies your project.
+   *
+   * @schema CfnPrivateEndpointProps#GroupId
+   */
+  readonly groupId: string;
+
+  /**
+   * Aws Region
+   *
+   * @schema CfnPrivateEndpointProps#Region
+   */
+  readonly region: string;
+
+  /**
+   * List of private endpoint associated to the service
+   *
+   * @schema CfnPrivateEndpointProps#PrivateEndpoints
+   */
+  readonly privateEndpoints?: PrivateEndpoint[];
 }
 
 /**
@@ -77,13 +70,79 @@ export function toJson_CfnPrivateEndpointProps(
   }
   const result = {
     Profile: obj.profile,
-    ProjectId: obj.projectId,
-    EndpointServiceId: obj.endpointServiceId,
-    InterfaceEndpointId: obj.interfaceEndpointId,
-    CloudProvider: obj.cloudProvider,
-    EnforceConnectionSuccess: obj.enforceConnectionSuccess,
-    ConnectionStatus: obj.connectionStatus,
+    EndpointServiceName: obj.endpointServiceName,
     ErrorMessage: obj.errorMessage,
+    Status: obj.status,
+    GroupId: obj.groupId,
+    Region: obj.region,
+    PrivateEndpoints: obj.privateEndpoints?.map((y) =>
+      toJson_PrivateEndpoint(y)
+    ),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
+
+/**
+ * @schema PrivateEndpoint
+ */
+export interface PrivateEndpoint {
+  /**
+   * String Representing the AWS VPC ID (like: vpc-xxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint)
+   *
+   * @schema PrivateEndpoint#VpcId
+   */
+  readonly vpcId?: string;
+
+  /**
+   * List of string representing the AWS VPC Subnet ID (like: subnet-xxxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint)
+   *
+   * @schema PrivateEndpoint#SubnetIds
+   */
+  readonly subnetIds?: string[];
+
+  /**
+   * Unique identifiers of the interface endpoints in your VPC that you added to the AWS PrivateLink connection.
+   *
+   * @schema PrivateEndpoint#InterfaceEndpointId
+   */
+  readonly interfaceEndpointId?: string;
+
+  /**
+   * Status of the AWS PrivateEndpoint connection.
+   *
+   * @schema PrivateEndpoint#AWSPrivateEndpointStatus
+   */
+  readonly awsPrivateEndpointStatus?: string;
+
+  /**
+   * Status of the Atlas PrivateEndpoint connection.
+   *
+   * @schema PrivateEndpoint#AtlasPrivateEndpointStatus
+   */
+  readonly atlasPrivateEndpointStatus?: string;
+}
+
+/**
+ * Converts an object of type 'PrivateEndpoint' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_PrivateEndpoint(
+  obj: PrivateEndpoint | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    VpcId: obj.vpcId,
+    SubnetIds: obj.subnetIds?.map((y) => y),
+    InterfaceEndpointId: obj.interfaceEndpointId,
+    AWSPrivateEndpointStatus: obj.awsPrivateEndpointStatus,
+    AtlasPrivateEndpointStatus: obj.atlasPrivateEndpointStatus,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -115,6 +174,10 @@ export class CfnPrivateEndpoint extends cdk.CfnResource {
    * Attribute `MongoDB::Atlas::PrivateEndpoint.Id`
    */
   public readonly attrId: string;
+  /**
+   * Attribute `MongoDB::Atlas::PrivateEndpoint.InterfaceEndpoints`
+   */
+  public readonly attrInterfaceEndpoints: string[];
 
   /**
    * Create a new `MongoDB::Atlas::PrivateEndpoint`.
@@ -136,5 +199,8 @@ export class CfnPrivateEndpoint extends cdk.CfnResource {
     this.props = props;
 
     this.attrId = cdk.Token.asString(this.getAtt("Id"));
+    this.attrInterfaceEndpoints = cdk.Token.asList(
+      this.getAtt("InterfaceEndpoints")
+    );
   }
 }

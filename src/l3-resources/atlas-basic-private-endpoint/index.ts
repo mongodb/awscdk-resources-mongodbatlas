@@ -78,7 +78,7 @@ export class AtlasBasicPrivateEndpoint extends Construct {
         serviceName: this.privateEndpointService.attrEndpointServiceName,
         subnetIds: [props.privateEndpointProps.awsSubnetId],
         vpcEndpointType: privateEndpointDefaults.vpcEndpointType,
-        vpcId: props.privateEndpointProps.awsSubnetId,
+        vpcId: props.privateEndpointProps.awsVpcId,
       }
     );
 

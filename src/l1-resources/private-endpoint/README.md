@@ -4,12 +4,12 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 > AWS CDK [L1 construct] and data structures for the [AWS CloudFormation Registry] type `MongoDB::Atlas::PrivateEndpoint` v1.0.0.
 
-[l1 construct]: https://docs.aws.amazon.com/cdk/latest/guide/constructs.html
-[aws cloudformation registry]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html
+[L1 construct]: https://docs.aws.amazon.com/cdk/latest/guide/constructs.html
+[AWS CloudFormation Registry]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html
 
 ## Description
 
-Creates one private endpoint for the specified cloud service provider. This cloud service provider manages the private endpoint service, which in turn manages the private endpoints for the project. To use this resource, the requesting API Key must have the Project Owner role. To learn more about considerations, limitations, and prerequisites, see the MongoDB documentation for setting up a private endpoint.
+The Private Endpoint creation flow consists of the creation of three related resources in the next order: 1. Atlas Private Endpoint Service 2. Aws VPC private Endpoint 3. Atlas Private Endpoint
 
 ## MongoDB Atlas API Docs
 
@@ -38,26 +38,30 @@ aws cloudformation activate-type \
 You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
 
 ## Example: [private-endpoint.ts](../../../examples/l1-resources/private-endpoint.ts)
-
 ```ts
-import { CfnPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
+import { CfnPrivateEndpoint } from 'awscdk-resources-mongodbatlas';
 
-const myPrivateEndpoint = new CfnPrivateEndpoint(this, 'privateEndpoint', {
-  projectId: atlasProject,
-  endpointServiceId: 'endpointServiceId' /*Id of the PrivateEndpointService*/,
-  profile: 'default',
-  interfaceEndpointId: '',
-  cloudProvider: 'AWS'
-})
+const myPrivateEndpoint = new CfnPrivateEndpoint (this, "privateEndpoint", {
+    projectId: atlasProps.projId,
+    profile:  atlasProps.profile,
+    region: atlasProps.region,
+    privateEndpoints: [
+        {
+        vpcId: atlasProps.vpcId,
+        subnetIds: [atlasProps.subnetId]
+        }
+    ],
+});
+
 ```
 
 ## Feedback
 
 This library is auto-generated and published to all supported programming languages by the [cdklabs/cdk-cloudformation] project based on the API schema published for `MongoDB::Atlas::PrivateEndpoint`.
 
-- Issues related to this generated library should be [reported here](https://github.com/cdklabs/cdk-cloudformation/issues/new?title=Issue+with+%40cdk-cloudformation%2Fmongodb-atlas-privateendpoint+v1.0.0).
-- Issues related to `MongoDB::Atlas::PrivateEndpoint` should be reported to the [publisher](https://github.com/mongodb/mongodbatlas-cloudformation-resources/issues).
-- Feature requests should be [reported here](https://feedback.mongodb.com/forums/924145-atlas?category_id=392596)
+* Issues related to this generated library should be [reported here](https://github.com/cdklabs/cdk-cloudformation/issues/new?title=Issue+with+%40cdk-cloudformation%2Fmongodb-atlas-privateendpoint+v1.0.0).
+* Issues related to `MongoDB::Atlas::PrivateEndpoint` should be reported to the [publisher](https://github.com/mongodb/mongodbatlas-cloudformation-resources/issues).
+* Feature requests should be [reported here](https://feedback.mongodb.com/forums/924145-atlas?category_id=392596)
 
 [cdklabs/cdk-cloudformation]: https://github.com/cdklabs/cdk-cloudformation
 
