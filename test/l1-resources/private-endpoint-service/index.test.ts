@@ -14,7 +14,10 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnPrivateEndpointService } from "../../../src/l1-resources/private-endpoint-service";
+import {
+  CfnPrivateEndpointService,
+  CfnPrivateEndpointServicePropsCloudProvider,
+} from "../../../src/l1-resources/private-endpoint-service";
 
 const RESOURCE_NAME = "MongoDB::Atlas::PrivateEndpointService";
 const REGION = "US_EAST_1";
@@ -29,6 +32,7 @@ test("CfnCloudBackUpRestoreJobs construct should contain default properties", ()
     projectId: PROJECT_ID,
     region: REGION,
     profile: PROFILE,
+    cloudProvider: CfnPrivateEndpointServicePropsCloudProvider.AWS,
   });
 
   const template = Template.fromStack(stack);

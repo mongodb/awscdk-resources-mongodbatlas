@@ -221,6 +221,7 @@ export {
 export {
   CfnPrivateEndpointService,
   CfnPrivateEndpointServiceProps,
+  CfnPrivateEndpointServicePropsCloudProvider,
 } from "./l1-resources/private-endpoint-service";
 
 export {

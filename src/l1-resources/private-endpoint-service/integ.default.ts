@@ -1,7 +1,10 @@
 import * as cdk from "aws-cdk-lib";
 import * as ec2 from "aws-cdk-lib/aws-ec2";
-import { CfnPrivateEndpointService } from "./index";
-import { CfnPrivateEndpoint } from "../private-endpoint/index";
+import {
+  CfnPrivateEndpointService,
+  CfnPrivateEndpointServicePropsCloudProvider,
+} from "./index";
+import { CfnPrivateEndpointAws } from "../private-endpoint-aws";
 
 const app = new cdk.App();
 const stack = new cdk.Stack(app, "atlas-test-cdk-test", {
@@ -17,7 +20,8 @@ const subnetId = "";
 
 const atlasService = new CfnPrivateEndpointService(stack, "AtlasCluster", {
   projectId: atlasProject,
-  region: "US_EAST_1",
+  region: "us-east-1",
+  cloudProvider: CfnPrivateEndpointServicePropsCloudProvider.AWS,
 });
 
 const awsPrivateEndpoint = new ec2.CfnVPCEndpoint(stack, "AWSPrivateEndpoint", {
@@ -29,14 +33,13 @@ const awsPrivateEndpoint = new ec2.CfnVPCEndpoint(stack, "AWSPrivateEndpoint", {
 
 awsPrivateEndpoint.addDependency(atlasService);
 
-const myPrivateEndpoint = new CfnPrivateEndpoint(
+const myPrivateEndpoint = new CfnPrivateEndpointAws(
   stack,
   "AtlasPrivateEndpoint",
   {
     projectId: atlasProject,
     endpointServiceId: atlasService.attrId,
-    cloudProvider: "AWS",
-    interfaceEndpointId: awsPrivateEndpoint.ref,
+    id: awsPrivateEndpoint.ref,
   }
 );
 

@@ -14,7 +14,7 @@
 
 import * as ec2 from "aws-cdk-lib/aws-ec2";
 import { Construct } from "constructs";
-import { CfnPrivateEndpointAws, CfnPrivateEndpointService } from "../../index";
+import { CfnPrivateEndpointAws, CfnPrivateEndpointService, CfnPrivateEndpointServicePropsCloudProvider } from "../../index";
 import { AtlasBasic } from "../atlas-basic";
 import { AtlasBasicProps } from "../common/props";
 
@@ -63,6 +63,7 @@ export class AtlasBasicPrivateEndpoint extends Construct {
       {
         projectId: this.atlasBasic.mProject.attrId,
         region: props.region.toUpperCase().replace(/-/g, "_"),
+        cloudProvider: CfnPrivateEndpointServicePropsCloudProvider.AWS,
       }
     );
 
