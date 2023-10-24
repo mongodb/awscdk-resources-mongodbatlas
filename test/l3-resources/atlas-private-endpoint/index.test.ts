@@ -124,7 +124,7 @@ test("AtlasBasicPrivateEndpoint construct should contain default properties", ()
   template.hasResourceProperties(RESOURCE_NAME_PRIVATE_ENDPOINT_SERVICE, {
     ProjectId: { "Fn::GetAtt": [Match.anyValue(), "Id"] },
     Region: REGION,
-    CloudPrivider: "AWS",
+    CloudProvider: "AWS",
   });
 
   template.hasResourceProperties(RESOURCE_NAME_PRIVATE_ENDPOINT_AWS, {

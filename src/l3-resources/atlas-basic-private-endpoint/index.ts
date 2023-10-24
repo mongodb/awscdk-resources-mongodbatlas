@@ -14,7 +14,11 @@
 
 import * as ec2 from "aws-cdk-lib/aws-ec2";
 import { Construct } from "constructs";
-import { CfnPrivateEndpointAws, CfnPrivateEndpointService, CfnPrivateEndpointServicePropsCloudProvider } from "../../index";
+import {
+  CfnPrivateEndpointAws,
+  CfnPrivateEndpointService,
+  CfnPrivateEndpointServicePropsCloudProvider,
+} from "../../index";
 import { AtlasBasic } from "../atlas-basic";
 import { AtlasBasicProps } from "../common/props";
 
