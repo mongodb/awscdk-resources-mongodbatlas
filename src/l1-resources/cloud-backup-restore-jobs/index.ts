@@ -16,14 +16,14 @@ export interface CfnCloudBackUpRestoreJobsProps {
   readonly projectId: string;
 
   /**
-   * The name of the Atlas cluster whose snapshot you want to restore or you want to retrieve restore jobs.
+   * Type of instance specified on the Instance Name serverless or cluster
    *
-   * @schema CfnCloudBackUpRestoreJobsProps#ClusterName
+   * @schema CfnCloudBackUpRestoreJobsProps#InstanceType
    */
-  readonly clusterName: string;
+  readonly instanceType?: CfnCloudBackUpRestoreJobsPropsInstanceType;
 
   /**
-   * The instance name of the Serverless cluster whose snapshot you want to restore or you want to retrieve restore jobs.
+   * The instance name of the Serverless/Cluster whose snapshot you want to restore or you want to retrieve restore jobs.
    *
    * @schema CfnCloudBackUpRestoreJobsProps#InstanceName
    */
@@ -42,6 +42,13 @@ export interface CfnCloudBackUpRestoreJobsProps {
    * @schema CfnCloudBackUpRestoreJobsProps#Cancelled
    */
   readonly cancelled?: boolean;
+
+  /**
+   * Indicates whether the restore job failed.
+   *
+   * @schema CfnCloudBackUpRestoreJobsProps#Failed
+   */
+  readonly failed?: boolean;
 
   /**
    * Indicates whether the restore job expired.
@@ -98,6 +105,20 @@ export interface CfnCloudBackUpRestoreJobsProps {
    * @schema CfnCloudBackUpRestoreJobsProps#Profile
    */
   readonly profile?: string;
+
+  /**
+   * If set to true, the CloudFormation resource will wait until the job is completed, WARNING: if the snapshot has a big load of data, the cloud formation resource might take a long time to finish leading to high costs
+   *
+   * @schema CfnCloudBackUpRestoreJobsProps#EnableSynchronousCreation
+   */
+  readonly enableSynchronousCreation?: boolean;
+
+  /**
+   * Options that needs to be set to control the synchronous creation flow, this options need to be set if EnableSynchronousCreation is se to TRUE
+   *
+   * @schema CfnCloudBackUpRestoreJobsProps#SynchronousCreationOptions
+   */
+  readonly synchronousCreationOptions?: SynchronousCreationOptions;
 }
 
 /**
@@ -112,10 +133,11 @@ export function toJson_CfnCloudBackUpRestoreJobsProps(
   }
   const result = {
     ProjectId: obj.projectId,
-    ClusterName: obj.clusterName,
+    InstanceType: obj.instanceType,
     InstanceName: obj.instanceName,
     DeliveryType: obj.deliveryType,
     Cancelled: obj.cancelled,
+    Failed: obj.failed,
     Expired: obj.expired,
     SnapshotId: obj.snapshotId,
     OpLogTs: obj.opLogTs,
@@ -124,6 +146,10 @@ export function toJson_CfnCloudBackUpRestoreJobsProps(
     TargetProjectId: obj.targetProjectId,
     TargetClusterName: obj.targetClusterName,
     Profile: obj.profile,
+    EnableSynchronousCreation: obj.enableSynchronousCreation,
+    SynchronousCreationOptions: toJson_SynchronousCreationOptions(
+      obj.synchronousCreationOptions
+    ),
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -132,6 +158,18 @@ export function toJson_CfnCloudBackUpRestoreJobsProps(
   );
 }
 /* eslint-enable max-len, quote-props */
+
+/**
+ * Type of instance specified on the Instance Name serverless or cluster
+ *
+ * @schema CfnCloudBackUpRestoreJobsPropsInstanceType
+ */
+export enum CfnCloudBackUpRestoreJobsPropsInstanceType {
+  /** serverless */
+  SERVERLESS = "serverless",
+  /** cluster */
+  CLUSTER = "cluster",
+}
 
 /**
  * Type of restore job to create.The value can be any one of download,automated or point_in_time
@@ -146,6 +184,57 @@ export enum CfnCloudBackUpRestoreJobsPropsDeliveryType {
   /** pointInTime */
   POINT_IN_TIME = "pointInTime",
 }
+
+/**
+ * Options that needs to be set to control the synchronous creation flow, this options need to be set if EnableSynchronousCreation is se to TRUE
+ *
+ * @schema SynchronousCreationOptions
+ */
+export interface SynchronousCreationOptions {
+  /**
+   * The amount of time the process will wait until exiting with a success, default (1200 seconds)
+   *
+   * @schema SynchronousCreationOptions#TimeOutInSeconds
+   */
+  readonly timeOutInSeconds?: number;
+
+  /**
+   * Represents the time interval, measured in seconds, for the synchronous process to wait before checking again to verify if the job has been completed. example: if set to 20, it will chek every 20 seconds if the resource is completed, default (30 seconds)
+   *
+   * @schema SynchronousCreationOptions#CallbackDelaySeconds
+   */
+  readonly callbackDelaySeconds?: number;
+
+  /**
+   * if set to true, the process will return success, in the event of a timeOut, default false
+   *
+   * @schema SynchronousCreationOptions#ReturnSuccessIfTimeOut
+   */
+  readonly returnSuccessIfTimeOut?: boolean;
+}
+
+/**
+ * Converts an object of type 'SynchronousCreationOptions' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_SynchronousCreationOptions(
+  obj: SynchronousCreationOptions | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    TimeOutInSeconds: obj.timeOutInSeconds,
+    CallbackDelaySeconds: obj.callbackDelaySeconds,
+    ReturnSuccessIfTimeOut: obj.returnSuccessIfTimeOut,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
 
 /**
  * A CloudFormation `MongoDB::Atlas::CloudBackUpRestoreJobs`
@@ -173,10 +262,6 @@ export class CfnCloudBackUpRestoreJobs extends cdk.CfnResource {
    * Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.DeliveryUrl`
    */
   public readonly attrDeliveryUrl: string[];
-  /**
-   * Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.CreatedAt`
-   */
-  public readonly attrCreatedAt: string;
   /**
    * Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.ExpiresAt`
    */
@@ -211,7 +296,6 @@ export class CfnCloudBackUpRestoreJobs extends cdk.CfnResource {
 
     this.attrId = cdk.Token.asString(this.getAtt("Id"));
     this.attrDeliveryUrl = cdk.Token.asList(this.getAtt("DeliveryUrl"));
-    this.attrCreatedAt = cdk.Token.asString(this.getAtt("CreatedAt"));
     this.attrExpiresAt = cdk.Token.asString(this.getAtt("ExpiresAt"));
     this.attrFinishedAt = cdk.Token.asString(this.getAtt("FinishedAt"));
     this.attrTimestamp = cdk.Token.asString(this.getAtt("Timestamp"));

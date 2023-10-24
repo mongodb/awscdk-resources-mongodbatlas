@@ -14,7 +14,10 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnCloudBackUpRestoreJobs } from "../../../src/l1-resources/cloud-backup-restore-jobs";
+import {
+  CfnCloudBackUpRestoreJobs,
+  CfnCloudBackUpRestoreJobsPropsInstanceType,
+} from "../../../src/l1-resources/cloud-backup-restore-jobs";
 
 const RESOURCE_NAME = "MongoDB::Atlas::CloudBackUpRestoreJobs";
 const CLUSTER_NAME = "testCluster";
@@ -26,13 +29,15 @@ test("CfnCloudBackUpRestoreJobs construct should contain default properties", ()
 
   new CfnCloudBackUpRestoreJobs(stack, "testing-stack", {
     projectId: CLUSTER_NAME,
-    clusterName: PROJECT_NAME,
+    instanceName: PROJECT_NAME,
+    instanceType: CfnCloudBackUpRestoreJobsPropsInstanceType.CLUSTER,
   });
 
   const template = Template.fromStack(stack);
 
   template.hasResourceProperties(RESOURCE_NAME, {
     ProjectId: CLUSTER_NAME,
-    ClusterName: PROJECT_NAME,
+    InstanceName: PROJECT_NAME,
+    InstanceType: "cluster",
   });
 });
