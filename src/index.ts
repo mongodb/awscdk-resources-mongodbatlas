@@ -211,6 +211,7 @@ export {
 export {
   CfnPrivateEndpointProps,
   CfnPrivateEndpoint,
+  PrivateEndpoint,
 } from "./l1-resources/private-endpoint";
 
 export {

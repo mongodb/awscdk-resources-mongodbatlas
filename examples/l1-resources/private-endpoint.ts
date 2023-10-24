@@ -1,8 +1,8 @@
+import { CfnPrivateEndpointAws } from './../../src/l1-resources/private-endpoint-aws/index';
 import * as cdk from 'aws-cdk-lib';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import { Construct } from 'constructs';
-import { CfnPrivateEndpoint } from '../../src/l1-resources/private-endpoint';
-import { CfnPrivateEndpointService } from '../../src/l1-resources/private-endpoint-service';
+import { CfnPrivateEndpointService, CfnPrivateEndpointServicePropsCloudProvider } from '../../src/l1-resources/private-endpoint-service';
 
 interface AtlasStackProps {
   readonly projId: string;
@@ -22,6 +22,7 @@ export class CdkPrivateEndpoint extends cdk.Stack {
       projectId: atlasProps.projId,
       profile: atlasProps.profile,
       region: atlasProps.region,
+      cloudProvider: CfnPrivateEndpointServicePropsCloudProvider.AWS
     });
 
     const awsPrivateEndpoint = new ec2.CfnVPCEndpoint(this, 'AWSPrivateEndpoint', {
@@ -33,12 +34,11 @@ export class CdkPrivateEndpoint extends cdk.Stack {
 
     awsPrivateEndpoint.addDependency(atlasService)
     
-    const myPrivateEndpoint = new CfnPrivateEndpoint (this, "AtlasPrivateEndpoint", {
+    const myPrivateEndpoint = new CfnPrivateEndpointAws (this, "AtlasPrivateEndpoint", {
       projectId: atlasProps.projId,
       profile: atlasProps.profile,
       endpointServiceId: atlasService.attrId,
-      cloudProvider: "AWS",
-      interfaceEndpointId : awsPrivateEndpoint.ref,
+      id : awsPrivateEndpoint.ref,
     });
 
     myPrivateEndpoint.addDependency(myPrivateEndpoint)
