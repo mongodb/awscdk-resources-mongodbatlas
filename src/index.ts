@@ -217,6 +217,13 @@ export {
 } from "./l1-resources/private-endpoint";
 
 export {
+  CfnServerlessPrivateEndpointProps,
+  CfnServerlessPrivateEndpoint,
+  ServerlessPrivateEndpoint,
+  AwsPrivateEndpointConfig,
+} from "./l1-resources/serverless-private-endpoint";
+
+export {
   CfnPrivateEndpointAdl,
   CfnPrivateEndpointAdlProps,
 } from "./l1-resources/private-endpoint-adl";
