@@ -21752,6 +21752,709 @@ The CloudFormation resource type name for this resource class.
 
 ---
 
+### CfnServerlessPrivateEndpoint <a name="CfnServerlessPrivateEndpoint" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint"></a>
+
+A CloudFormation `MongoDB::Atlas::ServerlessPrivateEndpoint`.
+
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.Initializer"></a>
+
+```typescript
+import { CfnServerlessPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
+
+new CfnServerlessPrivateEndpoint(scope: Construct, id: string, props: CfnServerlessPrivateEndpointProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | - scope in which this resource is defined. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.Initializer.parameter.id">id</a></code> | <code>string</code> | - scoped id of the resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps">CfnServerlessPrivateEndpointProps</a></code> | - resource properties. |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+scope in which this resource is defined.
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+scoped id of the resource.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps">CfnServerlessPrivateEndpointProps</a>
+
+resource properties.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addDependsOn">addDependsOn</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addMetadata">addMetadata</a></code> | Add a value to the CloudFormation Resource Metadata. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
+
+---
+
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.overrideLogicalId"></a>
+
+```typescript
+public overrideLogicalId(newLogicalId: string): void
+```
+
+Overrides the auto-generated logical ID with a specific ID.
+
+###### `newLogicalId`<sup>Required</sup> <a name="newLogicalId" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.overrideLogicalId.parameter.newLogicalId"></a>
+
+- *Type:* string
+
+The new logical ID to use for this stack element.
+
+---
+
+##### `addDeletionOverride` <a name="addDeletionOverride" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addDeletionOverride"></a>
+
+```typescript
+public addDeletionOverride(path: string): void
+```
+
+Syntactic sugar for `addOverride(path, undefined)`.
+
+###### `path`<sup>Required</sup> <a name="path" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addDeletionOverride.parameter.path"></a>
+
+- *Type:* string
+
+The path of the value to delete.
+
+---
+
+##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addDependency"></a>
+
+```typescript
+public addDependency(target: CfnResource): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### ~~`addDependsOn`~~ <a name="addDependsOn" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addDependsOn"></a>
+
+```typescript
+public addDependsOn(target: CfnResource): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addDependsOn.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `addMetadata` <a name="addMetadata" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addMetadata"></a>
+
+```typescript
+public addMetadata(key: string, value: any): void
+```
+
+Add a value to the CloudFormation Resource Metadata.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.)
+
+###### `key`<sup>Required</sup> <a name="key" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addMetadata.parameter.key"></a>
+
+- *Type:* string
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addMetadata.parameter.value"></a>
+
+- *Type:* any
+
+---
+
+##### `addOverride` <a name="addOverride" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addOverride"></a>
+
+```typescript
+public addOverride(path: string, value: any): void
+```
+
+Adds an override to the synthesized CloudFormation resource.
+
+To add a
+property override, either use `addPropertyOverride` or prefix `path` with
+"Properties." (i.e. `Properties.TopicName`).
+
+If the override is nested, separate each nested level using a dot (.) in the path parameter.
+If there is an array as part of the nesting, specify the index in the path.
+
+To include a literal `.` in the property name, prefix with a `\`. In most
+programming languages you will need to write this as `"\\."` because the
+`\` itself will need to be escaped.
+
+For example,
+```typescript
+cfnResource.addOverride('Properties.GlobalSecondaryIndexes.0.Projection.NonKeyAttributes', ['myattribute']);
+cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'INCLUDE');
+```
+would add the overrides
+```json
+"Properties": {
+   "GlobalSecondaryIndexes": [
+     {
+       "Projection": {
+         "NonKeyAttributes": [ "myattribute" ]
+         ...
+       }
+       ...
+     },
+     {
+       "ProjectionType": "INCLUDE"
+       ...
+     },
+   ]
+   ...
+}
+```
+
+The `value` argument to `addOverride` will not be processed or translated
+in any way. Pass raw JSON values in here with the correct capitalization
+for CloudFormation. If you pass CDK classes or structs, they will be
+rendered with lowercased key names, and CloudFormation will reject the
+template.
+
+###### `path`<sup>Required</sup> <a name="path" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addOverride.parameter.path"></a>
+
+- *Type:* string
+
+The path of the property, you can use dot notation to override values in complex types.
+
+Any intermdediate keys
+will be created as needed.
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addOverride.parameter.value"></a>
+
+- *Type:* any
+
+The value.
+
+Could be primitive or complex.
+
+---
+
+##### `addPropertyDeletionOverride` <a name="addPropertyDeletionOverride" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addPropertyDeletionOverride"></a>
+
+```typescript
+public addPropertyDeletionOverride(propertyPath: string): void
+```
+
+Adds an override that deletes the value of a property from the resource definition.
+
+###### `propertyPath`<sup>Required</sup> <a name="propertyPath" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addPropertyDeletionOverride.parameter.propertyPath"></a>
+
+- *Type:* string
+
+The path to the property.
+
+---
+
+##### `addPropertyOverride` <a name="addPropertyOverride" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addPropertyOverride"></a>
+
+```typescript
+public addPropertyOverride(propertyPath: string, value: any): void
+```
+
+Adds an override to a resource property.
+
+Syntactic sugar for `addOverride("Properties.<...>", value)`.
+
+###### `propertyPath`<sup>Required</sup> <a name="propertyPath" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addPropertyOverride.parameter.propertyPath"></a>
+
+- *Type:* string
+
+The path of the property.
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.addPropertyOverride.parameter.value"></a>
+
+- *Type:* any
+
+The value.
+
+---
+
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.applyRemovalPolicy"></a>
+
+```typescript
+public applyRemovalPolicy(policy?: RemovalPolicy, options?: RemovalPolicyOptions): void
+```
+
+Sets the deletion policy of the resource based on the removal policy specified.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
+account for data recovery and cleanup later (`RemovalPolicy.RETAIN`). In some
+cases, a snapshot can be taken of the resource prior to deletion
+(`RemovalPolicy.SNAPSHOT`). A list of resources that support this policy
+can be found in the following link:
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html#aws-attribute-deletionpolicy-options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html#aws-attribute-deletionpolicy-options)
+
+###### `policy`<sup>Optional</sup> <a name="policy" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.applyRemovalPolicy.parameter.options"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `getAtt` <a name="getAtt" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.getAtt"></a>
+
+```typescript
+public getAtt(attributeName: string, typeHint?: ResolutionTypeHint): Reference
+```
+
+Returns a token for an runtime attribute of this resource.
+
+Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
+in case there is no generated attribute.
+
+###### `attributeName`<sup>Required</sup> <a name="attributeName" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.getAtt.parameter.attributeName"></a>
+
+- *Type:* string
+
+The name of the attribute.
+
+---
+
+###### `typeHint`<sup>Optional</sup> <a name="typeHint" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.getAtt.parameter.typeHint"></a>
+
+- *Type:* aws-cdk-lib.ResolutionTypeHint
+
+---
+
+##### `getMetadata` <a name="getMetadata" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.getMetadata"></a>
+
+```typescript
+public getMetadata(key: string): any
+```
+
+Retrieve a value value from the CloudFormation Resource Metadata.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.)
+
+###### `key`<sup>Required</sup> <a name="key" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.getMetadata.parameter.key"></a>
+
+- *Type:* string
+
+---
+
+##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.obtainDependencies"></a>
+
+```typescript
+public obtainDependencies(): CfnResource | Stack[]
+```
+
+Retrieves an array of resources this resource depends on.
+
+This assembles dependencies on resources across stacks (including nested stacks)
+automatically.
+
+##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.obtainResourceDependencies"></a>
+
+```typescript
+public obtainResourceDependencies(): CfnResource[]
+```
+
+Get a shallow copy of dependencies between this resource and other resources in the same stack.
+
+##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.removeDependency"></a>
+
+```typescript
+public removeDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `replaceDependency` <a name="replaceDependency" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.replaceDependency"></a>
+
+```typescript
+public replaceDependency(target: CfnResource, newTarget: CfnResource): void
+```
+
+Replaces one dependency with another.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.replaceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+The dependency to replace.
+
+---
+
+###### `newTarget`<sup>Required</sup> <a name="newTarget" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.replaceDependency.parameter.newTarget"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+The new dependency to add.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isConstruct"></a>
+
+```typescript
+import { CfnServerlessPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
+
+CfnServerlessPrivateEndpoint.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isCfnElement` <a name="isCfnElement" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isCfnElement"></a>
+
+```typescript
+import { CfnServerlessPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
+
+CfnServerlessPrivateEndpoint.isCfnElement(x: any)
+```
+
+Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template).
+
+Uses duck-typing instead of `instanceof` to allow stack elements from different
+versions of this library to be included in the same stack.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isCfnElement.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `isCfnResource` <a name="isCfnResource" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isCfnResource"></a>
+
+```typescript
+import { CfnServerlessPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
+
+CfnServerlessPrivateEndpoint.isCfnResource(construct: IConstruct)
+```
+
+Check whether the given construct is a CfnResource.
+
+###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isCfnResource.parameter.construct"></a>
+
+- *Type:* constructs.IConstruct
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.creationStack">creationStack</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.logicalId">logicalId</a></code> | <code>string</code> | The logical ID for this CloudFormation stack element. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this element is defined. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.attrAwsPrivateEndpointMetaData">attrAwsPrivateEndpointMetaData</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServerlessPrivateEndpoint.AwsPrivateEndpointMetaData`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.attrEndpointServiceName">attrEndpointServiceName</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServerlessPrivateEndpoint.EndpointServiceName`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.attrErrorMessage">attrErrorMessage</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServerlessPrivateEndpoint.ErrorMessage`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServerlessPrivateEndpoint.Id`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.attrProviderName">attrProviderName</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServerlessPrivateEndpoint.ProviderName`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.attrStatus">attrStatus</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServerlessPrivateEndpoint.Status`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps">CfnServerlessPrivateEndpointProps</a></code> | Resource props. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `creationStack`<sup>Required</sup> <a name="creationStack" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.creationStack"></a>
+
+```typescript
+public readonly creationStack: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `logicalId`<sup>Required</sup> <a name="logicalId" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.logicalId"></a>
+
+```typescript
+public readonly logicalId: string;
+```
+
+- *Type:* string
+
+The logical ID for this CloudFormation stack element.
+
+The logical ID of the element
+is calculated from the path of the resource node in the construct tree.
+
+To override this value, use `overrideLogicalId(newLogicalId)`.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this element is defined.
+
+CfnElements must be defined within a stack scope (directly or indirectly).
+
+---
+
+##### `ref`<sup>Required</sup> <a name="ref" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.ref"></a>
+
+```typescript
+public readonly ref: string;
+```
+
+- *Type:* string
+
+Return a string that will be resolved to a CloudFormation `{ Ref }` for this element.
+
+If, by any chance, the intrinsic reference of a resource is not a string, you could
+coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
+
+---
+
+##### `cfnOptions`<sup>Required</sup> <a name="cfnOptions" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.cfnOptions"></a>
+
+```typescript
+public readonly cfnOptions: ICfnResourceOptions;
+```
+
+- *Type:* aws-cdk-lib.ICfnResourceOptions
+
+Options for this resource, such as condition, update policy etc.
+
+---
+
+##### `cfnResourceType`<sup>Required</sup> <a name="cfnResourceType" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.cfnResourceType"></a>
+
+```typescript
+public readonly cfnResourceType: string;
+```
+
+- *Type:* string
+
+AWS resource type.
+
+---
+
+##### `attrAwsPrivateEndpointMetaData`<sup>Required</sup> <a name="attrAwsPrivateEndpointMetaData" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.attrAwsPrivateEndpointMetaData"></a>
+
+```typescript
+public readonly attrAwsPrivateEndpointMetaData: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::ServerlessPrivateEndpoint.AwsPrivateEndpointMetaData`.
+
+---
+
+##### `attrEndpointServiceName`<sup>Required</sup> <a name="attrEndpointServiceName" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.attrEndpointServiceName"></a>
+
+```typescript
+public readonly attrEndpointServiceName: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::ServerlessPrivateEndpoint.EndpointServiceName`.
+
+---
+
+##### `attrErrorMessage`<sup>Required</sup> <a name="attrErrorMessage" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.attrErrorMessage"></a>
+
+```typescript
+public readonly attrErrorMessage: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::ServerlessPrivateEndpoint.ErrorMessage`.
+
+---
+
+##### `attrId`<sup>Required</sup> <a name="attrId" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.attrId"></a>
+
+```typescript
+public readonly attrId: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::ServerlessPrivateEndpoint.Id`.
+
+---
+
+##### `attrProviderName`<sup>Required</sup> <a name="attrProviderName" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.attrProviderName"></a>
+
+```typescript
+public readonly attrProviderName: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::ServerlessPrivateEndpoint.ProviderName`.
+
+---
+
+##### `attrStatus`<sup>Required</sup> <a name="attrStatus" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.attrStatus"></a>
+
+```typescript
+public readonly attrStatus: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::ServerlessPrivateEndpoint.Status`.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.props"></a>
+
+```typescript
+public readonly props: CfnServerlessPrivateEndpointProps;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps">CfnServerlessPrivateEndpointProps</a>
+
+Resource props.
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.CFN_RESOURCE_TYPE_NAME">CFN_RESOURCE_TYPE_NAME</a></code> | <code>string</code> | The CloudFormation resource type name for this resource class. |
+
+---
+
+##### `CFN_RESOURCE_TYPE_NAME`<sup>Required</sup> <a name="CFN_RESOURCE_TYPE_NAME" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.property.CFN_RESOURCE_TYPE_NAME"></a>
+
+```typescript
+public readonly CFN_RESOURCE_TYPE_NAME: string;
+```
+
+- *Type:* string
+
+The CloudFormation resource type name for this resource class.
+
+---
+
 ### CfnTeams <a name="CfnTeams" id="awscdk-resources-mongodbatlas.CfnTeams"></a>
 
 A CloudFormation `MongoDB::Atlas::Teams`.
@@ -26537,6 +27240,90 @@ ID of an AWS IAM role authorized to manage an AWS customer master key.
 
 ---
 
+### AwsPrivateEndpointConfig <a name="AwsPrivateEndpointConfig" id="awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig"></a>
+
+AWS Private endpoint configuration properties.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig.Initializer"></a>
+
+```typescript
+import { AwsPrivateEndpointConfig } from 'awscdk-resources-mongodbatlas'
+
+const awsPrivateEndpointConfig: AwsPrivateEndpointConfig = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig.property.awsPrivateEndpointStatus">awsPrivateEndpointStatus</a></code> | <code>string</code> | Status of the AWS PrivateEndpoint connection. |
+| <code><a href="#awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig.property.interfaceEndpointId">interfaceEndpointId</a></code> | <code>string</code> | Unique identifiers of the interface endpoints in your VPC that you added to the AWS PrivateLink connection. |
+| <code><a href="#awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig.property.region">region</a></code> | <code>string</code> | Aws Region. |
+| <code><a href="#awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig.property.subnetIds">subnetIds</a></code> | <code>string[]</code> | List of string representing the AWS VPC Subnet ID (like: subnet-xxxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint). |
+| <code><a href="#awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig.property.vpcId">vpcId</a></code> | <code>string</code> | String Representing the AWS VPC ID (like: vpc-xxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint). |
+
+---
+
+##### `awsPrivateEndpointStatus`<sup>Optional</sup> <a name="awsPrivateEndpointStatus" id="awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig.property.awsPrivateEndpointStatus"></a>
+
+```typescript
+public readonly awsPrivateEndpointStatus: string;
+```
+
+- *Type:* string
+
+Status of the AWS PrivateEndpoint connection.
+
+---
+
+##### `interfaceEndpointId`<sup>Optional</sup> <a name="interfaceEndpointId" id="awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig.property.interfaceEndpointId"></a>
+
+```typescript
+public readonly interfaceEndpointId: string;
+```
+
+- *Type:* string
+
+Unique identifiers of the interface endpoints in your VPC that you added to the AWS PrivateLink connection.
+
+---
+
+##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig.property.region"></a>
+
+```typescript
+public readonly region: string;
+```
+
+- *Type:* string
+
+Aws Region.
+
+---
+
+##### `subnetIds`<sup>Optional</sup> <a name="subnetIds" id="awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig.property.subnetIds"></a>
+
+```typescript
+public readonly subnetIds: string[];
+```
+
+- *Type:* string[]
+
+List of string representing the AWS VPC Subnet ID (like: subnet-xxxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint).
+
+---
+
+##### `vpcId`<sup>Optional</sup> <a name="vpcId" id="awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig.property.vpcId"></a>
+
+```typescript
+public readonly vpcId: string;
+```
+
+- *Type:* string
+
+String Representing the AWS VPC ID (like: vpc-xxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint).
+
+---
+
 ### CfnAlertConfigurationProps <a name="CfnAlertConfigurationProps" id="awscdk-resources-mongodbatlas.CfnAlertConfigurationProps"></a>
 
 Returns and edits the conditions that trigger alerts and how MongoDB Cloud notifies users.
@@ -30793,6 +31580,131 @@ public readonly terminationProtectionEnabled: boolean;
 Flag that indicates whether termination protection is enabled on the serverless instance.
 
 If set to true, MongoDB Cloud won't delete the serverless instance. If set to false, MongoDB cloud will delete the serverless instance."
+
+---
+
+### CfnServerlessPrivateEndpointProps <a name="CfnServerlessPrivateEndpointProps" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps"></a>
+
+Returns, adds, edits, and removes private endpoints for serverless instances.
+
+To learn more, see the Atlas Administration API tab on the following tutorial.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.Initializer"></a>
+
+```typescript
+import { CfnServerlessPrivateEndpointProps } from 'awscdk-resources-mongodbatlas'
+
+const cfnServerlessPrivateEndpointProps: CfnServerlessPrivateEndpointProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.instanceName">instanceName</a></code> | <code>string</code> | Human-readable label that identifies the serverless instance for which the tenant endpoint will be created. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.awsPrivateEndpointConfigurationProperties">awsPrivateEndpointConfigurationProperties</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig">AwsPrivateEndpointConfig</a></code> | Properties used to configure Aws private endpoint. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.cloudProviderEndpointId">cloudProviderEndpointId</a></code> | <code>string</code> | Unique string that identifies the private endpoint's network interface. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.comment">comment</a></code> | <code>string</code> | Human-readable comment associated with the private endpoint. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.createAndAssignAwsPrivateEndpoint">createAndAssignAwsPrivateEndpoint</a></code> | <code>boolean</code> | If true the resource will create the aws private endpoint and assign the Endpoint ID. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.privateEndpointIpAddress">privateEndpointIpAddress</a></code> | <code>string</code> | IPv4 address of the private endpoint in your Azure VNet that someone added to this private endpoint service. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
+
+---
+
+##### `instanceName`<sup>Required</sup> <a name="instanceName" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.instanceName"></a>
+
+```typescript
+public readonly instanceName: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the serverless instance for which the tenant endpoint will be created.
+
+---
+
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.projectId"></a>
+
+```typescript
+public readonly projectId: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies your project.
+
+---
+
+##### `awsPrivateEndpointConfigurationProperties`<sup>Optional</sup> <a name="awsPrivateEndpointConfigurationProperties" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.awsPrivateEndpointConfigurationProperties"></a>
+
+```typescript
+public readonly awsPrivateEndpointConfigurationProperties: AwsPrivateEndpointConfig;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AwsPrivateEndpointConfig">AwsPrivateEndpointConfig</a>
+
+Properties used to configure Aws private endpoint.
+
+---
+
+##### `cloudProviderEndpointId`<sup>Optional</sup> <a name="cloudProviderEndpointId" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.cloudProviderEndpointId"></a>
+
+```typescript
+public readonly cloudProviderEndpointId: string;
+```
+
+- *Type:* string
+
+Unique string that identifies the private endpoint's network interface.
+
+---
+
+##### `comment`<sup>Optional</sup> <a name="comment" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.comment"></a>
+
+```typescript
+public readonly comment: string;
+```
+
+- *Type:* string
+
+Human-readable comment associated with the private endpoint.
+
+---
+
+##### `createAndAssignAwsPrivateEndpoint`<sup>Optional</sup> <a name="createAndAssignAwsPrivateEndpoint" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.createAndAssignAwsPrivateEndpoint"></a>
+
+```typescript
+public readonly createAndAssignAwsPrivateEndpoint: boolean;
+```
+
+- *Type:* boolean
+
+If true the resource will create the aws private endpoint and assign the Endpoint ID.
+
+---
+
+##### `privateEndpointIpAddress`<sup>Optional</sup> <a name="privateEndpointIpAddress" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.privateEndpointIpAddress"></a>
+
+```typescript
+public readonly privateEndpointIpAddress: string;
+```
+
+- *Type:* string
+
+IPv4 address of the private endpoint in your Azure VNet that someone added to this private endpoint service.
+
+---
+
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.property.profile"></a>
+
+```typescript
+public readonly profile: string;
+```
+
+- *Type:* string
+
+Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
 
 ---
 
@@ -36095,6 +37007,112 @@ public readonly regionName: string;
 Human-readable label that identifies the geographic location of your MongoDB serverless instance.
 
 The region you choose can affect network latency for clients accessing your databases. For a complete list of region names, see [AWS](https://docs.atlas.mongodb.com/reference/amazon-aws/#std-label-amazon-aws), [GCP](https://docs.atlas.mongodb.com/reference/google-gcp/), and [Azure](https://docs.atlas.mongodb.com/reference/microsoft-azure/).
+
+---
+
+### ServerlessPrivateEndpoint <a name="ServerlessPrivateEndpoint" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint"></a>
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.Initializer"></a>
+
+```typescript
+import { ServerlessPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
+
+const serverlessPrivateEndpoint: ServerlessPrivateEndpoint = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.atlasPrivateEndpointStatus">atlasPrivateEndpointStatus</a></code> | <code>string</code> | Status of the Atlas PrivateEndpoint connection. |
+| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.awsPrivateEndpointStatus">awsPrivateEndpointStatus</a></code> | <code>string</code> | Status of the AWS PrivateEndpoint connection. |
+| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.comment">comment</a></code> | <code>string</code> | string to represent the comment. |
+| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.createAndAssignAWSPrivateEndpoint">createAndAssignAWSPrivateEndpoint</a></code> | <code>boolean</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.interfaceEndpointId">interfaceEndpointId</a></code> | <code>string</code> | Unique identifiers of the interface endpoints in your VPC that you added to the AWS PrivateLink connection. |
+| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.subnetIds">subnetIds</a></code> | <code>string[]</code> | List of string representing the AWS VPC Subnet ID (like: subnet-xxxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint). |
+| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.vpcId">vpcId</a></code> | <code>string</code> | String Representing the AWS VPC ID (like: vpc-xxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint). |
+
+---
+
+##### `atlasPrivateEndpointStatus`<sup>Optional</sup> <a name="atlasPrivateEndpointStatus" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.atlasPrivateEndpointStatus"></a>
+
+```typescript
+public readonly atlasPrivateEndpointStatus: string;
+```
+
+- *Type:* string
+
+Status of the Atlas PrivateEndpoint connection.
+
+---
+
+##### `awsPrivateEndpointStatus`<sup>Optional</sup> <a name="awsPrivateEndpointStatus" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.awsPrivateEndpointStatus"></a>
+
+```typescript
+public readonly awsPrivateEndpointStatus: string;
+```
+
+- *Type:* string
+
+Status of the AWS PrivateEndpoint connection.
+
+---
+
+##### `comment`<sup>Optional</sup> <a name="comment" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.comment"></a>
+
+```typescript
+public readonly comment: string;
+```
+
+- *Type:* string
+
+string to represent the comment.
+
+---
+
+##### `createAndAssignAWSPrivateEndpoint`<sup>Optional</sup> <a name="createAndAssignAWSPrivateEndpoint" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.createAndAssignAWSPrivateEndpoint"></a>
+
+```typescript
+public readonly createAndAssignAWSPrivateEndpoint: boolean;
+```
+
+- *Type:* boolean
+
+---
+
+##### `interfaceEndpointId`<sup>Optional</sup> <a name="interfaceEndpointId" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.interfaceEndpointId"></a>
+
+```typescript
+public readonly interfaceEndpointId: string;
+```
+
+- *Type:* string
+
+Unique identifiers of the interface endpoints in your VPC that you added to the AWS PrivateLink connection.
+
+---
+
+##### `subnetIds`<sup>Optional</sup> <a name="subnetIds" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.subnetIds"></a>
+
+```typescript
+public readonly subnetIds: string[];
+```
+
+- *Type:* string[]
+
+List of string representing the AWS VPC Subnet ID (like: subnet-xxxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint).
+
+---
+
+##### `vpcId`<sup>Optional</sup> <a name="vpcId" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.vpcId"></a>
+
+```typescript
+public readonly vpcId: string;
+```
+
+- *Type:* string
+
+String Representing the AWS VPC ID (like: vpc-xxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint).
 
 ---
 
