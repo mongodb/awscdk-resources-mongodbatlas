@@ -27531,14 +27531,14 @@ const cfnCloudBackUpRestoreJobsProps: CfnCloudBackUpRestoreJobsProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.deliveryType">deliveryType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsDeliveryType">CfnCloudBackUpRestoreJobsPropsDeliveryType</a></code> | Type of restore job to create.The value can be any one of download,automated or point_in_time. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.instanceName">instanceName</a></code> | <code>string</code> | The instance name of the Serverless/Cluster whose snapshot you want to restore or you want to retrieve restore jobs. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.instanceType">instanceType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsInstanceType">CfnCloudBackUpRestoreJobsPropsInstanceType</a></code> | Type of instance specified on the Instance Name serverless or cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.projectId">projectId</a></code> | <code>string</code> | The unique identifier of the project for the Atlas cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.cancelled">cancelled</a></code> | <code>boolean</code> | Indicates whether the restore job was canceled. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.deliveryType">deliveryType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsDeliveryType">CfnCloudBackUpRestoreJobsPropsDeliveryType</a></code> | Type of restore job to create.The value can be any one of download,automated or point_in_time. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.enableSynchronousCreation">enableSynchronousCreation</a></code> | <code>boolean</code> | If set to true, the CloudFormation resource will wait until the job is completed, WARNING: if the snapshot has a big load of data, the cloud formation resource might take a long time to finish leading to high costs. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.expired">expired</a></code> | <code>boolean</code> | Indicates whether the restore job expired. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.failed">failed</a></code> | <code>boolean</code> | Indicates whether the restore job failed. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.instanceName">instanceName</a></code> | <code>string</code> | The instance name of the Serverless/Cluster whose snapshot you want to restore or you want to retrieve restore jobs. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.instanceType">instanceType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsInstanceType">CfnCloudBackUpRestoreJobsPropsInstanceType</a></code> | Type of instance specified on the Instance Name serverless or cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.opLogInc">opLogInc</a></code> | <code>string</code> | Oplog operation number from which to you want to restore this snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.opLogTs">opLogTs</a></code> | <code>string</code> | Timestamp in the number of seconds that have elapsed since the UNIX epoch from which to you want to restore this snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.pointInTimeUtcSeconds">pointInTimeUtcSeconds</a></code> | <code>number</code> | If you performed a Point-in-Time restores at a time specified by a Unix time in seconds since epoch, pointInTimeUTCSeconds indicates the Unix time used. |
@@ -27547,6 +27547,42 @@ const cfnCloudBackUpRestoreJobsProps: CfnCloudBackUpRestoreJobsProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.synchronousCreationOptions">synchronousCreationOptions</a></code> | <code><a href="#awscdk-resources-mongodbatlas.SynchronousCreationOptions">SynchronousCreationOptions</a></code> | Options that needs to be set to control the synchronous creation flow, this options need to be set if EnableSynchronousCreation is se to TRUE. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.targetClusterName">targetClusterName</a></code> | <code>string</code> | Name of the target Atlas cluster to which the restore job restores the snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.targetProjectId">targetProjectId</a></code> | <code>string</code> | Name of the target Atlas project of the restore job. |
+
+---
+
+##### `deliveryType`<sup>Required</sup> <a name="deliveryType" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.deliveryType"></a>
+
+```typescript
+public readonly deliveryType: CfnCloudBackUpRestoreJobsPropsDeliveryType;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsDeliveryType">CfnCloudBackUpRestoreJobsPropsDeliveryType</a>
+
+Type of restore job to create.The value can be any one of download,automated or point_in_time.
+
+---
+
+##### `instanceName`<sup>Required</sup> <a name="instanceName" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.instanceName"></a>
+
+```typescript
+public readonly instanceName: string;
+```
+
+- *Type:* string
+
+The instance name of the Serverless/Cluster whose snapshot you want to restore or you want to retrieve restore jobs.
+
+---
+
+##### `instanceType`<sup>Required</sup> <a name="instanceType" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.instanceType"></a>
+
+```typescript
+public readonly instanceType: CfnCloudBackUpRestoreJobsPropsInstanceType;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsInstanceType">CfnCloudBackUpRestoreJobsPropsInstanceType</a>
+
+Type of instance specified on the Instance Name serverless or cluster.
 
 ---
 
@@ -27571,18 +27607,6 @@ public readonly cancelled: boolean;
 - *Type:* boolean
 
 Indicates whether the restore job was canceled.
-
----
-
-##### `deliveryType`<sup>Optional</sup> <a name="deliveryType" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.deliveryType"></a>
-
-```typescript
-public readonly deliveryType: CfnCloudBackUpRestoreJobsPropsDeliveryType;
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsDeliveryType">CfnCloudBackUpRestoreJobsPropsDeliveryType</a>
-
-Type of restore job to create.The value can be any one of download,automated or point_in_time.
 
 ---
 
@@ -27619,30 +27643,6 @@ public readonly failed: boolean;
 - *Type:* boolean
 
 Indicates whether the restore job failed.
-
----
-
-##### `instanceName`<sup>Optional</sup> <a name="instanceName" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.instanceName"></a>
-
-```typescript
-public readonly instanceName: string;
-```
-
-- *Type:* string
-
-The instance name of the Serverless/Cluster whose snapshot you want to restore or you want to retrieve restore jobs.
-
----
-
-##### `instanceType`<sup>Optional</sup> <a name="instanceType" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.instanceType"></a>
-
-```typescript
-public readonly instanceType: CfnCloudBackUpRestoreJobsPropsInstanceType;
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsInstanceType">CfnCloudBackUpRestoreJobsPropsInstanceType</a>
-
-Type of instance specified on the Instance Name serverless or cluster.
 
 ---
 
