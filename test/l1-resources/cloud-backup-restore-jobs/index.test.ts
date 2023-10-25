@@ -21,23 +21,23 @@ import {
 
 const RESOURCE_NAME = "MongoDB::Atlas::CloudBackUpRestoreJobs";
 const CLUSTER_NAME = "testCluster";
-const PROJECT_NAME = "projtest";
+const TEST_PROJECT_ID = "projtest";
 
 test("CfnCloudBackUpRestoreJobs construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
   new CfnCloudBackUpRestoreJobs(stack, "testing-stack", {
-    projectId: CLUSTER_NAME,
-    instanceName: PROJECT_NAME,
+    projectId: TEST_PROJECT_ID,
+    instanceName: CLUSTER_NAME,
     instanceType: CfnCloudBackUpRestoreJobsPropsInstanceType.CLUSTER,
   });
 
   const template = Template.fromStack(stack);
 
   template.hasResourceProperties(RESOURCE_NAME, {
-    ProjectId: CLUSTER_NAME,
-    InstanceName: PROJECT_NAME,
+    ProjectId: TEST_PROJECT_ID,
+    InstanceName: CLUSTER_NAME,
     InstanceType: "cluster",
   });
 });

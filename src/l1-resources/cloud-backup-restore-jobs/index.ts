@@ -20,21 +20,21 @@ export interface CfnCloudBackUpRestoreJobsProps {
    *
    * @schema CfnCloudBackUpRestoreJobsProps#InstanceType
    */
-  readonly instanceType?: CfnCloudBackUpRestoreJobsPropsInstanceType;
+  readonly instanceType: CfnCloudBackUpRestoreJobsPropsInstanceType;
 
   /**
    * The instance name of the Serverless/Cluster whose snapshot you want to restore or you want to retrieve restore jobs.
    *
    * @schema CfnCloudBackUpRestoreJobsProps#InstanceName
    */
-  readonly instanceName?: string;
+  readonly instanceName: string;
 
   /**
    * Type of restore job to create.The value can be any one of download,automated or point_in_time
    *
    * @schema CfnCloudBackUpRestoreJobsProps#DeliveryType
    */
-  readonly deliveryType?: CfnCloudBackUpRestoreJobsPropsDeliveryType;
+  readonly deliveryType: CfnCloudBackUpRestoreJobsPropsDeliveryType;
 
   /**
    * Indicates whether the restore job was canceled.
