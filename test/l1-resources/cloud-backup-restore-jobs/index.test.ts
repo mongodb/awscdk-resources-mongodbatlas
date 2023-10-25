@@ -16,6 +16,7 @@ import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
 import {
   CfnCloudBackUpRestoreJobs,
+  CfnCloudBackUpRestoreJobsPropsDeliveryType,
   CfnCloudBackUpRestoreJobsPropsInstanceType,
 } from "../../../src/l1-resources/cloud-backup-restore-jobs";
 
@@ -31,6 +32,7 @@ test("CfnCloudBackUpRestoreJobs construct should contain default properties", ()
     projectId: TEST_PROJECT_ID,
     instanceName: CLUSTER_NAME,
     instanceType: CfnCloudBackUpRestoreJobsPropsInstanceType.CLUSTER,
+    deliveryType: CfnCloudBackUpRestoreJobsPropsDeliveryType.AUTOMATED,
   });
 
   const template = Template.fromStack(stack);
@@ -39,5 +41,6 @@ test("CfnCloudBackUpRestoreJobs construct should contain default properties", ()
     ProjectId: TEST_PROJECT_ID,
     InstanceName: CLUSTER_NAME,
     InstanceType: "cluster",
+    DeliveryType: "automated",
   });
 });
