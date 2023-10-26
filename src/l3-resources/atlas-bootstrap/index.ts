@@ -5,6 +5,7 @@ import {
   aws_cloudformation as cloudformation,
   SecretValue,
   Duration,
+  Aws,
 } from "aws-cdk-lib";
 import { Construct } from "constructs";
 
@@ -57,34 +58,36 @@ export class MongoAtlasBootstrap extends Construct {
       roleName: props?.roleName,
     });
 
+    const policyStatement = new iam.PolicyStatement({
+      effect: iam.Effect.ALLOW,
+      actions: [
+        "secretsmanager:DescribeSecret",
+        "secretsmanager:GetSecretValue",
+        "ec2:CreateVpcEndpoint",
+        "ec2:DeleteVpcEndpoints",
+        "cloudformation:CreateResource",
+        "cloudformation:DeleteResource",
+        "cloudformation:GetResource",
+        "cloudformation:GetResourceRequestStatus",
+        "cloudformation:ListResources",
+        "cloudformation:UpdateResource",
+        "iam:AttachRolePolicy",
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:GetRole",
+        "iam:GetRolePolicy",
+        "iam:ListAttachedRolePolicies",
+        "iam:ListRolePolicies",
+        "iam:PutRolePolicy",
+      ],
+      resources: ["*"],
+    });
+
+    policyStatement.addSourceAccountCondition(Aws.ACCOUNT_ID);
+
     const atlasCdkPolicy = new iam.Policy(this, "AtlasCDKExecutionPolicy", {
       policyName: "AtlasCDKExecution", // Custom Policy Name
-      statements: [
-        new iam.PolicyStatement({
-          effect: iam.Effect.ALLOW,
-          actions: [
-            "secretsmanager:DescribeSecret",
-            "secretsmanager:GetSecretValue",
-            "ec2:CreateVpcEndpoint",
-            "ec2:DeleteVpcEndpoints",
-            "cloudformation:CreateResource",
-            "cloudformation:DeleteResource",
-            "cloudformation:GetResource",
-            "cloudformation:GetResourceRequestStatus",
-            "cloudformation:ListResources",
-            "cloudformation:UpdateResource",
-            "iam:AttachRolePolicy",
-            "iam:CreateRole",
-            "iam:DeleteRole",
-            "iam:GetRole",
-            "iam:GetRolePolicy",
-            "iam:ListAttachedRolePolicies",
-            "iam:ListRolePolicies",
-            "iam:PutRolePolicy",
-          ],
-          resources: ["*"],
-        }),
-      ],
+      statements: [policyStatement],
     });
 
     this.role.attachInlinePolicy(atlasCdkPolicy);
