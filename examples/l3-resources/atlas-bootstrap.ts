@@ -27,15 +27,6 @@ export class AtlasBoostrapExample extends cdk.Stack {
     const mongoDBProfile = "development";
     const roleName = "MongoDB-Atlas-CDK-Excecution";
 
-    const publicKey = new cdk.CfnParameter(this, "atlasPublicKey", {
-    noEcho: true,
-    type: "String",
-    });
-    const privateKey = new cdk.CfnParameter(this, "atlasPrivateKey", {
-    noEcho: true,
-    type: "String",
-    });
-
     const bootstrapProperties: MongoAtlasBootstrapProps = {
         roleName: roleName,
         secretProfile: mongoDBProfile,
