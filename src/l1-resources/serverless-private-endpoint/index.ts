@@ -236,3 +236,51 @@ export class CfnServerlessPrivateEndpoint extends cdk.CfnResource {
     );
   }
 }
+
+/**
+ * @schema PrivateEndpoint
+ */
+export interface ServerlessPrivateEndpoint {
+  /**
+   * String Representing the AWS VPC ID (like: vpc-xxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint)
+   *
+   * @schema PrivateEndpoint#VpcId
+   */
+  readonly vpcId?: string;
+
+  /**
+   * List of string representing the AWS VPC Subnet ID (like: subnet-xxxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint)
+   *
+   * @schema PrivateEndpoint#SubnetIds
+   */
+  readonly subnetIds?: string[];
+
+  /**
+   * Unique identifiers of the interface endpoints in your VPC that you added to the AWS PrivateLink connection.
+   *
+   * @schema PrivateEndpoint#InterfaceEndpointId
+   */
+  readonly interfaceEndpointId?: string;
+
+  /**
+   * string to represent the comment
+   * @schema PrivateEndpoint#comment
+   */
+  readonly comment?: string;
+
+  /**
+   * Status of the AWS PrivateEndpoint connection.
+   *
+   * @schema PrivateEndpoint#AWSPrivateEndpointStatus
+   */
+  readonly awsPrivateEndpointStatus?: string;
+
+  /**
+   * Status of the Atlas PrivateEndpoint connection.
+   *
+   * @schema PrivateEndpoint#AtlasPrivateEndpointStatus
+   */
+  readonly atlasPrivateEndpointStatus?: string;
+
+  readonly createAndAssignAWSPrivateEndpoint?: boolean;
+}
