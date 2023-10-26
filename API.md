@@ -21960,20 +21960,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -21989,7 +21989,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -22131,7 +22131,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
