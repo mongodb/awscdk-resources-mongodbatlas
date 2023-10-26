@@ -10,11 +10,11 @@ The atlas-cdk-bootstrap AWS Cloud Development Kit (CDK) construct was designed t
 
 Key Features:
 
-- User Provisioning: The atlas-cdk-bootstrap construct creates a dedicated user within AWS Identity and Access Management (IAM) for executing CloudFormation resources. This helps maintain security and isolation for Atlas CDK operations.
+- User Provisioning: The atlas-cdk-bootstrap construct creates a dedicated execution role within AWS Identity and Access Management (IAM) for executing CloudFormation Extension resources. This helps maintain security and isolation for Atlas CDK operations.
 
 - API Key Management: It sets up an Amazon Secret Manager to securely store and manage API keys required for interacting with the Atlas services. This ensures sensitive credentials are protected and can be easily rotated.
 
-- CloudFormation Resource Activation: This construct streamlines the activation of CloudFormation resources essential for Atlas CDK. It provides a seamless interface for users to specify the specific CloudFormation resources that need to be deployed and configured.
+- CloudFormation Extensions Activation: This construct streamlines the activation of CloudFormation public extensions essential for Atlas CDK. It provides a seamless interface for users to specify the specific CloudFormation resources that need to be deployed and configured.
 
 With atlas-cdk-bootstrap, you can accelerate the onboarding process for Atlas CDK and significantly reduce the complexity of environment setup. By automating user provisioning, credential management, and resource activation, this CDK construct empowers developers to focus on building and deploying applications using Atlas CDK without getting bogged down by manual configuration tasks.
 
