@@ -27,26 +27,18 @@ test("AtlasBasicPrivateEndpoint construct should contain default properties", ()
   const stack = new Stack(mockApp);
 
   const atlasBasicProps: l3.AtlasBasicProps = {
-    clusterProps: {
-      replicationSpecs: [
+    clusterProps: getClusterProps(),
+    projectProps: getProjectProps(),
+    dbUserProps: {
+      databaseName: ADMIN_DB,
+      password: PWD,
+      username: DATABASE_USER_NAME,
+      roles: [
         {
-          numShards: 3,
-          advancedRegionConfigs: [
-            {
-              regionName: REGION,
-              electableSpecs: {
-                instanceSize: INSTANCE_SIZE,
-                nodeCount: 3,
-              },
-            },
-          ],
+          databaseName: ADMIN_DB,
+          roleName: ROLE_NAME,
         },
       ],
-      name: PROJECT_NAME,
-    },
-    projectProps: {
-      orgId: ORG_ID,
-      name: PROJECT_NAME,
     },
     ipAccessListProps: {
       accessList: [
@@ -134,3 +126,93 @@ test("AtlasBasicPrivateEndpoint construct should contain default properties", ()
     ],
   });
 });
+
+test("AtlasBasicPrivateEndpoint construct should contain dbuser and IpAccessList if not provided", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  const atlasBasicProps: l3.AtlasBasicProps = {
+    clusterProps: getClusterProps(),
+    projectProps: getProjectProps(),
+  };
+
+  const privateEndpointProps: PrivateEndpointProps = {
+    privateEndpoints: [
+      {
+        vpcId: AWS_VPC_ID,
+        subnetIds: [AWS_SUBNET_ID],
+      },
+    ],
+  };
+
+  new l3.AtlasBasicPrivateEndpoint(stack, "testing-stack", {
+    atlasBasicProps: atlasBasicProps,
+    privateEndpointProps: privateEndpointProps,
+    region: REGION,
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME_PROJECT, {
+    OrgId: ORG_ID,
+    Name: PROJECT_NAME,
+  });
+
+  template.hasResourceProperties(RESOURCE_NAME_CLUSTER, {
+    ProjectId: { "Fn::GetAtt": [Match.anyValue(), "Id"] },
+    ClusterType: "REPLICASET",
+    Name: PROJECT_NAME,
+    ReplicationSpecs: [
+      {
+        NumShards: 3,
+        AdvancedRegionConfigs: [
+          {
+            RegionName: REGION,
+            ElectableSpecs: {
+              InstanceSize: INSTANCE_SIZE,
+              NodeCount: 3,
+            },
+          },
+        ],
+      },
+    ],
+  });
+
+  template.hasResourceProperties(RESOURCE_NAME_PRIVATE_ENDPOINT, {
+    GroupId: { "Fn::GetAtt": [Match.anyValue(), "Id"] },
+    Region: REGION,
+    PrivateEndpoints: [
+      {
+        VpcId: AWS_VPC_ID,
+        SubnetIds: [AWS_SUBNET_ID],
+      },
+    ],
+  });
+});
+
+function getClusterProps(): l3.ClusterProps {
+  return {
+    replicationSpecs: [
+      {
+        numShards: 3,
+        advancedRegionConfigs: [
+          {
+            regionName: REGION,
+            electableSpecs: {
+              instanceSize: INSTANCE_SIZE,
+              nodeCount: 3,
+            },
+          },
+        ],
+      },
+    ],
+    name: PROJECT_NAME,
+  };
+}
+
+function getProjectProps(): l3.ProjectProps {
+  return {
+    orgId: ORG_ID,
+    name: PROJECT_NAME,
+  };
+}
