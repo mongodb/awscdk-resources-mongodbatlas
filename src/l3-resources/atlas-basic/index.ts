@@ -62,13 +62,13 @@ export class AtlasBasic extends Construct {
    * @type {user.CfnDatabaseUser}
    * @memberof AtlasBasic
    */
-  readonly mDBUser: atlas.CfnDatabaseUser;
+  readonly mDBUser?: atlas.CfnDatabaseUser;
   /**
    * @description
    * @type {ipAccessList.CfnProjectIpAccessList}
    * @memberof AtlasBasic
    */
-  readonly ipAccessList: atlas.CfnProjectIpAccessList;
+  readonly ipAccessList?: atlas.CfnProjectIpAccessList;
 
   /**
    * Creates an instance of AtlasBasic.
@@ -97,27 +97,32 @@ export class AtlasBasic extends Construct {
       clusterType: clusterDefaults.clusterType,
       ...props.clusterProps,
     });
-    // Create a new MongoDB Atlas Database User
-    this.mDBUser = new atlas.CfnDatabaseUser(this, "db-user-".concat(id), {
-      profile: props.profile,
-      databaseName: props.dbUserProps?.databaseName || dbDefaults.dbName,
-      projectId: this.mProject.attrId,
-      username: props.dbUserProps?.username || dbDefaults.username,
-      roles: props.dbUserProps?.roles || dbDefaults.roles,
-      password: props.dbUserProps?.password || dbDefaults.password,
-      ...props.dbUserProps,
-    });
-    // Create a new MongoDB Atlas Project IP Access List
-    this.ipAccessList = new atlas.CfnProjectIpAccessList(
-      this,
-      "ip-access-list-".concat(id),
-      {
+
+    if (props.dbUserProps != null) {
+      // Create a new MongoDB Atlas Database User
+      this.mDBUser = new atlas.CfnDatabaseUser(this, "db-user-".concat(id), {
         profile: props.profile,
+        databaseName: props.dbUserProps?.databaseName || dbDefaults.dbName,
         projectId: this.mProject.attrId,
-        accessList: props.ipAccessListProps?.accessList,
-        ...props.ipAccessListProps,
-      }
-    );
+        username: props.dbUserProps?.username || dbDefaults.username,
+        roles: props.dbUserProps?.roles || dbDefaults.roles,
+        password: props.dbUserProps?.password || dbDefaults.password,
+        ...props.dbUserProps,
+      });
+    }
+
+    if (props.ipAccessListProps) {
+      // Create a new MongoDB Atlas Project IP Access List
+      this.ipAccessList = new atlas.CfnProjectIpAccessList(
+        this,
+        "ip-access-list-".concat(id),
+        {
+          profile: props.profile,
+          projectId: this.mProject.attrId,
+          ...props.ipAccessListProps,
+        }
+      );
+    }
   }
 }
 
