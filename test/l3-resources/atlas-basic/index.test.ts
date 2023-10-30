@@ -19,6 +19,8 @@ import * as l3 from "../../../src";
 const RESOURCE_NAME_PROJECT = "MongoDB::Atlas::Project";
 const RESOURCE_NAME_CLUSTER = "MongoDB::Atlas::Cluster";
 const RESOURCE_NAME_DB_USER = "MongoDB::Atlas::DatabaseUser";
+const RESOURCE_NAME_PROJECT_IP_ACCESS_LIST =
+  "MongoDB::Atlas::ProjectIpAccessList";
 const PROJECT_ID = "testProjectId";
 const ORG_ID = "testProjectId";
 const PROJECT_NAME = "test";
@@ -29,6 +31,7 @@ const DATABASE_USER_NAME = "atlas-user";
 const ADMIN_DB = "admin";
 const ROLE_NAME = "atlasAdmin";
 const PWD = "test";
+const IP_ACCESS = "0000";
 
 test("AtlasBasis construct should contain default properties", () => {
   const mockApp = new App();
@@ -60,6 +63,9 @@ test("AtlasBasis construct should contain default properties", () => {
       projectId: PROJECT_ID,
       databaseName: DATABASE_NAME,
       password: PWD,
+    },
+    ipAccessListProps: {
+      accessList: [{ ipAddress: IP_ACCESS, comment: "My first IP address" }],
     },
   });
 
@@ -100,5 +106,9 @@ test("AtlasBasis construct should contain default properties", () => {
         RoleName: ROLE_NAME,
       },
     ],
+  });
+
+  template.hasResourceProperties(RESOURCE_NAME_PROJECT_IP_ACCESS_LIST, {
+    AccessList: [{ IPAddress: IP_ACCESS, Comment: "My first IP address" }],
   });
 });
