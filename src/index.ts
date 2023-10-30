@@ -333,5 +333,6 @@ export * from "./l3-resources/atlas-basic";
 export * from "./l3-resources/atlas-serverless-basic";
 export * from "./l3-resources/atlas-basic-private-endpoint";
 export * from "./l3-resources/encryption-at-rest-express";
+export * from "./l3-resources/atlas-bootstrap";
 
 export * from "./l3-resources/common/props";

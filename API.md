@@ -959,20 +959,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -988,7 +988,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -1130,7 +1130,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -1623,20 +1623,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -1652,7 +1652,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -1794,7 +1794,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnAuditing.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -2287,20 +2287,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -2316,7 +2316,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -2458,7 +2458,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -2990,20 +2990,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -3019,7 +3019,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -3161,7 +3161,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -3641,20 +3641,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -3670,7 +3670,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -3812,7 +3812,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -4422,20 +4422,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -4451,7 +4451,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -4593,7 +4593,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -5060,20 +5060,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -5089,7 +5089,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -5231,7 +5231,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCluster.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -5750,20 +5750,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -5779,7 +5779,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -5921,7 +5921,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -6375,20 +6375,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -6404,7 +6404,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -6546,7 +6546,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -7000,20 +7000,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -7029,7 +7029,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -7171,7 +7171,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -7638,20 +7638,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -7667,7 +7667,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -7809,7 +7809,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnDataLakes.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -8302,20 +8302,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -8331,7 +8331,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -8473,7 +8473,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -8940,20 +8940,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -8969,7 +8969,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -9111,7 +9111,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -9630,20 +9630,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -9659,7 +9659,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -9801,7 +9801,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -10307,20 +10307,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -10336,7 +10336,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -10478,7 +10478,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -10945,20 +10945,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -10974,7 +10974,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -11116,7 +11116,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -11570,20 +11570,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -11599,7 +11599,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -11741,7 +11741,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -12195,20 +12195,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -12224,7 +12224,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -12366,7 +12366,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnLdapVerify.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -12846,20 +12846,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -12875,7 +12875,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -13017,7 +13017,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -13471,20 +13471,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -13500,7 +13500,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -13642,7 +13642,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -14109,20 +14109,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -14138,7 +14138,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -14280,7 +14280,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -14786,20 +14786,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -14815,7 +14815,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -14957,7 +14957,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -15450,20 +15450,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -15479,7 +15479,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -15621,7 +15621,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -16127,20 +16127,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -16156,7 +16156,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -16298,7 +16298,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -16778,20 +16778,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -16807,7 +16807,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -16949,7 +16949,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAdl.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -17403,20 +17403,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -17432,7 +17432,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -17574,7 +17574,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -18028,20 +18028,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -18057,7 +18057,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -18199,7 +18199,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -18653,20 +18653,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -18682,7 +18682,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -18824,7 +18824,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProject.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -19317,20 +19317,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -19346,7 +19346,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -19488,7 +19488,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -19994,20 +19994,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -20023,7 +20023,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -20165,7 +20165,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -20619,20 +20619,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -20648,7 +20648,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -20790,7 +20790,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnSearchIndex.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -21270,20 +21270,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -21299,7 +21299,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -21441,7 +21441,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnServerlessInstance.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -21960,20 +21960,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -21989,7 +21989,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -22131,7 +22131,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -22663,20 +22663,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -22692,7 +22692,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -22834,7 +22834,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnTeams.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -23301,20 +23301,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -23330,7 +23330,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -23472,7 +23472,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -23926,20 +23926,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -23955,7 +23955,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -24097,7 +24097,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnTrigger.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -24564,20 +24564,20 @@ cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'I
 would add the overrides
 ```json
 "Properties": {
-   "GlobalSecondaryIndexes": [
-     {
-       "Projection": {
-         "NonKeyAttributes": [ "myattribute" ]
-         ...
-       }
-       ...
-     },
-     {
-       "ProjectionType": "INCLUDE"
-       ...
-     },
-   ]
-   ...
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
 }
 ```
 
@@ -24593,7 +24593,7 @@ template.
 
 The path of the property, you can use dot notation to override values in complex types.
 
-Any intermdediate keys
+Any intermediate keys
 will be created as needed.
 
 ---
@@ -24735,7 +24735,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): CfnResource | Stack[]
+public obtainDependencies(): Stack | CfnResource[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -25210,6 +25210,219 @@ public readonly cfnThirdPartyIntegration: CfnThirdPartyIntegration;
 ```
 
 - *Type:* <a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration">CfnThirdPartyIntegration</a>
+
+---
+
+
+### MongoAtlasBootstrap <a name="MongoAtlasBootstrap" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap"></a>
+
+Generate the CFN extension execution role.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html)
+
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.Initializer"></a>
+
+```typescript
+import { MongoAtlasBootstrap } from 'awscdk-resources-mongodbatlas'
+
+new MongoAtlasBootstrap(scope: Construct, id: string, props?: MongoAtlasBootstrapProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrap.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrap.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrap.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps">MongoAtlasBootstrapProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Optional</sup> <a name="props" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps">MongoAtlasBootstrapProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrap.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrap.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.isConstruct"></a>
+
+```typescript
+import { MongoAtlasBootstrap } from 'awscdk-resources-mongodbatlas'
+
+MongoAtlasBootstrap.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrap.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrap.property.role">role</a></code> | <code>aws-cdk-lib.aws_iam.IRole</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `role`<sup>Required</sup> <a name="role" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.property.role"></a>
+
+```typescript
+public readonly role: IRole;
+```
+
+- *Type:* aws-cdk-lib.aws_iam.IRole
+
+---
+
+
+### MongoSecretProfile <a name="MongoSecretProfile" id="awscdk-resources-mongodbatlas.MongoSecretProfile"></a>
+
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer"></a>
+
+```typescript
+import { MongoSecretProfile } from 'awscdk-resources-mongodbatlas'
+
+new MongoSecretProfile(scope: Construct, id: string, profileName: string)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.profileName">profileName</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `profileName`<sup>Required</sup> <a name="profileName" id="awscdk-resources-mongodbatlas.MongoSecretProfile.Initializer.parameter.profileName"></a>
+
+- *Type:* string
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoSecretProfile.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.MongoSecretProfile.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoSecretProfile.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.MongoSecretProfile.isConstruct"></a>
+
+```typescript
+import { MongoSecretProfile } from 'awscdk-resources-mongodbatlas'
+
+MongoSecretProfile.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.MongoSecretProfile.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoSecretProfile.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.MongoSecretProfile.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
 
 ---
 
@@ -37734,6 +37947,87 @@ Human-readable label that identifies the zone in your global cluster.
 This zone maps to a location code.
 
 ---
+
+## Classes <a name="Classes" id="Classes"></a>
+
+### MongoAtlasBootstrapProps <a name="MongoAtlasBootstrapProps" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps"></a>
+
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.Initializer"></a>
+
+```typescript
+import { MongoAtlasBootstrapProps } from 'awscdk-resources-mongodbatlas'
+
+new MongoAtlasBootstrapProps()
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+
+---
+
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.roleName">roleName</a></code> | <code>string</code> | The IAM role name for CloudFormation Extension Execution. |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.secretProfile">secretProfile</a></code> | <code>string</code> | The secret profile name for MongoDB Atlas. |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.typesToActivate">typesToActivate</a></code> | <code>string[]</code> | List of strings representing mongoDB atlas types to activate. |
+
+---
+
+##### `roleName`<sup>Required</sup> <a name="roleName" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.roleName"></a>
+
+```typescript
+public readonly roleName: string;
+```
+
+- *Type:* string
+- *Default:* auto generat the name.
+
+The IAM role name for CloudFormation Extension Execution.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html)
+
+---
+
+##### `secretProfile`<sup>Required</sup> <a name="secretProfile" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.secretProfile"></a>
+
+```typescript
+public readonly secretProfile: string;
+```
+
+- *Type:* string
+- *Default:* generate a dummy secret.
+
+The secret profile name for MongoDB Atlas.
+
+> [https://github.com/mongodb/mongodbatlas-cloudformation-resources/tree/master#2-configure-your-profile](https://github.com/mongodb/mongodbatlas-cloudformation-resources/tree/master#2-configure-your-profile)
+
+---
+
+##### `typesToActivate`<sup>Optional</sup> <a name="typesToActivate" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrapProps.property.typesToActivate"></a>
+
+```typescript
+public readonly typesToActivate: string[];
+```
+
+- *Type:* string[]
+
+List of strings representing mongoDB atlas types to activate.
+
+the exported AtlasBasicResources can be used for AtlasBasic resources
+if not provided non resources will be activated
+
+---
+
+*Example*
+
+```typescript
+typesToActivate=["Cluster","Project"] this will actiate MongoDB::Atlas::Project && MongoDB::Atlas::Cluster
+```
+
 
 
 
