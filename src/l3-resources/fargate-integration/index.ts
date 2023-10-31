@@ -1,4 +1,3 @@
-import * as cdk from "aws-cdk-lib";
 import { aws_ec2, aws_ecs, Duration } from "aws-cdk-lib";
 import * as ecs from "aws-cdk-lib/aws-ecs";
 import { Protocol } from "aws-cdk-lib/aws-ecs";
@@ -8,7 +7,6 @@ import * as iam from "aws-cdk-lib/aws-iam";
 import * as logs from "aws-cdk-lib/aws-logs";
 import * as servicediscovery from "aws-cdk-lib/aws-servicediscovery";
 import { Construct } from "constructs";
-import { AtlasBasic } from "../atlas-basic";
 
 /**
  * @description
@@ -20,12 +18,9 @@ export interface FargateIntegrationProps {
   readonly ClientContainerImageURI: string;
   readonly WebAccessCIDR: string;
   readonly VpcCidr: string;
-  readonly AZ1: string;
-  readonly AZ2: string;
   readonly Subnet1CIDR: string;
   readonly Subnet2CIDR: string;
   readonly MongoDBEndpoint?: string;
-  // readonly AtlasBasic: AtlasBasic;
 }
 
 /**
@@ -36,13 +31,6 @@ export interface FargateIntegrationProps {
  */
 
 export class FargateIntegration extends Construct {
-  /**
-   * @description
-   * @type {aws_ec2.Vpc}
-   * @memberof FargateIntegration
-   */
-  readonly Vpc: aws_ec2.Vpc;
-
   /**
    * @description
    * @type {aws_ecs.CfnService}
@@ -87,7 +75,7 @@ export class FargateIntegration extends Construct {
 
   /**
    * @description
-   * @type {eventbus.EventBus}
+   * @type {ecs.Cluster}
    * @memberof FargateIntegration
    */
   readonly ECSCluster: ecs.Cluster;
@@ -141,6 +129,13 @@ export class FargateIntegration extends Construct {
   readonly ServerTaskExecutionRole: iam.Role;
 
   /**
+   * @description
+   * @type {aws_ec2.Vpc}
+   * @memberof FargateIntegration
+   */
+  readonly Vpc: aws_ec2.Vpc;
+
+  /**
    * Creates an instance of AtlasBasic.
    * @param {Construct} scope
    * @param {string} id
@@ -150,11 +145,12 @@ export class FargateIntegration extends Construct {
   constructor(scope: Construct, id: string, props: FargateIntegrationProps) {
     super(scope, id);
 
-    const namespace = "partner-atlas-fargate-mean-stack";
+    const namespace = "partner-atlas-fargate-integration";
+
     // Create VPC for fargate service
     this.Vpc = new aws_ec2.Vpc(this, "mean-stack-fargate-vpc", {
+      ipAddresses: aws_ec2.IpAddresses.cidr(props.VpcCidr),
       maxAzs: 2,
-      cidr: props.VpcCidr,
       subnetConfiguration: [
         {
           cidrMask: 24,
@@ -168,78 +164,6 @@ export class FargateIntegration extends Construct {
         },
       ],
     });
-    // const subnet1 = new aws_ec2.PublicSubnet(this, "PublicSubnet1", {
-    //   availabilityZone: props.AZ1,
-    //   vpcId: this.Vpc.vpcId,
-    //   cidrBlock: props.Subnet1CIDR,
-    // });
-    //
-    // const subnet2 = new aws_ec2.PublicSubnet(this, "PublicSubnet2", {
-    //   availabilityZone: props.AZ2,
-    //   vpcId: this.Vpc.vpcId,
-    //   cidrBlock: props.Subnet2CIDR,
-    // });
-
-    // Create DHCP options
-    const domainName =
-      cdk.Stack.of(this).region === "us-east-1"
-        ? "ec2.internal"
-        : `${cdk.Stack.of(this).region}.compute.internal`;
-    const dhcpOptions = new aws_ec2.CfnDHCPOptions(this, "MyDHCPOptions", {
-      domainName: domainName,
-      domainNameServers: ["AmazonProvidedDNS"],
-      tags: [
-        {
-          key: "Name",
-          value: cdk.Fn.sub("${AWS::StackName} stack DHCPOptions"),
-        },
-        {
-          key: "StackName",
-          value: cdk.Fn.ref("AWS::StackName"),
-        },
-      ],
-    });
-
-    // Associate DHCP options with the VPC
-    new aws_ec2.CfnVPCDHCPOptionsAssociation(this, "MyDHCPOptionsAssociation", {
-      vpcId: this.Vpc.vpcId,
-      dhcpOptionsId: dhcpOptions.ref,
-    });
-
-    // this.Vpc.publicSubnets.forEach((subnet, index) => {
-    //   const routeTable = subnet.routeTable;
-    //   new aws_ec2.CfnRoute(this, `RouteToIGW${index}`, {
-    //     routeTableId: routeTable.routeTableId,
-    //     destinationCidrBlock: "0.0.0.0/0",
-    //     gatewayId: this.Vpc.internetGatewayId,
-    //   });
-    // });
-
-    const existingSubnetIds = [
-      "subnet-0b4b72f62625b06c2",
-      "subnet-0cdc42b2b52c812bf",
-    ]; // Specify your subnet IDs
-
-    // Accessing the default VPC DHCP options
-
-    // const existingVpc = aws_ec2.Vpc.fromVpcAttributes(this, "MyExistingVpc", {
-    //   vpcId: "vpc-05535f04b8eab37bf",
-    //   availabilityZones: ["us-east-1a", "us-east-1b"], // Specify your AZs
-    //   publicSubnetIds: existingSubnetIds, // Use existing public subnet IDs
-    //   // Other VPC attributes as needed
-    // });
-    //
-    // const subnet1 = aws_ec2.Subnet.fromSubnetId(
-    //   this,
-    //   "subnet1",
-    //   existingSubnetIds[0]
-    // );
-    //
-    // const subnet2 = aws_ec2.Subnet.fromSubnetId(
-    //   this,
-    //   "subnet2",
-    //   existingSubnetIds[1]
-    // );
 
     // Create log group
     this.LogGroup = new logs.LogGroup(this, "LogGroup", {
@@ -277,7 +201,7 @@ export class FargateIntegration extends Construct {
         internetFacing: true,
         crossZoneEnabled: true,
         vpcSubnets: {
-          subnets: [this.Vpc.publicSubnets[0], this.Vpc.publicSubnets[1]],
+          subnets: this.Vpc.publicSubnets,
         },
       }
     );
@@ -353,6 +277,7 @@ export class FargateIntegration extends Construct {
       }
     );
 
+    // listener for client
     const clientListener = new elbv2.NetworkListener(
       this,
       "ClientTCP8080Listener",
@@ -364,23 +289,20 @@ export class FargateIntegration extends Construct {
       }
     );
     // Define the init container
-    // const initContainer = this.ClientTaskDefinition.addContainer(
-    //   "client-app-init-container",
-    //   {
-    //     image: ecs.ContainerImage.fromRegistry(
-    //       "docker/ecs-searchdomain-sidecar:1.0"
-    //     ),
-    //     essential: false,
-    //     command: ["us-east-1.compute.internal", namespace.concat(".local")],
-    //     environment: {
-    //       ATLAS_URI: "http://${LoadBalancer.DNSName}:5200",
-    //     },
-    //     logging: new ecs.AwsLogDriver({
-    //       streamPrefix: namespace,
-    //       logGroup: this.LogGroup,
-    //     }),
-    //   }
-    // );
+    const initContainer = this.ClientTaskDefinition.addContainer(
+      "client-app-init-container",
+      {
+        image: ecs.ContainerImage.fromRegistry(
+          "docker/ecs-searchdomain-sidecar:1.0"
+        ),
+        essential: false,
+        command: ["us-east-1.compute.internal", namespace.concat(".local")],
+        logging: new ecs.AwsLogDriver({
+          streamPrefix: namespace,
+          logGroup: this.LogGroup,
+        }),
+      }
+    );
 
     // create container
     this.ClientTaskDefinition.addContainer("client-container", {
@@ -389,7 +311,6 @@ export class FargateIntegration extends Construct {
         { containerPort: 8080, hostPort: 8080, protocol: Protocol.TCP },
       ],
       containerName: "client",
-      //command: ["us-east-1.compute.internal", namespace.concat(".local")],
       essential: true,
       environment: {
         ATLAS_URI: `http://${this.LoadBalancer.loadBalancerDnsName}:5200`,
@@ -398,9 +319,9 @@ export class FargateIntegration extends Construct {
         streamPrefix: "partner-meanstack-atlas-fargate",
         logGroup: this.LogGroup,
       }),
-      // }).addContainerDependencies({
-      //   container: initContainer,
-      //   condition: ecs.ContainerDependencyCondition.SUCCESS,
+    }).addContainerDependencies({
+      container: initContainer,
+      condition: ecs.ContainerDependencyCondition.SUCCESS,
     });
 
     // Create a client discovery entry
@@ -435,7 +356,7 @@ export class FargateIntegration extends Construct {
       assignPublicIp: true,
       securityGroups: [securityGroup],
       vpcSubnets: {
-        subnets: [this.Vpc.publicSubnets[0], this.Vpc.publicSubnets[1]],
+        subnets: this.Vpc.publicSubnets,
       },
     });
 
@@ -443,7 +364,9 @@ export class FargateIntegration extends Construct {
       service: this.ClientServiceDiscoveryEntry,
     });
 
+    // dependency for client
     this.ClientService.node.addDependency(clientListener);
+    // assign target group to client
     this.ClientService.attachToNetworkTargetGroup(
       this.ClientAppTCP8080TargetGroup
     );
@@ -517,33 +440,12 @@ export class FargateIntegration extends Construct {
       }
     );
 
-    // Define the init container
-    // const initServerContainer = this.ServerTaskDefinition.addContainer(
-    //   "Server_ResolvConf_InitContainer",
-    //   {
-    //     image: ecs.ContainerImage.fromRegistry(
-    //       "docker/ecs-searchdomain-sidecar:1.0"
-    //     ),
-    //     essential: false,
-    //     //command: ["us-east-1.compute.internal", namespace.concat(".local")],
-    //     // environment: {
-    //     //   ATLAS_URI: "http://${LoadBalancer.DNSName}:5200",
-    //     // },
-    //     logging: new ecs.AwsLogDriver({
-    //       streamPrefix: namespace,
-    //       logGroup: this.LogGroup,
-    //     }),
-    //   }
-    // );
-
     // Define the main application container
     this.ServerTaskDefinition.addContainer("server", {
       image: ecs.ContainerImage.fromRegistry(props.ServerContainerImageURI),
-      //image: ecs.ContainerImage.fromRegistry("nginx:latest"), // Use the NGINX image
-      // portMappings: portMappingsΩ[{ containerPort: 80 }], //
       essential: true,
       environment: {
-        ATLAS_URI: props.MongoDBEndpoint ?? "",
+        ATLAS_URI: props.MongoDBEndpoint || "",
       },
       portMappings: [
         {
@@ -556,9 +458,6 @@ export class FargateIntegration extends Construct {
         streamPrefix: namespace,
         logGroup: this.LogGroup,
       }),
-      // }).addContainerDependencies({
-      //   container: initServerContainer,
-      //   condition: ecs.ContainerDependencyCondition.SUCCESS,
     });
 
     // Define the Server Fargate service
@@ -577,19 +476,19 @@ export class FargateIntegration extends Construct {
       assignPublicIp: true,
       securityGroups: [securityGroup],
       vpcSubnets: {
-        subnets: [this.Vpc.publicSubnets[0], this.Vpc.publicSubnets[1]],
+        subnets: this.Vpc.publicSubnets,
       },
     });
     this.ServerService.associateCloudMapService({
       service: this.ServerServiceDiscoveryEntry,
     });
 
+    // dependency for server
     this.ServerService.node.addDependency(serverListener);
+    // assign target group to server
     this.ServerService.attachToNetworkTargetGroup(
       this.ServerAppTCP5200TargetGroup
     );
-    // Add the target group to the listener
-    //this.ServerAppTCP5200TargetGroup.addTarget(this.ServerService);
   }
 }
 

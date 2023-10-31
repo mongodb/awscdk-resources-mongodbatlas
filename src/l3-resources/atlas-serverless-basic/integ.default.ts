@@ -24,7 +24,7 @@ const stack = new cdk.Stack(app, "atlas-basic-default", {
   },
 });
 
-const orgId = "63350255419cf25e3d511c95";
+const orgId = "<atlas_orgId>";
 
 new AtlasServerlessBasic(stack, "atlas-basic", {
   serverlessProps: {
