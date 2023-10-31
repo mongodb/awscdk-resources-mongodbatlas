@@ -201,7 +201,7 @@ export class FargateIntegration extends Construct {
         internetFacing: true,
         crossZoneEnabled: true,
         vpcSubnets: {
-          subnets: this.Vpc.publicSubnets,
+          subnets: [this.Vpc.publicSubnets[0], this.Vpc.publicSubnets[1]],
         },
       }
     );
@@ -356,7 +356,7 @@ export class FargateIntegration extends Construct {
       assignPublicIp: true,
       securityGroups: [securityGroup],
       vpcSubnets: {
-        subnets: this.Vpc.publicSubnets,
+        subnets: [this.Vpc.publicSubnets[0], this.Vpc.publicSubnets[1]],
       },
     });
 
@@ -476,7 +476,7 @@ export class FargateIntegration extends Construct {
       assignPublicIp: true,
       securityGroups: [securityGroup],
       vpcSubnets: {
-        subnets: this.Vpc.publicSubnets,
+        subnets: [this.Vpc.publicSubnets[0], this.Vpc.publicSubnets[1]],
       },
     });
     this.ServerService.associateCloudMapService({

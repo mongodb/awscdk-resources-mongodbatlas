@@ -14,7 +14,6 @@
 
 import * as cdk from "aws-cdk-lib";
 import { FargateIntegration } from "./index";
-import { AtlasBasic } from "../atlas-basic";
 const app = new cdk.App();
 const stack = new cdk.Stack(app, "atlas-basic-default", {
   env: {
@@ -23,7 +22,6 @@ const stack = new cdk.Stack(app, "atlas-basic-default", {
   },
 });
 
-const orgId = "<atlas_orgId>";
 new FargateIntegration(stack, "fargate-integration-test", {
   Subnet1CIDR: "11.0.128.0/20",
   Subnet2CIDR: "11.0.144.0/20",
