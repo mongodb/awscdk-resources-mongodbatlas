@@ -311,9 +311,7 @@ export class SageMakerIntegration extends Construct {
       "PullRepository",
       props.pullLambdaImageRepo
     );
-    // const pullRepo = new ecr.Repository(this, "PullRepository", {
-    //   repositoryName: props.pullLambdaImageURI,
-    // });
+
     const endpointName = this.sagemakerEndpoint.endpointName ?? "";
     // Create a Lambda function to pull results from SageMaker
     this.lambdaFunctionToReadMDBEvents = new lambda.Function(
@@ -325,9 +323,9 @@ export class SageMakerIntegration extends Construct {
         handler: aws_lambda.Handler.FROM_IMAGE,
         role: this.pullLambdaFunctionRole,
         environment: {
-          model_endpoint: endpointName, // Use an existing resource or replace with your model endpoint
+          model_endpoint: endpointName,
           region_name: cdk.Aws.REGION,
-          eventbus_name: this.eventbusForSagemakerResults.eventBusName, // Use an existing resource or replace with your event bus
+          eventbus_name: this.eventbusForSagemakerResults.eventBusName,
         },
         architecture: lambda.Architecture.X86_64,
         memorySize: 1024,
