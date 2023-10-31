@@ -22,6 +22,9 @@ const stack = new cdk.Stack(app, "atlas-basic-default", {
   },
 });
 
+// NOTE: once this is deployed, you can verify the client app using load balancer DNS name as below
+// loadbalancer-DNS-Name:8080
+// eg: http://ecs-me-farga-u1rjkkhffmnh-b33e2de1a3ae6a57.elb.us-east-1.amazonaws.com:8080/employees
 new FargateIntegration(stack, "fargate-integration-test", {
   Subnet1CIDR: "11.0.128.0/20",
   Subnet2CIDR: "11.0.144.0/20",
