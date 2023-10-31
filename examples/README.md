@@ -27,12 +27,12 @@ Consult the [AWS CDK | Getting Started](https://docs.aws.amazon.com/cdk/v2/guide
 #### CloudFormation Profile
 A profile should be created in the AWS Secrets Manager, containing the MongoDB Atlas Programmatic API Key.
 
-Use [this template](../profile-secret.yaml) to create a [new CloudFormation stack](https://console.aws.amazon.com/cloudformation/home#/stacks/create) for the default profile that all resources will attempt to use unless a different override is specified.
+Use [this template](profile-secret.yaml) to create a [new CloudFormation stack](https://console.aws.amazon.com/cloudformation/home#/stacks/create) for the default profile that all resources will attempt to use unless a different override is specified.
 
 ## Using the examples
 Once your prerequisites are configured, use the examples in this folder as a starting template for a resource to quickly create a new AWS cdk application.
 
-For example, the [cluster example](/l1-resources/cluster.ts) creates a project & cluster in your MongoDB Atlas organization, using a Typescript application. The example requires the following to be configured:
+For example, the [cluster example](l1-resources/cluster.ts) creates a project & cluster in your MongoDB Atlas organization, using a Typescript application. The example requires the following to be configured:
 * A new CDK application, in a folder named `cdk-testing`
   ```bash
     cdk init app --language typescript
@@ -41,7 +41,7 @@ For example, the [cluster example](/l1-resources/cluster.ts) creates a project &
   ```bash
     npm install awscdk-resources-mongodbatlas
   ```
-* Replace the generated `lib/cdk-testing-stack.ts` file with the [cluster example](/l1-resources/cluster.ts) content
+* Replace the generated `lib/cdk-testing-stack.ts` file with the [cluster example](l1-resources/cluster.ts) content
 * Your application to be built successfully
   ```bash
     npm run build
