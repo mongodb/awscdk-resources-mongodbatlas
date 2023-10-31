@@ -16,7 +16,7 @@ export class CdkTestingStack extends cdk.Stack {
 
     const atlasProps = this.getContextProps();
 
-    const myPrivateEndpoint = new CfnPrivateEndpoint (this, "privateEndpoint", {
+    new CfnPrivateEndpoint (this, "privateEndpoint", {
       projectId: atlasProps.projId,
       profile:  atlasProps.profile,
       region: atlasProps.region,
