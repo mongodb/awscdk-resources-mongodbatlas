@@ -89,6 +89,7 @@ export {
   CfnCloudBackupSnapshotProps,
   CfnCloudBackupSnapshotPropsFrequencyType,
   CfnCloudBackupSnapshotPropsSnapshotType,
+  CfnCloudBackupSnapshotPropsInstanceType,
 } from "./l1-resources/cloud-backup-snapshot";
 
 export {
