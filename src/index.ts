@@ -64,6 +64,8 @@ export {
   CfnCloudBackUpRestoreJobs,
   CfnCloudBackUpRestoreJobsProps,
   CfnCloudBackUpRestoreJobsPropsDeliveryType,
+  CfnCloudBackUpRestoreJobsPropsInstanceType,
+  SynchronousCreationOptions,
 } from "./l1-resources/cloud-backup-restore-jobs";
 
 export {
