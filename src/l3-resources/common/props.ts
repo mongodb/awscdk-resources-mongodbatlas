@@ -40,7 +40,7 @@ export interface AtlasBasicProps {
    * @type {IpAccessListProps}
    * @memberof AtlasBasicProps
    */
-  readonly ipAccessListProps?: IpAccessListProps;
+  readonly ipAccessListProps: IpAccessListProps;
 }
 
 export interface AtlasServerlessBasicProps {

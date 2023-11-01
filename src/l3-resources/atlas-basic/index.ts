@@ -114,7 +114,6 @@ export class AtlasBasic extends Construct {
       {
         profile: props.profile,
         projectId: this.mProject.attrId,
-        accessList: props.ipAccessListProps?.accessList,
         ...props.ipAccessListProps,
       }
     );
