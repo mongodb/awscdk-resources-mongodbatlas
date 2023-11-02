@@ -16,18 +16,18 @@ export interface CfnCloudBackupSnapshotProps {
   readonly profile?: string;
 
   /**
-   * Human-readable label that identifies the cluster.
+   * Type of instance specified on the Instance Name serverless or cluster
    *
-   * @schema CfnCloudBackupSnapshotProps#ClusterName
+   * @schema CfnCloudBackupSnapshotProps#InstanceType
    */
-  readonly clusterName: string;
+  readonly instanceType: CfnCloudBackupSnapshotPropsInstanceType;
 
   /**
-   * Human-readable label that identifies the serverless instance.
+   * The instance name of the Serverless/Cluster whose snapshot you want to restore or you want to retrieve restore snapshot.
    *
    * @schema CfnCloudBackupSnapshotProps#InstanceName
    */
-  readonly instanceName?: string;
+  readonly instanceName: string;
 
   /**
    * Human-readable phrase or sentence that explains the purpose of the snapshot. The resource returns this parameter when `"status": "onDemand"`.
@@ -126,7 +126,7 @@ export function toJson_CfnCloudBackupSnapshotProps(
   }
   const result = {
     Profile: obj.profile,
-    ClusterName: obj.clusterName,
+    InstanceType: obj.instanceType,
     InstanceName: obj.instanceName,
     Description: obj.description,
     FrequencyType: obj.frequencyType,
@@ -152,6 +152,18 @@ export function toJson_CfnCloudBackupSnapshotProps(
   );
 }
 /* eslint-enable max-len, quote-props */
+
+/**
+ * Type of instance specified on the Instance Name serverless or cluster
+ *
+ * @schema CfnCloudBackupSnapshotPropsInstanceType
+ */
+export enum CfnCloudBackupSnapshotPropsInstanceType {
+  /** serverless */
+  SERVERLESS = "serverless",
+  /** cluster */
+  CLUSTER = "cluster",
+}
 
 /**
  * Human-readable label that identifies how often this snapshot triggers.
