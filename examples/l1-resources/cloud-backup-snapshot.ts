@@ -1,6 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { CfnCloudBackupSnapshot } from 'awscdk-resources-mongodbatlas';
+import { CfnCloudBackupSnapshot,CfnCloudBackupSnapshotPropsInstanceType } from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
   readonly projId: string;
@@ -15,8 +15,9 @@ export class CdkTestingStack extends cdk.Stack {
 
     const atlasProps = this.getContextProps();
 
-    const cloudBackupSnapshot = new CfnCloudBackupSnapshot(this, 'CloudBackupSnapshot', {
-        clusterName: atlasProps.clusterName,
+    new CfnCloudBackupSnapshot(this, 'CloudBackupSnapshot', {
+        instanceName: atlasProps.clusterName,
+        instanceType: CfnCloudBackupSnapshotPropsInstanceType.CLUSTER,
         profile: atlasProps.profile,
         projectId: atlasProps.projId,
         description: 'Snapshot created with CDK',

@@ -14,7 +14,10 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnCloudBackupSnapshot } from "../../../src/l1-resources/cloud-backup-snapshot";
+import {
+  CfnCloudBackupSnapshot,
+  CfnCloudBackupSnapshotPropsInstanceType,
+} from "../../../src/l1-resources/cloud-backup-snapshot";
 
 const RESOURCE_NAME = "MongoDB::Atlas::CloudBackupSnapshot";
 const PROJECT_ID = "testProjectId";
@@ -26,7 +29,8 @@ test("CloudBackupSnapshot construct should contain default properties", () => {
 
   new CfnCloudBackupSnapshot(stack, "testing-stack", {
     projectId: PROJECT_ID,
-    clusterName: CLUSTER_NAME,
+    instanceName: CLUSTER_NAME,
+    instanceType: CfnCloudBackupSnapshotPropsInstanceType.CLUSTER,
     description: "snapshot through cloud formation template",
     retentionInDays: 5,
   });
@@ -35,7 +39,8 @@ test("CloudBackupSnapshot construct should contain default properties", () => {
 
   template.hasResourceProperties(RESOURCE_NAME, {
     ProjectId: PROJECT_ID,
-    ClusterName: CLUSTER_NAME,
+    InstanceName: CLUSTER_NAME,
+    InstanceType: CfnCloudBackupSnapshotPropsInstanceType.CLUSTER,
     Description: "snapshot through cloud formation template",
     RetentionInDays: 5,
   });
