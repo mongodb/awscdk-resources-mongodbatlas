@@ -29607,12 +29607,12 @@ const cfnCloudBackupSnapshotProps: CfnCloudBackupSnapshotProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.clusterName">clusterName</a></code> | <code>string</code> | Human-readable label that identifies the cluster. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.instanceName">instanceName</a></code> | <code>string</code> | The instance name of the Serverless/Cluster whose snapshot you want to restore or you want to retrieve restore snapshot. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.instanceType">instanceType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotPropsInstanceType">CfnCloudBackupSnapshotPropsInstanceType</a></code> | Type of instance specified on the Instance Name serverless or cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.description">description</a></code> | <code>string</code> | Human-readable phrase or sentence that explains the purpose of the snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.frequencyType">frequencyType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotPropsFrequencyType">CfnCloudBackupSnapshotPropsFrequencyType</a></code> | Human-readable label that identifies how often this snapshot triggers. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.includeCount">includeCount</a></code> | <code>boolean</code> | Flag that indicates whether the response returns the total number of items (**totalCount**) in the response. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.instanceName">instanceName</a></code> | <code>string</code> | Human-readable label that identifies the serverless instance. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.itemsPerPage">itemsPerPage</a></code> | <code>number</code> | Number of items that the response returns per page. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.members">members</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasDiskBackupShardedClusterSnapshotMemberView">ApiAtlasDiskBackupShardedClusterSnapshotMemberView</a>[]</code> | List that includes the snapshots and the cloud provider that stores the snapshots. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.pageNum">pageNum</a></code> | <code>number</code> | Number of the page that displays the current set of the total objects that the response returns. |
@@ -29625,15 +29625,27 @@ const cfnCloudBackupSnapshotProps: CfnCloudBackupSnapshotProps = { ... }
 
 ---
 
-##### `clusterName`<sup>Required</sup> <a name="clusterName" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.clusterName"></a>
+##### `instanceName`<sup>Required</sup> <a name="instanceName" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.instanceName"></a>
 
 ```typescript
-public readonly clusterName: string;
+public readonly instanceName: string;
 ```
 
 - *Type:* string
 
-Human-readable label that identifies the cluster.
+The instance name of the Serverless/Cluster whose snapshot you want to restore or you want to retrieve restore snapshot.
+
+---
+
+##### `instanceType`<sup>Required</sup> <a name="instanceType" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.instanceType"></a>
+
+```typescript
+public readonly instanceType: CfnCloudBackupSnapshotPropsInstanceType;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotPropsInstanceType">CfnCloudBackupSnapshotPropsInstanceType</a>
+
+Type of instance specified on the Instance Name serverless or cluster.
 
 ---
 
@@ -29684,18 +29696,6 @@ public readonly includeCount: boolean;
 - *Type:* boolean
 
 Flag that indicates whether the response returns the total number of items (**totalCount**) in the response.
-
----
-
-##### `instanceName`<sup>Optional</sup> <a name="instanceName" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotProps.property.instanceName"></a>
-
-```typescript
-public readonly instanceName: string;
-```
-
-- *Type:* string
-
-Human-readable label that identifies the serverless instance.
 
 ---
 
@@ -40150,6 +40150,33 @@ weekly.
 ##### `MONTHLY` <a name="MONTHLY" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotPropsFrequencyType.MONTHLY"></a>
 
 monthly.
+
+---
+
+
+### CfnCloudBackupSnapshotPropsInstanceType <a name="CfnCloudBackupSnapshotPropsInstanceType" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotPropsInstanceType"></a>
+
+Type of instance specified on the Instance Name serverless or cluster.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotPropsInstanceType.SERVERLESS">SERVERLESS</a></code> | serverless. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotPropsInstanceType.CLUSTER">CLUSTER</a></code> | cluster. |
+
+---
+
+##### `SERVERLESS` <a name="SERVERLESS" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotPropsInstanceType.SERVERLESS"></a>
+
+serverless.
+
+---
+
+
+##### `CLUSTER` <a name="CLUSTER" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotPropsInstanceType.CLUSTER"></a>
+
+cluster.
 
 ---
 
