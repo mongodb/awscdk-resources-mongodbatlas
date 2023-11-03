@@ -1,6 +1,8 @@
+import { CfnPrivateEndpointAws } from './../../src/l1-resources/private-endpoint-aws/index';
 import * as cdk from 'aws-cdk-lib';
+import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import { Construct } from 'constructs';
-import { CfnPrivateEndpoint } from 'awscdk-resources-mongodbatlas';
+import { CfnPrivateEndpointService, CfnPrivateEndpointServicePropsCloudProvider } from '../../src/l1-resources/private-endpoint-service';
 
 interface AtlasStackProps {
   readonly projId: string;
@@ -10,23 +12,36 @@ interface AtlasStackProps {
   readonly subnetId: string;
 }
 
-export class CdkTestingStack extends cdk.Stack {
+export class CdkPrivateEndpoint extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     const atlasProps = this.getContextProps();
 
-    const myPrivateEndpoint = new CfnPrivateEndpoint (this, "privateEndpoint", {
+    const atlasService = new CfnPrivateEndpointService(this, "AtlasPrivateEndpointService", {
       projectId: atlasProps.projId,
-      profile:  atlasProps.profile,
+      profile: atlasProps.profile,
       region: atlasProps.region,
-      privateEndpoints: [
-          {
-            vpcId: atlasProps.vpcId,
-            subnetIds: [atlasProps.subnetId]
-          }
-      ],
+      cloudProvider: CfnPrivateEndpointServicePropsCloudProvider.AWS
     });
+
+    const awsPrivateEndpoint = new ec2.CfnVPCEndpoint(this, 'AWSPrivateEndpoint', {
+      serviceName: atlasService.attrEndpointServiceName,
+      subnetIds: [atlasProps.subnetId],
+      vpcEndpointType: 'Interface',
+      vpcId: atlasProps.vpcId,
+    });
+
+    awsPrivateEndpoint.addDependency(atlasService)
+    
+    const myPrivateEndpoint = new CfnPrivateEndpointAws (this, "AtlasPrivateEndpoint", {
+      projectId: atlasProps.projId,
+      profile: atlasProps.profile,
+      endpointServiceId: atlasService.attrId,
+      id : awsPrivateEndpoint.ref,
+    });
+
+    myPrivateEndpoint.addDependency(myPrivateEndpoint)
   }
 
   getContextProps(): AtlasStackProps {

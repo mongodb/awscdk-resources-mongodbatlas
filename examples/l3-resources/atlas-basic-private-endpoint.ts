@@ -18,7 +18,7 @@ export class CdkTestingStack extends cdk.Stack {
     super(scope, id, props);
 
     const atlasProps = this.getContextProps();
-    const atlasBasicPrivateEndpointasBasic = new AtlasBasicPrivateEndpoint(this, 'AtlasBasic', {
+    new AtlasBasicPrivateEndpoint(this, 'AtlasBasic', {
       atlasBasicProps: {
         clusterProps: {
         name: atlasProps.clusterName,  
@@ -53,13 +53,8 @@ export class CdkTestingStack extends cdk.Stack {
         }
       },
       privateEndpointProps: {
-        privateEndpoints: [
-          {
-            vpcId: atlasProps.vpcId,
-            subnetIds: [atlasProps.subnetId],
-          }
-  
-        ]
+        awsVpcId: atlasProps.vpcId,
+        awsSubnetId: atlasProps.subnetId,
       },
       profile: atlasProps.profile,
       
