@@ -62,7 +62,7 @@ export interface CfnCloudBackUpRestoreJobsProps {
    *
    * @schema CfnCloudBackUpRestoreJobsProps#SnapshotId
    */
-  readonly snapshotId?: string;
+  readonly snapshotId: string;
 
   /**
    * Timestamp in the number of seconds that have elapsed since the UNIX epoch from which to you want to restore this snapshot. This is the first part of an Oplog timestamp.

@@ -29085,6 +29085,7 @@ const cfnCloudBackUpRestoreJobsProps: CfnCloudBackUpRestoreJobsProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.instanceName">instanceName</a></code> | <code>string</code> | The instance name of the Serverless/Cluster whose snapshot you want to restore or you want to retrieve restore jobs. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.instanceType">instanceType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsInstanceType">CfnCloudBackUpRestoreJobsPropsInstanceType</a></code> | Type of instance specified on the Instance Name serverless or cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.projectId">projectId</a></code> | <code>string</code> | The unique identifier of the project for the Atlas cluster. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.snapshotId">snapshotId</a></code> | <code>string</code> | Unique identifier of the source snapshot ID of the restore job. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.cancelled">cancelled</a></code> | <code>boolean</code> | Indicates whether the restore job was canceled. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.enableSynchronousCreation">enableSynchronousCreation</a></code> | <code>boolean</code> | If set to true, the CloudFormation resource will wait until the job is completed, WARNING: if the snapshot has a big load of data, the cloud formation resource might take a long time to finish leading to high costs. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.expired">expired</a></code> | <code>boolean</code> | Indicates whether the restore job expired. |
@@ -29093,7 +29094,6 @@ const cfnCloudBackUpRestoreJobsProps: CfnCloudBackUpRestoreJobsProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.opLogTs">opLogTs</a></code> | <code>string</code> | Timestamp in the number of seconds that have elapsed since the UNIX epoch from which to you want to restore this snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.pointInTimeUtcSeconds">pointInTimeUtcSeconds</a></code> | <code>number</code> | If you performed a Point-in-Time restores at a time specified by a Unix time in seconds since epoch, pointInTimeUTCSeconds indicates the Unix time used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.snapshotId">snapshotId</a></code> | <code>string</code> | Unique identifier of the source snapshot ID of the restore job. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.synchronousCreationOptions">synchronousCreationOptions</a></code> | <code><a href="#awscdk-resources-mongodbatlas.SynchronousCreationOptions">SynchronousCreationOptions</a></code> | Options that needs to be set to control the synchronous creation flow, this options need to be set if EnableSynchronousCreation is se to TRUE. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.targetClusterName">targetClusterName</a></code> | <code>string</code> | Name of the target Atlas cluster to which the restore job restores the snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.targetProjectId">targetProjectId</a></code> | <code>string</code> | Name of the target Atlas project of the restore job. |
@@ -29145,6 +29145,18 @@ public readonly projectId: string;
 - *Type:* string
 
 The unique identifier of the project for the Atlas cluster.
+
+---
+
+##### `snapshotId`<sup>Required</sup> <a name="snapshotId" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.snapshotId"></a>
+
+```typescript
+public readonly snapshotId: string;
+```
+
+- *Type:* string
+
+Unique identifier of the source snapshot ID of the restore job.
 
 ---
 
@@ -29245,18 +29257,6 @@ public readonly profile: string;
 - *Type:* string
 
 Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
-
----
-
-##### `snapshotId`<sup>Optional</sup> <a name="snapshotId" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.snapshotId"></a>
-
-```typescript
-public readonly snapshotId: string;
-```
-
-- *Type:* string
-
-Unique identifier of the source snapshot ID of the restore job.
 
 ---
 
