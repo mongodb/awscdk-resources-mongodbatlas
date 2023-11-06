@@ -71,7 +71,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     "atlas",
   ],
   npmAccess: javascript.NpmAccess.PUBLIC,
-  majorVersion: 1,
   prettier: true,
   docgen: true,
   releaseToNpm: true,
