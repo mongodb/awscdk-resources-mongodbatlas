@@ -9,7 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-Returns, adds, edits, and removes Atlas Search indexes. Also returns and updates user-defined analyzers.
+Returns, adds, edits, and removes Atlas indexes for Search or Vector search. Also returns and updates user-defined analyzers.
 
 ## MongoDB Atlas API Docs
 
