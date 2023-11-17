@@ -51,10 +51,12 @@ const mySearchIndex = new CfnSearchIndex(this, 'MySearchIndex', {
   searchAnalyzer: 'lucene.standard',
   analyzer: 'lucene.standard',
   mappings: {
-      fields: [
-      "summary:string", 
-      "description:string",
-      "minimum_nights:number"],
+      fields: JSON.stringify({
+        employees: {
+          type: "string",
+          analyzer: "lucene.whitespace",
+        }
+      }),
       dynamic: false,
   },
 });
@@ -67,14 +69,14 @@ const myVectorSearchIndex = new CfnSearchIndex(this, 'MyVectorSearchIndex', {
   collectionName: atlasProps.collectionName,
   database: atlasProps.dbName,
   type: 'vectorSearch',
-  fields: [
-    [
-      "type:vector",
-      "path:plot_embedding",
-      "numDimensions:1536",
-      "similarity:euclidean"
-    ]
-  ],
+      fields: JSON.stringify([
+        {
+          type: "vector",
+          path: "plot_embedding",
+          numDimensions: 1536,
+          similarity: "euclidean"
+        }
+      ]),
 });
 ```
 

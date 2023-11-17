@@ -27,10 +27,12 @@ export class CdkTestingStack extends cdk.Stack {
       searchAnalyzer: 'lucene.standard',
       analyzer: 'lucene.standard',
       mappings: {
-        fields: [
-          "summary:string",
-          "description:string",
-          "minimum_nights:number"],
+        fields: JSON.stringify({
+          employees: {
+            type: "string",
+            analyzer: "lucene.whitespace",
+          }
+        }),
         dynamic: false,
       },
     });
@@ -43,14 +45,14 @@ export class CdkTestingStack extends cdk.Stack {
       collectionName: atlasProps.collectionName,
       database: atlasProps.dbName,
       type: 'vectorSearch',
-      fields: [
-        [
-          "type:vector",
-          "path:plot_embedding",
-          "numDimensions:1536",
-          "similarity:euclidean"
-        ]
-      ],
+      fields: JSON.stringify([
+        {
+          type: "vector",
+          path: "plot_embedding",
+          numDimensions: 1536,
+          similarity: "euclidean"
+        }
+      ]),
     });
   }
 
