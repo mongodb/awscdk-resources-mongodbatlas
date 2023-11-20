@@ -2,14 +2,14 @@
 
 The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node.js.
 
-> AWS CDK [L1 construct] and data structures for the [AWS CloudFormation Registry] type `MongoDB::Atlas::SearchIndex` v1.0.0.
+> AWS CDK [L1 construct] and data structures for the [AWS CloudFormation Registry] type `MongoDB::Atlas::SearchIndex` v3.0.0.
 
 [L1 construct]: https://docs.aws.amazon.com/cdk/latest/guide/constructs.html
 [AWS CloudFormation Registry]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html
 
 ## Description
 
-Returns, adds, edits, and removes Atlas indexes for Search or Vector search. Also returns and updates user-defined analyzers.
+Returns, adds, edits, and removes Atlas indexes for Search or Vector search. Also returns and updates user-defined analyzers. It requires CFN resource `MongoDB::Atlas::SearchIndex` >= 3.0.0.
 
 ## MongoDB Atlas API Docs
 
