@@ -27624,9 +27624,9 @@ const apiAtlasFtsAnalyzersViewManual: ApiAtlasFtsAnalyzersViewManual = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.charFilters">charFilters</a></code> | <code>any[]</code> | Filters that examine text one character at a time and perform filtering operations. |
+| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.charFilters">charFilters</a></code> | <code>string[]</code> | Filters that examine text one character at a time and perform filtering operations. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.name">name</a></code> | <code>string</code> | Human-readable name that identifies the custom analyzer. |
-| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.tokenFilters">tokenFilters</a></code> | <code>any[]</code> | Filter that performs operations such as:. |
+| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.tokenFilters">tokenFilters</a></code> | <code>string[]</code> | Filter that performs operations such as:. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.tokenizer">tokenizer</a></code> | <code>any</code> | Tokenizer that you want to use to create tokens. |
 
 ---
@@ -27634,10 +27634,10 @@ const apiAtlasFtsAnalyzersViewManual: ApiAtlasFtsAnalyzersViewManual = { ... }
 ##### `charFilters`<sup>Optional</sup> <a name="charFilters" id="awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.charFilters"></a>
 
 ```typescript
-public readonly charFilters: any[];
+public readonly charFilters: string[];
 ```
 
-- *Type:* any[]
+- *Type:* string[]
 
 Filters that examine text one character at a time and perform filtering operations.
 
@@ -27663,10 +27663,10 @@ Names must be unique within an index, and must not start with any of the followi
 ##### `tokenFilters`<sup>Optional</sup> <a name="tokenFilters" id="awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.tokenFilters"></a>
 
 ```typescript
-public readonly tokenFilters: any[];
+public readonly tokenFilters: string[];
 ```
 
-- *Type:* any[]
+- *Type:* string[]
 
 Filter that performs operations such as:.
 
@@ -27705,7 +27705,7 @@ const apiAtlasFtsMappingsViewManual: ApiAtlasFtsMappingsViewManual = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsMappingsViewManual.property.dynamic">dynamic</a></code> | <code>boolean</code> | Flag that indicates whether the index uses dynamic or static mappings. |
-| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsMappingsViewManual.property.fields">fields</a></code> | <code>string[]</code> | One or more field specifications for the Atlas Search index. |
+| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsMappingsViewManual.property.fields">fields</a></code> | <code>string</code> | One or more field specifications for the Atlas Search index. |
 
 ---
 
@@ -27719,21 +27719,21 @@ public readonly dynamic: boolean;
 
 Flag that indicates whether the index uses dynamic or static mappings.
 
-Required if **mappings.fields** is omitted.
+Required for search indexes if **mappings.fields** is omitted.
 
 ---
 
 ##### `fields`<sup>Optional</sup> <a name="fields" id="awscdk-resources-mongodbatlas.ApiAtlasFtsMappingsViewManual.property.fields"></a>
 
 ```typescript
-public readonly fields: string[];
+public readonly fields: string;
 ```
 
-- *Type:* string[]
+- *Type:* string
 
 One or more field specifications for the Atlas Search index.
 
-The element of the array must have the format fieldName:fieldType. Required if **mappings.dynamic** is omitted or set to **false**.
+Stringify json representation of field with types and properties. Required for search indexes if **mappings.dynamic** is omitted or set to **false**.
 
 ---
 
@@ -27757,7 +27757,7 @@ const apiAtlasFtsSynonymMappingDefinitionView: ApiAtlasFtsSynonymMappingDefiniti
 
 ---
 
-##### `analyzer`<sup>Optional</sup> <a name="analyzer" id="awscdk-resources-mongodbatlas.ApiAtlasFtsSynonymMappingDefinitionView.property.analyzer"></a>
+##### `analyzer`<sup>Required</sup> <a name="analyzer" id="awscdk-resources-mongodbatlas.ApiAtlasFtsSynonymMappingDefinitionView.property.analyzer"></a>
 
 ```typescript
 public readonly analyzer: string;
@@ -27769,7 +27769,7 @@ Specific pre-defined method chosen to apply to the synonyms to be searched.
 
 ---
 
-##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.ApiAtlasFtsSynonymMappingDefinitionView.property.name"></a>
+##### `name`<sup>Required</sup> <a name="name" id="awscdk-resources-mongodbatlas.ApiAtlasFtsSynonymMappingDefinitionView.property.name"></a>
 
 ```typescript
 public readonly name: string;
@@ -27783,7 +27783,7 @@ Each **synonym.name** must be unique within the same index definition.
 
 ---
 
-##### `source`<sup>Optional</sup> <a name="source" id="awscdk-resources-mongodbatlas.ApiAtlasFtsSynonymMappingDefinitionView.property.source"></a>
+##### `source`<sup>Required</sup> <a name="source" id="awscdk-resources-mongodbatlas.ApiAtlasFtsSynonymMappingDefinitionView.property.source"></a>
 
 ```typescript
 public readonly source: SynonymSource;
@@ -33013,14 +33013,16 @@ const cfnSearchIndexProps: CfnSearchIndexProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.clusterName">clusterName</a></code> | <code>string</code> | Name of the cluster that contains the database and collection with one or more Application Search indexes. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.collectionName">collectionName</a></code> | <code>string</code> | Human-readable label that identifies the collection that contains one or more Atlas Search indexes. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.database">database</a></code> | <code>string</code> | Human-readable label that identifies the database that contains the collection with one or more Atlas Search indexes. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.mappings">mappings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsMappingsViewManual">ApiAtlasFtsMappingsViewManual</a></code> | Index specifications for the collection's fields. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.analyzer">analyzer</a></code> | <code>string</code> | Specific pre-defined method chosen to convert database field text into searchable words. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.analyzers">analyzers</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual">ApiAtlasFtsAnalyzersViewManual</a>[]</code> | List of user-defined methods to convert database field text into searchable words. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.fields">fields</a></code> | <code>string</code> | Array of [Fields](https://www.mongodb.com/docs/atlas/atlas-search/field-types/knn-vector/#std-label-fts-data-types-knn-vector) to configure this vectorSearch index. Stringify json representation of field with types and properties. Required for vector indexes. It must contain at least one **vector** type field. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.mappings">mappings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsMappingsViewManual">ApiAtlasFtsMappingsViewManual</a></code> | Index specifications for the collection's fields. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.name">name</a></code> | <code>string</code> | Human-readable label that identifies this index. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.searchAnalyzer">searchAnalyzer</a></code> | <code>string</code> | Method applied to identify words when searching this index. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.synonyms">synonyms</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsSynonymMappingDefinitionView">ApiAtlasFtsSynonymMappingDefinitionView</a>[]</code> | Rule sets that map words to their synonyms in this index. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.type">type</a></code> | <code>string</code> | Type of index: **search** or **vectorSearch**. |
 
 ---
 
@@ -33060,18 +33062,6 @@ Human-readable label that identifies the database that contains the collection w
 
 ---
 
-##### `mappings`<sup>Required</sup> <a name="mappings" id="awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.mappings"></a>
-
-```typescript
-public readonly mappings: ApiAtlasFtsMappingsViewManual;
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsMappingsViewManual">ApiAtlasFtsMappingsViewManual</a>
-
-Index specifications for the collection's fields.
-
----
-
 ##### `analyzer`<sup>Optional</sup> <a name="analyzer" id="awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.analyzer"></a>
 
 ```typescript
@@ -33104,6 +33094,30 @@ public readonly analyzers: ApiAtlasFtsAnalyzersViewManual[];
 - *Type:* <a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual">ApiAtlasFtsAnalyzersViewManual</a>[]
 
 List of user-defined methods to convert database field text into searchable words.
+
+---
+
+##### `fields`<sup>Optional</sup> <a name="fields" id="awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.fields"></a>
+
+```typescript
+public readonly fields: string;
+```
+
+- *Type:* string
+
+Array of [Fields](https://www.mongodb.com/docs/atlas/atlas-search/field-types/knn-vector/#std-label-fts-data-types-knn-vector) to configure this vectorSearch index. Stringify json representation of field with types and properties. Required for vector indexes. It must contain at least one **vector** type field.
+
+---
+
+##### `mappings`<sup>Optional</sup> <a name="mappings" id="awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.mappings"></a>
+
+```typescript
+public readonly mappings: ApiAtlasFtsMappingsViewManual;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsMappingsViewManual">ApiAtlasFtsMappingsViewManual</a>
+
+Index specifications for the collection's fields.
 
 ---
 
@@ -33168,6 +33182,20 @@ public readonly synonyms: ApiAtlasFtsSynonymMappingDefinitionView[];
 - *Type:* <a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsSynonymMappingDefinitionView">ApiAtlasFtsSynonymMappingDefinitionView</a>[]
 
 Rule sets that map words to their synonyms in this index.
+
+---
+
+##### `type`<sup>Optional</sup> <a name="type" id="awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+Type of index: **search** or **vectorSearch**.
+
+Default type is **search**.
 
 ---
 
@@ -39231,7 +39259,7 @@ const synonymSource: SynonymSource = { ... }
 
 ---
 
-##### `collection`<sup>Optional</sup> <a name="collection" id="awscdk-resources-mongodbatlas.SynonymSource.property.collection"></a>
+##### `collection`<sup>Required</sup> <a name="collection" id="awscdk-resources-mongodbatlas.SynonymSource.property.collection"></a>
 
 ```typescript
 public readonly collection: string;
