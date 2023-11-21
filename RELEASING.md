@@ -9,7 +9,7 @@ Stable releases are managed by the [Release GitHub Action](https://github.com/mo
 
 After the action finishes successfully you have to manually release the Go package:
 - Go to the [Go repo](https://github.com/mongodb/awscdk-resources-mongodbatlas-go) and check that the latest commit happened now with the same release as in this repo, e.g. `chore(release): v3.0.0`.
-- Go to the [Go Repo release page](https://github.com/mongodb/awscdk-resources-mongodbatlas-go/releases)
+- Go to the [Go Repo release page](https://github.com/mongodb/awscdk-resources-mongodbatlas-go/releases).
 - Select the latest release that has to be the same as the one in this repo, e.g. `awscdkresourcemongodbatlas/v3.0.0`, name will be like `v3.0.0`, click "Generate release notes" and make sure "Set as latest release" is checked.
 
 ## Versioning
