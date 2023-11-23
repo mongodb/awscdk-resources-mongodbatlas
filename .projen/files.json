@@ -5,7 +5,6 @@
     ".github/pull_request_template.md",
     ".gitignore",
     ".mergify.yml",
-    ".npmrc",
     ".prettierignore",
     ".prettierrc.json",
     ".projen/deps.json",

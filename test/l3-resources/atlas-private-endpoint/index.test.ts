@@ -8,7 +8,9 @@ const RESOURCE_NAME_CLUSTER = "MongoDB::Atlas::Cluster";
 const RESOURCE_NAME_DB_USER = "MongoDB::Atlas::DatabaseUser";
 const RESOURCE_NAME_PROJECT_IP_ACCESS_LIST =
   "MongoDB::Atlas::ProjectIpAccessList";
-const RESOURCE_NAME_PRIVATE_ENDPOINT = "MongoDB::Atlas::PrivateEndpoint";
+const RESOURCE_NAME_PRIVATE_ENDPOINT_AWS = "MongoDB::Atlas::PrivateEndpointAWS";
+const RESOURCE_NAME_PRIVATE_ENDPOINT_SERVICE =
+  "MongoDB::Atlas::PrivateEndpointService";
 const ORG_ID = "testProjectId";
 const PROJECT_NAME = "test";
 const INSTANCE_SIZE = "M30";
@@ -59,12 +61,8 @@ test("AtlasBasicPrivateEndpoint construct should contain default properties", ()
   };
 
   const privateEndpointProps: PrivateEndpointProps = {
-    privateEndpoints: [
-      {
-        vpcId: AWS_VPC_ID,
-        subnetIds: [AWS_SUBNET_ID],
-      },
-    ],
+    awsVpcId: AWS_VPC_ID,
+    awsSubnetId: AWS_SUBNET_ID,
   };
 
   new l3.AtlasBasicPrivateEndpoint(stack, "testing-stack", {
@@ -123,14 +121,13 @@ test("AtlasBasicPrivateEndpoint construct should contain default properties", ()
     ],
   });
 
-  template.hasResourceProperties(RESOURCE_NAME_PRIVATE_ENDPOINT, {
-    GroupId: { "Fn::GetAtt": [Match.anyValue(), "Id"] },
+  template.hasResourceProperties(RESOURCE_NAME_PRIVATE_ENDPOINT_SERVICE, {
+    ProjectId: { "Fn::GetAtt": [Match.anyValue(), "Id"] },
     Region: REGION,
-    PrivateEndpoints: [
-      {
-        VpcId: AWS_VPC_ID,
-        SubnetIds: [AWS_SUBNET_ID],
-      },
-    ],
+    CloudProvider: "AWS",
+  });
+
+  template.hasResourceProperties(RESOURCE_NAME_PRIVATE_ENDPOINT_AWS, {
+    ProjectId: { "Fn::GetAtt": [Match.anyValue(), "Id"] },
   });
 });

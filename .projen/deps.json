@@ -25,10 +25,6 @@
       "type": "build"
     },
     {
-      "name": "eslint-import-resolver-node",
-      "type": "build"
-    },
-    {
       "name": "eslint-import-resolver-typescript",
       "type": "build"
     },
@@ -116,7 +112,7 @@
     },
     {
       "name": "aws-cdk-lib",
-      "version": "^2.64.0",
+      "version": "^2.103.0",
       "type": "peer"
     },
     {

@@ -2,14 +2,14 @@
 
 The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node.js.
 
-> AWS CDK [L1 construct] and data structures for the [AWS CloudFormation Registry] type `MongoDB::Atlas::SearchIndex` v1.0.0.
+> AWS CDK [L1 construct] and data structures for the [AWS CloudFormation Registry] type `MongoDB::Atlas::SearchIndex` v3.0.0.
 
 [L1 construct]: https://docs.aws.amazon.com/cdk/latest/guide/constructs.html
 [AWS CloudFormation Registry]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html
 
 ## Description
 
-Returns, adds, edits, and removes Atlas Search indexes. Also returns and updates user-defined analyzers.
+Returns, adds, edits, and removes Atlas indexes for Search or Vector search. Also returns and updates user-defined analyzers. It requires CFN resource `MongoDB::Atlas::SearchIndex` >= 3.0.0.
 
 ## MongoDB Atlas API Docs
 
@@ -42,29 +42,49 @@ You can find more information about activating this type in the [AWS CloudFormat
 import { CfnSearchIndex } from 'awscdk-resources-mongodbatlas';
 
 const mySearchIndex = new CfnSearchIndex(this, 'MySearchIndex', {
-    analyzer: 'lucene.standard',
-    clusterName: atlasProps.clusterName,
-    collectionName: atlasProps.collectionName,
-    database: atlasProps.dbName,
-    mappings: {
-        fields: [
-        "summary:string", 
-        "description:string",
-        "minimum_nights:number"],
-        dynamic: false,
-    },
-    name: atlasProps.indexName,
-    profile: atlasProps.profile,
-    projectId: atlasProps.projId,
-    searchAnalyzer: 'lucene.standard'
-    });
+  profile: atlasProps.profile,
+  projectId: atlasProps.projId,
+  clusterName: atlasProps.clusterName,
+  name: atlasProps.indexNameSearch,
+  collectionName: atlasProps.collectionName,
+  database: atlasProps.dbName,
+  searchAnalyzer: 'lucene.standard',
+  analyzer: 'lucene.standard',
+  mappings: {
+      fields: JSON.stringify({
+        employees: {
+          type: "string",
+          analyzer: "lucene.whitespace",
+        }
+      }),
+      dynamic: false,
+  },
+});
+
+const myVectorSearchIndex = new CfnSearchIndex(this, 'MyVectorSearchIndex', {
+  profile: atlasProps.profile,
+  projectId: atlasProps.projId,
+  clusterName: atlasProps.clusterName,
+  name: atlasProps.indexNameVector,
+  collectionName: atlasProps.collectionName,
+  database: atlasProps.dbName,
+  type: 'vectorSearch',
+      fields: JSON.stringify([
+        {
+          type: "vector",
+          path: "plot_embedding",
+          numDimensions: 1536,
+          similarity: "euclidean"
+        }
+      ]),
+});
 ```
 
 ## Feedback
 
 This library is auto-generated and published to all supported programming languages by the [cdklabs/cdk-cloudformation] project based on the API schema published for `MongoDB::Atlas::SearchIndex`.
 
-* Issues related to this generated library should be [reported here](https://github.com/cdklabs/cdk-cloudformation/issues/new?title=Issue+with+%40cdk-cloudformation%2Fmongodb-atlas-searchindex+v1.0.0).
+* Issues related to this generated library should be [reported here](https://github.com/cdklabs/cdk-cloudformation/issues/new?title=Issue+with+%40cdk-cloudformation%2Fmongodb-atlas-searchindex+v3.0.0).
 * Issues related to `MongoDB::Atlas::SearchIndex` should be reported to the [publisher](https://github.com/mongodb/mongodbatlas-cloudformation-resources/issues).
 * Feature requests should be [reported here](https://feedback.mongodb.com/forums/924145-atlas?category_id=392596)
 

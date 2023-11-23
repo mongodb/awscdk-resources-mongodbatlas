@@ -71,7 +71,7 @@ export interface CfnSearchIndexProps {
    *
    * @schema CfnSearchIndexProps#Mappings
    */
-  readonly mappings: ApiAtlasFtsMappingsViewManual;
+  readonly mappings?: ApiAtlasFtsMappingsViewManual;
 
   /**
    * Human-readable label that identifies this index. Within each namespace, names of all indexes in the namespace must be unique.
@@ -79,6 +79,13 @@ export interface CfnSearchIndexProps {
    * @schema CfnSearchIndexProps#Name
    */
   readonly name?: string;
+
+  /**
+   * Type of index: **search** or **vectorSearch**. Default type is **search**.
+   *
+   * @schema CfnSearchIndexProps#Type
+   */
+  readonly type?: string;
 
   /**
    * Method applied to identify words when searching this index.
@@ -93,6 +100,13 @@ export interface CfnSearchIndexProps {
    * @schema CfnSearchIndexProps#Synonyms
    */
   readonly synonyms?: ApiAtlasFtsSynonymMappingDefinitionView[];
+
+  /**
+   * Array of [Fields](https://www.mongodb.com/docs/atlas/atlas-search/field-types/knn-vector/#std-label-fts-data-types-knn-vector) to configure this vectorSearch index. Stringify json representation of field with types and properties. Required for vector indexes. It must contain at least one **vector** type field.
+   *
+   * @schema CfnSearchIndexProps#Fields
+   */
+  readonly fields?: string;
 }
 
 /**
@@ -117,10 +131,12 @@ export function toJson_CfnSearchIndexProps(
     ProjectId: obj.projectId,
     Mappings: toJson_ApiAtlasFtsMappingsViewManual(obj.mappings),
     Name: obj.name,
+    Type: obj.type,
     SearchAnalyzer: obj.searchAnalyzer,
     Synonyms: obj.synonyms?.map((y) =>
       toJson_ApiAtlasFtsSynonymMappingDefinitionView(y)
     ),
+    Fields: obj.fields,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -139,7 +155,7 @@ export interface ApiAtlasFtsAnalyzersViewManual {
    *
    * @schema ApiAtlasFTSAnalyzersViewManual#CharFilters
    */
-  readonly charFilters?: any[];
+  readonly charFilters?: string[];
 
   /**
    * Human-readable name that identifies the custom analyzer. Names must be unique within an index, and must not start with any of the following strings:
@@ -160,7 +176,7 @@ export interface ApiAtlasFtsAnalyzersViewManual {
    *
    * @schema ApiAtlasFTSAnalyzersViewManual#TokenFilters
    */
-  readonly tokenFilters?: any[];
+  readonly tokenFilters?: string[];
 
   /**
    * Tokenizer that you want to use to create tokens. Tokens determine how Atlas Search splits up text into discrete chunks for indexing.
@@ -184,7 +200,7 @@ export function toJson_ApiAtlasFtsAnalyzersViewManual(
     CharFilters: obj.charFilters?.map((y) => y),
     Name: obj.name,
     TokenFilters: obj.tokenFilters?.map((y) => y),
-    Tokenizer: obj.tokenizer,
+    Tokenizer: toJson_ApiAtlasFtsAnalyzersTokenizer(obj.tokenizer),
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -199,18 +215,18 @@ export function toJson_ApiAtlasFtsAnalyzersViewManual(
  */
 export interface ApiAtlasFtsMappingsViewManual {
   /**
-   * Flag that indicates whether the index uses dynamic or static mappings. Required if **mappings.fields** is omitted.
+   * Flag that indicates whether the index uses dynamic or static mappings. Required for search indexes if **mappings.fields** is omitted.
    *
    * @schema ApiAtlasFTSMappingsViewManual#Dynamic
    */
   readonly dynamic?: boolean;
 
   /**
-   * One or more field specifications for the Atlas Search index. The element of the array must have the format fieldName:fieldType. Required if **mappings.dynamic** is omitted or set to **false**.
+   * One or more field specifications for the Atlas Search index. Stringify json representation of field with types and properties. Required for search indexes if **mappings.dynamic** is omitted or set to **false**.
    *
    * @schema ApiAtlasFTSMappingsViewManual#Fields
    */
-  readonly fields?: string[];
+  readonly fields?: string;
 }
 
 /**
@@ -225,7 +241,7 @@ export function toJson_ApiAtlasFtsMappingsViewManual(
   }
   const result = {
     Dynamic: obj.dynamic,
-    Fields: obj.fields?.map((y) => y),
+    Fields: obj.fields,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -244,21 +260,21 @@ export interface ApiAtlasFtsSynonymMappingDefinitionView {
    *
    * @schema ApiAtlasFTSSynonymMappingDefinitionView#Analyzer
    */
-  readonly analyzer?: string;
+  readonly analyzer: string;
 
   /**
    * Human-readable label that identifies the synonym definition. Each **synonym.name** must be unique within the same index definition.
    *
    * @schema ApiAtlasFTSSynonymMappingDefinitionView#Name
    */
-  readonly name?: string;
+  readonly name: string;
 
   /**
    * Data set that stores the mapping one or more words map to one or more synonyms of those words.
    *
    * @schema ApiAtlasFTSSynonymMappingDefinitionView#Source
    */
-  readonly source?: SynonymSource;
+  readonly source: SynonymSource;
 }
 
 /**
@@ -285,6 +301,81 @@ export function toJson_ApiAtlasFtsSynonymMappingDefinitionView(
 /* eslint-enable max-len, quote-props */
 
 /**
+ * Tokenizer that you want to use to create tokens. Tokens determine how Atlas Search splits up text into discrete chunks for indexing.
+ *
+ * @schema ApiAtlasFTSAnalyzersTokenizer
+ */
+export interface ApiAtlasFtsAnalyzersTokenizer {
+  /**
+   * Characters to include in the longest token that Atlas Search creates.
+   *
+   * @schema ApiAtlasFTSAnalyzersTokenizer#MaxGram
+   */
+  readonly maxGram?: number;
+
+  /**
+   * Characters to include in the shortest token that Atlas Search creates.
+   *
+   * @schema ApiAtlasFTSAnalyzersTokenizer#MinGram
+   */
+  readonly minGram?: number;
+
+  /**
+   * Human-readable label that identifies this tokenizer type.
+   *
+   * @schema ApiAtlasFTSAnalyzersTokenizer#Type
+   */
+  readonly type?: string;
+
+  /**
+   * Index of the character group within the matching expression to extract into tokens. Use `0` to extract all character groups.
+   *
+   * @schema ApiAtlasFTSAnalyzersTokenizer#Group
+   */
+  readonly group?: number;
+
+  /**
+   * Regular expression to match against.
+   *
+   * @schema ApiAtlasFTSAnalyzersTokenizer#Pattern
+   */
+  readonly pattern?: string;
+
+  /**
+   * Maximum number of characters in a single token. Tokens greater than this length are split at this length into multiple tokens.
+   *
+   * @schema ApiAtlasFTSAnalyzersTokenizer#MaxTokenLength
+   */
+  readonly maxTokenLength?: number;
+}
+
+/**
+ * Converts an object of type 'ApiAtlasFtsAnalyzersTokenizer' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_ApiAtlasFtsAnalyzersTokenizer(
+  obj: ApiAtlasFtsAnalyzersTokenizer | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    MaxGram: obj.maxGram,
+    MinGram: obj.minGram,
+    Type: obj.type,
+    Group: obj.group,
+    Pattern: obj.pattern,
+    MaxTokenLength: obj.maxTokenLength,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
+
+/**
  * @schema SynonymSource
  */
 export interface SynonymSource {
@@ -293,7 +384,7 @@ export interface SynonymSource {
    *
    * @schema SynonymSource#Collection
    */
-  readonly collection?: string;
+  readonly collection: string;
 }
 
 /**

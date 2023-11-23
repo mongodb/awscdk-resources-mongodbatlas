@@ -1,3 +1,4 @@
+import { CfnCloudBackUpRestoreJobsPropsInstanceType } from './../../src/l1-resources/cloud-backup-restore-jobs/index';
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { CfnCloudBackUpRestoreJobs, CfnCloudBackUpRestoreJobsPropsDeliveryType } from 'awscdk-resources-mongodbatlas';
@@ -6,7 +7,7 @@ interface AtlasStackProps {
   readonly projId: string;
   readonly profile: string;
   readonly snapshotId: string;
-  readonly clusterName: string;
+  readonly instanceName: string;
   readonly targetClusterName: string;
   readonly targerProjId: string;
 }
@@ -17,8 +18,9 @@ export class CdkTestingStack extends cdk.Stack {
 
     const atlasProps = this.getContextProps();
 
-    const cloudBackupRestoreJobs = new CfnCloudBackUpRestoreJobs(this, 'CloudBackupRestoreJobs', {    
-      clusterName: atlasProps.clusterName,
+    new CfnCloudBackUpRestoreJobs(this, 'CloudBackupRestoreJobs', {    
+      instanceName: atlasProps.instanceName,
+      instanceType: CfnCloudBackUpRestoreJobsPropsInstanceType.CLUSTER,
       projectId: atlasProps.projId,
       profile: atlasProps.profile,
       snapshotId: atlasProps.snapshotId,
@@ -37,7 +39,7 @@ export class CdkTestingStack extends cdk.Stack {
     }
     const snapshotId = this.node.tryGetContext('snapshotId');
     const profile = this.node.tryGetContext('profile') ?? 'default';
-    const clusterName = this.node.tryGetContext('clusterName');
+    const instanceName = this.node.tryGetContext('instanceName');
     const targetClusterName = this.node.tryGetContext('targetClusterName');
     const targerProjId = this.node.tryGetContext('targerProjId');
 
@@ -45,7 +47,7 @@ export class CdkTestingStack extends cdk.Stack {
       projId,
       profile,
       snapshotId,
-      clusterName,
+      instanceName,
       targetClusterName,
       targerProjId
     }

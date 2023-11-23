@@ -12,14 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import * as ec2 from "aws-cdk-lib/aws-ec2";
 import { Construct } from "constructs";
-import { CfnPrivateEndpoint, PrivateEndpoint } from "../../index";
+import {
+  CfnPrivateEndpointAws,
+  CfnPrivateEndpointService,
+  CfnPrivateEndpointServicePropsCloudProvider,
+} from "../../index";
 import { AtlasBasic } from "../atlas-basic";
 import { AtlasBasicProps } from "../common/props";
 
 /** @type {*} */
 const privateEndpointDefaults = {
   region: "us-east-1",
+  vpcEndpointType: "Interface",
+  cloudProvider: "AWS",
 };
 
 /**
@@ -30,7 +37,9 @@ const privateEndpointDefaults = {
  */
 export class AtlasBasicPrivateEndpoint extends Construct {
   readonly atlasBasic: AtlasBasic;
-  readonly privateEndpoint: CfnPrivateEndpoint;
+  readonly privateEndpointService: CfnPrivateEndpointService;
+  readonly awsPrivateEndpoint: ec2.CfnVPCEndpoint;
+  readonly privateEndpointAws: CfnPrivateEndpointAws;
 
   /**
    * Creates an instance of AtlasBasicPrivateEndpoint.
@@ -51,16 +60,41 @@ export class AtlasBasicPrivateEndpoint extends Construct {
       profile: props.profile,
       ...props.atlasBasicProps,
     });
-    this.privateEndpoint = new CfnPrivateEndpoint(
+
+    this.privateEndpointService = new CfnPrivateEndpointService(
       this,
-      "private-endpoint-".concat(id),
+      "atlas-private-endpoint-service-".concat(id),
       {
-        profile: props.profile,
-        groupId: this.atlasBasic.mProject.attrId,
-        region: props.region || privateEndpointDefaults.region,
-        ...props.privateEndpointProps,
+        projectId: this.atlasBasic.mProject.attrId,
+        region: props.region.toUpperCase().replace(/-/g, "_"),
+        cloudProvider: CfnPrivateEndpointServicePropsCloudProvider.AWS,
       }
     );
+
+    this.awsPrivateEndpoint = new ec2.CfnVPCEndpoint(
+      this,
+      "aws-private-endpoint-service-".concat(id),
+      {
+        serviceName: this.privateEndpointService.attrEndpointServiceName,
+        subnetIds: [props.privateEndpointProps.awsSubnetId],
+        vpcEndpointType: privateEndpointDefaults.vpcEndpointType,
+        vpcId: props.privateEndpointProps.awsVpcId,
+      }
+    );
+
+    this.awsPrivateEndpoint.addDependency(this.privateEndpointService);
+
+    this.privateEndpointAws = new CfnPrivateEndpointAws(
+      this,
+      "atlas-private-endpoint-".concat(id),
+      {
+        projectId: this.atlasBasic.mProject.attrId,
+        endpointServiceId: this.privateEndpointService.attrId,
+        id: this.awsPrivateEndpoint.ref,
+      }
+    );
+
+    this.privateEndpointAws.addDependency(this.awsPrivateEndpoint);
   }
 }
 
@@ -84,7 +118,7 @@ export interface AtlasBasicPrivateEndpointProps {
    * @default us-east-1
    * @memberof AtlasPrivateEndpointProps
    */
-  readonly region?: string;
+  readonly region: string;
   /**
    * @description
    * @type {AtlasBasicProps}
@@ -106,39 +140,15 @@ export interface AtlasBasicPrivateEndpointProps {
  */
 export interface PrivateEndpointProps {
   /**
-   * @description Name of the AWS PrivateLink endpoint service. Atlas returns null while it is creating the endpoint service.
+   * @description AWS VPC ID (like: vpc-xxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint)
    * @type {string}
    * @memberof PrivateEndpointProps
    */
-  readonly endpointServiceName?: string;
+  readonly awsVpcId: string;
   /**
-   * @description Error message pertaining to the AWS PrivateLink connection. Returns null if there are no errors.
+   * @description AWS VPC Subnet ID (like: subnet-xxxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint)
    * @type {string}
    * @memberof PrivateEndpointProps
    */
-  readonly errorMessage?: string;
-  /**
-   * @description Status of the Atlas PrivateEndpoint service connection
-   * @type {string}
-   * @memberof PrivateEndpointProps
-   */
-  readonly status?: string;
-  /**
-   * @description Unique 24-hexadecimal digit string that identifies your project.
-   * @type {string}
-   * @memberof PrivateEndpointProps
-   */
-  readonly groupId?: string;
-  /**
-   * @description
-   * @type {string}
-   * @memberof PrivateEndpointProps
-   */
-  readonly region?: string;
-  /**
-   * @description
-   * @type {PrivateEndpoint[]}
-   * @memberof PrivateEndpointProps
-   */
-  readonly privateEndpoints?: PrivateEndpoint[];
+  readonly awsSubnetId: string;
 }

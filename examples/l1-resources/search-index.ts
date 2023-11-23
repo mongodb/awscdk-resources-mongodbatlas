@@ -8,45 +8,66 @@ interface AtlasStackProps {
   readonly clusterName: string;
   readonly collectionName: string;
   readonly dbName: string;
-  readonly indexName: string;
+  readonly indexNameSearch: string;
+  readonly indexNameVector: string;
 }
 
 export class CdkTestingStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-
     const atlasProps = this.getContextProps();
-    const mySearchIndex = new CfnSearchIndex(this, 'MySearchIndex', {
-        analyzer: 'lucene.standard',
-        clusterName: atlasProps.clusterName,
-        collectionName: atlasProps.collectionName,
-        database: atlasProps.dbName,
-        mappings: {
-          fields: [
-            "summary:string", 
-            "description:string",
-            "minimum_nights:number"],
-          dynamic: false,
-        },
-        name: atlasProps.indexName,
-        profile: atlasProps.profile,
-        projectId: atlasProps.projId,
-        searchAnalyzer: 'lucene.standard'
-      });
 
+    const mySearchIndex = new CfnSearchIndex(this, 'MySearchIndex', {
+      profile: atlasProps.profile,
+      projectId: atlasProps.projId,
+      clusterName: atlasProps.clusterName,
+      name: atlasProps.indexNameSearch,
+      collectionName: atlasProps.collectionName,
+      database: atlasProps.dbName,
+      searchAnalyzer: 'lucene.standard',
+      analyzer: 'lucene.standard',
+      mappings: {
+        fields: JSON.stringify({
+          employees: {
+            type: "string",
+            analyzer: "lucene.whitespace",
+          }
+        }),
+        dynamic: false,
+      },
+    });
+
+    const myVectorSearchIndex = new CfnSearchIndex(this, 'MyVectorSearchIndex', {
+      profile: atlasProps.profile,
+      projectId: atlasProps.projId,
+      clusterName: atlasProps.clusterName,
+      name: atlasProps.indexNameVector,
+      collectionName: atlasProps.collectionName,
+      database: atlasProps.dbName,
+      type: 'vectorSearch',
+      fields: JSON.stringify([
+        {
+          type: "vector",
+          path: "plot_embedding",
+          numDimensions: 1536,
+          similarity: "euclidean"
+        }
+      ]),
+    });
   }
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for orgId. Please specify via the cdk context."
     }
-    
+
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const clusterName = this.node.tryGetContext('clusterName') ?? 'Cluster0';
     const collectionName = this.node.tryGetContext('collectionName') ?? 'listingsAndReviews';
     const dbName = this.node.tryGetContext('dbName') ?? 'sample_airbnb';
-    const indexName = this.node.tryGetContext('indexName') ?? 'searchIndex';
+    const indexNameSearch = this.node.tryGetContext('indexName') ?? 'searchIndex';
+    const indexNameVector = this.node.tryGetContext('indexNameVector') ?? 'searchIndexVector';
 
     return {
       projId,
@@ -54,7 +75,8 @@ export class CdkTestingStack extends cdk.Stack {
       clusterName,
       collectionName,
       dbName,
-      indexName
+      indexNameSearch,
+      indexNameVector,
     }
   }
 }

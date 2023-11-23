@@ -14,25 +14,36 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnCloudBackUpRestoreJobs } from "../../../src/l1-resources/cloud-backup-restore-jobs";
+import {
+  CfnCloudBackUpRestoreJobs,
+  CfnCloudBackUpRestoreJobsPropsDeliveryType,
+  CfnCloudBackUpRestoreJobsPropsInstanceType,
+} from "../../../src/l1-resources/cloud-backup-restore-jobs";
 
 const RESOURCE_NAME = "MongoDB::Atlas::CloudBackUpRestoreJobs";
 const CLUSTER_NAME = "testCluster";
-const PROJECT_NAME = "projtest";
+const TEST_PROJECT_ID = "projtest";
+const SNAPSHOT_ID = "testsnapshot";
 
 test("CfnCloudBackUpRestoreJobs construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
   new CfnCloudBackUpRestoreJobs(stack, "testing-stack", {
-    projectId: CLUSTER_NAME,
-    clusterName: PROJECT_NAME,
+    projectId: TEST_PROJECT_ID,
+    instanceName: CLUSTER_NAME,
+    instanceType: CfnCloudBackUpRestoreJobsPropsInstanceType.CLUSTER,
+    deliveryType: CfnCloudBackUpRestoreJobsPropsDeliveryType.AUTOMATED,
+    snapshotId: SNAPSHOT_ID,
   });
 
   const template = Template.fromStack(stack);
 
   template.hasResourceProperties(RESOURCE_NAME, {
-    ProjectId: CLUSTER_NAME,
-    ClusterName: PROJECT_NAME,
+    ProjectId: TEST_PROJECT_ID,
+    InstanceName: CLUSTER_NAME,
+    InstanceType: "cluster",
+    DeliveryType: "automated",
+    SnapshotId: SNAPSHOT_ID,
   });
 });

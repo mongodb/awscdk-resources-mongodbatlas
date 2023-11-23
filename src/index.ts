@@ -64,6 +64,8 @@ export {
   CfnCloudBackUpRestoreJobs,
   CfnCloudBackUpRestoreJobsProps,
   CfnCloudBackUpRestoreJobsPropsDeliveryType,
+  CfnCloudBackUpRestoreJobsPropsInstanceType,
+  SynchronousCreationOptions,
 } from "./l1-resources/cloud-backup-restore-jobs";
 
 export {
@@ -89,6 +91,7 @@ export {
   CfnCloudBackupSnapshotProps,
   CfnCloudBackupSnapshotPropsFrequencyType,
   CfnCloudBackupSnapshotPropsSnapshotType,
+  CfnCloudBackupSnapshotPropsInstanceType,
 } from "./l1-resources/cloud-backup-snapshot";
 
 export {
@@ -215,6 +218,24 @@ export {
 } from "./l1-resources/private-endpoint";
 
 export {
+  CfnPrivateEndpointAwsProps,
+  CfnPrivateEndpointAws,
+} from "./l1-resources/private-endpoint-aws";
+
+export {
+  CfnPrivateEndpointService,
+  CfnPrivateEndpointServiceProps,
+  CfnPrivateEndpointServicePropsCloudProvider,
+} from "./l1-resources/private-endpoint-service";
+
+export {
+  CfnServerlessPrivateEndpointProps,
+  CfnServerlessPrivateEndpoint,
+  ServerlessPrivateEndpoint,
+  AwsPrivateEndpointConfig,
+} from "./l1-resources/serverless-private-endpoint";
+
+export {
   CfnPrivateEndpointAdl,
   CfnPrivateEndpointAdlProps,
 } from "./l1-resources/private-endpoint-adl";
@@ -326,5 +347,6 @@ export * from "./l3-resources/atlas-basic";
 export * from "./l3-resources/atlas-serverless-basic";
 export * from "./l3-resources/atlas-basic-private-endpoint";
 export * from "./l3-resources/encryption-at-rest-express";
+export * from "./l3-resources/atlas-bootstrap";
 
 export * from "./l3-resources/common/props";
