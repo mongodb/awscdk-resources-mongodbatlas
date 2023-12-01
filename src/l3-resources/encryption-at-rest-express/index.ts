@@ -54,7 +54,7 @@ function getClusterProps(
       inputClusterProps.name || "atlas-cluster-".concat(String(randomNumber())),
     mongoDbMajorVersion:
       inputClusterProps.mongoDbMajorVersion || MONGODB_VERSION,
-    backupEnabled: inputClusterProps.backupEnabled || BACKUP_ENABLED,
+    backupEnabled: inputClusterProps.backupEnabled ?? BACKUP_ENABLED,
     diskSizeGb: inputClusterProps.diskSizeGb,
     clusterType: inputClusterProps.clusterType || CLUSTER_TYPE,
     biConnector: inputClusterProps.biConnector,
