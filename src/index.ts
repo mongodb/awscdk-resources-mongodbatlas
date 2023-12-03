@@ -100,6 +100,13 @@ export {
 } from "./l1-resources/cloud-backup-snapshot-export-bucket";
 
 export {
+  CfnClusterOutageSimulation,
+  CfnClusterOutageSimulationProps,
+  Filter,
+  FilterCloudProvider,
+} from "./l1-resources/cluster-outage-simulation";
+
+export {
   CfnClusterProps,
   ProcessArgs,
   CfnClusterPropsBiConnector,
