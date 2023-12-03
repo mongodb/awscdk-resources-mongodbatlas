@@ -212,6 +212,12 @@ export {
 } from "./l1-resources/org-invitation";
 
 export {
+  CfnOrganization,
+  CfnOrganizationProps,
+  ApiKey,
+} from "./l1-resources/organization";
+
+export {
   CfnPrivateEndpointProps,
   CfnPrivateEndpoint,
   PrivateEndpoint,
