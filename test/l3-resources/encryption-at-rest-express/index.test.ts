@@ -18,6 +18,7 @@ import * as l3 from "../../../src";
 
 const PROJECT_ID = "PROJ_ID";
 const PROJECT_NAME = "TEST";
+const BACKUP_ENABLED = false;
 const ROLE_ID = "ROLE_ID";
 const CUSTOMER_MASTER_KEY = "MASTER_KEY";
 const DATABASE_NAME = "DATABASE_NAME";
@@ -41,6 +42,7 @@ test("Encryption at rest express construct should contain default properties", (
   new l3.AtlasEncryptionAtRestExpress(stack, "testing-stack", {
     cluster: {
       name: PROJECT_NAME,
+      backupEnabled: BACKUP_ENABLED,
     },
 
     accessList: {
@@ -70,6 +72,7 @@ test("Encryption at rest express construct should contain default properties", (
   template.hasResourceProperties(RESOURCE_NAME_CLUSTER, {
     ClusterType: "REPLICASET",
     Name: PROJECT_NAME,
+    BackupEnabled: BACKUP_ENABLED,
     ReplicationSpecs: [
       {
         NumShards: 1,
