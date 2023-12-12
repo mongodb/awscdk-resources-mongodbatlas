@@ -100,6 +100,13 @@ export {
 } from "./l1-resources/cloud-backup-snapshot-export-bucket";
 
 export {
+  CfnClusterOutageSimulation,
+  CfnClusterOutageSimulationProps,
+  Filter,
+  FilterCloudProvider,
+} from "./l1-resources/cluster-outage-simulation";
+
+export {
   CfnClusterProps,
   ProcessArgs,
   CfnClusterPropsBiConnector,
@@ -210,6 +217,12 @@ export {
   CfnOrgInvitationProps,
   CfnOrgInvitationPropsRoles,
 } from "./l1-resources/org-invitation";
+
+export {
+  CfnOrganization,
+  CfnOrganizationProps,
+  ApiKey,
+} from "./l1-resources/organization";
 
 export {
   CfnPrivateEndpointProps,
