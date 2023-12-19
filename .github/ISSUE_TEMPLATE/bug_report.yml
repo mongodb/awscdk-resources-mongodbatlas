@@ -44,7 +44,7 @@ body:
     attributes:
       label: CFN Resource Region
       description: In which AWS Region are you running your CFN stack?
-      placeholder: "US-EAST-1"
+      placeholder: "us-east-1"
     validations:
       required: true
 
