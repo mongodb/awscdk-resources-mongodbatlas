@@ -86,10 +86,3 @@ body:
         - label: I agree to follow this project's Code of Conduct
           required: true
 
-  - type: checkboxes
-    attributes:
-      label: Is there an existing issue for this?
-      description: Please search to see if an issue already exists for the bug you encountered. If the issue has been reported add a reaction, i.e. +1, to the issue.
-      options:
-        - label: I have searched the existing issues
-          required: true
