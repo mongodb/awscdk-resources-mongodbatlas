@@ -114,7 +114,7 @@ Our support will prioritise issues that contain all the required information tha
     * AWS CDK package version used to reproduce the issue
     * CFN resource version and AWS region used to reproduce the issue
   * Issues that **cannot be properly reproduced will be de-prioritised** in favour of the ones that succeed.
-* Before opening an issue, you have to try to specifically isolate it to the **CDK MongoDB Atlas constructur** by **removing as many dependencies** as possible. If the issue only happens with other dependencies, then:
+* Before opening an issue, you have to try to specifically isolate it to the **CDK MongoDB Atlas constructor** by **removing as many dependencies** as possible. If the issue only happens with other dependencies, then:
   * If other CDK constructors are required, please make sure you also include those. _Same "one-click reproducible issue" principle applies_.
   * If external components are required to replicate it, please make sure you also provides instructions on those parts.
 
