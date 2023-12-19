@@ -34,8 +34,8 @@ body:
     id: cfn_resource_version
     attributes:
       label: CFN Resource version
-      description: What CFN resource version are you using in your AWS account?
-      placeholder: "Example: v1.6.6"
+      description: What versions of CFN resources are you using in your AWS account?
+      placeholder: "Example: project: v1.6.6, cluster:v1.0.0"
     validations:
       required: true
 
