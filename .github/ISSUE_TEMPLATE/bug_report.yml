@@ -39,6 +39,15 @@ body:
     validations:
       required: true
 
+  - type: input
+    id: cfn_resource_region
+    attributes:
+      label: CFN Resource AWS Region
+      description: In which AWS Region are you running your CFN stack?
+      placeholder: "Example: v1.6.6"
+    validations:
+      required: true
+
   - type: textarea
     id: current_behaviour
     attributes:
