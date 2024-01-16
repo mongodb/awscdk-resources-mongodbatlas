@@ -10,6 +10,7 @@
   jobs:
     jira_task:
       name: Create Jira issue
+      if: github.event.action == 'opened'
       runs-on: ubuntu-latest
       steps:
       - name: Create JIRA ticket
