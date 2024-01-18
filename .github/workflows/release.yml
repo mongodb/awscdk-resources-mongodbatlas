@@ -10,7 +10,7 @@ jobs:
       CI: "true"
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Set git config safe.directory
@@ -140,7 +140,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.14.0
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: 3.x
       - name: Download build artifacts
@@ -231,7 +231,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.14.0
-      - uses: actions/setup-go@v4
+      - uses: actions/setup-go@v5
         with:
           go-version: ^1.16.0
       - name: Download build artifacts
