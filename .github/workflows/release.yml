@@ -20,7 +20,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 16.14.0
       - name: Install dependencies
@@ -43,7 +43,7 @@ jobs:
       contents: read
       issues: write
     steps:
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 16.14.0
       - name: Download build artifacts
@@ -91,7 +91,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 11.x
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 16.14.0
       - name: Download build artifacts
@@ -137,7 +137,7 @@ jobs:
       contents: read
       issues: write
     steps:
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 16.14.0
       - uses: actions/setup-python@v5
@@ -183,7 +183,7 @@ jobs:
       contents: read
       issues: write
     steps:
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 16.14.0
       - uses: actions/setup-dotnet@v3
@@ -228,7 +228,7 @@ jobs:
       contents: read
       issues: write
     steps:
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 16.14.0
       - uses: actions/setup-go@v5
@@ -275,7 +275,7 @@ jobs:
       contents: write
       issues: write
     steps:
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 16.14.0
       - name: Download build artifacts
