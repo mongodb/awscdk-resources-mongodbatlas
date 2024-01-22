@@ -39,6 +39,7 @@ We're here to help! This is simply a reminder of what we are going to look for b
 - [ ] I have added any necessary documentation (if appropriate)
 - [ ] I have run \`make fmt\` and formatted my code
 - [ ] I have tested the CDK constructor in a CFN stack. See [TESTING.md](../TESTING.md)
+- [ ] If changes include removal or addition of 3rd party GitHub actions, I updated our internal document. Reach out to the APIx Integration slack channel to get access to the internal document.
 
 ## Further comments
 `;
