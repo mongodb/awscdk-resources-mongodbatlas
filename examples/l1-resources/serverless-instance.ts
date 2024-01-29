@@ -3,10 +3,12 @@ import { Construct } from 'constructs';
 import { CfnServerlessInstance,  ServerlessInstanceProviderSettingsProviderName} from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
+  readonly name: string;
   readonly projId: string;
   readonly profile: string;
-  readonly continuousBackupEnabled: string;
-  readonly terminationProtectionEnabled: string;
+  readonly continuousBackupEnabled: boolean;
+  readonly terminationProtectionEnabled: boolean;
+  readonly region: string;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -16,11 +18,13 @@ export class CdkTestingStack extends cdk.Stack {
     const atlasProps = this.getContextProps();
 
     const myServerlessInstance = new CfnServerlessInstance(this, 'MyServerlessInstance', {
+      name: atlasProps.name,
       projectId: atlasProps.projId,
-      profile:  atlasProps.profile,
+      profile: atlasProps.profile,
       continuousBackupEnabled: atlasProps.continuousBackupEnabled,
       providerSettings: {
-        providerName: ServerlessInstanceProviderSettingsProviderName.SERVERLESS
+        providerName: ServerlessInstanceProviderSettingsProviderName.SERVERLESS,
+        regionName: atlasProps.region
       },
       terminationProtectionEnabled: atlasProps.terminationProtectionEnabled   
      });
@@ -31,17 +35,20 @@ export class CdkTestingStack extends cdk.Stack {
     if (!projId){
       throw "No context value specified for orgId. Please specify via the cdk context."
     }
-    
-    const profile = this.node.tryGetContext('profile') ?? 'default';
-    const terminationProtectionEnabled = this.node.tryGetContext('terminationProtectionEnabled');
-    const continuousBackupEnabled = this.node.tryGetContext('continuousBackupEnabled');
 
+    const name = this.node.tryGetContext('name') ?? 'default';
+    const profile = this.node.tryGetContext('profile') ?? 'default';
+    const terminationProtectionEnabled = this.node.tryGetContext('terminationProtectionEnabled') ?? false;
+    const continuousBackupEnabled = this.node.tryGetContext('continuousBackupEnabled') ?? false;
+    const region = this.node.tryGetContext('region') ?? "EU_WEST_1";
 
     return {
+      name,
       projId,
       profile,
       terminationProtectionEnabled,
-      continuousBackupEnabled
+      continuousBackupEnabled,
+      region
     }
   }
 }
