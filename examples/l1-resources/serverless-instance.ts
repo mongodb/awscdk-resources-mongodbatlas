@@ -36,7 +36,7 @@ export class CdkTestingStack extends cdk.Stack {
       throw "No context value specified for orgId. Please specify via the cdk context."
     }
 
-    const name = this.node.tryGetContext('name') ?? 'test';
+    const name = this.node.tryGetContext('name') ?? 'default';
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const terminationProtectionEnabled = this.node.tryGetContext('terminationProtectionEnabled') ?? false;
     const continuousBackupEnabled = this.node.tryGetContext('continuousBackupEnabled') ?? false;
