@@ -9,6 +9,7 @@ interface AtlasStackProps {
   readonly profile: string;
   readonly region: string;
   readonly ip: string;
+  readonly instanceName: string;
   readonly continuousBackupEnabled: boolean;
   readonly terminationProtectionEnabled: boolean;
 }
@@ -19,7 +20,8 @@ export class CdkTestingStack extends cdk.Stack {
 
     const atlasProps = this.getContextProps();
     const atlasBasic = new AtlasServerlessBasic(this, 'AtlasServerlessBasic', {
-        serverlessProps: { 
+        serverlessProps: {
+          name: atlasProps.instanceName,
           projectId: atlasProps.projectId,
           profile:  atlasProps.profile,
           continuousBackupEnabled: atlasProps.continuousBackupEnabled,
@@ -56,6 +58,7 @@ export class CdkTestingStack extends cdk.Stack {
     const terminationProtectionEnabled = this.node.tryGetContext('terminationProtectionEnabled');
     const continuousBackupEnabled = this.node.tryGetContext('continuousBackupEnabled');
     const region = this.node.tryGetContext('region') ?? "US_EAST_1";
+    const instanceName = this.node.tryGetContext('instanceName');
     const ip = this.node.tryGetContext('ip');
     if (!ip){
       throw "No context value specified for ip. Please specify via the cdk context."
@@ -68,7 +71,8 @@ export class CdkTestingStack extends cdk.Stack {
       continuousBackupEnabled,
       profile,
       region,
-      ip
+      ip,
+      instanceName
     }
   }
 }

@@ -95,15 +95,9 @@ export class AtlasServerlessBasic extends Construct {
         name:
           props.serverlessProps.name ||
           serverlessDefaults.serverlessName.concat(String(randomNumber())),
-        providerSettings: {
-          providerName:
-            atlas.ServerlessInstanceProviderSettingsProviderName.SERVERLESS,
-          regionName: "us-east-1",
-        },
+        providerSettings: props.serverlessProps.providerSettings,
         profile: props.profile,
-        continuousBackupEnabled: this.node.tryGetContext(
-          "continuousBackupEnabled"
-        ),
+        continuousBackupEnabled: props.serverlessProps.continuousBackupEnabled,
         ...props.serverlessProps,
       }
     );
