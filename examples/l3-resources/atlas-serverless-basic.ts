@@ -5,11 +5,11 @@ import { AtlasServerlessBasic, ServerlessInstanceProviderSettingsProviderName } 
 
 interface AtlasStackProps {
   readonly orgId: string;
-  readonly projectId: string;
   readonly profile: string;
   readonly region: string;
   readonly ip: string;
   readonly instanceName: string;
+  readonly projectName: string;
   readonly continuousBackupEnabled: boolean;
   readonly terminationProtectionEnabled: boolean;
 }
@@ -19,10 +19,9 @@ export class CdkTestingStack extends cdk.Stack {
     super(scope, id, props);
 
     const atlasProps = this.getContextProps();
-    const atlasBasic = new AtlasServerlessBasic(this, 'AtlasServerlessBasic', {
+    new AtlasServerlessBasic(this, 'AtlasServerlessBasic', {
         serverlessProps: {
           name: atlasProps.instanceName,
-          projectId: atlasProps.projectId,
           profile:  atlasProps.profile,
           continuousBackupEnabled: atlasProps.continuousBackupEnabled,
           providerSettings: {
@@ -32,6 +31,7 @@ export class CdkTestingStack extends cdk.Stack {
           terminationProtectionEnabled: atlasProps.terminationProtectionEnabled
         },
         projectProps: {
+          name: atlasProps.projectName,
           orgId: atlasProps.orgId,
         },
     
@@ -50,15 +50,12 @@ export class CdkTestingStack extends cdk.Stack {
     if (!orgId){
       throw "No context value specified for orgId. Please specify via the cdk context."
     }
-    const projectId = this.node.tryGetContext('projectId');
-    if (!projectId){
-      throw "No context value specified for projectId. Please specify via the cdk context."
-    }
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const terminationProtectionEnabled = this.node.tryGetContext('terminationProtectionEnabled');
     const continuousBackupEnabled = this.node.tryGetContext('continuousBackupEnabled');
     const region = this.node.tryGetContext('region') ?? "US_EAST_1";
     const instanceName = this.node.tryGetContext('instanceName');
+    const projectName = this.node.tryGetContext('projectName');
     const ip = this.node.tryGetContext('ip');
     if (!ip){
       throw "No context value specified for ip. Please specify via the cdk context."
@@ -66,13 +63,13 @@ export class CdkTestingStack extends cdk.Stack {
 
     return {
       orgId,
-      projectId,
       terminationProtectionEnabled,
       continuousBackupEnabled,
       profile,
       region,
       ip,
-      instanceName
+      instanceName,
+      projectName
     }
   }
 }
