@@ -5,11 +5,12 @@ import { AtlasServerlessBasic, ServerlessInstanceProviderSettingsProviderName } 
 
 interface AtlasStackProps {
   readonly orgId: string;
+  readonly projectId: string;
   readonly profile: string;
   readonly region: string;
   readonly ip: string;
-  readonly continuousBackupEnabled: string;
-  readonly terminationProtectionEnabled: string;
+  readonly continuousBackupEnabled: boolean;
+  readonly terminationProtectionEnabled: boolean;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -19,11 +20,12 @@ export class CdkTestingStack extends cdk.Stack {
     const atlasProps = this.getContextProps();
     const atlasBasic = new AtlasServerlessBasic(this, 'AtlasServerlessBasic', {
         serverlessProps: { 
-          projectId: atlasProps.orgId,
+          projectId: atlasProps.projectId,
           profile:  atlasProps.profile,
           continuousBackupEnabled: atlasProps.continuousBackupEnabled,
           providerSettings: {
-            providerName: ServerlessInstanceProviderSettingsProviderName.SERVERLESS
+            providerName: ServerlessInstanceProviderSettingsProviderName.SERVERLESS,
+            regionName: atlasProps.region
           },
           terminationProtectionEnabled: atlasProps.terminationProtectionEnabled
         },
@@ -46,6 +48,10 @@ export class CdkTestingStack extends cdk.Stack {
     if (!orgId){
       throw "No context value specified for orgId. Please specify via the cdk context."
     }
+    const projectId = this.node.tryGetContext('projectId');
+    if (!projectId){
+      throw "No context value specified for projectId. Please specify via the cdk context."
+    }
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const terminationProtectionEnabled = this.node.tryGetContext('terminationProtectionEnabled');
     const continuousBackupEnabled = this.node.tryGetContext('continuousBackupEnabled');
@@ -57,6 +63,7 @@ export class CdkTestingStack extends cdk.Stack {
 
     return {
       orgId,
+      projectId,
       terminationProtectionEnabled,
       continuousBackupEnabled,
       profile,
