@@ -8,8 +8,10 @@ interface AtlasStackProps {
   readonly profile: string;
   readonly region: string;
   readonly ip: string;
-  readonly continuousBackupEnabled: string;
-  readonly terminationProtectionEnabled: string;
+  readonly instanceName: string;
+  readonly projectName: string;
+  readonly continuousBackupEnabled: boolean;
+  readonly terminationProtectionEnabled: boolean;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -17,17 +19,19 @@ export class CdkTestingStack extends cdk.Stack {
     super(scope, id, props);
 
     const atlasProps = this.getContextProps();
-    const atlasBasic = new AtlasServerlessBasic(this, 'AtlasServerlessBasic', {
-        serverlessProps: { 
-          projectId: atlasProps.orgId,
+    new AtlasServerlessBasic(this, 'AtlasServerlessBasic', {
+        serverlessProps: {
+          name: atlasProps.instanceName,
           profile:  atlasProps.profile,
           continuousBackupEnabled: atlasProps.continuousBackupEnabled,
           providerSettings: {
-            providerName: ServerlessInstanceProviderSettingsProviderName.SERVERLESS
+            providerName: ServerlessInstanceProviderSettingsProviderName.SERVERLESS,
+            regionName: atlasProps.region
           },
           terminationProtectionEnabled: atlasProps.terminationProtectionEnabled
         },
         projectProps: {
+          name: atlasProps.projectName,
           orgId: atlasProps.orgId,
         },
     
@@ -50,6 +54,8 @@ export class CdkTestingStack extends cdk.Stack {
     const terminationProtectionEnabled = this.node.tryGetContext('terminationProtectionEnabled');
     const continuousBackupEnabled = this.node.tryGetContext('continuousBackupEnabled');
     const region = this.node.tryGetContext('region') ?? "US_EAST_1";
+    const instanceName = this.node.tryGetContext('instanceName');
+    const projectName = this.node.tryGetContext('projectName');
     const ip = this.node.tryGetContext('ip');
     if (!ip){
       throw "No context value specified for ip. Please specify via the cdk context."
@@ -61,7 +67,9 @@ export class CdkTestingStack extends cdk.Stack {
       continuousBackupEnabled,
       profile,
       region,
-      ip
+      ip,
+      instanceName,
+      projectName
     }
   }
 }

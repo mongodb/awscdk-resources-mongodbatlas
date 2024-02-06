@@ -17,14 +17,6 @@ import * as atlas from "../../index";
 import { AtlasServerlessBasicProps } from "../common/props";
 
 /** @type {*} */
-const projectDefaults = {
-  projectName: "atlas-project-",
-};
-/** @type {*} */
-const serverlessDefaults = {
-  serverlessName: "atlas-serverless-",
-};
-/** @type {*} */
 const dbDefaults = {
   dbName: "admin",
   username: "atlas-user",
@@ -81,9 +73,7 @@ export class AtlasServerlessBasic extends Construct {
     //Create a new MongoDB Atlas Project
     this.mProject = new atlas.CfnProject(this, "project-".concat(id), {
       profile: props.profile,
-      name:
-        props.projectProps.name ||
-        projectDefaults.projectName.concat(String(randomNumber())),
+      name: props.projectProps.name ?? `project-${id}`,
       ...props.projectProps,
     });
     // Create a new serverless Instance and pass project ID
@@ -92,18 +82,10 @@ export class AtlasServerlessBasic extends Construct {
       "serverless-".concat(id),
       {
         projectId: this.mProject.attrId,
-        name:
-          props.serverlessProps.name ||
-          serverlessDefaults.serverlessName.concat(String(randomNumber())),
-        providerSettings: {
-          providerName:
-            atlas.ServerlessInstanceProviderSettingsProviderName.SERVERLESS,
-          regionName: "us-east-1",
-        },
+        name: props.serverlessProps.name ?? `serverless-${id}`,
+        providerSettings: props.serverlessProps.providerSettings,
         profile: props.profile,
-        continuousBackupEnabled: this.node.tryGetContext(
-          "continuousBackupEnabled"
-        ),
+        continuousBackupEnabled: props.serverlessProps.continuousBackupEnabled,
         ...props.serverlessProps,
       }
     );
@@ -132,10 +114,4 @@ export class AtlasServerlessBasic extends Construct {
     );
     this.ipAccessList.addDependency(this.mProject);
   }
-}
-
-function randomNumber() {
-  const min = 10;
-  const max = 9999999;
-  return Math.floor(Math.random() * (max - min + 1) + min);
 }
