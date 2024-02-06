@@ -5,7 +5,6 @@ import {
   aws_cloudformation as cloudformation,
   SecretValue,
   Duration,
-  Aws,
 } from "aws-cdk-lib";
 import { Construct } from "constructs";
 
@@ -82,8 +81,6 @@ export class MongoAtlasBootstrap extends Construct {
       ],
       resources: ["*"],
     });
-
-    policyStatement.addSourceAccountCondition(Aws.ACCOUNT_ID);
 
     const atlasCdkPolicy = new iam.Policy(this, "AtlasCDKExecutionPolicy", {
       policyName: "AtlasCDKExecution", // Custom Policy Name
