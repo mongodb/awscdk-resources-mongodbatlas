@@ -74,7 +74,7 @@ jobs:
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
       - name: Create Issue
         if: ${{ failure() }}
-        uses: imjohnbo/issue-bot@6924a99d928dc228f407d34eb3d0149eda73f2a7
+        uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
         with:
           labels: failed-release
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to npm failed
@@ -124,7 +124,7 @@ jobs:
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
       - name: Create Issue
         if: ${{ failure() }}
-        uses: imjohnbo/issue-bot@6924a99d928dc228f407d34eb3d0149eda73f2a7
+        uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
         with:
           labels: failed-release
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to Maven Central failed
@@ -170,7 +170,7 @@ jobs:
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
       - name: Create Issue
         if: ${{ failure() }}
-        uses: imjohnbo/issue-bot@6924a99d928dc228f407d34eb3d0149eda73f2a7
+        uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
         with:
           labels: failed-release
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to PyPI failed
@@ -215,7 +215,7 @@ jobs:
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
       - name: Create Issue
         if: ${{ failure() }}
-        uses: imjohnbo/issue-bot@6924a99d928dc228f407d34eb3d0149eda73f2a7
+        uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
         with:
           labels: failed-release
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to NuGet Gallery failed
@@ -262,7 +262,7 @@ jobs:
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
       - name: Create Issue
         if: ${{ failure() }}
-        uses: imjohnbo/issue-bot@6924a99d928dc228f407d34eb3d0149eda73f2a7
+        uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
         with:
           labels: failed-release
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to GitHub Go Module Repository failed
@@ -302,7 +302,7 @@ jobs:
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
       - name: Create Issue
         if: ${{ failure() }}
-        uses: imjohnbo/issue-bot@6924a99d928dc228f407d34eb3d0149eda73f2a7
+        uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
