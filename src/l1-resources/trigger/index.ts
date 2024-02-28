@@ -35,14 +35,14 @@ export interface CfnTriggerProps {
    *
    * @schema CfnTriggerProps#Name
    */
-  readonly name?: string;
+  readonly name: string;
 
   /**
    * The trigger's type.
    *
    * @schema CfnTriggerProps#Type
    */
-  readonly type?: string;
+  readonly type: string;
 
   /**
    * If `true`, the trigger is disabled and does not listen for events or execute.
