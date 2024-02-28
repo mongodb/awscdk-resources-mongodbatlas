@@ -1,7 +1,7 @@
 // This example creates a database user in Atlas using the L1 resources.
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { CfnTrigger,  DatabaseConfigOperationTypes } from 'awscdk-resources-mongodbatlas';
+import { CfnTrigger, DatabaseConfigOperationTypes } from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
   readonly projId: string;
@@ -23,6 +23,7 @@ export class CdkTestingStack extends cdk.Stack {
     const trigger = new CfnTrigger(this, 'ThirdPartyIntegration', {
       projectId: atlasProps.projId,
       profile: atlasProps.profile,
+      name: "mytrigger",
       type: "DATABASE",
       appId: atlasProps.appId,
       databaseTrigger: {
@@ -45,7 +46,7 @@ export class CdkTestingStack extends cdk.Stack {
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for projId. Please specify via the cdk context."
     }
     const appId = this.node.tryGetContext('appId');
@@ -55,14 +56,14 @@ export class CdkTestingStack extends cdk.Stack {
     const serviceId = this.node.tryGetContext('serviceId');
     const functionId = this.node.tryGetContext('functionId');
     const functionName = this.node.tryGetContext('functionName');
-    
+
     return {
       projId,
       profile,
       appId,
       dbName,
       collection,
-      serviceId, 
+      serviceId,
       functionId,
       functionName
     }
