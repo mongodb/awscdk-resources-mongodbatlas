@@ -19,6 +19,8 @@ import { CfnTrigger } from "../../../src/l1-resources/trigger";
 const RESOURCE_NAME = "MongoDB::Atlas::Trigger";
 const PROJECT_ID = "testProjectId";
 const APPID = "appId";
+const NAME = "name";
+const TYPE = "type";
 
 test("Trigger construct should contain default properties", () => {
   const mockApp = new App();
@@ -27,6 +29,8 @@ test("Trigger construct should contain default properties", () => {
   new CfnTrigger(stack, "testing-stack", {
     projectId: PROJECT_ID,
     appId: APPID,
+    name: NAME,
+    type: TYPE,
   });
 
   const template = Template.fromStack(stack);
@@ -34,5 +38,7 @@ test("Trigger construct should contain default properties", () => {
   template.hasResourceProperties(RESOURCE_NAME, {
     ProjectId: PROJECT_ID,
     AppId: APPID,
+    Name: NAME,
+    Type: TYPE,
   });
 });
