@@ -35452,17 +35452,17 @@ const cfnTriggerProps: CfnTriggerProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.appId">appId</a></code> | <code>string</code> | App Services Application ID. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.name">name</a></code> | <code>string</code> | The trigger's name. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.projectId">projectId</a></code> | <code>string</code> | Project Id for application services. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.type">type</a></code> | <code>string</code> | The trigger's type. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.authTrigger">authTrigger</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AuthConfig">AuthConfig</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.databaseTrigger">databaseTrigger</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig">DatabaseConfig</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.disabled">disabled</a></code> | <code>boolean</code> | If `true`, the trigger is disabled and does not listen for events or execute. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.eventProcessors">eventProcessors</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Event">Event</a></code> | An object where each field name is an event processor ID and each value is an object that configures its corresponding event processor. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.functionId">functionId</a></code> | <code>string</code> | The ID of the function that the trigger calls when it fires. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.functionName">functionName</a></code> | <code>string</code> | The name of the function that the trigger calls when it fires, i.e. the function described by `function_id`. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.name">name</a></code> | <code>string</code> | The trigger's name. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.scheduleTrigger">scheduleTrigger</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ScheduleConfig">ScheduleConfig</a></code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps.property.type">type</a></code> | <code>string</code> | The trigger's type. |
 
 ---
 
@@ -35478,6 +35478,18 @@ App Services Application ID.
 
 ---
 
+##### `name`<sup>Required</sup> <a name="name" id="awscdk-resources-mongodbatlas.CfnTriggerProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+The trigger's name.
+
+---
+
 ##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnTriggerProps.property.projectId"></a>
 
 ```typescript
@@ -35487,6 +35499,18 @@ public readonly projectId: string;
 - *Type:* string
 
 Project Id for application services.
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="awscdk-resources-mongodbatlas.CfnTriggerProps.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+The trigger's type.
 
 ---
 
@@ -35574,18 +35598,6 @@ For example, if you define `function_name`, the backend duplicates it to `event_
 
 ---
 
-##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.CfnTriggerProps.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
-The trigger's name.
-
----
-
 ##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.CfnTriggerProps.property.profile"></a>
 
 ```typescript
@@ -35607,18 +35619,6 @@ public readonly scheduleTrigger: ScheduleConfig;
 ```
 
 - *Type:* <a href="#awscdk-resources-mongodbatlas.ScheduleConfig">ScheduleConfig</a>
-
----
-
-##### `type`<sup>Optional</sup> <a name="type" id="awscdk-resources-mongodbatlas.CfnTriggerProps.property.type"></a>
-
-```typescript
-public readonly type: string;
-```
-
-- *Type:* string
-
-The trigger's type.
 
 ---
 
