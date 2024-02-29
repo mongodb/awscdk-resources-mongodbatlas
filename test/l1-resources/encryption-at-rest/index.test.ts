@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnEncryptionAtRest } from "../../../src/l1-resources/encryption-at-rest";
+import { CfnEncryptionAtRest } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::EncryptionAtRest";
 const PROFILE = "default";

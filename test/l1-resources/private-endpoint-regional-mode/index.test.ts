@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnPrivateEndPointRegionalMode } from "../../../src/l1-resources/private-endpoint-regional-mode";
+import { CfnPrivateEndPointRegionalMode } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::PrivateEndPointRegionalMode";
 const PROJECT_ID = "testProjectId";

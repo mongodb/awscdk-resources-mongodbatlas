@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnFederatedDatabaseInstance } from "../../../src/l1-resources/federated-database-instance";
+import { CfnFederatedDatabaseInstance } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::FederatedDatabaseInstance";
 const PROJECT_ID = "testProjectId";

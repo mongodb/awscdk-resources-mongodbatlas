@@ -17,7 +17,7 @@ import { Template } from "aws-cdk-lib/assertions";
 import {
   CfnPrivateEndpointService,
   CfnPrivateEndpointServicePropsCloudProvider,
-} from "../../../src/l1-resources/private-endpoint-service";
+} from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::PrivateEndpointService";
 const REGION = "US_EAST_1";

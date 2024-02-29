@@ -18,7 +18,7 @@ import {
   CfnCloudBackUpRestoreJobs,
   CfnCloudBackUpRestoreJobsPropsDeliveryType,
   CfnCloudBackUpRestoreJobsPropsInstanceType,
-} from "../../../src/l1-resources/cloud-backup-restore-jobs";
+} from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::CloudBackUpRestoreJobs";
 const CLUSTER_NAME = "testCluster";

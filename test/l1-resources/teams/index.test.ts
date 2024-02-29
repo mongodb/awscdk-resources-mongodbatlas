@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnTeams } from "../../../src/l1-resources/teams";
+import { CfnTeams } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::Teams";
 const PROFILE = "default";

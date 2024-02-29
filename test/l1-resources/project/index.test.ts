@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnProject } from "../../../src/l1-resources/project";
+import { CfnProject } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::Project";
 const PROJECT_ID = "63350255419cf25e3d511c95";

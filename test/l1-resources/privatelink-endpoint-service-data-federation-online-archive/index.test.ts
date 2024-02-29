@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnPrivatelinkEndpointServiceDataFederationOnlineArchive } from "../../../src/l1-resources/privatelink-endpoint-service-data-federation-online-archive";
+import { CfnPrivatelinkEndpointServiceDataFederationOnlineArchive } from "../../../src";
 
 const RESOURCE_NAME =
   "MongoDB::Atlas::PrivatelinkEndpointServiceDataFederationOnlineArchive";

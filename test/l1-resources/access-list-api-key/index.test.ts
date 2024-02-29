@@ -1,9 +1,6 @@
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import {
-  CfnAccessListApiKey,
-  CfnAccessListApiKeyProps,
-} from "../../../src/l1-resources/access-list-api-key";
+import { CfnAccessListApiKey, CfnAccessListApiKeyProps } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::AccessListAPIKey";
 const ORG_ID = "63350255419cf25e3d511c95";

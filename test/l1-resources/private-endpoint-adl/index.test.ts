@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnPrivateEndpointAdl } from "../../../src/l1-resources/private-endpoint-adl";
+import { CfnPrivateEndpointAdl } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::PrivateEndpointADL";
 const PROJECT_ID = "testProjectId";

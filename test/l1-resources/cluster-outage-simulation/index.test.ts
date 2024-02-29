@@ -14,10 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import {
-  CfnClusterOutageSimulation,
-  FilterCloudProvider,
-} from "../../../src/l1-resources/cluster-outage-simulation";
+import { CfnClusterOutageSimulation, FilterCloudProvider } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::ClusterOutageSimulation";
 const PROJECTI_ID = "test_project_id";

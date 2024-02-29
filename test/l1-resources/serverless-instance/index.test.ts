@@ -17,7 +17,7 @@ import { Template } from "aws-cdk-lib/assertions";
 import {
   CfnServerlessInstance,
   ServerlessInstanceProviderSettingsProviderName,
-} from "../../../src/l1-resources/serverless-instance";
+} from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::ServerlessInstance";
 const PROJECT_ID = "testProjectId";

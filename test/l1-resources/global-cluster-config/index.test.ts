@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnGlobalClusterConfig } from "../../../src/l1-resources/global-cluster-config";
+import { CfnGlobalClusterConfig } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::GlobalClusterConfig";
 const PROFILE = "default";

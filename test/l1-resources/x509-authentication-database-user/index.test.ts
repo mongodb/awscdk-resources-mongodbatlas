@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnX509AuthenticationDatabaseUser } from "../../../src/l1-resources/x509-authentication-database-user";
+import { CfnX509AuthenticationDatabaseUser } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::X509AuthenticationDatabaseUser";
 const PROJECT_ID = "testProjectId";

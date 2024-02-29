@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnFederatedSettingsOrgRoleMapping } from "../../../src/l1-resources/federated-settings-org-role-mapping";
+import { CfnFederatedSettingsOrgRoleMapping } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::FederatedSettingsOrgRoleMapping";
 const PROJECT_ID = "97498392039231";

@@ -6,7 +6,7 @@ import {
   CfnApiKeyProps,
   ProjectAssignment,
   ListOptions,
-} from "../../../src/l1-resources/api-key";
+} from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::APIKey";
 const ORG_ID = "63350255419cf25e3d511c95";
