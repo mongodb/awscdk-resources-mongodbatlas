@@ -142,6 +142,9 @@ export {
   CfnCustomDnsConfigurationClusterAwsProps,
 } from "./l1-resources/custom-dns-configuration-cluster-aws";
 
+
+export { CfnDataLakePipeline, CfnDataLakePipelineProps } from "./l1-resources/data-lake-pipeline";
+
 export {
   CfnDatabaseUser,
   CfnDatabaseUserProps,
