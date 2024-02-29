@@ -35,6 +35,8 @@ export {
   NotificationViewSeverity,
 } from "./l1-resources/alert-configuration";
 
+export { CfnApiKey, CfnApiKeyProps } from "./l1-resources/api-key";
+
 export { CfnAuditing, CfnAuditingProps } from "./l1-resources/auditing";
 
 export {
