@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnProjectInvitation } from "../../../src/l1-resources/project-invitation";
+import { CfnProjectInvitation } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::ProjectInvitation";
 const PROFILE = "default";

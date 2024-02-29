@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnOrganization } from "../../../src/l1-resources/organization";
+import { CfnOrganization } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::Organization";
 const NAME = "testProjectId";

@@ -18,7 +18,7 @@ import {
   CfnFederatedQueryLimit,
   CfnFederatedQueryLimitProps,
   CfnFederatedQueryLimitPropsLimitName,
-} from "../../../src/l1-resources/federated-query-limit";
+} from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::FederatedQueryLimit";
 const PROJECT_ID = "64bad960538ae76ec5c70050";

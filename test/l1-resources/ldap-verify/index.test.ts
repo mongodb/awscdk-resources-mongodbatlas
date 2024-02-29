@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnLdapVerify } from "../../../src/l1-resources/ldap-verify";
+import { CfnLdapVerify } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::LDAPVerify";
 const PROJECT_ID = "testProjectId";

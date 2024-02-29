@@ -3,7 +3,7 @@ import { Template } from "aws-cdk-lib/assertions";
 import {
   CfnServerlessPrivateEndpoint,
   AwsPrivateEndpointConfig,
-} from "../../../src/l1-resources/serverless-private-endpoint";
+} from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::ServerlessPrivateEndpoint";
 const INSTANCE_NAME = "testserverlessprivateendpoint";

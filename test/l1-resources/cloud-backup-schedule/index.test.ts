@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnCloudBackupSchedule } from "../../../src/l1-resources/cloud-backup-schedule";
+import { CfnCloudBackupSchedule } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::CloudBackupSchedule";
 const PROJECT_ID = "testProjectId";

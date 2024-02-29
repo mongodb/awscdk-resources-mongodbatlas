@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnTrigger } from "../../../src/l1-resources/trigger";
+import { CfnTrigger } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::Trigger";
 const PROJECT_ID = "testProjectId";

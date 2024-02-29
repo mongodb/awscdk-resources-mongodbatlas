@@ -13,6 +13,12 @@
 // limitations under the License.
 
 // L1 Constructors
+
+export {
+  CfnAccessListApiKey,
+  CfnAccessListApiKeyProps,
+} from "./l1-resources/access-list-api-key";
+
 export {
   CfnAlertConfiguration,
   CfnAlertConfigurationProps,
@@ -32,33 +38,13 @@ export {
   NotificationViewSeverity,
 } from "./l1-resources/alert-configuration";
 
+export {
+  CfnApiKey,
+  CfnApiKeyProps,
+  ProjectAssignment,
+} from "./l1-resources/api-key";
+
 export { CfnAuditing, CfnAuditingProps } from "./l1-resources/auditing";
-
-export {
-  CfnFederatedQueryLimit,
-  CfnFederatedQueryLimitProps,
-  CfnFederatedQueryLimitPropsLimitName,
-} from "./l1-resources/federated-query-limit";
-
-export {
-  CfnFederatedDatabaseInstance,
-  CfnFederatedDatabaseInstanceProps,
-  CloudProviderConfig,
-  DataProcessRegion,
-  Storage,
-  Database,
-  Store,
-  Collection,
-  DataSource,
-  ReadPreference,
-  TagSet,
-  View,
-} from "./l1-resources/federated-database-instance";
-
-export {
-  CfnPrivatelinkEndpointServiceDataFederationOnlineArchive,
-  CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps,
-} from "./l1-resources/privatelink-endpoint-service-data-federation-online-archive";
 
 export {
   CfnCloudBackUpRestoreJobs,
@@ -138,6 +124,17 @@ export {
 } from "./l1-resources/custom-dns-configuration-cluster-aws";
 
 export {
+  CfnDataLakePipeline,
+  CfnDataLakePipelineProps,
+  Sink,
+  SinkType,
+  Source,
+  SourceType,
+  Transformations,
+  PartitionFields,
+} from "./l1-resources/data-lake-pipeline";
+
+export {
   CfnDatabaseUser,
   CfnDatabaseUserProps,
   LabelDefinition,
@@ -171,6 +168,27 @@ export {
   CfnEncryptionAtRest,
   CfnEncryptionAtRestProps,
 } from "./l1-resources/encryption-at-rest";
+
+export {
+  CfnFederatedDatabaseInstance,
+  CfnFederatedDatabaseInstanceProps,
+  CloudProviderConfig,
+  DataProcessRegion,
+  Storage,
+  Database,
+  Store,
+  Collection,
+  DataSource,
+  ReadPreference,
+  TagSet,
+  View,
+} from "./l1-resources/federated-database-instance";
+
+export {
+  CfnFederatedQueryLimit,
+  CfnFederatedQueryLimitProps,
+  CfnFederatedQueryLimitPropsLimitName,
+} from "./l1-resources/federated-query-limit";
 
 export {
   CfnFederatedSettingsOrgRoleMapping,
@@ -213,6 +231,19 @@ export {
 } from "./l1-resources/network-peering";
 
 export {
+  CfnOnlineArchive,
+  CfnOnlineArchiveProps,
+  CfnOnlineArchivePropsCollectionType,
+  CriteriaView,
+  CriteriaViewDateFormat,
+  CriteriaViewType,
+  PartitionFieldView,
+  PartitionFieldViewFieldType,
+  ScheduleView,
+  ScheduleViewType,
+} from "./l1-resources/online-archive";
+
+export {
   CfnOrgInvitation,
   CfnOrgInvitationProps,
   CfnOrgInvitationPropsRoles,
@@ -231,9 +262,19 @@ export {
 } from "./l1-resources/private-endpoint";
 
 export {
+  CfnPrivateEndpointAdl,
+  CfnPrivateEndpointAdlProps,
+} from "./l1-resources/private-endpoint-adl";
+
+export {
   CfnPrivateEndpointAwsProps,
   CfnPrivateEndpointAws,
 } from "./l1-resources/private-endpoint-aws";
+
+export {
+  CfnPrivateEndPointRegionalMode,
+  CfnPrivateEndPointRegionalModeProps,
+} from "./l1-resources/private-endpoint-regional-mode";
 
 export {
   CfnPrivateEndpointService,
@@ -242,21 +283,9 @@ export {
 } from "./l1-resources/private-endpoint-service";
 
 export {
-  CfnServerlessPrivateEndpointProps,
-  CfnServerlessPrivateEndpoint,
-  ServerlessPrivateEndpoint,
-  AwsPrivateEndpointConfig,
-} from "./l1-resources/serverless-private-endpoint";
-
-export {
-  CfnPrivateEndpointAdl,
-  CfnPrivateEndpointAdlProps,
-} from "./l1-resources/private-endpoint-adl";
-
-export {
-  CfnPrivateEndPointRegionalMode,
-  CfnPrivateEndPointRegionalModeProps,
-} from "./l1-resources/private-endpoint-regional-mode";
+  CfnPrivatelinkEndpointServiceDataFederationOnlineArchive,
+  CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps,
+} from "./l1-resources/privatelink-endpoint-service-data-federation-online-archive";
 
 export {
   CfnProject,
@@ -300,6 +329,13 @@ export {
 } from "./l1-resources/serverless-instance";
 
 export {
+  CfnServerlessPrivateEndpointProps,
+  CfnServerlessPrivateEndpoint,
+  ServerlessPrivateEndpoint,
+  AwsPrivateEndpointConfig,
+} from "./l1-resources/serverless-private-endpoint";
+
+export {
   CfnTeams,
   CfnTeamsProps,
   CfnTeamsPropsRoleNames,
@@ -307,6 +343,14 @@ export {
   AtlasRole,
   AtlasUser,
 } from "./l1-resources/teams";
+
+export {
+  CfnThirdPartyIntegration,
+  CfnThirdPartyIntegrationProps,
+  CfnThirdPartyIntegrationPropsScheme,
+  CfnThirdPartyIntegrationPropsServiceDiscovery,
+  CfnThirdPartyIntegrationPropsType,
+} from "./l1-resources/third-party-integration";
 
 export {
   AuthConfig,
@@ -325,41 +369,22 @@ export {
 } from "./l1-resources/trigger";
 
 export {
-  CfnThirdPartyIntegration,
-  CfnThirdPartyIntegrationProps,
-  CfnThirdPartyIntegrationPropsScheme,
-  CfnThirdPartyIntegrationPropsServiceDiscovery,
-  CfnThirdPartyIntegrationPropsType,
-} from "./l1-resources/third-party-integration";
-
-export {
   CfnX509AuthenticationDatabaseUser,
   CfnX509AuthenticationDatabaseUserProps,
   CustomerX509,
 } from "./l1-resources/x509-authentication-database-user";
 
-export {
-  CfnOnlineArchive,
-  CfnOnlineArchiveProps,
-  CfnOnlineArchivePropsCollectionType,
-  CriteriaView,
-  CriteriaViewDateFormat,
-  CriteriaViewType,
-  PartitionFieldView,
-  PartitionFieldViewFieldType,
-  ScheduleView,
-  ScheduleViewType,
-} from "./l1-resources/online-archive";
-
 // L2 Constructors
+
 export * from "./l2-resources/encryption-at-rest";
 export * from "./l2-resources/third-party-integration";
 
 // L3 Constructors
+
+export * from "./l3-resources/common/props";
+
 export * from "./l3-resources/atlas-basic";
 export * from "./l3-resources/atlas-serverless-basic";
 export * from "./l3-resources/atlas-basic-private-endpoint";
 export * from "./l3-resources/encryption-at-rest-express";
 export * from "./l3-resources/atlas-bootstrap";
-
-export * from "./l3-resources/common/props";

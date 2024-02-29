@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnLdapConfiguration } from "../../../src/l1-resources/ldap-configuration";
+import { CfnLdapConfiguration } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::LDAPConfiguration";
 const PROJECT_ID = "testProjectId";

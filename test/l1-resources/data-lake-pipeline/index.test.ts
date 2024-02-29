@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnDataLakePipeline } from "../../../src/l1-resources/data-lake-pipeline";
+import { CfnDataLakePipeline } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::DataLakePipeline";
 const PROJECT_ID = "testProjectId";

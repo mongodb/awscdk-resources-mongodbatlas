@@ -17,7 +17,7 @@ import { Template } from "aws-cdk-lib/assertions";
 import {
   CfnCloudBackupSnapshot,
   CfnCloudBackupSnapshotPropsInstanceType,
-} from "../../../src/l1-resources/cloud-backup-snapshot";
+} from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::CloudBackupSnapshot";
 const PROJECT_ID = "testProjectId";

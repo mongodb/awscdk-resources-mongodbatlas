@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnSearchIndex } from "../../../src/l1-resources/search-index";
+import { CfnSearchIndex } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::SearchIndex";
 const PROJECT_ID = "projectId";
