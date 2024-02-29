@@ -13,6 +13,9 @@
 // limitations under the License.
 
 // L1 Constructors
+
+export { CfnAccessListApiKey, CfnAccessListApiKeyProps } from "./l1-resources/access-list-api-key";
+
 export {
   CfnAlertConfiguration,
   CfnAlertConfigurationProps,
