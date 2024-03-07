@@ -336,6 +336,11 @@ export {
 } from "./l1-resources/serverless-private-endpoint";
 
 export {
+  CfnStreamInstance,
+  StreamsDataProcessRegionCloudProvider,
+} from "./l1-resources/stream-instance";
+
+export {
   CfnTeams,
   CfnTeamsProps,
   CfnTeamsPropsRoleNames,
@@ -373,11 +378,6 @@ export {
   CfnX509AuthenticationDatabaseUserProps,
   CustomerX509,
 } from "./l1-resources/x509-authentication-database-user";
-
-export {
-  CfnStreamInstance,
-  StreamsDataProcessRegionCloudProvider,
-} from "./l1-resources/stream-instance";
 
 // L2 Constructors
 
