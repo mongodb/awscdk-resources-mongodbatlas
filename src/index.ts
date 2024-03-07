@@ -374,6 +374,11 @@ export {
   CustomerX509,
 } from "./l1-resources/x509-authentication-database-user";
 
+export {
+  CfnStreamInstance,
+  StreamsDataProcessRegionCloudProvider,
+} from "./l1-resources/stream-instance";
+
 // L2 Constructors
 
 export * from "./l2-resources/encryption-at-rest";
