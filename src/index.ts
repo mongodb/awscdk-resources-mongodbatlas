@@ -338,6 +338,15 @@ export {
 export {
   CfnStreamInstance,
   StreamsDataProcessRegionCloudProvider,
+  CfnStreamInstanceProps,
+  StreamsDataProcessRegion,
+  StreamConfig,
+  StreamsConnection,
+  StreamsConnectionType,
+  StreamsKafkaAuthentication,
+  StreamsKafkaSecurity,
+  DbRoleToExecute,
+  DbRoleToExecuteType,
 } from "./l1-resources/stream-instance";
 
 export {
