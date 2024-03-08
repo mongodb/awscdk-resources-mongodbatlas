@@ -342,6 +342,16 @@ export {
 } from "./l1-resources/serverless-private-endpoint";
 
 export {
+  CfnStreamConnection,
+  CfnStreamConnectionProps,
+  CfnStreamConnectionPropsType,
+  DbRoleToExecute,
+  DbRoleToExecuteType,
+  StreamsKafkaAuthentication,
+  StreamsKafkaSecurity,
+} from "./l1-resources/stream-connection";
+
+export {
   CfnStreamInstance,
   StreamsDataProcessRegionCloudProvider,
   CfnStreamInstanceProps,
@@ -349,10 +359,6 @@ export {
   StreamConfig,
   StreamsConnection,
   StreamsConnectionType,
-  StreamsKafkaAuthentication,
-  StreamsKafkaSecurity,
-  DbRoleToExecute,
-  DbRoleToExecuteType,
 } from "./l1-resources/stream-instance";
 
 export {
