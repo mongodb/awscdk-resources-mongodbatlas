@@ -3,11 +3,13 @@ import { Construct } from 'constructs';
 import { CfnStreamInstance, StreamsDataProcessRegionCloudProvider } from 'awscdk-resources-mongodbatlas'
 import { env } from 'node:process';
 
-const PROFILE = "default-oriol";
-const PROJECT_ID = "65dca009938ec8392b94e7e6";
-const INSTANCE_NAME = "testInstanceName";
-const REGION = "VIRGINIA_USA";
-const TIER = "SP30";
+interface AtlasStackProps {
+  readonly projectId: string;
+  readonly profile: string;
+  readonly instanceName: string;
+  readonly region: string;
+  readonly tier: string;
+}
 
 const app = new cdk.App();
 
@@ -16,18 +18,47 @@ export class CdkTestStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    const atlasProps = this.getContextProps();
     const streamInstance = new CfnStreamInstance(this, "stream-instance-testing-stack", {
-      profile: PROFILE,
-      instanceName: INSTANCE_NAME,
-      projectId: PROJECT_ID,
+      profile: atlasProps.profile,
+      instanceName: atlasProps.instanceName,
+      projectId: atlasProps.projectId,
       dataProcessRegion: {
         cloudProvider: StreamsDataProcessRegionCloudProvider.AWS,
-        region: REGION,
+        region: atlasProps.region,
       },
       streamConfig: {
-        tier: TIER,
+        tier: atlasProps.tier,
       },
     });
+  }
+
+  getContextProps(): AtlasStackProps {
+    const profile = this.node.tryGetContext('profile') ?? 'default';
+    const projectId = this.node.tryGetContext('projectId');
+    const instanceName = this.node.tryGetContext('instanceName');
+    const region = this.node.tryGetContext('region');
+    const tier = this.node.tryGetContext('tier');
+    if (!projectId) {
+      throw "No context value specified for projectId. Please specify via the cdk context."
+    }
+    if (!instanceName) {
+      throw "No context value specified for instanceName. Please specify via the cdk context."
+    }
+    if (!region) {
+      throw "No context value specified for region. Please specify via the cdk context."
+    }
+    if (!tier) {
+      throw "No context value specified for tier. Please specify via the cdk context."
+    }
+
+    return {
+      projectId,
+      profile,
+      instanceName,
+      region,
+      tier
+    }
   }
 
 }
