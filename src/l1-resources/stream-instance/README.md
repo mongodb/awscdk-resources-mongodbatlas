@@ -30,7 +30,7 @@ Alternatively:
 
 ```sh
 aws cloudformation activate-type \
-  --public-type-arn arn:aws:cloudformation:us-east-1::type/resource/bb989456c78c398a858fef18f2ca1bfc1fbba082/MongoDB-Atlas-SearchDeployment \
+  --public-type-arn arn:aws:cloudformation:us-east-1::type/resource/bb989456c78c398a858fef18f2ca1bfc1fbba082/MongoDB-Atlas-StreamInstance \
   --execution-role-arn ROLE-ARN
 ```
 
