@@ -35,7 +35,7 @@ export class CdkTestingStack extends cdk.Stack {
       throw "No context value specified for projectId. Please specify via the cdk context."
     }
     const clusterName = this.node.tryGetContext('clusterName');
-    if (!projectId){
+    if (!clusterName){
       throw "No context value specified for clusterName. Please specify via the cdk context."
     }
 
