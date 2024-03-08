@@ -38,7 +38,7 @@ You can find more information about activating this type in the [AWS CloudFormat
 
 ## Example: [stream-instance.ts](../../../examples/l1-resources/stream-instance.ts)
 ```ts
-import { CfnSearchDeployment } from 'awscdk-resources-mongodbatlas';
+import { CfnStreamInstance } from 'awscdk-resources-mongodbatlas';
 
     const streamInstance = new CfnStreamInstance(this, "stream-instance-testing-stack", {
       profile: atlasProps.profile,
