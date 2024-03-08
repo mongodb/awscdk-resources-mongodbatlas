@@ -309,6 +309,12 @@ export {
 } from "./l1-resources/project-ip-access-list";
 
 export {
+  CfnSearchDeployment,
+  CfnSearchDeploymentProps,
+  ApiSearchDeploymentSpec,
+} from "./l1-resources/search-deployment";
+
+export {
   ApiAtlasFtsAnalyzersViewManual,
   ApiAtlasFtsMappingsViewManual,
   ApiAtlasFtsSynonymMappingDefinitionView,
