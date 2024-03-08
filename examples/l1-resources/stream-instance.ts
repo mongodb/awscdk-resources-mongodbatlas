@@ -16,7 +16,7 @@ export class CdkTestStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const accessLstApiKey = new CfnStreamInstance(this, "stream-instance-testing-stack", {
+    const streamInstance = new CfnStreamInstance(this, "stream-instance-testing-stack", {
       profile: PROFILE,
       instanceName: INSTANCE_NAME,
       projectId: PROJECT_ID,
