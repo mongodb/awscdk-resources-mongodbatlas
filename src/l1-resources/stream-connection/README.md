@@ -2,9 +2,7 @@
 
 The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node.js.
 
-> AWS CDK [L1 construct] and data structures for the [AWS CloudFormation Registry] type `MongoDB::Atlas::StreamConnection`.
-[L1 construct]: https://docs.aws.amazon.com/cdk/latest/guide/constructs.html
-[AWS CloudFormation Registry]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html
+> AWS CDK [L1 construct](https://docs.aws.amazon.com/cdk/latest/guide/constructs.html) and data structures for the [AWS CloudFormation Registry](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html) type `MongoDB::Atlas::StreamConnection`.
 
 > **NOTE**: 
 > - **Atlas Streams functionality is currently in [Public Preview](https://www.mongodb.com/blog/post/atlas-stream-processing-now-in-public-preview).** 
