@@ -34,7 +34,7 @@ const PASSWORD = "testPassword";
 const BOOTSTRAP_SERVER = "testBootstapServer";
 const BROKER_PUBLIC_CERTIFICATE = "testBrokerPublicCertificate";
 
-test("AtlasStreamConnection construct should contain default properties", () => {
+test("AtlasStreamConnection of type Cluster construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);
 
@@ -49,6 +49,34 @@ test("AtlasStreamConnection construct should contain default properties", () => 
       role: ROLE,
       type: DbRoleToExecuteType.BUILT_UNDERSCORE_IN,
     },
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    Profile: PROFILE,
+    InstanceName: INSTANCE_NAME,
+    ProjectId: PROJECT_ID,
+    ConnectionName: CONNECTION_NAME,
+    Type: CfnStreamConnectionPropsType.CLUSTER,
+    ClusterName: CLUSTER_NAME,
+    DbRoleToExecute: {
+      Role: ROLE,
+      Type: DbRoleToExecuteType.BUILT_UNDERSCORE_IN,
+    },
+  });
+});
+
+test("AtlasStreamConnection of type Kafka construct should contain default properties", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnStreamConnection(stack, "stream-connection-testing-stack", {
+    profile: PROFILE,
+    instanceName: INSTANCE_NAME,
+    projectId: PROJECT_ID,
+    connectionName: CONNECTION_NAME,
+    type: CfnStreamConnectionPropsType.CLUSTER,
     authentication: {
       mechanism: MECHANISM,
       username: USERNAME,
@@ -69,11 +97,6 @@ test("AtlasStreamConnection construct should contain default properties", () => 
     ProjectId: PROJECT_ID,
     ConnectionName: CONNECTION_NAME,
     Type: CfnStreamConnectionPropsType.CLUSTER,
-    ClusterName: CLUSTER_NAME,
-    DbRoleToExecute: {
-      Role: ROLE,
-      Type: DbRoleToExecuteType.BUILT_UNDERSCORE_IN,
-    },
     Authentication: {
       Mechanism: MECHANISM,
       Username: USERNAME,
