@@ -21,6 +21,8 @@ For more information about the API refer to: [API Endpoints](https://www.mongodb
 
 ## Usage
 
+> [Using Atlas Streams with Cloudformation](https://github.com/mongodb/mongodbatlas-cloudformation-resources/blob/master/examples/atlas-streams/README.md)
+
 In order to use this library, you will need to activate this AWS CloudFormation Registry type in your account. You can do this via the AWS Management Console or using the [AWS CLI](https://aws.amazon.com/cli/) using the following command:
 
 ```sh
