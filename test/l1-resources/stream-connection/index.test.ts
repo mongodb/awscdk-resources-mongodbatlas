@@ -17,6 +17,7 @@ import { Template } from "aws-cdk-lib/assertions";
 import {
   CfnStreamConnection,
   CfnStreamConnectionPropsType,
+  DbRoleToExecuteType,
 } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::StreamConnection";
@@ -24,6 +25,14 @@ const PROFILE = "default";
 const PROJECT_ID = "testProjectId";
 const INSTANCE_NAME = "testInstanceName";
 const CONNECTION_NAME = "testConnectionName";
+const CLUSTER_NAME = "testClusterName";
+const ROLE = "testRole";
+const PROTOCOL = "PLAINTEXT";
+const MECHANISM = "PLAIN";
+const USERNAME = "testUsername";
+const PASSWORD = "testPassword";
+const BOOTSTRAP_SERVER = "testBootstapServer";
+const BROKER_PUBLIC_CERTIFICATE = "testBrokerPublicCertificate";
 
 test("AtlasStreamConnection construct should contain default properties", () => {
   const mockApp = new App();
@@ -35,6 +44,21 @@ test("AtlasStreamConnection construct should contain default properties", () => 
     projectId: PROJECT_ID,
     connectionName: CONNECTION_NAME,
     type: CfnStreamConnectionPropsType.CLUSTER,
+    clusterName: CLUSTER_NAME,
+    dbRoleToExecute: {
+      role: ROLE,
+      type: DbRoleToExecuteType.BUILT_UNDERSCORE_IN,
+    },
+    authentication: {
+      mechanism: MECHANISM,
+      username: USERNAME,
+      password: PASSWORD,
+    },
+    bootstrapServers: BOOTSTRAP_SERVER,
+    security: {
+      brokerPublicCertificate: BROKER_PUBLIC_CERTIFICATE,
+      protocol: PROTOCOL,
+    },
   });
 
   const template = Template.fromStack(stack);
@@ -45,5 +69,20 @@ test("AtlasStreamConnection construct should contain default properties", () => 
     ProjectId: PROJECT_ID,
     ConnectionName: CONNECTION_NAME,
     Type: CfnStreamConnectionPropsType.CLUSTER,
+    ClusterName: CLUSTER_NAME,
+    DbRoleToExecute: {
+      Role: ROLE,
+      Type: DbRoleToExecuteType.BUILT_UNDERSCORE_IN,
+    },
+    Authentication: {
+      Mechanism: MECHANISM,
+      Username: USERNAME,
+      Password: PASSWORD,
+    },
+    BootstrapServers: BOOTSTRAP_SERVER,
+    Security: {
+      BrokerPublicCertificate: BROKER_PUBLIC_CERTIFICATE,
+      Protocol: PROTOCOL,
+    },
   });
 });

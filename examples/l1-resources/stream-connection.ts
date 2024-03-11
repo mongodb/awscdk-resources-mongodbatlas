@@ -25,7 +25,7 @@ export class CdkTestStack extends cdk.Stack {
 			instanceName: atlasProps.instanceName,
 			projectId: atlasProps.projectId,
 			connectionName: atlasProps.connectionName,
-			type: atlasProps.type,
+			type: CfnStreamConnectionPropsType.CLUSTER,
 			clusterName: atlasProps.clusterName
 		});
 	}

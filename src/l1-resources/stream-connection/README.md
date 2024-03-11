@@ -50,7 +50,8 @@ import { CfnStreamInstance } from 'awscdk-resources-mongodbatlas';
 			instanceName: atlasProps.instanceName,
 			projectId: atlasProps.projectId,
 			connectionName: atlasProps.connectionName,
-			type: atlasProps.type
+			type: CfnStreamConnectionPropsType.CLUSTER,
+			clusterName: atlasProps.clusterName
 		});
 ```
 
