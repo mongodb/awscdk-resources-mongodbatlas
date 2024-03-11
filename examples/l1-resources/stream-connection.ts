@@ -9,6 +9,7 @@ interface AtlasStackProps {
 	readonly instanceName: string;
 	readonly connectionName: string;
 	readonly type: CfnStreamConnectionPropsType;
+	readonly clusterName: string;
 }
 
 const app = new cdk.App();
@@ -24,7 +25,8 @@ export class CdkTestStack extends cdk.Stack {
 			instanceName: atlasProps.instanceName,
 			projectId: atlasProps.projectId,
 			connectionName: atlasProps.connectionName,
-			type: atlasProps.type
+			type: atlasProps.type,
+			clusterName: atlasProps.clusterName
 		});
 	}
 
