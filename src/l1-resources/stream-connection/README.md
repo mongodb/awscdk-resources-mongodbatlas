@@ -1,10 +1,8 @@
-# stream-instance
+# stream-connection
 
 The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node.js.
 
-> AWS CDK [L1 construct] and data structures for the [AWS CloudFormation Registry] type `MongoDB::Atlas::StreamInstance`.
-[L1 construct]: https://docs.aws.amazon.com/cdk/latest/guide/constructs.html
-[AWS CloudFormation Registry]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html
+> AWS CDK [L1 construct](https://docs.aws.amazon.com/cdk/latest/guide/constructs.html) and data structures for the [AWS CloudFormation Registry](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html) type `MongoDB::Atlas::StreamConnection`.
 
 > **NOTE**: 
 > - **Atlas Streams functionality is currently in [Public Preview](https://www.mongodb.com/blog/post/atlas-stream-processing-now-in-public-preview).** 
@@ -13,7 +11,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-Returns, adds, edits, and removes stream instances.
+Returns, adds, edits, and removes stream connections.
 
 ## MongoDB Atlas API Docs
 
@@ -27,7 +25,7 @@ In order to use this library, you will need to activate this AWS CloudFormation 
 
 ```sh
 aws cloudformation activate-type \
-  --type-name MongoDB::Atlas::StreamInstance \
+  --type-name MongoDB::Atlas::StreamConnection \
   --publisher-id bb989456c78c398a858fef18f2ca1bfc1fbba082 \
   --type RESOURCE \
   --execution-role-arn ROLE-ARN
@@ -37,36 +35,32 @@ Alternatively:
 
 ```sh
 aws cloudformation activate-type \
-  --public-type-arn arn:aws:cloudformation:us-east-1::type/resource/bb989456c78c398a858fef18f2ca1bfc1fbba082/MongoDB-Atlas-StreamInstance \
+  --public-type-arn arn:aws:cloudformation:us-east-1::type/resource/bb989456c78c398a858fef18f2ca1bfc1fbba082/MongoDB-Atlas-StreamConnection \
   --execution-role-arn ROLE-ARN
 ```
 
 You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
 
-## Example: [stream-instance.ts](../../../examples/l1-resources/stream-instance.ts)
+## Example: [stream-connection.ts](../../../examples/l1-resources/stream-connection.ts)
 ```ts
 import { CfnStreamInstance } from 'awscdk-resources-mongodbatlas';
-
-    const streamInstance = new CfnStreamInstance(this, "stream-instance-testing-stack", {
-      profile: atlasProps.profile,
-      instanceName: atlasProps.projectId,
-      projectId: atlasProps.projectId,
-      dataProcessRegion: {
-        cloudProvider: StreamsDataProcessRegionCloudProvider.AWS,
-        region: "VIRGINIA_USA",
-      },
-      streamConfig: {
-        tier: "SP30",
-      },
-    });
+    
+	const streamConnection = new CfnStreamConnection(this, "stream-connection-testing-stack", {
+			profile: atlasProps.profile,
+			instanceName: atlasProps.instanceName,
+			projectId: atlasProps.projectId,
+			connectionName: atlasProps.connectionName,
+			type: CfnStreamConnectionPropsType.CLUSTER,
+			clusterName: atlasProps.clusterName
+		});
 ```
 
 ## Feedback
 
-This library is auto-generated and published to all supported programming languages by the [cdklabs/cdk-cloudformation] project based on the API schema published for `MongoDB::Atlas::StreamInstance`.
+This library is auto-generated and published to all supported programming languages by the [cdklabs/cdk-cloudformation] project based on the API schema published for `MongoDB::Atlas::StreamConnection`.
 
-* Issues related to this generated library should be [reported here](https://github.com/cdklabs/cdk-cloudformation/issues/new?title=Issue+with+%40cdk-cloudformation%2Fmongodb-atlas-stream-instance+v1.0.0).
-* Issues related to `MongoDB::Atlas::StreamInstance` should be reported to the [publisher](https://github.com/mongodb/mongodbatlas-cloudformation-resources/issues).
+* Issues related to this generated library should be [reported here](https://github.com/cdklabs/cdk-cloudformation/issues/new?title=Issue+with+%40cdk-cloudformation%2Fmongodb-atlas-stream-connection+v1.0.0).
+* Issues related to `MongoDB::Atlas::StreamConnection` should be reported to the [publisher](https://github.com/mongodb/mongodbatlas-cloudformation-resources/issues).
 * Feature requests should be [reported here](https://feedback.mongodb.com/forums/924145-atlas?category_id=392596)
 
 [cdklabs/cdk-cloudformation]: https://github.com/cdklabs/cdk-cloudformation
