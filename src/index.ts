@@ -309,6 +309,12 @@ export {
 } from "./l1-resources/project-ip-access-list";
 
 export {
+  CfnSearchDeployment,
+  CfnSearchDeploymentProps,
+  ApiSearchDeploymentSpec,
+} from "./l1-resources/search-deployment";
+
+export {
   ApiAtlasFtsAnalyzersViewManual,
   ApiAtlasFtsMappingsViewManual,
   ApiAtlasFtsSynonymMappingDefinitionView,
@@ -334,6 +340,26 @@ export {
   ServerlessPrivateEndpoint,
   AwsPrivateEndpointConfig,
 } from "./l1-resources/serverless-private-endpoint";
+
+export {
+  CfnStreamConnection,
+  CfnStreamConnectionProps,
+  CfnStreamConnectionPropsType,
+  DbRoleToExecute,
+  DbRoleToExecuteType,
+  StreamsKafkaAuthentication,
+  StreamsKafkaSecurity,
+} from "./l1-resources/stream-connection";
+
+export {
+  CfnStreamInstance,
+  StreamsDataProcessRegionCloudProvider,
+  CfnStreamInstanceProps,
+  StreamsDataProcessRegion,
+  StreamConfig,
+  StreamsConnection,
+  StreamsConnectionType,
+} from "./l1-resources/stream-instance";
 
 export {
   CfnTeams,

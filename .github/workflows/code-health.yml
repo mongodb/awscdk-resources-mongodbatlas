@@ -13,7 +13,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
       - name: actionlint
         run: |
           bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
@@ -47,7 +47,7 @@ jobs:
     name: shellcheck
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+      - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
       - name: Run ShellCheck
         uses: bewuethr/shellcheck-action@a7092784dbc0f7b2139dd8396ab357fe4678e958
   call-package-workflow:

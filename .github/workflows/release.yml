@@ -10,7 +10,7 @@ jobs:
       CI: "true"
     steps:
       - name: Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633
         with:
           fetch-depth: 0
       - name: Set git config safe.directory
@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
         with:
-          node-version: 16.14.0
+          node-version: 18.x
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: release
@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
         with:
-          node-version: 16.14.0
+          node-version: 18.x
       - name: Download build artifacts
         uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
         with:
@@ -93,7 +93,7 @@ jobs:
           java-version: 11.x
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
         with:
-          node-version: 16.14.0
+          node-version: 18.x
       - name: Download build artifacts
         uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
         with:
@@ -139,7 +139,7 @@ jobs:
     steps:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
         with:
-          node-version: 16.14.0
+          node-version: 18.x
       - uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c
         with:
           python-version: 3.x
@@ -185,7 +185,7 @@ jobs:
     steps:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
         with:
-          node-version: 16.14.0
+          node-version: 18.x
       - uses: actions/setup-dotnet@4d6c8fcf3c8f7a60068d26b594648e99df24cee3
         with:
           dotnet-version: 3.x
@@ -230,7 +230,7 @@ jobs:
     steps:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
         with:
-          node-version: 16.14.0
+          node-version: 18.x
       - uses: actions/setup-go@0c52d547c9bc32b1aa3301fd7a9cb496313a4491
         with:
           go-version: ^1.16.0
@@ -277,7 +277,7 @@ jobs:
     steps:
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
         with:
-          node-version: 16.14.0
+          node-version: 18.x
       - name: Download build artifacts
         uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
         with:
