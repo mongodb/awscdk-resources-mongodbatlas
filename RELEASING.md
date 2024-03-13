@@ -35,6 +35,8 @@ git tag -d v1.0.1 # Delete the tag v1.0.1
 npx projen release
 ```
 
+As a result within the `./dist` folder you will be able to verify the generated packages for each target, as well as the version and changelog.
+
 4. Publish the artifacts to the package managers. Reach out to [APIx-Integration](https://github.com/orgs/mongodb/teams/apix-integrations/members) for the credentials.
 ```bash
 # NPM
@@ -70,4 +72,10 @@ export GIT_USER_EMAIL=*********
 npx -p publib@latest publib-golang
 ```
 
-5. Create a new release in [awscdk-resources-mongodbatlas-go](https://github.com/mongodb/awscdk-resources-mongodbatlas-go)
+##### Maven publishing considerations
+- Make sure that your mvn version (`mvn --version`) is running the same java version that we use in the GitHub release workflow (currently temurin 11).
+- It is possible that during the publishing process it will require to enter the gpg passphrase, in this case enter the value defined in `MAVEN_GPG_PRIVATE_KEY_PASSPHRASE`.
+
+5. Create a new release in [awscdk-resources-mongodbatlas-go](https://github.com/mongodb/awscdk-resources-mongodbatlas-go).
+
+6. If the initial release process failed, it is likely that the final step generating the GitHub release and version tag was not run. This can be done by creating a new release from the GitHub UI, defining the correct `vX.Y.Z` to be created, and copying the content of `./dist/changelog.md` for the release notes.
