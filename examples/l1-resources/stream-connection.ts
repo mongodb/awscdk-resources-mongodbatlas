@@ -25,7 +25,7 @@ export class CdkTestStack extends cdk.Stack {
 			instanceName: atlasProps.instanceName,
 			projectId: atlasProps.projectId,
 			connectionName: atlasProps.connectionName,
-			type: CfnStreamConnectionPropsType.CLUSTER,
+			type: atlasProps.type,
 			clusterName: atlasProps.clusterName
 		});
 	}
@@ -37,6 +37,7 @@ export class CdkTestStack extends cdk.Stack {
 		const instanceName = this.node.tryGetContext('instanceName');
 		const connectionName = this.node.tryGetContext('connectionName');
 		const type = this.node.tryGetContext('type');
+		const clusterName = this.node.tryGetContext('clusterName') ?? '';
 		if (!projectId) {
 			throw "No context value specified for projectId. Please specify via the cdk context."
 		}
@@ -55,8 +56,8 @@ export class CdkTestStack extends cdk.Stack {
 			profile,
 			instanceName,
 			connectionName,
-			type
+			type,
+			clusterName
 		}
 	}
-
 }

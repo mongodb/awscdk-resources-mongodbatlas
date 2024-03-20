@@ -39406,6 +39406,8 @@ public readonly connectionName: string;
 
 Human-readable label that identifies the stream connection.
 
+In the case of the Sample type, this is the name of the sample source.
+
 ---
 
 ##### `instanceName`<sup>Required</sup> <a name="instanceName" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.instanceName"></a>
@@ -39446,7 +39448,7 @@ public readonly type: CfnStreamConnectionPropsType;
 
 Type of the connection.
 
-Can be either Cluster or Kafka.
+Can be either Cluster, Kafka, or Sample.
 
 ---
 
@@ -47486,7 +47488,7 @@ GROUP_READ_ONLY.
 
 Type of the connection.
 
-Can be either Cluster or Kafka.
+Can be either Cluster, Kafka, or Sample.
 
 #### Members <a name="Members" id="Members"></a>
 
@@ -47494,6 +47496,7 @@ Can be either Cluster or Kafka.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType.KAFKA">KAFKA</a></code> | Kafka. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType.CLUSTER">CLUSTER</a></code> | Cluster. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType.SAMPLE">SAMPLE</a></code> | Sample. |
 
 ---
 
@@ -47507,6 +47510,13 @@ Kafka.
 ##### `CLUSTER` <a name="CLUSTER" id="awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType.CLUSTER"></a>
 
 Cluster.
+
+---
+
+
+##### `SAMPLE` <a name="SAMPLE" id="awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType.SAMPLE"></a>
+
+Sample.
 
 ---
 

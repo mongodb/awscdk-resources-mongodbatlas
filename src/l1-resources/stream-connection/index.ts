@@ -25,7 +25,7 @@ export interface CfnStreamConnectionProps {
   readonly profile?: string;
 
   /**
-   * Human-readable label that identifies the stream connection.
+   * Human-readable label that identifies the stream connection. In the case of the Sample type, this is the name of the sample source.
    *
    * @schema CfnStreamConnectionProps#ConnectionName
    */
@@ -39,7 +39,7 @@ export interface CfnStreamConnectionProps {
   readonly instanceName: string;
 
   /**
-   * Type of the connection. Can be either Cluster or Kafka.
+   * Type of the connection. Can be either Cluster, Kafka, or Sample.
    *
    * @schema CfnStreamConnectionProps#Type
    */
@@ -112,7 +112,7 @@ export function toJson_CfnStreamConnectionProps(
 /* eslint-enable max-len, quote-props */
 
 /**
- * Type of the connection. Can be either Cluster or Kafka.
+ * Type of the connection. Can be either Cluster, Kafka, or Sample.
  *
  * @schema CfnStreamConnectionPropsType
  */
@@ -121,6 +121,8 @@ export enum CfnStreamConnectionPropsType {
   KAFKA = "Kafka",
   /** Cluster */
   CLUSTER = "Cluster",
+  /** Sample */
+  SAMPLE = "Sample",
 }
 
 /**

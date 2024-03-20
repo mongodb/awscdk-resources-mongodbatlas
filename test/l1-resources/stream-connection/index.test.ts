@@ -25,6 +25,7 @@ const PROFILE = "default";
 const PROJECT_ID = "testProjectId";
 const INSTANCE_NAME = "testInstanceName";
 const CONNECTION_NAME = "testConnectionName";
+const CONNECTION_NAME_SAMPLE_STREAM_SOLAR = "sample_stream_solar";
 const CLUSTER_NAME = "testClusterName";
 const ROLE = "testRole";
 const PROTOCOL = "PLAINTEXT";
@@ -107,5 +108,28 @@ test("AtlasStreamConnection of type Kafka construct should contain default prope
       BrokerPublicCertificate: BROKER_PUBLIC_CERTIFICATE,
       Protocol: PROTOCOL,
     },
+  });
+});
+
+test("AtlasStreamConnection of type Sample construct should contain default properties", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnStreamConnection(stack, "stream-connection-testing-stack", {
+    profile: PROFILE,
+    instanceName: INSTANCE_NAME,
+    projectId: PROJECT_ID,
+    connectionName: CONNECTION_NAME_SAMPLE_STREAM_SOLAR,
+    type: CfnStreamConnectionPropsType.SAMPLE,
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    Profile: PROFILE,
+    InstanceName: INSTANCE_NAME,
+    ProjectId: PROJECT_ID,
+    ConnectionName: CONNECTION_NAME_SAMPLE_STREAM_SOLAR,
+    Type: CfnStreamConnectionPropsType.SAMPLE,
   });
 });
