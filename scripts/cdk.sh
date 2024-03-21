@@ -62,8 +62,8 @@ for file in "${dir}"/mongodb-atlas-*.json; do
 		cdk-import cfn -l typescript -s "${file}" -o "src/l1-resources/${path}" "${src}"
 		# need rename resource file to index.ts file
 		dest="src/l1-resources/${path}/index.ts"
-		mv "src/l1-resources/${path}/mongodb-atlas-${path//-/}.ts" ${dest}
-		python ${root_dir}/scripts/rename_in_file.py ${dest}
+		mv "src/l1-resources/${path}/mongodb-atlas-${path//-/}.ts" "${dest}"
+		python "${root_dir}/scripts/rename_in_file.py" "${dest}"
 	fi
 done
 
