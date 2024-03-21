@@ -48,7 +48,7 @@ test("AtlasStreamConnection of type Cluster construct should contain default pro
     clusterName: CLUSTER_NAME,
     dbRoleToExecute: {
       role: ROLE,
-      type: DbRoleToExecuteType.BUILT_UNDERSCORE_IN,
+      type: DbRoleToExecuteType.BUILT_IN,
     },
   });
 
@@ -63,7 +63,7 @@ test("AtlasStreamConnection of type Cluster construct should contain default pro
     ClusterName: CLUSTER_NAME,
     DbRoleToExecute: {
       Role: ROLE,
-      Type: DbRoleToExecuteType.BUILT_UNDERSCORE_IN,
+      Type: DbRoleToExecuteType.BUILT_IN,
     },
   });
 });

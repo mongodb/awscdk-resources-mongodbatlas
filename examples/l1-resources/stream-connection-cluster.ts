@@ -25,7 +25,7 @@ export class CdkTestStackCluster extends cdk.Stack {
 			connectionName: atlasProps.connectionName,
 			type: CfnStreamConnectionPropsType.CLUSTER,
 			clusterName: atlasProps.clusterName,
-			dbRoleToExecute: {role: "atlasAdmin", type: DbRoleToExecuteType.BUILT_UNDERSCORE_IN}
+			dbRoleToExecute: {role: "atlasAdmin", type: DbRoleToExecuteType.BUILT_IN}
 		});
 	}
 

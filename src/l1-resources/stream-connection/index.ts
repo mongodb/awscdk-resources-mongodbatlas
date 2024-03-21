@@ -269,7 +269,7 @@ export function toJson_StreamsKafkaSecurity(
  */
 export enum DbRoleToExecuteType {
   /** BUILT_IN */
-  BUILT_UNDERSCORE_IN = "BUILT_IN",
+  BUILT_IN = "BUILT_IN",
   /** CUSTOM */
   CUSTOM = "CUSTOM",
 }

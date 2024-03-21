@@ -48078,12 +48078,12 @@ Can be either BuiltIn or Custom.
 
 | **Name** | **Description** |
 | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.DbRoleToExecuteType.BUILT_UNDERSCORE_IN">BUILT_UNDERSCORE_IN</a></code> | BUILT_IN. |
+| <code><a href="#awscdk-resources-mongodbatlas.DbRoleToExecuteType.BUILT_IN">BUILT_IN</a></code> | BUILT_IN. |
 | <code><a href="#awscdk-resources-mongodbatlas.DbRoleToExecuteType.CUSTOM">CUSTOM</a></code> | CUSTOM. |
 
 ---
 
-##### `BUILT_UNDERSCORE_IN` <a name="BUILT_UNDERSCORE_IN" id="awscdk-resources-mongodbatlas.DbRoleToExecuteType.BUILT_UNDERSCORE_IN"></a>
+##### `BUILT_IN` <a name="BUILT_IN" id="awscdk-resources-mongodbatlas.DbRoleToExecuteType.BUILT_IN"></a>
 
 BUILT_IN.
 
