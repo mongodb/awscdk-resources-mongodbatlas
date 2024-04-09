@@ -63,13 +63,6 @@ export interface CfnAlertConfigurationProps {
    * @schema CfnAlertConfigurationProps#Threshold
    */
   readonly threshold?: IntegerThresholdView;
-
-  /**
-   * Human-readable label that displays the alert type.
-   *
-   * @schema CfnAlertConfigurationProps#TypeName
-   */
-  readonly typeName?: string;
 }
 
 /**
@@ -91,7 +84,6 @@ export function toJson_CfnAlertConfigurationProps(
     MetricThreshold: toJson_MetricThresholdView(obj.metricThreshold),
     Notifications: obj.notifications?.map((y) => toJson_NotificationView(y)),
     Threshold: toJson_IntegerThresholdView(obj.threshold),
-    TypeName: obj.typeName,
   };
   // filter undefined values
   return Object.entries(result).reduce(
