@@ -39368,7 +39368,7 @@ Profile used to provide credentials information, (a secret with the cfn/atlas/pr
 
 Returns, adds, edits, and removes one connection for a stream instance in the specified project.
 
-To use this resource, the requesting API Key must have the Project Owner roles. Note that Atlas Streams functionality is currently in [Public Preview](https://www.mongodb.com/blog/post/atlas-stream-processing-now-in-public-preview)
+To use this resource, the requesting API Key must have the Project Owner roles.
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.Initializer"></a>
 
@@ -39531,8 +39531,6 @@ public readonly security: StreamsKafkaSecurity;
 ### CfnStreamInstanceProps <a name="CfnStreamInstanceProps" id="awscdk-resources-mongodbatlas.CfnStreamInstanceProps"></a>
 
 Returns, adds, edits, and removes Atlas Stream Processing Instances.
-
-Note that Atlas Streams functionality is currently in [Public Preview](https://www.mongodb.com/blog/post/atlas-stream-processing-now-in-public-preview)
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnStreamInstanceProps.Initializer"></a>
 
