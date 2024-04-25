@@ -170,7 +170,7 @@ export interface DataProcessRegion {
    *
    * @schema DataProcessRegion#Region
    */
-  readonly region?: string;
+  readonly region: string;
 }
 
 /**
@@ -676,21 +676,6 @@ export class CfnFederatedDatabaseInstance extends cdk.CfnResource {
   public readonly attrState: string;
 
   /**
-   * Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.ExternalId`
-   */
-  public readonly attrExternalId: string;
-
-  /**
-   * Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamAssumedRoleARN`
-   */
-  public readonly attrIamAssumedRoleARNN: string;
-
-  /**
-   * Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamUserARN`
-   */
-  public readonly attrIamUserARN: string;
-
-  /**
    * Create a new `MongoDB::Atlas::FederatedDatabaseInstance`.
    *
    * @param scope - scope in which this resource is defined
@@ -711,14 +696,5 @@ export class CfnFederatedDatabaseInstance extends cdk.CfnResource {
 
     this.attrHostNames = cdk.Token.asList(this.getAtt("HostNames"));
     this.attrState = cdk.Token.asString(this.getAtt("State"));
-    this.attrExternalId = cdk.Token.asString(
-      this.getAtt("CloudProviderConfig.ExternalId")
-    );
-    this.attrIamUserARN = cdk.Token.asString(
-      this.getAtt("CloudProviderConfig.IamUserARN")
-    );
-    this.attrIamAssumedRoleARNN = cdk.Token.asString(
-      this.getAtt("CloudProviderConfig.IamAssumedRoleARN")
-    );
   }
 }
