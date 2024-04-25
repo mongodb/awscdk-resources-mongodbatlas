@@ -3,7 +3,7 @@ import * as cdk from "aws-cdk-lib";
 import * as constructs from "constructs";
 
 /**
- * Returns, adds, edits, and removes Atlas Stream Processing Instances. Note that Atlas Streams functionality is currently in [Public Preview](https://www.mongodb.com/blog/post/atlas-stream-processing-now-in-public-preview)
+ * Returns, adds, edits, and removes Atlas Stream Processing Instances.
  *
  * @schema CfnStreamInstanceProps
  */
