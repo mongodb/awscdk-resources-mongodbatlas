@@ -11900,7 +11900,10 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrExternalId">attrExternalId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.ExternalId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrHostNames">attrHostNames</a></code> | <code>string[]</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.HostNames`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrIamAssumedRoleARNN">attrIamAssumedRoleARNN</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamAssumedRoleARN`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrIamUserARN">attrIamUserARN</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamUserARN`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrState">attrState</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.State`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps">CfnFederatedDatabaseInstanceProps</a></code> | Resource props. |
 
@@ -11998,6 +12001,18 @@ AWS resource type.
 
 ---
 
+##### `attrExternalId`<sup>Required</sup> <a name="attrExternalId" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrExternalId"></a>
+
+```typescript
+public readonly attrExternalId: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.ExternalId`.
+
+---
+
 ##### `attrHostNames`<sup>Required</sup> <a name="attrHostNames" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrHostNames"></a>
 
 ```typescript
@@ -12007,6 +12022,30 @@ public readonly attrHostNames: string[];
 - *Type:* string[]
 
 Attribute `MongoDB::Atlas::FederatedDatabaseInstance.HostNames`.
+
+---
+
+##### `attrIamAssumedRoleARNN`<sup>Required</sup> <a name="attrIamAssumedRoleARNN" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrIamAssumedRoleARNN"></a>
+
+```typescript
+public readonly attrIamAssumedRoleARNN: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamAssumedRoleARN`.
+
+---
+
+##### `attrIamUserARN`<sup>Required</sup> <a name="attrIamUserARN" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrIamUserARN"></a>
+
+```typescript
+public readonly attrIamUserARN: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamUserARN`.
 
 ---
 
