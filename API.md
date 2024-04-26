@@ -37678,10 +37678,13 @@ const cfnOrganizationProps: CfnOrganizationProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.awsSecretName">awsSecretName</a></code> | <code>string</code> | AwsSecretName used to set newly created Org credentials information. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.name">name</a></code> | <code>string</code> | Human-readable label that identifies the organization. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.orgOwnerId">orgOwnerId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the MongoDB Cloud user that you want to assign the Organization Owner role. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.apiAccessListRequired">apiAccessListRequired</a></code> | <code>boolean</code> | Flag that indicates whether to require API operations to originate from an IP Address added to the API access list for the specified organization. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.apiKey">apiKey</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiKey">ApiKey</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.federatedSettingsId">federatedSettingsId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the federation to link the newly created organization to. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.isDeleted">isDeleted</a></code> | <code>boolean</code> | Flag that indicates whether this organization has been deleted. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.multiFactorAuthRequired">multiFactorAuthRequired</a></code> | <code>boolean</code> | Flag that indicates whether to require users to set up Multi-Factor Authentication (MFA) before accessing the specified organization. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.restrictEmployeeAccess">restrictEmployeeAccess</a></code> | <code>boolean</code> | Flag that indicates whether to block MongoDB Support from accessing Atlas infrastructure for any deployment in the specified organization without explicit permission. |
 
 ---
 
@@ -37723,6 +37726,18 @@ This user must be a member of the same organization as the calling API key. If y
 
 ---
 
+##### `apiAccessListRequired`<sup>Optional</sup> <a name="apiAccessListRequired" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.apiAccessListRequired"></a>
+
+```typescript
+public readonly apiAccessListRequired: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether to require API operations to originate from an IP Address added to the API access list for the specified organization.
+
+---
+
 ##### `apiKey`<sup>Optional</sup> <a name="apiKey" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.apiKey"></a>
 
 ```typescript
@@ -37759,6 +37774,20 @@ Flag that indicates whether this organization has been deleted.
 
 ---
 
+##### `multiFactorAuthRequired`<sup>Optional</sup> <a name="multiFactorAuthRequired" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.multiFactorAuthRequired"></a>
+
+```typescript
+public readonly multiFactorAuthRequired: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether to require users to set up Multi-Factor Authentication (MFA) before accessing the specified organization.
+
+To learn more, see: https://www.mongodb.com/docs/atlas/security-multi-factor-authentication/.
+
+---
+
 ##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.profile"></a>
 
 ```typescript
@@ -37768,6 +37797,20 @@ public readonly profile: string;
 - *Type:* string
 
 Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
+
+---
+
+##### `restrictEmployeeAccess`<sup>Optional</sup> <a name="restrictEmployeeAccess" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.restrictEmployeeAccess"></a>
+
+```typescript
+public readonly restrictEmployeeAccess: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether to block MongoDB Support from accessing Atlas infrastructure for any deployment in the specified organization without explicit permission.
+
+Once this setting is turned on, you can grant MongoDB Support a 24-hour bypass access to the Atlas deployment to resolve support issues. To learn more, see: https://www.mongodb.com/docs/atlas/security-restrict-support-access/.
 
 ---
 
