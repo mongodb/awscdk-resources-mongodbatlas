@@ -170,7 +170,7 @@ export interface DataProcessRegion {
    *
    * @schema DataProcessRegion#Region
    */
-  readonly region?: string;
+  readonly region: string;
 }
 
 /**

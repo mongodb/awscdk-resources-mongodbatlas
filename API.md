@@ -41947,8 +41947,20 @@ const dataProcessRegion: DataProcessRegion = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.DataProcessRegion.property.cloudProvider">cloudProvider</a></code> | <code>string</code> | Name of the cloud service that hosts the data lake's data stores. |
 | <code><a href="#awscdk-resources-mongodbatlas.DataProcessRegion.property.region">region</a></code> | <code>string</code> | Name of the region to which the data lake routes client connections. |
+| <code><a href="#awscdk-resources-mongodbatlas.DataProcessRegion.property.cloudProvider">cloudProvider</a></code> | <code>string</code> | Name of the cloud service that hosts the data lake's data stores. |
+
+---
+
+##### `region`<sup>Required</sup> <a name="region" id="awscdk-resources-mongodbatlas.DataProcessRegion.property.region"></a>
+
+```typescript
+public readonly region: string;
+```
+
+- *Type:* string
+
+Name of the region to which the data lake routes client connections.
 
 ---
 
@@ -41961,18 +41973,6 @@ public readonly cloudProvider: string;
 - *Type:* string
 
 Name of the cloud service that hosts the data lake's data stores.
-
----
-
-##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.DataProcessRegion.property.region"></a>
-
-```typescript
-public readonly region: string;
-```
-
-- *Type:* string
-
-Name of the region to which the data lake routes client connections.
 
 ---
 
