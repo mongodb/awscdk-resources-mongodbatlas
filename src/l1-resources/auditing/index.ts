@@ -18,9 +18,9 @@ export interface CfnAuditingProps {
   /**
    * Unique 24-hexadecimal digit string that identifies your project.
    *
-   * @schema CfnAuditingProps#ProjectId
+   * @schema CfnAuditingProps#GroupId
    */
-  readonly projectId: string;
+  readonly groupId: string;
 }
 
 /**
@@ -35,7 +35,7 @@ export function toJson_CfnAuditingProps(
   }
   const result = {
     Profile: obj.profile,
-    ProjectId: obj.projectId,
+    GroupId: obj.groupId,
   };
   // filter undefined values
   return Object.entries(result).reduce(

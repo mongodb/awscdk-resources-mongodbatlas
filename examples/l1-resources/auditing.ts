@@ -13,9 +13,9 @@ export class CdkTestingStack extends cdk.Stack {
     super(scope, id, props);
 
     const atlasProps = this.getContextProps();
-
+   
     const auditing = new CfnAuditing(this, 'Auditing', {
-      projectId: atlasProps.projId,
+      groupId: atlasProps.projId,
       profile: atlasProps.profile,
     });
 
@@ -23,7 +23,7 @@ export class CdkTestingStack extends cdk.Stack {
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId) {
+    if (!projId){
       throw "No context value specified for projId. Please specify via the cdk context."
     }
 

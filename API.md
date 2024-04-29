@@ -34558,10 +34558,10 @@ const cfnAuditingProps: CfnAuditingProps = { ... }
 
 ---
 
-##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnAuditingProps.property.projectId"></a>
+##### `groupId`<sup>Required</sup> <a name="groupId" id="awscdk-resources-mongodbatlas.CfnAuditingProps.property.groupId"></a>
 
 ```typescript
-public readonly projectId: string;
+public readonly groupId: string;
 ```
 
 - *Type:* string
