@@ -41,7 +41,7 @@ You can find more information about activating this type in the [AWS CloudFormat
 
 ```ts
   const auditing = new CfnAuditing(this, 'Auditing', {
-    groupId: atlasProps.projId,
+    projectId: atlasProps.projId,
     profile: atlasProps.profile,
   });
 ```
