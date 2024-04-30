@@ -8,6 +8,9 @@ interface AtlasStackProps {
   readonly profile: string;
   readonly projName: string;
   readonly regionUsageRestrictions: string;
+  readonly tags: Map<string, string>;
+  readonly apiKey: string
+  readonly teamId: string;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -31,17 +34,18 @@ export class CdkTestingStack extends cdk.Stack {
     },
     projectApiKeys: [
         {
-            key: "64f75b66e205b21647ae1e58",
+            key: atlasProps.apiKey,
             roleNames: ["GROUP_CLUSTER_MANAGER"]
         }
     ],
     projectTeams: [
         {
-            teamId: "647a04045878135ce0e8bfff",
+            teamId: atlasProps.teamId,
             roleNames: ["GROUP_OWNER"]
         }
-    ]
-    });
+    ],
+    tags: atlasProps.tags,
+  });
 
   }
 
@@ -53,11 +57,23 @@ export class CdkTestingStack extends cdk.Stack {
     const projName = this.node.tryGetContext('projName') ?? 'test-proj';
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const regionUsageRestrictions= this.node.tryGetContext('regionUsageRestrictions') ?? "NONE";
+    const tags = this.node.tryGetContext('tags') ?? {Owner: 'AWS-CDK-EXAMPLE'};
+    const apiKey = this.node.tryGetContext('apiKey');
+    if (!apiKey){
+      throw "No context value specified for apiKey. Please specify via the cdk context."
+    }
+    const teamId = this.node.tryGetContext('teamId');
+    if (!teamId){
+      throw "No context value specified for teamId. Please specify via the cdk context."
+    }
     return {
       projName,
       orgId,
       profile,
-      regionUsageRestrictions
+      regionUsageRestrictions,
+      tags,
+      apiKey,
+      teamId,
     }
   }
 }
