@@ -34566,15 +34566,15 @@ const cfnAuditingProps: CfnAuditingProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditingProps.property.groupId">groupId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditingProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditingProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 
 ---
 
-##### `groupId`<sup>Required</sup> <a name="groupId" id="awscdk-resources-mongodbatlas.CfnAuditingProps.property.groupId"></a>
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnAuditingProps.property.projectId"></a>
 
 ```typescript
-public readonly groupId: string;
+public readonly projectId: string;
 ```
 
 - *Type:* string
