@@ -23566,6 +23566,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrClusterCount">attrClusterCount</a></code> | <code>number</code> | Attribute `MongoDB::Atlas::Project.ClusterCount`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrCreated">attrCreated</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Project.Created`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Project.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrProjectOwnerId">attrProjectOwnerId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Project.ProjectOwnerId`. |
@@ -23662,6 +23663,18 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `attrClusterCount`<sup>Required</sup> <a name="attrClusterCount" id="awscdk-resources-mongodbatlas.CfnProject.property.attrClusterCount"></a>
+
+```typescript
+public readonly attrClusterCount: number;
+```
+
+- *Type:* number
+
+Attribute `MongoDB::Atlas::Project.ClusterCount`.
 
 ---
 
@@ -34553,15 +34566,15 @@ const cfnAuditingProps: CfnAuditingProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditingProps.property.groupId">groupId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditingProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditingProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 
 ---
 
-##### `groupId`<sup>Required</sup> <a name="groupId" id="awscdk-resources-mongodbatlas.CfnAuditingProps.property.groupId"></a>
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnAuditingProps.property.projectId"></a>
 
 ```typescript
-public readonly groupId: string;
+public readonly projectId: string;
 ```
 
 - *Type:* string
@@ -37678,10 +37691,13 @@ const cfnOrganizationProps: CfnOrganizationProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.awsSecretName">awsSecretName</a></code> | <code>string</code> | AwsSecretName used to set newly created Org credentials information. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.name">name</a></code> | <code>string</code> | Human-readable label that identifies the organization. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.orgOwnerId">orgOwnerId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the MongoDB Cloud user that you want to assign the Organization Owner role. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.apiAccessListRequired">apiAccessListRequired</a></code> | <code>boolean</code> | Flag that indicates whether to require API operations to originate from an IP Address added to the API access list for the specified organization. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.apiKey">apiKey</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiKey">ApiKey</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.federatedSettingsId">federatedSettingsId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the federation to link the newly created organization to. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.isDeleted">isDeleted</a></code> | <code>boolean</code> | Flag that indicates whether this organization has been deleted. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.multiFactorAuthRequired">multiFactorAuthRequired</a></code> | <code>boolean</code> | Flag that indicates whether to require users to set up Multi-Factor Authentication (MFA) before accessing the specified organization. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.restrictEmployeeAccess">restrictEmployeeAccess</a></code> | <code>boolean</code> | Flag that indicates whether to block MongoDB Support from accessing Atlas infrastructure for any deployment in the specified organization without explicit permission. |
 
 ---
 
@@ -37723,6 +37739,18 @@ This user must be a member of the same organization as the calling API key. If y
 
 ---
 
+##### `apiAccessListRequired`<sup>Optional</sup> <a name="apiAccessListRequired" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.apiAccessListRequired"></a>
+
+```typescript
+public readonly apiAccessListRequired: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether to require API operations to originate from an IP Address added to the API access list for the specified organization.
+
+---
+
 ##### `apiKey`<sup>Optional</sup> <a name="apiKey" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.apiKey"></a>
 
 ```typescript
@@ -37759,6 +37787,20 @@ Flag that indicates whether this organization has been deleted.
 
 ---
 
+##### `multiFactorAuthRequired`<sup>Optional</sup> <a name="multiFactorAuthRequired" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.multiFactorAuthRequired"></a>
+
+```typescript
+public readonly multiFactorAuthRequired: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether to require users to set up Multi-Factor Authentication (MFA) before accessing the specified organization.
+
+To learn more, see: https://www.mongodb.com/docs/atlas/security-multi-factor-authentication/.
+
+---
+
 ##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.profile"></a>
 
 ```typescript
@@ -37768,6 +37810,20 @@ public readonly profile: string;
 - *Type:* string
 
 Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
+
+---
+
+##### `restrictEmployeeAccess`<sup>Optional</sup> <a name="restrictEmployeeAccess" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.restrictEmployeeAccess"></a>
+
+```typescript
+public readonly restrictEmployeeAccess: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether to block MongoDB Support from accessing Atlas infrastructure for any deployment in the specified organization without explicit permission.
+
+Once this setting is turned on, you can grant MongoDB Support a 24-hour bypass access to the Atlas deployment to resolve support issues. To learn more, see: https://www.mongodb.com/docs/atlas/security-restrict-support-access/.
 
 ---
 
@@ -38686,12 +38742,12 @@ const cfnProjectProps: CfnProjectProps = { ... }
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.name">name</a></code> | <code>string</code> | Name of the project to create. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.orgId">orgId</a></code> | <code>string</code> | Unique identifier of the organization within which to create the project. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.clusterCount">clusterCount</a></code> | <code>number</code> | The number of Atlas clusters deployed in the project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectApiKeys">projectApiKeys</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectApiKey">ProjectApiKey</a>[]</code> | API keys that you assigned to the specified project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectSettings">projectSettings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings">ProjectSettings</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectTeams">projectTeams</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectTeam">ProjectTeam</a>[]</code> | Teams to which the authenticated user has access in the project specified using its unique 24-hexadecimal digit identifier. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.regionUsageRestrictions">regionUsageRestrictions</a></code> | <code>string</code> | Region usage restrictions that designate the project's AWS region.Enum: "GOV_REGIONS_ONLY" "COMMERCIAL_FEDRAMP_REGIONS_ONLY" "NONE". |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.tags">tags</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.withDefaultAlertsSettings">withDefaultAlertsSettings</a></code> | <code>boolean</code> | Flag that indicates whether to create the project with default alert settings. |
 
 ---
@@ -38717,18 +38773,6 @@ public readonly orgId: string;
 - *Type:* string
 
 Unique identifier of the organization within which to create the project.
-
----
-
-##### `clusterCount`<sup>Optional</sup> <a name="clusterCount" id="awscdk-resources-mongodbatlas.CfnProjectProps.property.clusterCount"></a>
-
-```typescript
-public readonly clusterCount: number;
-```
-
-- *Type:* number
-
-The number of Atlas clusters deployed in the project.
 
 ---
 
@@ -38787,6 +38831,16 @@ public readonly regionUsageRestrictions: string;
 - *Type:* string
 
 Region usage restrictions that designate the project's AWS region.Enum: "GOV_REGIONS_ONLY" "COMMERCIAL_FEDRAMP_REGIONS_ONLY" "NONE".
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="awscdk-resources-mongodbatlas.CfnProjectProps.property.tags"></a>
+
+```typescript
+public readonly tags: any;
+```
+
+- *Type:* any
 
 ---
 
@@ -39368,7 +39422,7 @@ Profile used to provide credentials information, (a secret with the cfn/atlas/pr
 
 Returns, adds, edits, and removes one connection for a stream instance in the specified project.
 
-To use this resource, the requesting API Key must have the Project Owner roles. Note that Atlas Streams functionality is currently in [Public Preview](https://www.mongodb.com/blog/post/atlas-stream-processing-now-in-public-preview)
+To use this resource, the requesting API Key must have the Project Owner roles.
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.Initializer"></a>
 
@@ -39531,8 +39585,6 @@ public readonly security: StreamsKafkaSecurity;
 ### CfnStreamInstanceProps <a name="CfnStreamInstanceProps" id="awscdk-resources-mongodbatlas.CfnStreamInstanceProps"></a>
 
 Returns, adds, edits, and removes Atlas Stream Processing Instances.
-
-Note that Atlas Streams functionality is currently in [Public Preview](https://www.mongodb.com/blog/post/atlas-stream-processing-now-in-public-preview)
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnStreamInstanceProps.Initializer"></a>
 
@@ -41949,8 +42001,20 @@ const dataProcessRegion: DataProcessRegion = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.DataProcessRegion.property.cloudProvider">cloudProvider</a></code> | <code>string</code> | Name of the cloud service that hosts the data lake's data stores. |
 | <code><a href="#awscdk-resources-mongodbatlas.DataProcessRegion.property.region">region</a></code> | <code>string</code> | Name of the region to which the data lake routes client connections. |
+| <code><a href="#awscdk-resources-mongodbatlas.DataProcessRegion.property.cloudProvider">cloudProvider</a></code> | <code>string</code> | Name of the cloud service that hosts the data lake's data stores. |
+
+---
+
+##### `region`<sup>Required</sup> <a name="region" id="awscdk-resources-mongodbatlas.DataProcessRegion.property.region"></a>
+
+```typescript
+public readonly region: string;
+```
+
+- *Type:* string
+
+Name of the region to which the data lake routes client connections.
 
 ---
 
@@ -41963,18 +42027,6 @@ public readonly cloudProvider: string;
 - *Type:* string
 
 Name of the cloud service that hosts the data lake's data stores.
-
----
-
-##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.DataProcessRegion.property.region"></a>
-
-```typescript
-public readonly region: string;
-```
-
-- *Type:* string
-
-Name of the region to which the data lake routes client connections.
 
 ---
 

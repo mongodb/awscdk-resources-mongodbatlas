@@ -30,13 +30,6 @@ export interface CfnProjectProps {
   readonly withDefaultAlertsSettings?: boolean;
 
   /**
-   * The number of Atlas clusters deployed in the project.
-   *
-   * @schema CfnProjectProps#ClusterCount
-   */
-  readonly clusterCount?: number;
-
-  /**
    * @schema CfnProjectProps#ProjectSettings
    */
   readonly projectSettings?: ProjectSettings;
@@ -68,6 +61,11 @@ export interface CfnProjectProps {
    * @schema CfnProjectProps#RegionUsageRestrictions
    */
   readonly regionUsageRestrictions?: string;
+
+  /**
+   * @schema CfnProjectProps#Tags
+   */
+  readonly tags?: any;
 }
 
 /**
@@ -84,12 +82,12 @@ export function toJson_CfnProjectProps(
     Name: obj.name,
     OrgId: obj.orgId,
     WithDefaultAlertsSettings: obj.withDefaultAlertsSettings,
-    ClusterCount: obj.clusterCount,
     ProjectSettings: toJson_ProjectSettings(obj.projectSettings),
     Profile: obj.profile,
     ProjectTeams: obj.projectTeams?.map((y) => toJson_ProjectTeam(y)),
     ProjectApiKeys: obj.projectApiKeys?.map((y) => toJson_ProjectApiKey(y)),
     RegionUsageRestrictions: obj.regionUsageRestrictions,
+    Tags: obj.tags,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -284,6 +282,10 @@ export class CfnProject extends cdk.CfnResource {
    * Attribute `MongoDB::Atlas::Project.ProjectOwnerId`
    */
   public readonly attrProjectOwnerId: string;
+  /**
+   * Attribute `MongoDB::Atlas::Project.ClusterCount`
+   */
+  public readonly attrClusterCount: number;
 
   /**
    * Create a new `MongoDB::Atlas::Project`.
@@ -303,5 +305,6 @@ export class CfnProject extends cdk.CfnResource {
     this.attrId = cdk.Token.asString(this.getAtt("Id"));
     this.attrCreated = cdk.Token.asString(this.getAtt("Created"));
     this.attrProjectOwnerId = cdk.Token.asString(this.getAtt("ProjectOwnerId"));
+    this.attrClusterCount = cdk.Token.asNumber(this.getAtt("ClusterCount"));
   }
 }

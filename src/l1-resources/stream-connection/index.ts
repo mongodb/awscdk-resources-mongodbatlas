@@ -3,7 +3,7 @@ import * as cdk from "aws-cdk-lib";
 import * as constructs from "constructs";
 
 /**
- * Returns, adds, edits, and removes one connection for a stream instance in the specified project. To use this resource, the requesting API Key must have the Project Owner roles. Note that Atlas Streams functionality is currently in [Public Preview](https://www.mongodb.com/blog/post/atlas-stream-processing-now-in-public-preview)
+ * Returns, adds, edits, and removes one connection for a stream instance in the specified project. To use this resource, the requesting API Key must have the Project Owner roles.
  *
  * @schema CfnStreamConnectionProps
  */
