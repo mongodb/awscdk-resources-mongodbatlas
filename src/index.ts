@@ -108,7 +108,7 @@ export {
   CfnClusterPropsEncryptionAtRestProvider,
   AdvancedRegionConfigProviderName,
   Tag,
-} from "./l1-resources/clusters";
+} from "./l1-resources/cluster";
 
 export {
   Action,
