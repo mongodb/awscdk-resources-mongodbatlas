@@ -18,7 +18,7 @@ export interface CfnAccessListApiKeyProps {
   /**
    * Unique 24-hexadecimal digit string that identifies this organization API key for which you want to return access list entries.
    *
-   * @schema CfnAccessListApiKeyProps#ApiUserId
+   * @schema CfnAccessListApiKeyProps#APIUserId
    */
   readonly apiUserId: string;
 
@@ -96,6 +96,11 @@ export class CfnAccessListApiKey extends cdk.CfnResource {
   public readonly props: CfnAccessListApiKeyProps;
 
   /**
+   * Attribute `MongoDB::Atlas::AccessListAPIKey.Entry`
+   */
+  public readonly attrEntry: string;
+
+  /**
    * Create a new `MongoDB::Atlas::AccessListAPIKey`.
    *
    * @param scope - scope in which this resource is defined
@@ -113,5 +118,7 @@ export class CfnAccessListApiKey extends cdk.CfnResource {
     });
 
     this.props = props;
+
+    this.attrEntry = cdk.Token.asString(this.getAtt("Entry"));
   }
 }

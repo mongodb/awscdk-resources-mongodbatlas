@@ -1302,6 +1302,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.attrEntry">attrEntry</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::AccessListAPIKey.Entry`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKeyProps">CfnAccessListApiKeyProps</a></code> | Resource props. |
 
 ---
@@ -1395,6 +1396,18 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `attrEntry`<sup>Required</sup> <a name="attrEntry" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.attrEntry"></a>
+
+```typescript
+public readonly attrEntry: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::AccessListAPIKey.Entry`.
 
 ---
 
