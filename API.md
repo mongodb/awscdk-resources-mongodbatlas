@@ -35445,6 +35445,7 @@ const cfnClusterProps: CfnClusterProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.connectionStrings">connectionStrings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings">ConnectionStrings</a></code> | Set of connection strings that your applications use to connect to this cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.diskSizeGb">diskSizeGb</a></code> | <code>number</code> | Storage capacity that the host's root volume possesses expressed in gigabytes. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.encryptionAtRestProvider">encryptionAtRestProvider</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterPropsEncryptionAtRestProvider">CfnClusterPropsEncryptionAtRestProvider</a></code> | Cloud service provider that manages your customer keys to provide an additional layer of encryption at rest for the cluster. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.globalClusterSelfManagedSharding">globalClusterSelfManagedSharding</a></code> | <code>boolean</code> | (Optional) Flag that indicates if cluster uses Atlas-Managed Sharding (false, default) or Self-Managed Sharding (true). |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.labels">labels</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterPropsLabels">CfnClusterPropsLabels</a>[]</code> | Collection of key-value pairs between 1 to 255 characters in length that tag and categorize the cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.mongoDbMajorVersion">mongoDbMajorVersion</a></code> | <code>string</code> | Major MongoDB version of the cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.paused">paused</a></code> | <code>boolean</code> | Flag that indicates whether the cluster is paused or not. |
@@ -35569,6 +35570,20 @@ public readonly encryptionAtRestProvider: CfnClusterPropsEncryptionAtRestProvide
 Cloud service provider that manages your customer keys to provide an additional layer of encryption at rest for the cluster.
 
 To enable customer key management for encryption at rest, the cluster replicationSpecs[n].regionConfigs[m].{type}Specs.instanceSize setting must be M10 or higher and "backupEnabled" : false or omitted entirely.
+
+---
+
+##### `globalClusterSelfManagedSharding`<sup>Optional</sup> <a name="globalClusterSelfManagedSharding" id="awscdk-resources-mongodbatlas.CfnClusterProps.property.globalClusterSelfManagedSharding"></a>
+
+```typescript
+public readonly globalClusterSelfManagedSharding: boolean;
+```
+
+- *Type:* boolean
+
+(Optional) Flag that indicates if cluster uses Atlas-Managed Sharding (false, default) or Self-Managed Sharding (true).
+
+It can only be enabled for Global Clusters (`GEOSHARDED`). It cannot be changed once the cluster is created. Use this mode if you're an advanced user and the default configuration is too restrictive for your workload. If you select this option, you must manually configure the sharding strategy, more info [here](https://www.mongodb.com/docs/atlas/tutorial/create-global-cluster/#select-your-sharding-configuration).
 
 ---
 
