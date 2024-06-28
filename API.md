@@ -36749,6 +36749,8 @@ See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
 
 Returns, adds, and removes Global Cluster managed namespaces and custom zone mappings.
 
+This resource can only be used with Atlas-managed clusters, see doc for `GlobalClusterSelfManagedSharding` attribute in `Mongodb::Atlas::Cluster` resource for more info.
+
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.Initializer"></a>
 
 ```typescript
