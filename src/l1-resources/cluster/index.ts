@@ -56,6 +56,13 @@ export interface CfnClusterProps {
   readonly encryptionAtRestProvider?: CfnClusterPropsEncryptionAtRestProvider;
 
   /**
+   * (Optional) Flag that indicates if cluster uses Atlas-Managed Sharding (false, default) or Self-Managed Sharding (true). It can only be enabled for Global Clusters (`GEOSHARDED`). It cannot be changed once the cluster is created. Use this mode if you're an advanced user and the default configuration is too restrictive for your workload. If you select this option, you must manually configure the sharding strategy, more info [here](https://www.mongodb.com/docs/atlas/tutorial/create-global-cluster/#select-your-sharding-configuration).
+   *
+   * @schema CfnClusterProps#GlobalClusterSelfManagedSharding
+   */
+  readonly globalClusterSelfManagedSharding?: boolean;
+
+  /**
    * Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used
    *
    * @schema CfnClusterProps#Profile
@@ -158,6 +165,7 @@ export function toJson_CfnClusterProps(
     ConnectionStrings: toJson_ConnectionStrings(obj.connectionStrings),
     DiskSizeGB: obj.diskSizeGb,
     EncryptionAtRestProvider: obj.encryptionAtRestProvider,
+    GlobalClusterSelfManagedSharding: obj.globalClusterSelfManagedSharding,
     Profile: obj.profile,
     ProjectId: obj.projectId,
     Labels: obj.labels?.map((y) => toJson_CfnClusterPropsLabels(y)),
