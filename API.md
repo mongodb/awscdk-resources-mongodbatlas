@@ -13905,7 +13905,6 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.attrRemoveAllZoneMapping">attrRemoveAllZoneMapping</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::GlobalClusterConfig.RemoveAllZoneMapping`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps">CfnGlobalClusterConfigProps</a></code> | Resource props. |
 
 ---
@@ -13999,18 +13998,6 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
-
----
-
-##### `attrRemoveAllZoneMapping`<sup>Required</sup> <a name="attrRemoveAllZoneMapping" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.attrRemoveAllZoneMapping"></a>
-
-```typescript
-public readonly attrRemoveAllZoneMapping: IResolvable;
-```
-
-- *Type:* aws-cdk-lib.IResolvable
-
-Attribute `MongoDB::Atlas::GlobalClusterConfig.RemoveAllZoneMapping`.
 
 ---
 
@@ -35458,7 +35445,6 @@ const cfnClusterProps: CfnClusterProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.connectionStrings">connectionStrings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings">ConnectionStrings</a></code> | Set of connection strings that your applications use to connect to this cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.diskSizeGb">diskSizeGb</a></code> | <code>number</code> | Storage capacity that the host's root volume possesses expressed in gigabytes. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.encryptionAtRestProvider">encryptionAtRestProvider</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterPropsEncryptionAtRestProvider">CfnClusterPropsEncryptionAtRestProvider</a></code> | Cloud service provider that manages your customer keys to provide an additional layer of encryption at rest for the cluster. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.globalClusterSelfManagedSharding">globalClusterSelfManagedSharding</a></code> | <code>boolean</code> | (Optional) Flag that indicates if cluster uses Atlas-Managed Sharding (false, default) or Self-Managed Sharding (true). |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.labels">labels</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterPropsLabels">CfnClusterPropsLabels</a>[]</code> | Collection of key-value pairs between 1 to 255 characters in length that tag and categorize the cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.mongoDbMajorVersion">mongoDbMajorVersion</a></code> | <code>string</code> | Major MongoDB version of the cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.paused">paused</a></code> | <code>boolean</code> | Flag that indicates whether the cluster is paused or not. |
@@ -35583,20 +35569,6 @@ public readonly encryptionAtRestProvider: CfnClusterPropsEncryptionAtRestProvide
 Cloud service provider that manages your customer keys to provide an additional layer of encryption at rest for the cluster.
 
 To enable customer key management for encryption at rest, the cluster replicationSpecs[n].regionConfigs[m].{type}Specs.instanceSize setting must be M10 or higher and "backupEnabled" : false or omitted entirely.
-
----
-
-##### `globalClusterSelfManagedSharding`<sup>Optional</sup> <a name="globalClusterSelfManagedSharding" id="awscdk-resources-mongodbatlas.CfnClusterProps.property.globalClusterSelfManagedSharding"></a>
-
-```typescript
-public readonly globalClusterSelfManagedSharding: boolean;
-```
-
-- *Type:* boolean
-
-(Optional) Flag that indicates if cluster uses Atlas-Managed Sharding (false, default) or Self-Managed Sharding (true).
-
-It can only be enabled for Global Clusters (`GEOSHARDED`). It cannot be changed once the cluster is created. Use this mode if you're an advanced user and the default configuration is too restrictive for your workload. If you select this option, you must manually configure the sharding strategy, more info [here](https://www.mongodb.com/docs/atlas/tutorial/create-global-cluster/#select-your-sharding-configuration).
 
 ---
 
@@ -36762,8 +36734,6 @@ See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
 
 Returns, adds, and removes Global Cluster managed namespaces and custom zone mappings.
 
-This resource can only be used with Atlas-managed clusters, see doc for `GlobalClusterSelfManagedSharding` attribute in `Mongodb::Atlas::Cluster` resource for more info.
-
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.Initializer"></a>
 
 ```typescript
@@ -36777,14 +36747,15 @@ const cfnGlobalClusterConfigProps: CfnGlobalClusterConfigProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.clusterName">clusterName</a></code> | <code>string</code> | The name of the Atlas cluster that contains the snapshots you want to retrieve. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.projectId">projectId</a></code> | <code>string</code> | The unique identifier of the project for the Atlas cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.customZoneMappings">customZoneMappings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ZoneMapping">ZoneMapping</a>[]</code> | List that contains comma-separated key value pairs to map zones to geographic regions. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.managedNamespaces">managedNamespaces</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ManagedNamespace">ManagedNamespace</a>[]</code> | List that contains comma-separated key value pairs to map zones to geographic regions. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.projectId">projectId</a></code> | <code>string</code> | The unique identifier of the project for the Atlas cluster. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.removeAllZoneMapping">removeAllZoneMapping</a></code> | <code>boolean</code> | Flag that indicates whether all custom zone mapping to be deleted during delete. |
 
 ---
 
-##### `clusterName`<sup>Optional</sup> <a name="clusterName" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.clusterName"></a>
+##### `clusterName`<sup>Required</sup> <a name="clusterName" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.clusterName"></a>
 
 ```typescript
 public readonly clusterName: string;
@@ -36793,6 +36764,18 @@ public readonly clusterName: string;
 - *Type:* string
 
 The name of the Atlas cluster that contains the snapshots you want to retrieve.
+
+---
+
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.projectId"></a>
+
+```typescript
+public readonly projectId: string;
+```
+
+- *Type:* string
+
+The unique identifier of the project for the Atlas cluster.
 
 ---
 
@@ -36842,15 +36825,15 @@ See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
 
 ---
 
-##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.projectId"></a>
+##### `removeAllZoneMapping`<sup>Optional</sup> <a name="removeAllZoneMapping" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.removeAllZoneMapping"></a>
 
 ```typescript
-public readonly projectId: string;
+public readonly removeAllZoneMapping: boolean;
 ```
 
-- *Type:* string
+- *Type:* boolean
 
-The unique identifier of the project for the Atlas cluster.
+Flag that indicates whether all custom zone mapping to be deleted during delete.
 
 ---
 
