@@ -16,6 +16,16 @@ After the action finishes successfully you have to manually release the Go packa
 The release version is determinated based on the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) in that release.
 
 
+## Release troubleshooting
+If the Release Gitub Action fails, it can happen that the new version is published only to some repositories, 
+but the failing ones are still in the current version.
+
+The current version is only updated when the Github Action is completely succesful. Also the action is retryable 
+(all repository publishings are idempotent, if try to publish a version that is already published, it doesn't fail and behaves like a no-op). 
+**That means that the offending issue can be fixed and run the action again.**
+
+You can also do a manual release for the failing repository publishings.
+
 ## Manual Release
 
 **Note, we should manual release a version only if one of the Publish step of the action failed.**
