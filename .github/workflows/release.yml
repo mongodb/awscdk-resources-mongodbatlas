@@ -214,16 +214,16 @@ jobs:
       - name: Log in to MongoDB Docker registry
         uses: docker/login-action@0d4c9c5ea7693da7b068278f7b52bda2a190a446
         with:
+          registry: ${{ secrets.ARTIFACTORY_REGISTRY }}
           username: ${{ secrets.ARTIFACTORY_USER }}
           password: ${{ secrets.ARTIFACTORY_PASSWORD }}
-          registry: ${{ secrets.ARTIFACTORY_REGISTRY }}
       - name: Sign NuGet package
         run: |
           docker run \
           -e GRS_CONFIG_USER1_USERNAME=${{ secrets.ARTIFACTORY_SIGN_USER }} \
           -e GRS_CONFIG_USER1_PASSWORD=${{ secrets.ARTIFACTORY_SIGN_PASSWORD }} \
           --rm -v $(pwd):$(pwd) -w $(pwd) \
-          ${{ secrets.ARTIFACTORY_SIGN_REGISTRY }} \
+          ${{ secrets.ARTIFACTORY_REGISTRY }}/${{ secrets.ARTIFACTORY_SIGN_TOOL }} \
           /bin/bash -c "jsign --tsaurl http://timestamp.digicert.com -a mongo-authenticode-2021 \
           ./dist/dotnet/MongoDB.AWSCDKResourcesMongoDBAtlas.${{ steps.extract-version.outputs.VERSION }}.nupkg"
       - name: Release
