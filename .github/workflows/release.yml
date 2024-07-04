@@ -208,14 +208,13 @@ jobs:
         run: cd .repo && npx projen package:dotnet
       - name: Collect dotnet Artifact
         run: mv .repo/dist dist
+      - name: Extract Version
+        id: extract-version
+        run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
       - name: Release
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: npx -p publib@latest publib-nuget
-      - name: Extract Version
-        id: extract-version
-        if: ${{ failure() }}
-        run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
       - name: Create Issue
         if: ${{ failure() }}
         uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
