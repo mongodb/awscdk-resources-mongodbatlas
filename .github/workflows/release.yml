@@ -1,4 +1,4 @@
-name: Release (temporary test)
+name: Release
 on: workflow_dispatch
 jobs:
   release:
@@ -36,7 +36,6 @@ jobs:
           name: build-artifact
           path: dist
   release_npm:
-    if: false
     name: Publish to npm
     needs: release
     runs-on: ubuntu-latest
@@ -81,7 +80,6 @@ jobs:
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to npm failed
           body: See https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
   release_maven:
-    if: false
     name: Publish to Maven Central
     needs: release
     runs-on: ubuntu-latest
@@ -132,7 +130,6 @@ jobs:
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to Maven Central failed
           body: See https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
   release_pypi:
-    if: false
     name: Publish to PyPI
     needs: release
     runs-on: ubuntu-latest
@@ -244,7 +241,6 @@ jobs:
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to NuGet Gallery failed
           body: See https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
   release_golang:
-    if: false
     name: Publish to GitHub Go Module Repository
     needs: release
     runs-on: ubuntu-latest
@@ -292,7 +288,6 @@ jobs:
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to GitHub Go Module Repository failed
           body: See https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
   release_github:
-    if: false
     name: Publish to GitHub Releases
     needs: [release, release_npm, release_maven, release_pypi, release_nuget, release_golang]
     runs-on: ubuntu-latest
