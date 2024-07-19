@@ -217,12 +217,11 @@ jobs:
           registry: ${{ secrets.ARTIFACTORY_REGISTRY }}
           username: ${{ secrets.ARTIFACTORY_USER }}
           password: ${{ secrets.ARTIFACTORY_PASSWORD }}
-      - run: mv dist/dotnet/MongoDB.AWSCDKResourcesMongoDBAtlas.3.7.1.nupkg dist/dotnet/MongoDB.AWSCDKResourcesMongoDBAtlas.3.7.0.nupkg
       - name: Sign NuGet package
         run: |
           docker run --platform="linux/amd64" --rm -v $(pwd):/workdir -w /workdir \
             artifactory.corp.mongodb.com/release-tools-container-registry-local/azure-keyvault-nuget \
-            NuGetKeyVaultSignTool sign "dist/dotnet/MongoDB.AWSCDKResourcesMongoDBAtlas.3.7.0.nupkg" \
+            NuGetKeyVaultSignTool sign "dist/dotnet/MongoDB.AWSCDKResourcesMongoDBAtlas.${{ steps.extract-version.outputs.VERSION }}.nupkg" \
               --force \
               --file-digest=sha256 \
               --timestamp-rfc3161=http://timestamp.digicert.com \
@@ -233,6 +232,7 @@ jobs:
               --azure-key-vault-client-id="${{ secrets.AZURE_NUGET_SIGN_CLIENT_ID }}" \
               --azure-key-vault-certificate=authenticode-2021
       - name: Release
+        if: false
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: npx -p publib@latest publib-nuget
