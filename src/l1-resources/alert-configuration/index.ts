@@ -280,6 +280,20 @@ export interface NotificationView {
   readonly emailEnabled?: boolean;
 
   /**
+   * Flowdock flow name to which MongoDB Cloud sends alert notifications. This name appears after the organization name in the Uniform Resource Locator (URL) path: 'www.flowdock.com/app/<organization-name>/<flow-name>'. The resource requires this parameter when '"notifications.typeName" : "FLOWDOCK"'.
+   *
+   * @schema NotificationView#FlowName
+   */
+  readonly flowName?: string;
+
+  /**
+   * Flowdock API token that MongoDB Cloud needs to send alert notifications to Flowdock. The resource requires this parameter when '"notifications.typeName" : "FLOWDOCK"'. If the token later becomes invalid, MongoDB Cloud sends an email to the project owners. If the token remains invalid, MongoDB Cloud removes the token.
+   *
+   * @schema NotificationView#FlowdockApiToken
+   */
+  readonly flowdockApiToken?: string;
+
+  /**
    * Number of minutes to wait between successive notifications. MongoDB Cloud sends notifications until someone acknowledges the unacknowledged alert.
    *
    * PagerDuty, VictorOps, and OpsGenie notifications don't return this element. Configure and manage the notification interval within each of those services.
@@ -444,6 +458,8 @@ export function toJson_NotificationView(
     DelayMin: obj.delayMin,
     EmailAddress: obj.emailAddress,
     EmailEnabled: obj.emailEnabled,
+    FlowName: obj.flowName,
+    FlowdockApiToken: obj.flowdockApiToken,
     IntervalMin: obj.intervalMin,
     MicrosoftTeamsWebhookUrl: obj.microsoftTeamsWebhookUrl,
     MobileNumber: obj.mobileNumber,
