@@ -227,11 +227,12 @@ jobs:
           /bin/bash -c "jsign --tsaurl http://timestamp.digicert.com -a mongo-authenticode-2021 \
           ./dist/dotnet/MongoDB.AWSCDKResourcesMongoDBAtlas.${{ steps.extract-version.outputs.VERSION }}.nupkg"
       - name: Release
+        if: false
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         run: npx -p publib@latest publib-nuget
       - name: Create Issue
-        if: ${{ failure() }}
+        if: false
         uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
         with:
           labels: failed-release
