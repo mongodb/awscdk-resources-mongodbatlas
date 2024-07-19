@@ -216,7 +216,7 @@ jobs:
           password: ${{ secrets.ARTIFACTORY_PASSWORD }}
       - name: Sign NuGet package
         run: |
-          docker run --platform="linux/amd64" --rm -v $(pwd):/workdir -w /workdir \
+          docker run --platform="linux/amd64" --rm -v "$(pwd)":/workdir -w /workdir \
             artifactory.corp.mongodb.com/release-tools-container-registry-local/azure-keyvault-nuget \
             NuGetKeyVaultSignTool sign "dist/dotnet/MongoDB.AWSCDKResourcesMongoDBAtlas.${{ steps.extract-version.outputs.VERSION }}.nupkg" \
               --force \
