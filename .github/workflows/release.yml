@@ -219,13 +219,18 @@ jobs:
           password: ${{ secrets.ARTIFACTORY_PASSWORD }}
       - name: Sign NuGet package
         run: |
-          docker run \
-          -e GRS_CONFIG_USER1_USERNAME="${{ secrets.ARTIFACTORY_SIGN_USER }}" \
-          -e GRS_CONFIG_USER1_PASSWORD="${{ secrets.ARTIFACTORY_SIGN_PASSWORD }}" \
-          --rm -v "$(pwd)":"$(pwd)" -w "$(pwd)" \
-          "${{ secrets.ARTIFACTORY_REGISTRY }}/${{ secrets.ARTIFACTORY_SIGN_TOOL }}" \
-          /bin/bash -c "jsign --tsaurl http://timestamp.digicert.com -a mongo-authenticode-2021 \
-          ./dist/dotnet/MongoDB.AWSCDKResourcesMongoDBAtlas.${{ steps.extract-version.outputs.VERSION }}.nupkg"
+          docker run --platform="linux/amd64" --rm -v $(pwd):/workdir -w /workdir \
+            artifactory.corp.mongodb.com/release-tools-container-registry-local/azure-keyvault-nuget \
+            NuGetKeyVaultSignTool sign "dist/dotnet/MongoDB.AWSCDKResourcesMongoDBAtlas.${{ steps.extract-version.outputs.VERSION }}.nupkg" \
+              --force \
+              --file-digest=sha256 \
+              --timestamp-rfc3161=http://timestamp.digicert.com \
+              --timestamp-digest=sha256 \
+              --azure-key-vault-url=https://mdb-authenticode.vault.azure.net \
+              --azure-key-vault-tenant-id="${{ secrets.AZURE_NUGET_SIGN_TENANT_ID }}" \
+              --azure-key-vault-client-secret="${{ secrets.AZURE_NUGET_SIGN_CLIENT_SECRET }}" \
+              --azure-key-vault-client-id="${{ secrets.AZURE_NUGET_SIGN_CLIENT_ID }}" \
+              --azure-key-vault-certificate=authenticode-2021
       - name: Release
         if: false
         env:
