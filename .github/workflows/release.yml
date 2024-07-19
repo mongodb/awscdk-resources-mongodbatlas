@@ -65,7 +65,7 @@ jobs:
         run: mv .repo/dist dist
       - name: Release
         env:
-          NPM_DIST_TAG: latest
+          NPM_DIST_TAG: 3.6.0
           NPM_REGISTRY: registry.npmjs.org
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx -p publib@latest publib-npm
