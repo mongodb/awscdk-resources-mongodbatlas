@@ -48258,6 +48258,9 @@ The parameter must match all rules for MongoDB Cloud to check for alert configur
 | <code><a href="#awscdk-resources-mongodbatlas.MatcherFieldName.REPLICA_SET_NAME">REPLICA_SET_NAME</a></code> | REPLICA_SET_NAME. |
 | <code><a href="#awscdk-resources-mongodbatlas.MatcherFieldName.SHARD_NAME">SHARD_NAME</a></code> | SHARD_NAME. |
 | <code><a href="#awscdk-resources-mongodbatlas.MatcherFieldName.TYPE_NAME">TYPE_NAME</a></code> | TYPE_NAME. |
+| <code><a href="#awscdk-resources-mongodbatlas.MatcherFieldName.APPLICATION_ID">APPLICATION_ID</a></code> | APPLICATION_ID. |
+| <code><a href="#awscdk-resources-mongodbatlas.MatcherFieldName.INSTANCE_NAME">INSTANCE_NAME</a></code> | INSTANCE_NAME. |
+| <code><a href="#awscdk-resources-mongodbatlas.MatcherFieldName.PROCESSOR_NAME">PROCESSOR_NAME</a></code> | PROCESSOR_NAME. |
 
 ---
 
@@ -48306,6 +48309,27 @@ SHARD_NAME.
 ##### `TYPE_NAME` <a name="TYPE_NAME" id="awscdk-resources-mongodbatlas.MatcherFieldName.TYPE_NAME"></a>
 
 TYPE_NAME.
+
+---
+
+
+##### `APPLICATION_ID` <a name="APPLICATION_ID" id="awscdk-resources-mongodbatlas.MatcherFieldName.APPLICATION_ID"></a>
+
+APPLICATION_ID.
+
+---
+
+
+##### `INSTANCE_NAME` <a name="INSTANCE_NAME" id="awscdk-resources-mongodbatlas.MatcherFieldName.INSTANCE_NAME"></a>
+
+INSTANCE_NAME.
+
+---
+
+
+##### `PROCESSOR_NAME` <a name="PROCESSOR_NAME" id="awscdk-resources-mongodbatlas.MatcherFieldName.PROCESSOR_NAME"></a>
+
+PROCESSOR_NAME.
 
 ---
 
