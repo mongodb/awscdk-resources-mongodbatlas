@@ -8,6 +8,7 @@ interface AtlasStackProps {
   readonly profile: string;
   readonly collName: string;
   readonly dbName: string;
+  readonly clusterName: string;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -21,6 +22,7 @@ export class CdkTestingStack extends cdk.Stack {
       projectId: atlasProps.projId,
       collName: atlasProps.collName,
       dbName: atlasProps.dbName,
+      clusterName: atlasProps.clusterName,
       criteria: {
         type: CriteriaViewType.DATE,
         dateFormat: 'ISODATE',
@@ -36,7 +38,7 @@ export class CdkTestingStack extends cdk.Stack {
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for projId. Please specify via the cdk context."
     }
     const collName = this.node.tryGetContext('collName');
