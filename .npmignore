@@ -27,7 +27,6 @@ cdk.out
 cdk.context.json
 yarn-error.log
 *.DS_Store
-/submodules/
 /src/
 CONTRIBUTING.md
 TESTING.md
