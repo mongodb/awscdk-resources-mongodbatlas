@@ -25,13 +25,12 @@ set -euo pipefail
 _print_usage() {
 	echo
 	echo 'Usage:'
-	echo './cdk.sh   "<RESOURCE NAME>"'
+	echo './script/cdk.sh "<RESOURCE NAME>"'
 	echo
 	echo 'Example:'
-	echo './cdk.sh cluster'
+	echo './script/cdk.sh database-user'
 	echo
 }
-
 
 if [ "$#" -ne 1 ]; then
 	echo "Error: please provide the resource name"
@@ -39,32 +38,23 @@ if [ "$#" -ne 1 ]; then
 	exit 1
 fi
 
-script_dir="$(cd "$(dirname "$0")" && pwd)"
-root_dir="$(cd "${script_dir}/.." && pwd)"
-
 resource=$1
-echo "Generating L1 CDK resource"
-dir="${root_dir}/submodules/mongodbatlas-cloudformation-resources/cfn-resources/${resource}"
+resourceNoDashes=${resource//-/}
+mainFileRoot="mongodb-atlas-${resourceNoDashes}"
+temp_dir=$(mktemp -d)
+trap 'rm -rf "$temp_dir"' EXIT # temp dir cleanup when script exits
+resourceHttp="https://raw.githubusercontent.com/mongodb/mongodbatlas-cloudformation-resources/master/cfn-resources/${resource}/${mainFileRoot}.json" 
+resourceTemp="${temp_dir}/${mainFileRoot}.json"
 
+echo "Generating L1 CDK resource: ${resource}, resourceNoDashes: ${resourceNoDashes}, resourceHttp: ${resourceHttp}"
+curl  -sSfL -o "${resourceTemp}" "${resourceHttp}"
+resourceType=$(jq -r '.typeName' "${resourceTemp}")
+cdk-import cfn -l typescript -s "${resourceTemp}" -o "src/l1-resources/${resource}" "${resourceType}"
 
-for file in "${dir}"/mongodb-atlas-*.json; do
-	if [[ -f $file ]]; then
-		src=$(jq -r '.typeName' "${file}")
-		echo "generating for $src"
-		path=$(basename "${dir}")
+# Rename resource file to index.ts file
+dest="src/l1-resources/${resource}/index.ts"
+mv "src/l1-resources/${resource}/${mainFileRoot}.ts" "${dest}"
+python "./scripts/rename_in_file.py" "${dest}"
 
-		if [ -f l1-resources/"${path}"/src/index.ts ]; then
-			rm -rf l1-resources/"${path}"/src/*.ts
-		fi
-
-                # NOTE: known_issue MODULE_NOT_FOUND error.
-		# When the Resource is not merged to main branch of submodule, you see the above error. 
-		cdk-import cfn -l typescript -s "${file}" -o "src/l1-resources/${path}" "${src}"
-		# need rename resource file to index.ts file
-		dest="src/l1-resources/${path}/index.ts"
-		mv "src/l1-resources/${path}/mongodb-atlas-${path//-/}.ts" "${dest}"
-		python "${root_dir}/scripts/rename_in_file.py" "${dest}"
-	fi
-done
-
-echo "Done"
+echo
+echo "L1 CDK resource generated succesfully: ${resource}, CFN type: ${resourceType}"
