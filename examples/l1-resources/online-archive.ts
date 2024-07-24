@@ -44,13 +44,15 @@ export class CdkTestingStack extends cdk.Stack {
     const collName = this.node.tryGetContext('collName');
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const dbName = this.node.tryGetContext('dbName');
+    const clusterName = this.node.tryGetContext('clusterName');
 
 
     return {
       projId,
       profile,
       collName,
-      dbName
+      dbName,
+      clusterName
     }
   }
 }
