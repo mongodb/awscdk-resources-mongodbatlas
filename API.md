@@ -1940,6 +1940,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.attrCreated">attrCreated</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::AlertConfiguration.Created`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.attrEnabled">attrEnabled</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::AlertConfiguration.Enabled`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::AlertConfiguration.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.attrUpdated">attrUpdated</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::AlertConfiguration.Updated`. |
@@ -2036,6 +2037,18 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `attrCreated`<sup>Required</sup> <a name="attrCreated" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.attrCreated"></a>
+
+```typescript
+public readonly attrCreated: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::AlertConfiguration.Created`.
 
 ---
 
@@ -34308,7 +34321,6 @@ const cfnAlertConfigurationProps: CfnAlertConfigurationProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.created">created</a></code> | <code>string</code> | Date and time when MongoDB Cloud created the alert configuration. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.eventTypeName">eventTypeName</a></code> | <code>string</code> | Event type that triggers an alert. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.matchers">matchers</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Matcher">Matcher</a>[]</code> | List of rules that determine whether MongoDB Cloud checks an object for the alert configuration. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.metricThreshold">metricThreshold</a></code> | <code><a href="#awscdk-resources-mongodbatlas.MetricThresholdView">MetricThresholdView</a></code> | Threshold for the metric that, when exceeded, triggers an alert. |
@@ -34317,20 +34329,6 @@ const cfnAlertConfigurationProps: CfnAlertConfigurationProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.threshold">threshold</a></code> | <code><a href="#awscdk-resources-mongodbatlas.IntegerThresholdView">IntegerThresholdView</a></code> | Limit that triggers an alert when exceeded. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.typeName">typeName</a></code> | <code>string</code> | Human-readable label that displays the alert type. |
-
----
-
-##### `created`<sup>Optional</sup> <a name="created" id="awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.created"></a>
-
-```typescript
-public readonly created: string;
-```
-
-- *Type:* string
-
-Date and time when MongoDB Cloud created the alert configuration.
-
-This parameter expresses its value in the ISO 8601 timestamp format in UTC.
 
 ---
 
@@ -41019,9 +41017,7 @@ public readonly type: CriteriaViewType;
 
 Means by which MongoDB Cloud selects data to archive.
 
-Data can be chosen using the age of the data or a MongoDB query.
-**DATE** selects documents to archive based on a date.
-**CUSTOM** selects documents to archive based on a custom JSON query. MongoDB Cloud doesn't support **CUSTOM** when `"collectionType": "TIMESERIES"`.
+Data can be chosen using the age of the data or a MongoDB query. **DATE** selects documents to archive based on a date. (if DATE is selected, the PartitionFields.FieldName must be completed with the Criteria.DateField value)**CUSTOM** selects documents to archive based on a custom JSON query (When selecting this option, the Query property must be inputted). MongoDB Cloud doesn't support **CUSTOM** when `collectionType: TIMESERIES`.
 
 ---
 
@@ -43285,8 +43281,6 @@ const notificationView: NotificationView = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.delayMin">delayMin</a></code> | <code>number</code> | Number of minutes that MongoDB Cloud waits after detecting an alert condition before it sends out the first notification. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.emailAddress">emailAddress</a></code> | <code>string</code> | Email address to which MongoDB Cloud sends alert notifications. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.emailEnabled">emailEnabled</a></code> | <code>boolean</code> | Flag that indicates whether MongoDB Cloud should send email notifications. |
-| <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.flowdockApiToken">flowdockApiToken</a></code> | <code>string</code> | Flowdock API token that MongoDB Cloud needs to send alert notifications to Flowdock. |
-| <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.flowName">flowName</a></code> | <code>string</code> | Flowdock flow name to which MongoDB Cloud sends alert notifications. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.intervalMin">intervalMin</a></code> | <code>number</code> | Number of minutes to wait between successive notifications. MongoDB Cloud sends notifications until someone acknowledges the unacknowledged alert. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.microsoftTeamsWebhookUrl">microsoftTeamsWebhookUrl</a></code> | <code>string</code> | Microsoft Teams Webhook Uniform Resource Locator (URL) that MongoDB Cloud needs to send this notification via Microsoft Teams. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.mobileNumber">mobileNumber</a></code> | <code>string</code> | Mobile phone number to which MongoDB Cloud sends alert notifications. |
@@ -43414,34 +43408,6 @@ The resource requires this parameter when one of the following values have been 
 - '"notifications.typeName" : "ORG"'
 - '"notifications.typeName" : "GROUP"'
 - '"notifications.typeName" : "USER"'
-
----
-
-##### `flowdockApiToken`<sup>Optional</sup> <a name="flowdockApiToken" id="awscdk-resources-mongodbatlas.NotificationView.property.flowdockApiToken"></a>
-
-```typescript
-public readonly flowdockApiToken: string;
-```
-
-- *Type:* string
-
-Flowdock API token that MongoDB Cloud needs to send alert notifications to Flowdock.
-
-The resource requires this parameter when '"notifications.typeName" : "FLOWDOCK"'. If the token later becomes invalid, MongoDB Cloud sends an email to the project owners. If the token remains invalid, MongoDB Cloud removes the token.
-
----
-
-##### `flowName`<sup>Optional</sup> <a name="flowName" id="awscdk-resources-mongodbatlas.NotificationView.property.flowName"></a>
-
-```typescript
-public readonly flowName: string;
-```
-
-- *Type:* string
-
-Flowdock flow name to which MongoDB Cloud sends alert notifications.
-
-This name appears after the organization name in the Uniform Resource Locator (URL) path: 'www.flowdock.com/app/<organization-name>/<flow-name>'. The resource requires this parameter when '"notifications.typeName" : "FLOWDOCK"'.
 
 ---
 
@@ -43850,7 +43816,6 @@ const partitionFieldView: PartitionFieldView = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.PartitionFieldView.property.fieldName">fieldName</a></code> | <code>string</code> | Human-readable label that identifies the parameter that MongoDB Cloud uses to partition data. |
-| <code><a href="#awscdk-resources-mongodbatlas.PartitionFieldView.property.fieldType">fieldType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.PartitionFieldViewFieldType">PartitionFieldViewFieldType</a></code> | Data type of the parameter that that MongoDB Cloud uses to partition data. |
 | <code><a href="#awscdk-resources-mongodbatlas.PartitionFieldView.property.order">order</a></code> | <code>number</code> | Sequence in which MongoDB Cloud slices the collection data to create partitions. |
 
 ---
@@ -43866,20 +43831,6 @@ public readonly fieldName: string;
 Human-readable label that identifies the parameter that MongoDB Cloud uses to partition data.
 
 To specify a nested parameter, use the dot notation.
-
----
-
-##### `fieldType`<sup>Optional</sup> <a name="fieldType" id="awscdk-resources-mongodbatlas.PartitionFieldView.property.fieldType"></a>
-
-```typescript
-public readonly fieldType: PartitionFieldViewFieldType;
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.PartitionFieldViewFieldType">PartitionFieldViewFieldType</a>
-
-Data type of the parameter that that MongoDB Cloud uses to partition data.
-
-Partition parameters of type [UUID](http://bsonspec.org/spec.html) must be of binary subtype 4. MongoDB Cloud skips partition parameters of type UUID with subtype 3.
 
 ---
 
@@ -47842,9 +47793,7 @@ EPOCH_NANOSECONDS.
 
 Means by which MongoDB Cloud selects data to archive.
 
-Data can be chosen using the age of the data or a MongoDB query.
-**DATE** selects documents to archive based on a date.
-**CUSTOM** selects documents to archive based on a custom JSON query. MongoDB Cloud doesn't support **CUSTOM** when `"collectionType": "TIMESERIES"`.
+Data can be chosen using the age of the data or a MongoDB query. **DATE** selects documents to archive based on a date. (if DATE is selected, the PartitionFields.FieldName must be completed with the Criteria.DateField value)**CUSTOM** selects documents to archive based on a custom JSON query (When selecting this option, the Query property must be inputted). MongoDB Cloud doesn't support **CUSTOM** when `collectionType: TIMESERIES`.
 
 #### Members <a name="Members" id="Members"></a>
 
@@ -48783,67 +48732,6 @@ WEBHOOK.
 
 
 ##### `EU` <a name="EU" id="awscdk-resources-mongodbatlas.PagerDutyRegion.EU"></a>
-
----
-
-
-### PartitionFieldViewFieldType <a name="PartitionFieldViewFieldType" id="awscdk-resources-mongodbatlas.PartitionFieldViewFieldType"></a>
-
-Data type of the parameter that that MongoDB Cloud uses to partition data.
-
-Partition parameters of type [UUID](http://bsonspec.org/spec.html) must be of binary subtype 4. MongoDB Cloud skips partition parameters of type UUID with subtype 3.
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.PartitionFieldViewFieldType.DATE">DATE</a></code> | date. |
-| <code><a href="#awscdk-resources-mongodbatlas.PartitionFieldViewFieldType.INT">INT</a></code> | int. |
-| <code><a href="#awscdk-resources-mongodbatlas.PartitionFieldViewFieldType.LONG">LONG</a></code> | long. |
-| <code><a href="#awscdk-resources-mongodbatlas.PartitionFieldViewFieldType.OBJECT_ID">OBJECT_ID</a></code> | objectId. |
-| <code><a href="#awscdk-resources-mongodbatlas.PartitionFieldViewFieldType.STRING">STRING</a></code> | string. |
-| <code><a href="#awscdk-resources-mongodbatlas.PartitionFieldViewFieldType.UUID">UUID</a></code> | uuid. |
-
----
-
-##### `DATE` <a name="DATE" id="awscdk-resources-mongodbatlas.PartitionFieldViewFieldType.DATE"></a>
-
-date.
-
----
-
-
-##### `INT` <a name="INT" id="awscdk-resources-mongodbatlas.PartitionFieldViewFieldType.INT"></a>
-
-int.
-
----
-
-
-##### `LONG` <a name="LONG" id="awscdk-resources-mongodbatlas.PartitionFieldViewFieldType.LONG"></a>
-
-long.
-
----
-
-
-##### `OBJECT_ID` <a name="OBJECT_ID" id="awscdk-resources-mongodbatlas.PartitionFieldViewFieldType.OBJECT_ID"></a>
-
-objectId.
-
----
-
-
-##### `STRING` <a name="STRING" id="awscdk-resources-mongodbatlas.PartitionFieldViewFieldType.STRING"></a>
-
-string.
-
----
-
-
-##### `UUID` <a name="UUID" id="awscdk-resources-mongodbatlas.PartitionFieldViewFieldType.UUID"></a>
-
-uuid.
 
 ---
 
