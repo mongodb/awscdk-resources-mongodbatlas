@@ -152,9 +152,7 @@ export enum CfnOnlineArchivePropsCollectionType {
  */
 export interface CriteriaView {
   /**
-   * Means by which MongoDB Cloud selects data to archive. Data can be chosen using the age of the data or a MongoDB query.
-   * **DATE** selects documents to archive based on a date.
-   * **CUSTOM** selects documents to archive based on a custom JSON query. MongoDB Cloud doesn't support **CUSTOM** when `"collectionType": "TIMESERIES"`.
+   * Means by which MongoDB Cloud selects data to archive. Data can be chosen using the age of the data or a MongoDB query. **DATE** selects documents to archive based on a date. (if DATE is selected, the PartitionFields.FieldName must be completed with the Criteria.DateField value)**CUSTOM** selects documents to archive based on a custom JSON query (When selecting this option, the Query property must be inputted). MongoDB Cloud doesn't support **CUSTOM** when `collectionType: TIMESERIES`.
    *
    * @schema CriteriaView#Type
    */
@@ -226,13 +224,6 @@ export interface PartitionFieldView {
   readonly fieldName?: string;
 
   /**
-   * Data type of the parameter that that MongoDB Cloud uses to partition data. Partition parameters of type [UUID](http://bsonspec.org/spec.html) must be of binary subtype 4. MongoDB Cloud skips partition parameters of type UUID with subtype 3.
-   *
-   * @schema PartitionFieldView#FieldType
-   */
-  readonly fieldType?: PartitionFieldViewFieldType;
-
-  /**
    * Sequence in which MongoDB Cloud slices the collection data to create partitions. The resource expresses this sequence starting with zero. The value of the **criteria.dateField** parameter defaults as the first item in the partition sequence.
    *
    * @schema PartitionFieldView#Order
@@ -252,7 +243,6 @@ export function toJson_PartitionFieldView(
   }
   const result = {
     FieldName: obj.fieldName,
-    FieldType: obj.fieldType,
     Order: obj.order,
   };
   // filter undefined values
@@ -343,9 +333,7 @@ export function toJson_ScheduleView(
 /* eslint-enable max-len, quote-props */
 
 /**
- * Means by which MongoDB Cloud selects data to archive. Data can be chosen using the age of the data or a MongoDB query.
- * **DATE** selects documents to archive based on a date.
- * **CUSTOM** selects documents to archive based on a custom JSON query. MongoDB Cloud doesn't support **CUSTOM** when `"collectionType": "TIMESERIES"`.
+ * Means by which MongoDB Cloud selects data to archive. Data can be chosen using the age of the data or a MongoDB query. **DATE** selects documents to archive based on a date. (if DATE is selected, the PartitionFields.FieldName must be completed with the Criteria.DateField value)**CUSTOM** selects documents to archive based on a custom JSON query (When selecting this option, the Query property must be inputted). MongoDB Cloud doesn't support **CUSTOM** when `collectionType: TIMESERIES`.
  *
  * @schema CriteriaViewType
  */
@@ -370,26 +358,6 @@ export enum CriteriaViewDateFormat {
   EPOCH_MILLIS = "EPOCH_MILLIS",
   /** EPOCH_NANOSECONDS */
   EPOCH_NANOSECONDS = "EPOCH_NANOSECONDS",
-}
-
-/**
- * Data type of the parameter that that MongoDB Cloud uses to partition data. Partition parameters of type [UUID](http://bsonspec.org/spec.html) must be of binary subtype 4. MongoDB Cloud skips partition parameters of type UUID with subtype 3.
- *
- * @schema PartitionFieldViewFieldType
- */
-export enum PartitionFieldViewFieldType {
-  /** date */
-  DATE = "date",
-  /** int */
-  INT = "int",
-  /** long */
-  LONG = "long",
-  /** objectId */
-  OBJECT_ID = "objectId",
-  /** string */
-  STRING = "string",
-  /** uuid */
-  UUID = "uuid",
 }
 
 /**
