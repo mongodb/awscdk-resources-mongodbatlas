@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright 2023 MongoDB Inc
+# Copyright 2024 MongoDB Inc
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,18 +17,17 @@
 # This shell script can be use to generate one L1 CDK Construct.
 # The script uses the CFN template to generate the CDK resource.
 #
-# How to use it:
-#   1. CDK L1:  ./cdk.sh "<RESOURCE NAME>" l1
+# How to use it: ./scripts/cdk.sh "<RESOURCE NAME>"
 
 set -euo pipefail
 
 _print_usage() {
 	echo
 	echo 'Usage:'
-	echo './script/cdk.sh "<RESOURCE NAME>"'
+	echo './scripts/cdk.sh "<RESOURCE NAME>"'
 	echo
 	echo 'Example:'
-	echo './script/cdk.sh database-user'
+	echo './scripts/cdk.sh database-user'
 	echo
 }
 
