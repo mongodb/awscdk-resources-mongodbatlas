@@ -426,21 +426,21 @@ export enum AuthConfigOperationType {
  */
 export enum AuthConfigProviders {
   /** anon-user */
-  ANON_HYPHEN_USER = "anon-user",
+  ANON_USER = "anon-user",
   /** api-key */
-  API_HYPHEN_KEY = "api-key",
+  API_KEY = "api-key",
   /** custom-token */
-  CUSTOM_HYPHEN_TOKEN = "custom-token",
+  CUSTOM_TOKEN = "custom-token",
   /** custom-function */
-  CUSTOM_HYPHEN_FUNCTION = "custom-function",
+  CUSTOM_FUNCTION = "custom-function",
   /** local-userpass */
-  LOCAL_HYPHEN_USERPASS = "local-userpass",
+  LOCAL_USERPASS = "local-userpass",
   /** oauth2-apple */
-  OAUTH2_HYPHEN_APPLE = "oauth2-apple",
+  OAUTH2_APPLE = "oauth2-apple",
   /** oauth2-facebook */
-  OAUTH2_HYPHEN_FACEBOOK = "oauth2-facebook",
+  OAUTH2_FACEBOOK = "oauth2-facebook",
   /** oauth2-google */
-  OAUTH2_HYPHEN_GOOGLE = "oauth2-google",
+  OAUTH2_GOOGLE = "oauth2-google",
 }
 
 /**

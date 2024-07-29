@@ -54,8 +54,8 @@ cdk-import cfn -l typescript -s "${resourceTemp}" -o "src/l1-resources/${resourc
 dest="src/l1-resources/${resource}/index.ts"
 mv "src/l1-resources/${resource}/${mainFileRoot}.ts" "${dest}"
 
-# Remove UNDERSCORE_ and PERIOD_ strings from the generated file
-sed -e 's/UNDERSCORE_//g' -e 's/PERIOD_//g' "${dest}" > "${dest}.tmp" && mv "${dest}.tmp" "${dest}"
+# Remove UNDERSCORE_, HYPHEN_ and PERIOD_ strings from the generated file
+sed -e 's/UNDERSCORE_//g' -e 's/HYPHEN_//g' -e 's/PERIOD_//g' "${dest}" > "${dest}.tmp" && mv "${dest}.tmp" "${dest}"
 
 echo
 echo "L1 CDK resource generated succesfully: ${resource}, CFN type: ${resourceType}"
