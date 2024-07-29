@@ -84,13 +84,13 @@ export function toJson_CfnFederatedQueryLimitProps(
  */
 export enum CfnFederatedQueryLimitPropsLimitName {
   /** bytesProcessed.query */
-  BYTES_PROCESSED_QUERY = "bytesProcessed.query",
+  BYTES_PROCESSED_PERIOD_QUERY = "bytesProcessed.query",
   /** bytesProcessed.daily */
-  BYTES_PROCESSED_DAILY = "bytesProcessed.daily",
+  BYTES_PROCESSED_PERIOD_DAILY = "bytesProcessed.daily",
   /** bytesProcessed.weekly */
-  BYTES_PROCESSED_WEEKLY = "bytesProcessed.weekly",
+  BYTES_PROCESSED_PERIOD_WEEKLY = "bytesProcessed.weekly",
   /** bytesProcessed.monthly */
-  BYTES_PROCESSED_MONTHLY = "bytesProcessed.monthly",
+  BYTES_PROCESSED_PERIOD_MONTHLY = "bytesProcessed.monthly",
 }
 
 /**
@@ -116,10 +116,6 @@ export class CfnFederatedQueryLimit extends cdk.CfnResource {
    */
   public readonly attrCurrentUsage: string;
   /**
-   * Attribute `MongoDB::Atlas::FederatedQueryLimit.DefaultLimit`
-   */
-  public readonly attrDefaultLimit: string;
-  /**
    * Attribute `MongoDB::Atlas::FederatedQueryLimit.LastModifiedDate`
    */
   public readonly attrLastModifiedDate: string;
@@ -127,6 +123,10 @@ export class CfnFederatedQueryLimit extends cdk.CfnResource {
    * Attribute `MongoDB::Atlas::FederatedQueryLimit.MaximumLimit`
    */
   public readonly attrMaximumLimit: string;
+  /**
+   * Attribute `MongoDB::Atlas::FederatedQueryLimit.DefaultLimit`
+   */
+  public readonly attrDefaultLimit: string;
 
   /**
    * Create a new `MongoDB::Atlas::FederatedQueryLimit`.
@@ -148,7 +148,6 @@ export class CfnFederatedQueryLimit extends cdk.CfnResource {
     this.props = props;
 
     this.attrCurrentUsage = cdk.Token.asString(this.getAtt("CurrentUsage"));
-    this.attrDefaultLimit = cdk.Token.asString(this.getAtt("DefaultLimit"));
     this.attrLastModifiedDate = cdk.Token.asString(
       this.getAtt("LastModifiedDate")
     );

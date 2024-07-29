@@ -655,25 +655,25 @@ export function toJson_DataLakeDatabaseDataSourceView(
  */
 export enum DataLakeDatabaseDataSourceViewDefaultFormat {
   /** .avro */
-  AVRO = ".avro",
+  VALUE_PERIOD_AVRO = ".avro",
   /** .avro.gz */
-  AVRO_GZ = ".avro.gz",
+  VALUE_PERIOD_AVRO_PERIOD_GZ = ".avro.gz",
   /** .bson */
-  BSON = ".bson",
+  VALUE_PERIOD_BSON = ".bson",
   /** .bson.gz */
-  BSON_GZ = ".bson.gz",
+  VALUE_PERIOD_BSON_PERIOD_GZ = ".bson.gz",
   /** .csv */
-  CSV = ".csv",
+  VALUE_PERIOD_CSV = ".csv",
   /** .json */
-  JSON = ".json",
+  VALUE_PERIOD_JSON = ".json",
   /** .json.gz */
-  JSON_GZ = ".json.gz",
+  VALUE_PERIOD_JSON_PERIOD_GZ = ".json.gz",
   /** .orc */
-  ORC = ".orc",
+  VALUE_PERIOD_ORC = ".orc",
   /** .tsv */
-  TSV = ".tsv",
+  VALUE_PERIOD_TSV = ".tsv",
   /** .tsv.gz */
-  TSV_GZ = ".tsv.gz",
+  VALUE_PERIOD_TSV_PERIOD_GZ = ".tsv.gz",
 }
 
 /**

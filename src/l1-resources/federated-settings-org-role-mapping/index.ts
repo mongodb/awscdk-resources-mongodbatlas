@@ -41,7 +41,7 @@ export interface CfnFederatedSettingsOrgRoleMappingProps {
    *
    * @schema CfnFederatedSettingsOrgRoleMappingProps#RoleAssignments
    */
-  readonly roleAssignments: RoleAssignment[];
+  readonly roleAssignments?: RoleAssignment[];
 }
 
 /**

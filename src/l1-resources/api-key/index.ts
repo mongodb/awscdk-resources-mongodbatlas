@@ -16,11 +16,11 @@ export interface CfnApiKeyProps {
   readonly description: string;
 
   /**
-   * Name of the AWS Secrets Manager secret that stores the API key Details. The secret name must be unique to the AWS account and region. If you don't specify a name, AWS CloudFormation use APIUserId for the secret name.
+   * Name of the AWS Secrets Manager secret that stores the API key Details.
    *
    * @schema CfnApiKeyProps#AwsSecretName
    */
-  readonly awsSecretName?: string;
+  readonly awsSecretName: string;
 
   /**
    * Unique 24-hexadecimal digit string that identifies the organization that contains your projects. Use the /orgs endpoint to retrieve all organizations to which the authenticated user has access.
@@ -35,6 +35,13 @@ export interface CfnApiKeyProps {
    * @schema CfnApiKeyProps#Profile
    */
   readonly profile?: string;
+
+  /**
+   * ARN of the AWS Secrets Manager secret that stores the API key Details
+   *
+   * @schema CfnApiKeyProps#AwsSecretArn
+   */
+  readonly awsSecretArn?: string;
 
   /**
    * List of roles to grant this API key. If you provide this list, provide a minimum of one role and ensure each role applies to this organization.
@@ -69,6 +76,7 @@ export function toJson_CfnApiKeyProps(
     AwsSecretName: obj.awsSecretName,
     OrgId: obj.orgId,
     Profile: obj.profile,
+    AwsSecretArn: obj.awsSecretArn,
     Roles: obj.roles?.map((y) => y),
     ProjectAssignments: obj.projectAssignments?.map((y) =>
       toJson_ProjectAssignment(y)
@@ -202,10 +210,6 @@ export class CfnApiKey extends cdk.CfnResource {
    * Attribute `MongoDB::Atlas::APIKey.APIUserId`
    */
   public readonly attrAPIUserId: string;
-  /**
-   * Attribute `MongoDB::Atlas::APIKey.AwsSecretArn`
-   */
-  public readonly attrAwsSecretArn: string;
 
   /**
    * Create a new `MongoDB::Atlas::APIKey`.
@@ -225,6 +229,5 @@ export class CfnApiKey extends cdk.CfnResource {
     this.attrPrivateKey = cdk.Token.asString(this.getAtt("PrivateKey"));
     this.attrPublicKey = cdk.Token.asString(this.getAtt("PublicKey"));
     this.attrAPIUserId = cdk.Token.asString(this.getAtt("APIUserId"));
-    this.attrAwsSecretArn = cdk.Token.asString(this.getAtt("AwsSecretArn"));
   }
 }

@@ -154,7 +154,6 @@ export function toJson_ServerlessInstanceConnectionStrings(
     {}
   );
 }
-
 /* eslint-enable max-len, quote-props */
 
 /**

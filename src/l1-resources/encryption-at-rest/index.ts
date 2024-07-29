@@ -9,9 +9,9 @@ import * as constructs from "constructs";
  */
 export interface CfnEncryptionAtRestProps {
   /**
-   * @schema CfnEncryptionAtRestProps#AwsKms
+   * @schema CfnEncryptionAtRestProps#AwsKmsConfig
    */
-  readonly awsKms: AwsKmsConfiguration;
+  readonly awsKmsConfig: AwsKmsConfig;
 
   /**
    * The profile is defined in AWS Secret manager. See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
@@ -39,7 +39,7 @@ export function toJson_CfnEncryptionAtRestProps(
     return undefined;
   }
   const result = {
-    AwsKms: toJson_AwsKms(obj.awsKms),
+    AwsKmsConfig: toJson_AwsKmsConfig(obj.awsKmsConfig),
     Profile: obj.profile,
     ProjectId: obj.projectId,
   };
@@ -54,44 +54,44 @@ export function toJson_CfnEncryptionAtRestProps(
 /**
  * Specifies AWS KMS configuration details and whether Encryption at Rest is enabled for an Atlas project.
  *
- * @schema AwsKms
+ * @schema AwsKmsConfig
  */
-export interface AwsKmsConfiguration {
+export interface AwsKmsConfig {
   /**
    * ID of an AWS IAM role authorized to manage an AWS customer master key.
    *
-   * @schema AwsKms#RoleID
+   * @schema AwsKmsConfig#RoleID
    */
   readonly roleId?: string;
 
   /**
    * The AWS customer master key used to encrypt and decrypt the MongoDB master keys.
    *
-   * @schema AwsKms#CustomerMasterKeyID
+   * @schema AwsKmsConfig#CustomerMasterKeyID
    */
   readonly customerMasterKeyId?: string;
 
   /**
    * Specifies whether Encryption at Rest is enabled for an Atlas project. To disable Encryption at Rest, pass only this parameter with a value of false. When you disable Encryption at Rest, Atlas also removes the configuration details.
    *
-   * @schema AwsKms#Enabled
+   * @schema AwsKmsConfig#Enabled
    */
   readonly enabled?: boolean;
 
   /**
    * The AWS region in which the AWS customer master key exists.
    *
-   * @schema AwsKms#Region
+   * @schema AwsKmsConfig#Region
    */
   readonly region?: string;
 }
 
 /**
- * Converts an object of type 'AwsKms' to JSON representation.
+ * Converts an object of type 'AwsKmsConfig' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_AwsKms(
-  obj: AwsKmsConfiguration | undefined
+export function toJson_AwsKmsConfig(
+  obj: AwsKmsConfig | undefined
 ): Record<string, any> | undefined {
   if (obj === undefined) {
     return undefined;
