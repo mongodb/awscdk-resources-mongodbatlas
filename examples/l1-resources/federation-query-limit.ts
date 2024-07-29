@@ -1,6 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { CfnFederatedQueryLimit, CfnFederatedQueryLimitPropsLimitName} from 'awscdk-resources-mongodbatlas';
+import { CfnFederatedQueryLimit, CfnFederatedQueryLimitPropsLimitName } from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
   readonly projectId: string;
@@ -20,22 +20,22 @@ export class CdkTestingStack extends cdk.Stack {
       profile: atlasProps.profile,
       projectId: atlasProps.projectId,
       tenantName: atlasProps.tenantName,
-      limitName : atlasProps.limitName,
+      limitName: atlasProps.limitName,
       value: atlasProps.value
     });
   }
 
   getContextProps(): AtlasStackProps {
     const projectId = this.node.tryGetContext('projId');
-    if (!projectId){
+    if (!projectId) {
       throw "No context value specified for projId. Please specify via the cdk context."
     }
 
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const role = this.node.tryGetContext('role');
     const tenantName = this.node.tryGetContext('tenantName');
-    const limitName=  this.node.tryGetContext('limitName') ?? CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_QUERY;
-    const value= this.node.tryGetContext("value") ?? "2000000000"
+    const limitName = this.node.tryGetContext('limitName') ?? CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_QUERY;
+    const value = this.node.tryGetContext("value") ?? "2000000000"
     return {
       projectId,
       profile,

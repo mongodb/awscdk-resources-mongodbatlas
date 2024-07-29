@@ -29,6 +29,7 @@ test("CloudBackupSchedule construct should contain default properties", () => {
     projectId: PROJECT_ID,
     clusterName: CLUSTER_NAME,
     profile: PROFILE,
+    autoExportEnabled: true,
   });
 
   const template = Template.fromStack(stack);
@@ -37,5 +38,6 @@ test("CloudBackupSchedule construct should contain default properties", () => {
     ProjectId: PROJECT_ID,
     ClusterName: CLUSTER_NAME,
     Profile: PROFILE,
+    AutoExportEnabled: true,
   });
 });
