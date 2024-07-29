@@ -59,6 +59,7 @@ jobs:
       - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
         with:
           node-version: 18.x
+      - run: yarn install --check-files
       - run: npm install -g cdk-import
       - run: ./scripts/cdk-all.sh
       - name: Find mutations
