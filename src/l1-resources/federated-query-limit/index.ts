@@ -84,13 +84,13 @@ export function toJson_CfnFederatedQueryLimitProps(
  */
 export enum CfnFederatedQueryLimitPropsLimitName {
   /** bytesProcessed.query */
-  BYTES_PROCESSED_PERIOD_QUERY = "bytesProcessed.query",
+  BYTES_PROCESSED_QUERY = "bytesProcessed.query",
   /** bytesProcessed.daily */
-  BYTES_PROCESSED_PERIOD_DAILY = "bytesProcessed.daily",
+  BYTES_PROCESSED_DAILY = "bytesProcessed.daily",
   /** bytesProcessed.weekly */
-  BYTES_PROCESSED_PERIOD_WEEKLY = "bytesProcessed.weekly",
+  BYTES_PROCESSED_WEEKLY = "bytesProcessed.weekly",
   /** bytesProcessed.monthly */
-  BYTES_PROCESSED_PERIOD_MONTHLY = "bytesProcessed.monthly",
+  BYTES_PROCESSED_MONTHLY = "bytesProcessed.monthly",
 }
 
 /**
