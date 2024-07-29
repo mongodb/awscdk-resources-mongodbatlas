@@ -80,7 +80,7 @@
       "off"
     ],
     "@typescript-eslint/no-shadow": [
-      "off"
+      "error"
     ],
     "key-spacing": [
       "error"
