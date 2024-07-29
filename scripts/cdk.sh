@@ -53,7 +53,9 @@ cdk-import cfn -l typescript -s "${resourceTemp}" -o "src/l1-resources/${resourc
 # Rename resource file to index.ts file
 dest="src/l1-resources/${resource}/index.ts"
 mv "src/l1-resources/${resource}/${mainFileRoot}.ts" "${dest}"
-python "./scripts/rename_in_file.py" "${dest}"
+
+# Remove UNDERSCORE_ and PERIOD_ strings from the generated file
+sed -e 's/UNDERSCORE_//g' -e 's/PERIOD_//g' "${dest}" > "${dest}.tmp" && mv "${dest}.tmp" "${dest}"
 
 echo
 echo "L1 CDK resource generated succesfully: ${resource}, CFN type: ${resourceType}"
