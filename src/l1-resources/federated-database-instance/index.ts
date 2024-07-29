@@ -492,7 +492,7 @@ export function toJson_ReadPreference(
   const result = {
     Mode: obj.mode,
     MaxStalenessSeconds: obj.maxStalenessSeconds,
-    TagSets: obj.tagSets?.map((y) => y?.map((y) => toJson_TagSet(y))),
+    TagSets: obj.tagSets?.map((y) => y?.map((z) => toJson_TagSet(z))),
   };
   // filter undefined values
   return Object.entries(result).reduce(

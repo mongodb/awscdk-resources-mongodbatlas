@@ -57,5 +57,8 @@ mv "src/l1-resources/${resource}/${mainFileRoot}.ts" "${dest}"
 # Remove UNDERSCORE_, HYPHEN_ and PERIOD_ strings from the generated file
 sed -e 's/UNDERSCORE_//g' -e 's/HYPHEN_//g' -e 's/PERIOD_//g' "${dest}" > "${dest}.tmp" && mv "${dest}.tmp" "${dest}"
 
+# Avoid @typescript-eslint/no-shadow es-linter error in file federated-database-instance/index.ts
+sed -e 's/map(y => toJson_TagSet(y))/map(z => toJson_TagSet(z))/g' "${dest}" > "${dest}.tmp" && mv "${dest}.tmp" "${dest}"
+
 echo
 echo "L1 CDK resource generated succesfully: ${resource}, CFN type: ${resourceType}"
