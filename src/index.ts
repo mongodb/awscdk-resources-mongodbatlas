@@ -238,7 +238,6 @@ export {
   CriteriaViewDateFormat,
   CriteriaViewType,
   PartitionFieldView,
-  PartitionFieldViewFieldType,
   ScheduleView,
   ScheduleViewType,
 } from "./l1-resources/online-archive";
