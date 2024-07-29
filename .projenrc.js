@@ -115,7 +115,6 @@ const common_exclude = [
 project.gitignore.exclude(...common_exclude);
 project.npmignore.exclude(
   ...common_exclude,
-  "/submodules/",
   "/src/",
   "CONTRIBUTING.md",
   "TESTING.md",
