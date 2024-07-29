@@ -62,6 +62,7 @@ jobs:
       - run: yarn install --check-files
       - run: npm install -g cdk-import
       - run: ./scripts/cdk-all.sh
+      - run: npx projen build
       - name: Find mutations
         id: self_mutation
         run: |-
