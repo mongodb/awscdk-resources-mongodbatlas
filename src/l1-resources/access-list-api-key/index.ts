@@ -11,7 +11,7 @@ export interface CfnAccessListApiKeyProps {
   /**
    * Unique 24-hexadecimal digit string that identifies the organization that contains your projects
    *
-   * @schema CfnAccessListApiKeyProps#OrgId2
+   * @schema CfnAccessListApiKeyProps#OrgId
    */
   readonly orgId: string;
 
