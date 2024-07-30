@@ -111,6 +111,7 @@ const common_exclude = [
   "cdk.context.json",
   "yarn-error.log",
   "*.DS_Store",
+  "examples-bin",
 ];
 project.gitignore.exclude(...common_exclude);
 project.npmignore.exclude(

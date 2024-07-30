@@ -80,8 +80,20 @@ jobs:
           echo "::error::Files were changed during build (see build log). If this was triggered from a fork, you will need to update your branch."
           cat .repo.patch
           exit 1
+  check-examples:
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
+        with:
+          node-version: 18.x
+      - run: yarn install --check-files
+      - run: npm install -g cdk
+      - run: npx projen build
+      - run: ./scripts/check-examples.sh
   call-package-workflow:
-    needs: [compile, lint, shellcheck, check-l1-updated]
+    needs: [compile, lint, shellcheck, check-l1-updated, check-examples]
     secrets: inherit
     permissions:
       contents: write
