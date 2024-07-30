@@ -91,9 +91,6 @@ jobs:
       - run: yarn install --check-files
       - run: npm install -g cdk
       - run: npx projen build
-      - uses: mxschmitt/action-tmate@v3.18
-        with:
-          limit-access-to-actor: true
       - run: ./scripts/check-examples.sh
   call-package-workflow:
     needs: [compile, lint, shellcheck, check-l1-updated, check-examples]
