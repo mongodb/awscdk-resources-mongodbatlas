@@ -2618,7 +2618,6 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.attrAPIUserId">attrAPIUserId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::APIKey.APIUserId`. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.attrAwsSecretArn">attrAwsSecretArn</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::APIKey.AwsSecretArn`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.attrPrivateKey">attrPrivateKey</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::APIKey.PrivateKey`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.attrPublicKey">attrPublicKey</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::APIKey.PublicKey`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKeyProps">CfnApiKeyProps</a></code> | Resource props. |
@@ -2726,18 +2725,6 @@ public readonly attrAPIUserId: string;
 - *Type:* string
 
 Attribute `MongoDB::Atlas::APIKey.APIUserId`.
-
----
-
-##### `attrAwsSecretArn`<sup>Required</sup> <a name="attrAwsSecretArn" id="awscdk-resources-mongodbatlas.CfnApiKey.property.attrAwsSecretArn"></a>
-
-```typescript
-public readonly attrAwsSecretArn: string;
-```
-
-- *Type:* string
-
-Attribute `MongoDB::Atlas::APIKey.AwsSecretArn`.
 
 ---
 
@@ -3958,8 +3945,11 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrCancelled">attrCancelled</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.Cancelled`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrDeliveryUrl">attrDeliveryUrl</a></code> | <code>string[]</code> | Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.DeliveryUrl`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrExpired">attrExpired</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.Expired`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrExpiresAt">attrExpiresAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.ExpiresAt`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrFailed">attrFailed</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.Failed`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrFinishedAt">attrFinishedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.FinishedAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrTimestamp">attrTimestamp</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.Timestamp`. |
@@ -4059,6 +4049,18 @@ AWS resource type.
 
 ---
 
+##### `attrCancelled`<sup>Required</sup> <a name="attrCancelled" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrCancelled"></a>
+
+```typescript
+public readonly attrCancelled: IResolvable;
+```
+
+- *Type:* aws-cdk-lib.IResolvable
+
+Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.Cancelled`.
+
+---
+
 ##### `attrDeliveryUrl`<sup>Required</sup> <a name="attrDeliveryUrl" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrDeliveryUrl"></a>
 
 ```typescript
@@ -4071,6 +4073,18 @@ Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.DeliveryUrl`.
 
 ---
 
+##### `attrExpired`<sup>Required</sup> <a name="attrExpired" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrExpired"></a>
+
+```typescript
+public readonly attrExpired: IResolvable;
+```
+
+- *Type:* aws-cdk-lib.IResolvable
+
+Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.Expired`.
+
+---
+
 ##### `attrExpiresAt`<sup>Required</sup> <a name="attrExpiresAt" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrExpiresAt"></a>
 
 ```typescript
@@ -4080,6 +4094,18 @@ public readonly attrExpiresAt: string;
 - *Type:* string
 
 Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.ExpiresAt`.
+
+---
+
+##### `attrFailed`<sup>Required</sup> <a name="attrFailed" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrFailed"></a>
+
+```typescript
+public readonly attrFailed: IResolvable;
+```
+
+- *Type:* aws-cdk-lib.IResolvable
+
+Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.Failed`.
 
 ---
 
@@ -11913,10 +11939,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrExternalId">attrExternalId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.ExternalId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrHostNames">attrHostNames</a></code> | <code>string[]</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.HostNames`. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrIamAssumedRoleARNN">attrIamAssumedRoleARNN</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamAssumedRoleARN`. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrIamUserARN">attrIamUserARN</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamUserARN`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrState">attrState</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.State`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps">CfnFederatedDatabaseInstanceProps</a></code> | Resource props. |
 
@@ -12014,18 +12037,6 @@ AWS resource type.
 
 ---
 
-##### `attrExternalId`<sup>Required</sup> <a name="attrExternalId" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrExternalId"></a>
-
-```typescript
-public readonly attrExternalId: string;
-```
-
-- *Type:* string
-
-Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.ExternalId`.
-
----
-
 ##### `attrHostNames`<sup>Required</sup> <a name="attrHostNames" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrHostNames"></a>
 
 ```typescript
@@ -12035,30 +12046,6 @@ public readonly attrHostNames: string[];
 - *Type:* string[]
 
 Attribute `MongoDB::Atlas::FederatedDatabaseInstance.HostNames`.
-
----
-
-##### `attrIamAssumedRoleARNN`<sup>Required</sup> <a name="attrIamAssumedRoleARNN" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrIamAssumedRoleARNN"></a>
-
-```typescript
-public readonly attrIamAssumedRoleARNN: string;
-```
-
-- *Type:* string
-
-Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamAssumedRoleARN`.
-
----
-
-##### `attrIamUserARN`<sup>Required</sup> <a name="attrIamUserARN" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrIamUserARN"></a>
-
-```typescript
-public readonly attrIamUserARN: string;
-```
-
-- *Type:* string
-
-Attribute `MongoDB::Atlas::FederatedDatabaseInstance.CloudProviderConfig.IamUserARN`.
 
 ---
 
@@ -13918,6 +13905,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.attrRemoveAllZoneMapping">attrRemoveAllZoneMapping</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::GlobalClusterConfig.RemoveAllZoneMapping`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps">CfnGlobalClusterConfigProps</a></code> | Resource props. |
 
 ---
@@ -14011,6 +13999,18 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `attrRemoveAllZoneMapping`<sup>Required</sup> <a name="attrRemoveAllZoneMapping" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.attrRemoveAllZoneMapping"></a>
+
+```typescript
+public readonly attrRemoveAllZoneMapping: IResolvable;
+```
+
+- *Type:* aws-cdk-lib.IResolvable
+
+Attribute `MongoDB::Atlas::GlobalClusterConfig.RemoveAllZoneMapping`.
 
 ---
 
@@ -24933,6 +24933,7 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.attrTotalCount">attrTotalCount</a></code> | <code>number</code> | Attribute `MongoDB::Atlas::ProjectIpAccessList.TotalCount`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessListProps">CfnProjectIpAccessListProps</a></code> | Resource props. |
 
 ---
@@ -25026,6 +25027,18 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `attrTotalCount`<sup>Required</sup> <a name="attrTotalCount" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.attrTotalCount"></a>
+
+```typescript
+public readonly attrTotalCount: number;
+```
+
+- *Type:* number
+
+Attribute `MongoDB::Atlas::ProjectIpAccessList.TotalCount`.
 
 ---
 
@@ -31430,6 +31443,8 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.attrMonthsUntilExpiration">attrMonthsUntilExpiration</a></code> | <code>number</code> | Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.MonthsUntilExpiration`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.attrTotalCount">attrTotalCount</a></code> | <code>number</code> | Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.TotalCount`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUserProps">CfnX509AuthenticationDatabaseUserProps</a></code> | Resource props. |
 
 ---
@@ -31523,6 +31538,30 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `attrMonthsUntilExpiration`<sup>Required</sup> <a name="attrMonthsUntilExpiration" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.attrMonthsUntilExpiration"></a>
+
+```typescript
+public readonly attrMonthsUntilExpiration: number;
+```
+
+- *Type:* number
+
+Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.MonthsUntilExpiration`.
+
+---
+
+##### `attrTotalCount`<sup>Required</sup> <a name="attrTotalCount" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.attrTotalCount"></a>
+
+```typescript
+public readonly attrTotalCount: number;
+```
+
+- *Type:* number
+
+Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.TotalCount`.
 
 ---
 
@@ -32850,6 +32889,109 @@ Human-readable label that categorizes the cluster as a replica set or sharded cl
 
 ---
 
+### ApiAtlasFtsAnalyzersTokenizer <a name="ApiAtlasFtsAnalyzersTokenizer" id="awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer"></a>
+
+Tokenizer that you want to use to create tokens.
+
+Tokens determine how Atlas Search splits up text into discrete chunks for indexing.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer.Initializer"></a>
+
+```typescript
+import { ApiAtlasFtsAnalyzersTokenizer } from 'awscdk-resources-mongodbatlas'
+
+const apiAtlasFtsAnalyzersTokenizer: ApiAtlasFtsAnalyzersTokenizer = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer.property.group">group</a></code> | <code>number</code> | Index of the character group within the matching expression to extract into tokens. |
+| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer.property.maxGram">maxGram</a></code> | <code>number</code> | Characters to include in the longest token that Atlas Search creates. |
+| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer.property.maxTokenLength">maxTokenLength</a></code> | <code>number</code> | Maximum number of characters in a single token. |
+| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer.property.minGram">minGram</a></code> | <code>number</code> | Characters to include in the shortest token that Atlas Search creates. |
+| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer.property.pattern">pattern</a></code> | <code>string</code> | Regular expression to match against. |
+| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer.property.type">type</a></code> | <code>string</code> | Human-readable label that identifies this tokenizer type. |
+
+---
+
+##### `group`<sup>Optional</sup> <a name="group" id="awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer.property.group"></a>
+
+```typescript
+public readonly group: number;
+```
+
+- *Type:* number
+
+Index of the character group within the matching expression to extract into tokens.
+
+Use `0` to extract all character groups.
+
+---
+
+##### `maxGram`<sup>Optional</sup> <a name="maxGram" id="awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer.property.maxGram"></a>
+
+```typescript
+public readonly maxGram: number;
+```
+
+- *Type:* number
+
+Characters to include in the longest token that Atlas Search creates.
+
+---
+
+##### `maxTokenLength`<sup>Optional</sup> <a name="maxTokenLength" id="awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer.property.maxTokenLength"></a>
+
+```typescript
+public readonly maxTokenLength: number;
+```
+
+- *Type:* number
+
+Maximum number of characters in a single token.
+
+Tokens greater than this length are split at this length into multiple tokens.
+
+---
+
+##### `minGram`<sup>Optional</sup> <a name="minGram" id="awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer.property.minGram"></a>
+
+```typescript
+public readonly minGram: number;
+```
+
+- *Type:* number
+
+Characters to include in the shortest token that Atlas Search creates.
+
+---
+
+##### `pattern`<sup>Optional</sup> <a name="pattern" id="awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer.property.pattern"></a>
+
+```typescript
+public readonly pattern: string;
+```
+
+- *Type:* string
+
+Regular expression to match against.
+
+---
+
+##### `type`<sup>Optional</sup> <a name="type" id="awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies this tokenizer type.
+
+---
+
 ### ApiAtlasFtsAnalyzersViewManual <a name="ApiAtlasFtsAnalyzersViewManual" id="awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual"></a>
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.Initializer"></a>
@@ -32867,7 +33009,7 @@ const apiAtlasFtsAnalyzersViewManual: ApiAtlasFtsAnalyzersViewManual = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.charFilters">charFilters</a></code> | <code>string[]</code> | Filters that examine text one character at a time and perform filtering operations. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.name">name</a></code> | <code>string</code> | Human-readable name that identifies the custom analyzer. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.tokenFilters">tokenFilters</a></code> | <code>string[]</code> | Filter that performs operations such as:. |
-| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.tokenizer">tokenizer</a></code> | <code>any</code> | Tokenizer that you want to use to create tokens. |
+| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.tokenizer">tokenizer</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer">ApiAtlasFtsAnalyzersTokenizer</a></code> | Tokenizer that you want to use to create tokens. |
 
 ---
 
@@ -32919,10 +33061,10 @@ Stemming, which reduces related words, such as "talking", "talked", and "talks" 
 ##### `tokenizer`<sup>Optional</sup> <a name="tokenizer" id="awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual.property.tokenizer"></a>
 
 ```typescript
-public readonly tokenizer: any;
+public readonly tokenizer: ApiAtlasFtsAnalyzersTokenizer;
 ```
 
-- *Type:* any
+- *Type:* <a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersTokenizer">ApiAtlasFtsAnalyzersTokenizer</a>
 
 Tokenizer that you want to use to create tokens.
 
@@ -33215,7 +33357,7 @@ const apiPolicyItemView: ApiPolicyItemView = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.ApiPolicyItemView.property.frequencyInterval">frequencyInterval</a></code> | <code>number</code> | Desired frequency of the new backup policy item specified by frequencyType. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiPolicyItemView.property.frequencyType">frequencyType</a></code> | <code>string</code> | Frequency associated with the backup policy item. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiPolicyItemView.property.id">id</a></code> | <code>string</code> | Unique identifier of the backup policy item. |
-| <code><a href="#awscdk-resources-mongodbatlas.ApiPolicyItemView.property.retentionUnit">retentionUnit</a></code> | <code>string</code> | Metric of duration of the backup policy item: days, weeks, or months. |
+| <code><a href="#awscdk-resources-mongodbatlas.ApiPolicyItemView.property.retentionUnit">retentionUnit</a></code> | <code>string</code> | Metric of duration of the backup policy item: days, weeks, months or years. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiPolicyItemView.property.retentionValue">retentionValue</a></code> | <code>number</code> | Duration for which the backup is kept. |
 
 ---
@@ -33242,7 +33384,7 @@ public readonly frequencyType: string;
 
 Frequency associated with the backup policy item.
 
-One of the following values: hourly, daily, weekly or monthly.
+One of the following values: hourly, daily, weekly, monthly or yearly.
 
 ---
 
@@ -33266,7 +33408,7 @@ public readonly retentionUnit: string;
 
 - *Type:* string
 
-Metric of duration of the backup policy item: days, weeks, or months.
+Metric of duration of the backup policy item: days, weeks, months or years.
 
 ---
 
@@ -33298,7 +33440,7 @@ const apiPolicyView: ApiPolicyView = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.ApiPolicyView.property.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.ApiPolicyView.property.id">id</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies this backup policy. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiPolicyView.property.policyItems">policyItems</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiPolicyItemView">ApiPolicyItemView</a>[]</code> | *No description.* |
 
 ---
@@ -33310,6 +33452,10 @@ public readonly id: string;
 ```
 
 - *Type:* string
+
+Unique 24-hexadecimal digit string that identifies this backup policy.
+
+The policy id can be retrieved by running: atlas backups schedule describe "${clusterName}" --projectId "${projectId}" | jq -r '.policies[0].id'
 
 ---
 
@@ -34049,30 +34195,30 @@ The type(s) of authentication provider that the trigger listens to.
 
 ---
 
-### AwsKmsConfiguration <a name="AwsKmsConfiguration" id="awscdk-resources-mongodbatlas.AwsKmsConfiguration"></a>
+### AwsKmsConfig <a name="AwsKmsConfig" id="awscdk-resources-mongodbatlas.AwsKmsConfig"></a>
 
 Specifies AWS KMS configuration details and whether Encryption at Rest is enabled for an Atlas project.
 
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.AwsKmsConfiguration.Initializer"></a>
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.AwsKmsConfig.Initializer"></a>
 
 ```typescript
-import { AwsKmsConfiguration } from 'awscdk-resources-mongodbatlas'
+import { AwsKmsConfig } from 'awscdk-resources-mongodbatlas'
 
-const awsKmsConfiguration: AwsKmsConfiguration = { ... }
+const awsKmsConfig: AwsKmsConfig = { ... }
 ```
 
 #### Properties <a name="Properties" id="Properties"></a>
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.AwsKmsConfiguration.property.customerMasterKeyId">customerMasterKeyId</a></code> | <code>string</code> | The AWS customer master key used to encrypt and decrypt the MongoDB master keys. |
-| <code><a href="#awscdk-resources-mongodbatlas.AwsKmsConfiguration.property.enabled">enabled</a></code> | <code>boolean</code> | Specifies whether Encryption at Rest is enabled for an Atlas project. |
-| <code><a href="#awscdk-resources-mongodbatlas.AwsKmsConfiguration.property.region">region</a></code> | <code>string</code> | The AWS region in which the AWS customer master key exists. |
-| <code><a href="#awscdk-resources-mongodbatlas.AwsKmsConfiguration.property.roleId">roleId</a></code> | <code>string</code> | ID of an AWS IAM role authorized to manage an AWS customer master key. |
+| <code><a href="#awscdk-resources-mongodbatlas.AwsKmsConfig.property.customerMasterKeyId">customerMasterKeyId</a></code> | <code>string</code> | The AWS customer master key used to encrypt and decrypt the MongoDB master keys. |
+| <code><a href="#awscdk-resources-mongodbatlas.AwsKmsConfig.property.enabled">enabled</a></code> | <code>boolean</code> | Specifies whether Encryption at Rest is enabled for an Atlas project. |
+| <code><a href="#awscdk-resources-mongodbatlas.AwsKmsConfig.property.region">region</a></code> | <code>string</code> | The AWS region in which the AWS customer master key exists. |
+| <code><a href="#awscdk-resources-mongodbatlas.AwsKmsConfig.property.roleId">roleId</a></code> | <code>string</code> | ID of an AWS IAM role authorized to manage an AWS customer master key. |
 
 ---
 
-##### `customerMasterKeyId`<sup>Optional</sup> <a name="customerMasterKeyId" id="awscdk-resources-mongodbatlas.AwsKmsConfiguration.property.customerMasterKeyId"></a>
+##### `customerMasterKeyId`<sup>Optional</sup> <a name="customerMasterKeyId" id="awscdk-resources-mongodbatlas.AwsKmsConfig.property.customerMasterKeyId"></a>
 
 ```typescript
 public readonly customerMasterKeyId: string;
@@ -34084,7 +34230,7 @@ The AWS customer master key used to encrypt and decrypt the MongoDB master keys.
 
 ---
 
-##### `enabled`<sup>Optional</sup> <a name="enabled" id="awscdk-resources-mongodbatlas.AwsKmsConfiguration.property.enabled"></a>
+##### `enabled`<sup>Optional</sup> <a name="enabled" id="awscdk-resources-mongodbatlas.AwsKmsConfig.property.enabled"></a>
 
 ```typescript
 public readonly enabled: boolean;
@@ -34098,7 +34244,7 @@ To disable Encryption at Rest, pass only this parameter with a value of false. W
 
 ---
 
-##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.AwsKmsConfiguration.property.region"></a>
+##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.AwsKmsConfig.property.region"></a>
 
 ```typescript
 public readonly region: string;
@@ -34110,7 +34256,7 @@ The AWS region in which the AWS customer master key exists.
 
 ---
 
-##### `roleId`<sup>Optional</sup> <a name="roleId" id="awscdk-resources-mongodbatlas.AwsKmsConfiguration.property.roleId"></a>
+##### `roleId`<sup>Optional</sup> <a name="roleId" id="awscdk-resources-mongodbatlas.AwsKmsConfig.property.roleId"></a>
 
 ```typescript
 public readonly roleId: string;
@@ -34452,13 +34598,26 @@ const cfnApiKeyProps: CfnApiKeyProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKeyProps.property.awsSecretName">awsSecretName</a></code> | <code>string</code> | Name of the AWS Secrets Manager secret that stores the API key Details. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKeyProps.property.description">description</a></code> | <code>string</code> | Purpose or explanation provided when someone created this organization API key. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKeyProps.property.orgId">orgId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the organization that contains your projects. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKeyProps.property.awsSecretName">awsSecretName</a></code> | <code>string</code> | Name of the AWS Secrets Manager secret that stores the API key Details. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKeyProps.property.awsSecretArn">awsSecretArn</a></code> | <code>string</code> | ARN of the AWS Secrets Manager secret that stores the API key Details. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKeyProps.property.listOptions">listOptions</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ListOptions">ListOptions</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKeyProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKeyProps.property.projectAssignments">projectAssignments</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectAssignment">ProjectAssignment</a>[]</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKeyProps.property.roles">roles</a></code> | <code>string[]</code> | List of roles to grant this API key. |
+
+---
+
+##### `awsSecretName`<sup>Required</sup> <a name="awsSecretName" id="awscdk-resources-mongodbatlas.CfnApiKeyProps.property.awsSecretName"></a>
+
+```typescript
+public readonly awsSecretName: string;
+```
+
+- *Type:* string
+
+Name of the AWS Secrets Manager secret that stores the API key Details.
 
 ---
 
@@ -34488,17 +34647,15 @@ Use the /orgs endpoint to retrieve all organizations to which the authenticated 
 
 ---
 
-##### `awsSecretName`<sup>Optional</sup> <a name="awsSecretName" id="awscdk-resources-mongodbatlas.CfnApiKeyProps.property.awsSecretName"></a>
+##### `awsSecretArn`<sup>Optional</sup> <a name="awsSecretArn" id="awscdk-resources-mongodbatlas.CfnApiKeyProps.property.awsSecretArn"></a>
 
 ```typescript
-public readonly awsSecretName: string;
+public readonly awsSecretArn: string;
 ```
 
 - *Type:* string
 
-Name of the AWS Secrets Manager secret that stores the API key Details.
-
-The secret name must be unique to the AWS account and region. If you don't specify a name, AWS CloudFormation use APIUserId for the secret name.
+ARN of the AWS Secrets Manager secret that stores the API key Details.
 
 ---
 
@@ -34614,10 +34771,8 @@ const cfnCloudBackUpRestoreJobsProps: CfnCloudBackUpRestoreJobsProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.instanceType">instanceType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsInstanceType">CfnCloudBackUpRestoreJobsPropsInstanceType</a></code> | Type of instance specified on the Instance Name serverless or cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.projectId">projectId</a></code> | <code>string</code> | The unique identifier of the project for the Atlas cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.snapshotId">snapshotId</a></code> | <code>string</code> | Unique identifier of the source snapshot ID of the restore job. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.cancelled">cancelled</a></code> | <code>boolean</code> | Indicates whether the restore job was canceled. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.enableSynchronousCreation">enableSynchronousCreation</a></code> | <code>boolean</code> | If set to true, the CloudFormation resource will wait until the job is completed, WARNING: if the snapshot has a big load of data, the cloud formation resource might take a long time to finish leading to high costs. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.expired">expired</a></code> | <code>boolean</code> | Indicates whether the restore job expired. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.failed">failed</a></code> | <code>boolean</code> | Indicates whether the restore job failed. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.links">links</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsLinks">CfnCloudBackUpRestoreJobsPropsLinks</a>[]</code> | One or more links to sub-resources and/or related resources. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.opLogInc">opLogInc</a></code> | <code>string</code> | Oplog operation number from which to you want to restore this snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.opLogTs">opLogTs</a></code> | <code>string</code> | Timestamp in the number of seconds that have elapsed since the UNIX epoch from which to you want to restore this snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.pointInTimeUtcSeconds">pointInTimeUtcSeconds</a></code> | <code>number</code> | If you performed a Point-in-Time restores at a time specified by a Unix time in seconds since epoch, pointInTimeUTCSeconds indicates the Unix time used. |
@@ -34688,18 +34843,6 @@ Unique identifier of the source snapshot ID of the restore job.
 
 ---
 
-##### `cancelled`<sup>Optional</sup> <a name="cancelled" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.cancelled"></a>
-
-```typescript
-public readonly cancelled: boolean;
-```
-
-- *Type:* boolean
-
-Indicates whether the restore job was canceled.
-
----
-
 ##### `enableSynchronousCreation`<sup>Optional</sup> <a name="enableSynchronousCreation" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.enableSynchronousCreation"></a>
 
 ```typescript
@@ -34712,27 +34855,15 @@ If set to true, the CloudFormation resource will wait until the job is completed
 
 ---
 
-##### `expired`<sup>Optional</sup> <a name="expired" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.expired"></a>
+##### `links`<sup>Optional</sup> <a name="links" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.links"></a>
 
 ```typescript
-public readonly expired: boolean;
+public readonly links: CfnCloudBackUpRestoreJobsPropsLinks[];
 ```
 
-- *Type:* boolean
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsLinks">CfnCloudBackUpRestoreJobsPropsLinks</a>[]
 
-Indicates whether the restore job expired.
-
----
-
-##### `failed`<sup>Optional</sup> <a name="failed" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.failed"></a>
-
-```typescript
-public readonly failed: boolean;
-```
-
-- *Type:* boolean
-
-Indicates whether the restore job failed.
+One or more links to sub-resources and/or related resources.
 
 ---
 
@@ -34828,6 +34959,45 @@ Only visible if deliveryType is automated.
 
 ---
 
+### CfnCloudBackUpRestoreJobsPropsLinks <a name="CfnCloudBackUpRestoreJobsPropsLinks" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsLinks"></a>
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsLinks.Initializer"></a>
+
+```typescript
+import { CfnCloudBackUpRestoreJobsPropsLinks } from 'awscdk-resources-mongodbatlas'
+
+const cfnCloudBackUpRestoreJobsPropsLinks: CfnCloudBackUpRestoreJobsPropsLinks = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsLinks.property.href">href</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsLinks.property.rel">rel</a></code> | <code>string</code> | *No description.* |
+
+---
+
+##### `href`<sup>Optional</sup> <a name="href" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsLinks.property.href"></a>
+
+```typescript
+public readonly href: string;
+```
+
+- *Type:* string
+
+---
+
+##### `rel`<sup>Optional</sup> <a name="rel" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsLinks.property.rel"></a>
+
+```typescript
+public readonly rel: string;
+```
+
+- *Type:* string
+
+---
+
 ### CfnCloudBackupScheduleProps <a name="CfnCloudBackupScheduleProps" id="awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps"></a>
 
 An example resource schema demonstrating some basic constructs and validation rules.
@@ -34844,9 +35014,8 @@ const cfnCloudBackupScheduleProps: CfnCloudBackupScheduleProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.clusterName">clusterName</a></code> | <code>string</code> | The name of the Atlas cluster that contains the snapshots you want to retrieve. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.autoExportEnabled">autoExportEnabled</a></code> | <code>boolean</code> | Flag that indicates whether automatic export of cloud backup snapshots to the AWS bucket is enabled. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.clusterName">clusterName</a></code> | <code>string</code> | The name of the Atlas cluster that contains the snapshots you want to retrieve. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.copySettings">copySettings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasDiskBackupCopySettingView">ApiAtlasDiskBackupCopySettingView</a>[]</code> | List that contains a document for each copy setting item in the desired backup policy. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.deleteCopiedBackups">deleteCopiedBackups</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiDeleteCopiedBackupsView">ApiDeleteCopiedBackupsView</a>[]</code> | List that contains a document for each deleted copy setting whose backup copies you want to delete. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.export">export</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Export">Export</a></code> | Policy for automatically exporting cloud backup snapshots. |
@@ -34854,6 +35023,7 @@ const cfnCloudBackupScheduleProps: CfnCloudBackupScheduleProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.links">links</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Link">Link</a>[]</code> | List of one or more Uniform Resource Locators (URLs) that point to API sub-resources, related API resources, or both. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.policies">policies</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiPolicyView">ApiPolicyView</a>[]</code> | Rules set for this backup schedule. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.projectId">projectId</a></code> | <code>string</code> | The unique identifier of the project for the Atlas cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.referenceHourOfDay">referenceHourOfDay</a></code> | <code>number</code> | UTC Hour of day between 0 and 23 representing which hour of the day that Atlas takes a snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.referenceMinuteOfHour">referenceMinuteOfHour</a></code> | <code>number</code> | UTC Minute of day between 0 and 59 representing which minute of the referenceHourOfDay that Atlas takes the snapshot. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.restoreWindowDays">restoreWindowDays</a></code> | <code>number</code> | Number of days back in time you can restore to with Continuous Cloud Backup accuracy. |
@@ -34862,31 +35032,7 @@ const cfnCloudBackupScheduleProps: CfnCloudBackupScheduleProps = { ... }
 
 ---
 
-##### `clusterName`<sup>Required</sup> <a name="clusterName" id="awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.clusterName"></a>
-
-```typescript
-public readonly clusterName: string;
-```
-
-- *Type:* string
-
-The name of the Atlas cluster that contains the snapshots you want to retrieve.
-
----
-
-##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.projectId"></a>
-
-```typescript
-public readonly projectId: string;
-```
-
-- *Type:* string
-
-Unique 24-hexadecimal digit string that identifies your project.
-
----
-
-##### `autoExportEnabled`<sup>Optional</sup> <a name="autoExportEnabled" id="awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.autoExportEnabled"></a>
+##### `autoExportEnabled`<sup>Required</sup> <a name="autoExportEnabled" id="awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.autoExportEnabled"></a>
 
 ```typescript
 public readonly autoExportEnabled: boolean;
@@ -34895,6 +35041,18 @@ public readonly autoExportEnabled: boolean;
 - *Type:* boolean
 
 Flag that indicates whether automatic export of cloud backup snapshots to the AWS bucket is enabled.
+
+---
+
+##### `clusterName`<sup>Optional</sup> <a name="clusterName" id="awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.clusterName"></a>
+
+```typescript
+public readonly clusterName: string;
+```
+
+- *Type:* string
+
+The name of the Atlas cluster that contains the snapshots you want to retrieve.
 
 ---
 
@@ -34981,6 +35139,18 @@ public readonly profile: string;
 - *Type:* string
 
 Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
+
+---
+
+##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps.property.projectId"></a>
+
+```typescript
+public readonly projectId: string;
+```
+
+- *Type:* string
+
+The unique identifier of the project for the Atlas cluster.
 
 ---
 
@@ -36400,19 +36570,19 @@ const cfnEncryptionAtRestProps: CfnEncryptionAtRestProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRestProps.property.awsKms">awsKms</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AwsKmsConfiguration">AwsKmsConfiguration</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRestProps.property.awsKmsConfig">awsKmsConfig</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AwsKmsConfig">AwsKmsConfig</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRestProps.property.projectId">projectId</a></code> | <code>string</code> | Unique identifier of the Atlas project to which the user belongs. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRestProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
 
 ---
 
-##### `awsKms`<sup>Required</sup> <a name="awsKms" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRestProps.property.awsKms"></a>
+##### `awsKmsConfig`<sup>Required</sup> <a name="awsKmsConfig" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRestProps.property.awsKmsConfig"></a>
 
 ```typescript
-public readonly awsKms: AwsKmsConfiguration;
+public readonly awsKmsConfig: AwsKmsConfig;
 ```
 
-- *Type:* <a href="#awscdk-resources-mongodbatlas.AwsKmsConfiguration">AwsKmsConfiguration</a>
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AwsKmsConfig">AwsKmsConfig</a>
 
 ---
 
@@ -36676,8 +36846,8 @@ const cfnFederatedSettingsOrgRoleMappingProps: CfnFederatedSettingsOrgRoleMappin
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMappingProps.property.externalGroupName">externalGroupName</a></code> | <code>string</code> | Unique human-readable label that identifies the identity provider group to whichthis role mapping applies. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMappingProps.property.federationSettingsId">federationSettingsId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your federation. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMappingProps.property.orgId">orgId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the organization that contains your projects. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMappingProps.property.roleAssignments">roleAssignments</a></code> | <code><a href="#awscdk-resources-mongodbatlas.RoleAssignment">RoleAssignment</a>[]</code> | Atlas roles and the unique identifiers of the groups and organizations associated with each role. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMappingProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMappingProps.property.roleAssignments">roleAssignments</a></code> | <code><a href="#awscdk-resources-mongodbatlas.RoleAssignment">RoleAssignment</a>[]</code> | Atlas roles and the unique identifiers of the groups and organizations associated with each role. |
 
 ---
 
@@ -36717,18 +36887,6 @@ Unique 24-hexadecimal digit string that identifies the organization that contain
 
 ---
 
-##### `roleAssignments`<sup>Required</sup> <a name="roleAssignments" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMappingProps.property.roleAssignments"></a>
-
-```typescript
-public readonly roleAssignments: RoleAssignment[];
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.RoleAssignment">RoleAssignment</a>[]
-
-Atlas roles and the unique identifiers of the groups and organizations associated with each role.
-
----
-
 ##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMappingProps.property.profile"></a>
 
 ```typescript
@@ -36740,6 +36898,18 @@ public readonly profile: string;
 The profile is defined in AWS Secret manager.
 
 See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
+
+---
+
+##### `roleAssignments`<sup>Optional</sup> <a name="roleAssignments" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMappingProps.property.roleAssignments"></a>
+
+```typescript
+public readonly roleAssignments: RoleAssignment[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.RoleAssignment">RoleAssignment</a>[]
+
+Atlas roles and the unique identifiers of the groups and organizations associated with each role.
 
 ---
 
@@ -36762,15 +36932,14 @@ const cfnGlobalClusterConfigProps: CfnGlobalClusterConfigProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.clusterName">clusterName</a></code> | <code>string</code> | The name of the Atlas cluster that contains the snapshots you want to retrieve. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.projectId">projectId</a></code> | <code>string</code> | The unique identifier of the project for the Atlas cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.customZoneMappings">customZoneMappings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ZoneMapping">ZoneMapping</a>[]</code> | List that contains comma-separated key value pairs to map zones to geographic regions. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.managedNamespaces">managedNamespaces</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ManagedNamespace">ManagedNamespace</a>[]</code> | List that contains comma-separated key value pairs to map zones to geographic regions. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.removeAllZoneMapping">removeAllZoneMapping</a></code> | <code>boolean</code> | Flag that indicates whether all custom zone mapping to be deleted during delete. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.projectId">projectId</a></code> | <code>string</code> | The unique identifier of the project for the Atlas cluster. |
 
 ---
 
-##### `clusterName`<sup>Required</sup> <a name="clusterName" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.clusterName"></a>
+##### `clusterName`<sup>Optional</sup> <a name="clusterName" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.clusterName"></a>
 
 ```typescript
 public readonly clusterName: string;
@@ -36779,18 +36948,6 @@ public readonly clusterName: string;
 - *Type:* string
 
 The name of the Atlas cluster that contains the snapshots you want to retrieve.
-
----
-
-##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.projectId"></a>
-
-```typescript
-public readonly projectId: string;
-```
-
-- *Type:* string
-
-The unique identifier of the project for the Atlas cluster.
 
 ---
 
@@ -36840,15 +36997,15 @@ See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
 
 ---
 
-##### `removeAllZoneMapping`<sup>Optional</sup> <a name="removeAllZoneMapping" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.removeAllZoneMapping"></a>
+##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps.property.projectId"></a>
 
 ```typescript
-public readonly removeAllZoneMapping: boolean;
+public readonly projectId: string;
 ```
 
-- *Type:* boolean
+- *Type:* string
 
-Flag that indicates whether all custom zone mapping to be deleted during delete.
+The unique identifier of the project for the Atlas cluster.
 
 ---
 
@@ -37873,7 +38030,7 @@ const cfnOrgInvitationProps: CfnOrgInvitationProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitationProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitationProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitationProps.property.includeCount">includeCount</a></code> | <code>boolean</code> | Flag that indicates whether the response returns the total number of items (**totalCount**) in the response. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitationProps.property.invitationId">invitationId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the invitation. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitationProps.property.itemsPerPage">itemsPerPage</a></code> | <code>number</code> | Number of items that the response returns per page. |
@@ -37895,7 +38052,9 @@ public readonly profile: string;
 
 - *Type:* string
 
-Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
+The profile is defined in AWS Secret manager.
+
+See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
 
 ---
 
@@ -38234,13 +38393,13 @@ public readonly profile: string;
 
 The profile is defined in AWS Secret manager.
 
-See [Secret Manager Profile setup (../../../examples/profile-secret.yaml)
+See [Secret Manager Profile setup](../../../examples/profile-secret.yaml)
 
 ---
 
 ### CfnPrivateEndpointProps <a name="CfnPrivateEndpointProps" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointProps"></a>
 
-The Private Endpoint creation flow consists of the creation of three related resources in the next order: 1.
+DEPRECATED- USE MongoDB::Atlas::PrivateEndpointService and MongoDB::Atlas::PrivateEndpointAWS instead, The Private Endpoint creation flow consists of the creation of three related resources in the next order: 1.
 
 Atlas Private Endpoint Service 2. Aws VPC private Endpoint 3. Atlas Private Endpoint
 
@@ -38340,7 +38499,7 @@ public readonly profile: string;
 
 The profile is defined in AWS Secret manager.
 
-See [Secret Manager Profile setup (../../../examples/profile-secret.yaml)
+See [Secret Manager Profile setup](../../../examples/profile-secret.yaml)
 
 ---
 
@@ -38472,7 +38631,7 @@ public readonly profile: string;
 
 The profile is defined in AWS Secret manager.
 
-See [Secret Manager Profile setup (../../../examples/profile-secret.yaml)
+See [Secret Manager Profile setup](../../../examples/profile-secret.yaml)
 
 ---
 
@@ -38676,7 +38835,7 @@ Email address of the user account invited to this project.
 
 ### CfnProjectIpAccessListProps <a name="CfnProjectIpAccessListProps" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessListProps"></a>
 
-Returns, adds, edits, and removes network access limits to database deployments in MongoDB Cloud.
+Returns, adds, edits, and removes network access limits to database deployments in Atlas.
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessListProps.Initializer"></a>
 
@@ -38690,11 +38849,20 @@ const cfnProjectIpAccessListProps: CfnProjectIpAccessListProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessListProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessListProps.property.accessList">accessList</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AccessListDefinition">AccessListDefinition</a>[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessListProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessListProps.property.listOptions">listOptions</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ListOptions">ListOptions</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessListProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessListProps.property.totalCount">totalCount</a></code> | <code>number</code> | Number of documents returned in this response. |
+
+---
+
+##### `accessList`<sup>Required</sup> <a name="accessList" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessListProps.property.accessList"></a>
+
+```typescript
+public readonly accessList: AccessListDefinition[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.AccessListDefinition">AccessListDefinition</a>[]
 
 ---
 
@@ -38707,16 +38875,6 @@ public readonly projectId: string;
 - *Type:* string
 
 Unique 24-hexadecimal digit string that identifies your project.
-
----
-
-##### `accessList`<sup>Optional</sup> <a name="accessList" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessListProps.property.accessList"></a>
-
-```typescript
-public readonly accessList: AccessListDefinition[];
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.AccessListDefinition">AccessListDefinition</a>[]
 
 ---
 
@@ -38739,18 +38897,6 @@ public readonly profile: string;
 - *Type:* string
 
 Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
-
----
-
-##### `totalCount`<sup>Optional</sup> <a name="totalCount" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessListProps.property.totalCount"></a>
-
-```typescript
-public readonly totalCount: number;
-```
-
-- *Type:* number
-
-Number of documents returned in this response.
 
 ---
 
@@ -39723,12 +39869,12 @@ const cfnTeamsProps: CfnTeamsProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.name">name</a></code> | <code>string</code> | Unique 24-hexadecimal character string that identifies the team. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.orgId">orgId</a></code> | <code>string</code> | Unique 24-hexadecimal character string that identifies the team. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.name">name</a></code> | <code>string</code> | Human-readable label that identifies the team. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.orgId">orgId</a></code> | <code>string</code> | Unique 24-hexadecimal character string that identifies the organization. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal character string that identifies the project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.roleNames">roleNames</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsPropsRoleNames">CfnTeamsPropsRoleNames</a>[]</code> | One or more organization- or project-level roles to assign to the MongoDB Cloud user. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.usernames">usernames</a></code> | <code>string[]</code> | One or more organization- or project-level roles to assign to the MongoDB Cloud user. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.usernames">usernames</a></code> | <code>string[]</code> | List that contains the MongoDB Cloud users in this team. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps.property.users">users</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AtlasUser">AtlasUser</a>[]</code> | List of returned documents that MongoDB Cloud provides when completing this request. |
 
 ---
@@ -39741,7 +39887,7 @@ public readonly name: string;
 
 - *Type:* string
 
-Unique 24-hexadecimal character string that identifies the team.
+Human-readable label that identifies the team.
 
 ---
 
@@ -39753,7 +39899,7 @@ public readonly orgId: string;
 
 - *Type:* string
 
-Unique 24-hexadecimal character string that identifies the team.
+Unique 24-hexadecimal character string that identifies the organization.
 
 ---
 
@@ -39803,7 +39949,7 @@ public readonly usernames: string[];
 
 - *Type:* string[]
 
-One or more organization- or project-level roles to assign to the MongoDB Cloud user.
+List that contains the MongoDB Cloud users in this team.
 
 ---
 
@@ -40108,7 +40254,7 @@ Human-readable label that identifies your Prometheus incoming webhook.
 
 ### CfnTriggerProps <a name="CfnTriggerProps" id="awscdk-resources-mongodbatlas.CfnTriggerProps"></a>
 
-View and manage your application's [triggers](https://www.mongodb.com/docs/atlas/app-services/triggers/overview/).
+View and manage your application's triggers: https://www.mongodb.com/docs/atlas/app-services/triggers/.
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnTriggerProps.Initializer"></a>
 
@@ -40314,10 +40460,8 @@ const cfnX509AuthenticationDatabaseUserProps: CfnX509AuthenticationDatabaseUserP
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUserProps.property.customerX509">customerX509</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CustomerX509">CustomerX509</a></code> | CustomerX509 represents Customer-managed X.509 configuration for an Atlas project. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUserProps.property.monthsUntilExpiration">monthsUntilExpiration</a></code> | <code>number</code> | A number of months that the created certificate is valid for before expiry, up to 24 months.default 3. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUserProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUserProps.property.projectId">projectId</a></code> | <code>string</code> | The unique identifier for the project . |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUserProps.property.totalCount">totalCount</a></code> | <code>number</code> | Total number of unexpired certificates returned in this response. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUserProps.property.userName">userName</a></code> | <code>string</code> | Username of the database user to create a certificate for. |
 
 ---
@@ -40331,18 +40475,6 @@ public readonly customerX509: CustomerX509;
 - *Type:* <a href="#awscdk-resources-mongodbatlas.CustomerX509">CustomerX509</a>
 
 CustomerX509 represents Customer-managed X.509 configuration for an Atlas project.
-
----
-
-##### `monthsUntilExpiration`<sup>Optional</sup> <a name="monthsUntilExpiration" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUserProps.property.monthsUntilExpiration"></a>
-
-```typescript
-public readonly monthsUntilExpiration: number;
-```
-
-- *Type:* number
-
-A number of months that the created certificate is valid for before expiry, up to 24 months.default 3.
 
 ---
 
@@ -40367,18 +40499,6 @@ public readonly projectId: string;
 - *Type:* string
 
 The unique identifier for the project .
-
----
-
-##### `totalCount`<sup>Optional</sup> <a name="totalCount" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUserProps.property.totalCount"></a>
-
-```typescript
-public readonly totalCount: number;
-```
-
-- *Type:* number
-
-Total number of unexpired certificates returned in this response.
 
 ---
 
@@ -42621,7 +42741,7 @@ public readonly frequencyType: string;
 
 Frequency associated with the export policy.
 
-Value can be daily, weekly, or monthly.
+Value can be daily, weekly, monthly or yearly.
 
 ---
 
@@ -45107,112 +45227,6 @@ The region you choose can affect network latency for clients accessing your data
 
 ---
 
-### ServerlessPrivateEndpoint <a name="ServerlessPrivateEndpoint" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint"></a>
-
-#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.Initializer"></a>
-
-```typescript
-import { ServerlessPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
-
-const serverlessPrivateEndpoint: ServerlessPrivateEndpoint = { ... }
-```
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.atlasPrivateEndpointStatus">atlasPrivateEndpointStatus</a></code> | <code>string</code> | Status of the Atlas PrivateEndpoint connection. |
-| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.awsPrivateEndpointStatus">awsPrivateEndpointStatus</a></code> | <code>string</code> | Status of the AWS PrivateEndpoint connection. |
-| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.comment">comment</a></code> | <code>string</code> | string to represent the comment. |
-| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.createAndAssignAWSPrivateEndpoint">createAndAssignAWSPrivateEndpoint</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.interfaceEndpointId">interfaceEndpointId</a></code> | <code>string</code> | Unique identifiers of the interface endpoints in your VPC that you added to the AWS PrivateLink connection. |
-| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.subnetIds">subnetIds</a></code> | <code>string[]</code> | List of string representing the AWS VPC Subnet ID (like: subnet-xxxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint). |
-| <code><a href="#awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.vpcId">vpcId</a></code> | <code>string</code> | String Representing the AWS VPC ID (like: vpc-xxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint). |
-
----
-
-##### `atlasPrivateEndpointStatus`<sup>Optional</sup> <a name="atlasPrivateEndpointStatus" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.atlasPrivateEndpointStatus"></a>
-
-```typescript
-public readonly atlasPrivateEndpointStatus: string;
-```
-
-- *Type:* string
-
-Status of the Atlas PrivateEndpoint connection.
-
----
-
-##### `awsPrivateEndpointStatus`<sup>Optional</sup> <a name="awsPrivateEndpointStatus" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.awsPrivateEndpointStatus"></a>
-
-```typescript
-public readonly awsPrivateEndpointStatus: string;
-```
-
-- *Type:* string
-
-Status of the AWS PrivateEndpoint connection.
-
----
-
-##### `comment`<sup>Optional</sup> <a name="comment" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.comment"></a>
-
-```typescript
-public readonly comment: string;
-```
-
-- *Type:* string
-
-string to represent the comment.
-
----
-
-##### `createAndAssignAWSPrivateEndpoint`<sup>Optional</sup> <a name="createAndAssignAWSPrivateEndpoint" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.createAndAssignAWSPrivateEndpoint"></a>
-
-```typescript
-public readonly createAndAssignAWSPrivateEndpoint: boolean;
-```
-
-- *Type:* boolean
-
----
-
-##### `interfaceEndpointId`<sup>Optional</sup> <a name="interfaceEndpointId" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.interfaceEndpointId"></a>
-
-```typescript
-public readonly interfaceEndpointId: string;
-```
-
-- *Type:* string
-
-Unique identifiers of the interface endpoints in your VPC that you added to the AWS PrivateLink connection.
-
----
-
-##### `subnetIds`<sup>Optional</sup> <a name="subnetIds" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.subnetIds"></a>
-
-```typescript
-public readonly subnetIds: string[];
-```
-
-- *Type:* string[]
-
-List of string representing the AWS VPC Subnet ID (like: subnet-xxxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint).
-
----
-
-##### `vpcId`<sup>Optional</sup> <a name="vpcId" id="awscdk-resources-mongodbatlas.ServerlessPrivateEndpoint.property.vpcId"></a>
-
-```typescript
-public readonly vpcId: string;
-```
-
-- *Type:* string
-
-String Representing the AWS VPC ID (like: vpc-xxxxxxxxxxxxxxxx) (Used For Creating the AWS VPC Endpoint).
-
----
-
 ### Sink <a name="Sink" id="awscdk-resources-mongodbatlas.Sink"></a>
 
 Ingestion destination of a Data Lake Pipeline.
@@ -47152,6 +47166,8 @@ NONE.
 ### CfnDatabaseUserPropsAwsiamType <a name="CfnDatabaseUserPropsAwsiamType" id="awscdk-resources-mongodbatlas.CfnDatabaseUserPropsAwsiamType"></a>
 
 Human-readable label that indicates whether the new database user authenticates with the Amazon Web Services (AWS) Identity and Access Management (IAM) credentials associated with the user or the user's role.
+
+Default value is `NONE`.
 
 #### Members <a name="Members" id="Members"></a>
 

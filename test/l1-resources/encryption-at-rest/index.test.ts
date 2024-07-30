@@ -30,7 +30,7 @@ test("AtlasEncryptionAtRest construct should contain default properties", () => 
   new CfnEncryptionAtRest(stack, "testing-stack", {
     profile: PROFILE,
     projectId: PROJECT_ID,
-    awsKms: {
+    awsKmsConfig: {
       roleId: ROLE_ID,
       customerMasterKeyId: CUSTOMER_MASTER_KEY_ID,
       enabled: true,
@@ -43,7 +43,7 @@ test("AtlasEncryptionAtRest construct should contain default properties", () => 
   template.hasResourceProperties(RESOURCE_NAME, {
     Profile: PROFILE,
     ProjectId: PROJECT_ID,
-    AwsKms: {
+    AwsKmsConfig: {
       RoleID: ROLE_ID,
       CustomerMasterKeyID: CUSTOMER_MASTER_KEY_ID,
       Enabled: true,

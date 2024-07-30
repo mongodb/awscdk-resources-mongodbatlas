@@ -39,7 +39,7 @@ test("AtlasEncryptionAtRest construct should contain default properties", () => 
   template.hasResourceProperties(RESOURCE_NAME, {
     ProjectId: PROJECT_ID,
     Profile: PROFILE,
-    AwsKms: {
+    AwsKmsConfig: {
       RoleID: ROLE_ID,
       CustomerMasterKeyID: CUSTOMER_MASTER_KEY_ID,
       Enabled: true,
@@ -66,7 +66,7 @@ test("AtlasEncryptionAtRest construct should contain all the properties", () => 
   template.hasResourceProperties(RESOURCE_NAME, {
     ProjectId: PROJECT_ID,
     Profile: PROFILE,
-    AwsKms: {
+    AwsKmsConfig: {
       RoleID: ROLE_ID,
       CustomerMasterKeyID: CUSTOMER_MASTER_KEY_ID,
       Enabled: false,

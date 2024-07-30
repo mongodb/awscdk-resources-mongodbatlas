@@ -50,8 +50,38 @@ jobs:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
       - name: Run ShellCheck
         uses: bewuethr/shellcheck-action@d01912909579c4b1a335828b8fca197fbb8e0aa4
+  check-l1-updated:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b
+        with:
+          node-version: 18.x
+      - run: yarn install --check-files
+      - run: npm install -g cdk-import
+      - run: ./scripts/cdk-all.sh
+      - run: npx projen build
+      - name: Find mutations
+        id: self_mutation
+        run: |-
+          git add .
+          git diff --staged --patch --exit-code > .repo.patch || echo "self_mutation_happened=true" >> "${GITHUB_OUTPUT}"
+      - name: Upload patch
+        if: steps.self_mutation.outputs.self_mutation_happened
+        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
+        with:
+          name: .repo.patch
+          path: .repo.patch
+      - name: Fail build on mutation
+        if: steps.self_mutation.outputs.self_mutation_happened
+        run: |-
+          echo "::error::Files were changed during build (see build log). If this was triggered from a fork, you will need to update your branch."
+          cat .repo.patch
+          exit 1
   call-package-workflow:
-    needs: [compile, lint, shellcheck]
+    needs: [compile, lint, shellcheck, check-l1-updated]
     secrets: inherit
     permissions:
       contents: write

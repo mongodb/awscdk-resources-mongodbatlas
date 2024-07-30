@@ -152,7 +152,7 @@ export class AtlasEncryptionAtRestExpress extends Construct {
       this,
       "encryption-at-rest-".concat(id),
       {
-        awsKms: {
+        awsKmsConfig: {
           customerMasterKeyId: props.encryptionAtRest.customerMasterKeyId,
           roleId: props.encryptionAtRest.roleId,
           enabled:

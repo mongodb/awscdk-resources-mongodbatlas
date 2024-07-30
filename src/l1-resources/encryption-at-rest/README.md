@@ -44,7 +44,7 @@ import { CfnEncryptionAtRest } from 'awscdk-resources-mongodbatlas';
 const encryptionAtRest = new CfnEncryptionAtRest(this, 'EncryptionAtRest', {
     projectId: atlasProps.projId,
     profile:  atlasProps.profile,
-    awsKms: {
+    awsKmsConfig: {
     enabled: true,
     region: atlasProps.region,
     customerMasterKeyId: atlasProps.customerMasterKeyId

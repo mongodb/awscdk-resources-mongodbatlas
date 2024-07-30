@@ -9,7 +9,7 @@ import * as constructs from "constructs";
  */
 export interface CfnPrivateEndpointServiceProps {
   /**
-   * The profile is defined in AWS Secret manager. See [Secret Manager Profile setup (../../../examples/profile-secret.yaml)
+   * The profile is defined in AWS Secret manager. See [Secret Manager Profile setup](../../../examples/profile-secret.yaml)
    *
    * @schema CfnPrivateEndpointServiceProps#Profile
    */

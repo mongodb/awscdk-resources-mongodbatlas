@@ -3,7 +3,7 @@ import * as cdk from "aws-cdk-lib";
 import * as constructs from "constructs";
 
 /**
- * Returns, adds, edits, and removes network access limits to database deployments in MongoDB Cloud.
+ * Returns, adds, edits, and removes network access limits to database deployments in Atlas.
  *
  * @schema CfnProjectIpAccessListProps
  */
@@ -11,7 +11,7 @@ export interface CfnProjectIpAccessListProps {
   /**
    * @schema CfnProjectIpAccessListProps#AccessList
    */
-  readonly accessList?: AccessListDefinition[];
+  readonly accessList: AccessListDefinition[];
 
   /**
    * Unique 24-hexadecimal digit string that identifies your project.
@@ -21,23 +21,16 @@ export interface CfnProjectIpAccessListProps {
   readonly projectId: string;
 
   /**
-   * @schema CfnProjectIpAccessListProps#ListOptions
-   */
-  readonly listOptions?: ListOptions;
-
-  /**
-   * Number of documents returned in this response.
-   *
-   * @schema CfnProjectIpAccessListProps#TotalCount
-   */
-  readonly totalCount?: number;
-
-  /**
    * Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used
    *
    * @schema CfnProjectIpAccessListProps#Profile
    */
   readonly profile?: string;
+
+  /**
+   * @schema CfnProjectIpAccessListProps#ListOptions
+   */
+  readonly listOptions?: ListOptions;
 }
 
 /**
@@ -53,9 +46,8 @@ export function toJson_CfnProjectIpAccessListProps(
   const result = {
     AccessList: obj.accessList?.map((y) => toJson_AccessListDefinition(y)),
     ProjectId: obj.projectId,
-    ListOptions: toJson_ListOptions(obj.listOptions),
-    TotalCount: obj.totalCount,
     Profile: obj.profile,
+    ListOptions: toJson_ListOptions(obj.listOptions),
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -206,6 +198,11 @@ export class CfnProjectIpAccessList extends cdk.CfnResource {
   public readonly props: CfnProjectIpAccessListProps;
 
   /**
+   * Attribute `MongoDB::Atlas::ProjectIpAccessList.TotalCount`
+   */
+  public readonly attrTotalCount: number;
+
+  /**
    * Create a new `MongoDB::Atlas::ProjectIpAccessList`.
    *
    * @param scope - scope in which this resource is defined
@@ -223,5 +220,7 @@ export class CfnProjectIpAccessList extends cdk.CfnResource {
     });
 
     this.props = props;
+
+    this.attrTotalCount = cdk.Token.asNumber(this.getAtt("TotalCount"));
   }
 }

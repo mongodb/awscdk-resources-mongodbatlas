@@ -116,10 +116,6 @@ export class CfnFederatedQueryLimit extends cdk.CfnResource {
    */
   public readonly attrCurrentUsage: string;
   /**
-   * Attribute `MongoDB::Atlas::FederatedQueryLimit.DefaultLimit`
-   */
-  public readonly attrDefaultLimit: string;
-  /**
    * Attribute `MongoDB::Atlas::FederatedQueryLimit.LastModifiedDate`
    */
   public readonly attrLastModifiedDate: string;
@@ -127,6 +123,10 @@ export class CfnFederatedQueryLimit extends cdk.CfnResource {
    * Attribute `MongoDB::Atlas::FederatedQueryLimit.MaximumLimit`
    */
   public readonly attrMaximumLimit: string;
+  /**
+   * Attribute `MongoDB::Atlas::FederatedQueryLimit.DefaultLimit`
+   */
+  public readonly attrDefaultLimit: string;
 
   /**
    * Create a new `MongoDB::Atlas::FederatedQueryLimit`.
@@ -148,7 +148,6 @@ export class CfnFederatedQueryLimit extends cdk.CfnResource {
     this.props = props;
 
     this.attrCurrentUsage = cdk.Token.asString(this.getAtt("CurrentUsage"));
-    this.attrDefaultLimit = cdk.Token.asString(this.getAtt("DefaultLimit"));
     this.attrLastModifiedDate = cdk.Token.asString(
       this.getAtt("LastModifiedDate")
     );
