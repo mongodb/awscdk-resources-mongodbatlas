@@ -90,6 +90,7 @@ jobs:
           node-version: 18.x
       - run: yarn install --check-files
       - run: npm install -g cdk
+      - run: npx projen build
       - run: npx projen package:js 
       - run: ./scripts/check-examples.sh
   call-package-workflow:
