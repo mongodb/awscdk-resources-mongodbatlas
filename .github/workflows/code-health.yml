@@ -90,7 +90,7 @@ jobs:
           node-version: 18.x
       - run: yarn install --check-files
       - run: npm install -g cdk
-      - run: CI='' npx projen build # unset CI env var to build dist artifacts
+      - run: npx projen package:js 
       - run: ./scripts/check-examples.sh
   call-package-workflow:
     needs: [compile, lint, shellcheck, check-l1-updated, check-examples]
