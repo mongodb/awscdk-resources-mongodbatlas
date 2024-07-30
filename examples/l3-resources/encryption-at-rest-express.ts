@@ -22,35 +22,35 @@ export class CdkTestingStack extends cdk.Stack {
     const atlasProps = this.getContextProps();
     const atlasBasicPrivateEndpointasBasic = AtlasEncryptionAtRestExpress(this, 'AtlasBasic', {
       cluster: {
-          name: atlasProps.clusterName,,
-          replicationSpecs:   [
-            {
-              numShards: 1,
-              advancedRegionConfigs: [
-                  {
-                      analyticsSpecs: {
-                          ebsVolumeType: "STANDARD",
-                          instanceSize: "M10",
-                          nodeCount: 1
-                      },
-                      electableSpecs: {
-                          ebsVolumeType: "STANDARD",
-                          instanceSize: "M10",
-                          nodeCount: 3
-                      },
-                      priority:  7,
-                      regionName: "US_EAST_1"
-                  }]
-            }]        
-      
-  
+        name: atlasProps.clusterName,
+        replicationSpecs: [
+          {
+            numShards: 1,
+            advancedRegionConfigs: [
+              {
+                analyticsSpecs: {
+                  ebsVolumeType: "STANDARD",
+                  instanceSize: "M10",
+                  nodeCount: 1
+                },
+                electableSpecs: {
+                  ebsVolumeType: "STANDARD",
+                  instanceSize: "M10",
+                  nodeCount: 3
+                },
+                priority: 7,
+                regionName: "US_EAST_1"
+              }]
+          }]
+
+
       },
       profile: atlasProps.profile,
       projectId: atlasProps.projId,
       encryptionAtRest: {
         customerMasterKeyId: atlasProps.customerMasterKeyId,
-        roleId:   atlasProps.roleId,
-      }, 
+        roleId: atlasProps.roleId,
+      },
       accessList: {
         accessList: [{ ipAddress: atlasProps.ip, comment: 'My first IP address' }]
       }
@@ -59,7 +59,7 @@ export class CdkTestingStack extends cdk.Stack {
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for projId. Please specify via the cdk context."
     }
 
@@ -79,7 +79,7 @@ export class CdkTestingStack extends cdk.Stack {
       region,
       ip,
       vpcId,
-      subnetId, 
+      subnetId,
       roleId,
       customerMasterKeyId
     }
