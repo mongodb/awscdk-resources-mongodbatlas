@@ -20,13 +20,6 @@ export interface CfnX509AuthenticationDatabaseUserProps {
   readonly profile?: string;
 
   /**
-   * Total number of unexpired certificates returned in this response.
-   *
-   * @schema CfnX509AuthenticationDatabaseUserProps#TotalCount
-   */
-  readonly totalCount?: number;
-
-  /**
    * CustomerX509 represents Customer-managed X.509 configuration for an Atlas project.
    *
    * @schema CfnX509AuthenticationDatabaseUserProps#CustomerX509
@@ -39,13 +32,6 @@ export interface CfnX509AuthenticationDatabaseUserProps {
    * @schema CfnX509AuthenticationDatabaseUserProps#UserName
    */
   readonly userName?: string;
-
-  /**
-   * A number of months that the created certificate is valid for before expiry, up to 24 months.default 3.
-   *
-   * @schema CfnX509AuthenticationDatabaseUserProps#MonthsUntilExpiration
-   */
-  readonly monthsUntilExpiration?: number;
 
   /**
    * The unique identifier for the project .
@@ -67,10 +53,8 @@ export function toJson_CfnX509AuthenticationDatabaseUserProps(
   }
   const result = {
     Profile: obj.profile,
-    TotalCount: obj.totalCount,
     CustomerX509: toJson_CustomerX509(obj.customerX509),
     UserName: obj.userName,
-    MonthsUntilExpiration: obj.monthsUntilExpiration,
     ProjectId: obj.projectId,
   };
   // filter undefined values
@@ -133,6 +117,15 @@ export class CfnX509AuthenticationDatabaseUser extends cdk.CfnResource {
   public readonly props: CfnX509AuthenticationDatabaseUserProps;
 
   /**
+   * Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.TotalCount`
+   */
+  public readonly attrTotalCount: number;
+  /**
+   * Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.MonthsUntilExpiration`
+   */
+  public readonly attrMonthsUntilExpiration: number;
+
+  /**
    * Create a new `MongoDB::Atlas::X509AuthenticationDatabaseUser`.
    *
    * @param scope - scope in which this resource is defined
@@ -150,5 +143,10 @@ export class CfnX509AuthenticationDatabaseUser extends cdk.CfnResource {
     });
 
     this.props = props;
+
+    this.attrTotalCount = cdk.Token.asNumber(this.getAtt("TotalCount"));
+    this.attrMonthsUntilExpiration = cdk.Token.asNumber(
+      this.getAtt("MonthsUntilExpiration")
+    );
   }
 }

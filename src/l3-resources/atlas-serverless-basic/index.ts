@@ -108,7 +108,7 @@ export class AtlasServerlessBasic extends Construct {
       {
         profile: props.profile,
         projectId: this.mProject.attrId,
-        accessList: props.ipAccessListProps?.accessList,
+        accessList: props.ipAccessListProps?.accessList || [],
         ...props.ipAccessListProps,
       }
     );

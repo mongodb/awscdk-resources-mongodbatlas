@@ -49,6 +49,7 @@ export { CfnAuditing, CfnAuditingProps } from "./l1-resources/auditing";
 export {
   CfnCloudBackUpRestoreJobs,
   CfnCloudBackUpRestoreJobsProps,
+  CfnCloudBackUpRestoreJobsPropsLinks,
   CfnCloudBackUpRestoreJobsPropsDeliveryType,
   CfnCloudBackUpRestoreJobsPropsInstanceType,
   SynchronousCreationOptions,
@@ -164,7 +165,7 @@ export {
 } from "./l1-resources/datalakes";
 
 export {
-  AwsKmsConfiguration,
+  AwsKmsConfig,
   CfnEncryptionAtRest,
   CfnEncryptionAtRestProps,
 } from "./l1-resources/encryption-at-rest";
@@ -314,6 +315,7 @@ export {
 } from "./l1-resources/search-deployment";
 
 export {
+  ApiAtlasFtsAnalyzersTokenizer,
   ApiAtlasFtsAnalyzersViewManual,
   ApiAtlasFtsMappingsViewManual,
   ApiAtlasFtsSynonymMappingDefinitionView,
@@ -336,7 +338,6 @@ export {
 export {
   CfnServerlessPrivateEndpointProps,
   CfnServerlessPrivateEndpoint,
-  ServerlessPrivateEndpoint,
   AwsPrivateEndpointConfig,
 } from "./l1-resources/serverless-private-endpoint";
 

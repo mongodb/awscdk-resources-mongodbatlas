@@ -37,32 +37,18 @@ export interface CfnCloudBackUpRestoreJobsProps {
   readonly deliveryType: CfnCloudBackUpRestoreJobsPropsDeliveryType;
 
   /**
-   * Indicates whether the restore job was canceled.
-   *
-   * @schema CfnCloudBackUpRestoreJobsProps#Cancelled
-   */
-  readonly cancelled?: boolean;
-
-  /**
-   * Indicates whether the restore job failed.
-   *
-   * @schema CfnCloudBackUpRestoreJobsProps#Failed
-   */
-  readonly failed?: boolean;
-
-  /**
-   * Indicates whether the restore job expired.
-   *
-   * @schema CfnCloudBackUpRestoreJobsProps#Expired
-   */
-  readonly expired?: boolean;
-
-  /**
    * Unique identifier of the source snapshot ID of the restore job.
    *
    * @schema CfnCloudBackUpRestoreJobsProps#SnapshotId
    */
   readonly snapshotId: string;
+
+  /**
+   * One or more links to sub-resources and/or related resources.
+   *
+   * @schema CfnCloudBackUpRestoreJobsProps#Links
+   */
+  readonly links?: CfnCloudBackUpRestoreJobsPropsLinks[];
 
   /**
    * Timestamp in the number of seconds that have elapsed since the UNIX epoch from which to you want to restore this snapshot. This is the first part of an Oplog timestamp.
@@ -136,10 +122,8 @@ export function toJson_CfnCloudBackUpRestoreJobsProps(
     InstanceType: obj.instanceType,
     InstanceName: obj.instanceName,
     DeliveryType: obj.deliveryType,
-    Cancelled: obj.cancelled,
-    Failed: obj.failed,
-    Expired: obj.expired,
     SnapshotId: obj.snapshotId,
+    Links: obj.links?.map((y) => toJson_CfnCloudBackUpRestoreJobsPropsLinks(y)),
     OpLogTs: obj.opLogTs,
     OpLogInc: obj.opLogInc,
     PointInTimeUtcSeconds: obj.pointInTimeUtcSeconds,
@@ -184,6 +168,43 @@ export enum CfnCloudBackUpRestoreJobsPropsDeliveryType {
   /** pointInTime */
   POINT_IN_TIME = "pointInTime",
 }
+
+/**
+ * @schema CfnCloudBackUpRestoreJobsPropsLinks
+ */
+export interface CfnCloudBackUpRestoreJobsPropsLinks {
+  /**
+   * @schema CfnCloudBackUpRestoreJobsPropsLinks#Rel
+   */
+  readonly rel?: string;
+
+  /**
+   * @schema CfnCloudBackUpRestoreJobsPropsLinks#Href
+   */
+  readonly href?: string;
+}
+
+/**
+ * Converts an object of type 'CfnCloudBackUpRestoreJobsPropsLinks' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_CfnCloudBackUpRestoreJobsPropsLinks(
+  obj: CfnCloudBackUpRestoreJobsPropsLinks | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    Rel: obj.rel,
+    Href: obj.href,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
 
 /**
  * Options that needs to be set to control the synchronous creation flow, this options need to be set if EnableSynchronousCreation is se to TRUE
@@ -263,6 +284,18 @@ export class CfnCloudBackUpRestoreJobs extends cdk.CfnResource {
    */
   public readonly attrDeliveryUrl: string[];
   /**
+   * Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.Cancelled`
+   */
+  public readonly attrCancelled: cdk.IResolvable;
+  /**
+   * Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.Failed`
+   */
+  public readonly attrFailed: cdk.IResolvable;
+  /**
+   * Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.Expired`
+   */
+  public readonly attrExpired: cdk.IResolvable;
+  /**
    * Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.ExpiresAt`
    */
   public readonly attrExpiresAt: string;
@@ -296,6 +329,9 @@ export class CfnCloudBackUpRestoreJobs extends cdk.CfnResource {
 
     this.attrId = cdk.Token.asString(this.getAtt("Id"));
     this.attrDeliveryUrl = cdk.Token.asList(this.getAtt("DeliveryUrl"));
+    this.attrCancelled = this.getAtt("Cancelled");
+    this.attrFailed = this.getAtt("Failed");
+    this.attrExpired = this.getAtt("Expired");
     this.attrExpiresAt = cdk.Token.asString(this.getAtt("ExpiresAt"));
     this.attrFinishedAt = cdk.Token.asString(this.getAtt("FinishedAt"));
     this.attrTimestamp = cdk.Token.asString(this.getAtt("Timestamp"));

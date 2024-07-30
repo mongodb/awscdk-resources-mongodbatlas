@@ -20,14 +20,14 @@ export interface CfnGlobalClusterConfigProps {
    *
    * @schema CfnGlobalClusterConfigProps#ProjectId
    */
-  readonly projectId: string;
+  readonly projectId?: string;
 
   /**
    * The name of the Atlas cluster that contains the snapshots you want to retrieve.
    *
    * @schema CfnGlobalClusterConfigProps#ClusterName
    */
-  readonly clusterName: string;
+  readonly clusterName?: string;
 
   /**
    * List that contains comma-separated key value pairs to map zones to geographic regions. These pairs map an ISO 3166-1a2 location code, with an ISO 3166-2 subdivision code when possible, to the human-readable label for the desired custom zone. MongoDB Cloud maps the ISO 3166-1a2 code to the nearest geographical zone by default. Include this parameter to override the default mappings.
@@ -37,13 +37,6 @@ export interface CfnGlobalClusterConfigProps {
    * @schema CfnGlobalClusterConfigProps#ManagedNamespaces
    */
   readonly managedNamespaces?: ManagedNamespace[];
-
-  /**
-   * Flag that indicates whether all custom zone mapping to be deleted during delete.
-   *
-   * @schema CfnGlobalClusterConfigProps#RemoveAllZoneMapping
-   */
-  readonly removeAllZoneMapping?: boolean;
 
   /**
    * List that contains comma-separated key value pairs to map zones to geographic regions. These pairs map an ISO 3166-1a2 location code, with an ISO 3166-2 subdivision code when possible, to the human-readable label for the desired custom zone. MongoDB Cloud maps the ISO 3166-1a2 code to the nearest geographical zone by default. Include this parameter to override the default mappings.
@@ -72,7 +65,6 @@ export function toJson_CfnGlobalClusterConfigProps(
     ManagedNamespaces: obj.managedNamespaces?.map((y) =>
       toJson_ManagedNamespace(y)
     ),
-    RemoveAllZoneMapping: obj.removeAllZoneMapping,
     CustomZoneMappings: obj.customZoneMappings?.map((y) =>
       toJson_ZoneMapping(y)
     ),
@@ -210,6 +202,11 @@ export class CfnGlobalClusterConfig extends cdk.CfnResource {
   public readonly props: CfnGlobalClusterConfigProps;
 
   /**
+   * Attribute `MongoDB::Atlas::GlobalClusterConfig.RemoveAllZoneMapping`
+   */
+  public readonly attrRemoveAllZoneMapping: cdk.IResolvable;
+
+  /**
    * Create a new `MongoDB::Atlas::GlobalClusterConfig`.
    *
    * @param scope - scope in which this resource is defined
@@ -227,5 +224,7 @@ export class CfnGlobalClusterConfig extends cdk.CfnResource {
     });
 
     this.props = props;
+
+    this.attrRemoveAllZoneMapping = this.getAtt("RemoveAllZoneMapping");
   }
 }

@@ -109,7 +109,7 @@ test("Encryption at rest express construct should contain default properties", (
   });
 
   template.hasResourceProperties(RESOURCE_ENCRYPTION_AT_REST, {
-    AwsKms: {
+    AwsKmsConfig: {
       Region: REGION,
       RoleID: ROLE_ID,
       Enabled: true,

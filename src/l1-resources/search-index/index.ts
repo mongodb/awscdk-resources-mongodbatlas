@@ -183,7 +183,7 @@ export interface ApiAtlasFtsAnalyzersViewManual {
    *
    * @schema ApiAtlasFTSAnalyzersViewManual#Tokenizer
    */
-  readonly tokenizer?: any;
+  readonly tokenizer?: ApiAtlasFtsAnalyzersTokenizer;
 }
 
 /**

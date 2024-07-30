@@ -23,7 +23,7 @@ export interface CfnTeamsProps {
   readonly roleNames?: CfnTeamsPropsRoleNames[];
 
   /**
-   * Unique 24-hexadecimal character string that identifies the team.
+   * Unique 24-hexadecimal character string that identifies the organization.
    *
    * @schema CfnTeamsProps#OrgId
    */
@@ -37,14 +37,14 @@ export interface CfnTeamsProps {
   readonly projectId?: string;
 
   /**
-   * Unique 24-hexadecimal character string that identifies the team.
+   * Human-readable label that identifies the team.
    *
    * @schema CfnTeamsProps#Name
    */
   readonly name?: string;
 
   /**
-   * One or more organization- or project-level roles to assign to the MongoDB Cloud user.
+   * List that contains the MongoDB Cloud users in this team.
    *
    * @schema CfnTeamsProps#Usernames
    */

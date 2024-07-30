@@ -3,7 +3,7 @@ import * as cdk from "aws-cdk-lib";
 import * as constructs from "constructs";
 
 /**
- * View and manage your application's [triggers](https://www.mongodb.com/docs/atlas/app-services/triggers/overview/).
+ * View and manage your application's triggers: https://www.mongodb.com/docs/atlas/app-services/triggers/
  *
  * @schema CfnTriggerProps
  */

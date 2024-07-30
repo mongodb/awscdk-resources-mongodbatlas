@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright 2023 MongoDB Inc
+# Copyright 2024 MongoDB Inc
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,18 +17,17 @@
 # This shell script can be use to generate one L1 CDK Construct.
 # The script uses the CFN template to generate the CDK resource.
 #
-# How to use it:
-#   1. CDK L1:  ./cdk.sh "<RESOURCE NAME>" l1
+# How to use it: ./scripts/cdk.sh "<RESOURCE NAME>"
 
 set -euo pipefail
 
 _print_usage() {
 	echo
 	echo 'Usage:'
-	echo './script/cdk.sh "<RESOURCE NAME>"'
+	echo './scripts/cdk.sh "<RESOURCE NAME>"'
 	echo
 	echo 'Example:'
-	echo './script/cdk.sh database-user'
+	echo './scripts/cdk.sh database-user'
 	echo
 }
 
@@ -54,7 +53,12 @@ cdk-import cfn -l typescript -s "${resourceTemp}" -o "src/l1-resources/${resourc
 # Rename resource file to index.ts file
 dest="src/l1-resources/${resource}/index.ts"
 mv "src/l1-resources/${resource}/${mainFileRoot}.ts" "${dest}"
-python "./scripts/rename_in_file.py" "${dest}"
+
+# Remove UNDERSCORE_, HYPHEN_, PERIOD_ and VALUE_ strings from the generated file
+sed -e 's/UNDERSCORE_//g' -e 's/HYPHEN_//g' -e 's/PERIOD_//g' -e 's/VALUE_//g' "${dest}" > "${dest}.tmp" && mv "${dest}.tmp" "${dest}"
+
+# Fix @typescript-eslint/no-shadow es-linter error in file federated-database-instance/index.ts
+sed -e 's/map(y => toJson_TagSet(y))/map(x => toJson_TagSet(x))/g' "${dest}" > "${dest}.tmp" && mv "${dest}.tmp" "${dest}"
 
 echo
 echo "L1 CDK resource generated succesfully: ${resource}, CFN type: ${resourceType}"

@@ -17,8 +17,8 @@ export class CdkTestingStack extends cdk.Stack {
     const atlasProps = this.getContextProps();
     const encryptionAtRest = new CfnEncryptionAtRest(this, 'EncryptionAtRest', {
       projectId: atlasProps.projId,
-      profile:  atlasProps.profile,
-      awsKms: {
+      profile: atlasProps.profile,
+      awsKmsConfig: {
         enabled: true,
         region: atlasProps.region,
         customerMasterKeyId: atlasProps.customerMasterKeyId
@@ -29,7 +29,7 @@ export class CdkTestingStack extends cdk.Stack {
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for projId. Please specify via the cdk context."
     }
 

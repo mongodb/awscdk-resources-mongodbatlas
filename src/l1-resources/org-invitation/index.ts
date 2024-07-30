@@ -9,7 +9,7 @@ import * as constructs from "constructs";
  */
 export interface CfnOrgInvitationProps {
   /**
-   * Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used
+   * The profile is defined in AWS Secret manager. See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
    *
    * @schema CfnOrgInvitationProps#Profile
    */
