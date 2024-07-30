@@ -90,9 +90,6 @@ jobs:
           node-version: 18.x
       - run: yarn install --check-files
       - run: npm install -g cdk
-      - uses: mxschmitt/action-tmate@v3.18
-        with:
-          limit-access-to-actor: true
       - run: npx projen release
       - run: ./scripts/check-examples.sh
   call-package-workflow:
