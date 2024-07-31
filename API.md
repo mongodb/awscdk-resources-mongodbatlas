@@ -33530,8 +33530,8 @@ const atlasBasicPrivateEndpointProps: AtlasBasicPrivateEndpointProps = { ... }
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.atlasBasicProps">atlasBasicProps</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicProps">AtlasBasicProps</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.privateEndpointProps">privateEndpointProps</a></code> | <code><a href="#awscdk-resources-mongodbatlas.PrivateEndpointProps">PrivateEndpointProps</a></code> | *No description.* |
-| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.region">region</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.profile">profile</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.region">region</a></code> | <code>string</code> | *No description.* |
 
 ---
 
@@ -33555,17 +33555,6 @@ public readonly privateEndpointProps: PrivateEndpointProps;
 
 ---
 
-##### `region`<sup>Required</sup> <a name="region" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.region"></a>
-
-```typescript
-public readonly region: string;
-```
-
-- *Type:* string
-- *Default:* us-east-1
-
----
-
 ##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.profile"></a>
 
 ```typescript
@@ -33573,6 +33562,17 @@ public readonly profile: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpointProps.property.region"></a>
+
+```typescript
+public readonly region: string;
+```
+
+- *Type:* string
+- *Default:* us-east-1
 
 ---
 
