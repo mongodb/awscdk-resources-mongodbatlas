@@ -1,8 +1,7 @@
-import { CfnPrivateEndpointAws } from './../../src/l1-resources/private-endpoint-aws/index';
 import * as cdk from 'aws-cdk-lib';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import { Construct } from 'constructs';
-import { CfnPrivateEndpointService, CfnPrivateEndpointServicePropsCloudProvider } from '../../src/l1-resources/private-endpoint-service';
+import { CfnPrivateEndpointAws, CfnPrivateEndpointService, CfnPrivateEndpointServicePropsCloudProvider } from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
   readonly projId: string;
@@ -33,12 +32,12 @@ export class CdkPrivateEndpoint extends cdk.Stack {
     });
 
     awsPrivateEndpoint.addDependency(atlasService)
-    
-    const myPrivateEndpoint = new CfnPrivateEndpointAws (this, "AtlasPrivateEndpoint", {
+
+    const myPrivateEndpoint = new CfnPrivateEndpointAws(this, "AtlasPrivateEndpoint", {
       projectId: atlasProps.projId,
       profile: atlasProps.profile,
       endpointServiceId: atlasService.attrId,
-      id : awsPrivateEndpoint.ref,
+      id: awsPrivateEndpoint.ref,
     });
 
     myPrivateEndpoint.addDependency(myPrivateEndpoint)
@@ -46,10 +45,10 @@ export class CdkPrivateEndpoint extends cdk.Stack {
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for orgId. Please specify via the cdk context."
     }
-    
+
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const region = this.node.tryGetContext('region');
     const vpcId = this.node.tryGetContext('vpcId');

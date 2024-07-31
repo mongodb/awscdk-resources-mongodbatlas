@@ -40,13 +40,13 @@ You can find more information about activating this type in the [AWS CloudFormat
 
 ## Example: [alert-configuration.ts](../../../examples/l1-resources/alert-configuration.ts)
 ```ts
-import { CfnAlertConfiguration, CfnAlertConfigurationPropsEventTypeName, 
-  NotificationViewTypeName,  MetricThresholdViewMetricName, MetricThresholdViewOperator,
-  MetricThresholdViewUnits, MetricThresholdViewMode } from 'awscdk-resources-mongodbatlas';
+  import { 
+    CfnAlertConfiguration, NotificationViewTypeName, MetricThresholdViewOperator, MetricThresholdViewMode 
+  } from 'awscdk-resources-mongodbatlas';
 
   const alert = new CfnAlertConfiguration(this, 'MyAlert', {
     profile: 'default-cfn-andrea-angiolillo',
-    eventTypeName: CfnAlertConfigurationPropsEventTypeName.OUTSIDE_METRIC_THRESHOLD, 
+    eventTypeName: 'OUTSIDE_METRIC_THRESHOLD', 
     notifications: [{
       typeName: NotificationViewTypeName.EMAIL,
       delayMin: 0,
@@ -55,10 +55,10 @@ import { CfnAlertConfiguration, CfnAlertConfigurationPropsEventTypeName,
       intervalMin: 15
     }],
     metricThreshold: {
-      metricName:MetricThresholdViewMetricName.NORMALIZED_SYSTEM_CPU_USER,
+      metricName:'NORMALIZED_SYSTEM_CPU_USER',
       operator: MetricThresholdViewOperator.GREATER_THAN,
       threshold: 5,
-      units: MetricThresholdViewUnits.RAW,
+      units: 'RAW',
       mode: MetricThresholdViewMode.AVERAGE,
     }
   }); 

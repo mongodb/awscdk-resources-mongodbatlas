@@ -21,9 +21,9 @@ export class CdkTestingStack extends cdk.Stack {
       awsKmsConfig: {
         enabled: true,
         region: atlasProps.region,
-        customerMasterKeyId: atlasProps.customerMasterKeyId
+        customerMasterKeyId: atlasProps.customerMasterKeyId,
+        roleId: atlasProps.roleId
       },
-      roleId: atlasProps.roleId
     });
   }
 

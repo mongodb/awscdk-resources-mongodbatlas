@@ -1,9 +1,9 @@
 // This example creates an alert in Atlas using the L1 resources.
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { CfnAlertConfiguration, CfnAlertConfigurationPropsEventTypeName, 
-  NotificationViewTypeName,  MetricThresholdViewMetricName, MetricThresholdViewOperator,
-  MetricThresholdViewUnits, MetricThresholdViewMode} from 'awscdk-resources-mongodbatlas';
+import {
+  CfnAlertConfiguration, NotificationViewTypeName, MetricThresholdViewOperator, MetricThresholdViewMode
+} from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
   readonly projectId: string;
@@ -21,7 +21,7 @@ export class CdkTestingStack extends cdk.Stack {
     const alert = new CfnAlertConfiguration(this, 'MyAlert', {
       profile: atlasProps.profile,
       projectId: atlasProps.projectId,
-      eventTypeName: CfnAlertConfigurationPropsEventTypeName.OUTSIDE_METRIC_THRESHOLD, 
+      eventTypeName: 'OUTSIDE_METRIC_THRESHOLD',
       notifications: [{
         typeName: NotificationViewTypeName.EMAIL,
         delayMin: 0,
@@ -30,10 +30,10 @@ export class CdkTestingStack extends cdk.Stack {
         intervalMin: 15
       }],
       metricThreshold: {
-        metricName:MetricThresholdViewMetricName.NORMALIZED_SYSTEM_CPU_USER,
+        metricName: 'NORMALIZED_SYSTEM_CPU_USER',
         operator: MetricThresholdViewOperator.GREATER_THAN,
         threshold: 5,
-        units: MetricThresholdViewUnits.RAW,
+        units: 'RAW',
         mode: MetricThresholdViewMode.AVERAGE,
       }
     });

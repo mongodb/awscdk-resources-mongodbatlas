@@ -8,8 +8,8 @@ interface AtlasStackProps {
   readonly clusterName: string;
   readonly dbName: string;
   readonly collection: string;
-  readonly isCustomShardKeyHashed: string;
-  readonly isShardKeyUnique: string;
+  readonly isCustomShardKeyHashed: boolean;
+  readonly isShardKeyUnique: boolean;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -18,15 +18,15 @@ export class CdkTestingStack extends cdk.Stack {
 
     const atlasProps = this.getContextProps();
     const globalClusterConfig = new CfnGlobalClusterConfig(this, 'GlobalClusterConfig', {
-      profile:  atlasProps.profile,
+      profile: atlasProps.profile,
       projectId: atlasProps.projId,
       clusterName: atlasProps.clusterName,
       managedNamespaces: [
         {
-            collection: atlasProps.collection,
-            db: atlasProps.dbName,
-            isCustomShardKeyHashed: atlasProps.isCustomShardKeyHashed,
-            isShardKeyUnique: atlasProps.isShardKeyUnique,
+          collection: atlasProps.collection,
+          db: atlasProps.dbName,
+          isCustomShardKeyHashed: atlasProps.isCustomShardKeyHashed,
+          isShardKeyUnique: atlasProps.isShardKeyUnique,
         }
       ],
       customZoneMappings: [
@@ -40,7 +40,7 @@ export class CdkTestingStack extends cdk.Stack {
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for projId. Please specify via the cdk context."
     }
 

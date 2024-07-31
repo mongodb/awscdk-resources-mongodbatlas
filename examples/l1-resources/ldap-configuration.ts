@@ -8,7 +8,7 @@ interface AtlasStackProps {
   readonly bindUsername: string;
   readonly bindPassword: string;
   readonly hostname: string;
-  readonly port: string;
+  readonly port: number;
   readonly authenticationEnabled: boolean;
 }
 

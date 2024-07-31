@@ -1,7 +1,7 @@
 // This example creates a project and a cluster in Atlas using the L1 resources.
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { AtlasBasicPrivateEndpoint } from 'awscdk-resources-mongodbatlas';
+import { AtlasEncryptionAtRestExpress } from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
   readonly projId: string;
@@ -20,7 +20,7 @@ export class CdkTestingStack extends cdk.Stack {
     super(scope, id, props);
 
     const atlasProps = this.getContextProps();
-    const atlasBasicPrivateEndpointasBasic = AtlasEncryptionAtRestExpress(this, 'AtlasBasic', {
+    const atlasBasicPrivateEndpointasBasic = new AtlasEncryptionAtRestExpress(this, 'AtlasBasic', {
       cluster: {
         name: atlasProps.clusterName,
         replicationSpecs: [

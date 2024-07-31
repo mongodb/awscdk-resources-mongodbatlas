@@ -1,7 +1,6 @@
-import { CfnCloudBackUpRestoreJobsPropsInstanceType } from './../../src/l1-resources/cloud-backup-restore-jobs/index';
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { CfnCloudBackUpRestoreJobs, CfnCloudBackUpRestoreJobsPropsDeliveryType } from 'awscdk-resources-mongodbatlas';
+import { CfnCloudBackUpRestoreJobs, CfnCloudBackUpRestoreJobsPropsInstanceType, CfnCloudBackUpRestoreJobsPropsDeliveryType } from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
   readonly projId: string;
@@ -18,7 +17,7 @@ export class CdkTestingStack extends cdk.Stack {
 
     const atlasProps = this.getContextProps();
 
-    new CfnCloudBackUpRestoreJobs(this, 'CloudBackupRestoreJobs', {    
+    new CfnCloudBackUpRestoreJobs(this, 'CloudBackupRestoreJobs', {
       instanceName: atlasProps.instanceName,
       instanceType: CfnCloudBackUpRestoreJobsPropsInstanceType.CLUSTER,
       projectId: atlasProps.projId,
@@ -27,14 +26,14 @@ export class CdkTestingStack extends cdk.Stack {
       deliveryType: CfnCloudBackUpRestoreJobsPropsDeliveryType.DOWNLOAD,
       targetClusterName: atlasProps.targetClusterName,
       targetProjectId: atlasProps.targerProjId,
-  
+
     });
 
   }
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for projId. Please specify via the cdk context."
     }
     const snapshotId = this.node.tryGetContext('snapshotId');

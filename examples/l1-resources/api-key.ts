@@ -1,6 +1,6 @@
 import * as cdk from "aws-cdk-lib";
 import { Construct } from 'constructs';
-import { CfnApiKey,CfnApiKeyProps,ProjectAssignment,ListOptions} from 'awscdk-resources-mongodbatlas';
+import { CfnApiKey, CfnApiKeyProps, ProjectAssignment, ListOptions } from 'awscdk-resources-mongodbatlas';
 
 const app = new cdk.App();
 
@@ -12,7 +12,7 @@ interface AtlasStackProps {
   readonly projectId: string;
 }
 
-const Roles = ["ORG_MEMBER","ORG_GROUP_CREATOR"]
+const Roles = ["ORG_MEMBER", "ORG_GROUP_CREATOR"]
 export class CdkTestingStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
@@ -23,7 +23,7 @@ export class CdkTestingStack extends cdk.Stack {
       orgId: atlasProps.orgId,
       description: atlasProps.description,
       awsSecretName: atlasProps.awsSecretName,
-      proAssignments: [{
+      projectAssignments: [{
         projectId: atlasProps.projectId,
         "roles": [
           "GROUP_READ_ONLY"
@@ -35,23 +35,23 @@ export class CdkTestingStack extends cdk.Stack {
 
   getContextProps(): AtlasStackProps {
     const projectId = this.node.tryGetContext('projId');
-    if (!projectId){
+    if (!projectId) {
       throw "No context value specified for projId. Please specify via the cdk context."
     }
 
     const orgId = this.node.tryGetContext('orgId');
-    if (!orgId){
+    if (!orgId) {
       throw "No context value specified for projId. Please specify via the cdk context."
     }
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const description = this.node.tryGetContext('description');
     const awsSecretName = this.node.tryGetContext('awsSecretName');
     return {
-        orgId,
-        profile,
-        description,
-        awsSecretName,
-        projectId
+      orgId,
+      profile,
+      description,
+      awsSecretName,
+      projectId
     }
   }
 }
