@@ -7,9 +7,8 @@ interface AtlasStackProps {
   readonly profile: string;
   readonly bindUsername: string;
   readonly bindPassword: string;
-  readonly hostname: string;
-  readonly port: string;
-  readonly authenticationEnabled: boolean;
+  readonly hostName: string;
+  readonly port: number;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -22,34 +21,31 @@ export class CdkTestingStack extends cdk.Stack {
       profile: atlasProps.profile,
       bindPassword: atlasProps.bindPassword,
       bindUsername: atlasProps.bindUsername,
-      hostname: atlasProps.hostname,
-      port: atlasProps.port,
-      authenticationEnabled: atlasProps.authenticationEnabled,
+      hostName: atlasProps.hostName,
+      port: atlasProps.port
     });
 
   }
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for orgId. Please specify via the cdk context."
     }
-    
+
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const bindUsername = this.node.tryGetContext('bindUsername');
     const bindPassword = this.node.tryGetContext('bindPassword');
-    const hostname = this.node.tryGetContext('hostname');
+    const hostName = this.node.tryGetContext('hostName');
     const port = this.node.tryGetContext('port');
-    const authenticationEnabled = this.node.tryGetContext('authenticationEnabled');
 
     return {
       projId,
       profile,
       bindUsername,
       bindPassword,
-      hostname,
-      port,
-      authenticationEnabled
+      hostName,
+      port
     }
   }
 }

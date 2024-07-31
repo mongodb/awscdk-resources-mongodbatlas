@@ -61,12 +61,14 @@ export class AtlasBasicPrivateEndpoint extends Construct {
       ...props.atlasBasicProps,
     });
 
+    const region = props.region || privateEndpointDefaults.region;
+
     this.privateEndpointService = new CfnPrivateEndpointService(
       this,
       "atlas-private-endpoint-service-".concat(id),
       {
         projectId: this.atlasBasic.mProject.attrId,
-        region: props.region.toUpperCase().replace(/-/g, "_"),
+        region: region.toUpperCase().replace(/-/g, "_"),
         cloudProvider: CfnPrivateEndpointServicePropsCloudProvider.AWS,
       }
     );
@@ -118,7 +120,7 @@ export interface AtlasBasicPrivateEndpointProps {
    * @default us-east-1
    * @memberof AtlasPrivateEndpointProps
    */
-  readonly region: string;
+  readonly region?: string;
   /**
    * @description
    * @type {AtlasBasicProps}

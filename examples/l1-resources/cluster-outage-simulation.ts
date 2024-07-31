@@ -1,16 +1,15 @@
 // This example creates a project and a cluster in Atlas using the L1 resources.
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { CfnClusterOutageSimulation } from 'awscdk-resources-mongodbatlas';
-import {FilterCloudProvider} from "../../src/l1-resources/cluster-outage-simulation";
+import { CfnClusterOutageSimulation, FilterCloudProvider } from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
     readonly projId: string;
     readonly profile: string;
     readonly clusterName: string;
-    readonly provider : FilterCloudProvider;
-    readonly region : string;
-    readonly outageType : string;
+    readonly provider: FilterCloudProvider;
+    readonly region: string;
+    readonly outageType: string;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -22,7 +21,7 @@ export class CdkTestingStack extends cdk.Stack {
             profile: atlasProps.profile,
             projectId: atlasProps.projId,
             clusterName: atlasProps.clusterName,
-            filters:[
+            outageFilters: [
                 {
                     cloudProvider: atlasProps.provider,
                     region: atlasProps.region,
@@ -35,7 +34,7 @@ export class CdkTestingStack extends cdk.Stack {
 
     getContextProps(): AtlasStackProps {
         const projId = this.node.tryGetContext('projId');
-        if (!projId){
+        if (!projId) {
             throw "No context value specified for projId. Please specify via the cdk context."
         }
         const clusterName = this.node.tryGetContext('clusterName');

@@ -15,7 +15,7 @@ const stack = new cdk.Stack(app, "api-key", {
 });
 
 const orgId = "63350255419cf25e3d511c95";
-const proAssignments: ProjectAssignment[] = [
+const projectAssignments: ProjectAssignment[] = [
   {
     projectId: "64ee3fcfaa95ad6b7e358d56",
     roles: ["GROUP_READ_ONLY"],
@@ -38,7 +38,7 @@ const apikeyProps: CfnApiKeyProps = {
   profile: "default",
   roles: Roles,
   awsSecretName: "mongodb/atlas/apikey/cfn-bot-apikey-test",
-  projectAssignments: proAssignments,
+  projectAssignments: projectAssignments,
   listOptions: listOptions,
 };
 

@@ -16,25 +16,25 @@ export class CdkTestingStack extends cdk.Stack {
 
     const atlasProps = this.getContextProps();
 
-    new CfnPrivateEndpoint (this, "privateEndpoint", {
-      projectId: atlasProps.projId,
-      profile:  atlasProps.profile,
+    new CfnPrivateEndpoint(this, "privateEndpoint", {
+      groupId: atlasProps.projId,
+      profile: atlasProps.profile,
       region: atlasProps.region,
       privateEndpoints: [
-          {
-            vpcId: atlasProps.vpcId,
-            subnetIds: [atlasProps.subnetId]
-          }
+        {
+          vpcId: atlasProps.vpcId,
+          subnetIds: [atlasProps.subnetId]
+        }
       ],
     });
   }
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for orgId. Please specify via the cdk context."
     }
-    
+
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const region = this.node.tryGetContext('region');
     const vpcId = this.node.tryGetContext('vpcId');

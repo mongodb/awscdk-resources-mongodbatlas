@@ -5,9 +5,9 @@ import { CfnMaintenanceWindow } from 'awscdk-resources-mongodbatlas';
 interface AtlasStackProps {
   readonly projId: string;
   readonly profile: string;
-  readonly dayOfWeek: string;
-  readonly hourOfDay: string;
-  readonly autoDeferOnceEnabled: string;
+  readonly dayOfWeek: number;
+  readonly hourOfDay: number;
+  readonly autoDeferOnceEnabled: boolean;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -17,7 +17,7 @@ export class CdkTestingStack extends cdk.Stack {
     const atlasProps = this.getContextProps();
     const myMaintenanceWindow = new CfnMaintenanceWindow(this, 'MyMaintenanceWindow', {
       projectId: atlasProps.projId,
-      profile:  atlasProps.profile,
+      profile: atlasProps.profile,
       dayOfWeek: atlasProps.dayOfWeek,
       hourOfDay: atlasProps.hourOfDay,
       autoDeferOnceEnabled: atlasProps.autoDeferOnceEnabled,
@@ -26,10 +26,10 @@ export class CdkTestingStack extends cdk.Stack {
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for orgId. Please specify via the cdk context."
     }
-    
+
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const dayOfWeek = this.node.tryGetContext('dayOfWeek');
     const hourOfDay = this.node.tryGetContext('hourOfDay');

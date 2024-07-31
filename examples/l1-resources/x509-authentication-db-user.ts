@@ -19,7 +19,7 @@ export class CdkTestingStack extends cdk.Stack {
     const myCfnX509AuthenticationDatabaseUser = new CfnX509AuthenticationDatabaseUser(this, 'MyCfnX509AuthenticationDatabaseUser', {
       projectId: atlasProps.projId,
       profile: atlasProps.profile,
-      username: atlasProps.username,
+      userName: atlasProps.username,
       customerX509: {
         cas: atlasProps.cas,
       }
@@ -28,13 +28,13 @@ export class CdkTestingStack extends cdk.Stack {
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for projId. Please specify via the cdk context."
     }
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const cas = this.node.tryGetContext('cas');
     const username = this.node.tryGetContext('username');
-  
+
 
 
     return {

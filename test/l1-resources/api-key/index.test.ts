@@ -12,7 +12,7 @@ const RESOURCE_NAME = "MongoDB::Atlas::APIKey";
 const ORG_ID = "63350255419cf25e3d511c95";
 const PROFILE = "default";
 const Roles = ["ORG_MEMBER", "ORG_GROUP_CREATOR"];
-const proAssignments: ProjectAssignment[] = [
+const projectAssignments: ProjectAssignment[] = [
   {
     projectId: "64ee3fcfaa95ad6b7e358d56",
     roles: ["GROUP_READ_ONLY"],
@@ -34,7 +34,7 @@ const propsQueryLimitProps: CfnApiKeyProps = {
   profile: PROFILE,
   roles: Roles,
   awsSecretName: "mongodb/atlas/apikey/cfn-bot-apikey-test",
-  projectAssignments: proAssignments,
+  projectAssignments: projectAssignments,
   listOptions: listOptions,
 };
 

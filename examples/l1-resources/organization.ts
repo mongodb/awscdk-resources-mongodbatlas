@@ -1,7 +1,7 @@
 
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { CfnOrganization, CfnOrganizationPropsRoles } from 'awscdk-resources-mongodbatlas';
+import { CfnOrganization } from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
   readonly orgOwnerId: string;
@@ -10,7 +10,7 @@ interface AtlasStackProps {
   readonly awsSecretName: string;
 }
 
-interface apiKey{
+interface apiKey {
   readonly roles: string[];
   readonly description: string;
 }
@@ -22,11 +22,11 @@ export class CdkTestingStack extends cdk.Stack {
     const atlasProps = this.getContextProps();
 
     const myOrg = new CfnOrganization(this, 'MyOrganization', {
-      orgId: atlasProps.orgOwnerId,
+      orgOwnerId: atlasProps.orgOwnerId,
       profile: atlasProps.profile,
-      username: atlasProps.name,
-      awsSecretName: [atlasProps.awsSecretName],
-      apikey:{
+      name: atlasProps.name,
+      awsSecretName: atlasProps.awsSecretName,
+      apiKey: {
         roles: ["ORG_OWNER"],
         description: "test-cdk"
       }
@@ -36,7 +36,7 @@ export class CdkTestingStack extends cdk.Stack {
 
   getContextProps(): AtlasStackProps {
     const orgOwnerId = this.node.tryGetContext('orgOwnerId');
-    if (!orgOwnerId){
+    if (!orgOwnerId) {
       throw "No context value specified for orgOwnerId. Please specify via the cdk context."
     }
     const name = this.node.tryGetContext('name') ?? 'test-org-cdk';

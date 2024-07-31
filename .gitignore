@@ -52,4 +52,5 @@ cdk.out
 cdk.context.json
 yarn-error.log
 *.DS_Store
+examples-bin
 !/.projenrc.js

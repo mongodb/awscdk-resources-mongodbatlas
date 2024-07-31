@@ -5,10 +5,10 @@ import { CfnCloudBackupSchedule } from 'awscdk-resources-mongodbatlas';
 interface AtlasStackProps {
   readonly projId: string;
   readonly profile: string;
-  readonly retentionValue: string;
+  readonly retentionValue: number;
   readonly clusterName: string;
   readonly retentionUnit: string;
-  readonly frequencyInterval: string;
+  readonly frequencyInterval: number;
   readonly frequencyType: string;
   readonly policyId: string;
   readonly replicationSpecId: string;
@@ -53,7 +53,7 @@ export class CdkTestingStack extends cdk.Stack {
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for projId. Please specify via the cdk context."
     }
     const retentionValue = this.node.tryGetContext('retentionValue');

@@ -7,7 +7,7 @@ interface AtlasStackProps {
   readonly profile: string;
   readonly role: string;
   readonly tenantName: string;
-  readonly limitName: string;
+  readonly limitName: CfnFederatedQueryLimitPropsLimitName;
   readonly value: string;
 }
 

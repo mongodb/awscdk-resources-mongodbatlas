@@ -1,7 +1,7 @@
 // This example creates a database user in Atlas using the L1 resources.
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { CfnOnlineArchive, CriteriaViewType } from 'awscdk-resources-mongodbatlas';
+import { CfnOnlineArchive, CriteriaViewType, CriteriaViewDateFormat } from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
   readonly projId: string;
@@ -25,7 +25,7 @@ export class CdkTestingStack extends cdk.Stack {
       clusterName: atlasProps.clusterName,
       criteria: {
         type: CriteriaViewType.DATE,
-        dateFormat: 'ISODATE',
+        dateFormat: CriteriaViewDateFormat.ISODATE,
         dateField: "created",
         expireAfterDays: 30
       }
