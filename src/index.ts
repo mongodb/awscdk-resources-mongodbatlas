@@ -400,6 +400,12 @@ export {
   CustomerX509,
 } from "./l1-resources/x509-authentication-database-user";
 
+export {
+  CfnResourcePolicy,
+  CfnResourcePolicyProps,
+  ApiAtlasPolicy,
+} from "./l1-resources/resource-policy";
+
 // L2 Constructors
 
 export * from "./l2-resources/encryption-at-rest";
