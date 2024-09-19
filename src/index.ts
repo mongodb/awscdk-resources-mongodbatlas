@@ -404,6 +404,7 @@ export {
   CfnResourcePolicy,
   CfnResourcePolicyProps,
   ApiAtlasPolicy,
+  ApiAtlasUserMetadata,
 } from "./l1-resources/resource-policy";
 
 // L2 Constructors
