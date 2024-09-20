@@ -309,6 +309,13 @@ export {
 } from "./l1-resources/project-ip-access-list";
 
 export {
+  CfnResourcePolicy,
+  CfnResourcePolicyProps,
+  ApiAtlasPolicy,
+  ApiAtlasUserMetadata,
+} from "./l1-resources/resource-policy";
+
+export {
   CfnSearchDeployment,
   CfnSearchDeploymentProps,
   ApiSearchDeploymentSpec,
@@ -399,13 +406,6 @@ export {
   CfnX509AuthenticationDatabaseUserProps,
   CustomerX509,
 } from "./l1-resources/x509-authentication-database-user";
-
-export {
-  CfnResourcePolicy,
-  CfnResourcePolicyProps,
-  ApiAtlasPolicy,
-  ApiAtlasUserMetadata,
-} from "./l1-resources/resource-policy";
 
 // L2 Constructors
 
