@@ -37084,7 +37084,9 @@ Default value is `NONE`.
 
 ### CfnDataLakePipelineProps <a name="CfnDataLakePipelineProps" id="awscdk-resources-mongodbatlas.CfnDataLakePipelineProps"></a>
 
-An example resource schema demonstrating some basic constructs and validation rules.
+Data Lake is deprecated.
+
+As of September 2024, Data Lake is deprecated. If you use Data Lake, you should migrate to alternative solutions before the service is removed. To learn more, see <https://dochub.mongodb.org/core/data-lake-deprecation>. This resource returns, adds, edits, and removes data lake pipelines.
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnDataLakePipelineProps.Initializer"></a>
 
