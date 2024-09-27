@@ -309,6 +309,13 @@ export {
 } from "./l1-resources/project-ip-access-list";
 
 export {
+  CfnResourcePolicy,
+  CfnResourcePolicyProps,
+  ApiAtlasPolicy,
+  ApiAtlasUserMetadata,
+} from "./l1-resources/resource-policy";
+
+export {
   CfnSearchDeployment,
   CfnSearchDeploymentProps,
   ApiSearchDeploymentSpec,

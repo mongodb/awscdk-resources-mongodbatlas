@@ -23,6 +23,13 @@ export interface CfnProjectProps {
   readonly orgId: string;
 
   /**
+   * Unique identifier of the organization within which to create the project.
+   *
+   * @schema CfnProjectProps#ProjectOwnerId
+   */
+  readonly projectOwnerId?: string;
+
+  /**
    * Flag that indicates whether to create the project with default alert settings.
    *
    * @schema CfnProjectProps#WithDefaultAlertsSettings
@@ -81,6 +88,7 @@ export function toJson_CfnProjectProps(
   const result = {
     Name: obj.name,
     OrgId: obj.orgId,
+    ProjectOwnerId: obj.projectOwnerId,
     WithDefaultAlertsSettings: obj.withDefaultAlertsSettings,
     ProjectSettings: toJson_ProjectSettings(obj.projectSettings),
     Profile: obj.profile,
@@ -279,10 +287,6 @@ export class CfnProject extends cdk.CfnResource {
    */
   public readonly attrCreated: string;
   /**
-   * Attribute `MongoDB::Atlas::Project.ProjectOwnerId`
-   */
-  public readonly attrProjectOwnerId: string;
-  /**
    * Attribute `MongoDB::Atlas::Project.ClusterCount`
    */
   public readonly attrClusterCount: number;
@@ -304,7 +308,6 @@ export class CfnProject extends cdk.CfnResource {
 
     this.attrId = cdk.Token.asString(this.getAtt("Id"));
     this.attrCreated = cdk.Token.asString(this.getAtt("Created"));
-    this.attrProjectOwnerId = cdk.Token.asString(this.getAtt("ProjectOwnerId"));
     this.attrClusterCount = cdk.Token.asNumber(this.getAtt("ClusterCount"));
   }
 }

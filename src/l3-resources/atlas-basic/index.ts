@@ -85,6 +85,7 @@ export class AtlasBasic extends Construct {
       name:
         props.projectProps.name ||
         projectDefaults.projectName.concat(String(randomNumber())),
+      projectOwnerId: props.projectProps.projectOwnerId,
       ...props.projectProps,
     });
     // Create a new MongoDB Atlas Cluster and pass project ID
