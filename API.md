@@ -23582,7 +23582,6 @@ Check whether the given construct is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrClusterCount">attrClusterCount</a></code> | <code>number</code> | Attribute `MongoDB::Atlas::Project.ClusterCount`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrCreated">attrCreated</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Project.Created`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Project.Id`. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrProjectOwnerId">attrProjectOwnerId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Project.ProjectOwnerId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps">CfnProjectProps</a></code> | Resource props. |
 
 ---
@@ -23712,18 +23711,6 @@ public readonly attrId: string;
 - *Type:* string
 
 Attribute `MongoDB::Atlas::Project.Id`.
-
----
-
-##### `attrProjectOwnerId`<sup>Required</sup> <a name="attrProjectOwnerId" id="awscdk-resources-mongodbatlas.CfnProject.property.attrProjectOwnerId"></a>
-
-```typescript
-public readonly attrProjectOwnerId: string;
-```
-
-- *Type:* string
-
-Attribute `MongoDB::Atlas::Project.ProjectOwnerId`.
 
 ---
 
@@ -39687,6 +39674,7 @@ const cfnProjectProps: CfnProjectProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.orgId">orgId</a></code> | <code>string</code> | Unique identifier of the organization within which to create the project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectApiKeys">projectApiKeys</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectApiKey">ProjectApiKey</a>[]</code> | API keys that you assigned to the specified project. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectOwnerId">projectOwnerId</a></code> | <code>string</code> | Unique identifier of the organization within which to create the project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectSettings">projectSettings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectSettings">ProjectSettings</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.projectTeams">projectTeams</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProjectTeam">ProjectTeam</a>[]</code> | Teams to which the authenticated user has access in the project specified using its unique 24-hexadecimal digit identifier. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectProps.property.regionUsageRestrictions">regionUsageRestrictions</a></code> | <code>string</code> | Region usage restrictions that designate the project's AWS region.Enum: "GOV_REGIONS_ONLY" "COMMERCIAL_FEDRAMP_REGIONS_ONLY" "NONE". |
@@ -39740,6 +39728,18 @@ public readonly projectApiKeys: ProjectApiKey[];
 - *Type:* <a href="#awscdk-resources-mongodbatlas.ProjectApiKey">ProjectApiKey</a>[]
 
 API keys that you assigned to the specified project.
+
+---
+
+##### `projectOwnerId`<sup>Optional</sup> <a name="projectOwnerId" id="awscdk-resources-mongodbatlas.CfnProjectProps.property.projectOwnerId"></a>
+
+```typescript
+public readonly projectOwnerId: string;
+```
+
+- *Type:* string
+
+Unique identifier of the organization within which to create the project.
 
 ---
 
