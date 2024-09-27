@@ -74,6 +74,7 @@ export class AtlasServerlessBasic extends Construct {
     this.mProject = new atlas.CfnProject(this, "project-".concat(id), {
       profile: props.profile,
       name: props.projectProps.name ?? `project-${id}`,
+      projectOwnerId: props.projectProps.projectOwnerId,
       ...props.projectProps,
     });
     // Create a new serverless Instance and pass project ID
