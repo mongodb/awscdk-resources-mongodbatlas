@@ -27,21 +27,21 @@ export interface CfnResourcePolicyProps {
    *
    * @schema CfnResourcePolicyProps#Name
    */
-  readonly name?: string;
+  readonly name: string;
 
   /**
    * Unique 24-hexadecimal digit string that identifies the organization that contains your projects. Use the [/orgs](#tag/Organizations/operation/listOrganizations) endpoint to retrieve all organizations to which the authenticated user has access.
    *
    * @schema CfnResourcePolicyProps#OrgId
    */
-  readonly orgId?: string;
+  readonly orgId: string;
 
   /**
    * List of policies that make up the atlas resource policy.
    *
    * @schema CfnResourcePolicyProps#Policies
    */
-  readonly policies?: ApiAtlasPolicy[];
+  readonly policies: ApiAtlasPolicy[];
 
   /**
    * Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used
@@ -127,7 +127,7 @@ export interface ApiAtlasPolicy {
    *
    * @schema ApiAtlasPolicy#Body
    */
-  readonly body?: string;
+  readonly body: string;
 
   /**
    * Unique 24-hexadecimal character string that identifies the policy.

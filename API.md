@@ -33933,7 +33933,7 @@ const apiAtlasPolicy: ApiAtlasPolicy = { ... }
 
 ---
 
-##### `body`<sup>Optional</sup> <a name="body" id="awscdk-resources-mongodbatlas.ApiAtlasPolicy.property.body"></a>
+##### `body`<sup>Required</sup> <a name="body" id="awscdk-resources-mongodbatlas.ApiAtlasPolicy.property.body"></a>
 
 ```typescript
 public readonly body: string;
@@ -39815,12 +39815,50 @@ const cfnResourcePolicyProps: CfnResourcePolicyProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.createdByUser">createdByUser</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasUserMetadata">ApiAtlasUserMetadata</a></code> | The user that last updated the atlas resource policy. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.lastUpdatedByUser">lastUpdatedByUser</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasUserMetadata">ApiAtlasUserMetadata</a></code> | The user that last updated the atlas resource policy. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.name">name</a></code> | <code>string</code> | Human-readable label that describes the atlas resource policy. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.orgId">orgId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the organization that contains your projects. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.policies">policies</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasPolicy">ApiAtlasPolicy</a>[]</code> | List of policies that make up the atlas resource policy. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.createdByUser">createdByUser</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasUserMetadata">ApiAtlasUserMetadata</a></code> | The user that last updated the atlas resource policy. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.lastUpdatedByUser">lastUpdatedByUser</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasUserMetadata">ApiAtlasUserMetadata</a></code> | The user that last updated the atlas resource policy. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Human-readable label that describes the atlas resource policy.
+
+---
+
+##### `orgId`<sup>Required</sup> <a name="orgId" id="awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.orgId"></a>
+
+```typescript
+public readonly orgId: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies the organization that contains your projects.
+
+Use the [/orgs](#tag/Organizations/operation/listOrganizations) endpoint to retrieve all organizations to which the authenticated user has access.
+
+---
+
+##### `policies`<sup>Required</sup> <a name="policies" id="awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.policies"></a>
+
+```typescript
+public readonly policies: ApiAtlasPolicy[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.ApiAtlasPolicy">ApiAtlasPolicy</a>[]
+
+List of policies that make up the atlas resource policy.
 
 ---
 
@@ -39845,44 +39883,6 @@ public readonly lastUpdatedByUser: ApiAtlasUserMetadata;
 - *Type:* <a href="#awscdk-resources-mongodbatlas.ApiAtlasUserMetadata">ApiAtlasUserMetadata</a>
 
 The user that last updated the atlas resource policy.
-
----
-
-##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
-Human-readable label that describes the atlas resource policy.
-
----
-
-##### `orgId`<sup>Optional</sup> <a name="orgId" id="awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.orgId"></a>
-
-```typescript
-public readonly orgId: string;
-```
-
-- *Type:* string
-
-Unique 24-hexadecimal digit string that identifies the organization that contains your projects.
-
-Use the [/orgs](#tag/Organizations/operation/listOrganizations) endpoint to retrieve all organizations to which the authenticated user has access.
-
----
-
-##### `policies`<sup>Optional</sup> <a name="policies" id="awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.policies"></a>
-
-```typescript
-public readonly policies: ApiAtlasPolicy[];
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.ApiAtlasPolicy">ApiAtlasPolicy</a>[]
-
-List of policies that make up the atlas resource policy.
 
 ---
 
