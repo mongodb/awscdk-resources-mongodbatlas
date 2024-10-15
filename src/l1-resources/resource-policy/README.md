@@ -3,7 +3,7 @@
 The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node.js.
 
 > **NOTE**: 
-> - **Atlas Resource Policies functionality is currently in Preview, you'll need to enable `Atlas Resource Policies` Beta Feature in your organization to use it.** 
+> - **Resource Policies is currently in Private Preview, if you want to use it, contact [MongoDB Support](https://www.mongodb.com/services/support) to enable `Atlas Resource Policies` Preview Feature in your organization.**
 
 > AWS CDK [L1 construct] and data structures for the [AWS CloudFormation Registry] type `MongoDB::Atlas::ResourcePolicy`.
 [L1 construct]: https://docs.aws.amazon.com/cdk/latest/guide/constructs.html
