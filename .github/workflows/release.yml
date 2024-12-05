@@ -221,7 +221,7 @@ jobs:
           -e GRS_CONFIG_USER1_PASSWORD="${{ secrets.ARTIFACTORY_SIGN_PASSWORD }}" \
           --rm -v "$(pwd)":"$(pwd)" -w "$(pwd)" \
           "${{ secrets.ARTIFACTORY_REGISTRY }}/${{ secrets.ARTIFACTORY_SIGN_TOOL }}" \
-          /bin/bash -c "jsign --tsaurl http://timestamp.digicert.com -a mongo-authenticode-2021 \
+          /bin/bash -c "jsign --tsaurl http://timestamp.digicert.com -a ${{ secrets.AUTHENTICODE_KEY_NAME }} \
           ./dist/dotnet/MongoDB.AWSCDKResourcesMongoDBAtlas.${{ steps.extract-version.outputs.VERSION }}.nupkg"
       - name: Release
         env:
