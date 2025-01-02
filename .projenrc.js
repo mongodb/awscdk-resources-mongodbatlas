@@ -125,4 +125,9 @@ project.npmignore.exclude(
   "/scripts/",
   "/examples/"
 );
+project.tasks.tryFind("docgen").updateStep(0, {
+  exec: "jsii-docgen -o API.md -r",
+  say: "Generating API.md, using -r to include readme content"
+
+})
 project.synth();
