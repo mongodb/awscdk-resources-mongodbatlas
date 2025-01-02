@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: 18.x
       - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
         with:
           name: build-artifact
           path: dist
@@ -57,7 +57,7 @@ jobs:
         with:
           node-version: 18.x
       - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
         with:
           name: build-artifact
           path: dist
@@ -79,7 +79,7 @@ jobs:
         with:
           python-version: 3.x
       - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
         with:
           name: build-artifact
           path: dist
@@ -101,7 +101,7 @@ jobs:
         with:
           dotnet-version: 3.x
       - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
         with:
           name: build-artifact
           path: dist
@@ -123,7 +123,7 @@ jobs:
         with:
           go-version: ^1.16.0
       - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
         with:
           name: build-artifact
           path: dist
