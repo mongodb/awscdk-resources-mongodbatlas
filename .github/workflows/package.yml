@@ -20,9 +20,6 @@ jobs:
         run: yarn install --check-files
       - name: build
         run: npx projen build
-      - name: Backup artifact permissions
-        run: cd dist && getfacl -R . > permissions-backup.acl
-        continue-on-error: true
       - name: Upload artifact
         uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b
         with:
@@ -41,9 +38,6 @@ jobs:
         with:
           name: build-artifact
           path: dist
-      - name: Restore build artifact permissions
-        run: cd dist && setfacl --restore=permissions-backup.acl
-        continue-on-error: true
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -67,9 +61,6 @@ jobs:
         with:
           name: build-artifact
           path: dist
-      - name: Restore build artifact permissions
-        run: cd dist && setfacl --restore=permissions-backup.acl
-        continue-on-error: true
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -92,9 +83,6 @@ jobs:
         with:
           name: build-artifact
           path: dist
-      - name: Restore build artifact permissions
-        run: cd dist && setfacl --restore=permissions-backup.acl
-        continue-on-error: true
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -117,9 +105,6 @@ jobs:
         with:
           name: build-artifact
           path: dist
-      - name: Restore build artifact permissions
-        run: cd dist && setfacl --restore=permissions-backup.acl
-        continue-on-error: true
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
@@ -142,9 +127,6 @@ jobs:
         with:
           name: build-artifact
           path: dist
-      - name: Restore build artifact permissions
-        run: cd dist && setfacl --restore=permissions-backup.acl
-        continue-on-error: true
       - name: Prepare Repository
         run: mv dist .repo
       - name: Install Dependencies
