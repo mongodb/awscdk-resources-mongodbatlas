@@ -20,11 +20,6 @@ jobs:
         run: yarn install --check-files
       - name: build
         run: npx projen build
-      - name: Upload artifact
-        uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b
-        with:
-          name: build-artifact
-          path: dist
   package-js:
     needs: build
     runs-on: ubuntu-latest
@@ -33,17 +28,15 @@ jobs:
       - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: 18.x
-      - name: Download build artifacts
-        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          name: build-artifact
-          path: dist
-      - name: Prepare Repository
-        run: mv dist .repo
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
+        run: yarn install --check-files --frozen-lockfile
       - name: Create js artifact
-        run: cd .repo && npx projen package:js
+        run: npx projen package:js
   package-java:
     needs: build
     runs-on: ubuntu-latest
@@ -56,81 +49,73 @@ jobs:
       - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: 18.x
-      - name: Download build artifacts
-        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          name: build-artifact
-          path: dist
-      - name: Prepare Repository
-        run: mv dist .repo
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
+        run: yarn install --check-files --frozen-lockfile
       - name: Create java artifact
-        run: cd .repo && npx projen package:java
+        run: npx projen package:java
   package-python:
     needs: build
     runs-on: ubuntu-latest
     permissions: {}
     steps:
-      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
-        with:
-          node-version: 18.x
       - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b
         with:
           python-version: 3.x
-      - name: Download build artifacts
-        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
-          name: build-artifact
-          path: dist
-      - name: Prepare Repository
-        run: mv dist .repo
+          node-version: 18.x
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
+        run: yarn install --check-files --frozen-lockfile
       - name: Create python artifact
-        run: cd .repo && npx projen package:python
+        run: npx projen package:python
   package-dotnet:
     needs: build
     runs-on: ubuntu-latest
     permissions: {}
     steps:
-      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
-        with:
-          node-version: 18.x
       - uses: actions/setup-dotnet@3e891b0cb619bf60e2c25674b222b8940e2c1c25
         with:
           dotnet-version: 3.x
-      - name: Download build artifacts
-        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
-          name: build-artifact
-          path: dist
-      - name: Prepare Repository
-        run: mv dist .repo
+          node-version: 18.x
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
+        run: yarn install --check-files --frozen-lockfile
       - name: Create dotnet artifact
-        run: cd .repo && npx projen package:dotnet
+        run: npx projen package:dotnet
   package-go:
     needs: build
     runs-on: ubuntu-latest
     permissions: {}
     steps:
-      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
-        with:
-          node-version: 18.x
       - uses: actions/setup-go@3041bf56c941b39c61721a86cd11f3bb1338122a
         with:
           go-version: ^1.16.0
-      - name: Download build artifacts
-        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
-          name: build-artifact
-          path: dist
-      - name: Prepare Repository
-        run: mv dist .repo
+          node-version: 18.x
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
+        run: yarn install --check-files --frozen-lockfile
       - name: Create go artifact
-        run: cd .repo && npx projen package:go
+        run: npx projen package:go
 
