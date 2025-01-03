@@ -94,12 +94,12 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
-      - name: Install Globalization library
-        run: sudo apt-get update && sudo apt-get install -y icu-devtools libicu-dev
       - name: Install Dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Create dotnet artifact
         run: npx projen compile && npx projen package:dotnet
+        env:
+          DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "1"
 
   package-go:
     needs: build
