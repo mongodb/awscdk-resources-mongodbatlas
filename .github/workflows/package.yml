@@ -85,7 +85,7 @@ jobs:
     steps:
       - uses: actions/setup-dotnet@3e891b0cb619bf60e2c25674b222b8940e2c1c25
         with:
-          dotnet-version: 3.x
+          dotnet-version: 9.0.x
       - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: 18.x
@@ -98,8 +98,6 @@ jobs:
         run: yarn install --check-files --frozen-lockfile
       - name: Create dotnet artifact
         run: npx projen compile && npx projen package:dotnet
-        env:
-          DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "1"
 
   package-go:
     needs: build
