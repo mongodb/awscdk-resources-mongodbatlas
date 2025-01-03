@@ -35,6 +35,7 @@ jobs:
         with:
           name: build-artifact
           path: dist
+          overwrite: true
   release_npm:
     name: Publish to npm
     needs: release
@@ -47,21 +48,23 @@ jobs:
         with:
           node-version: 18.x
       - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
         with:
           name: build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Prepare Repository
-        run: mv dist .repo
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: .repo
       - name: Install Dependencies
         run: cd .repo && yarn install --check-files --frozen-lockfile
       - name: Create js artifact
-        run: cd .repo && npx projen package:js
+        run: cd .repo && npx projen compile && npx projen package:js
       - name: Collect js Artifact
-        run: mv .repo/dist dist
+        run: mv .repo/dist/js dist/js
       - name: Release
         env:
           NPM_DIST_TAG: latest
@@ -95,21 +98,23 @@ jobs:
         with:
           node-version: 18.x
       - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
         with:
           name: build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Prepare Repository
-        run: mv dist .repo
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: .repo
       - name: Install Dependencies
         run: cd .repo && yarn install --check-files --frozen-lockfile
       - name: Create java artifact
-        run: cd .repo && npx projen package:java
+        run: cd .repo && npx projen compile && npx projen package:java
       - name: Collect java Artifact
-        run: mv .repo/dist dist
+        run: mv .repo/dist/java dist/java
       - name: Release
         env:
           MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
@@ -144,21 +149,23 @@ jobs:
         with:
           python-version: 3.x
       - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
         with:
           name: build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Prepare Repository
-        run: mv dist .repo
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: .repo
       - name: Install Dependencies
         run: cd .repo && yarn install --check-files --frozen-lockfile
       - name: Create python artifact
-        run: cd .repo && npx projen package:python
+        run: cd .repo && npx projen compile && npx projen package:python
       - name: Collect python Artifact
-        run: mv .repo/dist dist
+        run: mv .repo/dist/python dist/python
       - name: Release
         env:
           TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
@@ -188,23 +195,25 @@ jobs:
           node-version: 18.x
       - uses: actions/setup-dotnet@3e891b0cb619bf60e2c25674b222b8940e2c1c25
         with:
-          dotnet-version: 3.x
+          dotnet-version: 9.0.x
       - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
         with:
           name: build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Prepare Repository
-        run: mv dist .repo
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: .repo
       - name: Install Dependencies
         run: cd .repo && yarn install --check-files --frozen-lockfile
       - name: Create dotnet artifact
-        run: cd .repo && npx projen package:dotnet
+        run: cd .repo && npx projen compile && npx projen package:dotnet
       - name: Collect dotnet Artifact
-        run: mv .repo/dist dist
+        run: mv .repo/dist/dotnet dist/dotnet
       - name: Extract Version
         id: extract-version
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
@@ -249,21 +258,23 @@ jobs:
         with:
           go-version: ^1.16.0
       - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
         with:
           name: build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Prepare Repository
-        run: mv dist .repo
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          path: .repo
       - name: Install Dependencies
         run: cd .repo && yarn install --check-files --frozen-lockfile
       - name: Create go artifact
-        run: cd .repo && npx projen package:go
+        run: cd .repo && npx projen compile && npx projen package:go
       - name: Collect go Artifact
-        run: mv .repo/dist dist
+        run: mv .repo/dist/go dist/go
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GO_GITHUB_TOKEN }}
@@ -293,17 +304,13 @@ jobs:
         with:
           node-version: 18.x
       - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
         with:
           name: build-artifact
           path: dist
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Prepare Repository
-        run: mv dist .repo
-      - name: Collect GitHub Metadata
-        run: mv .repo/dist dist
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
