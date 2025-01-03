@@ -36,7 +36,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Create js artifact
-        run: npx projen package:js
+        run: npx projen compile && npx projen package:js
   package-java:
     needs: build
     runs-on: ubuntu-latest
@@ -57,7 +57,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Create java artifact
-        run: npx projen package:java
+        run: npx projen compile && npx projen package:java
   package-python:
     needs: build
     runs-on: ubuntu-latest
@@ -77,7 +77,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Create python artifact
-        run: npx projen package:python
+        run: npx projen compile && npx projen package:python
   package-dotnet:
     needs: build
     runs-on: ubuntu-latest
@@ -97,7 +97,7 @@ jobs:
       - name: Install Dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Create dotnet artifact
-        run: npx projen package:dotnet
+        run: npx projen compile && npx projen package:dotnet
   package-go:
     needs: build
     runs-on: ubuntu-latest
@@ -117,5 +117,5 @@ jobs:
       - name: Install Dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: Create go artifact
-        run: npx projen package:go
+        run: npx projen compile && npx projen package:go
 
