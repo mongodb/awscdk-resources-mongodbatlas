@@ -20,14 +20,6 @@ jobs:
         run: yarn install --check-files
       - name: build
         run: npx projen build
-      - name: Backup artifact permissions
-        run: cd dist && getfacl -R . > permissions-backup.acl
-        continue-on-error: true
-      - name: Upload artifact
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
-        with:
-          name: build-artifact
-          path: dist
   package-js:
     needs: build
     runs-on: ubuntu-latest
@@ -36,20 +28,15 @@ jobs:
       - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: 18.x
-      - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          name: build-artifact
-          path: dist
-      - name: Restore build artifact permissions
-        run: cd dist && setfacl --restore=permissions-backup.acl
-        continue-on-error: true
-      - name: Prepare Repository
-        run: mv dist .repo
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
+        run: yarn install --check-files --frozen-lockfile
       - name: Create js artifact
-        run: cd .repo && npx projen package:js
+        run: npx projen compile && npx projen package:js
   package-java:
     needs: build
     runs-on: ubuntu-latest
@@ -62,93 +49,74 @@ jobs:
       - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: 18.x
-      - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          name: build-artifact
-          path: dist
-      - name: Restore build artifact permissions
-        run: cd dist && setfacl --restore=permissions-backup.acl
-        continue-on-error: true
-      - name: Prepare Repository
-        run: mv dist .repo
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
+        run: yarn install --check-files --frozen-lockfile
       - name: Create java artifact
-        run: cd .repo && npx projen package:java
+        run: npx projen compile && npx projen package:java
   package-python:
     needs: build
     runs-on: ubuntu-latest
     permissions: {}
     steps:
-      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
-        with:
-          node-version: 18.x
       - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b
         with:
           python-version: 3.x
-      - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
-          name: build-artifact
-          path: dist
-      - name: Restore build artifact permissions
-        run: cd dist && setfacl --restore=permissions-backup.acl
-        continue-on-error: true
-      - name: Prepare Repository
-        run: mv dist .repo
+          node-version: 18.x
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
+        run: yarn install --check-files --frozen-lockfile
       - name: Create python artifact
-        run: cd .repo && npx projen package:python
+        run: npx projen compile && npx projen package:python
   package-dotnet:
     needs: build
     runs-on: ubuntu-latest
     permissions: {}
     steps:
+      - uses: actions/setup-dotnet@3e891b0cb619bf60e2c25674b222b8940e2c1c25
+        with:
+          dotnet-version: 9.0.x
       - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
           node-version: 18.x
-      - uses: actions/setup-dotnet@3e891b0cb619bf60e2c25674b222b8940e2c1c25
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          dotnet-version: 3.x
-      - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
-        with:
-          name: build-artifact
-          path: dist
-      - name: Restore build artifact permissions
-        run: cd dist && setfacl --restore=permissions-backup.acl
-        continue-on-error: true
-      - name: Prepare Repository
-        run: mv dist .repo
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
+        run: yarn install --check-files --frozen-lockfile
       - name: Create dotnet artifact
-        run: cd .repo && npx projen package:dotnet
+        run: npx projen compile && npx projen package:dotnet
+
   package-go:
     needs: build
     runs-on: ubuntu-latest
     permissions: {}
     steps:
-      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
-        with:
-          node-version: 18.x
       - uses: actions/setup-go@3041bf56c941b39c61721a86cd11f3bb1338122a
         with:
           go-version: ^1.16.0
-      - name: Download build artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
-          name: build-artifact
-          path: dist
-      - name: Restore build artifact permissions
-        run: cd dist && setfacl --restore=permissions-backup.acl
-        continue-on-error: true
-      - name: Prepare Repository
-        run: mv dist .repo
+          node-version: 18.x
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
       - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
+        run: yarn install --check-files --frozen-lockfile
       - name: Create go artifact
-        run: cd .repo && npx projen package:go
+        run: npx projen compile && npx projen package:go
 
