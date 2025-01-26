@@ -40,7 +40,7 @@ export class CdkPrivateEndpoint extends cdk.Stack {
       id: awsPrivateEndpoint.ref,
     });
 
-    myPrivateEndpoint.addDependency(myPrivateEndpoint)
+    myPrivateEndpoint.addDependency(awsPrivateEndpoint)
   }
 
   getContextProps(): AtlasStackProps {
