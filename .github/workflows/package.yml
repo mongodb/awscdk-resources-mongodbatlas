@@ -63,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions: {}
     steps:
-      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b
+      - uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38
         with:
           python-version: 3.x
       - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
