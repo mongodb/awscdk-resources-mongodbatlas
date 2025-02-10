@@ -49,6 +49,21 @@ export interface CfnOrganizationProps {
   readonly awsSecretName: string;
 
   /**
+   * Disables automatic alert creation. When set to `true`, Atlas doesn't automatically create organization-level alerts. Defaults to `true` for new Atlas Organizations created with the provider to prevent infrastructure drift caused by creation of new alerts.
+   *
+   * @default true` for new Atlas Organizations created with the provider to prevent infrastructure drift caused by creation of new alerts.
+   * @schema CfnOrganizationProps#SkipDefaultAlertsSettings
+   */
+  readonly skipDefaultAlertsSettings?: boolean;
+
+  /**
+   * Flag that indicates whether this organization has access to generative AI features. This setting only applies to Atlas Commercial and defaults to `true`. With this setting on, Project Owners may be able to enable or disable individual AI features at the project level. To learn more, see https://www.mongodb.com/docs/generative-ai-faq/
+   *
+   * @schema CfnOrganizationProps#GenAIFeaturesEnabled
+   */
+  readonly genAiFeaturesEnabled?: boolean;
+
+  /**
    * Flag that indicates whether this organization has been deleted.
    *
    * @schema CfnOrganizationProps#IsDeleted
@@ -94,6 +109,8 @@ export function toJson_CfnOrganizationProps(
     OrgOwnerId: obj.orgOwnerId,
     Profile: obj.profile,
     AwsSecretName: obj.awsSecretName,
+    SkipDefaultAlertsSettings: obj.skipDefaultAlertsSettings,
+    GenAIFeaturesEnabled: obj.genAiFeaturesEnabled,
     IsDeleted: obj.isDeleted,
     ApiAccessListRequired: obj.apiAccessListRequired,
     MultiFactorAuthRequired: obj.multiFactorAuthRequired,

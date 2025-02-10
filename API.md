@@ -38635,10 +38635,12 @@ const cfnOrganizationProps: CfnOrganizationProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.apiAccessListRequired">apiAccessListRequired</a></code> | <code>boolean</code> | Flag that indicates whether to require API operations to originate from an IP Address added to the API access list for the specified organization. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.apiKey">apiKey</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiKey">ApiKey</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.federatedSettingsId">federatedSettingsId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the federation to link the newly created organization to. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.genAiFeaturesEnabled">genAiFeaturesEnabled</a></code> | <code>boolean</code> | Flag that indicates whether this organization has access to generative AI features. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.isDeleted">isDeleted</a></code> | <code>boolean</code> | Flag that indicates whether this organization has been deleted. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.multiFactorAuthRequired">multiFactorAuthRequired</a></code> | <code>boolean</code> | Flag that indicates whether to require users to set up Multi-Factor Authentication (MFA) before accessing the specified organization. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.restrictEmployeeAccess">restrictEmployeeAccess</a></code> | <code>boolean</code> | Flag that indicates whether to block MongoDB Support from accessing Atlas infrastructure for any deployment in the specified organization without explicit permission. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.skipDefaultAlertsSettings">skipDefaultAlertsSettings</a></code> | <code>boolean</code> | Disables automatic alert creation. |
 
 ---
 
@@ -38716,6 +38718,20 @@ If specified, the proposed Organization Owner of the new organization must have 
 
 ---
 
+##### `genAiFeaturesEnabled`<sup>Optional</sup> <a name="genAiFeaturesEnabled" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.genAiFeaturesEnabled"></a>
+
+```typescript
+public readonly genAiFeaturesEnabled: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether this organization has access to generative AI features.
+
+This setting only applies to Atlas Commercial and defaults to `true`. With this setting on, Project Owners may be able to enable or disable individual AI features at the project level. To learn more, see https://www.mongodb.com/docs/generative-ai-faq/
+
+---
+
 ##### `isDeleted`<sup>Optional</sup> <a name="isDeleted" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.isDeleted"></a>
 
 ```typescript
@@ -38765,6 +38781,21 @@ public readonly restrictEmployeeAccess: boolean;
 Flag that indicates whether to block MongoDB Support from accessing Atlas infrastructure for any deployment in the specified organization without explicit permission.
 
 Once this setting is turned on, you can grant MongoDB Support a 24-hour bypass access to the Atlas deployment to resolve support issues. To learn more, see: https://www.mongodb.com/docs/atlas/security-restrict-support-access/.
+
+---
+
+##### `skipDefaultAlertsSettings`<sup>Optional</sup> <a name="skipDefaultAlertsSettings" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.skipDefaultAlertsSettings"></a>
+
+```typescript
+public readonly skipDefaultAlertsSettings: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true` for new Atlas Organizations created with the provider to prevent infrastructure drift caused by creation of new alerts.
+
+Disables automatic alert creation.
+
+When set to `true`, Atlas doesn't automatically create organization-level alerts. Defaults to `true` for new Atlas Organizations created with the provider to prevent infrastructure drift caused by creation of new alerts.
 
 ---
 

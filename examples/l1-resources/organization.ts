@@ -29,8 +29,9 @@ export class CdkTestingStack extends cdk.Stack {
       apiKey: {
         roles: ["ORG_OWNER"],
         description: "test-cdk"
-      }
-
+      },
+      skipDefaultAlertsSettings: true,
+      genAiFeaturesEnabled: true
     });
   }
 
