@@ -16,7 +16,7 @@ export interface CfnCloudBackUpRestoreJobsProps {
   readonly projectId: string;
 
   /**
-   * Type of instance specified on the Instance Name serverless or cluster
+   * Type of instance specified on the Instance Name serverless or cluster. **WARNING:** `serverless` instance type is deprecated and will be removed in January 2026. For more details, see [Migrate your programmatic tools from M2, M5, or Serverless Instances to Flex Clusters](https://www.mongodb.com/docs/atlas/flex-migration/).
    *
    * @schema CfnCloudBackUpRestoreJobsProps#InstanceType
    */
@@ -144,7 +144,7 @@ export function toJson_CfnCloudBackUpRestoreJobsProps(
 /* eslint-enable max-len, quote-props */
 
 /**
- * Type of instance specified on the Instance Name serverless or cluster
+ * Type of instance specified on the Instance Name serverless or cluster. **WARNING:** `serverless` instance type is deprecated and will be removed in January 2026. For more details, see [Migrate your programmatic tools from M2, M5, or Serverless Instances to Flex Clusters](https://www.mongodb.com/docs/atlas/flex-migration/).
  *
  * @schema CfnCloudBackUpRestoreJobsPropsInstanceType
  */
