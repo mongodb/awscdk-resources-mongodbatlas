@@ -35569,6 +35569,8 @@ public readonly instanceType: CfnCloudBackUpRestoreJobsPropsInstanceType;
 
 Type of instance specified on the Instance Name serverless or cluster.
 
+**WARNING:** `serverless` instance type is deprecated and will be removed in January 2026. For more details, see [Migrate your programmatic tools from M2, M5, or Serverless Instances to Flex Clusters](https://www.mongodb.com/docs/atlas/flex-migration/).
+
 ---
 
 ##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.projectId"></a>
@@ -40182,7 +40184,9 @@ Default type is **search**.
 
 ### CfnServerlessInstanceProps <a name="CfnServerlessInstanceProps" id="awscdk-resources-mongodbatlas.CfnServerlessInstanceProps"></a>
 
-Returns, adds, edits, and removes serverless instances.
+**WARNING:** This resource is deprecated and will be removed in January 2026.
+
+For more details, see [Migrate your programmatic tools from M2, M5, or Serverless Instances to Flex Clusters](https://www.mongodb.com/docs/atlas/flex-migration/). Returns, adds, edits, and removes serverless instances.
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnServerlessInstanceProps.Initializer"></a>
 
@@ -40337,9 +40341,9 @@ If set to true, MongoDB Cloud won't delete the serverless instance. If set to fa
 
 ### CfnServerlessPrivateEndpointProps <a name="CfnServerlessPrivateEndpointProps" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps"></a>
 
-Returns, adds, edits, and removes private endpoints for serverless instances.
+**WARNING:** This resource is deprecated and will be removed in May 2025.
 
-To learn more, see the Atlas Administration API tab on the following tutorial.
+If you try to create a new ServerlessInstance, you will create a Flex cluster. As a result, you can't create ServerlessPrivateEndpoints for these new instances. For more details, see [Migrate your programmatic tools from M2, M5, or Serverless Instances to Flex Clusters](https://www.mongodb.com/docs/atlas/flex-migration/). Returns, adds, edits, and removes private endpoints for serverless instances. To learn more, see the Atlas Administration API tab on the following tutorial.
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.Initializer"></a>
 
@@ -47863,6 +47867,8 @@ pointInTime.
 ### CfnCloudBackUpRestoreJobsPropsInstanceType <a name="CfnCloudBackUpRestoreJobsPropsInstanceType" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsInstanceType"></a>
 
 Type of instance specified on the Instance Name serverless or cluster.
+
+**WARNING:** `serverless` instance type is deprecated and will be removed in January 2026. For more details, see [Migrate your programmatic tools from M2, M5, or Serverless Instances to Flex Clusters](https://www.mongodb.com/docs/atlas/flex-migration/).
 
 #### Members <a name="Members" id="Members"></a>
 
