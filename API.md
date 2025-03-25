@@ -41276,7 +41276,7 @@ An object where each field name is an event processor ID and each value is an ob
 
 For an example configuration object, see
 [Send Trigger Events to AWS
-EventBridge](https://www.mongodb.com/docs/realm/triggers/examples/send-events-aws-eventbridge#std-label-event_processor_example).
+EventBridge](https://www.mongodb.com/docs/atlas/app-services/triggers/aws-eventbridge/#std-label-event_processor_example).
 
 ---
 
@@ -42164,6 +42164,7 @@ const databaseConfig: DatabaseConfig = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.fullDocument">fullDocument</a></code> | <code>boolean</code> | If `true`, indicates that `UPDATE` change events should include the most current [majority-committed](https://www.mongodb.com/docs/manual/reference/read-concern-majority/) version of the modified document in the `fullDocument` field. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.fullDocumentBeforeChange">fullDocumentBeforeChange</a></code> | <code>boolean</code> | If true, indicates that `UPDATE` change events should include a snapshot of the modified document from immediately before the update was applied. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.match">match</a></code> | <code>string</code> | stringify version of a [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.maximumThroughput">maximumThroughput</a></code> | <code>boolean</code> | If `true`, the trigger will use the maximize throughput option (https://www.mongodb.com/docs/atlas/app-services/triggers/database-triggers/#std-label-triggers-maximum-throughput). |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.operationTypes">operationTypes</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfigOperationTypes">DatabaseConfigOperationTypes</a>[]</code> | The type(s) of MongoDB change event that the trigger listens for. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.project">project</a></code> | <code>string</code> | stringify version of a [$project](https://www.mongodb.com/docs/manual/reference/operator/aggregation/project/) expressions to limit the data included in each event. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.serviceId">serviceId</a></code> | <code>string</code> | The _id value of a linked MongoDB data source. |
@@ -42237,6 +42238,18 @@ public readonly match: string;
 - *Type:* string
 
 stringify version of a [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event.
+
+---
+
+##### `maximumThroughput`<sup>Optional</sup> <a name="maximumThroughput" id="awscdk-resources-mongodbatlas.DatabaseConfig.property.maximumThroughput"></a>
+
+```typescript
+public readonly maximumThroughput: boolean;
+```
+
+- *Type:* boolean
+
+If `true`, the trigger will use the maximize throughput option (https://www.mongodb.com/docs/atlas/app-services/triggers/database-triggers/#std-label-triggers-maximum-throughput).
 
 ---
 
