@@ -83,7 +83,7 @@ export interface CfnTriggerProps {
    * each value is an object that configures its corresponding
    * event processor. For an example configuration object, see
    * [Send Trigger Events to AWS
-   * EventBridge](https://www.mongodb.com/docs/realm/triggers/examples/send-events-aws-eventbridge#std-label-event_processor_example).
+   * EventBridge](https://www.mongodb.com/docs/atlas/app-services/triggers/aws-eventbridge/#std-label-event_processor_example).
    *
    * @schema CfnTriggerProps#EventProcessors
    */
@@ -231,6 +231,13 @@ export interface DatabaseConfig {
   readonly tolerateResumeErrors?: boolean;
 
   /**
+   * If `true`, the trigger will use the maximize throughput option (https://www.mongodb.com/docs/atlas/app-services/triggers/database-triggers/#std-label-triggers-maximum-throughput).
+   *
+   * @schema DatabaseConfig#MaximumThroughput
+   */
+  readonly maximumThroughput?: boolean;
+
+  /**
    * If `true`, event ordering is disabled and this Trigger
    * can process events in parallel. If `false`, event
    * ordering is enabled and the Trigger executes events
@@ -262,6 +269,7 @@ export function toJson_DatabaseConfig(
     FullDocumentBeforeChange: obj.fullDocumentBeforeChange,
     SkipCatchupEvents: obj.skipCatchupEvents,
     TolerateResumeErrors: obj.tolerateResumeErrors,
+    MaximumThroughput: obj.maximumThroughput,
     Unordered: obj.unordered,
   };
   // filter undefined values

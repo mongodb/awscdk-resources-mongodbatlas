@@ -35569,6 +35569,8 @@ public readonly instanceType: CfnCloudBackUpRestoreJobsPropsInstanceType;
 
 Type of instance specified on the Instance Name serverless or cluster.
 
+**WARNING:** `serverless` instance type is deprecated and will be removed in January 2026. For more details, see [Migrate your programmatic tools from M2, M5, or Serverless Instances to Flex Clusters](https://www.mongodb.com/docs/atlas/flex-migration/).
+
 ---
 
 ##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsProps.property.projectId"></a>
@@ -38635,10 +38637,12 @@ const cfnOrganizationProps: CfnOrganizationProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.apiAccessListRequired">apiAccessListRequired</a></code> | <code>boolean</code> | Flag that indicates whether to require API operations to originate from an IP Address added to the API access list for the specified organization. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.apiKey">apiKey</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiKey">ApiKey</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.federatedSettingsId">federatedSettingsId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the federation to link the newly created organization to. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.genAiFeaturesEnabled">genAiFeaturesEnabled</a></code> | <code>boolean</code> | Flag that indicates whether this organization has access to generative AI features. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.isDeleted">isDeleted</a></code> | <code>boolean</code> | Flag that indicates whether this organization has been deleted. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.multiFactorAuthRequired">multiFactorAuthRequired</a></code> | <code>boolean</code> | Flag that indicates whether to require users to set up Multi-Factor Authentication (MFA) before accessing the specified organization. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.restrictEmployeeAccess">restrictEmployeeAccess</a></code> | <code>boolean</code> | Flag that indicates whether to block MongoDB Support from accessing Atlas infrastructure for any deployment in the specified organization without explicit permission. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.skipDefaultAlertsSettings">skipDefaultAlertsSettings</a></code> | <code>boolean</code> | Disables automatic alert creation. |
 
 ---
 
@@ -38716,6 +38720,20 @@ If specified, the proposed Organization Owner of the new organization must have 
 
 ---
 
+##### `genAiFeaturesEnabled`<sup>Optional</sup> <a name="genAiFeaturesEnabled" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.genAiFeaturesEnabled"></a>
+
+```typescript
+public readonly genAiFeaturesEnabled: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether this organization has access to generative AI features.
+
+This setting only applies to Atlas Commercial and defaults to `true`. With this setting on, Project Owners may be able to enable or disable individual AI features at the project level. To learn more, see https://www.mongodb.com/docs/generative-ai-faq/
+
+---
+
 ##### `isDeleted`<sup>Optional</sup> <a name="isDeleted" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.isDeleted"></a>
 
 ```typescript
@@ -38765,6 +38783,21 @@ public readonly restrictEmployeeAccess: boolean;
 Flag that indicates whether to block MongoDB Support from accessing Atlas infrastructure for any deployment in the specified organization without explicit permission.
 
 Once this setting is turned on, you can grant MongoDB Support a 24-hour bypass access to the Atlas deployment to resolve support issues. To learn more, see: https://www.mongodb.com/docs/atlas/security-restrict-support-access/.
+
+---
+
+##### `skipDefaultAlertsSettings`<sup>Optional</sup> <a name="skipDefaultAlertsSettings" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.skipDefaultAlertsSettings"></a>
+
+```typescript
+public readonly skipDefaultAlertsSettings: boolean;
+```
+
+- *Type:* boolean
+- *Default:* true` for new Atlas Organizations created with the provider to prevent infrastructure drift caused by creation of new alerts.
+
+Disables automatic alert creation.
+
+When set to `true`, Atlas doesn't automatically create organization-level alerts. Defaults to `true` for new Atlas Organizations created with the provider to prevent infrastructure drift caused by creation of new alerts.
 
 ---
 
@@ -40182,7 +40215,9 @@ Default type is **search**.
 
 ### CfnServerlessInstanceProps <a name="CfnServerlessInstanceProps" id="awscdk-resources-mongodbatlas.CfnServerlessInstanceProps"></a>
 
-Returns, adds, edits, and removes serverless instances.
+**WARNING:** This resource is deprecated and will be removed in January 2026.
+
+For more details, see [Migrate your programmatic tools from M2, M5, or Serverless Instances to Flex Clusters](https://www.mongodb.com/docs/atlas/flex-migration/). Returns, adds, edits, and removes serverless instances.
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnServerlessInstanceProps.Initializer"></a>
 
@@ -40337,9 +40372,9 @@ If set to true, MongoDB Cloud won't delete the serverless instance. If set to fa
 
 ### CfnServerlessPrivateEndpointProps <a name="CfnServerlessPrivateEndpointProps" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps"></a>
 
-Returns, adds, edits, and removes private endpoints for serverless instances.
+**WARNING:** This resource is deprecated and will be removed in May 2025.
 
-To learn more, see the Atlas Administration API tab on the following tutorial.
+If you try to create a new ServerlessInstance, you will create a Flex cluster. As a result, you can't create ServerlessPrivateEndpoints for these new instances. For more details, see [Migrate your programmatic tools from M2, M5, or Serverless Instances to Flex Clusters](https://www.mongodb.com/docs/atlas/flex-migration/). Returns, adds, edits, and removes private endpoints for serverless instances. To learn more, see the Atlas Administration API tab on the following tutorial.
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpointProps.Initializer"></a>
 
@@ -41241,7 +41276,7 @@ An object where each field name is an event processor ID and each value is an ob
 
 For an example configuration object, see
 [Send Trigger Events to AWS
-EventBridge](https://www.mongodb.com/docs/realm/triggers/examples/send-events-aws-eventbridge#std-label-event_processor_example).
+EventBridge](https://www.mongodb.com/docs/atlas/app-services/triggers/aws-eventbridge/#std-label-event_processor_example).
 
 ---
 
@@ -42129,6 +42164,7 @@ const databaseConfig: DatabaseConfig = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.fullDocument">fullDocument</a></code> | <code>boolean</code> | If `true`, indicates that `UPDATE` change events should include the most current [majority-committed](https://www.mongodb.com/docs/manual/reference/read-concern-majority/) version of the modified document in the `fullDocument` field. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.fullDocumentBeforeChange">fullDocumentBeforeChange</a></code> | <code>boolean</code> | If true, indicates that `UPDATE` change events should include a snapshot of the modified document from immediately before the update was applied. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.match">match</a></code> | <code>string</code> | stringify version of a [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.maximumThroughput">maximumThroughput</a></code> | <code>boolean</code> | If `true`, the trigger will use the maximize throughput option (https://www.mongodb.com/docs/atlas/app-services/triggers/database-triggers/#std-label-triggers-maximum-throughput). |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.operationTypes">operationTypes</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfigOperationTypes">DatabaseConfigOperationTypes</a>[]</code> | The type(s) of MongoDB change event that the trigger listens for. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.project">project</a></code> | <code>string</code> | stringify version of a [$project](https://www.mongodb.com/docs/manual/reference/operator/aggregation/project/) expressions to limit the data included in each event. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatabaseConfig.property.serviceId">serviceId</a></code> | <code>string</code> | The _id value of a linked MongoDB data source. |
@@ -42202,6 +42238,18 @@ public readonly match: string;
 - *Type:* string
 
 stringify version of a [$match](https://www.mongodb.com/docs/manual/reference/operator/aggregation/match) expression filters change events. The trigger will only fire if the expression evaluates to true for a given change event.
+
+---
+
+##### `maximumThroughput`<sup>Optional</sup> <a name="maximumThroughput" id="awscdk-resources-mongodbatlas.DatabaseConfig.property.maximumThroughput"></a>
+
+```typescript
+public readonly maximumThroughput: boolean;
+```
+
+- *Type:* boolean
+
+If `true`, the trigger will use the maximize throughput option (https://www.mongodb.com/docs/atlas/app-services/triggers/database-triggers/#std-label-triggers-maximum-throughput).
 
 ---
 
@@ -47863,6 +47911,8 @@ pointInTime.
 ### CfnCloudBackUpRestoreJobsPropsInstanceType <a name="CfnCloudBackUpRestoreJobsPropsInstanceType" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobsPropsInstanceType"></a>
 
 Type of instance specified on the Instance Name serverless or cluster.
+
+**WARNING:** `serverless` instance type is deprecated and will be removed in January 2026. For more details, see [Migrate your programmatic tools from M2, M5, or Serverless Instances to Flex Clusters](https://www.mongodb.com/docs/atlas/flex-migration/).
 
 #### Members <a name="Members" id="Members"></a>
 
