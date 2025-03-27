@@ -213,10 +213,10 @@ jobs:
       - name: Copy version file
         run: |
           mkdir -p .repo/dist
-          cp dist/version.txt .repo/
+          cp ./dist/version.txt .repo/
       - name: Create dotnet artifact
         run: |
-          VERSION=$(cat dist/version.txt)
+          VERSION=$(cat ./dist/version.txt)
           echo "Building package with version: $VERSION"
           cd .repo 
           npx projen compile 
@@ -226,16 +226,16 @@ jobs:
           echo "Contents of .repo/dist/dotnet:"
           ls -la .repo/dist/dotnet/
       - name: Collect dotnet Artifact
-        run: mv .repo/dist/dotnet dist/dotnet
+        run: mv .repo/dist/dotnet ./dist/dotnet
       - name: Debug final dist/dotnet contents
         run: |
           echo "Contents of dist/dotnet:"
-          ls -la dist/dotnet/
+          ls -la ./dist/dotnet/
       - name: Extract Version
         id: extract-version
         run: |
-          echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
-          echo "Version from version.txt: $(cat dist/version.txt)"
+          echo "VERSION=$(cat ./dist/version.txt)" >> "${GITHUB_OUTPUT}"
+          echo "Version from version.txt: $(cat ./dist/version.txt)"
       # - name: Log in to MongoDB Docker registry
       #   uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567
       #   with:
