@@ -214,7 +214,15 @@ jobs:
         run: |
           VERSION=$(cat dist/version.txt)
           echo "Building package with version: $VERSION"
-          cd .repo && npx projen compile && PACKAGE_VERSION=$VERSION npx projen package:dotnet
+          cd .repo 
+          # Make version available to projen and dotnet
+          export PACKAGE_VERSION=$VERSION
+          export VERSION=$VERSION
+          npx projen compile 
+          npx projen package:dotnet
+          # Verify the generated package version
+          echo "Generated package version:"
+          ls -la dist/dotnet/MongoDB.AWSCDKResourcesMongoDBAtlas.*.nupkg
       - name: Debug .repo/dist/dotnet contents
         run: |
           echo "Contents of .repo/dist/dotnet:"
