@@ -216,6 +216,8 @@ jobs:
           cd .repo
           ls -la
           cat package.json
+          npx projen bump
+          cat package.json
           npx projen compile
           ls -la
           npx projen package:dotnet
