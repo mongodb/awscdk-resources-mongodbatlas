@@ -210,27 +210,19 @@ jobs:
           path: .repo
       - name: Install Dependencies
         run: cd .repo && yarn install --check-files --frozen-lockfile
-      - name: Copy version file
-        run: |
-          mkdir -p .repo/dist
-          cp ./dist/version.txt .repo/
       - name: Create dotnet artifact
         run: |
-          VERSION=$(cat ./dist/version.txt)
-          echo "Building package with version: $VERSION"
-          cd .repo 
-          npx projen compile 
-          npx projen package:dotnet
+          run: cd .repo && npx projen bump && npx projen compile && npx projen package:dotnet && npx projen unbump
       - name: Debug .repo/dist/dotnet contents
         run: |
           echo "Contents of .repo/dist/dotnet:"
           ls -la .repo/dist/dotnet/
       - name: Collect dotnet Artifact
-        run: mv .repo/dist/dotnet ./dist/dotnet
+        run: mv .repo/dist/dotnet dist/dotnet
       - name: Debug final dist/dotnet contents
         run: |
           echo "Contents of dist/dotnet:"
-          ls -la ./dist/dotnet/
+          ls -la dist/dotnet/
       - name: Extract Version
         id: extract-version
         run: |
