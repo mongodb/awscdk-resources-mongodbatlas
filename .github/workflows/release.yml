@@ -211,7 +211,10 @@ jobs:
       - name: Install Dependencies
         run: cd .repo && yarn install --check-files --frozen-lockfile
       - name: Create dotnet artifact
-        run: cd .repo && npx projen compile && npx projen package:dotnet
+        run: |
+          VERSION=$(cat dist/version.txt)
+          echo "Building package with version: $VERSION"
+          cd .repo && npx projen compile && PACKAGE_VERSION=$VERSION npx projen package:dotnet
       - name: Debug .repo/dist/dotnet contents
         run: |
           echo "Contents of .repo/dist/dotnet:"
