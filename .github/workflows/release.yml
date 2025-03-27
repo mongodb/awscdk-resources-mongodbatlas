@@ -210,6 +210,10 @@ jobs:
           path: .repo
       - name: Install Dependencies
         run: cd .repo && yarn install --check-files --frozen-lockfile
+      - name: Copy version file
+        run: |
+          mkdir -p .repo/dist
+          cp dist/version.txt .repo/dist/
       - name: Bump version
         run: |
           cd .repo
