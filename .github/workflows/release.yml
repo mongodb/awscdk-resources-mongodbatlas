@@ -210,19 +210,17 @@ jobs:
           path: .repo
       - name: Install Dependencies
         run: cd .repo && yarn install --check-files --frozen-lockfile
+      - name: Bump version
+        run: |
+          cd .repo
+          npx projen bump
       - name: Create dotnet artifact
         run: |
           VERSION=$(cat dist/version.txt)
           echo "Building package with version: $VERSION"
           cd .repo 
-          # Make version available to projen and dotnet
-          export PACKAGE_VERSION=$VERSION
-          export VERSION=$VERSION
           npx projen compile 
           npx projen package:dotnet
-          # Verify the generated package version
-          echo "Generated package version:"
-          ls -la dist/dotnet/MongoDB.AWSCDKResourcesMongoDBAtlas.*.nupkg
       - name: Debug .repo/dist/dotnet contents
         run: |
           echo "Contents of .repo/dist/dotnet:"
