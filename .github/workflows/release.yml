@@ -213,38 +213,16 @@ jobs:
         run: cd .repo && yarn install --check-files --frozen-lockfile
       - name: Create dotnet artifact
         run: |
-          ls -la
           cd .repo
-          ls -la
-          cat package.json
-          echo "Git config before bump:"
-          git config --list
-          echo "Git log before bump:"
-          git log --oneline | head -n 5
-          echo "Running bump command..."
           npx projen bump
-          echo "Git log after bump:"
-          git log --oneline | head -n 5
-          echo "Package.json after bump:"
-          cat package.json
           npx projen compile
-          ls -la
           npx projen package:dotnet
-      - name: Debug .repo/dist/dotnet contents
-        run: |
-          echo "Contents of .repo/dist/dotnet:"
-          ls -la .repo/dist/dotnet/
       - name: Collect dotnet Artifact
         run: mv .repo/dist/dotnet dist/dotnet
-      - name: Debug final dist/dotnet contents
-        run: |
-          echo "Contents of dist/dotnet:"
-          ls -la dist/dotnet/
       - name: Extract Version
         id: extract-version
         run: |
           echo "VERSION=$(cat ./dist/version.txt)" >> "${GITHUB_OUTPUT}"
-          echo "Version from version.txt: $(cat ./dist/version.txt)"
       # - name: Log in to MongoDB Docker registry
       #   uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567
       #   with:
