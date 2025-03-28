@@ -216,7 +216,15 @@ jobs:
           cd .repo
           ls -la
           cat package.json
+          echo "Git config before bump:"
+          git config --list
+          echo "Git log before bump:"
+          git log --oneline | head -n 5
+          echo "Running bump command..."
           npx projen bump
+          echo "Git log after bump:"
+          git log --oneline | head -n 5
+          echo "Package.json after bump:"
           cat package.json
           npx projen compile
           ls -la
