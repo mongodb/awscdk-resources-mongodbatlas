@@ -208,10 +208,15 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           path: .repo
+          fetch-depth: 0
       - name: Install Dependencies
         run: cd .repo && yarn install --check-files --frozen-lockfile
       - name: Create dotnet artifact
-        run: cd .repo && npx projen compile && npx projen package:dotnet
+        run: |
+          cd .repo
+          npx projen bump
+          npx projen compile
+          npx projen package:dotnet
       - name: Collect dotnet Artifact
         run: mv .repo/dist/dotnet dist/dotnet
       - name: Extract Version
