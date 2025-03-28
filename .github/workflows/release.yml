@@ -193,7 +193,7 @@ jobs:
       - uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e
         with:
           node-version: 18.x
-      - uses: actions/setup-dotnet@87b7050bc53ea08284295505d98d2aa94301e852
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
         with:
           dotnet-version: 9.0.x
       - name: Download build artifacts
