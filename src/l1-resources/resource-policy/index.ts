@@ -72,8 +72,8 @@ export function toJson_CfnResourcePolicyProps(
     CreatedByUser: toJson_ApiAtlasUserMetadata(obj.createdByUser),
     LastUpdatedByUser: toJson_ApiAtlasUserMetadata(obj.lastUpdatedByUser),
     Name: obj.name,
-    OrgId: obj.orgId,
     Description: obj.description,
+    OrgId: obj.orgId,
     Policies: obj.policies?.map((y) => toJson_ApiAtlasPolicy(y)),
     Profile: obj.profile,
   };
