@@ -30,6 +30,13 @@ export interface CfnResourcePolicyProps {
   readonly name: string;
 
   /**
+   * Description of the Atlas resource policy.
+   *
+   * @schema CfnResourcePolicyProps#Description
+   */
+  readonly description?: string;
+
+  /**
    * Unique 24-hexadecimal digit string that identifies the organization that contains your projects. Use the [/orgs](#tag/Organizations/operation/listOrganizations) endpoint to retrieve all organizations to which the authenticated user has access.
    *
    * @schema CfnResourcePolicyProps#OrgId
@@ -66,6 +73,7 @@ export function toJson_CfnResourcePolicyProps(
     LastUpdatedByUser: toJson_ApiAtlasUserMetadata(obj.lastUpdatedByUser),
     Name: obj.name,
     OrgId: obj.orgId,
+    Description: obj.description,
     Policies: obj.policies?.map((y) => toJson_ApiAtlasPolicy(y)),
     Profile: obj.profile,
   };
