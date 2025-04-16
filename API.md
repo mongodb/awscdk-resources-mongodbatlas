@@ -39852,6 +39852,7 @@ const cfnResourcePolicyProps: CfnResourcePolicyProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.orgId">orgId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the organization that contains your projects. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.policies">policies</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasPolicy">ApiAtlasPolicy</a>[]</code> | List of policies that make up the atlas resource policy. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.createdByUser">createdByUser</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasUserMetadata">ApiAtlasUserMetadata</a></code> | The user that last updated the atlas resource policy. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.description">description</a></code> | <code>string</code> | Description of the Atlas resource policy. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.lastUpdatedByUser">lastUpdatedByUser</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasUserMetadata">ApiAtlasUserMetadata</a></code> | The user that last updated the atlas resource policy. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 
@@ -39904,6 +39905,18 @@ public readonly createdByUser: ApiAtlasUserMetadata;
 - *Type:* <a href="#awscdk-resources-mongodbatlas.ApiAtlasUserMetadata">ApiAtlasUserMetadata</a>
 
 The user that last updated the atlas resource policy.
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+Description of the Atlas resource policy.
 
 ---
 
