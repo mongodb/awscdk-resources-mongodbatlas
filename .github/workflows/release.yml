@@ -7,7 +7,7 @@ jobs:
       contents: write
       issues: write
     env:
-      CI: "0"
+      CI: "true"
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -43,7 +43,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: release
-        run: npx projen release
+        run: |
+          unset CI
+          npx projen release
       - name: Backup artifact permissions
         run: cd dist && getfacl -R . > permissions-backup.acl
         continue-on-error: true
