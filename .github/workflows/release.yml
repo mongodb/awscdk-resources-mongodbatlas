@@ -6,8 +6,8 @@ jobs:
     permissions:
       contents: write
       issues: write
-    # env:
-    #   CI: "true"
+    env:
+      CI: "0"
     steps:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
