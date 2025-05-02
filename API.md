@@ -36900,6 +36900,7 @@ const cfnDatabaseUserProps: CfnDatabaseUserProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.username">username</a></code> | <code>string</code> | Human-readable label that represents the user that authenticates to MongoDB. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.awsiamType">awsiamType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsAwsiamType">CfnDatabaseUserPropsAwsiamType</a></code> | Human-readable label that indicates whether the new database user authenticates with the Amazon Web Services (AWS) Identity and Access Management (IAM) credentials associated with the user or the user's role. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.deleteAfterDate">deleteAfterDate</a></code> | <code>string</code> | Date and time when MongoDB Cloud deletes the user. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.description">description</a></code> | <code>string</code> | Description of this database user. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.labels">labels</a></code> | <code><a href="#awscdk-resources-mongodbatlas.LabelDefinition">LabelDefinition</a>[]</code> | List that contains the key-value pairs for tagging and categorizing the MongoDB database user. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.ldapAuthType">ldapAuthType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsLdapAuthType">CfnDatabaseUserPropsLdapAuthType</a></code> | Method by which the provided username is authenticated. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.password">password</a></code> | <code>string</code> | The user’s password. |
@@ -36986,6 +36987,18 @@ public readonly deleteAfterDate: string;
 Date and time when MongoDB Cloud deletes the user.
 
 This parameter expresses its value in the ISO 8601 timestamp format in UTC and can include the time zone designation. You must specify a future date that falls within one week of making the Application Programming Interface (API) request.
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+Description of this database user.
 
 ---
 
@@ -45630,7 +45643,7 @@ public readonly collection: string;
 
 Human-readable label that identifies the collection on which you grant the action to one MongoDB user.
 
-If you don't set this parameter, you grant the action to all collections in the database specified in the actions.resources.db parameter. If you set "actions.resources.cluster" : true, MongoDB Cloud ignores this parameter.
+If you don't set this parameter, you grant the action to all collections in the database specified in the actions.resources.db parameter. If you set "actions.resources.cluster" : true, MongoDB Cloud ignores this parameter. Use the empty string ("") to allow an action on all collections.
 
 ---
 
@@ -45644,7 +45657,7 @@ public readonly db: string;
 
 Human-readable label that identifies the database on which you grant the action to one MongoDB user.
 
-If you set "actions.resources.cluster" : true, MongoDB Cloud ignores this parameter.
+If you set "actions.resources.cluster" : true, MongoDB Cloud ignores this parameter. Use the empty string ("") to allow an action on all databases.
 
 ---
 
