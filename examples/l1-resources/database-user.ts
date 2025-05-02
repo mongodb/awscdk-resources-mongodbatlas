@@ -10,6 +10,7 @@ interface AtlasStackProps {
   readonly dbName: string;
   readonly username: string;
   readonly password: string;
+  readonly description: string;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -23,6 +24,7 @@ export class CdkTestingStack extends cdk.Stack {
       username: atlasProps.username,
       password: atlasProps.password,
       databaseName: atlasProps.dbName,
+      description: atlasProps.description,
       roles: [ 
         {
           roleName: atlasProps.roleName,
@@ -43,6 +45,7 @@ export class CdkTestingStack extends cdk.Stack {
     const dbName = this.node.tryGetContext('dbName');
     const username = this.node.tryGetContext('username');
     const password = this.node.tryGetContext('password');
+    const description = this.node.tryGetContext('userDescription');
 
 
     return {
@@ -51,7 +54,8 @@ export class CdkTestingStack extends cdk.Stack {
       roleName,
       dbName,
       username,
-      password
+      password,
+      description
     }
   }
 }
