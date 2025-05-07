@@ -90,7 +90,7 @@ jobs:
       contents: read
       issues: write
     steps:
-      - uses: actions/setup-java@7a6d8a8234af8eb26422e24e3006232cccaa061b
+      - uses: actions/setup-java@c5195efecf7bdfc987ee8bae7a71cb8b11521c00
         with:
           distribution: temurin
           java-version: 11.x
