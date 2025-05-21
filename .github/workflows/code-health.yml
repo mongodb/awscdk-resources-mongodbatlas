@@ -59,9 +59,10 @@ jobs:
       - uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e
         with:
           node-version: 18.x
-      - run: yarn install --check-files --dev
       - run: npm install -g cdk-import
       - run: ./scripts/cdk-all.sh
+      - run: yarn install --check-files
+      - run: npx projen eslint -v
       - run: npx projen build
       - name: Find mutations
         id: self_mutation
