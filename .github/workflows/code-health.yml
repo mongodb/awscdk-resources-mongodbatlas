@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e
         with:
-          node-version: 18.x
+          node-version: "18.18.2"
       - name: Install dependencies
         run: yarn install --check-files
       - name: compile
