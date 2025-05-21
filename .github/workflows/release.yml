@@ -1,4 +1,4 @@
-name: Release (Remember manual steps)
+name: Release (Requires manual steps to take)
 on: workflow_dispatch
 jobs:
   release:
