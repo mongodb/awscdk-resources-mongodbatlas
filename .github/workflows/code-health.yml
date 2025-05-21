@@ -61,7 +61,7 @@ jobs:
           node-version: 18.x
       - run: npm install -g cdk-import
       - run: ./scripts/cdk-all.sh
-      - run: yarn install --check-files
+      - run: yarn install --check-files --frozen-lockfile
       - run: npx projen eslint -v
       - run: npx projen build
       - name: Find mutations
