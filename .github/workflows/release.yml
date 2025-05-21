@@ -44,7 +44,7 @@ jobs:
         run: yarn install --check-files --frozen-lockfile
       - name: release
         run: |
-          unset CI
+          unset CI # enable full package-all https://github.com/mongodb/awscdk-resources-mongodbatlas/blob/main/.projen/tasks.json#L157-L170
           npx projen release
       - name: Backup artifact permissions
         run: cd dist && getfacl -R . > permissions-backup.acl
