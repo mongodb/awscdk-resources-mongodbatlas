@@ -129,4 +129,5 @@ project.tasks.tryFind("docgen").updateStep(0, {
   exec: "jsii-docgen -o API.md -r",
   say: "Generating API.md, using -r to include readme content",
 });
+project.package.addDevDeps("eslint@^8"); // https://github.com/projen/projen/issues/3950
 project.synth();
