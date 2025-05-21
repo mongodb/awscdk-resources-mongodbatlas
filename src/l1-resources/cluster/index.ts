@@ -231,6 +231,20 @@ export interface ProcessArgs {
   readonly minimumEnabledTlsProtocol?: string;
 
   /**
+   * The TLS cipher suite configuration mode. Valid values include `CUSTOM` or `DEFAULT`. The `DEFAULT` mode uses the default cipher suites. The `CUSTOM` mode allows you to specify custom cipher suites for both TLS 1.2 and TLS 1.3. To unset, this should be set back to `DEFAULT`.
+   *
+   * @schema processArgs#TlsCipherConfigMode
+   */
+  readonly tlsCipherConfigMode?: string;
+
+  /**
+   * The custom OpenSSL cipher suite list for TLS 1.2. This field is only valid when `tls_cipher_config_mode` is set to `CUSTOM`.
+   *
+   * @schema processArgs#CustomOpensslCipherConfigTls12
+   */
+  readonly customOpensslCipherConfigTls12?: string[];
+
+  /**
    * Flag that indicates whether the cluster disables executing any query that requires a collection scan to return results.
    *
    * @schema processArgs#NoTableScan
@@ -289,6 +303,10 @@ export function toJson_ProcessArgs(
     FailIndexKeyTooLong: obj.failIndexKeyTooLong,
     JavascriptEnabled: obj.javascriptEnabled,
     MinimumEnabledTLSProtocol: obj.minimumEnabledTlsProtocol,
+    TlsCipherConfigMode: obj.tlsCipherConfigMode,
+    CustomOpensslCipherConfigTls12: obj.customOpensslCipherConfigTls12?.map(
+      (y) => y
+    ),
     NoTableScan: obj.noTableScan,
     OplogSizeMB: obj.oplogSizeMb,
     SampleSizeBIConnector: obj.sampleSizeBiConnector,
