@@ -3,7 +3,7 @@
 
 ## Stable release
 
-Stable releases are managed by the [Release GitHub Action](https://github.com/mongodb/awscdk-resources-mongodbatlas/actions/workflows/release.yml). You can release a new CDK version by manually trigger the action ([REMEMBER Manual Steps Below](#manual-steps)).
+Stable releases are managed by the [Release GitHub Action](https://github.com/mongodb/awscdk-resources-mongodbatlas/actions/workflows/release.yml). You can release a new CDK version by manually triggering the action ([*MAKE SURE TO FOLLOW MANUAL STEPS BELOW*](#manual-steps)).
 
 ![Screenshot 2023-04-20 at 10 35 11](https://user-images.githubusercontent.com/5663078/233325734-0f469045-f91b-436c-8dd5-19d1e8f24c57.png)
 
@@ -17,7 +17,7 @@ Also, to ensure no silent errors, look for the specific `vX.Y.Z` language releas
 - [Javascript](https://www.npmjs.com/package/awscdk-resources-mongodbatlas?activeTab=versions)
 - [Java](https://central.sonatype.com/artifact/org.mongodb/awscdk-resources-mongodbatlas/versions)
 - [Python](https://pypi.org/project/awscdk-resources-mongodbatlas/#history)
-- [Golang](https://github.com/mongodb/awscdk-resources-mongodbatlas-go/releases)
+- [Golang (after the manual release above)](https://github.com/mongodb/awscdk-resources-mongodbatlas-go/releases)
 - [Nuget](https://www.nuget.org/packages/MongoDB.AWSCDKResourcesMongoDBAtlas#versions-body-tab)
 
 ## Versioning
