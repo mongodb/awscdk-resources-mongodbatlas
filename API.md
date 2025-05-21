@@ -45045,6 +45045,7 @@ const processArgs: ProcessArgs = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.customOpensslCipherConfigTls12">customOpensslCipherConfigTls12</a></code> | <code>string[]</code> | The custom OpenSSL cipher suite list for TLS 1.2. This field is only valid when `tls_cipher_config_mode` is set to `CUSTOM`. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.defaultReadConcern">defaultReadConcern</a></code> | <code>string</code> | Default level of acknowledgment requested from MongoDB for read operations set for this cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.defaultWriteConcern">defaultWriteConcern</a></code> | <code>string</code> | Default level of acknowledgment requested from MongoDB for write operations set for this cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.failIndexKeyTooLong">failIndexKeyTooLong</a></code> | <code>boolean</code> | Flag that indicates whether you can insert or update documents where all indexed entries don't exceed 1024 bytes. |
@@ -45055,7 +45056,20 @@ const processArgs: ProcessArgs = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.oplogSizeMb">oplogSizeMb</a></code> | <code>number</code> | Storage limit of cluster's oplog expressed in megabytes. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.sampleRefreshIntervalBiConnector">sampleRefreshIntervalBiConnector</a></code> | <code>number</code> | Number of documents per database to sample when gathering schema information. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.sampleSizeBiConnector">sampleSizeBiConnector</a></code> | <code>number</code> | Interval in seconds at which the mongosqld process re-samples data to create its relational schema. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.tlsCipherConfigMode">tlsCipherConfigMode</a></code> | <code>string</code> | The TLS cipher suite configuration mode. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.transactionLifetimeLimitSeconds">transactionLifetimeLimitSeconds</a></code> | <code>number</code> | Lifetime, in seconds, of multi-document transactions. |
+
+---
+
+##### `customOpensslCipherConfigTls12`<sup>Optional</sup> <a name="customOpensslCipherConfigTls12" id="awscdk-resources-mongodbatlas.ProcessArgs.property.customOpensslCipherConfigTls12"></a>
+
+```typescript
+public readonly customOpensslCipherConfigTls12: string[];
+```
+
+- *Type:* string[]
+
+The custom OpenSSL cipher suite list for TLS 1.2. This field is only valid when `tls_cipher_config_mode` is set to `CUSTOM`.
 
 ---
 
@@ -45184,6 +45198,20 @@ public readonly sampleSizeBiConnector: number;
 - *Type:* number
 
 Interval in seconds at which the mongosqld process re-samples data to create its relational schema.
+
+---
+
+##### `tlsCipherConfigMode`<sup>Optional</sup> <a name="tlsCipherConfigMode" id="awscdk-resources-mongodbatlas.ProcessArgs.property.tlsCipherConfigMode"></a>
+
+```typescript
+public readonly tlsCipherConfigMode: string;
+```
+
+- *Type:* string
+
+The TLS cipher suite configuration mode.
+
+Valid values include `CUSTOM` or `DEFAULT`. The `DEFAULT` mode uses the default cipher suites. The `CUSTOM` mode allows you to specify custom cipher suites for both TLS 1.2 and TLS 1.3. To unset, this should be set back to `DEFAULT`.
 
 ---
 
