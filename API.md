@@ -36900,6 +36900,7 @@ const cfnDatabaseUserProps: CfnDatabaseUserProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.username">username</a></code> | <code>string</code> | Human-readable label that represents the user that authenticates to MongoDB. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.awsiamType">awsiamType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsAwsiamType">CfnDatabaseUserPropsAwsiamType</a></code> | Human-readable label that indicates whether the new database user authenticates with the Amazon Web Services (AWS) Identity and Access Management (IAM) credentials associated with the user or the user's role. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.deleteAfterDate">deleteAfterDate</a></code> | <code>string</code> | Date and time when MongoDB Cloud deletes the user. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.description">description</a></code> | <code>string</code> | Description of this database user. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.labels">labels</a></code> | <code><a href="#awscdk-resources-mongodbatlas.LabelDefinition">LabelDefinition</a>[]</code> | List that contains the key-value pairs for tagging and categorizing the MongoDB database user. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.ldapAuthType">ldapAuthType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsLdapAuthType">CfnDatabaseUserPropsLdapAuthType</a></code> | Method by which the provided username is authenticated. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.password">password</a></code> | <code>string</code> | The user’s password. |
@@ -36986,6 +36987,18 @@ public readonly deleteAfterDate: string;
 Date and time when MongoDB Cloud deletes the user.
 
 This parameter expresses its value in the ISO 8601 timestamp format in UTC and can include the time zone designation. You must specify a future date that falls within one week of making the Application Programming Interface (API) request.
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+Description of this database user.
 
 ---
 
@@ -39852,6 +39865,7 @@ const cfnResourcePolicyProps: CfnResourcePolicyProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.orgId">orgId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the organization that contains your projects. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.policies">policies</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasPolicy">ApiAtlasPolicy</a>[]</code> | List of policies that make up the atlas resource policy. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.createdByUser">createdByUser</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasUserMetadata">ApiAtlasUserMetadata</a></code> | The user that last updated the atlas resource policy. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.description">description</a></code> | <code>string</code> | Description of the Atlas resource policy. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.lastUpdatedByUser">lastUpdatedByUser</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasUserMetadata">ApiAtlasUserMetadata</a></code> | The user that last updated the atlas resource policy. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 
@@ -39904,6 +39918,18 @@ public readonly createdByUser: ApiAtlasUserMetadata;
 - *Type:* <a href="#awscdk-resources-mongodbatlas.ApiAtlasUserMetadata">ApiAtlasUserMetadata</a>
 
 The user that last updated the atlas resource policy.
+
+---
+
+##### `description`<sup>Optional</sup> <a name="description" id="awscdk-resources-mongodbatlas.CfnResourcePolicyProps.property.description"></a>
+
+```typescript
+public readonly description: string;
+```
+
+- *Type:* string
+
+Description of the Atlas resource policy.
 
 ---
 
@@ -45019,6 +45045,7 @@ const processArgs: ProcessArgs = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.customOpensslCipherConfigTls12">customOpensslCipherConfigTls12</a></code> | <code>string[]</code> | The custom OpenSSL cipher suite list for TLS 1.2. This field is only valid when `tls_cipher_config_mode` is set to `CUSTOM`. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.defaultReadConcern">defaultReadConcern</a></code> | <code>string</code> | Default level of acknowledgment requested from MongoDB for read operations set for this cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.defaultWriteConcern">defaultWriteConcern</a></code> | <code>string</code> | Default level of acknowledgment requested from MongoDB for write operations set for this cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.failIndexKeyTooLong">failIndexKeyTooLong</a></code> | <code>boolean</code> | Flag that indicates whether you can insert or update documents where all indexed entries don't exceed 1024 bytes. |
@@ -45029,7 +45056,20 @@ const processArgs: ProcessArgs = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.oplogSizeMb">oplogSizeMb</a></code> | <code>number</code> | Storage limit of cluster's oplog expressed in megabytes. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.sampleRefreshIntervalBiConnector">sampleRefreshIntervalBiConnector</a></code> | <code>number</code> | Number of documents per database to sample when gathering schema information. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.sampleSizeBiConnector">sampleSizeBiConnector</a></code> | <code>number</code> | Interval in seconds at which the mongosqld process re-samples data to create its relational schema. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.tlsCipherConfigMode">tlsCipherConfigMode</a></code> | <code>string</code> | The TLS cipher suite configuration mode. |
 | <code><a href="#awscdk-resources-mongodbatlas.ProcessArgs.property.transactionLifetimeLimitSeconds">transactionLifetimeLimitSeconds</a></code> | <code>number</code> | Lifetime, in seconds, of multi-document transactions. |
+
+---
+
+##### `customOpensslCipherConfigTls12`<sup>Optional</sup> <a name="customOpensslCipherConfigTls12" id="awscdk-resources-mongodbatlas.ProcessArgs.property.customOpensslCipherConfigTls12"></a>
+
+```typescript
+public readonly customOpensslCipherConfigTls12: string[];
+```
+
+- *Type:* string[]
+
+The custom OpenSSL cipher suite list for TLS 1.2. This field is only valid when `tls_cipher_config_mode` is set to `CUSTOM`.
 
 ---
 
@@ -45158,6 +45198,20 @@ public readonly sampleSizeBiConnector: number;
 - *Type:* number
 
 Interval in seconds at which the mongosqld process re-samples data to create its relational schema.
+
+---
+
+##### `tlsCipherConfigMode`<sup>Optional</sup> <a name="tlsCipherConfigMode" id="awscdk-resources-mongodbatlas.ProcessArgs.property.tlsCipherConfigMode"></a>
+
+```typescript
+public readonly tlsCipherConfigMode: string;
+```
+
+- *Type:* string
+
+The TLS cipher suite configuration mode.
+
+Valid values include `CUSTOM` or `DEFAULT`. The `DEFAULT` mode uses the default cipher suites. The `CUSTOM` mode allows you to specify custom cipher suites for both TLS 1.2 and TLS 1.3. To unset, this should be set back to `DEFAULT`.
 
 ---
 
@@ -45617,7 +45671,7 @@ public readonly collection: string;
 
 Human-readable label that identifies the collection on which you grant the action to one MongoDB user.
 
-If you don't set this parameter, you grant the action to all collections in the database specified in the actions.resources.db parameter. If you set "actions.resources.cluster" : true, MongoDB Cloud ignores this parameter.
+If you don't set this parameter, you grant the action to all collections in the database specified in the actions.resources.db parameter. If you set "actions.resources.cluster" : true, MongoDB Cloud ignores this parameter. Use the empty string ("") to allow an action on all collections.
 
 ---
 
@@ -45631,7 +45685,7 @@ public readonly db: string;
 
 Human-readable label that identifies the database on which you grant the action to one MongoDB user.
 
-If you set "actions.resources.cluster" : true, MongoDB Cloud ignores this parameter.
+If you set "actions.resources.cluster" : true, MongoDB Cloud ignores this parameter. Use the empty string ("") to allow an action on all databases.
 
 ---
 

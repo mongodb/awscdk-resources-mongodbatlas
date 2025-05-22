@@ -154,14 +154,14 @@ export function toJson_InheritedRole(
  */
 export interface Resource {
   /**
-   * Human-readable label that identifies the collection on which you grant the action to one MongoDB user. If you don't set this parameter, you grant the action to all collections in the database specified in the actions.resources.db parameter. If you set "actions.resources.cluster" : true, MongoDB Cloud ignores this parameter.
+   * Human-readable label that identifies the collection on which you grant the action to one MongoDB user. If you don't set this parameter, you grant the action to all collections in the database specified in the actions.resources.db parameter. If you set "actions.resources.cluster" : true, MongoDB Cloud ignores this parameter. Use the empty string ("") to allow an action on all collections.
    *
    * @schema Resource#Collection
    */
   readonly collection?: string;
 
   /**
-   * Human-readable label that identifies the database on which you grant the action to one MongoDB user. If you set "actions.resources.cluster" : true, MongoDB Cloud ignores this parameter.
+   * Human-readable label that identifies the database on which you grant the action to one MongoDB user. If you set "actions.resources.cluster" : true, MongoDB Cloud ignores this parameter. Use the empty string ("") to allow an action on all databases.
    *
    * @schema Resource#DB
    */
