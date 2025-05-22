@@ -60,5 +60,8 @@ sed -e 's/UNDERSCORE_//g' -e 's/HYPHEN_//g' -e 's/PERIOD_//g' -e 's/VALUE_//g' "
 # Fix @typescript-eslint/no-shadow es-linter error in file federated-database-instance/index.ts
 sed -e 's/map(y => toJson_TagSet(y))/map(x => toJson_TagSet(x))/g' "${dest}" > "${dest}.tmp" && mv "${dest}.tmp" "${dest}"
 
+# Fix errors like `Definition for rule '@stylistic/max-len' was not found      @stylistic/max-len` until eslint 9 is supported by projen: https://github.com/projen/projen/issues/3240
+sed -e 's|@stylistic/max-len, ||g' -e 's|, @stylistic/quote-props||g' "${dest}" > "${dest}.tmp" && mv "${dest}.tmp" "${dest}"
+
 echo
 echo "L1 CDK resource generated succesfully: ${resource}, CFN type: ${resourceType}"
