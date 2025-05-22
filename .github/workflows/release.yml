@@ -1,4 +1,4 @@
-name: Release
+name: Release (Requires manual steps to take)
 on: workflow_dispatch
 jobs:
   release:
@@ -23,10 +23,29 @@ jobs:
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 18.x
+      - uses: actions/setup-java@7a6d8a8234af8eb26422e24e3006232cccaa061b
+        name: Setup Java
+        with:
+          distribution: temurin
+          java-version: 11.x
+      - uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+        name: Setup Python
+        with:
+          python-version: 3.x
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
+        name: Setup .NET
+        with:
+          dotnet-version: 9.0.x
+      - uses: actions/setup-go@0aaccfd150d50ccaeb58ebd88d36e91967a5f35b
+        name: Setup Go
+        with:
+          go-version: ^1.16.0
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: release
-        run: npx projen release
+        run: |
+          unset CI # enable full package-all https://github.com/mongodb/awscdk-resources-mongodbatlas/blob/main/.projen/tasks.json#L157-L170
+          npx projen release
       - name: Backup artifact permissions
         run: cd dist && getfacl -R . > permissions-backup.acl
         continue-on-error: true
@@ -55,16 +74,6 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-        with:
-          path: .repo
-      - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
-      - name: Create js artifact
-        run: cd .repo && npx projen compile && npx projen package:js
-      - name: Collect js Artifact
-        run: mv .repo/dist/js dist/js
       - name: Release
         env:
           NPM_DIST_TAG: latest
@@ -105,16 +114,6 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-        with:
-          path: .repo
-      - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
-      - name: Create java artifact
-        run: cd .repo && npx projen compile && npx projen package:java
-      - name: Collect java Artifact
-        run: mv .repo/dist/java dist/java
       - name: Release
         env:
           MAVEN_GPG_PRIVATE_KEY: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
@@ -156,16 +155,6 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-        with:
-          path: .repo
-      - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
-      - name: Create python artifact
-        run: cd .repo && npx projen compile && npx projen package:python
-      - name: Collect python Artifact
-        run: mv .repo/dist/python dist/python
       - name: Release
         env:
           TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
@@ -204,21 +193,6 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-        with:
-          path: .repo
-          fetch-depth: 0
-      - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
-      - name: Create dotnet artifact
-        run: |
-          cd .repo
-          npx projen bump
-          npx projen compile
-          npx projen package:dotnet
-      - name: Collect dotnet Artifact
-        run: mv .repo/dist/dotnet dist/dotnet
       - name: Extract Version
         id: extract-version
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
@@ -270,16 +244,6 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-        with:
-          path: .repo
-      - name: Install Dependencies
-        run: cd .repo && yarn install --check-files --frozen-lockfile
-      - name: Create go artifact
-        run: cd .repo && npx projen compile && npx projen package:go
-      - name: Collect go Artifact
-        run: mv .repo/dist/go dist/go
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GO_GITHUB_TOKEN }}
