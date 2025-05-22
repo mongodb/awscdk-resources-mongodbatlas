@@ -21,14 +21,12 @@ export class CdkTestingStack extends cdk.Stack {
       profile: atlasProps.profile,
       actions:[
         {
-          action: "GROUP_READ",
+          action: "FIND",
           resources: [
             {
               collection: atlasProps.collectionName,
-            },
-            {
               db: atlasProps.dbName,
-            }
+            },
           ]
         }
       ],

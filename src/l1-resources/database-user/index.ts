@@ -30,6 +30,13 @@ export interface CfnDatabaseUserProps {
   readonly databaseName: string;
 
   /**
+   * Description of this database user.
+   *
+   * @schema CfnDatabaseUserProps#Description
+   */
+  readonly description?: string;
+
+  /**
    * List that contains the key-value pairs for tagging and categorizing the MongoDB database user. The labels that you define do not appear in the console.
    *
    * @schema CfnDatabaseUserProps#Labels
@@ -107,6 +114,7 @@ export function toJson_CfnDatabaseUserProps(
     DeleteAfterDate: obj.deleteAfterDate,
     AWSIAMType: obj.awsiamType,
     DatabaseName: obj.databaseName,
+    Description: obj.description,
     Labels: obj.labels?.map((y) => toJson_LabelDefinition(y)),
     LdapAuthType: obj.ldapAuthType,
     X509Type: obj.x509Type,
