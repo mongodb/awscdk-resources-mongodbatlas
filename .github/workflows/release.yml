@@ -162,7 +162,7 @@ jobs:
           passphrase: ${{ secrets.APIX_BOT_GPG_PASSPHRASE }}
       - name: GPG sign PyPI distributions
         run: |
-          for file in dist/*.whl dist/*.tar.gz; do
+          for file in dist/python/*.whl dist/python/*.tar.gz; do
             if [ -f "$file" ]; then
               gpg --batch --yes --pinentry-mode loopback --passphrase "$APIX_BOT_GPG_PASSPHRASE" --detach-sign -a "$file"
             fi
