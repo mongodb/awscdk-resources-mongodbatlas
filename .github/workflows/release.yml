@@ -155,11 +155,26 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Release
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@e89d40939c28e39f97cf32126055eeae86ba74ec
+        with:
+          gpg_private_key: ${{ secrets.APIX_BOT_GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.APIX_BOT_GPG_PASSPHRASE }}
+      - name: GPG sign PyPI distributions
+        run: |
+          for file in dist/python/*.whl dist/python/*.tar.gz; do
+            if [ -f "$file" ]; then
+              gpg --batch --yes --pinentry-mode loopback --passphrase "$APIX_BOT_GPG_PASSPHRASE" --detach-sign -a "$file"
+            fi
+          done
+        env:
+          APIX_BOT_GPG_PASSPHRASE: ${{ secrets.APIX_BOT_GPG_PASSPHRASE }}
+
+      - name: Upload to PyPI
         env:
           TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
-        run: npx -p publib@latest publib-pypi
+        run: twine upload dist/*
       - name: Extract Version
         id: extract-version
         if: ${{ failure() }}
