@@ -1234,7 +1234,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -1280,14 +1280,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnAccessListApiKey } from 'awscdk-resources-mongodbatlas'
 
-CfnAccessListApiKey.isCfnResource(construct: IConstruct)
+CfnAccessListApiKey.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -1872,7 +1872,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -1918,14 +1918,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnAlertConfiguration } from 'awscdk-resources-mongodbatlas'
 
-CfnAlertConfiguration.isCfnResource(construct: IConstruct)
+CfnAlertConfiguration.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -2549,7 +2549,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -2595,14 +2595,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnApiKey } from 'awscdk-resources-mongodbatlas'
 
-CfnApiKey.isCfnResource(construct: IConstruct)
+CfnApiKey.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnApiKey.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnApiKey.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -3213,7 +3213,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -3259,14 +3259,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnAuditing } from 'awscdk-resources-mongodbatlas'
 
-CfnAuditing.isCfnResource(construct: IConstruct)
+CfnAuditing.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnAuditing.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnAuditing.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -3877,7 +3877,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -3923,14 +3923,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnCloudBackUpRestoreJobs } from 'awscdk-resources-mongodbatlas'
 
-CfnCloudBackUpRestoreJobs.isCfnResource(construct: IConstruct)
+CfnCloudBackUpRestoreJobs.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -4606,7 +4606,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -4652,14 +4652,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnCloudBackupSchedule } from 'awscdk-resources-mongodbatlas'
 
-CfnCloudBackupSchedule.isCfnResource(construct: IConstruct)
+CfnCloudBackupSchedule.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -5257,7 +5257,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -5303,14 +5303,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnCloudBackupSnapshot } from 'awscdk-resources-mongodbatlas'
 
-CfnCloudBackupSnapshot.isCfnResource(construct: IConstruct)
+CfnCloudBackupSnapshot.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -6038,7 +6038,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -6084,14 +6084,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnCloudBackupSnapshotExportBucket } from 'awscdk-resources-mongodbatlas'
 
-CfnCloudBackupSnapshotExportBucket.isCfnResource(construct: IConstruct)
+CfnCloudBackupSnapshotExportBucket.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -6676,7 +6676,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -6722,14 +6722,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnCluster } from 'awscdk-resources-mongodbatlas'
 
-CfnCluster.isCfnResource(construct: IConstruct)
+CfnCluster.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnCluster.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCluster.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -7353,7 +7353,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -7399,14 +7399,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnClusterOutageSimulation } from 'awscdk-resources-mongodbatlas'
 
-CfnClusterOutageSimulation.isCfnResource(construct: IConstruct)
+CfnClusterOutageSimulation.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -8017,7 +8017,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -8063,14 +8063,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnCustomDbRole } from 'awscdk-resources-mongodbatlas'
 
-CfnCustomDbRole.isCfnResource(construct: IConstruct)
+CfnCustomDbRole.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -8642,7 +8642,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -8688,14 +8688,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnCustomDnsConfigurationClusterAws } from 'awscdk-resources-mongodbatlas'
 
-CfnCustomDnsConfigurationClusterAws.isCfnResource(construct: IConstruct)
+CfnCustomDnsConfigurationClusterAws.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -9267,7 +9267,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -9313,14 +9313,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnDatabaseUser } from 'awscdk-resources-mongodbatlas'
 
-CfnDatabaseUser.isCfnResource(construct: IConstruct)
+CfnDatabaseUser.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -9905,7 +9905,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDataLakePipeline.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDataLakePipeline.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnDataLakePipeline.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDataLakePipeline.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -9951,14 +9951,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnDataLakePipeline } from 'awscdk-resources-mongodbatlas'
 
-CfnDataLakePipeline.isCfnResource(construct: IConstruct)
+CfnDataLakePipeline.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnDataLakePipeline.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnDataLakePipeline.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -10569,7 +10569,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDataLakes.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDataLakes.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnDataLakes.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDataLakes.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -10615,14 +10615,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnDataLakes } from 'awscdk-resources-mongodbatlas'
 
-CfnDataLakes.isCfnResource(construct: IConstruct)
+CfnDataLakes.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnDataLakes.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnDataLakes.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -11233,7 +11233,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -11279,14 +11279,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnEncryptionAtRest } from 'awscdk-resources-mongodbatlas'
 
-CfnEncryptionAtRest.isCfnResource(construct: IConstruct)
+CfnEncryptionAtRest.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -11871,7 +11871,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -11917,14 +11917,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnFederatedDatabaseInstance } from 'awscdk-resources-mongodbatlas'
 
-CfnFederatedDatabaseInstance.isCfnResource(construct: IConstruct)
+CfnFederatedDatabaseInstance.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -12522,7 +12522,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -12568,14 +12568,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnFederatedQueryLimit } from 'awscdk-resources-mongodbatlas'
 
-CfnFederatedQueryLimit.isCfnResource(construct: IConstruct)
+CfnFederatedQueryLimit.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -13199,7 +13199,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -13245,14 +13245,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnFederatedSettingsOrgRoleMapping } from 'awscdk-resources-mongodbatlas'
 
-CfnFederatedSettingsOrgRoleMapping.isCfnResource(construct: IConstruct)
+CfnFederatedSettingsOrgRoleMapping.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -13837,7 +13837,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -13883,14 +13883,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnGlobalClusterConfig } from 'awscdk-resources-mongodbatlas'
 
-CfnGlobalClusterConfig.isCfnResource(construct: IConstruct)
+CfnGlobalClusterConfig.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -14475,7 +14475,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -14521,14 +14521,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnLdapConfiguration } from 'awscdk-resources-mongodbatlas'
 
-CfnLdapConfiguration.isCfnResource(construct: IConstruct)
+CfnLdapConfiguration.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -15100,7 +15100,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -15146,14 +15146,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnLdapVerify } from 'awscdk-resources-mongodbatlas'
 
-CfnLdapVerify.isCfnResource(construct: IConstruct)
+CfnLdapVerify.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnLdapVerify.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnLdapVerify.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -15751,7 +15751,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -15797,14 +15797,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnMaintenanceWindow } from 'awscdk-resources-mongodbatlas'
 
-CfnMaintenanceWindow.isCfnResource(construct: IConstruct)
+CfnMaintenanceWindow.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -16376,7 +16376,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -16422,14 +16422,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnNetworkContainer } from 'awscdk-resources-mongodbatlas'
 
-CfnNetworkContainer.isCfnResource(construct: IConstruct)
+CfnNetworkContainer.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -17014,7 +17014,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -17060,14 +17060,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnNetworkPeering } from 'awscdk-resources-mongodbatlas'
 
-CfnNetworkPeering.isCfnResource(construct: IConstruct)
+CfnNetworkPeering.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -17691,7 +17691,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -17737,14 +17737,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnOnlineArchive } from 'awscdk-resources-mongodbatlas'
 
-CfnOnlineArchive.isCfnResource(construct: IConstruct)
+CfnOnlineArchive.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -18355,7 +18355,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -18401,14 +18401,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnOrganization } from 'awscdk-resources-mongodbatlas'
 
-CfnOrganization.isCfnResource(construct: IConstruct)
+CfnOrganization.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnOrganization.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnOrganization.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -18993,7 +18993,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -19039,14 +19039,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnOrgInvitation } from 'awscdk-resources-mongodbatlas'
 
-CfnOrgInvitation.isCfnResource(construct: IConstruct)
+CfnOrgInvitation.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -19670,7 +19670,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -19716,14 +19716,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
 
-CfnPrivateEndpoint.isCfnResource(construct: IConstruct)
+CfnPrivateEndpoint.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -20321,7 +20321,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAdl.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAdl.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAdl.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAdl.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -20367,14 +20367,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnPrivateEndpointAdl } from 'awscdk-resources-mongodbatlas'
 
-CfnPrivateEndpointAdl.isCfnResource(construct: IConstruct)
+CfnPrivateEndpointAdl.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAdl.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAdl.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -20946,7 +20946,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -20992,14 +20992,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnPrivateEndpointAws } from 'awscdk-resources-mongodbatlas'
 
-CfnPrivateEndpointAws.isCfnResource(construct: IConstruct)
+CfnPrivateEndpointAws.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -21571,7 +21571,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -21617,14 +21617,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnPrivateEndPointRegionalMode } from 'awscdk-resources-mongodbatlas'
 
-CfnPrivateEndPointRegionalMode.isCfnResource(construct: IConstruct)
+CfnPrivateEndPointRegionalMode.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -22196,7 +22196,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -22242,14 +22242,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnPrivateEndpointService } from 'awscdk-resources-mongodbatlas'
 
-CfnPrivateEndpointService.isCfnResource(construct: IConstruct)
+CfnPrivateEndpointService.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -22886,7 +22886,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -22932,14 +22932,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnPrivatelinkEndpointServiceDataFederationOnlineArchive } from 'awscdk-resources-mongodbatlas'
 
-CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnResource(construct: IConstruct)
+CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -23511,7 +23511,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -23557,14 +23557,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnProject } from 'awscdk-resources-mongodbatlas'
 
-CfnProject.isCfnResource(construct: IConstruct)
+CfnProject.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnProject.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnProject.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -24175,7 +24175,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -24221,14 +24221,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnProjectInvitation } from 'awscdk-resources-mongodbatlas'
 
-CfnProjectInvitation.isCfnResource(construct: IConstruct)
+CfnProjectInvitation.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -24852,7 +24852,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -24898,14 +24898,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnProjectIpAccessList } from 'awscdk-resources-mongodbatlas'
 
-CfnProjectIpAccessList.isCfnResource(construct: IConstruct)
+CfnProjectIpAccessList.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -25490,7 +25490,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -25536,14 +25536,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnResourcePolicy } from 'awscdk-resources-mongodbatlas'
 
-CfnResourcePolicy.isCfnResource(construct: IConstruct)
+CfnResourcePolicy.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -26167,7 +26167,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -26213,14 +26213,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnSearchDeployment } from 'awscdk-resources-mongodbatlas'
 
-CfnSearchDeployment.isCfnResource(construct: IConstruct)
+CfnSearchDeployment.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -26818,7 +26818,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -26864,14 +26864,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnSearchIndex } from 'awscdk-resources-mongodbatlas'
 
-CfnSearchIndex.isCfnResource(construct: IConstruct)
+CfnSearchIndex.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnSearchIndex.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnSearchIndex.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -27469,7 +27469,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessInstance.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessInstance.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessInstance.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessInstance.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -27515,14 +27515,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnServerlessInstance } from 'awscdk-resources-mongodbatlas'
 
-CfnServerlessInstance.isCfnResource(construct: IConstruct)
+CfnServerlessInstance.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnServerlessInstance.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnServerlessInstance.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -28159,7 +28159,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -28205,14 +28205,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnServerlessPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
 
-CfnServerlessPrivateEndpoint.isCfnResource(construct: IConstruct)
+CfnServerlessPrivateEndpoint.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -28862,7 +28862,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -28908,14 +28908,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnStreamConnection } from 'awscdk-resources-mongodbatlas'
 
-CfnStreamConnection.isCfnResource(construct: IConstruct)
+CfnStreamConnection.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnStreamConnection.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnStreamConnection.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -29487,7 +29487,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -29533,14 +29533,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnStreamInstance } from 'awscdk-resources-mongodbatlas'
 
-CfnStreamInstance.isCfnResource(construct: IConstruct)
+CfnStreamInstance.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnStreamInstance.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnStreamInstance.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -30138,7 +30138,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -30184,14 +30184,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnTeams } from 'awscdk-resources-mongodbatlas'
 
-CfnTeams.isCfnResource(construct: IConstruct)
+CfnTeams.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnTeams.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnTeams.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -30776,7 +30776,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -30822,14 +30822,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnThirdPartyIntegration } from 'awscdk-resources-mongodbatlas'
 
-CfnThirdPartyIntegration.isCfnResource(construct: IConstruct)
+CfnThirdPartyIntegration.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -31401,7 +31401,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -31447,14 +31447,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnTrigger } from 'awscdk-resources-mongodbatlas'
 
-CfnTrigger.isCfnResource(construct: IConstruct)
+CfnTrigger.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnTrigger.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnTrigger.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 
@@ -32039,7 +32039,7 @@ The new dependency to add.
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.isCfnResource">isCfnResource</a></code> | Check whether the given construct is a CfnResource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
 
 ---
 
@@ -32085,14 +32085,14 @@ versions of this library to be included in the same stack.
 ```typescript
 import { CfnX509AuthenticationDatabaseUser } from 'awscdk-resources-mongodbatlas'
 
-CfnX509AuthenticationDatabaseUser.isCfnResource(construct: IConstruct)
+CfnX509AuthenticationDatabaseUser.isCfnResource(x: any)
 ```
 
-Check whether the given construct is a CfnResource.
+Check whether the given object is a CfnResource.
 
-###### `construct`<sup>Required</sup> <a name="construct" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.isCfnResource.parameter.construct"></a>
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.isCfnResource.parameter.x"></a>
 
-- *Type:* constructs.IConstruct
+- *Type:* any
 
 ---
 

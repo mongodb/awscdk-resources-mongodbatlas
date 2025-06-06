@@ -25,6 +25,7 @@ mkdir examples-bin
 cd examples-bin
 
 cdk init app --language typescript
+npm install aws-cdk-lib@2.200.1
 
 cp ../examples/l1-resources/* .
 cp ../examples/l2-resources/* .
