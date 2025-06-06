@@ -51,7 +51,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorAddress: "https://www.mongodb.com/",
   description:
     "MongoDB Atlas CDK Construct Library for AWS CloudFormation Resources",
-  cdkVersion: "2.189.1",
+  cdkVersion: "2.200.1",
   defaultReleaseBranch: "main",
   name: "awscdk-resources-mongodbatlas",
   repositoryUrl: "https://github.com/mongodb/awscdk-resources-mongodbatlas.git",
