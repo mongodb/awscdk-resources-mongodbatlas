@@ -67,7 +67,7 @@ jobs:
         with:
           node-version: 18.x
       - name: Download build artifacts
-        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: build-artifact
           path: dist
@@ -107,7 +107,7 @@ jobs:
         with:
           node-version: 18.x
       - name: Download build artifacts
-        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: build-artifact
           path: dist
@@ -148,7 +148,7 @@ jobs:
         with:
           python-version: 3.x
       - name: Download build artifacts
-        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: build-artifact
           path: dist
@@ -201,7 +201,7 @@ jobs:
         with:
           dotnet-version: 9.0.x
       - name: Download build artifacts
-        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: build-artifact
           path: dist
@@ -252,7 +252,7 @@ jobs:
         with:
           go-version: ^1.16.0
       - name: Download build artifacts
-        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: build-artifact
           path: dist
@@ -288,7 +288,7 @@ jobs:
         with:
           node-version: 18.x
       - name: Download build artifacts
-        uses: actions/download-artifact@533298bc57c27f112a2c04a74a04a4d43e2866fd
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: build-artifact
           path: dist
