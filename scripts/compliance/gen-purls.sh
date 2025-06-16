@@ -12,6 +12,6 @@ mkdir -p compliance
 PKG_JSON=package.json
 
 # Output all npm dependencies, devDependencies, and peerDependencies as PURLs to compliance/purls.txt
-yq -r --output-format json '.dependencies | to_entries | .[] |  "pkg:npm/" + .key + "@" + .value' package.json > compliance/purls.txt
-yq -r --output-format json '.devDependencies | to_entries | .[] |  "pkg:npm/" + .key + "@" + .value' package.json >> compliance/purls.txt
-yq -r --output-format json '.peerDependencies | to_entries | .[] |  "pkg:npm/" + .key + "@" + .value' package.json >> compliance/purls.txt
+yq -r --output-format json '.dependencies | to_entries | .[] |  "pkg:npm/" + .key + "@" + .value' $PKG_JSON > compliance/purls.txt
+yq -r --output-format json '.devDependencies | to_entries | .[] |  "pkg:npm/" + .key + "@" + .value' $PKG_JSON >> compliance/purls.txt
+yq -r --output-format json '.peerDependencies | to_entries | .[] |  "pkg:npm/" + .key + "@" + .value' $PKG_JSON >> compliance/purls.txt

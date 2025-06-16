@@ -341,10 +341,9 @@ jobs:
           remote: https://svc-apix-bot:${{ secrets.APIX_BOT_PAT }}@github.com/${{ github.repository }}
           gpg_private_key: ${{ secrets.APIX_BOT_GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.APIX_BOT_PASSPHRASE }}
-          file_to_commit: 'cfn-resources/${{ github.event.inputs.resourceName }}/compliance/v*/*'
+          file_to_commit: 'compliance/v*/*'
           commit_message:
-            "chore: Update SSDLC report for ${{ needs.publish.outputs.published_version }}"
-          repo-path: "cfn-resources/"
+            "chore: Update SSDLC report for ${{ steps.extract-version.outputs.VERSION }}"
         env:
           KONDUKTO_TOKEN: ${{ secrets.KONDUKTO_TOKEN }}
           SILKBOMB_IMG: ${{ vars.SILKBOMB_IMG }}
