@@ -10,7 +10,7 @@ if [ -z "${AUTHOR:-}" ]; then
 fi
 
 if [ -z "${VERSION:-}" ]; then
-  VERSION=$(git tag --list 'v*' --sort=-taggerdate | head -1 | cut -d 'v' -f 2)
+  VERSION=$(git tag --list 'v*' --sort=-v:refname | head -1 | cut -d 'v' -f 2)
 fi
 
 if [ "${AUGMENTED_REPORT:-false}" = "true" ]; then
