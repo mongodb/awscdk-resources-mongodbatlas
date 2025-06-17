@@ -8,4 +8,3 @@ docker run --rm \
   update \
   --purls /pwd/compliance/purls.txt \
   --sbom-out /pwd/compliance/sbom.json
-  
