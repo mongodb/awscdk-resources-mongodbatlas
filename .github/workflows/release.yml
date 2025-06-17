@@ -314,7 +314,7 @@ jobs:
           labels: failed-release
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to GitHub Releases failed
           body: See https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-      - name: Generate SBOM
+      - name: Generate PURL and SBOM
         run: |
           ./scripts/compliance/gen-purls.sh
           ./scripts/compliance/gen-sbom.sh
@@ -324,11 +324,7 @@ jobs:
           KONDUKTO_TOKEN: ${{ secrets.KONDUKTO_TOKEN }}
           KONDUKTO_REPO: ${{ vars.KONDUKTO_REPO }}
           KONDUKTO_BRANCH_PREFIX: ${{ vars.KONDUKTO_BRANCH_PREFIX }}
-      - name: terraform-provider-mongodbatlas-checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-        with:
-          repository: mongodb/terraform-provider-mongodbatlas
-          ref: master
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - name: Generate SSDLC report
         run: |
           AUTHOR="${{ github.actor }}"
