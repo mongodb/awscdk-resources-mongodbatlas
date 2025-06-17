@@ -329,7 +329,8 @@ jobs:
         run: |
           AUTHOR="${{ github.actor }}"
           export AUTHOR
-          export VERSION=${{ steps.extract-version.outputs.VERSION }}
+          VERSION="${{ steps.extract-version.outputs.VERSION }}"
+          export VERSION
           ./scripts/compliance/gen-ssdlc-report.sh
         env:
           KONDUKTO_TOKEN: ${{ secrets.KONDUKTO_TOKEN }}

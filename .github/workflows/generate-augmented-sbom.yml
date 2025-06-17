@@ -25,7 +25,7 @@ jobs:
       KONDUKTO_BRANCH_PREFIX: ${{ vars.KONDUKTO_BRANCH_PREFIX }}
       SILKBOMB_IMG: ${{ vars.SILKBOMB_IMG }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
       - name: Get current date
         id: date

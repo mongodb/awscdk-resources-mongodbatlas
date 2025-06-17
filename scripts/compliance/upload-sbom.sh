@@ -10,3 +10,4 @@ docker run --rm \
   --sbom-in /pwd/compliance/sbom.json \
   --repo "$KONDUKTO_REPO"  \
   --branch "$KONDUKTO_BRANCH_PREFIX"
+  
