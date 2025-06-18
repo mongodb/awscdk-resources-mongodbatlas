@@ -24,8 +24,8 @@ else # If not augmented, generate the standard report
   target_dir="compliance/v${VERSION}"
   file_name="ssdlc-compliance-${VERSION}.md"
   SBOM_TEXT="  - See SBOM Lite manifests (CycloneDX in JSON format):
-      - https://github.com/mongodb/terraform-provider-mongodbatlas/releases/download/terraform-provider-mongodbatlas%2Fv${VERSION}/sbom.json"
-  # Ensure terraform-provider-mongodbatlas version directory exists
+      - https://github.com/mongodb/awscdk-resources-mongodbatlas/releases/download/v${VERSION}/sbom.json"
+  # Ensure awscdk-resources-mongodbatlas version directory exists
   mkdir -p "${target_dir}"
 fi
 
