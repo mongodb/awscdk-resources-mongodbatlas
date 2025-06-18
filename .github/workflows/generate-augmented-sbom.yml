@@ -7,10 +7,6 @@ on:
         description: "Release version (e.g. 3.12.1)"
         required: true
         type: string
-      resource:
-        description: "Resource name (e.g. organization, project, etc.)"
-        required: true
-        type: string
 
 permissions:
   id-token: write
@@ -48,6 +44,6 @@ jobs:
         with:
           name: augmented_sbom_and_ssdlc_report
           path: |
-            cfn-resources/${{ inputs.resource }}/compliance/augmented-sbom-v${{ inputs.release_version }}-${{ steps.date.outputs.date }}.json
-            cfn-resources/${{ inputs.resource }}/compliance/ssdlc-compliance-${{ inputs.release_version }}-${{ steps.date.outputs.date }}.md
+            compliance/v${{ inputs.release_version }}/augmented-sbom-v${{ inputs.release_version }}-${{ steps.date.outputs.date }}.json
+            compliance/v${{ inputs.release_version }}/ssdlc-compliance-${{ inputs.release_version }}-${{ steps.date.outputs.date }}.md
           if-no-files-found: error 
