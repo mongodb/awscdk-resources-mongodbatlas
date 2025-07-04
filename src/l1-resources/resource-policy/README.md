@@ -12,7 +12,7 @@ Returns, adds, edits, and removes Atlas resource policies.
 
 ## MongoDB Atlas API Docs
 
-For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-atlas-resource-policies)
+For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-resource-policies)
 
 ## Usage
 

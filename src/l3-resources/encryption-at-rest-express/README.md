@@ -73,7 +73,8 @@ aws cloudformation activate-type \
 
 1. This CDK L3 resource allows users to create and edit the Encryption at Rest using Customer Key Management configuration. MongoDB Cloud encrypts all storage by default whether or not you use your own key management.
 
-2. Atlas limits this feature to dedicated cluster tiers of M10 and greater. For more information see: https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-encryption-at-rest-using-customer-key-management-
+2. Atlas limits this feature to dedicated cluster tiers of M10 and greater. For more information see: https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-encryption-at-rest-using-customer-key-management
+
 3. This construnctor supports only [AWS Key Management Service](https://www.mongodb.com/docs/atlas/security-aws-kms/#security-aws-kms). 
 
 4. MongoDB does not support creating and configuring a IAM role via CFN and CDK. **Please follow this guide ([Enable Role-Based Access to Your Encryption Key for a Project](https://www.mongodb.com/docs/atlas/security-aws-kms/#enable-customer-managed-keys-with-aws-kms)) before trying to use this constructor as you must provide** `roleId` **and the** `customerMasterKeyId`.

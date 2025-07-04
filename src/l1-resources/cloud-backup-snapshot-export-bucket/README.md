@@ -13,7 +13,7 @@ This resource allows you to grant Atlas access to the specified bucket for expor
 
 ## MongoDB Atlas API Docs
 
-For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-cloud-backup-export)
+For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-cloud-backups)
 
 ## Usage
 

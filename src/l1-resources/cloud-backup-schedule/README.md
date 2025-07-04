@@ -13,7 +13,7 @@ This resource allow you to manage cloud backup schedule.
 
 ## MongoDB Atlas API Docs
 
-For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-cloud-backup-schedule)
+For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-cloud-backups)
 
 ## Usage
 
