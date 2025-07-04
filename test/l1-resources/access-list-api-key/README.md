@@ -22,5 +22,5 @@ This CFN resource must be active in your AWS account while using this constructo
 
 ## Important Links
 
-- [API Documentation](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/v2/#tag/Programmatic-API-Keys)
+- [API Documentation](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-programmatic-api-keys)
 - [Resource Usage Documentation](https://www.mongodb.com/docs/atlas/data-federation/config/config-aws-s3/)

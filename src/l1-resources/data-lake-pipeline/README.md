@@ -13,7 +13,7 @@ Atlas Data Lake takes snapshots of your Atlas cluster, so you can easily analyze
 
 ## MongoDB Atlas API Docs
 
-For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/v2/#tag/Data-Lake-Pipelines/operation/createPipeline)
+For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-createpipeline)
 
 ## Usage
 

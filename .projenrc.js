@@ -112,6 +112,8 @@ const common_exclude = [
   "yarn-error.log",
   "*.DS_Store",
   "examples-bin",
+  ".idea/",
+  "*.iml",
 ];
 project.gitignore.exclude(...common_exclude);
 project.npmignore.exclude(

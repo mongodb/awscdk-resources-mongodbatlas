@@ -17,11 +17,11 @@ If you are managing your own Certificate Authority (CA) in Self-Managed X.509 mo
 
 ## MongoDB Atlas API Docs
 
-For more information about the API refer to: [Custom Database Roles Endpoint](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/X.509-Authentication-for-Database-Users)
+For more information about the API refer to: [Custom Database Roles Endpoint](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-x-509-authentication-for-database-users)
 
 ## MongoDB Atlas API Docs
 
-For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/x509-authentication-database-user)
+For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-x-509-authentication)
 
 ## Usage
 

@@ -20,5 +20,5 @@ This CFN resource must be active in your AWS account while using this constructo
 2. Ensure general [CDK resource success criteria](https://github.com/mongodb/mongodbatlas-cloudformation-resources/tree/master/TESTING.md) for this resource is met.
 
 ## Important Links
-- [API Documentation](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Third-Party-Integrations/operation/createThirdPartyIntegration)
+- [API Documentation](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-createthirdpartyintegration)
 - [Resource Usage Documentation](https://www.mongodb.com/docs/atlas/tutorial/third-party-service-integrations/)

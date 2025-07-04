@@ -9,7 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-The resource lets you create an Atlas Cluster, DB User, add an entry to the IP Access List and sets [Encryption at Rest using Customer Key Management](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Encryption-at-Rest-using-Customer-Key-Management) in your MongoDB Atlas Project.
+The resource lets you create an Atlas Cluster, DB User, add an entry to the IP Access List and sets [Encryption at Rest using Customer Key Management](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-encryption-at-rest-using-customer-key-management) in your MongoDB Atlas Project.
 
 
 
@@ -73,7 +73,7 @@ aws cloudformation activate-type \
 
 1. This CDK L3 resource allows users to create and edit the Encryption at Rest using Customer Key Management configuration. MongoDB Cloud encrypts all storage by default whether or not you use your own key management.
 
-2. Atlas limits this feature to dedicated cluster tiers of M10 and greater. For more information see: https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Encryption-at-Rest-using-Customer-Key-Management
+2. Atlas limits this feature to dedicated cluster tiers of M10 and greater. For more information see: https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-encryption-at-rest-using-customer-key-management
 
 3. This construnctor supports only [AWS Key Management Service](https://www.mongodb.com/docs/atlas/security-aws-kms/#security-aws-kms). 
 

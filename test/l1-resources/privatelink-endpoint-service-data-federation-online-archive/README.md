@@ -20,5 +20,5 @@ This CFN resource must be active in your AWS account while using this constructo
 
 ## Important Links
 
-- [API Documentation](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Custom-Database-Roles)
+- [API Documentation](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-custom-database-roles)
 - [Resource Usage Documentation](https://www.mongodb.com/docs/atlas/security-add-mongodb-roles/)

@@ -29,5 +29,5 @@ This can be validated via GET API call at URL:
 2. Ensure general [CDK resource success criteria](../../../TESTING.md) for this resource is met.
 
 ## Important Links
-- [API Documentation](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Global-Clusters)
+- [API Documentation](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-global-clusters)
 - [Resource Usage Documentation](https://www.mongodb.com/docs/atlas/global-clusters/)
