@@ -66,7 +66,7 @@ export function toJson_CfnSearchDeploymentProps(
  */
 export interface ApiSearchDeploymentSpec {
   /**
-   * Hardware specification for the search node instance sizes. The [MongoDB Atlas API](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-createatlassearchdeployment) describes the valid values. More details can also be found in the [Search Node Documentation](https://www.mongodb.com/docs/atlas/cluster-config/multi-cloud-distribution/#search-tier).
+   * Hardware specification for the search node instance sizes. The [MongoDB Atlas API](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Atlas-Search/operation/createAtlasSearchDeployment) describes the valid values. More details can also be found in the [Search Node Documentation](https://www.mongodb.com/docs/atlas/cluster-config/multi-cloud-distribution/#search-tier).
    *
    * @schema ApiSearchDeploymentSpec#InstanceSize
    */
