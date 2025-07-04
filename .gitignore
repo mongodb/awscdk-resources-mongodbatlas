@@ -26,6 +26,7 @@ build/Release
 node_modules/
 jspm_packages/
 *.tsbuildinfo
+*.iml
 .eslintcache
 *.tgz
 .yarn-integrity
