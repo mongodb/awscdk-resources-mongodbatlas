@@ -28,5 +28,5 @@ This CFN resource must be active in your AWS account while using this constructo
 
 
 ## Important Links
-- [API Documentation](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Database-Users)
+- [API Documentation](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-database-users)
 - [Resource Usage Documentation](https://www.mongodb.com/docs/atlas/security-add-mongodb-users/)

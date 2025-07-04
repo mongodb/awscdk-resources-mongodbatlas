@@ -13,7 +13,7 @@ Adds one private endpoint for Federated Database Instances and Online Archives t
 
 ## MongoDB Atlas API Docs
 
-For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Data-Federation-Private-Networks)
+For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-data-federation-private-networks)
 
 ## Usage
 

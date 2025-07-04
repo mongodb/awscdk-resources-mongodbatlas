@@ -34250,7 +34250,7 @@ public readonly instanceSize: string;
 
 Hardware specification for the search node instance sizes.
 
-The [MongoDB Atlas API](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Atlas-Search/operation/createAtlasSearchDeployment) describes the valid values. More details can also be found in the [Search Node Documentation](https://www.mongodb.com/docs/atlas/cluster-config/multi-cloud-distribution/#search-tier).
+The [MongoDB Atlas API](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-createatlassearchdeployment) describes the valid values. More details can also be found in the [Search Node Documentation](https://www.mongodb.com/docs/atlas/cluster-config/multi-cloud-distribution/#search-tier).
 
 ---
 
@@ -36958,8 +36958,7 @@ public readonly username: string;
 
 Human-readable label that represents the user that authenticates to MongoDB.
 
-The format of this label depends on the method of authentication. This will be USER_ARN or ROLE_ARN if AWSIAMType is USER or ROLE. Refer https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Database-Users/operation/createDatabaseUser for details.
-
+The format of this label depends on the method of authentication. This will be USER_ARN or ROLE_ARN if AWSIAMType is USER or ROLE. Refer https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/
 ---
 
 ##### `awsiamType`<sup>Optional</sup> <a name="awsiamType" id="awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.awsiamType"></a>

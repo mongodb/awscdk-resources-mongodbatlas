@@ -20,5 +20,5 @@ This CFN resource must be active in your AWS account while using this constructo
 2. Ensure general [CDK resource success criteria](../../../TESTING.md) for this resource is met.
 
 ## Important Links
-- [API Documentation](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/#tag/Atlas-Search)
+- [API Documentation](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-atlas-search)
 - [Resource Usage Documentation](https://www.mongodb.com/docs/atlas/atlas-search/create-index/)

@@ -13,7 +13,7 @@ This resource allows you to Starts a cluster outage simulation..
 
 ## MongoDB Atlas API Docs
 
-For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/v2/#tag/Cluster-Outage-Simulation)
+For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-cluster-outage-simulation)
 
 ## Usage
 

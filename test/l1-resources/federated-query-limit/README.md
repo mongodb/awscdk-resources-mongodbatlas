@@ -20,5 +20,5 @@ This CFN resource must be active in your AWS account while using this constructo
 
 ## Important Links
 
-- [API Documentation](https://www.mongodb.com/docs/atlas/reference/api-resources-spec/v2/#tag/Data-Federation/operation/returnFederatedDatabaseQueryLimits)
+- [API Documentation](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/operation/operation-returnfederateddatabasequerylimits)
 - [Resource Usage Documentation](https://www.mongodb.com/docs/atlas/data-federation/query/manage-query-limits/)
