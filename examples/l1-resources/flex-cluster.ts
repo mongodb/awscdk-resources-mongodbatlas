@@ -39,21 +39,6 @@ export class CdkFlexClusterStack extends cdk.Stack {
         },
       ],
     });
-
-    new cdk.CfnOutput(this, 'FlexClusterId', {
-      value: flexClusterRes.attrId,
-      description: 'Flex Cluster ID',
-    });
-
-    new cdk.CfnOutput(this, 'FlexClusterState', {
-      value: flexClusterRes.attrStateName,
-      description: 'Flex Cluster State',
-    });
-
-    new cdk.CfnOutput(this, 'FlexClusterMongoDBVersion', {
-      value: flexClusterRes.attrMongoDBVersion,
-      description: 'MongoDB Version',
-    });
   }
 
   getContextProps(): AtlasStackProps {
