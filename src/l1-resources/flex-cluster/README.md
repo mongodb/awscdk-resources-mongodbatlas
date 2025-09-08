@@ -9,9 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-The flex cluster resource provides access to your flex cluster configurations. The resource lets you create, edit and delete flex clusters. The resource requires your Project ID.
-
-MongoDB Atlas Flex clusters provide a flexible, scalable, and cost-optimized solution for low-traffic applications and variable workloads. Flex clusters automatically scale compute and storage resources based on demand, offering a pay-as-you-go model.
+The flex cluster resource provides access to your flex cluster configurations. The resource lets you create, edit and delete flex clusters. For more information, see [The MongoDB Atlas Flex Tier](https://www.mongodb.com/company/blog/product-release-announcements/dynamic-workloads-predictable-costs-mongodb-atlas-flex-tier).
 
 ## MongoDB Atlas API Docs
 
