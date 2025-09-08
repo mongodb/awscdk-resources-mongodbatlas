@@ -40,7 +40,6 @@ export class CdkFlexClusterStack extends cdk.Stack {
       ],
     });
 
-    // Output the connection strings
     new cdk.CfnOutput(this, 'FlexClusterId', {
       value: flexClusterRes.attrId,
       description: 'Flex Cluster ID',
