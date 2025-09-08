@@ -113,7 +113,11 @@ const common_exclude = [
   "*.DS_Store",
   "examples-bin",
   ".idea/",
-  "*.iml",
+  "*.secrets",
+  ".vscode",
+  ".windsurf",
+  "CLAUDE.md",
+  ".claude",
 ];
 project.gitignore.exclude(...common_exclude);
 project.npmignore.exclude(

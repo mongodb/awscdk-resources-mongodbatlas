@@ -54,5 +54,9 @@ yarn-error.log
 *.DS_Store
 examples-bin
 .idea/
-*.iml
+*.secrets
+.vscode
+.windsurf
+CLAUDE.md
+.claude
 !/.projenrc.js
