@@ -13408,6 +13408,709 @@ The CloudFormation resource type name for this resource class.
 
 ---
 
+### CfnFlexCluster <a name="CfnFlexCluster" id="awscdk-resources-mongodbatlas.CfnFlexCluster"></a>
+
+A CloudFormation `MongoDB::Atlas::FlexCluster`.
+
+#### Initializers <a name="Initializers" id="awscdk-resources-mongodbatlas.CfnFlexCluster.Initializer"></a>
+
+```typescript
+import { CfnFlexCluster } from 'awscdk-resources-mongodbatlas'
+
+new CfnFlexCluster(scope: Construct, id: string, props: CfnFlexClusterProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | - scope in which this resource is defined. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.Initializer.parameter.id">id</a></code> | <code>string</code> | - scoped id of the resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.Initializer.parameter.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexClusterProps">CfnFlexClusterProps</a></code> | - resource properties. |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="awscdk-resources-mongodbatlas.CfnFlexCluster.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+scope in which this resource is defined.
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.CfnFlexCluster.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+scoped id of the resource.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnFlexCluster.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnFlexClusterProps">CfnFlexClusterProps</a>
+
+resource properties.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addDependsOn">addDependsOn</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addMetadata">addMetadata</a></code> | Add a value to the CloudFormation Resource Metadata. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
+
+---
+
+##### `toString` <a name="toString" id="awscdk-resources-mongodbatlas.CfnFlexCluster.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnFlexCluster.overrideLogicalId"></a>
+
+```typescript
+public overrideLogicalId(newLogicalId: string): void
+```
+
+Overrides the auto-generated logical ID with a specific ID.
+
+###### `newLogicalId`<sup>Required</sup> <a name="newLogicalId" id="awscdk-resources-mongodbatlas.CfnFlexCluster.overrideLogicalId.parameter.newLogicalId"></a>
+
+- *Type:* string
+
+The new logical ID to use for this stack element.
+
+---
+
+##### `addDeletionOverride` <a name="addDeletionOverride" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addDeletionOverride"></a>
+
+```typescript
+public addDeletionOverride(path: string): void
+```
+
+Syntactic sugar for `addOverride(path, undefined)`.
+
+###### `path`<sup>Required</sup> <a name="path" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addDeletionOverride.parameter.path"></a>
+
+- *Type:* string
+
+The path of the value to delete.
+
+---
+
+##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addDependency"></a>
+
+```typescript
+public addDependency(target: CfnResource): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### ~~`addDependsOn`~~ <a name="addDependsOn" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addDependsOn"></a>
+
+```typescript
+public addDependsOn(target: CfnResource): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addDependsOn.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `addMetadata` <a name="addMetadata" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addMetadata"></a>
+
+```typescript
+public addMetadata(key: string, value: any): void
+```
+
+Add a value to the CloudFormation Resource Metadata.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.)
+
+###### `key`<sup>Required</sup> <a name="key" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addMetadata.parameter.key"></a>
+
+- *Type:* string
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addMetadata.parameter.value"></a>
+
+- *Type:* any
+
+---
+
+##### `addOverride` <a name="addOverride" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addOverride"></a>
+
+```typescript
+public addOverride(path: string, value: any): void
+```
+
+Adds an override to the synthesized CloudFormation resource.
+
+To add a
+property override, either use `addPropertyOverride` or prefix `path` with
+"Properties." (i.e. `Properties.TopicName`).
+
+If the override is nested, separate each nested level using a dot (.) in the path parameter.
+If there is an array as part of the nesting, specify the index in the path.
+
+To include a literal `.` in the property name, prefix with a `\`. In most
+programming languages you will need to write this as `"\\."` because the
+`\` itself will need to be escaped.
+
+For example,
+```typescript
+cfnResource.addOverride('Properties.GlobalSecondaryIndexes.0.Projection.NonKeyAttributes', ['myattribute']);
+cfnResource.addOverride('Properties.GlobalSecondaryIndexes.1.ProjectionType', 'INCLUDE');
+```
+would add the overrides
+```json
+"Properties": {
+  "GlobalSecondaryIndexes": [
+    {
+      "Projection": {
+        "NonKeyAttributes": [ "myattribute" ]
+        ...
+      }
+      ...
+    },
+    {
+      "ProjectionType": "INCLUDE"
+      ...
+    },
+  ]
+  ...
+}
+```
+
+The `value` argument to `addOverride` will not be processed or translated
+in any way. Pass raw JSON values in here with the correct capitalization
+for CloudFormation. If you pass CDK classes or structs, they will be
+rendered with lowercased key names, and CloudFormation will reject the
+template.
+
+###### `path`<sup>Required</sup> <a name="path" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addOverride.parameter.path"></a>
+
+- *Type:* string
+
+The path of the property, you can use dot notation to override values in complex types.
+
+Any intermediate keys
+will be created as needed.
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addOverride.parameter.value"></a>
+
+- *Type:* any
+
+The value.
+
+Could be primitive or complex.
+
+---
+
+##### `addPropertyDeletionOverride` <a name="addPropertyDeletionOverride" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addPropertyDeletionOverride"></a>
+
+```typescript
+public addPropertyDeletionOverride(propertyPath: string): void
+```
+
+Adds an override that deletes the value of a property from the resource definition.
+
+###### `propertyPath`<sup>Required</sup> <a name="propertyPath" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addPropertyDeletionOverride.parameter.propertyPath"></a>
+
+- *Type:* string
+
+The path to the property.
+
+---
+
+##### `addPropertyOverride` <a name="addPropertyOverride" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addPropertyOverride"></a>
+
+```typescript
+public addPropertyOverride(propertyPath: string, value: any): void
+```
+
+Adds an override to a resource property.
+
+Syntactic sugar for `addOverride("Properties.<...>", value)`.
+
+###### `propertyPath`<sup>Required</sup> <a name="propertyPath" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addPropertyOverride.parameter.propertyPath"></a>
+
+- *Type:* string
+
+The path of the property.
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addPropertyOverride.parameter.value"></a>
+
+- *Type:* any
+
+The value.
+
+---
+
+##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnFlexCluster.applyRemovalPolicy"></a>
+
+```typescript
+public applyRemovalPolicy(policy?: RemovalPolicy, options?: RemovalPolicyOptions): void
+```
+
+Sets the deletion policy of the resource based on the removal policy specified.
+
+The Removal Policy controls what happens to this resource when it stops
+being managed by CloudFormation, either because you've removed it from the
+CDK application or because you've made a change that requires the resource
+to be replaced.
+
+The resource can be deleted (`RemovalPolicy.DESTROY`), or left in your AWS
+account for data recovery and cleanup later (`RemovalPolicy.RETAIN`). In some
+cases, a snapshot can be taken of the resource prior to deletion
+(`RemovalPolicy.SNAPSHOT`). A list of resources that support this policy
+can be found in the following link:
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html#aws-attribute-deletionpolicy-options](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html#aws-attribute-deletionpolicy-options)
+
+###### `policy`<sup>Optional</sup> <a name="policy" id="awscdk-resources-mongodbatlas.CfnFlexCluster.applyRemovalPolicy.parameter.policy"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicy
+
+---
+
+###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnFlexCluster.applyRemovalPolicy.parameter.options"></a>
+
+- *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `getAtt` <a name="getAtt" id="awscdk-resources-mongodbatlas.CfnFlexCluster.getAtt"></a>
+
+```typescript
+public getAtt(attributeName: string, typeHint?: ResolutionTypeHint): Reference
+```
+
+Returns a token for an runtime attribute of this resource.
+
+Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
+in case there is no generated attribute.
+
+###### `attributeName`<sup>Required</sup> <a name="attributeName" id="awscdk-resources-mongodbatlas.CfnFlexCluster.getAtt.parameter.attributeName"></a>
+
+- *Type:* string
+
+The name of the attribute.
+
+---
+
+###### `typeHint`<sup>Optional</sup> <a name="typeHint" id="awscdk-resources-mongodbatlas.CfnFlexCluster.getAtt.parameter.typeHint"></a>
+
+- *Type:* aws-cdk-lib.ResolutionTypeHint
+
+---
+
+##### `getMetadata` <a name="getMetadata" id="awscdk-resources-mongodbatlas.CfnFlexCluster.getMetadata"></a>
+
+```typescript
+public getMetadata(key: string): any
+```
+
+Retrieve a value value from the CloudFormation Resource Metadata.
+
+> [https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
+
+Note that this is a different set of metadata from CDK node metadata; this
+metadata ends up in the stack template under the resource, whereas CDK
+node metadata ends up in the Cloud Assembly.)
+
+###### `key`<sup>Required</sup> <a name="key" id="awscdk-resources-mongodbatlas.CfnFlexCluster.getMetadata.parameter.key"></a>
+
+- *Type:* string
+
+---
+
+##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFlexCluster.obtainDependencies"></a>
+
+```typescript
+public obtainDependencies(): Stack | CfnResource[]
+```
+
+Retrieves an array of resources this resource depends on.
+
+This assembles dependencies on resources across stacks (including nested stacks)
+automatically.
+
+##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnFlexCluster.obtainResourceDependencies"></a>
+
+```typescript
+public obtainResourceDependencies(): CfnResource[]
+```
+
+Get a shallow copy of dependencies between this resource and other resources in the same stack.
+
+##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnFlexCluster.removeDependency"></a>
+
+```typescript
+public removeDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFlexCluster.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `replaceDependency` <a name="replaceDependency" id="awscdk-resources-mongodbatlas.CfnFlexCluster.replaceDependency"></a>
+
+```typescript
+public replaceDependency(target: CfnResource, newTarget: CfnResource): void
+```
+
+Replaces one dependency with another.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFlexCluster.replaceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+The dependency to replace.
+
+---
+
+###### `newTarget`<sup>Required</sup> <a name="newTarget" id="awscdk-resources-mongodbatlas.CfnFlexCluster.replaceDependency.parameter.newTarget"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+The new dependency to add.
+
+---
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.isCfnElement">isCfnElement</a></code> | Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template). |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.isCfnResource">isCfnResource</a></code> | Check whether the given object is a CfnResource. |
+
+---
+
+##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnFlexCluster.isConstruct"></a>
+
+```typescript
+import { CfnFlexCluster } from 'awscdk-resources-mongodbatlas'
+
+CfnFlexCluster.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFlexCluster.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+##### `isCfnElement` <a name="isCfnElement" id="awscdk-resources-mongodbatlas.CfnFlexCluster.isCfnElement"></a>
+
+```typescript
+import { CfnFlexCluster } from 'awscdk-resources-mongodbatlas'
+
+CfnFlexCluster.isCfnElement(x: any)
+```
+
+Returns `true` if a construct is a stack element (i.e. part of the synthesized cloudformation template).
+
+Uses duck-typing instead of `instanceof` to allow stack elements from different
+versions of this library to be included in the same stack.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFlexCluster.isCfnElement.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+##### `isCfnResource` <a name="isCfnResource" id="awscdk-resources-mongodbatlas.CfnFlexCluster.isCfnResource"></a>
+
+```typescript
+import { CfnFlexCluster } from 'awscdk-resources-mongodbatlas'
+
+CfnFlexCluster.isCfnResource(x: any)
+```
+
+Check whether the given object is a CfnResource.
+
+###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFlexCluster.isCfnResource.parameter.x"></a>
+
+- *Type:* any
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.creationStack">creationStack</a></code> | <code>string[]</code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.logicalId">logicalId</a></code> | <code>string</code> | The logical ID for this CloudFormation stack element. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.stack">stack</a></code> | <code>aws-cdk-lib.Stack</code> | The stack in which this element is defined. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrClusterType">attrClusterType</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FlexCluster.ClusterType`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrCreateDate">attrCreateDate</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FlexCluster.CreateDate`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FlexCluster.Id`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrMongoDBVersion">attrMongoDBVersion</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FlexCluster.MongoDBVersion`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrStateName">attrStateName</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FlexCluster.StateName`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrVersionReleaseSystem">attrVersionReleaseSystem</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FlexCluster.VersionReleaseSystem`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexClusterProps">CfnFlexClusterProps</a></code> | Resource props. |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `creationStack`<sup>Required</sup> <a name="creationStack" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.creationStack"></a>
+
+```typescript
+public readonly creationStack: string[];
+```
+
+- *Type:* string[]
+
+---
+
+##### `logicalId`<sup>Required</sup> <a name="logicalId" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.logicalId"></a>
+
+```typescript
+public readonly logicalId: string;
+```
+
+- *Type:* string
+
+The logical ID for this CloudFormation stack element.
+
+The logical ID of the element
+is calculated from the path of the resource node in the construct tree.
+
+To override this value, use `overrideLogicalId(newLogicalId)`.
+
+---
+
+##### `stack`<sup>Required</sup> <a name="stack" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.stack"></a>
+
+```typescript
+public readonly stack: Stack;
+```
+
+- *Type:* aws-cdk-lib.Stack
+
+The stack in which this element is defined.
+
+CfnElements must be defined within a stack scope (directly or indirectly).
+
+---
+
+##### `ref`<sup>Required</sup> <a name="ref" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.ref"></a>
+
+```typescript
+public readonly ref: string;
+```
+
+- *Type:* string
+
+Return a string that will be resolved to a CloudFormation `{ Ref }` for this element.
+
+If, by any chance, the intrinsic reference of a resource is not a string, you could
+coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
+
+---
+
+##### `cfnOptions`<sup>Required</sup> <a name="cfnOptions" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.cfnOptions"></a>
+
+```typescript
+public readonly cfnOptions: ICfnResourceOptions;
+```
+
+- *Type:* aws-cdk-lib.ICfnResourceOptions
+
+Options for this resource, such as condition, update policy etc.
+
+---
+
+##### `cfnResourceType`<sup>Required</sup> <a name="cfnResourceType" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.cfnResourceType"></a>
+
+```typescript
+public readonly cfnResourceType: string;
+```
+
+- *Type:* string
+
+AWS resource type.
+
+---
+
+##### `attrClusterType`<sup>Required</sup> <a name="attrClusterType" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrClusterType"></a>
+
+```typescript
+public readonly attrClusterType: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FlexCluster.ClusterType`.
+
+---
+
+##### `attrCreateDate`<sup>Required</sup> <a name="attrCreateDate" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrCreateDate"></a>
+
+```typescript
+public readonly attrCreateDate: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FlexCluster.CreateDate`.
+
+---
+
+##### `attrId`<sup>Required</sup> <a name="attrId" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrId"></a>
+
+```typescript
+public readonly attrId: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FlexCluster.Id`.
+
+---
+
+##### `attrMongoDBVersion`<sup>Required</sup> <a name="attrMongoDBVersion" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrMongoDBVersion"></a>
+
+```typescript
+public readonly attrMongoDBVersion: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FlexCluster.MongoDBVersion`.
+
+---
+
+##### `attrStateName`<sup>Required</sup> <a name="attrStateName" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrStateName"></a>
+
+```typescript
+public readonly attrStateName: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FlexCluster.StateName`.
+
+---
+
+##### `attrVersionReleaseSystem`<sup>Required</sup> <a name="attrVersionReleaseSystem" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrVersionReleaseSystem"></a>
+
+```typescript
+public readonly attrVersionReleaseSystem: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::FlexCluster.VersionReleaseSystem`.
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.props"></a>
+
+```typescript
+public readonly props: CfnFlexClusterProps;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnFlexClusterProps">CfnFlexClusterProps</a>
+
+Resource props.
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.CFN_RESOURCE_TYPE_NAME">CFN_RESOURCE_TYPE_NAME</a></code> | <code>string</code> | The CloudFormation resource type name for this resource class. |
+
+---
+
+##### `CFN_RESOURCE_TYPE_NAME`<sup>Required</sup> <a name="CFN_RESOURCE_TYPE_NAME" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.CFN_RESOURCE_TYPE_NAME"></a>
+
+```typescript
+public readonly CFN_RESOURCE_TYPE_NAME: string;
+```
+
+- *Type:* string
+
+The CloudFormation resource type name for this resource class.
+
+---
+
 ### CfnGlobalClusterConfig <a name="CfnGlobalClusterConfig" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig"></a>
 
 A CloudFormation `MongoDB::Atlas::GlobalClusterConfig`.
@@ -35104,6 +35807,40 @@ String Representing the AWS VPC ID (like: vpc-xxxxxxxxxxxxxxxx) (Used For Creati
 
 ---
 
+### BackupSettings <a name="BackupSettings" id="awscdk-resources-mongodbatlas.BackupSettings"></a>
+
+Flex backup configuration.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.BackupSettings.Initializer"></a>
+
+```typescript
+import { BackupSettings } from 'awscdk-resources-mongodbatlas'
+
+const backupSettings: BackupSettings = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.BackupSettings.property.enabled">enabled</a></code> | <code>boolean</code> | Flag that indicates whether backups are performed for this flex cluster. |
+
+---
+
+##### `enabled`<sup>Optional</sup> <a name="enabled" id="awscdk-resources-mongodbatlas.BackupSettings.property.enabled"></a>
+
+```typescript
+public readonly enabled: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether backups are performed for this flex cluster.
+
+Backup uses flex cluster backups.
+
+---
+
 ### CfnAccessListApiKeyProps <a name="CfnAccessListApiKeyProps" id="awscdk-resources-mongodbatlas.CfnAccessListApiKeyProps"></a>
 
 Creates the access list entries for the specified organization API key.
@@ -37679,6 +38416,127 @@ public readonly roleAssignments: RoleAssignment[];
 - *Type:* <a href="#awscdk-resources-mongodbatlas.RoleAssignment">RoleAssignment</a>[]
 
 Atlas roles and the unique identifiers of the groups and organizations associated with each role.
+
+---
+
+### CfnFlexClusterProps <a name="CfnFlexClusterProps" id="awscdk-resources-mongodbatlas.CfnFlexClusterProps"></a>
+
+The flex cluster resource provides access to your flex cluster configurations.
+
+The resource lets you create, edit and delete flex clusters. The resource requires your Project ID.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnFlexClusterProps.Initializer"></a>
+
+```typescript
+import { CfnFlexClusterProps } from 'awscdk-resources-mongodbatlas'
+
+const cfnFlexClusterProps: CfnFlexClusterProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.name">name</a></code> | <code>string</code> | Human-readable label that identifies the flex cluster. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.projectId">projectId</a></code> | <code>string</code> | Unique identifier of the project the cluster belongs to. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.providerSettings">providerSettings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ProviderSettings">ProviderSettings</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.backupSettings">backupSettings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.BackupSettings">BackupSettings</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.connectionStrings">connectionStrings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings">ConnectionStrings</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.tags">tags</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Tag">Tag</a>[]</code> | Map that contains key-value pairs between 1 to 255 characters in length for tagging and categorizing the flex cluster. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.terminationProtectionEnabled">terminationProtectionEnabled</a></code> | <code>boolean</code> | Flag that indicates whether termination protection is enabled on the cluster. |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the flex cluster.
+
+---
+
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.projectId"></a>
+
+```typescript
+public readonly projectId: string;
+```
+
+- *Type:* string
+
+Unique identifier of the project the cluster belongs to.
+
+---
+
+##### `providerSettings`<sup>Required</sup> <a name="providerSettings" id="awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.providerSettings"></a>
+
+```typescript
+public readonly providerSettings: ProviderSettings;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.ProviderSettings">ProviderSettings</a>
+
+---
+
+##### `backupSettings`<sup>Optional</sup> <a name="backupSettings" id="awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.backupSettings"></a>
+
+```typescript
+public readonly backupSettings: BackupSettings;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.BackupSettings">BackupSettings</a>
+
+---
+
+##### `connectionStrings`<sup>Optional</sup> <a name="connectionStrings" id="awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.connectionStrings"></a>
+
+```typescript
+public readonly connectionStrings: ConnectionStrings;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.ConnectionStrings">ConnectionStrings</a>
+
+---
+
+##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.profile"></a>
+
+```typescript
+public readonly profile: string;
+```
+
+- *Type:* string
+
+Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
+
+---
+
+##### `tags`<sup>Optional</sup> <a name="tags" id="awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.tags"></a>
+
+```typescript
+public readonly tags: Tag[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.Tag">Tag</a>[]
+
+Map that contains key-value pairs between 1 to 255 characters in length for tagging and categorizing the flex cluster.
+
+---
+
+##### `terminationProtectionEnabled`<sup>Optional</sup> <a name="terminationProtectionEnabled" id="awscdk-resources-mongodbatlas.CfnFlexClusterProps.property.terminationProtectionEnabled"></a>
+
+```typescript
+public readonly terminationProtectionEnabled: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether termination protection is enabled on the cluster.
+
+If set to true, MongoDB Cloud won't delete the cluster. If set to false, MongoDB Cloud will delete the cluster.
 
 ---
 
@@ -41870,83 +42728,8 @@ const connectionStrings: ConnectionStrings = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.private">private</a></code> | <code>string</code> | Network peering connection strings for each interface Virtual Private Cloud (VPC) endpoint that you configured to connect to this cluster. |
-| <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.privateEndpoints">privateEndpoints</a></code> | <code>string[]</code> | Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink. |
-| <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.privateEndpointsSrv">privateEndpointsSrv</a></code> | <code>string[]</code> | Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink. |
-| <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.privateSrv">privateSrv</a></code> | <code>string</code> | Network peering connection strings for each interface Virtual Private Cloud (VPC) endpoint that you configured to connect to this cluster. |
-| <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.srvShardOptimizedConnectionString">srvShardOptimizedConnectionString</a></code> | <code>string[]</code> | Private endpoint-aware connection string optimized for sharded clusters that uses the `mongodb+srv://` protocol to connect to MongoDB Cloud through a private endpoint. |
 | <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.standard">standard</a></code> | <code>string</code> | Public connection string that you can use to connect to this cluster. |
-| <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.standardSrv">standardSrv</a></code> | <code>string</code> | Public connection string that you can use to connect to this cluster. |
-
----
-
-##### `private`<sup>Optional</sup> <a name="private" id="awscdk-resources-mongodbatlas.ConnectionStrings.property.private"></a>
-
-```typescript
-public readonly private: string;
-```
-
-- *Type:* string
-
-Network peering connection strings for each interface Virtual Private Cloud (VPC) endpoint that you configured to connect to this cluster.
-
-This connection string uses the mongodb+srv:// protocol. The resource returns this parameter once someone creates a network peering connection to this cluster. This protocol tells the application to look up the host seed list in the Domain Name System (DNS). This list synchronizes with the nodes in a cluster. If the connection string uses this Uniform Resource Identifier (URI) format, you don't need to append the seed list or change the URI if the nodes change. Use this URI format if your driver supports it. If it doesn't, use connectionStrings.private. For Amazon Web Services (AWS) clusters, this resource returns this parameter only if you enable custom DNS.
-
----
-
-##### `privateEndpoints`<sup>Optional</sup> <a name="privateEndpoints" id="awscdk-resources-mongodbatlas.ConnectionStrings.property.privateEndpoints"></a>
-
-```typescript
-public readonly privateEndpoints: string[];
-```
-
-- *Type:* string[]
-
-Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink.
-
-Each key identifies an Amazon Web Services (AWS) interface endpoint. Each value identifies the related mongodb:// connection string that you use to connect to MongoDB Cloud through the interface endpoint that the key names.
-
----
-
-##### `privateEndpointsSrv`<sup>Optional</sup> <a name="privateEndpointsSrv" id="awscdk-resources-mongodbatlas.ConnectionStrings.property.privateEndpointsSrv"></a>
-
-```typescript
-public readonly privateEndpointsSrv: string[];
-```
-
-- *Type:* string[]
-
-Private endpoint-aware connection strings that use AWS-hosted clusters with Amazon Web Services (AWS) PrivateLink.
-
-Each key identifies an Amazon Web Services (AWS) interface endpoint. Each value identifies the related mongodb:// connection string that you use to connect to Atlas through the interface endpoint that the key names.
-
----
-
-##### `privateSrv`<sup>Optional</sup> <a name="privateSrv" id="awscdk-resources-mongodbatlas.ConnectionStrings.property.privateSrv"></a>
-
-```typescript
-public readonly privateSrv: string;
-```
-
-- *Type:* string
-
-Network peering connection strings for each interface Virtual Private Cloud (VPC) endpoint that you configured to connect to this cluster.
-
-This connection string uses the mongodb+srv:// protocol. The resource returns this parameter when someone creates a network peering connection to this cluster. This protocol tells the application to look up the host seed list in the Domain Name System (DNS). This list synchronizes with the nodes in a cluster. If the connection string uses this Uniform Resource Identifier (URI) format, you don't need to append the seed list or change the Uniform Resource Identifier (URI) if the nodes change. Use this Uniform Resource Identifier (URI) format if your driver supports it. If it doesn't, use connectionStrings.private. For Amazon Web Services (AWS) clusters, this parameter returns only if you enable custom DNS.
-
----
-
-##### `srvShardOptimizedConnectionString`<sup>Optional</sup> <a name="srvShardOptimizedConnectionString" id="awscdk-resources-mongodbatlas.ConnectionStrings.property.srvShardOptimizedConnectionString"></a>
-
-```typescript
-public readonly srvShardOptimizedConnectionString: string[];
-```
-
-- *Type:* string[]
-
-Private endpoint-aware connection string optimized for sharded clusters that uses the `mongodb+srv://` protocol to connect to MongoDB Cloud through a private endpoint.
-
-If the connection string uses this Uniform Resource Identifier (URI) format, you don't need to change the Uniform Resource Identifier (URI) if the nodes change. Use this Uniform Resource Identifier (URI) format if your application and Atlas cluster supports it. If it doesn't, use and consult the documentation for connectionStrings.privateEndpoint[n].srvConnectionString.
+| <code><a href="#awscdk-resources-mongodbatlas.ConnectionStrings.property.standardSrv">standardSrv</a></code> | <code>string</code> | Public connection string that you can use to connect to this flex cluster. |
 
 ---
 
@@ -41972,7 +42755,7 @@ public readonly standardSrv: string;
 
 - *Type:* string
 
-Public connection string that you can use to connect to this cluster.
+Public connection string that you can use to connect to this flex cluster.
 
 This connection string uses the mongodb+srv:// protocol.
 
@@ -45567,6 +46350,79 @@ string = 24 characters ^([a-f0-9]{24})$
 
 ---
 
+### ProviderSettings <a name="ProviderSettings" id="awscdk-resources-mongodbatlas.ProviderSettings"></a>
+
+Group of cloud provider settings that configure the provisioned MongoDB flex cluster.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.ProviderSettings.Initializer"></a>
+
+```typescript
+import { ProviderSettings } from 'awscdk-resources-mongodbatlas'
+
+const providerSettings: ProviderSettings = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.ProviderSettings.property.backingProviderName">backingProviderName</a></code> | <code>string</code> | Cloud service provider on which MongoDB Cloud provisioned the flex cluster. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProviderSettings.property.regionName">regionName</a></code> | <code>string</code> | Human-readable label that identifies the geographic location of your MongoDB flex cluster. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProviderSettings.property.diskSizeGb">diskSizeGb</a></code> | <code>number</code> | Storage capacity available to the flex cluster expressed in gigabytes. |
+| <code><a href="#awscdk-resources-mongodbatlas.ProviderSettings.property.providerName">providerName</a></code> | <code>string</code> | Human-readable label that identifies the cloud service provider. |
+
+---
+
+##### `backingProviderName`<sup>Required</sup> <a name="backingProviderName" id="awscdk-resources-mongodbatlas.ProviderSettings.property.backingProviderName"></a>
+
+```typescript
+public readonly backingProviderName: string;
+```
+
+- *Type:* string
+
+Cloud service provider on which MongoDB Cloud provisioned the flex cluster.
+
+---
+
+##### `regionName`<sup>Required</sup> <a name="regionName" id="awscdk-resources-mongodbatlas.ProviderSettings.property.regionName"></a>
+
+```typescript
+public readonly regionName: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the geographic location of your MongoDB flex cluster.
+
+The region you choose can affect network latency for clients accessing your databases.
+
+---
+
+##### `diskSizeGb`<sup>Optional</sup> <a name="diskSizeGb" id="awscdk-resources-mongodbatlas.ProviderSettings.property.diskSizeGb"></a>
+
+```typescript
+public readonly diskSizeGb: number;
+```
+
+- *Type:* number
+
+Storage capacity available to the flex cluster expressed in gigabytes.
+
+---
+
+##### `providerName`<sup>Optional</sup> <a name="providerName" id="awscdk-resources-mongodbatlas.ProviderSettings.property.providerName"></a>
+
+```typescript
+public readonly providerName: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the cloud service provider.
+
+---
+
 ### ReadPreference <a name="ReadPreference" id="awscdk-resources-mongodbatlas.ReadPreference"></a>
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.ReadPreference.Initializer"></a>
@@ -47097,7 +47953,7 @@ const tag: Tag = { ... }
 
 ---
 
-##### `key`<sup>Optional</sup> <a name="key" id="awscdk-resources-mongodbatlas.Tag.property.key"></a>
+##### `key`<sup>Required</sup> <a name="key" id="awscdk-resources-mongodbatlas.Tag.property.key"></a>
 
 ```typescript
 public readonly key: string;
@@ -47111,7 +47967,7 @@ For example, environment in the environment : production tag.
 
 ---
 
-##### `value`<sup>Optional</sup> <a name="value" id="awscdk-resources-mongodbatlas.Tag.property.value"></a>
+##### `value`<sup>Required</sup> <a name="value" id="awscdk-resources-mongodbatlas.Tag.property.value"></a>
 
 ```typescript
 public readonly value: string;

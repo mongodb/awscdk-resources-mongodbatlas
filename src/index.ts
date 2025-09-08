@@ -198,6 +198,15 @@ export {
 } from "./l1-resources/federated-settings-org-role-mapping";
 
 export {
+  CfnFlexCluster,
+  CfnFlexClusterProps,
+  ProviderSettings,
+  BackupSettings,
+  ConnectionStrings as FlexConnectionStrings, // Conflicts with cluster
+  Tag as FlexTag, // Conflicts with cluster
+} from "./l1-resources/flex-cluster";
+
+export {
   CfnGlobalClusterConfig,
   CfnGlobalClusterConfigProps,
   ManagedNamespace,
