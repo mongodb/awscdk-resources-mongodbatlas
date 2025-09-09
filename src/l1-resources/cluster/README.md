@@ -1,4 +1,4 @@
-# cluster
+# CfnCluster
 
 The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node.js.
 
@@ -9,7 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-The cluster resource provides access to your cluster configurations. The resource lets you create, edit and delete clusters. The resource requires your Project ID.
+The `CfnCluster` resource provides access to your cluster configurations and enable you to create, edit and delete clusters. The `CfnCluster` resource requires your Project ID.
 
 ## MongoDB Atlas API Docs
 
@@ -17,7 +17,7 @@ For more information about the API refer to: [API Endpoints](https://www.mongodb
 
 ## Usage
 
-In order to use this library, you will need to activate this AWS CloudFormation Registry type in your account. You can do this via the AWS Management Console or using the [AWS CLI](https://aws.amazon.com/cli/) using the following command:
+In order to use this library, you must activate the following AWS CloudFormation Registry type in your account. You can do this via the AWS Management Console or through the [AWS CLI](https://aws.amazon.com/cli/) using the following command:
 
 ```sh
 aws cloudformation activate-type \
