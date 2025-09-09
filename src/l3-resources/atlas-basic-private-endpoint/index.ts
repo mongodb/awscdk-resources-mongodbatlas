@@ -67,6 +67,7 @@ export class AtlasBasicPrivateEndpoint extends Construct {
       this,
       "atlas-private-endpoint-service-".concat(id),
       {
+        profile: props.profile,
         projectId: this.atlasBasic.mProject.attrId,
         region: region.toUpperCase().replace(/-/g, "_"),
         cloudProvider: CfnPrivateEndpointServicePropsCloudProvider.AWS,
@@ -90,6 +91,7 @@ export class AtlasBasicPrivateEndpoint extends Construct {
       this,
       "atlas-private-endpoint-".concat(id),
       {
+        profile: props.profile,
         projectId: this.atlasBasic.mProject.attrId,
         endpointServiceId: this.privateEndpointService.attrId,
         id: this.awsPrivateEndpoint.ref,
