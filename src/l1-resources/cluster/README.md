@@ -9,7 +9,11 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
+<<<<<<< HEAD
 The cluster resource provides access to your cluster configurations and enable you to create, edit, and delete clusters. The cluster resource requires your Project ID.
+=======
+The cluster resource provides access to your cluster configurations and enable you to create, edit and delete clusters. The cluster resource requires your Project ID.
+>>>>>>> 124160b (DOCSP-53434 -- corrections)
 
 ## MongoDB Atlas API Docs
 
@@ -89,6 +93,12 @@ const clusterRes = new CfnCluster(this, 'ClusterResource', {
     });
 
 ```
+
+## Flex Clusters
+
+We now support flex clusters. See the [flex-cluster Read Me file](https://github.com/mongodb/awscdk-resources-mongodbatlas/blob/main/src/l1-resources/flex-cluster/README.md) for more details.
+
+*Note:* Although we now support flex clusters, upgrades to or from flex clusters are currently unavailable. We expect to support upgrades to or from flex clusters in the forseeable future.
 
 ## Flex Clusters
 
