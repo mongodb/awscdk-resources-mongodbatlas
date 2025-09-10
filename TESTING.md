@@ -38,7 +38,7 @@ npx projen test
 
 ## Testing the resource in a CFN stack:
 1. Build the construct by running `npx projen build`.
-2. Navigate inside `/dist/js` and copy the`.tgz` file. You will use this in the next steps.
+2. It will generate a `.tgz` file in `dist/js` that we will reference later.
 3. Create a CDK test app: We will be using a CDK app to test our construct by using the app to create, update and delete AWS CloudFormation stacks.
 Create the CDK app by running the following in a terminal: ([refer AWS walkthrough for details](https://docs.aws.amazon.com/cdk/v2/guide/hello_world.html#hello_world_tutorial_create_app)):
 ```
@@ -48,10 +48,12 @@ cdk init app --language typescript
 # build the app:
 npm run build
 ```
-4. Copy the .tgz file from step #2 inside the node_modules folder in your CDK test app.
+4. Add a reference to the previous file in the `dependencies` section in `package.json` instead of using a published version, for example:
+```
+"awscdk-resources-mongodbatlas": "file:../dist/js/awscdk-resources-mongodbatlas@0.0.0.jsii.tgz"
+```
 5. Import your CDK construct in a testing project.
 6. Use the construct in your app with appropriate parameters.
- - [Optional, not applicable for L2/L3 constructs] If you need help getting test parameters to use with the constructs you can use `./cfn-resources/cfn-testing-helper.sh`. Refer “Getting test parameters” for creating a stack here for details.
 7. Build your app again.
 
 #### Create a stack:
