@@ -48349,6 +48349,7 @@ typesToActivate=["Cluster","Project"] this will actiate MongoDB::Atlas::Project 
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.GCP">GCP</a></code> | GCP. |
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.AZURE">AZURE</a></code> | AZURE. |
 | <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.TENANT">TENANT</a></code> | TENANT. |
+| <code><a href="#awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.FLEX">FLEX</a></code> | FLEX. |
 
 ---
 
@@ -48376,6 +48377,13 @@ AZURE.
 ##### `TENANT` <a name="TENANT" id="awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.TENANT"></a>
 
 TENANT.
+
+---
+
+
+##### `FLEX` <a name="FLEX" id="awscdk-resources-mongodbatlas.AdvancedRegionConfigProviderName.FLEX"></a>
+
+FLEX.
 
 ---
 
