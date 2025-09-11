@@ -9,7 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-The cluster resource provides access to your cluster configurations and enable you to create, edit and delete clusters. The cluster resource requires your Project ID.
+The cluster resource provides access to your cluster configurations and enable you to create, edit, and delete clusters. The cluster resource requires your Project ID.
 
 ## MongoDB Atlas API Docs
 
