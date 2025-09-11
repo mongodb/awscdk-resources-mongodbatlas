@@ -114,7 +114,7 @@ const flexClusterRes = new CfnCluster(this, 'FlexClusterResource', {
 
 *Note:* Upgrades to or from flex clusters are currently unavailable. We expect to support upgrades to or from flex clusters in the forseeable future.
 
-*Important:* Use the `CfnCluster` resource instead of the `CfnFlexCluster` resource to create and manage flex clusters. `CfnCluster` supports flex clusters and future upgrades will only be available through this resource. For more information, see the [`CfnCluster` README](link-to-readme).  
+*Important:* Use the `CfnCluster` resource instead of the [CfnFlexCluster](https://github.com/mongodb/awscdk-resources-mongodbatlas/blob/main/src/l1-resources/flex-cluster/README.md) resource to create and manage flex clusters. `CfnCluster` supports flex clusters and future upgrades will only be available through this resource.
 
 ## Feedback
 
