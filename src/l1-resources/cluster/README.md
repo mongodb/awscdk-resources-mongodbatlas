@@ -90,6 +90,7 @@ const clusterRes = new CfnCluster(this, 'ClusterResource', {
 
 ```
 
+
 ## Flex Clusters
 
 You can create a flex cluster using ``CfnCluster``, as the following example shows:
@@ -111,6 +112,7 @@ const flexClusterRes = new CfnCluster(this, 'FlexClusterResource', {
   }]
 });
 ```
+
 
 *Note:* Upgrades to or from flex clusters are currently unavailable. We expect to support upgrades to or from flex clusters in the forseeable future.
 

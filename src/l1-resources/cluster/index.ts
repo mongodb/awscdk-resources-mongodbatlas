@@ -579,14 +579,14 @@ export interface Tag {
    *
    * @schema tag#Key
    */
-  readonly key?: string;
+  readonly key: string;
 
   /**
    * Variable that belongs to the set of the tag. For example, production in the environment : production tag.
    *
    * @schema tag#Value
    */
-  readonly value?: string;
+  readonly value: string;
 }
 
 /**
@@ -747,6 +747,8 @@ export enum AdvancedRegionConfigProviderName {
   AZURE = "AZURE",
   /** TENANT */
   TENANT = "TENANT",
+  /** FLEX */
+  FLEX = "FLEX",
 }
 
 /**
