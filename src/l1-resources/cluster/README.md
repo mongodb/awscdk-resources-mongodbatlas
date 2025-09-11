@@ -9,11 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-<<<<<<< HEAD
-The cluster resource provides access to your cluster configurations and enable you to create, edit, and delete clusters. The cluster resource requires your Project ID.
-=======
-The cluster resource provides access to your cluster configurations and enable you to create, edit and delete clusters. The cluster resource requires your Project ID.
->>>>>>> 124160b (DOCSP-53434 -- corrections)
+The cluster resource provides access to your cluster configurations and enables you to create, edit, and delete clusters. The cluster resource requires your Project ID.
 
 ## MongoDB Atlas API Docs
 
@@ -41,8 +37,8 @@ aws cloudformation activate-type \
 
 You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
 
-
 ## Example: [cluster.ts](../../../examples/l1-resources/cluster.ts)
+
 ```ts
 import { CfnCluster } from 'awscdk-resources-mongodbatlas';
 
@@ -96,15 +92,31 @@ const clusterRes = new CfnCluster(this, 'ClusterResource', {
 
 ## Flex Clusters
 
-We now support flex clusters. See the [flex-cluster Read Me file](https://github.com/mongodb/awscdk-resources-mongodbatlas/blob/main/src/l1-resources/flex-cluster/README.md) for more details.
+We now support flex clusters. 
 
-*Note:* Although we now support flex clusters, upgrades to or from flex clusters are currently unavailable. We expect to support upgrades to or from flex clusters in the forseeable future.
+You can create a flex cluster using ``CfnCluster``, as the following example shows:
 
-## Flex Clusters
+```ts
+import { CfnCluster, AdvancedRegionConfigProviderName } from 'awscdk-resources-mongodbatlas';
 
-We now support flex clusters. See the [flex-cluster Read Me file](https://github.com/mongodb/awscdk-resources-mongodbatlas/blob/main/src/l1-resources/flex-cluster/README.md) for more details.
+const flexClusterRes = new CfnCluster(this, 'FlexClusterResource', {
+  name: atlasProps.clusterName,
+  projectId: projectRes.attrId,
+  profile: atlasProps.profile,
+  replicationSpecs: [{
+    advancedRegionConfigs: [{
+      regionName: atlasProps.region,
+      providerName: AdvancedRegionConfigProviderName.FLEX,
+      backingProviderName: "AWS",
+      priority: 7,
+    }]
+  }]
+});
+```
 
-*Note:* Although we now support flex clusters, upgrades to or from flex clusters are currently unavailable. We expect to support upgrades to or from flex clusters in the forseeable future.
+*Note:* Upgrades to or from flex clusters are currently unavailable. We expect to support upgrades to or from flex clusters in the forseeable future.
+
+*Important:* Use the `CfnCluster` resource instead of the `CfnFlexCluster` resource to create and manage flex clusters. `CfnCluster` supports flex clusters and future upgrades will only be available through this resource. For more information, see the [`CfnCluster` README](link-to-readme).  
 
 ## Feedback
 
