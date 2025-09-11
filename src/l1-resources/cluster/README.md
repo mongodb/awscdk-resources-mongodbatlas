@@ -90,6 +90,25 @@ const clusterRes = new CfnCluster(this, 'ClusterResource', {
 
 ```
 
+You can also create a flex cluster using CfnCluster, for example:
+```ts
+import { CfnCluster, AdvancedRegionConfigProviderName } from 'awscdk-resources-mongodbatlas';
+
+const flexClusterRes = new CfnCluster(this, 'FlexClusterResource', {
+  name: atlasProps.clusterName,
+  projectId: projectRes.attrId,
+  profile: atlasProps.profile,
+  replicationSpecs: [{
+    advancedRegionConfigs: [{
+      regionName: atlasProps.region,
+      providerName: AdvancedRegionConfigProviderName.FLEX,
+      backingProviderName: "AWS",
+      priority: 7,
+    }]
+  }]
+});
+```
+
 ## Feedback
 
 This library is auto-generated and published to all supported programming languages by the [cdklabs/cdk-cloudformation] project based on the API schema published for `MongoDB::Atlas::Cluster`.
