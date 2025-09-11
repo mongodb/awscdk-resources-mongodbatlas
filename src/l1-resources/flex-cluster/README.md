@@ -9,7 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-The flex cluster resource provides access to your flex cluster configurations. The resource lets you create, edit and delete flex clusters. For more information, see [The MongoDB Atlas Flex Tier](https://www.mongodb.com/company/blog/product-release-announcements/dynamic-workloads-predictable-costs-mongodb-atlas-flex-tier).
+The flex cluster resource provides access to your flex cluster configurations and enable you to create, edit, and delete flex clusters. For more information, see [The MongoDB Atlas Flex Tier](https://www.mongodb.com/company/blog/product-release-announcements/dynamic-workloads-predictable-costs-mongodb-atlas-flex-tier).
 
 ## MongoDB Atlas API Docs
 
@@ -17,7 +17,7 @@ For more information about the API refer to: [API Endpoints](https://www.mongodb
 
 ## Usage
 
-In order to use this library, you will need to activate this AWS CloudFormation Registry type in your account. You can do this via the AWS Management Console or using the [AWS CLI](https://aws.amazon.com/cli/) using the following command:
+In order to use this library, you must activate the following AWS CloudFormation Registry type in your account. You can do this via the AWS Management Console or through the [AWS CLI](https://aws.amazon.com/cli/) using the following command:
 
 ```sh
 aws cloudformation activate-type \
@@ -58,6 +58,8 @@ const flexClusterRes = new CfnFlexCluster(this, 'FlexClusterResource', {
   ],
 });
 ```
+
+*Note:* Upgrades to or from flex clusters are currently unavailable. We expect to support upgrades to or from flex clusters in the forseeable future.
 
 ## Feedback
 
