@@ -9,7 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-The cluster resource provides access to your cluster configurations. The resource lets you create, edit and delete clusters. The resource requires your Project ID.
+The cluster resource provides access to your cluster configurations and enables you to create, edit, and delete clusters. The cluster resource requires your Project ID.
 
 ## MongoDB Atlas API Docs
 
@@ -17,7 +17,7 @@ For more information about the API refer to: [API Endpoints](https://www.mongodb
 
 ## Usage
 
-In order to use this library, you will need to activate this AWS CloudFormation Registry type in your account. You can do this via the AWS Management Console or using the [AWS CLI](https://aws.amazon.com/cli/) using the following command:
+In order to use this library, you must activate the following AWS CloudFormation Registry type in your account. You can do this via the AWS Management Console or through the [AWS CLI](https://aws.amazon.com/cli/) using the following command:
 
 ```sh
 aws cloudformation activate-type \
@@ -37,8 +37,8 @@ aws cloudformation activate-type \
 
 You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
 
-
 ## Example: [cluster.ts](../../../examples/l1-resources/cluster.ts)
+
 ```ts
 import { CfnCluster } from 'awscdk-resources-mongodbatlas';
 
@@ -90,7 +90,11 @@ const clusterRes = new CfnCluster(this, 'ClusterResource', {
 
 ```
 
-You can also create a flex cluster using CfnCluster, for example:
+
+## Flex Clusters
+
+You can create a flex cluster using ``CfnCluster``, as the following example shows:
+
 ```ts
 import { CfnCluster, AdvancedRegionConfigProviderName } from 'awscdk-resources-mongodbatlas';
 
@@ -108,6 +112,11 @@ const flexClusterRes = new CfnCluster(this, 'FlexClusterResource', {
   }]
 });
 ```
+
+
+*Note:* Upgrades to or from flex clusters are currently unavailable. We expect to support upgrades to or from flex clusters in the forseeable future.
+
+*Important:* Use the `CfnCluster` resource instead of the [CfnFlexCluster](../flex-cluster/README.md) resource to create and manage flex clusters. `CfnCluster` supports flex clusters and future upgrades will only be available through this resource.
 
 ## Feedback
 
