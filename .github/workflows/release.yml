@@ -317,6 +317,7 @@ jobs:
           labels: failed-release
           title: Publishing v${{ steps.extract-version.outputs.VERSION }} to GitHub Releases failed
           body: See https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Generate PURL and SBOM
         run: |
           ./scripts/compliance/gen-purls.sh
