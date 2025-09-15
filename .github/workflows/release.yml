@@ -99,7 +99,7 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
         run: |
           pip install twine
-          twine upload dist/*
+          twine upload dist/python/*.whl dist/python/*.tar.gz
       - name: Extract Version
         id: extract-version
         if: ${{ failure() }}
