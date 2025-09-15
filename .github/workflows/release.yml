@@ -97,7 +97,9 @@ jobs:
         env:
           TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
-        run: twine upload dist/*
+        run: |
+          pip install twine
+          twine upload dist/*
       - name: Extract Version
         id: extract-version
         if: ${{ failure() }}
