@@ -56,8 +56,8 @@ jobs:
           path: dist
           overwrite: true
   
-  release_golang:
-    name: Publish to GitHub Go Module Repository
+  release_pypi:
+    name: Publish to PyPI
     needs: release
     runs-on: ubuntu-latest
     permissions:
@@ -67,9 +67,9 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
         with:
           node-version: 18.x
-      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c
         with:
-          go-version: ^1.16.0
+          python-version: 3.x
       - name: Download build artifacts
         uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
         with:
@@ -78,12 +78,26 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Release
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@e89d40939c28e39f97cf32126055eeae86ba74ec
+        with:
+          gpg_private_key: ${{ secrets.APIX_BOT_GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.APIX_BOT_GPG_PASSPHRASE }}
+      - name: GPG sign PyPI distributions
+        run: |
+          for file in dist/python/*.whl dist/python/*.tar.gz; do
+            if [ -f "$file" ]; then
+              gpg --batch --yes --pinentry-mode loopback --passphrase "$APIX_BOT_GPG_PASSPHRASE" --detach-sign -a "$file"
+            fi
+          done
         env:
-          GITHUB_TOKEN: ${{ secrets.GO_GITHUB_TOKEN }}
-          GIT_USER_NAME: ${{ secrets.GO_GIT_USER_NAME }}
-          GIT_USER_EMAIL: ${{ secrets.GO_GIT_USER_EMAIL }}
-        run: npx -p publib@latest publib-golang
+          APIX_BOT_GPG_PASSPHRASE: ${{ secrets.APIX_BOT_GPG_PASSPHRASE }}
+
+      - name: Upload to PyPI
+        env:
+          TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+        run: twine upload dist/*
       - name: Extract Version
         id: extract-version
         if: ${{ failure() }}
