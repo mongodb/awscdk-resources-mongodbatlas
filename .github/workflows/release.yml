@@ -80,9 +80,7 @@ jobs:
         id: extract-version
         if: ${{ failure() }}
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
-      - uses: mxschmitt/action-tmate@v3
-        with:
-          limit-access-to-actor: true  
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Generate PURL and SBOM
         run: |
           ./scripts/compliance/gen-purls.sh
@@ -96,7 +94,6 @@ jobs:
           SILKBOMB_IMG: ${{ vars.SILKBOMB_IMG }}
           KONDUKTO_REPO: ${{ vars.KONDUKTO_REPO }}
           KONDUKTO_BRANCH_PREFIX: ${{ vars.KONDUKTO_BRANCH_PREFIX }}
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Generate SSDLC report
         run: |
           AUTHOR="${{ github.actor }}"
