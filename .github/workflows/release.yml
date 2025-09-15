@@ -126,10 +126,9 @@ jobs:
         continue-on-error: true
       - name: Publish to npm with provenance
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          cd dist/js
-          npm publish --provenance --access public --tag latest
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+        run: npx -p publib@latest publib-npm
       - name: Extract Version
         id: extract-version
         if: ${{ failure() }}
