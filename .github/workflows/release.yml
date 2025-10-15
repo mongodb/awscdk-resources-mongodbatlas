@@ -20,7 +20,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
       - name: Setup Node.js
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
           node-version: 18.x
       - uses: actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165
@@ -64,7 +64,7 @@ jobs:
       issues: write
       id-token: write # required for provenance
     steps:
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
           node-version: 18.x
       - name: Download build artifacts
@@ -103,7 +103,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 11.x
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
           node-version: 18.x
       - name: Download build artifacts
@@ -142,7 +142,7 @@ jobs:
       contents: read
       issues: write
     steps:
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
           node-version: 18.x
       - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c
@@ -197,7 +197,7 @@ jobs:
       contents: read
       issues: write
     steps:
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
           node-version: 18.x
       - uses: actions/setup-dotnet@d4c94342e560b34958eacfc5d055d21461ed1c5d
@@ -248,7 +248,7 @@ jobs:
       contents: read
       issues: write
     steps:
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
           node-version: 18.x
       - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00
@@ -287,7 +287,7 @@ jobs:
       contents: write
       issues: write
     steps:
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
           node-version: 18.x
       - name: Download build artifacts
