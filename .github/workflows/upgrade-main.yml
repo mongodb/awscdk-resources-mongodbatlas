@@ -4,12 +4,15 @@ on:
   workflow_dispatch: {}
   schedule:
     - cron: 0 9 * * 2 # every Tuesday at 9am
+permissions:
+  contents: write
+  pull-requests: write
 jobs:
   upgrade:
     name: Upgrade
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
+    outputs:
+      patch_created: ${{ steps.create_patch.outputs.patch_created }}
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
@@ -21,6 +24,36 @@ jobs:
         run: yarn install --check-files --frozen-lockfile
       - name: Upgrade dependencies
         run: npx projen upgrade
+      - name: Find mutations
+        id: create_patch
+        run: |-
+          git add .
+          git diff --staged --patch --exit-code > .repo.patch || echo "patch_created=true" >> "${GITHUB_OUTPUT}"
+      - name: Upload patch
+        if: steps.create_patch.outputs.patch_created
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: .repo.patch
+          path: .repo.patch
+  pr:
+    name: Create Pull Request
+    needs: upgrade
+    runs-on: ubuntu-latest
+    if: ${{ needs.upgrade.outputs.patch_created }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - name: Download patch
+        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        with:
+          name: .repo.patch
+          path: ${{ runner.temp }}
+      - name: Apply patch
+        run: '[ -s ${{ runner.temp }}/.repo.patch ] && git apply ${{ runner.temp }}/.repo.patch || echo "Empty patch. Skipping."'
+      - name: Set git identity
+        run: |-
+          git config user.name "svc-apix-bot"
+          git config user.email "svc-api-experience-integrations-escalation@mongodb.com"
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e
         with:
@@ -30,3 +63,6 @@ jobs:
           delete-branch: true
           branch: upgrade-dependencies
           body: "Upgrades project dependencies. See details in [workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+          author: svc-apix-bot <svc-api-experience-integrations-escalation@mongodb.com>
+          committer: svc-apix-bot <svc-api-experience-integrations-escalation@mongodb.com>
+          signoff: true
