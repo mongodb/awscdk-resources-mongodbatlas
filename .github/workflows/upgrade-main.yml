@@ -22,11 +22,6 @@ jobs:
         run: yarn install --check-files --frozen-lockfile
       - name: Upgrade dependencies
         run: npx projen upgrade
-      - name: Set git identity & add files to commit
-        run: |
-          git config --local user.email svc-api-experience-integrations-escalation@mongodb.com
-          git config --local user.name svc-apix-bot
-          git add .
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e
         with:
