@@ -125,17 +125,6 @@ export {
 } from "./l1-resources/custom-dns-configuration-cluster-aws";
 
 export {
-  CfnDataLakePipeline,
-  CfnDataLakePipelineProps,
-  Sink,
-  SinkType,
-  Source,
-  SourceType,
-  Transformations,
-  PartitionFields,
-} from "./l1-resources/data-lake-pipeline";
-
-export {
   CfnDatabaseUser,
   CfnDatabaseUserProps,
   LabelDefinition,
@@ -146,23 +135,6 @@ export {
   CfnDatabaseUserPropsLdapAuthType,
   ScopeDefinitionType,
 } from "./l1-resources/database-user";
-
-export {
-  CfnDataLakes,
-  CfnDataLakesProps,
-  DataLakeAwsCloudProviderConfigView,
-  DataLakeCloudProviderConfigView,
-  DataLakeDataProcessRegionView,
-  DataLakeDataProcessRegionViewCloudProvider,
-  DataLakeDataProcessRegionViewRegion,
-  DataLakeDatabaseCollectionView,
-  DataLakeDatabaseDataSourceView,
-  DataLakeDatabaseDataSourceViewDefaultFormat,
-  DataLakeDatabaseView,
-  DataLakeStorageView,
-  DataLakeViewView,
-  StoreDetail,
-} from "./l1-resources/datalakes";
 
 export {
   AwsKmsConfig,
