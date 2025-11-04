@@ -94,7 +94,7 @@ You can find more information about activating this type in the [AWS CloudFormat
 
 - Issues related to this generated library should be [reported here](https://github.com/cdklabs/cdk-cloudformation/issues/new?title=Issue+with+%40cdk-cloudformation%2Fmongodb-atlas-cluster+v1.0.0).
 - Issues related to this library should be reported to the [publisher](https://github.com/mongodb/mongodbatlas-cloudformation-resources/issues).
-- Feature requests should be [reported here](https://feedback.mongodb.com/forums/924145-atlas?category_id=392596)
+- Feature requests should be [reported here](https://feedback.mongodb.com/ideas?category=7548141186718564699)
 
 [cdklabs/cdk-cloudformation]: https://github.com/cdklabs/cdk-cloudformation
 
