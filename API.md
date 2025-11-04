@@ -56,7 +56,7 @@ MongoDB Atlas AWS CDK Resources provides L1, L2 and L3 CDK constructors. Please,
 See the [cdk examples](examples/README.md) for how to setup prerequisites & get started with your first cluster, using our AWS CDK sample code. We also provide a quick guide on [How to Deploy MongoDB Atlas with AWS CDK in TypeScript](https://www.mongodb.com/developer/products/atlas/deploy-mongodb-atlas-aws-cdk-typescript/).
 
 ## Support, Bugs, Feature Requests
-Feature requests can be submitted at [feedback.mongodb.com](https://feedback.mongodb.com/forums/924145-atlas/category/392596-atlas-cloudformation-resources) - just select "Atlas CloudFormation Resources" as the category or vote for an already suggested feature.
+Feature requests can be submitted at the [MongoDB feedback portal](https://feedback.mongodb.com/ideas?category=7548141186718564699) - select Atlas -> infra-as-code as the category or vote for an already suggested feature.
 
 Support for the MongoDB Atlas Resource Provider for CloudFormation is provided under MongoDB Atlas support plans, starting with Developer. Please submit support questions within the Atlas UI. In addition, support questions submitted under the Issues section of this repo are also being monitored. Bugs should be filed under the Issues section of this repo.
 
