@@ -1,4 +1,4 @@
-name: Release (Requires manual steps to take)
+name: Release (Requires manual steps to take, check all jobs are successful)
 on: workflow_dispatch
 jobs:
   release:
@@ -60,11 +60,12 @@ jobs:
     permissions:
       contents: read
       issues: write
-      id-token: write # required for provenance
+      id-token: write # Required for provenance & Trusted Publishing.
     steps:
       - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
           node-version: 18.x
+          registry-url: https://registry.npmjs.org
       - name: Download build artifacts
         uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53
         with:
@@ -161,7 +162,7 @@ jobs:
     permissions:
       contents: read
       issues: write
-      id-token: write # For Trusted Publishing.
+      id-token: write # Required for Trusted Publishing.
     steps:
       - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
