@@ -62,7 +62,10 @@ jobs:
         id: self_mutation
         run: |-
           git add .
-          git diff --staged --patch --exit-code > .repo.patch || echo "self_mutation_happened=true" >> "${GITHUB_OUTPUT}"
+          git diff --staged --patch > .repo.patch
+          if [ -s .repo.patch ]; then
+            echo "self_mutation_happened=true" >> "${GITHUB_OUTPUT}"
+          fi
       - name: Upload patch
         if: steps.self_mutation.outputs.self_mutation_happened
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
