@@ -80,17 +80,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
         run: npx -p publib@latest publib-npm
-      - name: Extract Version
-        id: extract-version
-        if: ${{ failure() }}
-        run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
-      - name: Create Issue
-        if: ${{ failure() }}
-        uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
-        with:
-          labels: failed-release
-          title: Publishing v${{ steps.extract-version.outputs.VERSION }} to npm failed
-          body: See https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
   release_maven:
     name: Publish to Maven Central
     needs: release
@@ -123,17 +112,6 @@ jobs:
           MAVEN_STAGING_PROFILE_ID: ${{ secrets.MAVEN_STAGING_PROFILE_ID }}
           MAVEN_SERVER_ID: ${{ vars.MAVEN_SERVER_ID }}
         run: npx -p publib@latest publib-maven
-      - name: Extract Version
-        id: extract-version
-        if: ${{ failure() }}
-        run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
-      - name: Create Issue
-        if: ${{ failure() }}
-        uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
-        with:
-          labels: failed-release
-          title: Publishing v${{ steps.extract-version.outputs.VERSION }} to Maven Central failed
-          body: See https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
   release_pypi:
     name: Publish to PyPI
     needs: release
@@ -178,17 +156,6 @@ jobs:
         run: |
           pip install twine
           twine upload dist/python/*.whl dist/python/*.tar.gz
-      - name: Extract Version
-        id: extract-version
-        if: ${{ failure() }}
-        run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
-      - name: Create Issue
-        if: ${{ failure() }}
-        uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
-        with:
-          labels: failed-release
-          title: Publishing v${{ steps.extract-version.outputs.VERSION }} to PyPI failed
-          body: See https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
   release_nuget:
     name: Publish to NuGet Gallery
     needs: release
@@ -238,13 +205,6 @@ jobs:
         env:
           NUGET_API_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
         run: npx -p publib@latest publib-nuget
-      - name: Create Issue
-        if: ${{ failure() }}
-        uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
-        with:
-          labels: failed-release
-          title: Publishing v${{ steps.extract-version.outputs.VERSION }} to NuGet Gallery failed
-          body: See https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
   release_golang:
     name: Publish to GitHub Go Module Repository
     needs: release
@@ -273,17 +233,6 @@ jobs:
           GIT_USER_NAME: ${{ secrets.GO_GIT_USER_NAME }}
           GIT_USER_EMAIL: ${{ secrets.GO_GIT_USER_EMAIL }}
         run: npx -p publib@latest publib-golang
-      - name: Extract Version
-        id: extract-version
-        if: ${{ failure() }}
-        run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
-      - name: Create Issue
-        if: ${{ failure() }}
-        uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
-        with:
-          labels: failed-release
-          title: Publishing v${{ steps.extract-version.outputs.VERSION }} to GitHub Go Module Repository failed
-          body: See https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
   release_github:
     name: Publish to GitHub Releases
     needs: [release, release_npm, release_maven, release_pypi, release_nuget, release_golang]
@@ -309,19 +258,6 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REF: ${{ github.ref }}
         run: errout=$(mktemp); gh release create "$(cat dist/releasetag.txt)" -R "${GITHUB_REPOSITORY}" -F dist/changelog.md -t "$(cat dist/releasetag.txt)" --target "${GITHUB_REF}" 2> "$errout" && true; exitcode=$?; if [ $exitcode -ne 0 ] && ! grep -q "Release.tag_name already exists" "$errout"; then cat "$errout"; exit $exitcode; fi
-      - name: Extract Version
-        id: extract-version
-        if: ${{ failure() }}
-        run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
-      - name: Create Issue
-        if: ${{ failure() }}
-        uses: imjohnbo/issue-bot@572eed14422c4d6ca37e870f97e7da209422f5bd
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          labels: failed-release
-          title: Publishing v${{ steps.extract-version.outputs.VERSION }} to GitHub Releases failed
-          body: See https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Generate PURL and SBOM
         run: |
