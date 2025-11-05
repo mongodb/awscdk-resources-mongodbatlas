@@ -55,6 +55,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   defaultReleaseBranch: "main",
   name: "awscdk-resources-mongodbatlas",
   repositoryUrl: "https://github.com/mongodb/awscdk-resources-mongodbatlas.git",
+  packageManager: javascript.NodePackageManager.NPM,
   keywords: [
     "cdk",
     "aws-cdk",
@@ -109,7 +110,7 @@ new JsonFile(project, "cdk.json", {
 const common_exclude = [
   "cdk.out",
   "cdk.context.json",
-  "yarn-error.log",
+  "npm-debug.log*",
   "*.DS_Store",
   "examples-bin",
   ".idea/",

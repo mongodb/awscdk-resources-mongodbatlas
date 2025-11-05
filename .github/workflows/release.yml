@@ -36,7 +36,7 @@ jobs:
         with:
           go-version: ^1.25.0
       - name: Install dependencies
-        run: yarn install --check-files --frozen-lockfile
+        run: npm ci
       - name: release
         run: |
           unset CI # enable full package-all https://github.com/mongodb/awscdk-resources-mongodbatlas/blob/main/.projen/tasks.json#L157-L170

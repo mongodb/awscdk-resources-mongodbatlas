@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 24.x
       - name: Install dependencies
-        run: yarn install --check-files
+        run: npm ci
       - name: compile
         run: npx projen compile
   lint:
@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: 24.x
       - name: Install dependencies
-        run: yarn install --check-files
+        run: npm ci
       - name: lint
         run: npx projen eslint
   shellcheck:
@@ -54,7 +54,7 @@ jobs:
       - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
           node-version: 24.x
-      - run: yarn install --check-files
+      - run: npm ci
       - run: npm install -g cdk-import
       - run: ./scripts/cdk-all.sh
       - run: npx projen build
@@ -83,7 +83,7 @@ jobs:
       - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
           node-version: 24.x
-      - run: yarn install --check-files
+      - run: npm ci
       - run: npm install -g cdk
       - run: npx projen build
       - run: npx projen package:js 

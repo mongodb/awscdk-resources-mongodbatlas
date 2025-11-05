@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 24.x
       - name: Install dependencies
-        run: yarn install --check-files --frozen-lockfile
+        run: npm ci
       - name: Upgrade dependencies
         run: npx projen upgrade
       - name: Set git identity & add files to commit
