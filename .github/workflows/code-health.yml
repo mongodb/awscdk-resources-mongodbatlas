@@ -67,13 +67,16 @@ jobs:
             echo "self_mutation_happened=true" >> "${GITHUB_OUTPUT}"
             echo "Patch file created with $(wc -l < .repo.patch) lines"
             ls -lah .repo.patch
+            echo "Current directory: $(pwd)"
+            echo "File absolute path: $(realpath .repo.patch)"
           fi
       - name: Upload patch
         if: steps.self_mutation.outputs.self_mutation_happened
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         with:
           name: .repo.patch
-          path: ${{ github.workspace }}/.repo.patch
+          path: .repo.patch
+          include-hidden-files: true
       - name: Fail build on mutation
         if: steps.self_mutation.outputs.self_mutation_happened
         run: |-
