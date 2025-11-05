@@ -34,7 +34,7 @@ jobs:
       - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00
         name: Setup Go
         with:
-          go-version: ^1.16.0
+          go-version: ^1.25.0
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
       - name: release
