@@ -25,7 +25,7 @@ tsconfig.tsbuildinfo
 !.jsii
 cdk.out
 cdk.context.json
-yarn-error.log
+npm-debug.log*
 *.DS_Store
 examples-bin
 .idea/

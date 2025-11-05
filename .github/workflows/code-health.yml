@@ -12,24 +12,19 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Setup Node.js
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
-          node-version: 18.x
+          node-version: 24.x
       - name: Install dependencies
-        run: yarn install --check-files
+        run: npm ci
       - name: compile
         run: npx projen compile
   lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: actionlint
         run: |
           bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
@@ -38,9 +33,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
-          node-version: 18.x
+          node-version: 24.x
       - name: Install dependencies
-        run: yarn install --check-files
+        run: npm ci
       - name: lint
         run: npx projen eslint
   shellcheck:
@@ -58,8 +53,8 @@ jobs:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
-          node-version: 18.x
-      - run: yarn install --check-files
+          node-version: 24.x
+      - run: npm ci
       - run: npm install -g cdk-import
       - run: ./scripts/cdk-all.sh
       - run: npx projen build
@@ -67,13 +62,17 @@ jobs:
         id: self_mutation
         run: |-
           git add .
-          git diff --staged --patch --exit-code > .repo.patch || echo "self_mutation_happened=true" >> "${GITHUB_OUTPUT}"
+          git diff --staged --patch > .repo.patch
+          if [ -s .repo.patch ]; then
+            echo "self_mutation_happened=true" >> "${GITHUB_OUTPUT}"
+          fi
       - name: Upload patch
         if: steps.self_mutation.outputs.self_mutation_happened
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         with:
           name: .repo.patch
           path: .repo.patch
+          include-hidden-files: true
       - name: Fail build on mutation
         if: steps.self_mutation.outputs.self_mutation_happened
         run: |-
@@ -87,8 +86,8 @@ jobs:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
-          node-version: 18.x
-      - run: yarn install --check-files
+          node-version: 24.x
+      - run: npm ci
       - run: npm install -g cdk
       - run: npx projen build
       - run: npx projen package:js 
