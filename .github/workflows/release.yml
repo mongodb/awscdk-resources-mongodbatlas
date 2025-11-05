@@ -76,7 +76,6 @@ jobs:
         continue-on-error: true
       - name: Publish to npm with provenance
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
         run: npx -p publib@latest publib-npm
   release_maven:
