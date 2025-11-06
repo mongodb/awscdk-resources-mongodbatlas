@@ -116,6 +116,7 @@ jobs:
     permissions:
       contents: read
       issues: write
+      id-token: write # Required for Trusted Publishing.
     steps:
       - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
@@ -145,14 +146,10 @@ jobs:
           done
         env:
           APIX_BOT_GPG_PASSPHRASE: ${{ secrets.APIX_BOT_GPG_PASSPHRASE }}
-
       - name: Upload to PyPI
-        env:
-          TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
-          TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
-        run: |
-          pip install twine
-          twine upload dist/python/*.whl dist/python/*.tar.gz
+        uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e
+        with:
+          packages-dir: dist/python/
   release_nuget:
     name: Publish to NuGet Gallery
     needs: release
