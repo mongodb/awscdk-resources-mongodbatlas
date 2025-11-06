@@ -74,8 +74,6 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Install dependencies
-        run: npm ci
       - name: Publish to npm with provenance
         env:
           NPM_CONFIG_PROVENANCE: true
