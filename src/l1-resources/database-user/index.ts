@@ -79,7 +79,7 @@ export interface CfnDatabaseUserProps {
   readonly roles: RoleDefinition[];
 
   /**
-   * List that contains clusters and MongoDB Atlas Data Lakes that this database user can access. If omitted, MongoDB Cloud grants the database user access to all the clusters and MongoDB Atlas Data Lakes in the project.
+   * List that contains clusters and MongoDB Atlas Data Federation that this database user can access. If omitted, MongoDB Cloud grants the database user access to all the clusters and MongoDB Atlas Data Federation in the project.
    *
    * @schema CfnDatabaseUserProps#Scopes
    */

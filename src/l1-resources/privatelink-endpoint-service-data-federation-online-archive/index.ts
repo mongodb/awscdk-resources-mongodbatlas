@@ -25,7 +25,7 @@ export interface CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps {
   /**
    * Unique 22-character alphanumeric string that identifies the private endpoint.Reg ex ^vpce-[0-9a-f]{17}$ .
    *
-   * Atlas Data Lake supports Amazon Web Services private endpoints using the AWS PrivateLink feature.
+   * Atlas Data Federation supports Amazon Web Services private endpoints using the AWS PrivateLink feature.
    *
    * @schema CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps#EndpointId
    */
