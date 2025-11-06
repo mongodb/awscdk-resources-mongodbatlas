@@ -60,7 +60,7 @@ jobs:
     permissions:
       contents: read
       issues: write
-      id-token: write # Required for provenance & Trusted Publishing.
+      id-token: write # Required for Trusted Publishing.
     steps:
       - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
@@ -74,7 +74,7 @@ jobs:
       - name: Restore build artifact permissions
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
-      - name: Publish to npm with provenance
+      - name: Publish to npm
         env:
-          NPM_CONFIG_PROVENANCE: true
+          NPM_TRUSTED_PUBLISHER: true
         run: npx -p publib@latest publib-npm
