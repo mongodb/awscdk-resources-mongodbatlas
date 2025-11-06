@@ -41,7 +41,7 @@ You can find more information about activating this type in the [AWS CloudFormat
 ```ts 
 import { CfnPrivateEndPointRegionalMode } from 'awscdk-resources-mongodbatlas';
 
-const myPrivateEndpointAdl = new CfnPrivateEndPointRegionalMode(this, 'MyPrivateEndpointAdl', {
+const myPrivateEndpoint = new CfnPrivateEndPointRegionalMode(this, 'MyPrivateEndpoint', {
     projectId: atlasProps.projId,
     profile:  atlasProps.profile,
 });

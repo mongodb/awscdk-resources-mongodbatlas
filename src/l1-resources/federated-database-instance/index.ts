@@ -9,14 +9,14 @@ import * as constructs from "constructs";
  */
 export interface CfnFederatedDatabaseInstanceProps {
   /**
-   * Cloud provider linked to this data lake.
+   * Cloud provider linked to this Atlas Data Federation.
    *
    * @schema CfnFederatedDatabaseInstanceProps#CloudProviderConfig
    */
   readonly cloudProviderConfig?: CloudProviderConfig;
 
   /**
-   * Information about the cloud provider region to which the data lake routes client connections. MongoDB Cloud supports AWS only.
+   * Information about the cloud provider region to which the Atlas Data Federation routes client connections. MongoDB Cloud supports AWS only.
    *
    * @schema CfnFederatedDatabaseInstanceProps#DataProcessRegion
    */
@@ -86,34 +86,34 @@ export function toJson_CfnFederatedDatabaseInstanceProps(
 /* eslint-enable max-len, quote-props */
 
 /**
- * Cloud provider linked to this data lake..
+ * Cloud provider linked to this Atlas Data Federation.
  *
  * @schema CloudProviderConfig
  */
 export interface CloudProviderConfig {
   /**
-   * Unique identifier of the role that the data lake can use to access the data stores.Required if specifying cloudProviderConfig.
+   * Unique identifier of the role that the Atlas Data Federation can use to access the data stores.Required if specifying cloudProviderConfig.
    *
    * @schema CloudProviderConfig#ExternalId
    */
   readonly externalId?: string;
 
   /**
-   * Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the data lake assumes when accessing data stores.
+   * Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that the Atlas Data Federation assumes when accessing data stores.
    *
    * @schema CloudProviderConfig#IamAssumedRoleARN
    */
   readonly iamAssumedRoleArn?: string;
 
   /**
-   * Amazon Resource Name (ARN) of the user that the data lake assumes when accessing data stores.
+   * Amazon Resource Name (ARN) of the user that the Atlas Data Federation assumes when accessing data stores.
    *
    * @schema CloudProviderConfig#IamUserARN
    */
   readonly iamUserArn?: string;
 
   /**
-   * Unique identifier of the role that the data lake can use to access the data stores.Required if specifying cloudProviderConfig.
+   * Unique identifier of the role that the Atlas Data Federation can use to access the data stores.Required if specifying cloudProviderConfig.
    *
    * @schema CloudProviderConfig#RoleId
    */
@@ -153,20 +153,20 @@ export function toJson_CloudProviderConfig(
 /* eslint-enable max-len, quote-props */
 
 /**
- * Information about the cloud provider region to which the data lake routes client connections. MongoDB Cloud supports AWS only.
+ * Information about the cloud provider region to which the Atlas Data Federation routes client connections. MongoDB Cloud supports AWS only.
  *
  * @schema DataProcessRegion
  */
 export interface DataProcessRegion {
   /**
-   * Name of the cloud service that hosts the data lake's data stores.
+   * Name of the cloud service that hosts the Atlas Data Federation data stores.
    *
    * @schema DataProcessRegion#CloudProvider
    */
   readonly cloudProvider?: string;
 
   /**
-   * Name of the region to which the data lake routes client connections.
+   * Name of the region to which the Atlas Data Federation routes client connections.
    *
    * @schema DataProcessRegion#Region
    */
@@ -202,14 +202,14 @@ export function toJson_DataProcessRegion(
  */
 export interface Storage {
   /**
-   * Array that contains the queryable databases and collections for this data lake.
+   * Array that contains the queryable databases and collections for this Atlas Data Federation.
    *
    * @schema Storage#Databases
    */
   readonly databases?: Database[];
 
   /**
-   * Array that contains the data stores for the data lake.
+   * Array that contains the data stores for the Atlas Data Federation.
    *
    * @schema Storage#Stores
    */
@@ -257,7 +257,7 @@ export interface Database {
   readonly maxWildcardCollections?: string;
 
   /**
-   * Human-readable label that identifies the database to which the data lake maps data.
+   * Human-readable label that identifies the database to which the Atlas Data Federation maps data.
    *
    * @schema Database#Name
    */
@@ -296,13 +296,13 @@ export function toJson_Database(
 /* eslint-enable max-len, quote-props */
 
 /**
- * Array that contains the data stores for the data lake.
+ * Array that contains the data stores for the Atlas Data Federation.
  *
  * @schema Store
  */
 export interface Store {
   /**
-   * Human-readable label that identifies the data store. The databases.[n].collections.[n].dataSources.[n].storeName field references this values as part of the mapping configuration. To use MongoDB Cloud as a data store, the data lake requires a serverless instance or an M10 or higher cluster.
+   * Human-readable label that identifies the data store. The databases.[n].collections.[n].dataSources.[n].storeName field references this values as part of the mapping configuration. To use MongoDB Cloud as a data store, the Atlas Data Federation requires a serverless instance or an M10 or higher cluster.
    *
    * @schema Store#Name
    */
@@ -369,7 +369,7 @@ export function toJson_Store(
  */
 export interface Collection {
   /**
-   * Array that contains the data stores that map to a collection for this data lake.
+   * Array that contains the data stores that map to a collection for this Atlas Data Federation.
    *
    * @schema Collection#DataSources
    */
@@ -472,7 +472,7 @@ export interface ReadPreference {
   readonly maxStalenessSeconds?: string;
 
   /**
-   * List that contains tag sets or tag specification documents. If specified, Atlas Data Lake routes read requests to replica set member or members that are associated with the specified tags.
+   * List that contains tag sets or tag specification documents. If specified, Atlas Data Federation routes read requests to replica set member or members that are associated with the specified tags.
    *
    * @schema ReadPreference#TagSets
    */
@@ -570,7 +570,7 @@ export interface DataSource {
   readonly storeName?: string;
 
   /**
-   * URLs of the publicly accessible data files. You can't specify URLs that require authentication. Atlas Data Lake creates a partition for each URL. If empty or omitted, Data Lake uses the URLs from the store specified in the dataSources.storeName parameter.
+   * URLs of the publicly accessible data files. You can't specify URLs that require authentication. Atlas Data Federation creates a partition for each URL. If empty or omitted, Data Federation uses the URLs from the store specified in the dataSources.storeName parameter.
    *
    * @schema DataSource#Urls
    */

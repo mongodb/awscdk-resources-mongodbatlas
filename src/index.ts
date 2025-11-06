@@ -243,11 +243,6 @@ export {
 } from "./l1-resources/private-endpoint";
 
 export {
-  CfnPrivateEndpointAdl,
-  CfnPrivateEndpointAdlProps,
-} from "./l1-resources/private-endpoint-adl";
-
-export {
   CfnPrivateEndpointAwsProps,
   CfnPrivateEndpointAws,
 } from "./l1-resources/private-endpoint-aws";
