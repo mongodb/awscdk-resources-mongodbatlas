@@ -7,7 +7,7 @@ jobs:
       contents: write
       issues: write
     steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
         with:
           fetch-depth: 0
           ref: main
@@ -256,7 +256,7 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REF: ${{ github.ref }}
         run: errout=$(mktemp); gh release create "$(cat dist/releasetag.txt)" -R "${GITHUB_REPOSITORY}" -F dist/changelog.md -t "$(cat dist/releasetag.txt)" --target "${GITHUB_REF}" 2> "$errout" && true; exitcode=$?; if [ $exitcode -ne 0 ] && ! grep -q "Release.tag_name already exists" "$errout"; then cat "$errout"; exit $exitcode; fi
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
       - name: Generate PURL and SBOM
         run: |
           ./scripts/compliance/gen-purls.sh
