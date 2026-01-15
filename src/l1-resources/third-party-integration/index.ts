@@ -13,7 +13,7 @@ export interface CfnThirdPartyIntegrationProps {
    *
    * @schema CfnThirdPartyIntegrationProps#ProjectId
    */
-  readonly projectId?: string;
+  readonly projectId: string;
 
   /**
    * The profile is defined in AWS Secret manager. See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
@@ -27,7 +27,7 @@ export interface CfnThirdPartyIntegrationProps {
    *
    * @schema CfnThirdPartyIntegrationProps#Type
    */
-  readonly type?: CfnThirdPartyIntegrationPropsType;
+  readonly type: CfnThirdPartyIntegrationPropsType;
 
   /**
    * Key that allows MongoDB Cloud to access your Opsgenie/Datadog account.
@@ -121,13 +121,6 @@ export interface CfnThirdPartyIntegrationProps {
   readonly serviceDiscovery?: CfnThirdPartyIntegrationPropsServiceDiscovery;
 
   /**
-   * Security Scheme to apply to HyperText Transfer Protocol (HTTP) traffic between Prometheus and MongoDB Cloud.
-   *
-   * @schema CfnThirdPartyIntegrationProps#Scheme
-   */
-  readonly scheme?: CfnThirdPartyIntegrationPropsScheme;
-
-  /**
    * Flag that indicates whether someone has activated the Prometheus integration.
    *
    * @schema CfnThirdPartyIntegrationProps#Enabled
@@ -147,45 +140,45 @@ export interface CfnThirdPartyIntegrationProps {
    * @schema CfnThirdPartyIntegrationProps#TlsPemPath
    */
   readonly tlsPemPath?: string;
+
+  /**
+   * Flag that indicates whether to include user-defined resource tags when sending metrics and alerts to third-party services.
+   *
+   * @schema CfnThirdPartyIntegrationProps#SendUserProvidedResourceTags
+   */
+  readonly sendUserProvidedResourceTags?: boolean;
 }
 
 /**
  * Converts an object of type 'CfnThirdPartyIntegrationProps' to JSON representation.
  */
 /* eslint-disable max-len, quote-props */
-export function toJson_CfnThirdPartyIntegrationProps(
-  obj: CfnThirdPartyIntegrationProps | undefined
-): Record<string, any> | undefined {
-  if (obj === undefined) {
-    return undefined;
-  }
+export function toJson_CfnThirdPartyIntegrationProps(obj: CfnThirdPartyIntegrationProps | undefined): Record<string, any> | undefined {
+  if (obj === undefined) { return undefined; }
   const result = {
-    ProjectId: obj.projectId,
-    Profile: obj.profile,
-    Type: obj.type,
-    ApiKey: obj.apiKey,
-    Region: obj.region,
-    ServiceKey: obj.serviceKey,
-    ApiToken: obj.apiToken,
-    TeamName: obj.teamName,
-    ChannelName: obj.channelName,
-    RoutingKey: obj.routingKey,
-    Url: obj.url,
-    Secret: obj.secret,
-    MicrosoftTeamsWebhookUrl: obj.microsoftTeamsWebhookUrl,
-    UserName: obj.userName,
-    Password: obj.password,
-    ServiceDiscovery: obj.serviceDiscovery,
-    Scheme: obj.scheme,
-    Enabled: obj.enabled,
-    ListenAddress: obj.listenAddress,
-    TlsPemPath: obj.tlsPemPath,
+    'ProjectId': obj.projectId,
+    'Profile': obj.profile,
+    'Type': obj.type,
+    'ApiKey': obj.apiKey,
+    'Region': obj.region,
+    'ServiceKey': obj.serviceKey,
+    'ApiToken': obj.apiToken,
+    'TeamName': obj.teamName,
+    'ChannelName': obj.channelName,
+    'RoutingKey': obj.routingKey,
+    'Url': obj.url,
+    'Secret': obj.secret,
+    'MicrosoftTeamsWebhookUrl': obj.microsoftTeamsWebhookUrl,
+    'UserName': obj.userName,
+    'Password': obj.password,
+    'ServiceDiscovery': obj.serviceDiscovery,
+    'Enabled': obj.enabled,
+    'ListenAddress': obj.listenAddress,
+    'TlsPemPath': obj.tlsPemPath,
+    'SendUserProvidedResourceTags': obj.sendUserProvidedResourceTags,
   };
   // filter undefined values
-  return Object.entries(result).reduce(
-    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
-    {}
-  );
+  return Object.entries(result).reduce((r, i) => (i[1] === undefined) ? r : ({ ...r, [i[0]]: i[1] }), {});
 }
 /* eslint-enable max-len, quote-props */
 
@@ -225,17 +218,6 @@ export enum CfnThirdPartyIntegrationPropsServiceDiscovery {
   FILE = "file",
 }
 
-/**
- * Security Scheme to apply to HyperText Transfer Protocol (HTTP) traffic between Prometheus and MongoDB Cloud.
- *
- * @schema CfnThirdPartyIntegrationPropsScheme
- */
-export enum CfnThirdPartyIntegrationPropsScheme {
-  /** http */
-  HTTP = "http",
-  /** https */
-  HTTPS = "https",
-}
 
 /**
  * A CloudFormation `MongoDB::Atlas::ThirdPartyIntegration`
@@ -245,15 +227,15 @@ export enum CfnThirdPartyIntegrationPropsScheme {
  */
 export class CfnThirdPartyIntegration extends cdk.CfnResource {
   /**
-   * The CloudFormation resource type name for this resource class.
-   */
-  public static readonly CFN_RESOURCE_TYPE_NAME =
-    "MongoDB::Atlas::ThirdPartyIntegration";
+  * The CloudFormation resource type name for this resource class.
+  */
+  public static readonly CFN_RESOURCE_TYPE_NAME = "MongoDB::Atlas::ThirdPartyIntegration";
 
   /**
    * Resource props.
    */
   public readonly props: CfnThirdPartyIntegrationProps;
+
 
   /**
    * Create a new `MongoDB::Atlas::ThirdPartyIntegration`.
@@ -262,16 +244,10 @@ export class CfnThirdPartyIntegration extends cdk.CfnResource {
    * @param id    - scoped id of the resource
    * @param props - resource properties
    */
-  constructor(
-    scope: constructs.Construct,
-    id: string,
-    props: CfnThirdPartyIntegrationProps
-  ) {
-    super(scope, id, {
-      type: CfnThirdPartyIntegration.CFN_RESOURCE_TYPE_NAME,
-      properties: toJson_CfnThirdPartyIntegrationProps(props)!,
-    });
+  constructor(scope: constructs.Construct, id: string, props: CfnThirdPartyIntegrationProps) {
+    super(scope, id, { type: CfnThirdPartyIntegration.CFN_RESOURCE_TYPE_NAME, properties: toJson_CfnThirdPartyIntegrationProps(props)! });
 
     this.props = props;
+
   }
 }
