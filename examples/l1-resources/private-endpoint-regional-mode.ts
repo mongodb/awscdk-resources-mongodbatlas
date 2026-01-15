@@ -12,18 +12,18 @@ export class CdkTestingStack extends cdk.Stack {
     super(scope, id, props);
 
     const atlasProps = this.getContextProps();
-    const myPrivateEndpointAdl = new CfnPrivateEndPointRegionalMode(this, 'MyPrivateEndpointAdl', {
+    const myPrivateEndpoint = new CfnPrivateEndPointRegionalMode(this, 'MyPrivateEndpoint', {
       projectId: atlasProps.projId,
-      profile:  atlasProps.profile,
+      profile: atlasProps.profile,
     });
   }
 
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
-    if (!projId){
+    if (!projId) {
       throw "No context value specified for projId. Please specify via the cdk context."
     }
-    
+
     const profile = this.node.tryGetContext('profile') ?? 'default';
 
 

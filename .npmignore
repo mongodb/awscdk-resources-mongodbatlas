@@ -25,11 +25,15 @@ tsconfig.tsbuildinfo
 !.jsii
 cdk.out
 cdk.context.json
-yarn-error.log
+npm-debug.log*
 *.DS_Store
 examples-bin
 .idea/
-*.iml
+*.secrets
+.vscode
+.windsurf
+CLAUDE.md
+.claude
 /src/
 CONTRIBUTING.md
 TESTING.md

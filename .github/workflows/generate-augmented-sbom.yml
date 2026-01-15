@@ -21,7 +21,7 @@ jobs:
       KONDUKTO_BRANCH_PREFIX: ${{ vars.KONDUKTO_BRANCH_PREFIX }}
       SILKBOMB_IMG: ${{ vars.SILKBOMB_IMG }}
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
 
       - name: Get current date
         id: date
@@ -40,7 +40,7 @@ jobs:
         run: ./scripts/compliance/gen-ssdlc-report.sh
 
       - name: Upload augmented SBOM as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: augmented_sbom_and_ssdlc_report
           path: |

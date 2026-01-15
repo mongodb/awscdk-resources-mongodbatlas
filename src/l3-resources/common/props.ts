@@ -306,7 +306,7 @@ export interface DatabaseUserProps {
    */
   readonly roles?: atlas.RoleDefinition[];
   /**
-   * @description List that contains clusters and MongoDB Atlas Data Lakes that this database user can access. If omitted, MongoDB Cloud grants the database user access to all the clusters and MongoDB Atlas Data Lakes in the project.
+   * @description List that contains clusters and MongoDB Atlas Data Federation that this database user can access. If omitted, MongoDB Cloud grants the database user access to all the clusters and MongoDB Atlas Data Federation in the project.
    * @type {user.ScopeDefinition[]}
    * @memberof DatabaseUserProps
    */
