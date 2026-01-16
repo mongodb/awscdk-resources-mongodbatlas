@@ -39475,6 +39475,8 @@ const cfnThirdPartyIntegrationProps: CfnThirdPartyIntegrationProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.type">type</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationPropsType">CfnThirdPartyIntegrationPropsType</a></code> | Human-readable label that identifies the service to which you want to integrate with MongoDB Cloud. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.apiKey">apiKey</a></code> | <code>string</code> | Key that allows MongoDB Cloud to access your Opsgenie/Datadog account. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.apiToken">apiToken</a></code> | <code>string</code> | Key that allows MongoDB Cloud to access your Slack account. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.channelName">channelName</a></code> | <code>string</code> | Name of the Slack channel to which MongoDB Cloud sends alert notifications. |
@@ -39483,18 +39485,42 @@ const cfnThirdPartyIntegrationProps: CfnThirdPartyIntegrationProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.microsoftTeamsWebhookUrl">microsoftTeamsWebhookUrl</a></code> | <code>string</code> | Endpoint web address of the Microsoft Teams webhook to which MongoDB Cloud sends notifications. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.password">password</a></code> | <code>string</code> | Password required for your integration with Prometheus. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.region">region</a></code> | <code>string</code> | Two-letter code that indicates which regional URL MongoDB uses to access the Opsgenie/Datadog API. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.routingKey">routingKey</a></code> | <code>string</code> | Routing key associated with your Splunk On-Call account. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.scheme">scheme</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationPropsScheme">CfnThirdPartyIntegrationPropsScheme</a></code> | Security Scheme to apply to HyperText Transfer Protocol (HTTP) traffic between Prometheus and MongoDB Cloud. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.secret">secret</a></code> | <code>string</code> | Parameter returned if someone configure this webhook with a secret. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.sendUserProvidedResourceTags">sendUserProvidedResourceTags</a></code> | <code>boolean</code> | Flag that indicates whether to include user-defined resource tags when sending metrics and alerts to third-party services. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.serviceDiscovery">serviceDiscovery</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationPropsServiceDiscovery">CfnThirdPartyIntegrationPropsServiceDiscovery</a></code> | Desired method to discover the Prometheus service. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.serviceKey">serviceKey</a></code> | <code>string</code> | Service key associated with your PagerDuty account. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.teamName">teamName</a></code> | <code>string</code> | Human-readable label that identifies your Slack team. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.tlsPemPath">tlsPemPath</a></code> | <code>string</code> | Root-relative path to the Transport Layer Security (TLS) Privacy Enhanced Mail (PEM) key and certificate file on the host. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.type">type</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationPropsType">CfnThirdPartyIntegrationPropsType</a></code> | Human-readable label that identifies the service to which you want to integrate with MongoDB Cloud. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.url">url</a></code> | <code>string</code> | Endpoint web address to which MongoDB Cloud sends notifications. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.userName">userName</a></code> | <code>string</code> | Human-readable label that identifies your Prometheus incoming webhook. |
+
+---
+
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.projectId"></a>
+
+```typescript
+public readonly projectId: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies your project.
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.type"></a>
+
+```typescript
+public readonly type: CfnThirdPartyIntegrationPropsType;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationPropsType">CfnThirdPartyIntegrationPropsType</a>
+
+Human-readable label that identifies the service to which you want to integrate with MongoDB Cloud.
+
+The value must match the third-party service integration type.
 
 ---
 
@@ -39596,18 +39622,6 @@ See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
 
 ---
 
-##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.projectId"></a>
-
-```typescript
-public readonly projectId: string;
-```
-
-- *Type:* string
-
-Unique 24-hexadecimal digit string that identifies your project.
-
----
-
 ##### `region`<sup>Optional</sup> <a name="region" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.region"></a>
 
 ```typescript
@@ -39632,18 +39646,6 @@ Routing key associated with your Splunk On-Call account.
 
 ---
 
-##### `scheme`<sup>Optional</sup> <a name="scheme" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.scheme"></a>
-
-```typescript
-public readonly scheme: CfnThirdPartyIntegrationPropsScheme;
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationPropsScheme">CfnThirdPartyIntegrationPropsScheme</a>
-
-Security Scheme to apply to HyperText Transfer Protocol (HTTP) traffic between Prometheus and MongoDB Cloud.
-
----
-
 ##### `secret`<sup>Optional</sup> <a name="secret" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.secret"></a>
 
 ```typescript
@@ -39653,6 +39655,18 @@ public readonly secret: string;
 - *Type:* string
 
 Parameter returned if someone configure this webhook with a secret.
+
+---
+
+##### `sendUserProvidedResourceTags`<sup>Optional</sup> <a name="sendUserProvidedResourceTags" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.sendUserProvidedResourceTags"></a>
+
+```typescript
+public readonly sendUserProvidedResourceTags: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether to include user-defined resource tags when sending metrics and alerts to third-party services.
 
 ---
 
@@ -39703,20 +39717,6 @@ public readonly tlsPemPath: string;
 - *Type:* string
 
 Root-relative path to the Transport Layer Security (TLS) Privacy Enhanced Mail (PEM) key and certificate file on the host.
-
----
-
-##### `type`<sup>Optional</sup> <a name="type" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.type"></a>
-
-```typescript
-public readonly type: CfnThirdPartyIntegrationPropsType;
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationPropsType">CfnThirdPartyIntegrationPropsType</a>
-
-Human-readable label that identifies the service to which you want to integrate with MongoDB Cloud.
-
-The value must match the third-party service integration type.
 
 ---
 
@@ -46295,33 +46295,6 @@ GROUP_OWNER.
 ##### `GROUP_READ_ONLY` <a name="GROUP_READ_ONLY" id="awscdk-resources-mongodbatlas.CfnTeamsPropsRoleNames.GROUP_READ_ONLY"></a>
 
 GROUP_READ_ONLY.
-
----
-
-
-### CfnThirdPartyIntegrationPropsScheme <a name="CfnThirdPartyIntegrationPropsScheme" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationPropsScheme"></a>
-
-Security Scheme to apply to HyperText Transfer Protocol (HTTP) traffic between Prometheus and MongoDB Cloud.
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationPropsScheme.HTTP">HTTP</a></code> | http. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationPropsScheme.HTTPS">HTTPS</a></code> | https. |
-
----
-
-##### `HTTP` <a name="HTTP" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationPropsScheme.HTTP"></a>
-
-http.
-
----
-
-
-##### `HTTPS` <a name="HTTPS" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationPropsScheme.HTTPS"></a>
-
-https.
 
 ---
 
