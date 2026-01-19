@@ -41009,6 +41009,7 @@ const datadogIntegrationProps: DatadogIntegrationProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegrationProps.property.profile">profile</a></code> | <code>string</code> | Atlas API keys. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegrationProps.property.apiKey">apiKey</a></code> | <code>string</code> | Key that allows MongoDB Cloud to access your Datadog account. |
 | <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegrationProps.property.region">region</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DatadogRegion">DatadogRegion</a></code> | Two-letter code that indicates which regional URL MongoDB uses to access the Datadog API. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegrationProps.property.sendUserProvidedResourceTags">sendUserProvidedResourceTags</a></code> | <code>boolean</code> | Flag that indicates whether to include user-defined resource tags when sending metrics and alerts to Datadog. |
 
 ---
 
@@ -41057,6 +41058,18 @@ public readonly region: DatadogRegion;
 - *Type:* <a href="#awscdk-resources-mongodbatlas.DatadogRegion">DatadogRegion</a>
 
 Two-letter code that indicates which regional URL MongoDB uses to access the Datadog API.
+
+---
+
+##### `sendUserProvidedResourceTags`<sup>Optional</sup> <a name="sendUserProvidedResourceTags" id="awscdk-resources-mongodbatlas.DatadogIntegrationProps.property.sendUserProvidedResourceTags"></a>
+
+```typescript
+public readonly sendUserProvidedResourceTags: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether to include user-defined resource tags when sending metrics and alerts to Datadog.
 
 ---
 

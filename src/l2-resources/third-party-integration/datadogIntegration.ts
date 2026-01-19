@@ -39,7 +39,7 @@ export interface DatadogIntegrationProps extends ThirdPartyIntegrationProps {
   readonly region: DatadogRegion;
 
   /**
-   * Flag that indicates whether to include user-defined resource tags when sending metrics and alerts to Datadog.ß
+   * Flag that indicates whether to include user-defined resource tags when sending metrics and alerts to Datadog.
    */
   readonly sendUserProvidedResourceTags?: boolean;
 }
