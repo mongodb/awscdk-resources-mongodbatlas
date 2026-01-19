@@ -30,7 +30,7 @@ jobs:
         name: Setup Python
         with:
           python-version: 3.x
-      - uses: actions/setup-dotnet@2016bd2012dba4e32de620c46fe006a3ac9f0602
+      - uses: actions/setup-dotnet@baa11fbfe1d6520db94683bd5c7a3818018e4309
         name: Setup .NET
         with:
           dotnet-version: 9.0.x
@@ -163,7 +163,7 @@ jobs:
       - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
         with:
           node-version: 24.x
-      - uses: actions/setup-dotnet@2016bd2012dba4e32de620c46fe006a3ac9f0602
+      - uses: actions/setup-dotnet@baa11fbfe1d6520db94683bd5c7a3818018e4309
         with:
           dotnet-version: 9.0.x
       - name: Download build artifacts
