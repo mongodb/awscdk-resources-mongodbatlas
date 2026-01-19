@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
       - name: Setup Node.js
-        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
         with:
           node-version: 24.x
       - name: Install dependencies
@@ -31,7 +31,7 @@ jobs:
           ./actionlint -color
         shell: bash
       - name: Setup Node.js
-        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
         with:
           node-version: 24.x
       - name: Install dependencies
@@ -51,7 +51,7 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
-      - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
         with:
           node-version: 24.x
       - run: npm ci
@@ -84,7 +84,7 @@ jobs:
     permissions: {}
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
-      - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
         with:
           node-version: 24.x
       - run: npm ci
