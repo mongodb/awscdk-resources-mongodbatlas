@@ -21,4 +21,6 @@ export interface ThirdPartyIntegrationProps {
    * Atlas API keys.
    */
   readonly profile?: string;
+
+  readonly sendUserProvidedResourceTags?: boolean;
 }
