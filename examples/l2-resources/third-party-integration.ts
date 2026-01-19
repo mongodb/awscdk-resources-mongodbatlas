@@ -18,7 +18,6 @@ export class CdkTestingStack extends cdk.Stack {
         profile:  atlasProps.profile,
         region: PagerDutyRegion.EU,
         serviceKey:   atlasProps.serviceKey,  
-        sendUserProvidedResourceTags: true,
     });
   }
 
