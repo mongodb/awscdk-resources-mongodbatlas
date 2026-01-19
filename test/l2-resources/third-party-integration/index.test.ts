@@ -47,6 +47,7 @@ test("DatadogIntegration construct should be configured with properties", () => 
     projectId: constants.TEST_PROJECT_ID,
     apiKey: constants.TEST_KEY,
     region: l2.DatadogRegion.US,
+    sendUserProvidedResourceTags: true,
   });
 
   const template = Template.fromStack(stack);
@@ -57,6 +58,7 @@ test("DatadogIntegration construct should be configured with properties", () => 
       ApiKey: constants.TEST_KEY,
       Region: l2.DatadogRegion.US,
       Type: atlas_tpi.CfnThirdPartyIntegrationPropsType.DATADOG,
+      SendUserProvidedResourceTags: true,
     }
   );
 });
