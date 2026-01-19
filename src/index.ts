@@ -356,7 +356,6 @@ export {
 export {
   CfnThirdPartyIntegration,
   CfnThirdPartyIntegrationProps,
-  CfnThirdPartyIntegrationPropsScheme,
   CfnThirdPartyIntegrationPropsServiceDiscovery,
   CfnThirdPartyIntegrationPropsType,
 } from "./l1-resources/third-party-integration";
