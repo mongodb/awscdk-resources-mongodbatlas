@@ -37,6 +37,11 @@ export interface DatadogIntegrationProps extends ThirdPartyIntegrationProps {
    * Two-letter code that indicates which regional URL MongoDB uses to access the Datadog API.
    */
   readonly region: DatadogRegion;
+
+  /**
+   * Flag that indicates whether to include user-defined resource tags when sending metrics and alerts to Datadog.
+   */
+  readonly sendUserProvidedResourceTags?: boolean;
 }
 
 const validate = (props: DatadogIntegrationProps) => {
