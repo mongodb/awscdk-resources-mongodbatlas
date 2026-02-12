@@ -183,7 +183,7 @@ Returns a string representation of this construct.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasBasic.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasBasic.isConstruct"></a>
 
 ```typescript
 import { AtlasBasic } from 'awscdk-resources-mongodbatlas'
@@ -192,6 +192,20 @@ AtlasBasic.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.AtlasBasic.isConstruct.parameter.x"></a>
 
@@ -326,7 +340,7 @@ Returns a string representation of this construct.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.isConstruct"></a>
 
 ```typescript
 import { AtlasBasicPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
@@ -335,6 +349,20 @@ AtlasBasicPrivateEndpoint.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.isConstruct.parameter.x"></a>
 
@@ -469,7 +497,7 @@ Returns a string representation of this construct.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.isConstruct"></a>
 
 ```typescript
 import { AtlasEncryptionAtRest } from 'awscdk-resources-mongodbatlas'
@@ -478,6 +506,20 @@ AtlasEncryptionAtRest.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.isConstruct.parameter.x"></a>
 
@@ -579,7 +621,7 @@ Returns a string representation of this construct.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.isConstruct"></a>
 
 ```typescript
 import { AtlasEncryptionAtRestExpress } from 'awscdk-resources-mongodbatlas'
@@ -588,6 +630,20 @@ AtlasEncryptionAtRestExpress.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.isConstruct.parameter.x"></a>
 
@@ -722,7 +778,7 @@ Returns a string representation of this construct.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.isConstruct"></a>
 
 ```typescript
 import { AtlasServerlessBasic } from 'awscdk-resources-mongodbatlas'
@@ -731,6 +787,20 @@ AtlasServerlessBasic.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.AtlasServerlessBasic.isConstruct.parameter.x"></a>
 
@@ -1238,7 +1308,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.isConstruct"></a>
 
 ```typescript
 import { CfnAccessListApiKey } from 'awscdk-resources-mongodbatlas'
@@ -1247,6 +1317,20 @@ CfnAccessListApiKey.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.isConstruct.parameter.x"></a>
 
@@ -1876,7 +1960,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.isConstruct"></a>
 
 ```typescript
 import { CfnAlertConfiguration } from 'awscdk-resources-mongodbatlas'
@@ -1885,6 +1969,20 @@ CfnAlertConfiguration.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.isConstruct.parameter.x"></a>
 
@@ -2553,7 +2651,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnApiKey.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnApiKey.isConstruct"></a>
 
 ```typescript
 import { CfnApiKey } from 'awscdk-resources-mongodbatlas'
@@ -2562,6 +2660,20 @@ CfnApiKey.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnApiKey.isConstruct.parameter.x"></a>
 
@@ -3217,7 +3329,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnAuditing.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnAuditing.isConstruct"></a>
 
 ```typescript
 import { CfnAuditing } from 'awscdk-resources-mongodbatlas'
@@ -3226,6 +3338,20 @@ CfnAuditing.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnAuditing.isConstruct.parameter.x"></a>
 
@@ -3881,7 +4007,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.isConstruct"></a>
 
 ```typescript
 import { CfnCloudBackUpRestoreJobs } from 'awscdk-resources-mongodbatlas'
@@ -3890,6 +4016,20 @@ CfnCloudBackUpRestoreJobs.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.isConstruct.parameter.x"></a>
 
@@ -4610,7 +4750,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.isConstruct"></a>
 
 ```typescript
 import { CfnCloudBackupSchedule } from 'awscdk-resources-mongodbatlas'
@@ -4619,6 +4759,20 @@ CfnCloudBackupSchedule.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.isConstruct.parameter.x"></a>
 
@@ -5261,7 +5415,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.isConstruct"></a>
 
 ```typescript
 import { CfnCloudBackupSnapshot } from 'awscdk-resources-mongodbatlas'
@@ -5270,6 +5424,20 @@ CfnCloudBackupSnapshot.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.isConstruct.parameter.x"></a>
 
@@ -6042,7 +6210,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.isConstruct"></a>
 
 ```typescript
 import { CfnCloudBackupSnapshotExportBucket } from 'awscdk-resources-mongodbatlas'
@@ -6051,6 +6219,20 @@ CfnCloudBackupSnapshotExportBucket.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.isConstruct.parameter.x"></a>
 
@@ -6680,7 +6862,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCluster.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCluster.isConstruct"></a>
 
 ```typescript
 import { CfnCluster } from 'awscdk-resources-mongodbatlas'
@@ -6689,6 +6871,20 @@ CfnCluster.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCluster.isConstruct.parameter.x"></a>
 
@@ -7357,7 +7553,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.isConstruct"></a>
 
 ```typescript
 import { CfnClusterOutageSimulation } from 'awscdk-resources-mongodbatlas'
@@ -7366,6 +7562,20 @@ CfnClusterOutageSimulation.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.isConstruct.parameter.x"></a>
 
@@ -8021,7 +8231,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.isConstruct"></a>
 
 ```typescript
 import { CfnCustomDbRole } from 'awscdk-resources-mongodbatlas'
@@ -8030,6 +8240,20 @@ CfnCustomDbRole.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.isConstruct.parameter.x"></a>
 
@@ -8646,7 +8870,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.isConstruct"></a>
 
 ```typescript
 import { CfnCustomDnsConfigurationClusterAws } from 'awscdk-resources-mongodbatlas'
@@ -8655,6 +8879,20 @@ CfnCustomDnsConfigurationClusterAws.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.isConstruct.parameter.x"></a>
 
@@ -9271,7 +9509,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.isConstruct"></a>
 
 ```typescript
 import { CfnDatabaseUser } from 'awscdk-resources-mongodbatlas'
@@ -9280,6 +9518,20 @@ CfnDatabaseUser.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.isConstruct.parameter.x"></a>
 
@@ -9909,7 +10161,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.isConstruct"></a>
 
 ```typescript
 import { CfnEncryptionAtRest } from 'awscdk-resources-mongodbatlas'
@@ -9918,6 +10170,20 @@ CfnEncryptionAtRest.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.isConstruct.parameter.x"></a>
 
@@ -10547,7 +10813,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isConstruct"></a>
 
 ```typescript
 import { CfnFederatedDatabaseInstance } from 'awscdk-resources-mongodbatlas'
@@ -10556,6 +10822,20 @@ CfnFederatedDatabaseInstance.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.isConstruct.parameter.x"></a>
 
@@ -11198,7 +11478,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isConstruct"></a>
 
 ```typescript
 import { CfnFederatedQueryLimit } from 'awscdk-resources-mongodbatlas'
@@ -11207,6 +11487,20 @@ CfnFederatedQueryLimit.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.isConstruct.parameter.x"></a>
 
@@ -11875,7 +12169,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.isConstruct"></a>
 
 ```typescript
 import { CfnFederatedSettingsOrgRoleMapping } from 'awscdk-resources-mongodbatlas'
@@ -11884,6 +12178,20 @@ CfnFederatedSettingsOrgRoleMapping.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.isConstruct.parameter.x"></a>
 
@@ -12513,7 +12821,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnFlexCluster.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnFlexCluster.isConstruct"></a>
 
 ```typescript
 import { CfnFlexCluster } from 'awscdk-resources-mongodbatlas'
@@ -12522,6 +12830,20 @@ CfnFlexCluster.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnFlexCluster.isConstruct.parameter.x"></a>
 
@@ -13216,7 +13538,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.isConstruct"></a>
 
 ```typescript
 import { CfnGlobalClusterConfig } from 'awscdk-resources-mongodbatlas'
@@ -13225,6 +13547,20 @@ CfnGlobalClusterConfig.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.isConstruct.parameter.x"></a>
 
@@ -13854,7 +14190,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.isConstruct"></a>
 
 ```typescript
 import { CfnLdapConfiguration } from 'awscdk-resources-mongodbatlas'
@@ -13863,6 +14199,20 @@ CfnLdapConfiguration.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.isConstruct.parameter.x"></a>
 
@@ -14479,7 +14829,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnLdapVerify.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnLdapVerify.isConstruct"></a>
 
 ```typescript
 import { CfnLdapVerify } from 'awscdk-resources-mongodbatlas'
@@ -14488,6 +14838,20 @@ CfnLdapVerify.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnLdapVerify.isConstruct.parameter.x"></a>
 
@@ -15130,7 +15494,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.isConstruct"></a>
 
 ```typescript
 import { CfnMaintenanceWindow } from 'awscdk-resources-mongodbatlas'
@@ -15139,6 +15503,20 @@ CfnMaintenanceWindow.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.isConstruct.parameter.x"></a>
 
@@ -15194,6 +15572,9 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.attrNumberOfDeferrals">attrNumberOfDeferrals</a></code> | <code>number</code> | Attribute `MongoDB::Atlas::MaintenanceWindow.NumberOfDeferrals`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.attrStartASAP">attrStartASAP</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::MaintenanceWindow.StartASAP`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.attrTimeZoneId">attrTimeZoneId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::MaintenanceWindow.TimeZoneId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps">CfnMaintenanceWindowProps</a></code> | Resource props. |
 
 ---
@@ -15287,6 +15668,42 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `attrNumberOfDeferrals`<sup>Required</sup> <a name="attrNumberOfDeferrals" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.attrNumberOfDeferrals"></a>
+
+```typescript
+public readonly attrNumberOfDeferrals: number;
+```
+
+- *Type:* number
+
+Attribute `MongoDB::Atlas::MaintenanceWindow.NumberOfDeferrals`.
+
+---
+
+##### `attrStartASAP`<sup>Required</sup> <a name="attrStartASAP" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.attrStartASAP"></a>
+
+```typescript
+public readonly attrStartASAP: IResolvable;
+```
+
+- *Type:* aws-cdk-lib.IResolvable
+
+Attribute `MongoDB::Atlas::MaintenanceWindow.StartASAP`.
+
+---
+
+##### `attrTimeZoneId`<sup>Required</sup> <a name="attrTimeZoneId" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.attrTimeZoneId"></a>
+
+```typescript
+public readonly attrTimeZoneId: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::MaintenanceWindow.TimeZoneId`.
 
 ---
 
@@ -15755,7 +16172,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.isConstruct"></a>
 
 ```typescript
 import { CfnNetworkContainer } from 'awscdk-resources-mongodbatlas'
@@ -15764,6 +16181,20 @@ CfnNetworkContainer.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.isConstruct.parameter.x"></a>
 
@@ -16393,7 +16824,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.isConstruct"></a>
 
 ```typescript
 import { CfnNetworkPeering } from 'awscdk-resources-mongodbatlas'
@@ -16402,6 +16833,20 @@ CfnNetworkPeering.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.isConstruct.parameter.x"></a>
 
@@ -17070,7 +17515,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.isConstruct"></a>
 
 ```typescript
 import { CfnOnlineArchive } from 'awscdk-resources-mongodbatlas'
@@ -17079,6 +17524,20 @@ CfnOnlineArchive.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.isConstruct.parameter.x"></a>
 
@@ -17734,7 +18193,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnOrganization.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnOrganization.isConstruct"></a>
 
 ```typescript
 import { CfnOrganization } from 'awscdk-resources-mongodbatlas'
@@ -17743,6 +18202,20 @@ CfnOrganization.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnOrganization.isConstruct.parameter.x"></a>
 
@@ -18372,7 +18845,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.isConstruct"></a>
 
 ```typescript
 import { CfnOrgInvitation } from 'awscdk-resources-mongodbatlas'
@@ -18381,6 +18854,20 @@ CfnOrgInvitation.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.isConstruct.parameter.x"></a>
 
@@ -19049,7 +19536,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.isConstruct"></a>
 
 ```typescript
 import { CfnPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
@@ -19058,6 +19545,20 @@ CfnPrivateEndpoint.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.isConstruct.parameter.x"></a>
 
@@ -19700,7 +20201,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.isConstruct"></a>
 
 ```typescript
 import { CfnPrivateEndpointAws } from 'awscdk-resources-mongodbatlas'
@@ -19709,6 +20210,20 @@ CfnPrivateEndpointAws.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.isConstruct.parameter.x"></a>
 
@@ -19764,6 +20279,10 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.attrConnectionStatus">attrConnectionStatus</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::PrivateEndpointAWS.ConnectionStatus`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.attrDeleteRequested">attrDeleteRequested</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::PrivateEndpointAWS.DeleteRequested`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.attrErrorMessage">attrErrorMessage</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::PrivateEndpointAWS.ErrorMessage`. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.attrInterfaceEndpointId">attrInterfaceEndpointId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::PrivateEndpointAWS.InterfaceEndpointId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps">CfnPrivateEndpointAwsProps</a></code> | Resource props. |
 
 ---
@@ -19857,6 +20376,54 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `attrConnectionStatus`<sup>Required</sup> <a name="attrConnectionStatus" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.attrConnectionStatus"></a>
+
+```typescript
+public readonly attrConnectionStatus: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::PrivateEndpointAWS.ConnectionStatus`.
+
+---
+
+##### `attrDeleteRequested`<sup>Required</sup> <a name="attrDeleteRequested" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.attrDeleteRequested"></a>
+
+```typescript
+public readonly attrDeleteRequested: IResolvable;
+```
+
+- *Type:* aws-cdk-lib.IResolvable
+
+Attribute `MongoDB::Atlas::PrivateEndpointAWS.DeleteRequested`.
+
+---
+
+##### `attrErrorMessage`<sup>Required</sup> <a name="attrErrorMessage" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.attrErrorMessage"></a>
+
+```typescript
+public readonly attrErrorMessage: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::PrivateEndpointAWS.ErrorMessage`.
+
+---
+
+##### `attrInterfaceEndpointId`<sup>Required</sup> <a name="attrInterfaceEndpointId" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.attrInterfaceEndpointId"></a>
+
+```typescript
+public readonly attrInterfaceEndpointId: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::PrivateEndpointAWS.InterfaceEndpointId`.
 
 ---
 
@@ -20325,7 +20892,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.isConstruct"></a>
 
 ```typescript
 import { CfnPrivateEndPointRegionalMode } from 'awscdk-resources-mongodbatlas'
@@ -20334,6 +20901,20 @@ CfnPrivateEndPointRegionalMode.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.isConstruct.parameter.x"></a>
 
@@ -20950,7 +21531,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.isConstruct"></a>
 
 ```typescript
 import { CfnPrivateEndpointService } from 'awscdk-resources-mongodbatlas'
@@ -20959,6 +21540,20 @@ CfnPrivateEndpointService.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.isConstruct.parameter.x"></a>
 
@@ -21640,7 +22235,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isConstruct"></a>
 
 ```typescript
 import { CfnPrivatelinkEndpointServiceDataFederationOnlineArchive } from 'awscdk-resources-mongodbatlas'
@@ -21649,6 +22244,20 @@ CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.isConstruct.parameter.x"></a>
 
@@ -22265,7 +22874,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnProject.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnProject.isConstruct"></a>
 
 ```typescript
 import { CfnProject } from 'awscdk-resources-mongodbatlas'
@@ -22274,6 +22883,20 @@ CfnProject.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnProject.isConstruct.parameter.x"></a>
 
@@ -22929,7 +23552,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.isConstruct"></a>
 
 ```typescript
 import { CfnProjectInvitation } from 'awscdk-resources-mongodbatlas'
@@ -22938,6 +23561,20 @@ CfnProjectInvitation.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.isConstruct.parameter.x"></a>
 
@@ -23606,7 +24243,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.isConstruct"></a>
 
 ```typescript
 import { CfnProjectIpAccessList } from 'awscdk-resources-mongodbatlas'
@@ -23615,6 +24252,20 @@ CfnProjectIpAccessList.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.isConstruct.parameter.x"></a>
 
@@ -24244,7 +24895,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.isConstruct"></a>
 
 ```typescript
 import { CfnResourcePolicy } from 'awscdk-resources-mongodbatlas'
@@ -24253,6 +24904,20 @@ CfnResourcePolicy.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.isConstruct.parameter.x"></a>
 
@@ -24921,7 +25586,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.isConstruct"></a>
 
 ```typescript
 import { CfnSearchDeployment } from 'awscdk-resources-mongodbatlas'
@@ -24930,6 +25595,20 @@ CfnSearchDeployment.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.isConstruct.parameter.x"></a>
 
@@ -24985,6 +25664,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.attrEncryptionAtRestProvider">attrEncryptionAtRestProvider</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::SearchDeployment.EncryptionAtRestProvider`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::SearchDeployment.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.attrStateName">attrStateName</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::SearchDeployment.StateName`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeploymentProps">CfnSearchDeploymentProps</a></code> | Resource props. |
@@ -25080,6 +25760,18 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `attrEncryptionAtRestProvider`<sup>Required</sup> <a name="attrEncryptionAtRestProvider" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.property.attrEncryptionAtRestProvider"></a>
+
+```typescript
+public readonly attrEncryptionAtRestProvider: string;
+```
+
+- *Type:* string
+
+Attribute `MongoDB::Atlas::SearchDeployment.EncryptionAtRestProvider`.
 
 ---
 
@@ -25572,7 +26264,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnSearchIndex.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnSearchIndex.isConstruct"></a>
 
 ```typescript
 import { CfnSearchIndex } from 'awscdk-resources-mongodbatlas'
@@ -25581,6 +26273,20 @@ CfnSearchIndex.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnSearchIndex.isConstruct.parameter.x"></a>
 
@@ -26223,7 +26929,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnServerlessInstance.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnServerlessInstance.isConstruct"></a>
 
 ```typescript
 import { CfnServerlessInstance } from 'awscdk-resources-mongodbatlas'
@@ -26232,6 +26938,20 @@ CfnServerlessInstance.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnServerlessInstance.isConstruct.parameter.x"></a>
 
@@ -26913,7 +27633,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isConstruct"></a>
 
 ```typescript
 import { CfnServerlessPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
@@ -26922,6 +27642,20 @@ CfnServerlessPrivateEndpoint.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnServerlessPrivateEndpoint.isConstruct.parameter.x"></a>
 
@@ -27616,7 +28350,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnStreamConnection.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnStreamConnection.isConstruct"></a>
 
 ```typescript
 import { CfnStreamConnection } from 'awscdk-resources-mongodbatlas'
@@ -27625,6 +28359,20 @@ CfnStreamConnection.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnStreamConnection.isConstruct.parameter.x"></a>
 
@@ -28241,7 +28989,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnStreamInstance.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnStreamInstance.isConstruct"></a>
 
 ```typescript
 import { CfnStreamInstance } from 'awscdk-resources-mongodbatlas'
@@ -28250,6 +28998,20 @@ CfnStreamInstance.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnStreamInstance.isConstruct.parameter.x"></a>
 
@@ -28892,7 +29654,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnTeams.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnTeams.isConstruct"></a>
 
 ```typescript
 import { CfnTeams } from 'awscdk-resources-mongodbatlas'
@@ -28901,6 +29663,20 @@ CfnTeams.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnTeams.isConstruct.parameter.x"></a>
 
@@ -29530,7 +30306,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.isConstruct"></a>
 
 ```typescript
 import { CfnThirdPartyIntegration } from 'awscdk-resources-mongodbatlas'
@@ -29539,6 +30315,20 @@ CfnThirdPartyIntegration.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.isConstruct.parameter.x"></a>
 
@@ -30155,7 +30945,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnTrigger.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnTrigger.isConstruct"></a>
 
 ```typescript
 import { CfnTrigger } from 'awscdk-resources-mongodbatlas'
@@ -30164,6 +30954,20 @@ CfnTrigger.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnTrigger.isConstruct.parameter.x"></a>
 
@@ -30793,7 +31597,7 @@ The new dependency to add.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.isConstruct"></a>
 
 ```typescript
 import { CfnX509AuthenticationDatabaseUser } from 'awscdk-resources-mongodbatlas'
@@ -30802,6 +31606,20 @@ CfnX509AuthenticationDatabaseUser.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.isConstruct.parameter.x"></a>
 
@@ -31071,7 +31889,7 @@ Returns a string representation of this construct.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.DatadogIntegration.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.DatadogIntegration.isConstruct"></a>
 
 ```typescript
 import { DatadogIntegration } from 'awscdk-resources-mongodbatlas'
@@ -31080,6 +31898,20 @@ DatadogIntegration.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.DatadogIntegration.isConstruct.parameter.x"></a>
 
@@ -31181,7 +32013,7 @@ Returns a string representation of this construct.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.isConstruct"></a>
 
 ```typescript
 import { MicrosoftTeamsIntegration } from 'awscdk-resources-mongodbatlas'
@@ -31190,6 +32022,20 @@ MicrosoftTeamsIntegration.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.isConstruct.parameter.x"></a>
 
@@ -31295,7 +32141,7 @@ Returns a string representation of this construct.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.isConstruct"></a>
 
 ```typescript
 import { MongoAtlasBootstrap } from 'awscdk-resources-mongodbatlas'
@@ -31304,6 +32150,20 @@ MongoAtlasBootstrap.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.isConstruct.parameter.x"></a>
 
@@ -31405,7 +32265,7 @@ Returns a string representation of this construct.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.MongoSecretProfile.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.MongoSecretProfile.isConstruct"></a>
 
 ```typescript
 import { MongoSecretProfile } from 'awscdk-resources-mongodbatlas'
@@ -31414,6 +32274,20 @@ MongoSecretProfile.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.MongoSecretProfile.isConstruct.parameter.x"></a>
 
@@ -31504,7 +32378,7 @@ Returns a string representation of this construct.
 
 ---
 
-##### ~~`isConstruct`~~ <a name="isConstruct" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.isConstruct"></a>
+##### `isConstruct` <a name="isConstruct" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.isConstruct"></a>
 
 ```typescript
 import { PagerDutyIntegration } from 'awscdk-resources-mongodbatlas'
@@ -31513,6 +32387,20 @@ PagerDutyIntegration.isConstruct(x: any)
 ```
 
 Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
 
 ###### `x`<sup>Required</sup> <a name="x" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.isConstruct.parameter.x"></a>
 
@@ -32501,6 +33389,7 @@ const apiAtlasFtsMappingsViewManual: ApiAtlasFtsMappingsViewManual = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsMappingsViewManual.property.dynamic">dynamic</a></code> | <code>boolean</code> | Flag that indicates whether the index uses dynamic or static mappings. |
+| <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsMappingsViewManual.property.dynamicConfig">dynamicConfig</a></code> | <code>string</code> | Stringify json representation of dynamic mapping configuration object. |
 | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsMappingsViewManual.property.fields">fields</a></code> | <code>string</code> | One or more field specifications for the Atlas Search index. |
 
 ---
@@ -32515,7 +33404,21 @@ public readonly dynamic: boolean;
 
 Flag that indicates whether the index uses dynamic or static mappings.
 
-Required for search indexes if **mappings.fields** is omitted.
+If DynamicConfig is specified, this field is ignored (DynamicConfig takes precedence). Required for search indexes if **mappings.fields** is omitted and **mappings.dynamicConfig** is not specified.
+
+---
+
+##### `dynamicConfig`<sup>Optional</sup> <a name="dynamicConfig" id="awscdk-resources-mongodbatlas.ApiAtlasFtsMappingsViewManual.property.dynamicConfig"></a>
+
+```typescript
+public readonly dynamicConfig: string;
+```
+
+- *Type:* string
+
+Stringify json representation of dynamic mapping configuration object.
+
+This allows for more complex dynamic mapping configurations beyond a simple boolean. If both Dynamic and DynamicConfig are specified, DynamicConfig takes precedence.
 
 ---
 
@@ -32529,7 +33432,7 @@ public readonly fields: string;
 
 One or more field specifications for the Atlas Search index.
 
-Stringify json representation of field with types and properties. Required for search indexes if **mappings.dynamic** is omitted or set to **false**.
+Stringify json representation of field with types and properties. Required for search indexes if **mappings.dynamic** and **mappings.dynamicConfig** are omitted or if **mappings.dynamic** is set to **false**.
 
 ---
 
@@ -33697,6 +34600,38 @@ The type(s) of authentication provider that the trigger listens to.
 
 ---
 
+### Aws <a name="Aws" id="awscdk-resources-mongodbatlas.Aws"></a>
+
+AWS Lambda connection configuration.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.Aws.Initializer"></a>
+
+```typescript
+import { Aws } from 'awscdk-resources-mongodbatlas'
+
+const aws: Aws = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.Aws.property.roleArn">roleArn</a></code> | <code>string</code> | Amazon Resource Name (ARN) of the IAM role for AWS Lambda connection. |
+
+---
+
+##### `roleArn`<sup>Required</sup> <a name="roleArn" id="awscdk-resources-mongodbatlas.Aws.property.roleArn"></a>
+
+```typescript
+public readonly roleArn: string;
+```
+
+- *Type:* string
+
+Amazon Resource Name (ARN) of the IAM role for AWS Lambda connection.
+
+---
+
 ### AwsKmsConfig <a name="AwsKmsConfig" id="awscdk-resources-mongodbatlas.AwsKmsConfig"></a>
 
 Specifies AWS KMS configuration details and whether Encryption at Rest is enabled for an Atlas project.
@@ -34009,6 +34944,7 @@ const cfnAlertConfigurationProps: CfnAlertConfigurationProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.notifications">notifications</a></code> | <code><a href="#awscdk-resources-mongodbatlas.NotificationView">NotificationView</a>[]</code> | List that contains the targets that MongoDB Cloud sends notifications. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.severityOverride">severityOverride</a></code> | <code>string</code> | Degree of seriousness given to this alert. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.threshold">threshold</a></code> | <code><a href="#awscdk-resources-mongodbatlas.IntegerThresholdView">IntegerThresholdView</a></code> | Limit that triggers an alert when exceeded. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.typeName">typeName</a></code> | <code>string</code> | Human-readable label that displays the alert type. |
 
@@ -34087,6 +35023,20 @@ public readonly projectId: string;
 - *Type:* string
 
 Unique 24-hexadecimal digit string that identifies your project.
+
+---
+
+##### `severityOverride`<sup>Optional</sup> <a name="severityOverride" id="awscdk-resources-mongodbatlas.CfnAlertConfigurationProps.property.severityOverride"></a>
+
+```typescript
+public readonly severityOverride: string;
+```
+
+- *Type:* string
+
+Degree of seriousness given to this alert.
+
+This value overrides the default severity level for the alert.
 
 ---
 
@@ -35687,6 +36637,7 @@ const cfnDatabaseUserProps: CfnDatabaseUserProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.description">description</a></code> | <code>string</code> | Description of this database user. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.labels">labels</a></code> | <code><a href="#awscdk-resources-mongodbatlas.LabelDefinition">LabelDefinition</a>[]</code> | List that contains the key-value pairs for tagging and categorizing the MongoDB database user. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.ldapAuthType">ldapAuthType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsLdapAuthType">CfnDatabaseUserPropsLdapAuthType</a></code> | Method by which the provided username is authenticated. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.oidcAuthType">oidcAuthType</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsOidcAuthType">CfnDatabaseUserPropsOidcAuthType</a></code> | Human-readable label that indicates whether the new database user or group authenticates with OIDC federated authentication. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.password">password</a></code> | <code>string</code> | The user’s password. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided `default` is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.scopes">scopes</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ScopeDefinition">ScopeDefinition</a>[]</code> | List that contains clusters and MongoDB Atlas Data Federation that this database user can access. |
@@ -35811,6 +36762,20 @@ public readonly ldapAuthType: CfnDatabaseUserPropsLdapAuthType;
 Method by which the provided username is authenticated.
 
 Default value is `NONE`.
+
+---
+
+##### `oidcAuthType`<sup>Optional</sup> <a name="oidcAuthType" id="awscdk-resources-mongodbatlas.CfnDatabaseUserProps.property.oidcAuthType"></a>
+
+```typescript
+public readonly oidcAuthType: CfnDatabaseUserPropsOidcAuthType;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsOidcAuthType">CfnDatabaseUserPropsOidcAuthType</a>
+
+Human-readable label that indicates whether the new database user or group authenticates with OIDC federated authentication.
+
+To create a federated authentication user, specify the value of USER in this field. To create a federated authentication group, specify the value of IDP_GROUP in this field. Default value is `NONE`.
 
 ---
 
@@ -36062,7 +37027,7 @@ const cfnFederatedQueryLimitProps: CfnFederatedQueryLimitProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.tenantName">tenantName</a></code> | <code>string</code> | Human-readable label that identifies the data federated database instance to which the query limit applies. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.value">value</a></code> | <code>string</code> | Amount to set the limit to. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.overrunPolicy">overrunPolicy</a></code> | <code>string</code> | Only used for Data Federation limits. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.overrunPolicy">overrunPolicy</a></code> | <code>string</code> | Action to take when the usage limit is exceeded. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimitProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 
 ---
@@ -36123,9 +37088,9 @@ public readonly overrunPolicy: string;
 
 - *Type:* string
 
-Only used for Data Federation limits.
+Action to take when the usage limit is exceeded.
 
-Action to take when the usage limit is exceeded. If limit span is set to QUERY, this is ignored because MongoDB Cloud stops the query when it exceeds the usage limit. "enum" : [ "BLOCK", "BLOCK_AND_KILL" ]
+If limit span is set to QUERY, this is ignored because MongoDB Cloud stops the query when it exceeds the usage limit.
 
 ---
 
@@ -36791,42 +37756,18 @@ const cfnMaintenanceWindowProps: CfnMaintenanceWindowProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.hourOfDay">hourOfDay</a></code> | <code>number</code> | Zero-based integer that represents the hour of the of the day that the maintenance window starts according to a 24-hour clock. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.autoDeferOnceEnabled">autoDeferOnceEnabled</a></code> | <code>boolean</code> | Flag that indicates whether MongoDB Cloud should defer all maintenance windows for one week after you enable them. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.dayOfWeek">dayOfWeek</a></code> | <code>number</code> | One-based integer that represents the day of the week that the maintenance window starts. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.hourOfDay">hourOfDay</a></code> | <code>number</code> | Zero-based integer that represents the hour of the of the day that the maintenance window starts according to a 24-hour clock. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.startAsap">startAsap</a></code> | <code>boolean</code> | Flag that indicates whether MongoDB Cloud starts the maintenance window immediately upon receiving this request. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.autoDefer">autoDefer</a></code> | <code>boolean</code> | Flag that indicates whether MongoDB Cloud should automatically defer maintenance windows for one week when they occur during the defined maintenance window. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.autoDeferOnceEnabled">autoDeferOnceEnabled</a></code> | <code>boolean</code> | Flag that indicates whether MongoDB Cloud should defer all maintenance windows for one week after you enable them. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.defer">defer</a></code> | <code>boolean</code> | Flag that indicates whether to defer the maintenance window. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.protectedHours">protectedHours</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowPropsProtectedHours">CfnMaintenanceWindowPropsProtectedHours</a></code> | Protected hours during which MongoDB Cloud cannot start maintenance. |
 
 ---
 
-##### `hourOfDay`<sup>Required</sup> <a name="hourOfDay" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.hourOfDay"></a>
-
-```typescript
-public readonly hourOfDay: number;
-```
-
-- *Type:* number
-
-Zero-based integer that represents the hour of the of the day that the maintenance window starts according to a 24-hour clock.
-
-Use `0` for midnight and `12` for noon.
-
----
-
-##### `autoDeferOnceEnabled`<sup>Optional</sup> <a name="autoDeferOnceEnabled" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.autoDeferOnceEnabled"></a>
-
-```typescript
-public readonly autoDeferOnceEnabled: boolean;
-```
-
-- *Type:* boolean
-
-Flag that indicates whether MongoDB Cloud should defer all maintenance windows for one week after you enable them.
-
----
-
-##### `dayOfWeek`<sup>Optional</sup> <a name="dayOfWeek" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.dayOfWeek"></a>
+##### `dayOfWeek`<sup>Required</sup> <a name="dayOfWeek" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.dayOfWeek"></a>
 
 ```typescript
 public readonly dayOfWeek: number;
@@ -36848,6 +37789,70 @@ One-based integer that represents the day of the week that the maintenance windo
 
 ---
 
+##### `hourOfDay`<sup>Required</sup> <a name="hourOfDay" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.hourOfDay"></a>
+
+```typescript
+public readonly hourOfDay: number;
+```
+
+- *Type:* number
+
+Zero-based integer that represents the hour of the of the day that the maintenance window starts according to a 24-hour clock.
+
+Use `0` for midnight and `12` for noon.
+
+---
+
+##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.projectId"></a>
+
+```typescript
+public readonly projectId: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies your project.
+
+---
+
+##### `autoDefer`<sup>Optional</sup> <a name="autoDefer" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.autoDefer"></a>
+
+```typescript
+public readonly autoDefer: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether MongoDB Cloud should automatically defer maintenance windows for one week when they occur during the defined maintenance window.
+
+---
+
+##### `autoDeferOnceEnabled`<sup>Optional</sup> <a name="autoDeferOnceEnabled" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.autoDeferOnceEnabled"></a>
+
+```typescript
+public readonly autoDeferOnceEnabled: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether MongoDB Cloud should defer all maintenance windows for one week after you enable them.
+
+---
+
+##### `defer`<sup>Optional</sup> <a name="defer" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.defer"></a>
+
+```typescript
+public readonly defer: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether to defer the maintenance window.
+
+When set to true, the next scheduled maintenance will be deferred.
+
+---
+
 ##### `profile`<sup>Optional</sup> <a name="profile" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.profile"></a>
 
 ```typescript
@@ -36862,29 +37867,60 @@ See [Secret Manager Profile setup](../../../examples/profile-secret.yaml)
 
 ---
 
-##### `projectId`<sup>Optional</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.projectId"></a>
+##### `protectedHours`<sup>Optional</sup> <a name="protectedHours" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.protectedHours"></a>
 
 ```typescript
-public readonly projectId: string;
+public readonly protectedHours: CfnMaintenanceWindowPropsProtectedHours;
 ```
 
-- *Type:* string
+- *Type:* <a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowPropsProtectedHours">CfnMaintenanceWindowPropsProtectedHours</a>
 
-Unique 24-hexadecimal digit string that identifies your project.
+Protected hours during which MongoDB Cloud cannot start maintenance.
 
 ---
 
-##### `startAsap`<sup>Optional</sup> <a name="startAsap" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowProps.property.startAsap"></a>
+### CfnMaintenanceWindowPropsProtectedHours <a name="CfnMaintenanceWindowPropsProtectedHours" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowPropsProtectedHours"></a>
+
+Protected hours during which MongoDB Cloud cannot start maintenance.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowPropsProtectedHours.Initializer"></a>
 
 ```typescript
-public readonly startAsap: boolean;
+import { CfnMaintenanceWindowPropsProtectedHours } from 'awscdk-resources-mongodbatlas'
+
+const cfnMaintenanceWindowPropsProtectedHours: CfnMaintenanceWindowPropsProtectedHours = { ... }
 ```
 
-- *Type:* boolean
+#### Properties <a name="Properties" id="Properties"></a>
 
-Flag that indicates whether MongoDB Cloud starts the maintenance window immediately upon receiving this request.
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowPropsProtectedHours.property.endHourOfDay">endHourOfDay</a></code> | <code>number</code> | Hour of the day when protected hours end (0-23). |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindowPropsProtectedHours.property.startHourOfDay">startHourOfDay</a></code> | <code>number</code> | Hour of the day when protected hours start (0-23). |
 
-To start the maintenance window immediately for your project, MongoDB Cloud must have maintenance scheduled and you must set a maintenance window. This flag resets to `false` after MongoDB Cloud completes maintenance.
+---
+
+##### `endHourOfDay`<sup>Optional</sup> <a name="endHourOfDay" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowPropsProtectedHours.property.endHourOfDay"></a>
+
+```typescript
+public readonly endHourOfDay: number;
+```
+
+- *Type:* number
+
+Hour of the day when protected hours end (0-23).
+
+---
+
+##### `startHourOfDay`<sup>Optional</sup> <a name="startHourOfDay" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindowPropsProtectedHours.property.startHourOfDay"></a>
+
+```typescript
+public readonly startHourOfDay: number;
+```
+
+- *Type:* number
+
+Hour of the day when protected hours start (0-23).
 
 ---
 
@@ -37321,6 +38357,7 @@ const cfnOrganizationProps: CfnOrganizationProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.multiFactorAuthRequired">multiFactorAuthRequired</a></code> | <code>boolean</code> | Flag that indicates whether to require users to set up Multi-Factor Authentication (MFA) before accessing the specified organization. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.restrictEmployeeAccess">restrictEmployeeAccess</a></code> | <code>boolean</code> | Flag that indicates whether to block MongoDB Support from accessing Atlas infrastructure for any deployment in the specified organization without explicit permission. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.securityContact">securityContact</a></code> | <code>string</code> | Email address of the security contact for the organization. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps.property.skipDefaultAlertsSettings">skipDefaultAlertsSettings</a></code> | <code>boolean</code> | Disables automatic alert creation. |
 
 ---
@@ -37462,6 +38499,18 @@ public readonly restrictEmployeeAccess: boolean;
 Flag that indicates whether to block MongoDB Support from accessing Atlas infrastructure for any deployment in the specified organization without explicit permission.
 
 Once this setting is turned on, you can grant MongoDB Support a 24-hour bypass access to the Atlas deployment to resolve support issues. To learn more, see: https://www.mongodb.com/docs/atlas/security-restrict-support-access/.
+
+---
+
+##### `securityContact`<sup>Optional</sup> <a name="securityContact" id="awscdk-resources-mongodbatlas.CfnOrganizationProps.property.securityContact"></a>
+
+```typescript
+public readonly securityContact: string;
+```
+
+- *Type:* string
+
+Email address of the security contact for the organization.
 
 ---
 
@@ -37663,11 +38712,9 @@ const cfnPrivateEndpointAwsProps: CfnPrivateEndpointAwsProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.endpointServiceId">endpointServiceId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the private endpoint service for which you want to create a private endpoint. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.connectionStatus">connectionStatus</a></code> | <code>string</code> | State of the Amazon Web Service PrivateLink connection when MongoDB Cloud received this request. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.enforceConnectionSuccess">enforceConnectionSuccess</a></code> | <code>boolean</code> | If this proper is set to TRUE, the cloud formation resource will return success Only if the private connection is Succeeded. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.errorMessage">errorMessage</a></code> | <code>string</code> | Error message returned when requesting private connection resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.id">id</a></code> | <code>string</code> | Unique string that identifies the private endpoint. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.enforceConnectionSuccess">enforceConnectionSuccess</a></code> | <code>boolean</code> | If this proper is set to TRUE, the cloud formation resource will return success Only if the private connection is Succeeded. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
 
 ---
@@ -37684,6 +38731,20 @@ Unique 24-hexadecimal digit string that identifies the private endpoint service 
 
 ---
 
+##### `id`<sup>Required</sup> <a name="id" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.id"></a>
+
+```typescript
+public readonly id: string;
+```
+
+- *Type:* string
+
+Unique string that identifies the private endpoint.
+
+for AWS is the VPC endpoint ID, example: vpce-xxxxxxxx
+
+---
+
 ##### `projectId`<sup>Required</sup> <a name="projectId" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.projectId"></a>
 
 ```typescript
@@ -37696,18 +38757,6 @@ Unique 24-hexadecimal digit string that identifies your project.
 
 ---
 
-##### `connectionStatus`<sup>Optional</sup> <a name="connectionStatus" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.connectionStatus"></a>
-
-```typescript
-public readonly connectionStatus: string;
-```
-
-- *Type:* string
-
-State of the Amazon Web Service PrivateLink connection when MongoDB Cloud received this request.
-
----
-
 ##### `enforceConnectionSuccess`<sup>Optional</sup> <a name="enforceConnectionSuccess" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.enforceConnectionSuccess"></a>
 
 ```typescript
@@ -37717,34 +38766,6 @@ public readonly enforceConnectionSuccess: boolean;
 - *Type:* boolean
 
 If this proper is set to TRUE, the cloud formation resource will return success Only if the private connection is Succeeded.
-
----
-
-##### `errorMessage`<sup>Optional</sup> <a name="errorMessage" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.errorMessage"></a>
-
-```typescript
-public readonly errorMessage: string;
-```
-
-- *Type:* string
-
-Error message returned when requesting private connection resource.
-
-The resource returns null if the request succeeded.
-
----
-
-##### `id`<sup>Optional</sup> <a name="id" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAwsProps.property.id"></a>
-
-```typescript
-public readonly id: string;
-```
-
-- *Type:* string
-
-Unique string that identifies the private endpoint.
-
-for AWS is the VPC endpoint ID, example: vpce-xxxxxxxx
 
 ---
 
@@ -38618,16 +39639,19 @@ const cfnSearchIndexProps: CfnSearchIndexProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.clusterName">clusterName</a></code> | <code>string</code> | Name of the cluster that contains the database and collection with one or more Application Search indexes. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.collectionName">collectionName</a></code> | <code>string</code> | Human-readable label that identifies the collection that contains one or more Atlas Search indexes. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.database">database</a></code> | <code>string</code> | Human-readable label that identifies the database that contains the collection with one or more Atlas Search indexes. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.name">name</a></code> | <code>string</code> | Human-readable label that identifies this index. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.analyzer">analyzer</a></code> | <code>string</code> | Specific pre-defined method chosen to convert database field text into searchable words. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.analyzers">analyzers</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsAnalyzersViewManual">ApiAtlasFtsAnalyzersViewManual</a>[]</code> | List of user-defined methods to convert database field text into searchable words. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.fields">fields</a></code> | <code>string</code> | Array of [Fields](https://www.mongodb.com/docs/atlas/atlas-search/field-types/knn-vector/#std-label-fts-data-types-knn-vector) to configure this vectorSearch index. Stringify json representation of field with types and properties. Required for vector indexes. It must contain at least one **vector** type field. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.mappings">mappings</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsMappingsViewManual">ApiAtlasFtsMappingsViewManual</a></code> | Index specifications for the collection's fields. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.name">name</a></code> | <code>string</code> | Human-readable label that identifies this index. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.numPartitions">numPartitions</a></code> | <code>number</code> | Number of partitions for the index. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.profile">profile</a></code> | <code>string</code> | The profile is defined in AWS Secret manager. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.searchAnalyzer">searchAnalyzer</a></code> | <code>string</code> | Method applied to identify words when searching this index. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.storedSource">storedSource</a></code> | <code>string</code> | Flag that indicates whether to store the original document in the index. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.synonyms">synonyms</a></code> | <code><a href="#awscdk-resources-mongodbatlas.ApiAtlasFtsSynonymMappingDefinitionView">ApiAtlasFtsSynonymMappingDefinitionView</a>[]</code> | Rule sets that map words to their synonyms in this index. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.type">type</a></code> | <code>string</code> | Type of index: **search** or **vectorSearch**. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.typeSets">typeSets</a></code> | <code><a href="#awscdk-resources-mongodbatlas.TypeSet">TypeSet</a>[]</code> | Array of type sets that define alternate types for fields in the index. |
 
 ---
 
@@ -38664,6 +39688,20 @@ public readonly database: string;
 - *Type:* string
 
 Human-readable label that identifies the database that contains the collection with one or more Atlas Search indexes.
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies this index.
+
+Within each namespace, names of all indexes in the namespace must be unique.
 
 ---
 
@@ -38726,17 +39764,17 @@ Index specifications for the collection's fields.
 
 ---
 
-##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.name"></a>
+##### `numPartitions`<sup>Optional</sup> <a name="numPartitions" id="awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.numPartitions"></a>
 
 ```typescript
-public readonly name: string;
+public readonly numPartitions: number;
 ```
 
-- *Type:* string
+- *Type:* number
 
-Human-readable label that identifies this index.
+Number of partitions for the index.
 
-Within each namespace, names of all indexes in the namespace must be unique.
+This is used to improve search performance for large datasets by distributing the index across multiple partitions.
 
 ---
 
@@ -38778,6 +39816,20 @@ Method applied to identify words when searching this index.
 
 ---
 
+##### `storedSource`<sup>Optional</sup> <a name="storedSource" id="awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.storedSource"></a>
+
+```typescript
+public readonly storedSource: string;
+```
+
+- *Type:* string
+
+Flag that indicates whether to store the original document in the index.
+
+Can be a boolean ("true" or "false") or a stringified JSON object specifying which fields to include/exclude. When stored, this allows the index to return the original document for queries.
+
+---
+
 ##### `synonyms`<sup>Optional</sup> <a name="synonyms" id="awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.synonyms"></a>
 
 ```typescript
@@ -38801,6 +39853,20 @@ public readonly type: string;
 Type of index: **search** or **vectorSearch**.
 
 Default type is **search**.
+
+---
+
+##### `typeSets`<sup>Optional</sup> <a name="typeSets" id="awscdk-resources-mongodbatlas.CfnSearchIndexProps.property.typeSets"></a>
+
+```typescript
+public readonly typeSets: TypeSet[];
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.TypeSet">TypeSet</a>[]
+
+Array of type sets that define alternate types for fields in the index.
+
+Each type set allows you to group related fields under a common name.
 
 ---
 
@@ -39088,7 +40154,7 @@ Profile used to provide credentials information, (a secret with the cfn/atlas/pr
 
 ### CfnStreamConnectionProps <a name="CfnStreamConnectionProps" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps"></a>
 
-Returns, adds, edits, and removes one connection for a stream instance in the specified project.
+Returns, adds, edits, and removes one connection for a stream workspace in the specified project.
 
 To use this resource, the requesting API Key must have the Project Owner roles.
 
@@ -39105,16 +40171,22 @@ const cfnStreamConnectionProps: CfnStreamConnectionProps = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.connectionName">connectionName</a></code> | <code>string</code> | Human-readable label that identifies the stream connection. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.instanceName">instanceName</a></code> | <code>string</code> | Human-readable label that identifies the stream instance. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.projectId">projectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies your project. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.type">type</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType">CfnStreamConnectionPropsType</a></code> | Type of the connection. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.authentication">authentication</a></code> | <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication">StreamsKafkaAuthentication</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.aws">aws</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Aws">Aws</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.bootstrapServers">bootstrapServers</a></code> | <code>string</code> | Comma separated list of server addresses. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.clusterName">clusterName</a></code> | <code>string</code> | Name of the cluster configured for this connection. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.clusterProjectId">clusterProjectId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the project containing the cluster for cross-project cluster connections. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.config">config</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.dbRoleToExecute">dbRoleToExecute</a></code> | <code><a href="#awscdk-resources-mongodbatlas.DbRoleToExecute">DbRoleToExecute</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.headers">headers</a></code> | <code>any</code> | HTTP headers for HTTPS type connections. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.instanceName">instanceName</a></code> | <code>string</code> | Human-readable label that identifies the stream instance. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.networking">networking</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Networking">Networking</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.security">security</a></code> | <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaSecurity">StreamsKafkaSecurity</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.url">url</a></code> | <code>string</code> | URL endpoint for HTTPS type connections. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.workspaceName">workspaceName</a></code> | <code>string</code> | Human-readable label that identifies the stream workspace. |
 
 ---
 
@@ -39129,18 +40201,6 @@ public readonly connectionName: string;
 Human-readable label that identifies the stream connection.
 
 In the case of the Sample type, this is the name of the sample source.
-
----
-
-##### `instanceName`<sup>Required</sup> <a name="instanceName" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.instanceName"></a>
-
-```typescript
-public readonly instanceName: string;
-```
-
-- *Type:* string
-
-Human-readable label that identifies the stream instance.
 
 ---
 
@@ -39170,7 +40230,7 @@ public readonly type: CfnStreamConnectionPropsType;
 
 Type of the connection.
 
-Can be either Cluster, Kafka, or Sample.
+Can be Cluster, Kafka, Sample, AWSLambda, or Https.
 
 ---
 
@@ -39181,6 +40241,16 @@ public readonly authentication: StreamsKafkaAuthentication;
 ```
 
 - *Type:* <a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication">StreamsKafkaAuthentication</a>
+
+---
+
+##### `aws`<sup>Optional</sup> <a name="aws" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.aws"></a>
+
+```typescript
+public readonly aws: Aws;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.Aws">Aws</a>
 
 ---
 
@@ -39208,6 +40278,18 @@ Name of the cluster configured for this connection.
 
 ---
 
+##### `clusterProjectId`<sup>Optional</sup> <a name="clusterProjectId" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.clusterProjectId"></a>
+
+```typescript
+public readonly clusterProjectId: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies the project containing the cluster for cross-project cluster connections.
+
+---
+
 ##### `config`<sup>Optional</sup> <a name="config" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.config"></a>
 
 ```typescript
@@ -39225,6 +40307,42 @@ public readonly dbRoleToExecute: DbRoleToExecute;
 ```
 
 - *Type:* <a href="#awscdk-resources-mongodbatlas.DbRoleToExecute">DbRoleToExecute</a>
+
+---
+
+##### `headers`<sup>Optional</sup> <a name="headers" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.headers"></a>
+
+```typescript
+public readonly headers: any;
+```
+
+- *Type:* any
+
+HTTP headers for HTTPS type connections.
+
+---
+
+##### `instanceName`<sup>Optional</sup> <a name="instanceName" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.instanceName"></a>
+
+```typescript
+public readonly instanceName: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the stream instance.
+
+WARNING: This field is deprecated and will be removed in the next major release. Please use WorkspaceName instead.
+
+---
+
+##### `networking`<sup>Optional</sup> <a name="networking" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.networking"></a>
+
+```typescript
+public readonly networking: Networking;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.Networking">Networking</a>
 
 ---
 
@@ -39247,6 +40365,30 @@ public readonly security: StreamsKafkaSecurity;
 ```
 
 - *Type:* <a href="#awscdk-resources-mongodbatlas.StreamsKafkaSecurity">StreamsKafkaSecurity</a>
+
+---
+
+##### `url`<sup>Optional</sup> <a name="url" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.url"></a>
+
+```typescript
+public readonly url: string;
+```
+
+- *Type:* string
+
+URL endpoint for HTTPS type connections.
+
+---
+
+##### `workspaceName`<sup>Optional</sup> <a name="workspaceName" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.workspaceName"></a>
+
+```typescript
+public readonly workspaceName: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the stream workspace.
 
 ---
 
@@ -39488,6 +40630,8 @@ const cfnThirdPartyIntegrationProps: CfnThirdPartyIntegrationProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.region">region</a></code> | <code>string</code> | Two-letter code that indicates which regional URL MongoDB uses to access the Opsgenie/Datadog API. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.routingKey">routingKey</a></code> | <code>string</code> | Routing key associated with your Splunk On-Call account. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.secret">secret</a></code> | <code>string</code> | Parameter returned if someone configure this webhook with a secret. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.sendCollectionLatencyMetrics">sendCollectionLatencyMetrics</a></code> | <code>boolean</code> | Flag that indicates whether to send collection latency metrics to Datadog, including database names, collection names, and latency metrics on reads, writes, commands, and transactions. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.sendDatabaseMetrics">sendDatabaseMetrics</a></code> | <code>boolean</code> | Flag that indicates whether to send database metrics to Datadog, including database names and metrics on the number of collections, storage size, and index size. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.sendUserProvidedResourceTags">sendUserProvidedResourceTags</a></code> | <code>boolean</code> | Flag that indicates whether to include user-defined resource tags when sending metrics and alerts to third-party services. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.serviceDiscovery">serviceDiscovery</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationPropsServiceDiscovery">CfnThirdPartyIntegrationPropsServiceDiscovery</a></code> | Desired method to discover the Prometheus service. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.serviceKey">serviceKey</a></code> | <code>string</code> | Service key associated with your PagerDuty account. |
@@ -39655,6 +40799,30 @@ public readonly secret: string;
 - *Type:* string
 
 Parameter returned if someone configure this webhook with a secret.
+
+---
+
+##### `sendCollectionLatencyMetrics`<sup>Optional</sup> <a name="sendCollectionLatencyMetrics" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.sendCollectionLatencyMetrics"></a>
+
+```typescript
+public readonly sendCollectionLatencyMetrics: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether to send collection latency metrics to Datadog, including database names, collection names, and latency metrics on reads, writes, commands, and transactions.
+
+---
+
+##### `sendDatabaseMetrics`<sup>Optional</sup> <a name="sendDatabaseMetrics" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps.property.sendDatabaseMetrics"></a>
+
+```typescript
+public readonly sendDatabaseMetrics: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether to send database metrics to Datadog, including database names and metrics on the number of collections, storage size, and index size.
 
 ---
 
@@ -42322,6 +43490,85 @@ Endpoint web address of the Microsoft Teams webhook to which MongoDB Cloud sends
 
 ---
 
+### Networking <a name="Networking" id="awscdk-resources-mongodbatlas.Networking"></a>
+
+Networking configuration for AWS PrivateLink connections.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.Networking.Initializer"></a>
+
+```typescript
+import { Networking } from 'awscdk-resources-mongodbatlas'
+
+const networking: Networking = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.Networking.property.access">access</a></code> | <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccess">NetworkingAccess</a></code> | Network access configuration. |
+
+---
+
+##### `access`<sup>Required</sup> <a name="access" id="awscdk-resources-mongodbatlas.Networking.property.access"></a>
+
+```typescript
+public readonly access: NetworkingAccess;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.NetworkingAccess">NetworkingAccess</a>
+
+Network access configuration.
+
+---
+
+### NetworkingAccess <a name="NetworkingAccess" id="awscdk-resources-mongodbatlas.NetworkingAccess"></a>
+
+Network access configuration.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.NetworkingAccess.Initializer"></a>
+
+```typescript
+import { NetworkingAccess } from 'awscdk-resources-mongodbatlas'
+
+const networkingAccess: NetworkingAccess = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccess.property.type">type</a></code> | <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccessType">NetworkingAccessType</a></code> | Type of network access. |
+| <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccess.property.connectionId">connectionId</a></code> | <code>string</code> | Unique identifier of the AWS PrivateLink connection. |
+
+---
+
+##### `type`<sup>Required</sup> <a name="type" id="awscdk-resources-mongodbatlas.NetworkingAccess.property.type"></a>
+
+```typescript
+public readonly type: NetworkingAccessType;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.NetworkingAccessType">NetworkingAccessType</a>
+
+Type of network access.
+
+PRIVATE_ENDPOINT for AWS PrivateLink.
+
+---
+
+##### `connectionId`<sup>Optional</sup> <a name="connectionId" id="awscdk-resources-mongodbatlas.NetworkingAccess.property.connectionId"></a>
+
+```typescript
+public readonly connectionId: string;
+```
+
+- *Type:* string
+
+Unique identifier of the AWS PrivateLink connection.
+
+---
+
 ### NotificationView <a name="NotificationView" id="awscdk-resources-mongodbatlas.NotificationView"></a>
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.NotificationView.Initializer"></a>
@@ -42343,10 +43590,12 @@ const notificationView: NotificationView = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.delayMin">delayMin</a></code> | <code>number</code> | Number of minutes that MongoDB Cloud waits after detecting an alert condition before it sends out the first notification. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.emailAddress">emailAddress</a></code> | <code>string</code> | Email address to which MongoDB Cloud sends alert notifications. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.emailEnabled">emailEnabled</a></code> | <code>boolean</code> | Flag that indicates whether MongoDB Cloud should send email notifications. |
+| <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.integrationId">integrationId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the third party integration to use for this alert configuration. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.intervalMin">intervalMin</a></code> | <code>number</code> | Number of minutes to wait between successive notifications. MongoDB Cloud sends notifications until someone acknowledges the unacknowledged alert. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.microsoftTeamsWebhookUrl">microsoftTeamsWebhookUrl</a></code> | <code>string</code> | Microsoft Teams Webhook Uniform Resource Locator (URL) that MongoDB Cloud needs to send this notification via Microsoft Teams. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.mobileNumber">mobileNumber</a></code> | <code>string</code> | Mobile phone number to which MongoDB Cloud sends alert notifications. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.notificationToken">notificationToken</a></code> | <code>string</code> | HipChat API token that MongoDB Cloud needs to send alert notifications to HipChat. |
+| <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.notifierId">notifierId</a></code> | <code>string</code> | Unique 24-hexadecimal digit string that identifies the notifier to use for this alert configuration. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.opsGenieApiKey">opsGenieApiKey</a></code> | <code>string</code> | API Key that MongoDB Cloud needs to send this notification via Opsgenie. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.opsGenieRegion">opsGenieRegion</a></code> | <code><a href="#awscdk-resources-mongodbatlas.NotificationViewOpsGenieRegion">NotificationViewOpsGenieRegion</a></code> | Opsgenie region that indicates which API Uniform Resource Locator (URL) to use. |
 | <code><a href="#awscdk-resources-mongodbatlas.NotificationView.property.orgName">orgName</a></code> | <code>string</code> | Flowdock organization name to which MongoDB Cloud sends alert notifications. |
@@ -42473,6 +43722,18 @@ The resource requires this parameter when one of the following values have been 
 
 ---
 
+##### `integrationId`<sup>Optional</sup> <a name="integrationId" id="awscdk-resources-mongodbatlas.NotificationView.property.integrationId"></a>
+
+```typescript
+public readonly integrationId: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies the third party integration to use for this alert configuration.
+
+---
+
 ##### `intervalMin`<sup>Optional</sup> <a name="intervalMin" id="awscdk-resources-mongodbatlas.NotificationView.property.intervalMin"></a>
 
 ```typescript
@@ -42526,6 +43787,18 @@ public readonly notificationToken: string;
 HipChat API token that MongoDB Cloud needs to send alert notifications to HipChat.
 
 The resource requires this parameter when '"notifications.typeName" : "HIP_CHAT"'". If the token later becomes invalid, MongoDB Cloud sends an email to the project owners. If the token remains invalid, MongoDB Cloud removes it.
+
+---
+
+##### `notifierId`<sup>Optional</sup> <a name="notifierId" id="awscdk-resources-mongodbatlas.NotificationView.property.notifierId"></a>
+
+```typescript
+public readonly notifierId: string;
+```
+
+- *Type:* string
+
+Unique 24-hexadecimal digit string that identifies the notifier to use for this alert configuration.
 
 ---
 
@@ -44641,9 +45914,41 @@ const streamsKafkaAuthentication: StreamsKafkaAuthentication = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.clientId">clientId</a></code> | <code>string</code> | OAuth client ID. |
+| <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.clientSecret">clientSecret</a></code> | <code>string</code> | OAuth client secret. |
 | <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.mechanism">mechanism</a></code> | <code>string</code> | Style of authentication. |
+| <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.method">method</a></code> | <code>string</code> | OAuth authentication method. |
 | <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.password">password</a></code> | <code>string</code> | Password of the account to connect to the Kafka cluster. |
+| <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.saslOauthbearerExtensions">saslOauthbearerExtensions</a></code> | <code>string</code> | SASL OAuth bearer extensions. |
+| <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.scope">scope</a></code> | <code>string</code> | OAuth scope. |
+| <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.tokenEndpointUrl">tokenEndpointUrl</a></code> | <code>string</code> | OAuth token endpoint URL. |
 | <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.username">username</a></code> | <code>string</code> | Username of the account to connect to the Kafka cluster. |
+
+---
+
+##### `clientId`<sup>Optional</sup> <a name="clientId" id="awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.clientId"></a>
+
+```typescript
+public readonly clientId: string;
+```
+
+- *Type:* string
+
+OAuth client ID.
+
+---
+
+##### `clientSecret`<sup>Optional</sup> <a name="clientSecret" id="awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.clientSecret"></a>
+
+```typescript
+public readonly clientSecret: string;
+```
+
+- *Type:* string
+
+OAuth client secret.
+
+Review [AWS security best practices for CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/security-best-practices.html#creds) to manage credentials.
 
 ---
 
@@ -44657,7 +45962,19 @@ public readonly mechanism: string;
 
 Style of authentication.
 
-Can be one of PLAIN, SCRAM-256, or SCRAM-512.
+Can be one of PLAIN, SCRAM-256, SCRAM-512, or OAUTHBEARER.
+
+---
+
+##### `method`<sup>Optional</sup> <a name="method" id="awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.method"></a>
+
+```typescript
+public readonly method: string;
+```
+
+- *Type:* string
+
+OAuth authentication method.
 
 ---
 
@@ -44672,6 +45989,42 @@ public readonly password: string;
 Password of the account to connect to the Kafka cluster.
 
 Review [AWS security best practices for CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/security-best-practices.html#creds) to manage credentials.
+
+---
+
+##### `saslOauthbearerExtensions`<sup>Optional</sup> <a name="saslOauthbearerExtensions" id="awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.saslOauthbearerExtensions"></a>
+
+```typescript
+public readonly saslOauthbearerExtensions: string;
+```
+
+- *Type:* string
+
+SASL OAuth bearer extensions.
+
+---
+
+##### `scope`<sup>Optional</sup> <a name="scope" id="awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.scope"></a>
+
+```typescript
+public readonly scope: string;
+```
+
+- *Type:* string
+
+OAuth scope.
+
+---
+
+##### `tokenEndpointUrl`<sup>Optional</sup> <a name="tokenEndpointUrl" id="awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.tokenEndpointUrl"></a>
+
+```typescript
+public readonly tokenEndpointUrl: string;
+```
+
+- *Type:* string
+
+OAuth token endpoint URL.
 
 ---
 
@@ -44958,6 +46311,51 @@ public readonly profile: string;
 - *Type:* string
 
 Atlas API keys.
+
+---
+
+### TypeSet <a name="TypeSet" id="awscdk-resources-mongodbatlas.TypeSet"></a>
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.TypeSet.Initializer"></a>
+
+```typescript
+import { TypeSet } from 'awscdk-resources-mongodbatlas'
+
+const typeSet: TypeSet = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.TypeSet.property.name">name</a></code> | <code>string</code> | Human-readable label that identifies this type set. |
+| <code><a href="#awscdk-resources-mongodbatlas.TypeSet.property.types">types</a></code> | <code>string</code> | Stringify json representation of types array. |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="awscdk-resources-mongodbatlas.TypeSet.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies this type set.
+
+---
+
+##### `types`<sup>Optional</sup> <a name="types" id="awscdk-resources-mongodbatlas.TypeSet.property.types"></a>
+
+```typescript
+public readonly types: string;
+```
+
+- *Type:* string
+
+Stringify json representation of types array.
+
+Each type defines a field type for the search index.
 
 ---
 
@@ -45920,6 +47318,43 @@ GROUP.
 ---
 
 
+### CfnDatabaseUserPropsOidcAuthType <a name="CfnDatabaseUserPropsOidcAuthType" id="awscdk-resources-mongodbatlas.CfnDatabaseUserPropsOidcAuthType"></a>
+
+Human-readable label that indicates whether the new database user or group authenticates with OIDC federated authentication.
+
+To create a federated authentication user, specify the value of USER in this field. To create a federated authentication group, specify the value of IDP_GROUP in this field. Default value is `NONE`.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsOidcAuthType.NONE">NONE</a></code> | NONE. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsOidcAuthType.USER">USER</a></code> | USER. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserPropsOidcAuthType.IDP_GROUP">IDP_GROUP</a></code> | IDP_GROUP. |
+
+---
+
+##### `NONE` <a name="NONE" id="awscdk-resources-mongodbatlas.CfnDatabaseUserPropsOidcAuthType.NONE"></a>
+
+NONE.
+
+---
+
+
+##### `USER` <a name="USER" id="awscdk-resources-mongodbatlas.CfnDatabaseUserPropsOidcAuthType.USER"></a>
+
+USER.
+
+---
+
+
+##### `IDP_GROUP` <a name="IDP_GROUP" id="awscdk-resources-mongodbatlas.CfnDatabaseUserPropsOidcAuthType.IDP_GROUP"></a>
+
+IDP_GROUP.
+
+---
+
+
 ### CfnDatabaseUserPropsX509Type <a name="CfnDatabaseUserPropsX509Type" id="awscdk-resources-mongodbatlas.CfnDatabaseUserPropsX509Type"></a>
 
 Method that briefs who owns the certificate provided.
@@ -46222,7 +47657,7 @@ GROUP_READ_ONLY.
 
 Type of the connection.
 
-Can be either Cluster, Kafka, or Sample.
+Can be Cluster, Kafka, Sample, AWSLambda, or Https.
 
 #### Members <a name="Members" id="Members"></a>
 
@@ -46231,6 +47666,8 @@ Can be either Cluster, Kafka, or Sample.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType.KAFKA">KAFKA</a></code> | Kafka. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType.CLUSTER">CLUSTER</a></code> | Cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType.SAMPLE">SAMPLE</a></code> | Sample. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType.AWS_LAMBDA">AWS_LAMBDA</a></code> | AWSLambda. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType.HTTPS">HTTPS</a></code> | Https. |
 
 ---
 
@@ -46251,6 +47688,20 @@ Cluster.
 ##### `SAMPLE` <a name="SAMPLE" id="awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType.SAMPLE"></a>
 
 Sample.
+
+---
+
+
+##### `AWS_LAMBDA` <a name="AWS_LAMBDA" id="awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType.AWS_LAMBDA"></a>
+
+AWSLambda.
+
+---
+
+
+##### `HTTPS` <a name="HTTPS" id="awscdk-resources-mongodbatlas.CfnStreamConnectionPropsType.HTTPS"></a>
+
+Https.
 
 ---
 
@@ -46855,6 +48306,35 @@ GREATER_THAN.
 ##### `LESS_THAN` <a name="LESS_THAN" id="awscdk-resources-mongodbatlas.MetricThresholdViewOperator.LESS_THAN"></a>
 
 LESS_THAN.
+
+---
+
+
+### NetworkingAccessType <a name="NetworkingAccessType" id="awscdk-resources-mongodbatlas.NetworkingAccessType"></a>
+
+Type of network access.
+
+PRIVATE_ENDPOINT for AWS PrivateLink.
+
+#### Members <a name="Members" id="Members"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccessType.PRIVATE_ENDPOINT">PRIVATE_ENDPOINT</a></code> | PRIVATE_ENDPOINT. |
+| <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccessType.PUBLIC">PUBLIC</a></code> | PUBLIC. |
+
+---
+
+##### `PRIVATE_ENDPOINT` <a name="PRIVATE_ENDPOINT" id="awscdk-resources-mongodbatlas.NetworkingAccessType.PRIVATE_ENDPOINT"></a>
+
+PRIVATE_ENDPOINT.
+
+---
+
+
+##### `PUBLIC` <a name="PUBLIC" id="awscdk-resources-mongodbatlas.NetworkingAccessType.PUBLIC"></a>
+
+PUBLIC.
 
 ---
 

@@ -21,6 +21,7 @@ const PROJECT_ID = "projectId";
 const CLUSTER_NAME = "testCluster";
 const COLLECTION_NAME = "testCluster";
 const DATABASE = "databaseName";
+const INDEX_NAME = "testIndex";
 const VECTOR_TYPE = "vectorSearch";
 const FIELDS = JSON.stringify([
   {
@@ -40,6 +41,7 @@ test("CfnSearchIndex construct should contain default properties", () => {
     clusterName: CLUSTER_NAME,
     collectionName: COLLECTION_NAME,
     database: DATABASE,
+    name: INDEX_NAME,
     mappings: { dynamic: true },
   });
 
@@ -50,6 +52,7 @@ test("CfnSearchIndex construct should contain default properties", () => {
     ClusterName: CLUSTER_NAME,
     CollectionName: COLLECTION_NAME,
     Database: DATABASE,
+    Name: INDEX_NAME,
     Mappings: { Dynamic: true },
   });
 });
@@ -63,6 +66,7 @@ test("CfnSearchIndex construct should allow to build vector search indexes", () 
     clusterName: CLUSTER_NAME,
     collectionName: COLLECTION_NAME,
     database: DATABASE,
+    name: INDEX_NAME,
     type: VECTOR_TYPE,
     fields: FIELDS,
   });
@@ -74,6 +78,7 @@ test("CfnSearchIndex construct should allow to build vector search indexes", () 
     ClusterName: CLUSTER_NAME,
     CollectionName: COLLECTION_NAME,
     Database: DATABASE,
+    Name: INDEX_NAME,
     Type: VECTOR_TYPE,
     Fields: FIELDS,
   });

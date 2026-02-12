@@ -3,7 +3,7 @@ import * as cdk from "aws-cdk-lib";
 import * as constructs from "constructs";
 
 /**
- * Returns, adds, edits, and removes one connection for a stream instance in the specified project. To use this resource, the requesting API Key must have the Project Owner roles.
+ * Returns, adds, edits, and removes one connection for a stream workspace in the specified project. To use this resource, the requesting API Key must have the Project Owner roles.
  *
  * @schema CfnStreamConnectionProps
  */
@@ -32,14 +32,21 @@ export interface CfnStreamConnectionProps {
   readonly connectionName: string;
 
   /**
-   * Human-readable label that identifies the stream instance.
+   * Human-readable label that identifies the stream instance. WARNING: This field is deprecated and will be removed in the next major release. Please use WorkspaceName instead.
    *
    * @schema CfnStreamConnectionProps#InstanceName
    */
-  readonly instanceName: string;
+  readonly instanceName?: string;
 
   /**
-   * Type of the connection. Can be either Cluster, Kafka, or Sample.
+   * Human-readable label that identifies the stream workspace.
+   *
+   * @schema CfnStreamConnectionProps#WorkspaceName
+   */
+  readonly workspaceName?: string;
+
+  /**
+   * Type of the connection. Can be Cluster, Kafka, Sample, AWSLambda, or Https.
    *
    * @schema CfnStreamConnectionProps#Type
    */
@@ -51,6 +58,13 @@ export interface CfnStreamConnectionProps {
    * @schema CfnStreamConnectionProps#ClusterName
    */
   readonly clusterName?: string;
+
+  /**
+   * Unique 24-hexadecimal digit string that identifies the project containing the cluster for cross-project cluster connections.
+   *
+   * @schema CfnStreamConnectionProps#ClusterProjectId
+   */
+  readonly clusterProjectId?: string;
 
   /**
    * @schema CfnStreamConnectionProps#DbRoleToExecute
@@ -78,6 +92,30 @@ export interface CfnStreamConnectionProps {
    * @schema CfnStreamConnectionProps#Config
    */
   readonly config?: any;
+
+  /**
+   * @schema CfnStreamConnectionProps#Networking
+   */
+  readonly networking?: Networking;
+
+  /**
+   * @schema CfnStreamConnectionProps#Aws
+   */
+  readonly aws?: Aws;
+
+  /**
+   * URL endpoint for HTTPS type connections.
+   *
+   * @schema CfnStreamConnectionProps#Url
+   */
+  readonly url?: string;
+
+  /**
+   * HTTP headers for HTTPS type connections.
+   *
+   * @schema CfnStreamConnectionProps#Headers
+   */
+  readonly headers?: any;
 }
 
 /**
@@ -95,13 +133,19 @@ export function toJson_CfnStreamConnectionProps(
     Profile: obj.profile,
     ConnectionName: obj.connectionName,
     InstanceName: obj.instanceName,
+    WorkspaceName: obj.workspaceName,
     Type: obj.type,
     ClusterName: obj.clusterName,
+    ClusterProjectId: obj.clusterProjectId,
     DbRoleToExecute: toJson_DbRoleToExecute(obj.dbRoleToExecute),
     Authentication: toJson_StreamsKafkaAuthentication(obj.authentication),
     BootstrapServers: obj.bootstrapServers,
     Security: toJson_StreamsKafkaSecurity(obj.security),
     Config: obj.config,
+    Networking: toJson_Networking(obj.networking),
+    Aws: toJson_Aws(obj.aws),
+    Url: obj.url,
+    Headers: obj.headers,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -112,7 +156,7 @@ export function toJson_CfnStreamConnectionProps(
 /* eslint-enable max-len, quote-props */
 
 /**
- * Type of the connection. Can be either Cluster, Kafka, or Sample.
+ * Type of the connection. Can be Cluster, Kafka, Sample, AWSLambda, or Https.
  *
  * @schema CfnStreamConnectionPropsType
  */
@@ -123,6 +167,10 @@ export enum CfnStreamConnectionPropsType {
   CLUSTER = "Cluster",
   /** Sample */
   SAMPLE = "Sample",
+  /** AWSLambda */
+  AWS_LAMBDA = "AWSLambda",
+  /** Https */
+  HTTPS = "Https",
 }
 
 /**
@@ -175,11 +223,18 @@ export function toJson_DbRoleToExecute(
  */
 export interface StreamsKafkaAuthentication {
   /**
-   * Style of authentication. Can be one of PLAIN, SCRAM-256, or SCRAM-512.
+   * Style of authentication. Can be one of PLAIN, SCRAM-256, SCRAM-512, or OAUTHBEARER.
    *
    * @schema StreamsKafkaAuthentication#Mechanism
    */
   readonly mechanism?: string;
+
+  /**
+   * OAuth authentication method.
+   *
+   * @schema StreamsKafkaAuthentication#Method
+   */
+  readonly method?: string;
 
   /**
    * Username of the account to connect to the Kafka cluster.
@@ -194,6 +249,41 @@ export interface StreamsKafkaAuthentication {
    * @schema StreamsKafkaAuthentication#Password
    */
   readonly password?: string;
+
+  /**
+   * OAuth token endpoint URL.
+   *
+   * @schema StreamsKafkaAuthentication#TokenEndpointUrl
+   */
+  readonly tokenEndpointUrl?: string;
+
+  /**
+   * OAuth client ID.
+   *
+   * @schema StreamsKafkaAuthentication#ClientId
+   */
+  readonly clientId?: string;
+
+  /**
+   * OAuth client secret. Review [AWS security best practices for CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/security-best-practices.html#creds) to manage credentials.
+   *
+   * @schema StreamsKafkaAuthentication#ClientSecret
+   */
+  readonly clientSecret?: string;
+
+  /**
+   * OAuth scope.
+   *
+   * @schema StreamsKafkaAuthentication#Scope
+   */
+  readonly scope?: string;
+
+  /**
+   * SASL OAuth bearer extensions.
+   *
+   * @schema StreamsKafkaAuthentication#SaslOauthbearerExtensions
+   */
+  readonly saslOauthbearerExtensions?: string;
 }
 
 /**
@@ -208,8 +298,14 @@ export function toJson_StreamsKafkaAuthentication(
   }
   const result = {
     Mechanism: obj.mechanism,
+    Method: obj.method,
     Username: obj.username,
     Password: obj.password,
+    TokenEndpointUrl: obj.tokenEndpointUrl,
+    ClientId: obj.clientId,
+    ClientSecret: obj.clientSecret,
+    Scope: obj.scope,
+    SaslOauthbearerExtensions: obj.saslOauthbearerExtensions,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -263,6 +359,76 @@ export function toJson_StreamsKafkaSecurity(
 /* eslint-enable max-len, quote-props */
 
 /**
+ * Networking configuration for AWS PrivateLink connections.
+ *
+ * @schema Networking
+ */
+export interface Networking {
+  /**
+   * Network access configuration.
+   *
+   * @schema Networking#Access
+   */
+  readonly access: NetworkingAccess;
+}
+
+/**
+ * Converts an object of type 'Networking' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_Networking(
+  obj: Networking | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    Access: toJson_NetworkingAccess(obj.access),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
+
+/**
+ * AWS Lambda connection configuration.
+ *
+ * @schema Aws
+ */
+export interface Aws {
+  /**
+   * Amazon Resource Name (ARN) of the IAM role for AWS Lambda connection.
+   *
+   * @schema Aws#RoleArn
+   */
+  readonly roleArn: string;
+}
+
+/**
+ * Converts an object of type 'Aws' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_Aws(
+  obj: Aws | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    RoleArn: obj.roleArn,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
+
+/**
  * Type of the DB role. Can be either BuiltIn or Custom.
  *
  * @schema DbRoleToExecuteType
@@ -272,6 +438,61 @@ export enum DbRoleToExecuteType {
   BUILT_IN = "BUILT_IN",
   /** CUSTOM */
   CUSTOM = "CUSTOM",
+}
+
+/**
+ * Network access configuration.
+ *
+ * @schema NetworkingAccess
+ */
+export interface NetworkingAccess {
+  /**
+   * Type of network access. PRIVATE_ENDPOINT for AWS PrivateLink.
+   *
+   * @schema NetworkingAccess#Type
+   */
+  readonly type: NetworkingAccessType;
+
+  /**
+   * Unique identifier of the AWS PrivateLink connection.
+   *
+   * @schema NetworkingAccess#ConnectionId
+   */
+  readonly connectionId?: string;
+}
+
+/**
+ * Converts an object of type 'NetworkingAccess' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_NetworkingAccess(
+  obj: NetworkingAccess | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    Type: obj.type,
+    ConnectionId: obj.connectionId,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
+
+/**
+ * Type of network access. PRIVATE_ENDPOINT for AWS PrivateLink.
+ *
+ * @schema NetworkingAccessType
+ */
+export enum NetworkingAccessType {
+  /** PRIVATE_ENDPOINT */
+  PRIVATE_ENDPOINT = "PRIVATE_ENDPOINT",
+  /** PUBLIC */
+  PUBLIC = "PUBLIC",
 }
 
 /**

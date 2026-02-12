@@ -30,7 +30,7 @@ export interface CfnFederatedQueryLimitProps {
   readonly limitName: CfnFederatedQueryLimitPropsLimitName;
 
   /**
-   * Only used for Data Federation limits. Action to take when the usage limit is exceeded. If limit span is set to QUERY, this is ignored because MongoDB Cloud stops the query when it exceeds the usage limit. "enum" : [ "BLOCK", "BLOCK_AND_KILL" ]
+   * Action to take when the usage limit is exceeded. If limit span is set to QUERY, this is ignored because MongoDB Cloud stops the query when it exceeds the usage limit.
    *
    * @schema CfnFederatedQueryLimitProps#OverrunPolicy
    */

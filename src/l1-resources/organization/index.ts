@@ -90,6 +90,13 @@ export interface CfnOrganizationProps {
    * @schema CfnOrganizationProps#RestrictEmployeeAccess
    */
   readonly restrictEmployeeAccess?: boolean;
+
+  /**
+   * Email address of the security contact for the organization.
+   *
+   * @schema CfnOrganizationProps#SecurityContact
+   */
+  readonly securityContact?: string;
 }
 
 /**
@@ -115,6 +122,7 @@ export function toJson_CfnOrganizationProps(
     ApiAccessListRequired: obj.apiAccessListRequired,
     MultiFactorAuthRequired: obj.multiFactorAuthRequired,
     RestrictEmployeeAccess: obj.restrictEmployeeAccess,
+    SecurityContact: obj.securityContact,
   };
   // filter undefined values
   return Object.entries(result).reduce(
