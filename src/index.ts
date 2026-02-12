@@ -133,6 +133,7 @@ export {
   CfnDatabaseUserPropsX509Type,
   CfnDatabaseUserPropsAwsiamType,
   CfnDatabaseUserPropsLdapAuthType,
+  CfnDatabaseUserPropsOidcAuthType,
   ScopeDefinitionType,
 } from "./l1-resources/database-user";
 
@@ -200,6 +201,7 @@ export {
 export {
   CfnMaintenanceWindow,
   CfnMaintenanceWindowProps,
+  CfnMaintenanceWindowPropsProtectedHours,
 } from "./l1-resources/maintenance-window";
 
 export {
@@ -305,6 +307,7 @@ export {
   CfnSearchIndex,
   CfnSearchIndexProps,
   SynonymSource,
+  TypeSet,
 } from "./l1-resources/search-index";
 
 export {
@@ -332,6 +335,10 @@ export {
   DbRoleToExecuteType,
   StreamsKafkaAuthentication,
   StreamsKafkaSecurity,
+  Networking,
+  NetworkingAccess,
+  NetworkingAccessType,
+  Aws,
 } from "./l1-resources/stream-connection";
 
 export {

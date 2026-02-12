@@ -38,14 +38,14 @@ export interface CfnMaintenanceWindowProps {
    *
    * @schema CfnMaintenanceWindowProps#DayOfWeek
    */
-  readonly dayOfWeek?: number;
+  readonly dayOfWeek: number;
 
   /**
    * Unique 24-hexadecimal digit string that identifies your project.
    *
    * @schema CfnMaintenanceWindowProps#ProjectId
    */
-  readonly projectId?: string;
+  readonly projectId: string;
 
   /**
    * Zero-based integer that represents the hour of the of the day that the maintenance window starts according to a 24-hour clock. Use `0` for midnight and `12` for noon.
@@ -55,11 +55,25 @@ export interface CfnMaintenanceWindowProps {
   readonly hourOfDay: number;
 
   /**
-   * Flag that indicates whether MongoDB Cloud starts the maintenance window immediately upon receiving this request. To start the maintenance window immediately for your project, MongoDB Cloud must have maintenance scheduled and you must set a maintenance window. This flag resets to `false` after MongoDB Cloud completes maintenance.
+   * Flag that indicates whether to defer the maintenance window. When set to true, the next scheduled maintenance will be deferred.
    *
-   * @schema CfnMaintenanceWindowProps#StartASAP
+   * @schema CfnMaintenanceWindowProps#Defer
    */
-  readonly startAsap?: boolean;
+  readonly defer?: boolean;
+
+  /**
+   * Flag that indicates whether MongoDB Cloud should automatically defer maintenance windows for one week when they occur during the defined maintenance window.
+   *
+   * @schema CfnMaintenanceWindowProps#AutoDefer
+   */
+  readonly autoDefer?: boolean;
+
+  /**
+   * Protected hours during which MongoDB Cloud cannot start maintenance.
+   *
+   * @schema CfnMaintenanceWindowProps#ProtectedHours
+   */
+  readonly protectedHours?: CfnMaintenanceWindowPropsProtectedHours;
 }
 
 /**
@@ -78,7 +92,54 @@ export function toJson_CfnMaintenanceWindowProps(
     DayOfWeek: obj.dayOfWeek,
     ProjectId: obj.projectId,
     HourOfDay: obj.hourOfDay,
-    StartASAP: obj.startAsap,
+    Defer: obj.defer,
+    AutoDefer: obj.autoDefer,
+    ProtectedHours: toJson_CfnMaintenanceWindowPropsProtectedHours(
+      obj.protectedHours
+    ),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
+
+/**
+ * Protected hours during which MongoDB Cloud cannot start maintenance.
+ *
+ * @schema CfnMaintenanceWindowPropsProtectedHours
+ */
+export interface CfnMaintenanceWindowPropsProtectedHours {
+  /**
+   * Hour of the day when protected hours start (0-23).
+   *
+   * @schema CfnMaintenanceWindowPropsProtectedHours#StartHourOfDay
+   */
+  readonly startHourOfDay?: number;
+
+  /**
+   * Hour of the day when protected hours end (0-23).
+   *
+   * @schema CfnMaintenanceWindowPropsProtectedHours#EndHourOfDay
+   */
+  readonly endHourOfDay?: number;
+}
+
+/**
+ * Converts an object of type 'CfnMaintenanceWindowPropsProtectedHours' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_CfnMaintenanceWindowPropsProtectedHours(
+  obj: CfnMaintenanceWindowPropsProtectedHours | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    StartHourOfDay: obj.startHourOfDay,
+    EndHourOfDay: obj.endHourOfDay,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -107,6 +168,19 @@ export class CfnMaintenanceWindow extends cdk.CfnResource {
   public readonly props: CfnMaintenanceWindowProps;
 
   /**
+   * Attribute `MongoDB::Atlas::MaintenanceWindow.StartASAP`
+   */
+  public readonly attrStartASAP: cdk.IResolvable;
+  /**
+   * Attribute `MongoDB::Atlas::MaintenanceWindow.NumberOfDeferrals`
+   */
+  public readonly attrNumberOfDeferrals: number;
+  /**
+   * Attribute `MongoDB::Atlas::MaintenanceWindow.TimeZoneId`
+   */
+  public readonly attrTimeZoneId: string;
+
+  /**
    * Create a new `MongoDB::Atlas::MaintenanceWindow`.
    *
    * @param scope - scope in which this resource is defined
@@ -124,5 +198,11 @@ export class CfnMaintenanceWindow extends cdk.CfnResource {
     });
 
     this.props = props;
+
+    this.attrStartASAP = this.getAtt("StartASAP");
+    this.attrNumberOfDeferrals = cdk.Token.asNumber(
+      this.getAtt("NumberOfDeferrals")
+    );
+    this.attrTimeZoneId = cdk.Token.asString(this.getAtt("TimeZoneId"));
   }
 }

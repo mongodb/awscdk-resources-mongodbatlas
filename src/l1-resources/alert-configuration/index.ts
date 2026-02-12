@@ -63,6 +63,13 @@ export interface CfnAlertConfigurationProps {
    * @schema CfnAlertConfigurationProps#TypeName
    */
   readonly typeName?: string;
+
+  /**
+   * Degree of seriousness given to this alert. This value overrides the default severity level for the alert.
+   *
+   * @schema CfnAlertConfigurationProps#SeverityOverride
+   */
+  readonly severityOverride?: string;
 }
 
 /**
@@ -84,6 +91,7 @@ export function toJson_CfnAlertConfigurationProps(
     Notifications: obj.notifications?.map((y) => toJson_NotificationView(y)),
     Threshold: toJson_IntegerThresholdView(obj.threshold),
     TypeName: obj.typeName,
+    SeverityOverride: obj.severityOverride,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -416,6 +424,20 @@ export interface NotificationView {
    * @schema NotificationView#WebhookUrl
    */
   readonly webhookUrl?: string;
+
+  /**
+   * Unique 24-hexadecimal digit string that identifies the notifier to use for this alert configuration.
+   *
+   * @schema NotificationView#NotifierId
+   */
+  readonly notifierId?: string;
+
+  /**
+   * Unique 24-hexadecimal digit string that identifies the third party integration to use for this alert configuration.
+   *
+   * @schema NotificationView#IntegrationId
+   */
+  readonly integrationId?: string;
 }
 
 /**
@@ -456,6 +478,8 @@ export function toJson_NotificationView(
     VictorOpsRoutingKey: obj.victorOpsRoutingKey,
     WebhookSecret: obj.webhookSecret,
     WebhookUrl: obj.webhookUrl,
+    NotifierId: obj.notifierId,
+    IntegrationId: obj.integrationId,
   };
   // filter undefined values
   return Object.entries(result).reduce(

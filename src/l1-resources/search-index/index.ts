@@ -78,7 +78,7 @@ export interface CfnSearchIndexProps {
    *
    * @schema CfnSearchIndexProps#Name
    */
-  readonly name?: string;
+  readonly name: string;
 
   /**
    * Type of index: **search** or **vectorSearch**. Default type is **search**.
@@ -107,6 +107,27 @@ export interface CfnSearchIndexProps {
    * @schema CfnSearchIndexProps#Fields
    */
   readonly fields?: string;
+
+  /**
+   * Flag that indicates whether to store the original document in the index. Can be a boolean ("true" or "false") or a stringified JSON object specifying which fields to include/exclude. When stored, this allows the index to return the original document for queries.
+   *
+   * @schema CfnSearchIndexProps#StoredSource
+   */
+  readonly storedSource?: string;
+
+  /**
+   * Array of type sets that define alternate types for fields in the index. Each type set allows you to group related fields under a common name.
+   *
+   * @schema CfnSearchIndexProps#TypeSets
+   */
+  readonly typeSets?: TypeSet[];
+
+  /**
+   * Number of partitions for the index. This is used to improve search performance for large datasets by distributing the index across multiple partitions.
+   *
+   * @schema CfnSearchIndexProps#NumPartitions
+   */
+  readonly numPartitions?: number;
 }
 
 /**
@@ -137,6 +158,9 @@ export function toJson_CfnSearchIndexProps(
       toJson_ApiAtlasFtsSynonymMappingDefinitionView(y)
     ),
     Fields: obj.fields,
+    StoredSource: obj.storedSource,
+    TypeSets: obj.typeSets?.map((y) => toJson_TypeSet(y)),
+    NumPartitions: obj.numPartitions,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -215,14 +239,21 @@ export function toJson_ApiAtlasFtsAnalyzersViewManual(
  */
 export interface ApiAtlasFtsMappingsViewManual {
   /**
-   * Flag that indicates whether the index uses dynamic or static mappings. Required for search indexes if **mappings.fields** is omitted.
+   * Flag that indicates whether the index uses dynamic or static mappings. If DynamicConfig is specified, this field is ignored (DynamicConfig takes precedence). Required for search indexes if **mappings.fields** is omitted and **mappings.dynamicConfig** is not specified.
    *
    * @schema ApiAtlasFTSMappingsViewManual#Dynamic
    */
   readonly dynamic?: boolean;
 
   /**
-   * One or more field specifications for the Atlas Search index. Stringify json representation of field with types and properties. Required for search indexes if **mappings.dynamic** is omitted or set to **false**.
+   * Stringify json representation of dynamic mapping configuration object. This allows for more complex dynamic mapping configurations beyond a simple boolean. If both Dynamic and DynamicConfig are specified, DynamicConfig takes precedence.
+   *
+   * @schema ApiAtlasFTSMappingsViewManual#DynamicConfig
+   */
+  readonly dynamicConfig?: string;
+
+  /**
+   * One or more field specifications for the Atlas Search index. Stringify json representation of field with types and properties. Required for search indexes if **mappings.dynamic** and **mappings.dynamicConfig** are omitted or if **mappings.dynamic** is set to **false**.
    *
    * @schema ApiAtlasFTSMappingsViewManual#Fields
    */
@@ -241,6 +272,7 @@ export function toJson_ApiAtlasFtsMappingsViewManual(
   }
   const result = {
     Dynamic: obj.dynamic,
+    DynamicConfig: obj.dynamicConfig,
     Fields: obj.fields,
   };
   // filter undefined values
@@ -291,6 +323,47 @@ export function toJson_ApiAtlasFtsSynonymMappingDefinitionView(
     Analyzer: obj.analyzer,
     Name: obj.name,
     Source: toJson_SynonymSource(obj.source),
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
+
+/**
+ * @schema TypeSet
+ */
+export interface TypeSet {
+  /**
+   * Human-readable label that identifies this type set.
+   *
+   * @schema TypeSet#Name
+   */
+  readonly name: string;
+
+  /**
+   * Stringify json representation of types array. Each type defines a field type for the search index.
+   *
+   * @schema TypeSet#Types
+   */
+  readonly types?: string;
+}
+
+/**
+ * Converts an object of type 'TypeSet' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_TypeSet(
+  obj: TypeSet | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    Name: obj.name,
+    Types: obj.types,
   };
   // filter undefined values
   return Object.entries(result).reduce(

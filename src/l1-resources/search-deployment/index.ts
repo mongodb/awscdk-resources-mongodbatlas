@@ -128,6 +128,10 @@ export class CfnSearchDeployment extends cdk.CfnResource {
    * Attribute `MongoDB::Atlas::SearchDeployment.StateName`
    */
   public readonly attrStateName: string;
+  /**
+   * Attribute `MongoDB::Atlas::SearchDeployment.EncryptionAtRestProvider`
+   */
+  public readonly attrEncryptionAtRestProvider: string;
 
   /**
    * Create a new `MongoDB::Atlas::SearchDeployment`.
@@ -150,5 +154,8 @@ export class CfnSearchDeployment extends cdk.CfnResource {
 
     this.attrId = cdk.Token.asString(this.getAtt("Id"));
     this.attrStateName = cdk.Token.asString(this.getAtt("StateName"));
+    this.attrEncryptionAtRestProvider = cdk.Token.asString(
+      this.getAtt("EncryptionAtRestProvider")
+    );
   }
 }

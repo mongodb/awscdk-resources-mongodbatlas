@@ -58,6 +58,13 @@ export interface CfnDatabaseUserProps {
   readonly x509Type?: CfnDatabaseUserPropsX509Type;
 
   /**
+   * Human-readable label that indicates whether the new database user or group authenticates with OIDC federated authentication. To create a federated authentication user, specify the value of USER in this field. To create a federated authentication group, specify the value of IDP_GROUP in this field. Default value is `NONE`.
+   *
+   * @schema CfnDatabaseUserProps#OIDCAuthType
+   */
+  readonly oidcAuthType?: CfnDatabaseUserPropsOidcAuthType;
+
+  /**
    * The user’s password. This field is not included in the entity returned from the server.
    *
    * @schema CfnDatabaseUserProps#Password
@@ -118,6 +125,7 @@ export function toJson_CfnDatabaseUserProps(
     Labels: obj.labels?.map((y) => toJson_LabelDefinition(y)),
     LdapAuthType: obj.ldapAuthType,
     X509Type: obj.x509Type,
+    OIDCAuthType: obj.oidcAuthType,
     Password: obj.password,
     ProjectId: obj.projectId,
     Roles: obj.roles?.map((y) => toJson_RoleDefinition(y)),
@@ -210,6 +218,20 @@ export enum CfnDatabaseUserPropsX509Type {
   MANAGED = "MANAGED",
   /** CUSTOMER */
   CUSTOMER = "CUSTOMER",
+}
+
+/**
+ * Human-readable label that indicates whether the new database user or group authenticates with OIDC federated authentication. To create a federated authentication user, specify the value of USER in this field. To create a federated authentication group, specify the value of IDP_GROUP in this field. Default value is `NONE`.
+ *
+ * @schema CfnDatabaseUserPropsOidcAuthType
+ */
+export enum CfnDatabaseUserPropsOidcAuthType {
+  /** NONE */
+  NONE = "NONE",
+  /** USER */
+  USER = "USER",
+  /** IDP_GROUP */
+  IDP_GROUP = "IDP_GROUP",
 }
 
 /**

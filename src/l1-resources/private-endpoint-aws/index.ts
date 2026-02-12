@@ -34,7 +34,7 @@ export interface CfnPrivateEndpointAwsProps {
    *
    * @schema CfnPrivateEndpointAwsProps#Id
    */
-  readonly id?: string;
+  readonly id: string;
 
   /**
    * If this proper is set to TRUE, the cloud formation resource will return success Only if the private connection is Succeeded
@@ -42,20 +42,6 @@ export interface CfnPrivateEndpointAwsProps {
    * @schema CfnPrivateEndpointAwsProps#EnforceConnectionSuccess
    */
   readonly enforceConnectionSuccess?: boolean;
-
-  /**
-   * State of the Amazon Web Service PrivateLink connection when MongoDB Cloud received this request.
-   *
-   * @schema CfnPrivateEndpointAwsProps#ConnectionStatus
-   */
-  readonly connectionStatus?: string;
-
-  /**
-   * Error message returned when requesting private connection resource. The resource returns null if the request succeeded.
-   *
-   * @schema CfnPrivateEndpointAwsProps#ErrorMessage
-   */
-  readonly errorMessage?: string;
 }
 
 /**
@@ -74,8 +60,6 @@ export function toJson_CfnPrivateEndpointAwsProps(
     EndpointServiceId: obj.endpointServiceId,
     Id: obj.id,
     EnforceConnectionSuccess: obj.enforceConnectionSuccess,
-    ConnectionStatus: obj.connectionStatus,
-    ErrorMessage: obj.errorMessage,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -104,6 +88,23 @@ export class CfnPrivateEndpointAws extends cdk.CfnResource {
   public readonly props: CfnPrivateEndpointAwsProps;
 
   /**
+   * Attribute `MongoDB::Atlas::PrivateEndpointAWS.InterfaceEndpointId`
+   */
+  public readonly attrInterfaceEndpointId: string;
+  /**
+   * Attribute `MongoDB::Atlas::PrivateEndpointAWS.DeleteRequested`
+   */
+  public readonly attrDeleteRequested: cdk.IResolvable;
+  /**
+   * Attribute `MongoDB::Atlas::PrivateEndpointAWS.ConnectionStatus`
+   */
+  public readonly attrConnectionStatus: string;
+  /**
+   * Attribute `MongoDB::Atlas::PrivateEndpointAWS.ErrorMessage`
+   */
+  public readonly attrErrorMessage: string;
+
+  /**
    * Create a new `MongoDB::Atlas::PrivateEndpointAWS`.
    *
    * @param scope - scope in which this resource is defined
@@ -121,5 +122,14 @@ export class CfnPrivateEndpointAws extends cdk.CfnResource {
     });
 
     this.props = props;
+
+    this.attrInterfaceEndpointId = cdk.Token.asString(
+      this.getAtt("InterfaceEndpointId")
+    );
+    this.attrDeleteRequested = this.getAtt("DeleteRequested");
+    this.attrConnectionStatus = cdk.Token.asString(
+      this.getAtt("ConnectionStatus")
+    );
+    this.attrErrorMessage = cdk.Token.asString(this.getAtt("ErrorMessage"));
   }
 }

@@ -147,6 +147,20 @@ export interface CfnThirdPartyIntegrationProps {
    * @schema CfnThirdPartyIntegrationProps#SendUserProvidedResourceTags
    */
   readonly sendUserProvidedResourceTags?: boolean;
+
+  /**
+   * Flag that indicates whether to send collection latency metrics to Datadog, including database names, collection names, and latency metrics on reads, writes, commands, and transactions.
+   *
+   * @schema CfnThirdPartyIntegrationProps#SendCollectionLatencyMetrics
+   */
+  readonly sendCollectionLatencyMetrics?: boolean;
+
+  /**
+   * Flag that indicates whether to send database metrics to Datadog, including database names and metrics on the number of collections, storage size, and index size.
+   *
+   * @schema CfnThirdPartyIntegrationProps#SendDatabaseMetrics
+   */
+  readonly sendDatabaseMetrics?: boolean;
 }
 
 /**
@@ -180,6 +194,8 @@ export function toJson_CfnThirdPartyIntegrationProps(
     ListenAddress: obj.listenAddress,
     TlsPemPath: obj.tlsPemPath,
     SendUserProvidedResourceTags: obj.sendUserProvidedResourceTags,
+    SendCollectionLatencyMetrics: obj.sendCollectionLatencyMetrics,
+    SendDatabaseMetrics: obj.sendDatabaseMetrics,
   };
   // filter undefined values
   return Object.entries(result).reduce(
