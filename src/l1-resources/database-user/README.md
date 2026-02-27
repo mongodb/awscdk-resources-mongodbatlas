@@ -9,7 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-Returns, adds, edits, and removes database users.
+Returns, adds, edits, and removes database users. Supports password, AWS IAM, LDAP, X.509, and OIDC federated authentication types. Users can be scoped to specific clusters or Data Lake instances, and enriched with labels for categorization.
 
 ## MongoDB Atlas API Docs
 
@@ -37,7 +37,7 @@ aws cloudformation activate-type \
 
 You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
 
-Example: [database-user.ts](../../../examples/l1-resources/database-user.ts)
+## Example: [database-user.ts](../../../examples/l1-resources/database-user.ts)
 
 ```ts
 import { CfnDatabaseUser } from 'awscdk-resources-mongodbatlas';
@@ -53,7 +53,10 @@ const customDatabaseUser = new CfnDatabaseUser(this, 'CustomDatabaseUser', {
         roleName: atlasProps.roleName,
         databaseName: atlasProps.dbName
     }
-    ]
+    ],
+    scopes: [
+        { name: atlasProps.clusterName, type: ScopeDefinitionType.CLUSTER },
+    ],
 });
 
 ```

@@ -9,7 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-Returns, adds, edits, and removes third-party service integration configurations. MongoDB Cloud sends alerts to each third-party service that you configure.
+Returns, adds, edits, and removes third-party service integration configurations. MongoDB Cloud sends alerts to each third-party service that you configure. Supported integrations include Datadog, PagerDuty, Opsgenie, Slack, Splunk On-Call (VictorOps), Microsoft Teams, generic Webhooks, and Prometheus.
 
 ## MongoDB Atlas API Docs
 
@@ -38,16 +38,28 @@ aws cloudformation activate-type \
 You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
 
 
-# Example: [third-party-integration.ts](../../../examples/l1-resources/third-party-integration.ts)
+## Example: [third-party-integration.ts](../../../examples/l1-resources/third-party-integration.ts)
 
 ```ts
-import { CfnThirdPartyIntegration,  CfnThirdPartyIntegrationPropsType} from 'awscdk-resources-mongodbatlas';
+import { CfnThirdPartyIntegration, CfnThirdPartyIntegrationPropsType } from 'awscdk-resources-mongodbatlas';
 
-const thirdPartyIntegration = new CfnThirdPartyIntegration(this, 'ThirdPartyIntegration', {
+// Webhook integration
+new CfnThirdPartyIntegration(this, 'WebhookIntegration', {
     projectId: atlasProps.projId,
-    profile:  atlasProps.profile,
+    profile: atlasProps.profile,
     type: CfnThirdPartyIntegrationPropsType.WEBHOOK,
     url: atlasProps.url,
+});
+
+// Datadog integration
+new CfnThirdPartyIntegration(this, 'DatadogIntegration', {
+    projectId: atlasProps.projId,
+    profile: atlasProps.profile,
+    type: CfnThirdPartyIntegrationPropsType.DATADOG,
+    apiKey: atlasProps.datadogApiKey,
+    region: atlasProps.datadogRegion,
+    sendCollectionLatencyMetrics: true,
+    sendDatabaseMetrics: true,
 });
 
 ```

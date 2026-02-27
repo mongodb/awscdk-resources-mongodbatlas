@@ -18,7 +18,7 @@ export class CdkTestingStack extends cdk.Stack {
     const atlasProps = this.getContextProps();
     const federationSettings = new CfnFederatedSettingsOrgRoleMapping(this, 'FederationSettings', {
       profile:  atlasProps.profile,
-      orgId: atlasProps.projId,
+      orgId: atlasProps.orgId,
       externalGroupName: atlasProps.groupName,
       roleAssignments: [
         {

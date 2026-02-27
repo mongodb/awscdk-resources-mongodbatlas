@@ -1,7 +1,7 @@
 // This example creates a database user in Atlas using the L1 resources.
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { CfnDatabaseUser } from 'awscdk-resources-mongodbatlas';
+import { CfnDatabaseUser, ScopeDefinitionType } from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
   readonly projId: string;
@@ -11,6 +11,7 @@ interface AtlasStackProps {
   readonly username: string;
   readonly password: string;
   readonly description: string;
+  readonly clusterName: string;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -30,7 +31,10 @@ export class CdkTestingStack extends cdk.Stack {
           roleName: atlasProps.roleName,
           databaseName: atlasProps.dbName
         }
-      ]
+      ],
+      scopes: [
+        { name: atlasProps.clusterName, type: ScopeDefinitionType.CLUSTER },
+      ],
     });
 
   }
@@ -46,7 +50,7 @@ export class CdkTestingStack extends cdk.Stack {
     const username = this.node.tryGetContext('username');
     const password = this.node.tryGetContext('password');
     const description = this.node.tryGetContext('userDescription');
-
+    const clusterName = this.node.tryGetContext('clusterName') ?? 'Cluster0';
 
     return {
       projId,
@@ -55,7 +59,8 @@ export class CdkTestingStack extends cdk.Stack {
       dbName,
       username,
       password,
-      description
+      description,
+      clusterName,
     }
   }
 }
