@@ -302,7 +302,7 @@ export function toJson_Database(
  */
 export interface Store {
   /**
-   * Human-readable label that identifies the data store. The databases.[n].collections.[n].dataSources.[n].storeName field references this values as part of the mapping configuration. To use MongoDB Cloud as a data store, the Atlas Data Federation requires a serverless instance or an M10 or higher cluster.
+   * Human-readable label that identifies the data store. The databases.[n].collections.[n].dataSources.[n].storeName field references this values as part of the mapping configuration. To use MongoDB Cloud as a data store, the Atlas Data Federation requires an M10 or higher cluster.
    *
    * @schema Store#Name
    */

@@ -14,6 +14,13 @@ export interface CfnEncryptionAtRestProps {
   readonly awsKmsConfig: AwsKmsConfig;
 
   /**
+   * Flag that indicates whether Encryption at Rest for Dedicated Search Nodes is enabled in the specified project.
+   *
+   * @schema CfnEncryptionAtRestProps#EnabledForSearchNodes
+   */
+  readonly enabledForSearchNodes?: boolean;
+
+  /**
    * The profile is defined in AWS Secret manager. See [Secret Manager Profile setup](../../../examples/profile-secret.yaml).
    *
    * @schema CfnEncryptionAtRestProps#Profile
@@ -40,6 +47,7 @@ export function toJson_CfnEncryptionAtRestProps(
   }
   const result = {
     AwsKmsConfig: toJson_AwsKmsConfig(obj.awsKmsConfig),
+    EnabledForSearchNodes: obj.enabledForSearchNodes,
     Profile: obj.profile,
     ProjectId: obj.projectId,
   };
@@ -58,20 +66,6 @@ export function toJson_CfnEncryptionAtRestProps(
  */
 export interface AwsKmsConfig {
   /**
-   * ID of an AWS IAM role authorized to manage an AWS customer master key.
-   *
-   * @schema AwsKmsConfig#RoleID
-   */
-  readonly roleId?: string;
-
-  /**
-   * The AWS customer master key used to encrypt and decrypt the MongoDB master keys.
-   *
-   * @schema AwsKmsConfig#CustomerMasterKeyID
-   */
-  readonly customerMasterKeyId?: string;
-
-  /**
    * Specifies whether Encryption at Rest is enabled for an Atlas project. To disable Encryption at Rest, pass only this parameter with a value of false. When you disable Encryption at Rest, Atlas also removes the configuration details.
    *
    * @schema AwsKmsConfig#Enabled
@@ -79,11 +73,39 @@ export interface AwsKmsConfig {
   readonly enabled?: boolean;
 
   /**
-   * The AWS region in which the AWS customer master key exists.
+   * Unique alphanumeric string that identifies the Amazon Web Services (AWS) Customer Master Key (CMK) you used to encrypt and decrypt the MongoDB master keys.
+   *
+   * @schema AwsKmsConfig#CustomerMasterKeyID
+   */
+  readonly customerMasterKeyId?: string;
+
+  /**
+   * Physical location where MongoDB Atlas deploys your AWS-hosted MongoDB cluster nodes. The region you choose can affect network latency for clients accessing your databases.
    *
    * @schema AwsKmsConfig#Region
    */
   readonly region?: string;
+
+  /**
+   * Unique 24-hexadecimal digit string that identifies an Amazon Web Services (AWS) Identity and Access Management (IAM) role. This IAM role has the permissions required to manage your AWS customer master key.
+   *
+   * @schema AwsKmsConfig#RoleID
+   */
+  readonly roleId?: string;
+
+  /**
+   * Flag that indicates whether the Amazon Web Services (AWS) Key Management Service (KMS) encryption key can encrypt and decrypt data.
+   *
+   * @schema AwsKmsConfig#Valid
+   */
+  readonly valid?: boolean;
+
+  /**
+   * Enable connection to your Amazon Web Services (AWS) Key Management Service (KMS) over private networking.
+   *
+   * @schema AwsKmsConfig#RequirePrivateNetworking
+   */
+  readonly requirePrivateNetworking?: boolean;
 }
 
 /**
@@ -97,10 +119,12 @@ export function toJson_AwsKmsConfig(
     return undefined;
   }
   const result = {
-    RoleID: obj.roleId,
-    CustomerMasterKeyID: obj.customerMasterKeyId,
     Enabled: obj.enabled,
+    CustomerMasterKeyID: obj.customerMasterKeyId,
     Region: obj.region,
+    RoleID: obj.roleId,
+    Valid: obj.valid,
+    RequirePrivateNetworking: obj.requirePrivateNetworking,
   };
   // filter undefined values
   return Object.entries(result).reduce(
