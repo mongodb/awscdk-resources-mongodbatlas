@@ -51,3 +51,38 @@ test("AtlasEncryptionAtRest construct should contain default properties", () => 
     },
   });
 });
+
+test("AtlasEncryptionAtRest construct should render new AwsKmsConfig and EnabledForSearchNodes properties", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnEncryptionAtRest(stack, "testing-stack", {
+    profile: PROFILE,
+    projectId: PROJECT_ID,
+    enabledForSearchNodes: true,
+    awsKmsConfig: {
+      roleId: ROLE_ID,
+      customerMasterKeyId: CUSTOMER_MASTER_KEY_ID,
+      enabled: true,
+      region: REGION,
+      valid: true,
+      requirePrivateNetworking: true,
+    },
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    Profile: PROFILE,
+    ProjectId: PROJECT_ID,
+    EnabledForSearchNodes: true,
+    AwsKmsConfig: {
+      RoleID: ROLE_ID,
+      CustomerMasterKeyID: CUSTOMER_MASTER_KEY_ID,
+      Enabled: true,
+      Region: REGION,
+      Valid: true,
+      RequirePrivateNetworking: true,
+    },
+  });
+});
