@@ -10,27 +10,23 @@ interface AtlasStackProps {
   readonly awsSecretName: string;
 }
 
-interface apiKey {
-  readonly roles: string[];
-  readonly description: string;
-}
-
 export class CdkTestingStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
     const atlasProps = this.getContextProps();
 
-    const myOrg = new CfnOrganization(this, 'MyOrganization', {
+    new CfnOrganization(this, 'MyOrganization', {
       orgOwnerId: atlasProps.orgOwnerId,
       profile: atlasProps.profile,
       name: atlasProps.name,
       awsSecretName: atlasProps.awsSecretName,
       apiKey: {
         roles: ["ORG_OWNER"],
-        description: "test-cdk"
-      }
-
+        description: "creating an organization for development",
+      },
+      skipDefaultAlertsSettings: true,
+      multiFactorAuthRequired: true,
     });
   }
 

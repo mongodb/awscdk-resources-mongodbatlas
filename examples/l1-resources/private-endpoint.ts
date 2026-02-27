@@ -38,6 +38,7 @@ export class CdkPrivateEndpoint extends cdk.Stack {
       profile: atlasProps.profile,
       endpointServiceId: atlasService.attrId,
       id: awsPrivateEndpoint.ref,
+      enforceConnectionSuccess: true,
     });
 
     myPrivateEndpoint.addDependency(awsPrivateEndpoint)

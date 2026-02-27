@@ -35,6 +35,8 @@ export class CdkTestingStack extends cdk.Stack {
         }),
         dynamic: false,
       },
+      storedSource: JSON.stringify({ include: ["title", "year"] }),
+      numPartitions: 2,
     });
 
     const myVectorSearchIndex = new CfnSearchIndex(this, 'MyVectorSearchIndex', {
