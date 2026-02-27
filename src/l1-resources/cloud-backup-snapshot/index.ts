@@ -16,14 +16,14 @@ export interface CfnCloudBackupSnapshotProps {
   readonly profile?: string;
 
   /**
-   * Type of instance specified on the Instance Name serverless or cluster
+   * Type of instance specified on the Instance Name.
    *
    * @schema CfnCloudBackupSnapshotProps#InstanceType
    */
   readonly instanceType: CfnCloudBackupSnapshotPropsInstanceType;
 
   /**
-   * The instance name of the Serverless/Cluster whose snapshot you want to restore or you want to retrieve restore snapshot.
+   * Human-readable label that identifies the cluster.
    *
    * @schema CfnCloudBackupSnapshotProps#InstanceName
    */
@@ -154,13 +154,11 @@ export function toJson_CfnCloudBackupSnapshotProps(
 /* eslint-enable max-len, quote-props */
 
 /**
- * Type of instance specified on the Instance Name serverless or cluster
+ * Type of instance specified on the Instance Name.
  *
  * @schema CfnCloudBackupSnapshotPropsInstanceType
  */
 export enum CfnCloudBackupSnapshotPropsInstanceType {
-  /** serverless */
-  SERVERLESS = "serverless",
   /** cluster */
   CLUSTER = "cluster",
 }
