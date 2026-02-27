@@ -352,23 +352,6 @@ export {
 } from "./l1-resources/search-index";
 
 export {
-  CfnServerlessInstance,
-  CfnServerlessInstanceProps,
-  ServerlessInstanceConnectionStrings,
-  ServerlessInstancePrivateEndpoint,
-  ServerlessInstancePrivateEndpointEndpoint,
-  ServerlessInstancePrivateEndpointType,
-  ServerlessInstanceProviderSettings,
-  ServerlessInstanceProviderSettingsProviderName,
-} from "./l1-resources/serverless-instance";
-
-export {
-  CfnServerlessPrivateEndpointProps,
-  CfnServerlessPrivateEndpoint,
-  AwsPrivateEndpointConfig,
-} from "./l1-resources/serverless-private-endpoint";
-
-export {
   CfnServiceAccount,
   CfnServiceAccountProps,
   Secret,
@@ -483,7 +466,6 @@ export * from "./l2-resources/third-party-integration";
 export * from "./l3-resources/common/props";
 
 export * from "./l3-resources/atlas-basic";
-export * from "./l3-resources/atlas-serverless-basic";
 export * from "./l3-resources/atlas-basic-private-endpoint";
 export * from "./l3-resources/encryption-at-rest-express";
 export * from "./l3-resources/atlas-bootstrap";
