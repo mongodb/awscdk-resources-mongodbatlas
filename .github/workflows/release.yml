@@ -178,7 +178,7 @@ jobs:
         id: extract-version
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
       - name: Log in to MongoDB Docker registry
-        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
+        uses: docker/login-action@b45d80f862d83dbcd57f89517bcf500b2ab88fb2
         with:
           registry: ${{ secrets.ARTIFACTORY_REGISTRY }}
           username: ${{ secrets.ARTIFACTORY_USER }}
