@@ -18,7 +18,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
       - name: Setup Node.js
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
       - uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654
@@ -62,7 +62,7 @@ jobs:
       issues: write
       id-token: write # Required for Trusted Publishing.
     steps:
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
           registry-url: https://registry.npmjs.org
@@ -90,7 +90,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 21.x
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
       - name: Download build artifacts
@@ -119,7 +119,7 @@ jobs:
       issues: write
       id-token: write # Required for Trusted Publishing.
     steps:
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
       - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
@@ -160,7 +160,7 @@ jobs:
       issues: write
       id-token: write # Required for Trusted Publishing.
     steps:
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
       - uses: actions/setup-dotnet@baa11fbfe1d6520db94683bd5c7a3818018e4309
@@ -208,7 +208,7 @@ jobs:
       contents: read
       issues: write
     steps:
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
       - uses: actions/setup-go@4b73464bb391d4059bd26b0524d20df3927bd417
@@ -236,7 +236,7 @@ jobs:
       contents: write
       issues: write
     steps:
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
       - name: Download build artifacts
