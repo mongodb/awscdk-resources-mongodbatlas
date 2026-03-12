@@ -41508,6 +41508,7 @@ const aws: Aws = { ... }
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.Aws.property.roleArn">roleArn</a></code> | <code>string</code> | Amazon Resource Name (ARN) of the IAM role for AWS Lambda connection. |
+| <code><a href="#awscdk-resources-mongodbatlas.Aws.property.testBucket">testBucket</a></code> | <code>string</code> | The name of an S3 bucket used to check authorization of the passed-in IAM role ARN. |
 
 ---
 
@@ -41520,6 +41521,18 @@ public readonly roleArn: string;
 - *Type:* string
 
 Amazon Resource Name (ARN) of the IAM role for AWS Lambda connection.
+
+---
+
+##### `testBucket`<sup>Optional</sup> <a name="testBucket" id="awscdk-resources-mongodbatlas.Aws.property.testBucket"></a>
+
+```typescript
+public readonly testBucket: string;
+```
+
+- *Type:* string
+
+The name of an S3 bucket used to check authorization of the passed-in IAM role ARN.
 
 ---
 
@@ -48112,6 +48125,9 @@ const cfnStreamConnectionProps: CfnStreamConnectionProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.instanceName">instanceName</a></code> | <code>string</code> | Human-readable label that identifies the stream instance. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.networking">networking</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Networking">Networking</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.provider">provider</a></code> | <code>string</code> | The Schema Registry provider. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.schemaRegistryAuthentication">schemaRegistryAuthentication</a></code> | <code><a href="#awscdk-resources-mongodbatlas.SchemaRegistryAuthentication">SchemaRegistryAuthentication</a></code> | *No description.* |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.schemaRegistryUrls">schemaRegistryUrls</a></code> | <code>string[]</code> | List of Schema Registry endpoint URLs. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.security">security</a></code> | <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaSecurity">StreamsKafkaSecurity</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.url">url</a></code> | <code>string</code> | URL endpoint for HTTPS type connections. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.workspaceName">workspaceName</a></code> | <code>string</code> | Human-readable label that identifies the stream workspace. |
@@ -48283,6 +48299,42 @@ public readonly profile: string;
 - *Type:* string
 
 Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used.
+
+---
+
+##### `provider`<sup>Optional</sup> <a name="provider" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.provider"></a>
+
+```typescript
+public readonly provider: string;
+```
+
+- *Type:* string
+
+The Schema Registry provider.
+
+---
+
+##### `schemaRegistryAuthentication`<sup>Optional</sup> <a name="schemaRegistryAuthentication" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.schemaRegistryAuthentication"></a>
+
+```typescript
+public readonly schemaRegistryAuthentication: SchemaRegistryAuthentication;
+```
+
+- *Type:* <a href="#awscdk-resources-mongodbatlas.SchemaRegistryAuthentication">SchemaRegistryAuthentication</a>
+
+---
+
+##### `schemaRegistryUrls`<sup>Optional</sup> <a name="schemaRegistryUrls" id="awscdk-resources-mongodbatlas.CfnStreamConnectionProps.property.schemaRegistryUrls"></a>
+
+```typescript
+public readonly schemaRegistryUrls: string[];
+```
+
+- *Type:* string[]
+
+List of Schema Registry endpoint URLs.
+
+Each URL must use the http or https scheme and specify a valid host and optional port.
 
 ---
 
@@ -51267,9 +51319,35 @@ const integerThresholdView: IntegerThresholdView = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.IntegerThresholdView.property.metricName">metricName</a></code> | <code>string</code> | Human-readable label that identifies the metric against which MongoDB Cloud checks the configured threshold. |
+| <code><a href="#awscdk-resources-mongodbatlas.IntegerThresholdView.property.mode">mode</a></code> | <code>string</code> | Indicates how MongoDB Cloud computes the current metric value (e.g., AVERAGE). |
 | <code><a href="#awscdk-resources-mongodbatlas.IntegerThresholdView.property.operator">operator</a></code> | <code><a href="#awscdk-resources-mongodbatlas.IntegerThresholdViewOperator">IntegerThresholdViewOperator</a></code> | Comparison operator to apply when checking the current metric value. |
 | <code><a href="#awscdk-resources-mongodbatlas.IntegerThresholdView.property.threshold">threshold</a></code> | <code>number</code> | Value of metric that, when exceeded, triggers an alert. |
 | <code><a href="#awscdk-resources-mongodbatlas.IntegerThresholdView.property.units">units</a></code> | <code>string</code> | Element used to express the quantity. |
+
+---
+
+##### `metricName`<sup>Optional</sup> <a name="metricName" id="awscdk-resources-mongodbatlas.IntegerThresholdView.property.metricName"></a>
+
+```typescript
+public readonly metricName: string;
+```
+
+- *Type:* string
+
+Human-readable label that identifies the metric against which MongoDB Cloud checks the configured threshold.
+
+---
+
+##### `mode`<sup>Optional</sup> <a name="mode" id="awscdk-resources-mongodbatlas.IntegerThresholdView.property.mode"></a>
+
+```typescript
+public readonly mode: string;
+```
+
+- *Type:* string
+
+Indicates how MongoDB Cloud computes the current metric value (e.g., AVERAGE).
 
 ---
 
@@ -51801,7 +51879,7 @@ Endpoint web address of the Microsoft Teams webhook to which MongoDB Cloud sends
 
 ### Networking <a name="Networking" id="awscdk-resources-mongodbatlas.Networking"></a>
 
-Networking configuration for AWS PrivateLink connections.
+Networking configuration for connections.
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.Networking.Initializer"></a>
 
@@ -51847,22 +51925,10 @@ const networkingAccess: NetworkingAccess = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccess.property.type">type</a></code> | <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccessType">NetworkingAccessType</a></code> | Type of network access. |
-| <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccess.property.connectionId">connectionId</a></code> | <code>string</code> | Unique identifier of the AWS PrivateLink connection. |
-
----
-
-##### `type`<sup>Required</sup> <a name="type" id="awscdk-resources-mongodbatlas.NetworkingAccess.property.type"></a>
-
-```typescript
-public readonly type: NetworkingAccessType;
-```
-
-- *Type:* <a href="#awscdk-resources-mongodbatlas.NetworkingAccessType">NetworkingAccessType</a>
-
-Type of network access.
-
-PRIVATE_ENDPOINT for AWS PrivateLink.
+| <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccess.property.connectionId">connectionId</a></code> | <code>string</code> | Unique identifier of the connection. |
+| <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccess.property.name">name</a></code> | <code>string</code> | Reserved. |
+| <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccess.property.tgwRouteId">tgwRouteId</a></code> | <code>string</code> | Reserved. |
+| <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccess.property.type">type</a></code> | <code>string</code> | Type of network access. |
 
 ---
 
@@ -51874,7 +51940,49 @@ public readonly connectionId: string;
 
 - *Type:* string
 
-Unique identifier of the AWS PrivateLink connection.
+Unique identifier of the connection.
+
+---
+
+##### `name`<sup>Optional</sup> <a name="name" id="awscdk-resources-mongodbatlas.NetworkingAccess.property.name"></a>
+
+```typescript
+public readonly name: string;
+```
+
+- *Type:* string
+
+Reserved.
+
+Will be used by PRIVATE_LINK connection type.
+
+---
+
+##### `tgwRouteId`<sup>Optional</sup> <a name="tgwRouteId" id="awscdk-resources-mongodbatlas.NetworkingAccess.property.tgwRouteId"></a>
+
+```typescript
+public readonly tgwRouteId: string;
+```
+
+- *Type:* string
+
+Reserved.
+
+Will be used by TRANSIT_GATEWAY connection type.
+
+---
+
+##### `type`<sup>Optional</sup> <a name="type" id="awscdk-resources-mongodbatlas.NetworkingAccess.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+Type of network access.
+
+Can be PUBLIC, VPC, PRIVATE_LINK, or TRANSIT_GATEWAY.
 
 ---
 
@@ -53748,6 +53856,68 @@ public readonly type: ScheduleViewType;
 
 ---
 
+### SchemaRegistryAuthentication <a name="SchemaRegistryAuthentication" id="awscdk-resources-mongodbatlas.SchemaRegistryAuthentication"></a>
+
+Authentication configuration for Schema Registry.
+
+#### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.SchemaRegistryAuthentication.Initializer"></a>
+
+```typescript
+import { SchemaRegistryAuthentication } from 'awscdk-resources-mongodbatlas'
+
+const schemaRegistryAuthentication: SchemaRegistryAuthentication = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#awscdk-resources-mongodbatlas.SchemaRegistryAuthentication.property.password">password</a></code> | <code>string</code> | Password or Private Key for authentication. |
+| <code><a href="#awscdk-resources-mongodbatlas.SchemaRegistryAuthentication.property.type">type</a></code> | <code>string</code> | Authentication type discriminator. |
+| <code><a href="#awscdk-resources-mongodbatlas.SchemaRegistryAuthentication.property.username">username</a></code> | <code>string</code> | Username or Public Key for authentication. |
+
+---
+
+##### `password`<sup>Optional</sup> <a name="password" id="awscdk-resources-mongodbatlas.SchemaRegistryAuthentication.property.password"></a>
+
+```typescript
+public readonly password: string;
+```
+
+- *Type:* string
+
+Password or Private Key for authentication.
+
+Review [AWS security best practices for CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/security-best-practices.html#creds) to manage credentials.
+
+---
+
+##### `type`<sup>Optional</sup> <a name="type" id="awscdk-resources-mongodbatlas.SchemaRegistryAuthentication.property.type"></a>
+
+```typescript
+public readonly type: string;
+```
+
+- *Type:* string
+
+Authentication type discriminator.
+
+Specifies the authentication mechanism for Schema Registry.
+
+---
+
+##### `username`<sup>Optional</sup> <a name="username" id="awscdk-resources-mongodbatlas.SchemaRegistryAuthentication.property.username"></a>
+
+```typescript
+public readonly username: string;
+```
+
+- *Type:* string
+
+Username or Public Key for authentication.
+
+---
+
 ### ScopeDefinition <a name="ScopeDefinition" id="awscdk-resources-mongodbatlas.ScopeDefinition"></a>
 
 #### Initializer <a name="Initializer" id="awscdk-resources-mongodbatlas.ScopeDefinition.Initializer"></a>
@@ -54483,6 +54653,9 @@ const streamsKafkaAuthentication: StreamsKafkaAuthentication = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.password">password</a></code> | <code>string</code> | Password of the account to connect to the Kafka cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.saslOauthbearerExtensions">saslOauthbearerExtensions</a></code> | <code>string</code> | SASL OAuth bearer extensions. |
 | <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.scope">scope</a></code> | <code>string</code> | OAuth scope. |
+| <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.sslCertificate">sslCertificate</a></code> | <code>string</code> | SSL certificate for client authentication to Kafka. |
+| <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.sslKey">sslKey</a></code> | <code>string</code> | SSL key for client authentication to Kafka. |
+| <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.sslKeyPassword">sslKeyPassword</a></code> | <code>string</code> | Password for the SSL key, if it is password protected. |
 | <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.tokenEndpointUrl">tokenEndpointUrl</a></code> | <code>string</code> | OAuth token endpoint URL. |
 | <code><a href="#awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.username">username</a></code> | <code>string</code> | Username of the account to connect to the Kafka cluster. |
 
@@ -54575,6 +54748,46 @@ public readonly scope: string;
 - *Type:* string
 
 OAuth scope.
+
+---
+
+##### `sslCertificate`<sup>Optional</sup> <a name="sslCertificate" id="awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.sslCertificate"></a>
+
+```typescript
+public readonly sslCertificate: string;
+```
+
+- *Type:* string
+
+SSL certificate for client authentication to Kafka.
+
+---
+
+##### `sslKey`<sup>Optional</sup> <a name="sslKey" id="awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.sslKey"></a>
+
+```typescript
+public readonly sslKey: string;
+```
+
+- *Type:* string
+
+SSL key for client authentication to Kafka.
+
+Review [AWS security best practices for CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/security-best-practices.html#creds) to manage credentials.
+
+---
+
+##### `sslKeyPassword`<sup>Optional</sup> <a name="sslKeyPassword" id="awscdk-resources-mongodbatlas.StreamsKafkaAuthentication.property.sslKeyPassword"></a>
+
+```typescript
+public readonly sslKeyPassword: string;
+```
+
+- *Type:* string
+
+Password for the SSL key, if it is password protected.
+
+Review [AWS security best practices for CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/security-best-practices.html#creds) to manage credentials.
 
 ---
 
@@ -56979,35 +57192,6 @@ GREATER_THAN.
 ##### `LESS_THAN` <a name="LESS_THAN" id="awscdk-resources-mongodbatlas.MetricThresholdViewOperator.LESS_THAN"></a>
 
 LESS_THAN.
-
----
-
-
-### NetworkingAccessType <a name="NetworkingAccessType" id="awscdk-resources-mongodbatlas.NetworkingAccessType"></a>
-
-Type of network access.
-
-PRIVATE_ENDPOINT for AWS PrivateLink.
-
-#### Members <a name="Members" id="Members"></a>
-
-| **Name** | **Description** |
-| --- | --- |
-| <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccessType.PRIVATE_ENDPOINT">PRIVATE_ENDPOINT</a></code> | PRIVATE_ENDPOINT. |
-| <code><a href="#awscdk-resources-mongodbatlas.NetworkingAccessType.PUBLIC">PUBLIC</a></code> | PUBLIC. |
-
----
-
-##### `PRIVATE_ENDPOINT` <a name="PRIVATE_ENDPOINT" id="awscdk-resources-mongodbatlas.NetworkingAccessType.PRIVATE_ENDPOINT"></a>
-
-PRIVATE_ENDPOINT.
-
----
-
-
-##### `PUBLIC` <a name="PUBLIC" id="awscdk-resources-mongodbatlas.NetworkingAccessType.PUBLIC"></a>
-
-PUBLIC.
 
 ---
 

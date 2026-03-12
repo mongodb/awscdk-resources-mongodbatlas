@@ -494,6 +494,20 @@ export function toJson_NotificationView(
  */
 export interface IntegerThresholdView {
   /**
+   * Human-readable label that identifies the metric against which MongoDB Cloud checks the configured threshold.
+   *
+   * @schema IntegerThresholdView#MetricName
+   */
+  readonly metricName?: string;
+
+  /**
+   * Indicates how MongoDB Cloud computes the current metric value (e.g., AVERAGE).
+   *
+   * @schema IntegerThresholdView#Mode
+   */
+  readonly mode?: string;
+
+  /**
    * Comparison operator to apply when checking the current metric value.
    *
    * @schema IntegerThresholdView#Operator
@@ -526,6 +540,8 @@ export function toJson_IntegerThresholdView(
     return undefined;
   }
   const result = {
+    MetricName: obj.metricName,
+    Mode: obj.mode,
     Operator: obj.operator,
     Threshold: obj.threshold,
     Units: obj.units,
