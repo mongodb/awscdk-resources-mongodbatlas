@@ -39,11 +39,11 @@ You can find more information about activating this type in the [AWS CloudFormat
 
 ## Example: [federation-settings-org-role-mapping.ts](../../../examples/l1-resources/federation-settings-org-role-mapping.ts)
 ```ts
-import { CfnEncryptionAtRest } from 'awscdk-resources-mongodbatlas';
+import { CfnFederatedSettingsOrgRoleMapping } from 'awscdk-resources-mongodbatlas';
 
 const federationSettings = new CfnFederatedSettingsOrgRoleMapping(this, 'FederationSettings', {
-    profile:  atlasProps.profile,
-    orgId: atlasProps.projId,
+    profile: atlasProps.profile,
+    orgId: atlasProps.orgId,
     externalGroupName: atlasProps.groupName,
     roleAssignments: [
     {

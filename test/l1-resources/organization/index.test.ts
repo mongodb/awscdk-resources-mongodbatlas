@@ -52,3 +52,50 @@ test("CfnOrganization construct should contain default properties", () => {
     AwsSecretName: AWS_SECRET_NAME,
   });
 });
+
+test("CfnOrganization construct should support security and org configuration flags", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnOrganization(stack, "testing-stack-security", {
+    orgOwnerId: ORG_OWNER_ID,
+    name: NAME,
+    awsSecretName: AWS_SECRET_NAME,
+    skipDefaultAlertsSettings: true,
+    genAiFeaturesEnabled: false,
+    apiAccessListRequired: true,
+    multiFactorAuthRequired: true,
+    restrictEmployeeAccess: true,
+    securityContact: "security@example.com",
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    SkipDefaultAlertsSettings: true,
+    GenAIFeaturesEnabled: false,
+    ApiAccessListRequired: true,
+    MultiFactorAuthRequired: true,
+    RestrictEmployeeAccess: true,
+    SecurityContact: "security@example.com",
+  });
+});
+
+test("CfnOrganization construct should support federatedSettingsId", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+  const FEDERATED_SETTINGS_ID = "5e0a1234b6b4b12345678901";
+
+  new CfnOrganization(stack, "testing-stack-federation", {
+    orgOwnerId: ORG_OWNER_ID,
+    name: NAME,
+    awsSecretName: AWS_SECRET_NAME,
+    federatedSettingsId: FEDERATED_SETTINGS_ID,
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    FederatedSettingsId: FEDERATED_SETTINGS_ID,
+  });
+});

@@ -57,3 +57,57 @@ test("AtlasEncryptionAtRest construct should contain default properties", () => 
     },
   });
 });
+
+test("AtlasEncryptionAtRest construct should support enabledForSearchNodes", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnEncryptionAtRest(stack, "testing-stack-search-nodes", {
+    projectId: PROJECT_ID,
+    enabledForSearchNodes: true,
+    awsKmsConfig: {
+      roleId: ROLE_ID,
+      customerMasterKeyId: CUSTOMER_MASTER_KEY_ID,
+      enabled: true,
+      region: REGION,
+    },
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    ProjectId: PROJECT_ID,
+    EnabledForSearchNodes: true,
+    AwsKmsConfig: {
+      Enabled: true,
+    },
+  });
+});
+
+test("AtlasEncryptionAtRest construct should support requirePrivateNetworking in AwsKmsConfig", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnEncryptionAtRest(stack, "testing-stack-private-net", {
+    projectId: PROJECT_ID,
+    awsKmsConfig: {
+      roleId: ROLE_ID,
+      customerMasterKeyId: CUSTOMER_MASTER_KEY_ID,
+      enabled: true,
+      region: REGION,
+      requirePrivateNetworking: true,
+      valid: true,
+    },
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    AwsKmsConfig: {
+      RoleID: ROLE_ID,
+      Enabled: true,
+      RequirePrivateNetworking: true,
+      Valid: true,
+    },
+  });
+});

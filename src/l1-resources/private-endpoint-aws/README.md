@@ -40,14 +40,15 @@ You can find more information about activating this type in the [AWS CloudFormat
 ## Example: [private-endpoint.ts](../../../examples/l1-resources/private-endpoint.ts)
 
 ```ts
-import { CfnPrivateEndpoint } from 'awscdk-resources-mongodbatlas'
+import { CfnPrivateEndpointAws } from 'awscdk-resources-mongodbatlas';
 
 const myPrivateEndpoint = new CfnPrivateEndpointAws(this, 'privateEndpoint', {
-  projectId: atlasProject,
-  endpointServiceId: 'endpointServiceId' /*Id of the PrivateEndpointService*/,
-  profile: 'default',
-  id: ''
-})
+  projectId: atlasProps.projId,
+  endpointServiceId: atlasService.attrId,  // Id of the PrivateEndpointService
+  profile: atlasProps.profile,
+  id: awsVpcEndpoint.ref,                  // VPC endpoint ID (vpce-xxxxxxxx)
+  enforceConnectionSuccess: true,
+});
 ```
 
 ## Feedback

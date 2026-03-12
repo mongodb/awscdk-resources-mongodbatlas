@@ -9,7 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-Returns, adds, and edits organizational units in MongoDB Cloud.
+Returns, adds, and edits organizational units in MongoDB Cloud. Supports security configuration flags including `ApiAccessListRequired`, `MultiFactorAuthRequired`, `RestrictEmployeeAccess`, `SkipDefaultAlertsSettings`, `GenAIFeaturesEnabled`, and `SecurityContact`. Optionally links to a federation via `FederatedSettingsId`.
 
 ## MongoDB Atlas API Docs
 
@@ -45,11 +45,13 @@ const myOrg = new CfnOrganization(this, 'MyOrg', {
     orgOwnerId: atlasProps.orgOwnerId,
     profile: atlasProps.profile,
     name: atlasProps.name,
-    awsSecretName: [atlasProps.awsSecretName],
-    apikey:{
+    awsSecretName: atlasProps.awsSecretName,
+    apiKey: {
         roles: ["ORG_OWNER"],
-        description:"creating an organization for development"
-    }
+        description: "creating an organization for development",
+    },
+    skipDefaultAlertsSettings: true,
+    multiFactorAuthRequired: true,
 });
 
 ```

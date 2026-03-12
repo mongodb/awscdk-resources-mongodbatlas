@@ -45,10 +45,14 @@ import { CfnMaintenanceWindow } from 'awscdk-resources-mongodbatlas';
 
 const myMaintenanceWindow = new CfnMaintenanceWindow(this, 'MyMaintenanceWindow', {
     projectId: atlasProps.projId,
-    profile:  atlasProps.profile,
+    profile:  atlasProps.profile, 
     dayOfWeek: atlasProps.dayOfWeek,
     hourOfDay: atlasProps.hourOfDay,
     autoDeferOnceEnabled: atlasProps.autoDeferOnceEnabled,
+    protectedHours: {
+        startHourOfDay: 8,
+        endHourOfDay: 18,
+    },
 });
 
 ```

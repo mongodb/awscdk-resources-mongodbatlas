@@ -56,3 +56,59 @@ test("AtlasFederatedSettingsOrgRoleMapping construct should contain default prop
     ],
   });
 });
+
+test("AtlasFederatedSettingsOrgRoleMapping construct should support org-scoped role assignment", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnFederatedSettingsOrgRoleMapping(stack, "testing-stack-org-role", {
+    externalGroupName: EXTERNAL_GROUP_NAME,
+    orgId: ORG_ID,
+    federationSettingsId: FEDERATION_SETTINGS_ID,
+    roleAssignments: [
+      {
+        role: "ORG_MEMBER",
+        orgId: ORG_ID,
+      },
+    ],
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    ExternalGroupName: EXTERNAL_GROUP_NAME,
+    OrgId: ORG_ID,
+    RoleAssignments: [
+      {
+        Role: "ORG_MEMBER",
+        OrgId: ORG_ID,
+      },
+    ],
+  });
+});
+
+test("AtlasFederatedSettingsOrgRoleMapping construct should support multiple role assignments", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnFederatedSettingsOrgRoleMapping(stack, "testing-stack-multi-role", {
+    externalGroupName: EXTERNAL_GROUP_NAME,
+    orgId: ORG_ID,
+    federationSettingsId: FEDERATION_SETTINGS_ID,
+    roleAssignments: [
+      { role: ROLE, projectId: PROJECT_ID },
+      { role: "GROUP_READ_ONLY", projectId: PROJECT_ID },
+      { role: "ORG_MEMBER", orgId: ORG_ID },
+    ],
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    RoleAssignments: [
+      { Role: ROLE, ProjectId: PROJECT_ID },
+      { Role: "GROUP_READ_ONLY", ProjectId: PROJECT_ID },
+      { Role: "ORG_MEMBER", OrgId: ORG_ID },
+    ],
+  });
+});

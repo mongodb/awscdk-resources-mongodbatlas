@@ -14,7 +14,7 @@
 
 import { App, Stack } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import { CfnSearchIndex } from "../../../src";
+import { CfnSearchIndex, TypeSet } from "../../../src";
 
 const RESOURCE_NAME = "MongoDB::Atlas::SearchIndex";
 const PROJECT_ID = "projectId";
@@ -81,5 +81,104 @@ test("CfnSearchIndex construct should allow to build vector search indexes", () 
     Name: INDEX_NAME,
     Type: VECTOR_TYPE,
     Fields: FIELDS,
+  });
+});
+
+test("CfnSearchIndex construct should support storedSource property", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+  const STORED_SOURCE = JSON.stringify({ include: ["title", "year"] });
+
+  new CfnSearchIndex(stack, "testing-stack", {
+    projectId: PROJECT_ID,
+    clusterName: CLUSTER_NAME,
+    collectionName: COLLECTION_NAME,
+    database: DATABASE,
+    name: INDEX_NAME,
+    mappings: { dynamic: true },
+    storedSource: STORED_SOURCE,
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    Name: INDEX_NAME,
+    StoredSource: STORED_SOURCE,
+  });
+});
+
+test("CfnSearchIndex construct should support numPartitions property", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+  const NUM_PARTITIONS = 4;
+
+  new CfnSearchIndex(stack, "testing-stack", {
+    projectId: PROJECT_ID,
+    clusterName: CLUSTER_NAME,
+    collectionName: COLLECTION_NAME,
+    database: DATABASE,
+    name: INDEX_NAME,
+    mappings: { dynamic: true },
+    numPartitions: NUM_PARTITIONS,
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    Name: INDEX_NAME,
+    NumPartitions: NUM_PARTITIONS,
+  });
+});
+
+test("CfnSearchIndex construct should support typeSets property", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+  const typeSets: TypeSet[] = [
+    {
+      name: "employeeTypeSet",
+      types: JSON.stringify([{ type: "string" }, { type: "number" }]),
+    },
+  ];
+
+  new CfnSearchIndex(stack, "testing-stack", {
+    projectId: PROJECT_ID,
+    clusterName: CLUSTER_NAME,
+    collectionName: COLLECTION_NAME,
+    database: DATABASE,
+    name: INDEX_NAME,
+    mappings: { dynamic: true },
+    typeSets,
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    Name: INDEX_NAME,
+    TypeSets: [{ Name: "employeeTypeSet", Types: typeSets[0].types }],
+  });
+});
+
+test("CfnSearchIndex construct should support dynamicConfig in mappings", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+  const DYNAMIC_CONFIG = JSON.stringify({
+    date: { type: "date" },
+    numeric: { type: "number" },
+  });
+
+  new CfnSearchIndex(stack, "testing-stack", {
+    projectId: PROJECT_ID,
+    clusterName: CLUSTER_NAME,
+    collectionName: COLLECTION_NAME,
+    database: DATABASE,
+    name: INDEX_NAME,
+    mappings: { dynamicConfig: DYNAMIC_CONFIG },
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    Name: INDEX_NAME,
+    Mappings: { DynamicConfig: DYNAMIC_CONFIG },
   });
 });
