@@ -382,7 +382,7 @@ export {
   StreamsKafkaSecurity,
   Networking,
   NetworkingAccess,
-  NetworkingAccessType,
+  SchemaRegistryAuthentication,
   Aws,
 } from "./l1-resources/stream-connection";
 
