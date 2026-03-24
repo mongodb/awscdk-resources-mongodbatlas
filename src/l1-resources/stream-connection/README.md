@@ -2,7 +2,10 @@
 
 The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node.js.
 
-> AWS CDK [L1 construct](https://docs.aws.amazon.com/cdk/latest/guide/constructs.html) and data structures for the [AWS CloudFormation Registry](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html) type `MongoDB::Atlas::StreamConnection`.
+> AWS CDK [L1 construct] and data structures for the [AWS CloudFormation Registry] type `MongoDB::Atlas::StreamConnection` v1.0.0.
+
+[L1 construct]: https://docs.aws.amazon.com/cdk/latest/guide/constructs.html
+[AWS CloudFormation Registry]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html
 
 ## Description
 
@@ -38,16 +41,20 @@ You can find more information about activating this type in the [AWS CloudFormat
 
 ## Example: [stream-connection.ts](../../../examples/l1-resources/stream-connection.ts)
 ```ts
-import { CfnStreamInstance } from 'awscdk-resources-mongodbatlas';
-    
-	const streamConnection = new CfnStreamConnection(this, "stream-connection-testing-stack", {
-			profile: atlasProps.profile,
-			instanceName: atlasProps.instanceName,
-			projectId: atlasProps.projectId,
-			connectionName: atlasProps.connectionName,
-			type: CfnStreamConnectionPropsType.CLUSTER,
-			clusterName: atlasProps.clusterName
-		});
+import { CfnStreamConnection, CfnStreamConnectionPropsType, DbRoleToExecuteType } from 'awscdk-resources-mongodbatlas';
+
+const streamConnection = new CfnStreamConnection(this, 'StreamConnection', {
+    profile: atlasProps.profile,
+    projectId: atlasProps.projectId,
+    instanceName: atlasProps.instanceName,
+    connectionName: atlasProps.connectionName,
+    type: CfnStreamConnectionPropsType.CLUSTER,
+    clusterName: atlasProps.clusterName,
+    dbRoleToExecute: {
+        role: 'atlasAdmin',
+        type: DbRoleToExecuteType.BUILT_IN,
+    },
+});
 ```
 
 ## Feedback
