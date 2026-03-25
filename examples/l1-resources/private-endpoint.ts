@@ -38,6 +38,7 @@ export class CdkPrivateEndpoint extends cdk.Stack {
       profile: atlasProps.profile,
       endpointServiceId: atlasService.attrId,
       id: awsPrivateEndpoint.ref,
+      enforceConnectionSuccess: true,
     });
 
     myPrivateEndpoint.addDependency(awsPrivateEndpoint)
@@ -46,13 +47,13 @@ export class CdkPrivateEndpoint extends cdk.Stack {
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
     if (!projId) {
-      throw "No context value specified for orgId. Please specify via the cdk context."
+      throw "No context value specified for projId. Please specify via the cdk context."
     }
 
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const region = this.node.tryGetContext('region');
     const vpcId = this.node.tryGetContext('vpcId');
-    const subnetId = this.node.tryGetContext('comment');
+    const subnetId = this.node.tryGetContext('subnetId');
 
 
     return {

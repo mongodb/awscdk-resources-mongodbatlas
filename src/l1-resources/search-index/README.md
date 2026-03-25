@@ -9,7 +9,7 @@ The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node
 
 ## Description
 
-Returns, adds, edits, and removes Atlas indexes for Search or Vector search. Also returns and updates user-defined analyzers. It requires CFN resource `MongoDB::Atlas::SearchIndex` >= 3.0.0.
+Returns, adds, edits, and removes Atlas indexes for Search or Vector search. Also returns and updates user-defined analyzers. Supports advanced options including `storedSource` (store original documents in the index), `numPartitions` (partition count for large datasets), `typeSets` (alternate type groupings), and `dynamicConfig` (advanced dynamic mapping configuration). It requires CFN resource `MongoDB::Atlas::SearchIndex` >= 3.0.0.
 
 ## MongoDB Atlas API Docs
 
@@ -59,6 +59,8 @@ const mySearchIndex = new CfnSearchIndex(this, 'MySearchIndex', {
       }),
       dynamic: false,
   },
+  storedSource: JSON.stringify({ include: ["title", "year"] }),
+  numPartitions: 2,
 });
 
 const myVectorSearchIndex = new CfnSearchIndex(this, 'MyVectorSearchIndex', {

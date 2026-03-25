@@ -44,3 +44,24 @@ test("CfnPrivateEndpointService construct should contain default properties", ()
     EnforceConnectionSuccess: true,
   });
 });
+
+test("CfnPrivateEndpointService construct should support enforceConnectionSuccess false", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnPrivateEndpointAws(stack, "testing-stack", {
+    projectId: PROJECT_NAME,
+    endpointServiceId: ENDPOINT_SERVICE_ID,
+    id: INTERFACE_ENDPOINT_ID,
+    enforceConnectionSuccess: false,
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    ProjectId: PROJECT_NAME,
+    EndpointServiceId: ENDPOINT_SERVICE_ID,
+    Id: INTERFACE_ENDPOINT_ID,
+    EnforceConnectionSuccess: false,
+  });
+});

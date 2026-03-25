@@ -116,6 +116,25 @@ export interface CfnStreamConnectionProps {
    * @schema CfnStreamConnectionProps#Headers
    */
   readonly headers?: any;
+
+  /**
+   * The Schema Registry provider.
+   *
+   * @schema CfnStreamConnectionProps#Provider
+   */
+  readonly provider?: string;
+
+  /**
+   * @schema CfnStreamConnectionProps#SchemaRegistryAuthentication
+   */
+  readonly schemaRegistryAuthentication?: SchemaRegistryAuthentication;
+
+  /**
+   * List of Schema Registry endpoint URLs. Each URL must use the http or https scheme and specify a valid host and optional port.
+   *
+   * @schema CfnStreamConnectionProps#SchemaRegistryUrls
+   */
+  readonly schemaRegistryUrls?: string[];
 }
 
 /**
@@ -146,6 +165,11 @@ export function toJson_CfnStreamConnectionProps(
     Aws: toJson_Aws(obj.aws),
     Url: obj.url,
     Headers: obj.headers,
+    Provider: obj.provider,
+    SchemaRegistryAuthentication: toJson_SchemaRegistryAuthentication(
+      obj.schemaRegistryAuthentication
+    ),
+    SchemaRegistryUrls: obj.schemaRegistryUrls?.map((y) => y),
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -284,6 +308,27 @@ export interface StreamsKafkaAuthentication {
    * @schema StreamsKafkaAuthentication#SaslOauthbearerExtensions
    */
   readonly saslOauthbearerExtensions?: string;
+
+  /**
+   * SSL certificate for client authentication to Kafka.
+   *
+   * @schema StreamsKafkaAuthentication#SslCertificate
+   */
+  readonly sslCertificate?: string;
+
+  /**
+   * SSL key for client authentication to Kafka. Review [AWS security best practices for CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/security-best-practices.html#creds) to manage credentials.
+   *
+   * @schema StreamsKafkaAuthentication#SslKey
+   */
+  readonly sslKey?: string;
+
+  /**
+   * Password for the SSL key, if it is password protected. Review [AWS security best practices for CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/security-best-practices.html#creds) to manage credentials.
+   *
+   * @schema StreamsKafkaAuthentication#SslKeyPassword
+   */
+  readonly sslKeyPassword?: string;
 }
 
 /**
@@ -306,6 +351,9 @@ export function toJson_StreamsKafkaAuthentication(
     ClientSecret: obj.clientSecret,
     Scope: obj.scope,
     SaslOauthbearerExtensions: obj.saslOauthbearerExtensions,
+    SslCertificate: obj.sslCertificate,
+    SslKey: obj.sslKey,
+    SslKeyPassword: obj.sslKeyPassword,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -359,7 +407,7 @@ export function toJson_StreamsKafkaSecurity(
 /* eslint-enable max-len, quote-props */
 
 /**
- * Networking configuration for AWS PrivateLink connections.
+ * Networking configuration for connections.
  *
  * @schema Networking
  */
@@ -405,6 +453,13 @@ export interface Aws {
    * @schema Aws#RoleArn
    */
   readonly roleArn: string;
+
+  /**
+   * The name of an S3 bucket used to check authorization of the passed-in IAM role ARN.
+   *
+   * @schema Aws#TestBucket
+   */
+  readonly testBucket?: string;
 }
 
 /**
@@ -419,6 +474,58 @@ export function toJson_Aws(
   }
   const result = {
     RoleArn: obj.roleArn,
+    TestBucket: obj.testBucket,
+  };
+  // filter undefined values
+  return Object.entries(result).reduce(
+    (r, i) => (i[1] === undefined ? r : { ...r, [i[0]]: i[1] }),
+    {}
+  );
+}
+/* eslint-enable max-len, quote-props */
+
+/**
+ * Authentication configuration for Schema Registry.
+ *
+ * @schema SchemaRegistryAuthentication
+ */
+export interface SchemaRegistryAuthentication {
+  /**
+   * Authentication type discriminator. Specifies the authentication mechanism for Schema Registry.
+   *
+   * @schema SchemaRegistryAuthentication#Type
+   */
+  readonly type?: string;
+
+  /**
+   * Username or Public Key for authentication.
+   *
+   * @schema SchemaRegistryAuthentication#Username
+   */
+  readonly username?: string;
+
+  /**
+   * Password or Private Key for authentication. Review [AWS security best practices for CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/security-best-practices.html#creds) to manage credentials.
+   *
+   * @schema SchemaRegistryAuthentication#Password
+   */
+  readonly password?: string;
+}
+
+/**
+ * Converts an object of type 'SchemaRegistryAuthentication' to JSON representation.
+ */
+/* eslint-disable max-len, quote-props */
+export function toJson_SchemaRegistryAuthentication(
+  obj: SchemaRegistryAuthentication | undefined
+): Record<string, any> | undefined {
+  if (obj === undefined) {
+    return undefined;
+  }
+  const result = {
+    Type: obj.type,
+    Username: obj.username,
+    Password: obj.password,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -447,18 +554,32 @@ export enum DbRoleToExecuteType {
  */
 export interface NetworkingAccess {
   /**
-   * Type of network access. PRIVATE_ENDPOINT for AWS PrivateLink.
+   * Type of network access. Can be PUBLIC, VPC, PRIVATE_LINK, or TRANSIT_GATEWAY.
    *
    * @schema NetworkingAccess#Type
    */
-  readonly type: NetworkingAccessType;
+  readonly type?: string;
 
   /**
-   * Unique identifier of the AWS PrivateLink connection.
+   * Unique identifier of the connection.
    *
    * @schema NetworkingAccess#ConnectionId
    */
   readonly connectionId?: string;
+
+  /**
+   * Reserved. Will be used by PRIVATE_LINK connection type.
+   *
+   * @schema NetworkingAccess#Name
+   */
+  readonly name?: string;
+
+  /**
+   * Reserved. Will be used by TRANSIT_GATEWAY connection type.
+   *
+   * @schema NetworkingAccess#TgwRouteId
+   */
+  readonly tgwRouteId?: string;
 }
 
 /**
@@ -474,6 +595,8 @@ export function toJson_NetworkingAccess(
   const result = {
     Type: obj.type,
     ConnectionId: obj.connectionId,
+    Name: obj.name,
+    TgwRouteId: obj.tgwRouteId,
   };
   // filter undefined values
   return Object.entries(result).reduce(
@@ -482,18 +605,6 @@ export function toJson_NetworkingAccess(
   );
 }
 /* eslint-enable max-len, quote-props */
-
-/**
- * Type of network access. PRIVATE_ENDPOINT for AWS PrivateLink.
- *
- * @schema NetworkingAccessType
- */
-export enum NetworkingAccessType {
-  /** PRIVATE_ENDPOINT */
-  PRIVATE_ENDPOINT = "PRIVATE_ENDPOINT",
-  /** PUBLIC */
-  PUBLIC = "PUBLIC",
-}
 
 /**
  * A CloudFormation `MongoDB::Atlas::StreamConnection`

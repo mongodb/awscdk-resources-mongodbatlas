@@ -8,6 +8,7 @@ interface AtlasStackProps {
   readonly region: string;
   readonly customerMasterKeyId: string;
   readonly roleId: string;
+  readonly requirePrivateNetworking: boolean;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -15,14 +16,16 @@ export class CdkTestingStack extends cdk.Stack {
     super(scope, id, props);
 
     const atlasProps = this.getContextProps();
-    const encryptionAtRest = new CfnEncryptionAtRest(this, 'EncryptionAtRest', {
+    new CfnEncryptionAtRest(this, 'EncryptionAtRest', {
       projectId: atlasProps.projId,
       profile: atlasProps.profile,
+      enabledForSearchNodes: true,
       awsKmsConfig: {
         enabled: true,
         region: atlasProps.region,
         customerMasterKeyId: atlasProps.customerMasterKeyId,
-        roleId: atlasProps.roleId
+        roleId: atlasProps.roleId,
+        requirePrivateNetworking: atlasProps.requirePrivateNetworking,
       },
     });
   }
@@ -37,13 +40,15 @@ export class CdkTestingStack extends cdk.Stack {
     const customerMasterKeyId = this.node.tryGetContext('customerMasterKeyId');
     const region = this.node.tryGetContext('region');
     const roleId = this.node.tryGetContext('roleId');
+    const requirePrivateNetworking = this.node.tryGetContext('requirePrivateNetworking') === 'true';
 
     return {
       projId,
       profile,
       region,
       customerMasterKeyId,
-      roleId
+      roleId,
+      requirePrivateNetworking,
     }
   }
 }

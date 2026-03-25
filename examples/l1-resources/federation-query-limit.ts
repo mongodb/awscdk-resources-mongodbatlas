@@ -21,7 +21,8 @@ export class CdkTestingStack extends cdk.Stack {
       projectId: atlasProps.projectId,
       tenantName: atlasProps.tenantName,
       limitName: atlasProps.limitName,
-      value: atlasProps.value
+      value: atlasProps.value,
+      overrunPolicy: "BLOCK",
     });
   }
 

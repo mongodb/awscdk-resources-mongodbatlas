@@ -111,6 +111,119 @@ test("AtlasStreamConnection of type Kafka construct should contain default prope
   });
 });
 
+test("AtlasStreamConnection of type Kafka should support SSL client authentication", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnStreamConnection(stack, "stream-connection-testing-stack", {
+    profile: PROFILE,
+    instanceName: INSTANCE_NAME,
+    projectId: PROJECT_ID,
+    connectionName: CONNECTION_NAME,
+    type: CfnStreamConnectionPropsType.KAFKA,
+    authentication: {
+      mechanism: MECHANISM,
+      username: USERNAME,
+      password: PASSWORD,
+      sslCertificate: "testSslCertificate",
+      sslKey: "testSslKey",
+      sslKeyPassword: "testSslKeyPassword",
+    },
+    bootstrapServers: BOOTSTRAP_SERVER,
+    security: {
+      brokerPublicCertificate: BROKER_PUBLIC_CERTIFICATE,
+      protocol: "SSL",
+    },
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    Type: CfnStreamConnectionPropsType.KAFKA,
+    Authentication: {
+      Mechanism: MECHANISM,
+      Username: USERNAME,
+      Password: PASSWORD,
+      SslCertificate: "testSslCertificate",
+      SslKey: "testSslKey",
+      SslKeyPassword: "testSslKeyPassword",
+    },
+    Security: {
+      Protocol: "SSL",
+    },
+  });
+});
+
+test("AtlasStreamConnection of type Kafka should support Schema Registry configuration", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnStreamConnection(stack, "stream-connection-testing-stack", {
+    profile: PROFILE,
+    instanceName: INSTANCE_NAME,
+    projectId: PROJECT_ID,
+    connectionName: CONNECTION_NAME,
+    type: CfnStreamConnectionPropsType.KAFKA,
+    authentication: {
+      mechanism: MECHANISM,
+      username: USERNAME,
+      password: PASSWORD,
+    },
+    bootstrapServers: BOOTSTRAP_SERVER,
+    security: {
+      brokerPublicCertificate: BROKER_PUBLIC_CERTIFICATE,
+      protocol: PROTOCOL,
+    },
+    provider: "CONFLUENT",
+    schemaRegistryAuthentication: {
+      type: "USERPASS",
+      username: "registryUser",
+      password: "registryPassword",
+    },
+    schemaRegistryUrls: ["https://registry.example.com:8081"],
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    Type: CfnStreamConnectionPropsType.KAFKA,
+    Provider: "CONFLUENT",
+    SchemaRegistryAuthentication: {
+      Type: "USERPASS",
+      Username: "registryUser",
+      Password: "registryPassword",
+    },
+    SchemaRegistryUrls: ["https://registry.example.com:8081"],
+  });
+});
+
+test("AtlasStreamConnection of type AWS_LAMBDA should support testBucket", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnStreamConnection(stack, "stream-connection-testing-stack", {
+    profile: PROFILE,
+    instanceName: INSTANCE_NAME,
+    projectId: PROJECT_ID,
+    connectionName: CONNECTION_NAME,
+    type: CfnStreamConnectionPropsType.AWS_LAMBDA,
+    aws: {
+      roleArn: "arn:aws:iam::123456789012:role/test-role",
+      testBucket: "my-test-bucket",
+    },
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    Type: CfnStreamConnectionPropsType.AWS_LAMBDA,
+    Aws: {
+      RoleArn: "arn:aws:iam::123456789012:role/test-role",
+      TestBucket: "my-test-bucket",
+    },
+  });
+});
+
 test("AtlasStreamConnection of type Sample construct should contain default properties", () => {
   const mockApp = new App();
   const stack = new Stack(mockApp);

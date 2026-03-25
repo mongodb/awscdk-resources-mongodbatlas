@@ -47,6 +47,15 @@ export {
 export { CfnAuditing, CfnAuditingProps } from "./l1-resources/auditing";
 
 export {
+  CfnBackupCompliancePolicy,
+  CfnBackupCompliancePolicyProps,
+  OnDemandPolicyItem,
+  OnDemandPolicyItemRetentionUnit,
+  ScheduledPolicyItem,
+  ScheduledPolicyItemRetentionUnit,
+} from "./l1-resources/backup-compliance-policy";
+
+export {
   CfnCloudBackUpRestoreJobs,
   CfnCloudBackUpRestoreJobsProps,
   CfnCloudBackUpRestoreJobsPropsLinks,
@@ -165,6 +174,12 @@ export {
 } from "./l1-resources/federated-query-limit";
 
 export {
+  CfnFederatedSettingsIdentityProvider,
+  CfnFederatedSettingsIdentityProviderProps,
+  CfnFederatedSettingsIdentityProviderPropsProtocol,
+} from "./l1-resources/federated-settings-identity-provider";
+
+export {
   CfnFederatedSettingsOrgRoleMapping,
   CfnFederatedSettingsOrgRoleMappingProps,
   RoleAssignment,
@@ -199,10 +214,20 @@ export {
 } from "./l1-resources/ldap-verify";
 
 export {
+  CfnLogIntegration,
+  CfnLogIntegrationProps,
+} from "./l1-resources/log-integration";
+
+export {
   CfnMaintenanceWindow,
   CfnMaintenanceWindowProps,
   CfnMaintenanceWindowPropsProtectedHours,
 } from "./l1-resources/maintenance-window";
+
+export {
+  CfnMongoDbEmployeeAccessGrant,
+  CfnMongoDbEmployeeAccessGrantProps,
+} from "./l1-resources/mongodb-employee-access-grant";
 
 export {
   CfnNetworkContainer,
@@ -287,6 +312,22 @@ export {
 } from "./l1-resources/project-ip-access-list";
 
 export {
+  CfnProjectServiceAccount,
+  CfnProjectServiceAccountProps,
+  SecretDefinition,
+} from "./l1-resources/project-service-account";
+
+export {
+  CfnProjectServiceAccountAccessListEntry,
+  CfnProjectServiceAccountAccessListEntryProps,
+} from "./l1-resources/project-service-account-access-list-entry";
+
+export {
+  CfnProjectServiceAccountSecret,
+  CfnProjectServiceAccountSecretProps,
+} from "./l1-resources/project-service-account-secret";
+
+export {
   CfnResourcePolicy,
   CfnResourcePolicyProps,
   ApiAtlasPolicy,
@@ -311,6 +352,27 @@ export {
 } from "./l1-resources/search-index";
 
 export {
+  CfnServiceAccount,
+  CfnServiceAccountProps,
+  Secret,
+} from "./l1-resources/service-account";
+
+export {
+  CfnServiceAccountAccessListEntry,
+  CfnServiceAccountAccessListEntryProps,
+} from "./l1-resources/service-account-access-list-entry";
+
+export {
+  CfnServiceAccountProjectAssignment,
+  CfnServiceAccountProjectAssignmentProps,
+} from "./l1-resources/service-account-project-assignment";
+
+export {
+  CfnServiceAccountSecret,
+  CfnServiceAccountSecretProps,
+} from "./l1-resources/service-account-secret";
+
+export {
   CfnStreamConnection,
   CfnStreamConnectionProps,
   CfnStreamConnectionPropsType,
@@ -320,7 +382,7 @@ export {
   StreamsKafkaSecurity,
   Networking,
   NetworkingAccess,
-  NetworkingAccessType,
+  SchemaRegistryAuthentication,
   Aws,
 } from "./l1-resources/stream-connection";
 
@@ -333,6 +395,28 @@ export {
   StreamsConnection,
   StreamsConnectionType,
 } from "./l1-resources/stream-instance";
+
+export {
+  CfnStreamPrivatelinkEndpoint,
+  CfnStreamPrivatelinkEndpointProps,
+} from "./l1-resources/stream-privatelink-endpoint";
+
+export {
+  CfnStreamProcessor,
+  CfnStreamProcessorProps,
+  CfnStreamProcessorPropsDesiredState,
+  StreamsOptions,
+  StreamsDlq,
+  Timeouts,
+} from "./l1-resources/stream-processor";
+
+export {
+  CfnStreamWorkspace,
+  CfnStreamWorkspaceProps,
+  StreamsDataProcessRegion as StreamWorkspaceDataProcessRegion,
+  StreamsDataProcessRegionCloudProvider as StreamWorkspaceDataProcessRegionCloudProvider,
+  StreamConfig as StreamWorkspaceStreamConfig,
+} from "./l1-resources/stream-workspace";
 
 export {
   CfnTeams,

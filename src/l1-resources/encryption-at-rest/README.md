@@ -43,12 +43,15 @@ import { CfnEncryptionAtRest } from 'awscdk-resources-mongodbatlas';
 
 const encryptionAtRest = new CfnEncryptionAtRest(this, 'EncryptionAtRest', {
     projectId: atlasProps.projId,
-    profile:  atlasProps.profile,
+    profile: atlasProps.profile,
+    enabledForSearchNodes: true,
     awsKmsConfig: {
-    enabled: true,
-    region: atlasProps.region,
-    customerMasterKeyId: atlasProps.customerMasterKeyId
-    }
+        enabled: true,
+        region: atlasProps.region,
+        customerMasterKeyId: atlasProps.customerMasterKeyId,
+        roleId: atlasProps.roleId,
+        requirePrivateNetworking: true,
+    },
 });
 ```
 

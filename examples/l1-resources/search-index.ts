@@ -35,6 +35,8 @@ export class CdkTestingStack extends cdk.Stack {
         }),
         dynamic: false,
       },
+      storedSource: JSON.stringify({ include: ["title", "year"] }),
+      numPartitions: 2,
     });
 
     const myVectorSearchIndex = new CfnSearchIndex(this, 'MyVectorSearchIndex', {
@@ -59,7 +61,7 @@ export class CdkTestingStack extends cdk.Stack {
   getContextProps(): AtlasStackProps {
     const projId = this.node.tryGetContext('projId');
     if (!projId) {
-      throw "No context value specified for orgId. Please specify via the cdk context."
+      throw "No context value specified for projId. Please specify via the cdk context."
     }
 
     const profile = this.node.tryGetContext('profile') ?? 'default';

@@ -51,3 +51,51 @@ test("AtlasFederatedQueryLimit construct should contain default properties", () 
     Value: VALUE,
   });
 });
+
+test("AtlasFederatedQueryLimit construct should support overrunPolicy", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnFederatedQueryLimit(stack, "testing-stack", {
+    projectId: PROJECT_ID,
+    tenantName: TENANTNAME,
+    limitName: CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_DAILY,
+    value: VALUE,
+    overrunPolicy: "BLOCK",
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    LimitName: CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_DAILY,
+    OverrunPolicy: "BLOCK",
+  });
+});
+
+test("AtlasFederatedQueryLimit construct should support weekly and monthly limit names", () => {
+  const mockApp = new App();
+  const stackWeekly = new Stack(mockApp);
+  const stackMonthly = new Stack(new App());
+
+  new CfnFederatedQueryLimit(stackWeekly, "testing-stack-weekly", {
+    projectId: PROJECT_ID,
+    tenantName: TENANTNAME,
+    limitName: CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_WEEKLY,
+    value: VALUE,
+  });
+
+  new CfnFederatedQueryLimit(stackMonthly, "testing-stack-monthly", {
+    projectId: PROJECT_ID,
+    tenantName: TENANTNAME,
+    limitName: CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_MONTHLY,
+    value: VALUE,
+  });
+
+  Template.fromStack(stackWeekly).hasResourceProperties(RESOURCE_NAME, {
+    LimitName: CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_WEEKLY,
+  });
+
+  Template.fromStack(stackMonthly).hasResourceProperties(RESOURCE_NAME, {
+    LimitName: CfnFederatedQueryLimitPropsLimitName.BYTES_PROCESSED_MONTHLY,
+  });
+});

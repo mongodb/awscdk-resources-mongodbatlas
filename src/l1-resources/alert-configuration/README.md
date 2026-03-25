@@ -40,28 +40,29 @@ You can find more information about activating this type in the [AWS CloudFormat
 
 ## Example: [alert-configuration.ts](../../../examples/l1-resources/alert-configuration.ts)
 ```ts
-  import { 
-    CfnAlertConfiguration, NotificationViewTypeName, MetricThresholdViewOperator, MetricThresholdViewMode 
-  } from 'awscdk-resources-mongodbatlas';
+import {
+  CfnAlertConfiguration, NotificationViewTypeName, MetricThresholdViewOperator, MetricThresholdViewMode
+} from 'awscdk-resources-mongodbatlas';
 
-  const alert = new CfnAlertConfiguration(this, 'MyAlert', {
-    profile: 'default-cfn-andrea-angiolillo',
-    eventTypeName: 'OUTSIDE_METRIC_THRESHOLD', 
+const alert = new CfnAlertConfiguration(this, 'MyAlert', {
+    profile: atlasProps.profile,
+    projectId: atlasProps.projectId,
+    eventTypeName: 'OUTSIDE_METRIC_THRESHOLD',
     notifications: [{
-      typeName: NotificationViewTypeName.EMAIL,
-      delayMin: 0,
-      emailAddress: "test@test.com",
-      emailEnabled: true,
-      intervalMin: 15
+        typeName: NotificationViewTypeName.EMAIL,
+        delayMin: 0,
+        emailAddress: atlasProps.email,
+        emailEnabled: true,
+        intervalMin: 15,
     }],
     metricThreshold: {
-      metricName:'NORMALIZED_SYSTEM_CPU_USER',
-      operator: MetricThresholdViewOperator.GREATER_THAN,
-      threshold: 5,
-      units: 'RAW',
-      mode: MetricThresholdViewMode.AVERAGE,
-    }
-  }); 
+        metricName: 'NORMALIZED_SYSTEM_CPU_USER',
+        operator: MetricThresholdViewOperator.GREATER_THAN,
+        threshold: 5,
+        units: 'RAW',
+        mode: MetricThresholdViewMode.AVERAGE,
+    },
+});
 ```
 
 

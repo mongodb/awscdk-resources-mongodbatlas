@@ -1,0 +1,69 @@
+# log-integration
+
+The official [MongoDB Atlas](https://www.mongodb.com/) AWS CDK resource for Node.js.
+
+> AWS CDK [L1 construct] and data structures for the [AWS CloudFormation Registry] type `MongoDB::Atlas::LogIntegration` v1.0.0.
+
+[L1 construct]: https://docs.aws.amazon.com/cdk/latest/guide/constructs.html
+[AWS CloudFormation Registry]: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html
+
+## Description
+
+Provides access to push-based log export configurations for MongoDB Atlas. Supports creating, editing, and deleting log export integrations to cloud storage or log services. Currently supports S3 integration, allowing you to export log types (`MONGOD`, `MONGOS`, `MONGOD_AUDIT`, `MONGOS_AUDIT`) to an S3 bucket using an IAM role, with optional KMS encryption.
+
+## MongoDB Atlas API Docs
+
+For more information about the API refer to: [API Endpoints](https://www.mongodb.com/docs/api/doc/atlas-admin-api-v2/group/endpoint-log-collection-jobs)
+
+## Usage
+
+In order to use this library, you will need to activate this AWS CloudFormation Registry type in your account. You can do this via the AWS Management Console or using the [AWS CLI](https://aws.amazon.com/cli/) using the following command:
+
+```sh
+aws cloudformation activate-type \
+  --type-name MongoDB::Atlas::LogIntegration \
+  --publisher-id bb989456c78c398a858fef18f2ca1bfc1fbba082 \
+  --type RESOURCE \
+  --execution-role-arn ROLE-ARN
+```
+
+Alternatively:
+
+```sh
+aws cloudformation activate-type \
+  --public-type-arn arn:aws:cloudformation:us-east-1::type/resource/bb989456c78c398a858fef18f2ca1bfc1fbba082/MongoDB-Atlas-LogIntegration \
+  --execution-role-arn ROLE-ARN
+```
+
+You can find more information about activating this type in the [AWS CloudFormation documentation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html).
+
+## Example: [log-integration.ts](../../../examples/l1-resources/log-integration.ts)
+
+```ts
+import { CfnLogIntegration } from 'awscdk-resources-mongodbatlas';
+
+const logIntegration = new CfnLogIntegration(this, 'LogIntegration', {
+    projectId: atlasProps.projId,
+    profile: atlasProps.profile,
+    type: 'S3',
+    bucketName: atlasProps.bucketName,
+    iamRoleId: atlasProps.iamRoleId,
+    prefixPath: atlasProps.prefixPath,
+    logTypes: ['MONGOD', 'MONGOS', 'MONGOD_AUDIT', 'MONGOS_AUDIT'],
+    kmsKey: atlasProps.kmsKey,
+});
+```
+
+## Feedback
+
+This library is auto-generated and published to all supported programming languages by the [cdklabs/cdk-cloudformation] project based on the API schema published for `MongoDB::Atlas::LogIntegration`.
+
+* Issues related to this generated library should be [reported here](https://github.com/cdklabs/cdk-cloudformation/issues/new?title=Issue+with+%40cdk-cloudformation%2Fmongodb-atlas-logintegration+v1.0.0).
+* Issues related to `MongoDB::Atlas::LogIntegration` should be reported to the [publisher](https://github.com/mongodb/mongodbatlas-cloudformation-resources/issues).
+* Feature requests should be [reported here](https://feedback.mongodb.com/ideas?category=7548141186718564699)
+
+[cdklabs/cdk-cloudformation]: https://github.com/cdklabs/cdk-cloudformation
+
+## License
+
+Distributed under the Apache-2.0 License.
