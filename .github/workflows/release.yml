@@ -18,7 +18,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
       - name: Setup Node.js
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
       - uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654
@@ -30,7 +30,7 @@ jobs:
         name: Setup Python
         with:
           python-version: 3.x
-      - uses: actions/setup-dotnet@baa11fbfe1d6520db94683bd5c7a3818018e4309
+      - uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7
         name: Setup .NET
         with:
           dotnet-version: 9.0.x
@@ -62,12 +62,12 @@ jobs:
       issues: write
       id-token: write # Required for Trusted Publishing.
     steps:
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
           registry-url: https://registry.npmjs.org
       - name: Download build artifacts
-        uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
         with:
           name: build-artifact
           path: dist
@@ -90,11 +90,11 @@ jobs:
         with:
           distribution: temurin
           java-version: 21.x
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
       - name: Download build artifacts
-        uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
         with:
           name: build-artifact
           path: dist
@@ -119,14 +119,14 @@ jobs:
       issues: write
       id-token: write # Required for Trusted Publishing.
     steps:
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
       - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: 3.x
       - name: Download build artifacts
-        uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
         with:
           name: build-artifact
           path: dist
@@ -134,7 +134,7 @@ jobs:
         run: cd dist && setfacl --restore=permissions-backup.acl
         continue-on-error: true
       - name: Import GPG key
-        uses: crazy-max/ghaction-import-gpg@e89d40939c28e39f97cf32126055eeae86ba74ec
+        uses: crazy-max/ghaction-import-gpg@2dc316deee8e90f13e1a351ab510b4d5bc0c82cd
         with:
           gpg_private_key: ${{ secrets.APIX_BOT_GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.APIX_BOT_GPG_PASSPHRASE }}
@@ -160,14 +160,14 @@ jobs:
       issues: write
       id-token: write # Required for Trusted Publishing.
     steps:
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
-      - uses: actions/setup-dotnet@baa11fbfe1d6520db94683bd5c7a3818018e4309
+      - uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7
         with:
           dotnet-version: 9.0.x
       - name: Download build artifacts
-        uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
         with:
           name: build-artifact
           path: dist
@@ -178,7 +178,7 @@ jobs:
         id: extract-version
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
       - name: Log in to MongoDB Docker registry
-        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
+        uses: docker/login-action@b45d80f862d83dbcd57f89517bcf500b2ab88fb2
         with:
           registry: ${{ secrets.ARTIFACTORY_REGISTRY }}
           username: ${{ secrets.ARTIFACTORY_USER }}
@@ -208,14 +208,14 @@ jobs:
       contents: read
       issues: write
     steps:
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
       - uses: actions/setup-go@4b73464bb391d4059bd26b0524d20df3927bd417
         with:
           go-version: ^1.25.0
       - name: Download build artifacts
-        uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
         with:
           name: build-artifact
           path: dist
@@ -236,11 +236,11 @@ jobs:
       contents: write
       issues: write
     steps:
-      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238
+      - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
         with:
           node-version: 24.x
       - name: Download build artifacts
-        uses: actions/download-artifact@70fc10c6e5e1ce46ad2ea6f2b72d43f7d47b13c3
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
         with:
           name: build-artifact
           path: dist
@@ -284,7 +284,7 @@ jobs:
           KONDUKTO_REPO: ${{ vars.KONDUKTO_REPO }}
           KONDUKTO_BRANCH_PREFIX: ${{ vars.KONDUKTO_BRANCH_PREFIX }}
       - name: Import GPG key
-        uses: crazy-max/ghaction-import-gpg@e89d40939c28e39f97cf32126055eeae86ba74ec
+        uses: crazy-max/ghaction-import-gpg@2dc316deee8e90f13e1a351ab510b4d5bc0c82cd
         with:
           gpg_private_key: ${{ secrets.APIX_BOT_GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.APIX_BOT_GPG_PASSPHRASE }}
@@ -305,7 +305,7 @@ jobs:
             echo "No changes to commit."
           fi
       - name: Upload SBOM as release artifact
-        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b
+        uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe
         with:
           files: compliance/sbom.json
           tag_name: ${{ steps.extract-version.outputs.VERSION }}
