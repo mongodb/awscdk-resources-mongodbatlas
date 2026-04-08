@@ -43,9 +43,9 @@
     "@types/node": "^16 <= 16.18.78",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
-    "aws-cdk-lib": "2.200.1",
+    "aws-cdk-lib": "2.248.0",
     "commit-and-tag-version": "^12",
-    "constructs": "10.0.5",
+    "constructs": "10.5.0",
     "eslint": "^9",
     "eslint-config-prettier": "^8.10.2",
     "eslint-import-resolver-typescript": "^3.10.1",
@@ -64,8 +64,8 @@
     "typescript": "^5.7.2"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.200.1",
-    "constructs": "^10.0.5"
+    "aws-cdk-lib": "^2.248.0",
+    "constructs": "^10.5.0"
   },
   "keywords": [
     "atlas",
