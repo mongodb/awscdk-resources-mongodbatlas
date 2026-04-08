@@ -164,6 +164,7 @@ new AtlasBasic(scope: Construct, id: string, props: AtlasBasicProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.AtlasBasic.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasic.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -174,6 +175,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.AtlasBasic.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.AtlasBasic.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -321,6 +343,7 @@ new AtlasBasicPrivateEndpoint(scope: Construct, id: string, props: AtlasBasicPri
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -331,6 +354,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.AtlasBasicPrivateEndpoint.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -478,6 +522,7 @@ new AtlasEncryptionAtRest(scope: Construct, id: string, props: AtlasEncryptionAt
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -488,6 +533,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRest.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -602,6 +668,7 @@ new AtlasEncryptionAtRestExpress(scope: Construct, id: string, props: AtlasEncry
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -612,6 +679,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.AtlasEncryptionAtRestExpress.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -767,6 +855,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -792,6 +881,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.overrideLogicalId"></a>
 
@@ -1229,6 +1337,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.attrEntry">attrEntry</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::AccessListAPIKey.Entry`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKeyProps">CfnAccessListApiKeyProps</a></code> | Resource props. |
 
@@ -1326,6 +1435,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `attrEntry`<sup>Required</sup> <a name="attrEntry" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.property.attrEntry"></a>
 
 ```typescript
@@ -1419,6 +1538,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -1444,6 +1564,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.overrideLogicalId"></a>
 
@@ -1881,6 +2020,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.attrCreated">attrCreated</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::AlertConfiguration.Created`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.attrEnabled">attrEnabled</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::AlertConfiguration.Enabled`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::AlertConfiguration.Id`. |
@@ -1978,6 +2118,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -2110,6 +2260,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -2135,6 +2286,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnApiKey.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnApiKey.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnApiKey.overrideLogicalId"></a>
 
@@ -2572,6 +2742,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.attrAPIUserId">attrAPIUserId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::APIKey.APIUserId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.attrPrivateKey">attrPrivateKey</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::APIKey.PrivateKey`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.property.attrPublicKey">attrPublicKey</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::APIKey.PublicKey`. |
@@ -2668,6 +2839,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnApiKey.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -2788,6 +2969,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -2813,6 +2995,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnAuditing.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnAuditing.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnAuditing.overrideLogicalId"></a>
 
@@ -3250,6 +3451,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.property.attrAuditAuthorizationSuccess">attrAuditAuthorizationSuccess</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::Auditing.AuditAuthorizationSuccess`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.property.attrAuditFilter">attrAuditFilter</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Auditing.AuditFilter`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.property.attrConfigurationType">attrConfigurationType</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Auditing.ConfigurationType`. |
@@ -3346,6 +3548,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnAuditing.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -3466,6 +3678,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -3491,6 +3704,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.overrideLogicalId"></a>
 
@@ -3928,6 +4160,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.property.attrState">attrState</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::BackupCompliancePolicy.State`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.property.attrUpdatedDate">attrUpdatedDate</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::BackupCompliancePolicy.UpdatedDate`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.property.attrUpdatedUser">attrUpdatedUser</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::BackupCompliancePolicy.UpdatedUser`. |
@@ -4024,6 +4257,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -4144,6 +4387,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -4169,6 +4413,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.overrideLogicalId"></a>
 
@@ -4606,6 +4869,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrCancelled">attrCancelled</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.Cancelled`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrDeliveryUrl">attrDeliveryUrl</a></code> | <code>string[]</code> | Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.DeliveryUrl`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.attrExpired">attrExpired</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::CloudBackUpRestoreJobs.Expired`. |
@@ -4707,6 +4971,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -4887,6 +5161,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -4912,6 +5187,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.overrideLogicalId"></a>
 
@@ -5349,6 +5643,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.property.attrClusterId">attrClusterId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::CloudBackupSchedule.ClusterId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.property.attrNextSnapshot">attrNextSnapshot</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::CloudBackupSchedule.NextSnapshot`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupScheduleProps">CfnCloudBackupScheduleProps</a></code> | Resource props. |
@@ -5444,6 +5739,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -5552,6 +5857,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -5577,6 +5883,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.overrideLogicalId"></a>
 
@@ -6014,6 +6339,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.property.attrCloudProvider">attrCloudProvider</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::CloudBackupSnapshot.CloudProvider`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.property.attrCreatedAt">attrCreatedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::CloudBackupSnapshot.CreatedAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.property.attrExpiresAt">attrExpiresAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::CloudBackupSnapshot.ExpiresAt`. |
@@ -6119,6 +6445,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -6347,6 +6683,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -6372,6 +6709,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.overrideLogicalId"></a>
 
@@ -6809,6 +7165,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::CloudBackupSnapshotExportBucket.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucketProps">CfnCloudBackupSnapshotExportBucketProps</a></code> | Resource props. |
 
@@ -6906,6 +7263,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `attrId`<sup>Required</sup> <a name="attrId" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.property.attrId"></a>
 
 ```typescript
@@ -6999,6 +7366,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -7024,6 +7392,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnCluster.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnCluster.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnCluster.overrideLogicalId"></a>
 
@@ -7461,6 +7848,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.property.attrCreatedDate">attrCreatedDate</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Cluster.CreatedDate`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Cluster.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.property.attrMongoDBVersion">attrMongoDBVersion</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Cluster.MongoDBVersion`. |
@@ -7558,6 +7946,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnCluster.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -7690,6 +8088,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -7715,6 +8114,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.overrideLogicalId"></a>
 
@@ -8152,6 +8570,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.property.attrSimulationId">attrSimulationId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ClusterOutageSimulation.SimulationId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.property.attrStartRequestDate">attrStartRequestDate</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ClusterOutageSimulation.StartRequestDate`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.property.attrState">attrState</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ClusterOutageSimulation.State`. |
@@ -8248,6 +8667,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -8368,6 +8797,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -8393,6 +8823,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.overrideLogicalId"></a>
 
@@ -8830,6 +9279,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRoleProps">CfnCustomDbRoleProps</a></code> | Resource props. |
 
 ---
@@ -8926,6 +9376,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.property.props"></a>
 
 ```typescript
@@ -9007,6 +9467,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -9032,6 +9493,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.overrideLogicalId"></a>
 
@@ -9469,6 +9949,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAwsProps">CfnCustomDnsConfigurationClusterAwsProps</a></code> | Resource props. |
 
 ---
@@ -9565,6 +10046,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.property.props"></a>
 
 ```typescript
@@ -9646,6 +10137,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -9671,6 +10163,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.overrideLogicalId"></a>
 
@@ -10108,6 +10619,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.property.attrUserCFNIdentifier">attrUserCFNIdentifier</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::DatabaseUser.UserCFNIdentifier`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUserProps">CfnDatabaseUserProps</a></code> | Resource props. |
 
@@ -10205,6 +10717,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `attrUserCFNIdentifier`<sup>Required</sup> <a name="attrUserCFNIdentifier" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.property.attrUserCFNIdentifier"></a>
 
 ```typescript
@@ -10298,6 +10820,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -10323,6 +10846,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.overrideLogicalId"></a>
 
@@ -10760,6 +11302,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::EncryptionAtRest.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRestProps">CfnEncryptionAtRestProps</a></code> | Resource props. |
 
@@ -10857,6 +11400,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `attrId`<sup>Required</sup> <a name="attrId" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.property.attrId"></a>
 
 ```typescript
@@ -10950,6 +11503,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -10975,6 +11529,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.overrideLogicalId"></a>
 
@@ -11412,6 +11985,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrHostNames">attrHostNames</a></code> | <code>string[]</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.HostNames`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.attrState">attrState</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedDatabaseInstance.State`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstanceProps">CfnFederatedDatabaseInstanceProps</a></code> | Resource props. |
@@ -11507,6 +12081,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -11615,6 +12199,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -11640,6 +12225,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.overrideLogicalId"></a>
 
@@ -12077,6 +12681,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.attrCurrentUsage">attrCurrentUsage</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedQueryLimit.CurrentUsage`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.attrDefaultLimit">attrDefaultLimit</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedQueryLimit.DefaultLimit`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.attrLastModifiedDate">attrLastModifiedDate</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedQueryLimit.LastModifiedDate`. |
@@ -12174,6 +12779,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -12306,6 +12921,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -12331,6 +12947,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.overrideLogicalId"></a>
 
@@ -12768,6 +13403,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.property.attrIdpId">attrIdpId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedSettingsIdentityProvider.IdpId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.property.attrOktaIdpId">attrOktaIdpId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedSettingsIdentityProvider.OktaIdpId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProviderProps">CfnFederatedSettingsIdentityProviderProps</a></code> | Resource props. |
@@ -12863,6 +13499,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -12971,6 +13617,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -12996,6 +13643,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.overrideLogicalId"></a>
 
@@ -13433,6 +14099,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FederatedSettingsOrgRoleMapping.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMappingProps">CfnFederatedSettingsOrgRoleMappingProps</a></code> | Resource props. |
 
@@ -13530,6 +14197,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `attrId`<sup>Required</sup> <a name="attrId" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.property.attrId"></a>
 
 ```typescript
@@ -13623,6 +14300,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -13648,6 +14326,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnFlexCluster.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnFlexCluster.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnFlexCluster.overrideLogicalId"></a>
 
@@ -14085,6 +14782,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrClusterType">attrClusterType</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FlexCluster.ClusterType`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrCreateDate">attrCreateDate</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FlexCluster.CreateDate`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::FlexCluster.Id`. |
@@ -14184,6 +14882,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnFlexCluster.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -14340,6 +15048,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -14365,6 +15074,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.overrideLogicalId"></a>
 
@@ -14802,6 +15530,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.attrRemoveAllZoneMapping">attrRemoveAllZoneMapping</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::GlobalClusterConfig.RemoveAllZoneMapping`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfigProps">CfnGlobalClusterConfigProps</a></code> | Resource props. |
 
@@ -14899,6 +15628,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `attrRemoveAllZoneMapping`<sup>Required</sup> <a name="attrRemoveAllZoneMapping" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.property.attrRemoveAllZoneMapping"></a>
 
 ```typescript
@@ -14992,6 +15731,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -15017,6 +15757,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.overrideLogicalId"></a>
 
@@ -15454,6 +16213,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfigurationProps">CfnLdapConfigurationProps</a></code> | Resource props. |
 
 ---
@@ -15550,6 +16310,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.property.props"></a>
 
 ```typescript
@@ -15631,6 +16401,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -15656,6 +16427,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnLdapVerify.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnLdapVerify.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnLdapVerify.overrideLogicalId"></a>
 
@@ -16093,6 +16883,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.property.attrRequestId">attrRequestId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::LDAPVerify.RequestId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.property.attrStatus">attrStatus</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::LDAPVerify.Status`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerifyProps">CfnLdapVerifyProps</a></code> | Resource props. |
@@ -16188,6 +16979,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnLdapVerify.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -16296,6 +17097,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -16321,6 +17123,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnLogIntegration.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnLogIntegration.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnLogIntegration.overrideLogicalId"></a>
 
@@ -16758,6 +17579,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.property.attrIntegrationId">attrIntegrationId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::LogIntegration.IntegrationId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegrationProps">CfnLogIntegrationProps</a></code> | Resource props. |
 
@@ -16855,6 +17677,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnLogIntegration.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `attrIntegrationId`<sup>Required</sup> <a name="attrIntegrationId" id="awscdk-resources-mongodbatlas.CfnLogIntegration.property.attrIntegrationId"></a>
 
 ```typescript
@@ -16948,6 +17780,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -16973,6 +17806,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.overrideLogicalId"></a>
 
@@ -17410,6 +18262,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.attrNumberOfDeferrals">attrNumberOfDeferrals</a></code> | <code>number</code> | Attribute `MongoDB::Atlas::MaintenanceWindow.NumberOfDeferrals`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.attrStartASAP">attrStartASAP</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::MaintenanceWindow.StartASAP`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.attrTimeZoneId">attrTimeZoneId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::MaintenanceWindow.TimeZoneId`. |
@@ -17506,6 +18359,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -17626,6 +18489,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -17651,6 +18515,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.overrideLogicalId"></a>
 
@@ -18088,6 +18971,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrantProps">CfnMongoDbEmployeeAccessGrantProps</a></code> | Resource props. |
 
 ---
@@ -18184,6 +19068,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.property.props"></a>
 
 ```typescript
@@ -18265,6 +19159,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -18290,6 +19185,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.overrideLogicalId"></a>
 
@@ -18727,6 +19641,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::NetworkContainer.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainerProps">CfnNetworkContainerProps</a></code> | Resource props. |
 
@@ -18824,6 +19739,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `attrId`<sup>Required</sup> <a name="attrId" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.property.attrId"></a>
 
 ```typescript
@@ -18917,6 +19842,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -18942,6 +19868,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.overrideLogicalId"></a>
 
@@ -19379,6 +20324,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.property.attrConnectionId">attrConnectionId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::NetworkPeering.ConnectionId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.property.attrErrorStateName">attrErrorStateName</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::NetworkPeering.ErrorStateName`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::NetworkPeering.Id`. |
@@ -19476,6 +20422,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -19608,6 +20564,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -19633,6 +20590,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.overrideLogicalId"></a>
 
@@ -20070,6 +21046,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.property.attrArchiveId">attrArchiveId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::OnlineArchive.ArchiveId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.property.attrState">attrState</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::OnlineArchive.State`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.property.attrTotalCount">attrTotalCount</a></code> | <code>number</code> | Attribute `MongoDB::Atlas::OnlineArchive.TotalCount`. |
@@ -20166,6 +21143,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -20286,6 +21273,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -20311,6 +21299,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnOrganization.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnOrganization.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnOrganization.overrideLogicalId"></a>
 
@@ -20748,6 +21755,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.property.attrOrgId">attrOrgId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Organization.OrgId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganizationProps">CfnOrganizationProps</a></code> | Resource props. |
 
@@ -20845,6 +21853,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnOrganization.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `attrOrgId`<sup>Required</sup> <a name="attrOrgId" id="awscdk-resources-mongodbatlas.CfnOrganization.property.attrOrgId"></a>
 
 ```typescript
@@ -20938,6 +21956,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -20963,6 +21982,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.overrideLogicalId"></a>
 
@@ -21400,6 +22438,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.property.attrCreatedAt">attrCreatedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::OrgInvitation.CreatedAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.property.attrExpiresAt">attrExpiresAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::OrgInvitation.ExpiresAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::OrgInvitation.Id`. |
@@ -21497,6 +22536,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -21629,6 +22678,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -21654,6 +22704,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.overrideLogicalId"></a>
 
@@ -22091,6 +23160,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::PrivateEndpoint.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.property.attrInterfaceEndpoints">attrInterfaceEndpoints</a></code> | <code>string[]</code> | Attribute `MongoDB::Atlas::PrivateEndpoint.InterfaceEndpoints`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointProps">CfnPrivateEndpointProps</a></code> | Resource props. |
@@ -22186,6 +23256,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -22294,6 +23374,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -22319,6 +23400,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.overrideLogicalId"></a>
 
@@ -22756,6 +23856,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.attrConnectionStatus">attrConnectionStatus</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::PrivateEndpointAWS.ConnectionStatus`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.attrDeleteRequested">attrDeleteRequested</a></code> | <code>aws-cdk-lib.IResolvable</code> | Attribute `MongoDB::Atlas::PrivateEndpointAWS.DeleteRequested`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.attrErrorMessage">attrErrorMessage</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::PrivateEndpointAWS.ErrorMessage`. |
@@ -22853,6 +23954,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -22985,6 +24096,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -23010,6 +24122,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.overrideLogicalId"></a>
 
@@ -23447,6 +24578,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalModeProps">CfnPrivateEndPointRegionalModeProps</a></code> | Resource props. |
 
 ---
@@ -23543,6 +24675,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.property.props"></a>
 
 ```typescript
@@ -23624,6 +24766,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -23649,6 +24792,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.overrideLogicalId"></a>
 
@@ -24086,6 +25248,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.property.attrEndpointServiceName">attrEndpointServiceName</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::PrivateEndpointService.EndpointServiceName`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.property.attrErrorMessage">attrErrorMessage</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::PrivateEndpointService.ErrorMessage`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::PrivateEndpointService.Id`. |
@@ -24184,6 +25347,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -24328,6 +25501,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -24353,6 +25527,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.overrideLogicalId"></a>
 
@@ -24790,6 +25983,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps">CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps</a></code> | Resource props. |
 
 ---
@@ -24886,6 +26080,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.property.props"></a>
 
 ```typescript
@@ -24967,6 +26171,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -24992,6 +26197,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnProject.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnProject.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnProject.overrideLogicalId"></a>
 
@@ -25429,6 +26653,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrClusterCount">attrClusterCount</a></code> | <code>number</code> | Attribute `MongoDB::Atlas::Project.ClusterCount`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrCreated">attrCreated</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Project.Created`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Project.Id`. |
@@ -25525,6 +26750,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnProject.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -25645,6 +26880,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -25670,6 +26906,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.overrideLogicalId"></a>
 
@@ -26107,6 +27362,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.property.attrCreatedAt">attrCreatedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ProjectInvitation.CreatedAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.property.attrExpiresAt">attrExpiresAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ProjectInvitation.ExpiresAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ProjectInvitation.Id`. |
@@ -26204,6 +27460,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -26336,6 +27602,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -26361,6 +27628,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.overrideLogicalId"></a>
 
@@ -26798,6 +28084,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.attrTotalCount">attrTotalCount</a></code> | <code>number</code> | Attribute `MongoDB::Atlas::ProjectIpAccessList.TotalCount`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessListProps">CfnProjectIpAccessListProps</a></code> | Resource props. |
 
@@ -26895,6 +28182,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `attrTotalCount`<sup>Required</sup> <a name="attrTotalCount" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.property.attrTotalCount"></a>
 
 ```typescript
@@ -26988,6 +28285,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -27013,6 +28311,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.overrideLogicalId"></a>
 
@@ -27450,6 +28767,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.property.attrClientId">attrClientId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ProjectServiceAccount.ClientId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.property.attrCreatedAt">attrCreatedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ProjectServiceAccount.CreatedAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountProps">CfnProjectServiceAccountProps</a></code> | Resource props. |
@@ -27545,6 +28863,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -27653,6 +28981,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -27678,6 +29007,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.overrideLogicalId"></a>
 
@@ -28115,6 +29463,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.property.attrCreatedAt">attrCreatedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ProjectServiceAccountAccessListEntry.CreatedAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.property.attrLastUsedAddress">attrLastUsedAddress</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ProjectServiceAccountAccessListEntry.LastUsedAddress`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.property.attrLastUsedAt">attrLastUsedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ProjectServiceAccountAccessListEntry.LastUsedAt`. |
@@ -28212,6 +29561,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -28344,6 +29703,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -28369,6 +29729,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.overrideLogicalId"></a>
 
@@ -28806,6 +30185,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.property.attrCreatedAt">attrCreatedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ProjectServiceAccountSecret.CreatedAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.property.attrExpiresAt">attrExpiresAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ProjectServiceAccountSecret.ExpiresAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.property.attrLastUsedAt">attrLastUsedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ProjectServiceAccountSecret.LastUsedAt`. |
@@ -28905,6 +30285,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -29061,6 +30451,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -29086,6 +30477,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.overrideLogicalId"></a>
 
@@ -29523,6 +30933,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.property.attrCreatedDate">attrCreatedDate</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ResourcePolicy.CreatedDate`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ResourcePolicy.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.property.attrLastUpdatedDate">attrLastUpdatedDate</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ResourcePolicy.LastUpdatedDate`. |
@@ -29620,6 +31031,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -29752,6 +31173,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -29777,6 +31199,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.overrideLogicalId"></a>
 
@@ -30214,6 +31655,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.attrEncryptionAtRestProvider">attrEncryptionAtRestProvider</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::SearchDeployment.EncryptionAtRestProvider`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::SearchDeployment.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.property.attrStateName">attrStateName</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::SearchDeployment.StateName`. |
@@ -30310,6 +31752,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -30430,6 +31882,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -30455,6 +31908,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnSearchIndex.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnSearchIndex.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnSearchIndex.overrideLogicalId"></a>
 
@@ -30892,6 +32364,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.property.attrIndexId">attrIndexId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::SearchIndex.IndexId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.property.attrStatus">attrStatus</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::SearchIndex.Status`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndexProps">CfnSearchIndexProps</a></code> | Resource props. |
@@ -30987,6 +32460,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnSearchIndex.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -31095,6 +32578,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -31120,6 +32604,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnServiceAccount.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnServiceAccount.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnServiceAccount.overrideLogicalId"></a>
 
@@ -31557,6 +33060,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.property.attrClientId">attrClientId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServiceAccount.ClientId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.property.attrCreatedAt">attrCreatedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServiceAccount.CreatedAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProps">CfnServiceAccountProps</a></code> | Resource props. |
@@ -31652,6 +33156,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnServiceAccount.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -31760,6 +33274,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -31785,6 +33300,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.overrideLogicalId"></a>
 
@@ -32222,6 +33756,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.property.attrCreatedAt">attrCreatedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServiceAccountAccessListEntry.CreatedAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.property.attrLastUsedAddress">attrLastUsedAddress</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServiceAccountAccessListEntry.LastUsedAddress`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.property.attrLastUsedAt">attrLastUsedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServiceAccountAccessListEntry.LastUsedAt`. |
@@ -32319,6 +33854,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -32451,6 +33996,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -32476,6 +34022,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.overrideLogicalId"></a>
 
@@ -32913,6 +34478,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignmentProps">CfnServiceAccountProjectAssignmentProps</a></code> | Resource props. |
 
 ---
@@ -33009,6 +34575,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.property.props"></a>
 
 ```typescript
@@ -33090,6 +34666,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -33115,6 +34692,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.overrideLogicalId"></a>
 
@@ -33552,6 +35148,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.property.attrCreatedAt">attrCreatedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServiceAccountSecret.CreatedAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.property.attrExpiresAt">attrExpiresAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServiceAccountSecret.ExpiresAt`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.property.attrLastUsedAt">attrLastUsedAt</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::ServiceAccountSecret.LastUsedAt`. |
@@ -33651,6 +35248,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -33807,6 +35414,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -33832,6 +35440,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnStreamConnection.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnStreamConnection.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnStreamConnection.overrideLogicalId"></a>
 
@@ -34269,6 +35896,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnectionProps">CfnStreamConnectionProps</a></code> | Resource props. |
 
 ---
@@ -34365,6 +35993,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnStreamConnection.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnStreamConnection.property.props"></a>
 
 ```typescript
@@ -34446,6 +36084,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -34471,6 +36110,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnStreamInstance.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnStreamInstance.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnStreamInstance.overrideLogicalId"></a>
 
@@ -34908,6 +36566,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.property.attrHostnames">attrHostnames</a></code> | <code>string[]</code> | Attribute `MongoDB::Atlas::StreamInstance.Hostnames`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::StreamInstance.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstanceProps">CfnStreamInstanceProps</a></code> | Resource props. |
@@ -35003,6 +36662,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnStreamInstance.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -35111,6 +36780,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -35136,6 +36806,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.overrideLogicalId"></a>
 
@@ -35573,6 +37262,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.property.attrErrorMessage">attrErrorMessage</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::StreamPrivatelinkEndpoint.ErrorMessage`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::StreamPrivatelinkEndpoint.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.property.attrInterfaceEndpointId">attrInterfaceEndpointId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::StreamPrivatelinkEndpoint.InterfaceEndpointId`. |
@@ -35672,6 +37362,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -35828,6 +37528,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -35853,6 +37554,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.overrideLogicalId"></a>
 
@@ -36290,6 +38010,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::StreamProcessor.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.property.attrState">attrState</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::StreamProcessor.State`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.property.attrStats">attrStats</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::StreamProcessor.Stats`. |
@@ -36386,6 +38107,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -36506,6 +38237,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -36531,6 +38263,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.overrideLogicalId"></a>
 
@@ -36968,6 +38719,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.property.attrHostnames">attrHostnames</a></code> | <code>string[]</code> | Attribute `MongoDB::Atlas::StreamWorkspace.Hostnames`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::StreamWorkspace.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspaceProps">CfnStreamWorkspaceProps</a></code> | Resource props. |
@@ -37063,6 +38815,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -37171,6 +38933,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -37196,6 +38959,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnTeams.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnTeams.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnTeams.overrideLogicalId"></a>
 
@@ -37633,6 +39415,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.property.attrTeamId">attrTeamId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Teams.TeamId`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnTeamsProps">CfnTeamsProps</a></code> | Resource props. |
 
@@ -37730,6 +39513,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnTeams.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `attrTeamId`<sup>Required</sup> <a name="attrTeamId" id="awscdk-resources-mongodbatlas.CfnTeams.property.attrTeamId"></a>
 
 ```typescript
@@ -37823,6 +39616,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -37848,6 +39642,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.overrideLogicalId"></a>
 
@@ -38285,6 +40098,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegrationProps">CfnThirdPartyIntegrationProps</a></code> | Resource props. |
 
 ---
@@ -38381,6 +40195,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `props`<sup>Required</sup> <a name="props" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.property.props"></a>
 
 ```typescript
@@ -38462,6 +40286,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -38487,6 +40312,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnTrigger.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnTrigger.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnTrigger.overrideLogicalId"></a>
 
@@ -38924,6 +40768,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.property.attrId">attrId</a></code> | <code>string</code> | Attribute `MongoDB::Atlas::Trigger.Id`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnTriggerProps">CfnTriggerProps</a></code> | Resource props. |
 
@@ -39021,6 +40866,16 @@ AWS resource type.
 
 ---
 
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnTrigger.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
+
+---
+
 ##### `attrId`<sup>Required</sup> <a name="attrId" id="awscdk-resources-mongodbatlas.CfnTrigger.property.attrId"></a>
 
 ```typescript
@@ -39114,6 +40969,7 @@ resource properties.
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addDeletionOverride">addDeletionOverride</a></code> | Syntactic sugar for `addOverride(path, undefined)`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addDependency">addDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
@@ -39139,6 +40995,25 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+---
 
 ##### `overrideLogicalId` <a name="overrideLogicalId" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.overrideLogicalId"></a>
 
@@ -39576,6 +41451,7 @@ Check whether the given object is a CfnResource.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.ref">ref</a></code> | <code>string</code> | Return a string that will be resolved to a CloudFormation `{ Ref }` for this element. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.cfnOptions">cfnOptions</a></code> | <code>aws-cdk-lib.ICfnResourceOptions</code> | Options for this resource, such as condition, update policy etc. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.cfnResourceType">cfnResourceType</a></code> | <code>string</code> | AWS resource type. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.env">env</a></code> | <code>aws-cdk-lib.interfaces.ResourceEnvironment</code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.attrMonthsUntilExpiration">attrMonthsUntilExpiration</a></code> | <code>number</code> | Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.MonthsUntilExpiration`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.attrTotalCount">attrTotalCount</a></code> | <code>number</code> | Attribute `MongoDB::Atlas::X509AuthenticationDatabaseUser.TotalCount`. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.props">props</a></code> | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUserProps">CfnX509AuthenticationDatabaseUserProps</a></code> | Resource props. |
@@ -39671,6 +41547,16 @@ public readonly cfnResourceType: string;
 - *Type:* string
 
 AWS resource type.
+
+---
+
+##### `env`<sup>Required</sup> <a name="env" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.property.env"></a>
+
+```typescript
+public readonly env: ResourceEnvironment;
+```
+
+- *Type:* aws-cdk-lib.interfaces.ResourceEnvironment
 
 ---
 
@@ -39771,6 +41657,7 @@ new DatadogIntegration(scope: Construct, id: string, props: DatadogIntegrationPr
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegration.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.DatadogIntegration.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -39781,6 +41668,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.DatadogIntegration.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.DatadogIntegration.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -39895,6 +41803,7 @@ new MicrosoftTeamsIntegration(scope: Construct, id: string, props: MicrosoftTeam
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -39905,6 +41814,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.MicrosoftTeamsIntegration.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -40023,6 +41953,7 @@ new MongoAtlasBootstrap(scope: Construct, id: string, props?: MongoAtlasBootstra
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrap.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoAtlasBootstrap.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -40033,6 +41964,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.MongoAtlasBootstrap.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -40147,6 +42099,7 @@ new MongoSecretProfile(scope: Construct, id: string, profileName: string)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.MongoSecretProfile.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.MongoSecretProfile.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -40157,6 +42110,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.MongoSecretProfile.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.MongoSecretProfile.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
@@ -40260,6 +42234,7 @@ new PagerDutyIntegration(scope: Construct, id: string, props: PagerDutyIntegrati
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegration.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#awscdk-resources-mongodbatlas.PagerDutyIntegration.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -40270,6 +42245,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="awscdk-resources-mongodbatlas.PagerDutyIntegration.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
