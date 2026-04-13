@@ -48,7 +48,7 @@ jobs:
         run: cd dist && getfacl -R . > permissions-backup.acl
         continue-on-error: true
       - name: Upload artifact
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: build-artifact
           path: dist
@@ -148,7 +148,7 @@ jobs:
         env:
           APIX_BOT_GPG_PASSPHRASE: ${{ secrets.APIX_BOT_GPG_PASSPHRASE }}
       - name: Upload to PyPI
-        uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e
+        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b
         with:
           packages-dir: dist/python/
   release_nuget:
@@ -305,7 +305,7 @@ jobs:
             echo "No changes to commit."
           fi
       - name: Upload SBOM as release artifact
-        uses: softprops/action-gh-release@153bb8e04406b158c6c84fc1615b65b24149a1fe
+        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda
         with:
           files: compliance/sbom.json
           tag_name: ${{ steps.extract-version.outputs.VERSION }}
