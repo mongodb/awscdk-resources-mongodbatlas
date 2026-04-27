@@ -224,7 +224,7 @@ export interface ProcessArgs {
   readonly javascriptEnabled?: boolean;
 
   /**
-   * Minimum Transport Layer Security (TLS) version that the cluster accepts for incoming connections. Valid values are TLS1_2 and TLS1_3.
+   * Minimum Transport Layer Security (TLS) version that the cluster accepts for incoming connections. Valid values include `TLS1_2` and `TLS1_3`.
    *
    * @schema processArgs#MinimumEnabledTLSProtocol
    */
