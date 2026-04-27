@@ -55806,7 +55806,7 @@ public readonly minimumEnabledTlsProtocol: string;
 
 Minimum Transport Layer Security (TLS) version that the cluster accepts for incoming connections.
 
-Valid values are: `TLS1_2` and `TLS1_3`.
+Valid values are `TLS1_2` and `TLS1_3`.
 
 ---
 
