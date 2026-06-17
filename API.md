@@ -864,7 +864,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -1107,6 +1109,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.applyRemovalPolicy"></a>
 
 ```typescript
@@ -1137,6 +1158,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -1192,7 +1225,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -1547,7 +1580,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -1790,6 +1825,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.applyRemovalPolicy"></a>
 
 ```typescript
@@ -1820,6 +1874,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -1875,7 +1941,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -2269,7 +2335,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -2512,6 +2580,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnApiKey.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnApiKey.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnApiKey.applyRemovalPolicy"></a>
 
 ```typescript
@@ -2542,6 +2629,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnApiKey.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnApiKey.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnApiKey.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -2597,7 +2696,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnApiKey.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -2978,7 +3077,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -3221,6 +3322,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnAuditing.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnAuditing.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnAuditing.applyRemovalPolicy"></a>
 
 ```typescript
@@ -3251,6 +3371,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnAuditing.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnAuditing.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnAuditing.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -3306,7 +3438,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnAuditing.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -3687,7 +3819,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -3930,6 +4064,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.applyRemovalPolicy"></a>
 
 ```typescript
@@ -3960,6 +4113,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -4015,7 +4180,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -4396,7 +4561,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -4639,6 +4806,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.applyRemovalPolicy"></a>
 
 ```typescript
@@ -4669,6 +4855,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -4724,7 +4922,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -5170,7 +5368,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -5413,6 +5613,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.applyRemovalPolicy"></a>
 
 ```typescript
@@ -5443,6 +5662,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -5498,7 +5729,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -5866,7 +6097,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -6109,6 +6342,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.applyRemovalPolicy"></a>
 
 ```typescript
@@ -6139,6 +6391,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -6194,7 +6458,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -6692,7 +6956,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -6935,6 +7201,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.applyRemovalPolicy"></a>
 
 ```typescript
@@ -6965,6 +7250,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -7020,7 +7317,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -7375,7 +7672,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -7618,6 +7917,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCluster.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnCluster.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnCluster.applyRemovalPolicy"></a>
 
 ```typescript
@@ -7648,6 +7966,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnCluster.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnCluster.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnCluster.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -7703,7 +8033,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCluster.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -8097,7 +8427,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -8340,6 +8672,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.applyRemovalPolicy"></a>
 
 ```typescript
@@ -8370,6 +8721,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -8425,7 +8788,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -8806,7 +9169,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -9049,6 +9414,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.applyRemovalPolicy"></a>
 
 ```typescript
@@ -9079,6 +9463,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -9134,7 +9530,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -9476,7 +9872,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -9719,6 +10117,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.applyRemovalPolicy"></a>
 
 ```typescript
@@ -9749,6 +10166,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -9804,7 +10233,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -10146,7 +10575,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -10389,6 +10820,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.applyRemovalPolicy"></a>
 
 ```typescript
@@ -10419,6 +10869,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -10474,7 +10936,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -10829,7 +11291,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -11072,6 +11536,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.applyRemovalPolicy"></a>
 
 ```typescript
@@ -11102,6 +11585,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -11157,7 +11652,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -11512,7 +12007,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -11755,6 +12252,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.applyRemovalPolicy"></a>
 
 ```typescript
@@ -11785,6 +12301,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -11840,7 +12368,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -12208,7 +12736,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -12451,6 +12981,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.applyRemovalPolicy"></a>
 
 ```typescript
@@ -12481,6 +13030,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -12536,7 +13097,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -12930,7 +13491,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -13173,6 +13736,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.applyRemovalPolicy"></a>
 
 ```typescript
@@ -13203,6 +13785,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -13258,7 +13852,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -13626,7 +14220,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -13869,6 +14465,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.applyRemovalPolicy"></a>
 
 ```typescript
@@ -13899,6 +14514,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -13954,7 +14581,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -14309,7 +14936,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -14552,6 +15181,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnFlexCluster.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnFlexCluster.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnFlexCluster.applyRemovalPolicy"></a>
 
 ```typescript
@@ -14582,6 +15230,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnFlexCluster.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnFlexCluster.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnFlexCluster.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -14637,7 +15297,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFlexCluster.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -15057,7 +15717,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -15300,6 +15962,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.applyRemovalPolicy"></a>
 
 ```typescript
@@ -15330,6 +16011,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -15385,7 +16078,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -15740,7 +16433,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -15983,6 +16678,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.applyRemovalPolicy"></a>
 
 ```typescript
@@ -16013,6 +16727,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -16068,7 +16794,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -16410,7 +17136,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -16653,6 +17381,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnLdapVerify.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnLdapVerify.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnLdapVerify.applyRemovalPolicy"></a>
 
 ```typescript
@@ -16683,6 +17430,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnLdapVerify.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnLdapVerify.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnLdapVerify.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -16738,7 +17497,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnLdapVerify.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -17106,7 +17865,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -17349,6 +18110,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnLogIntegration.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnLogIntegration.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnLogIntegration.applyRemovalPolicy"></a>
 
 ```typescript
@@ -17379,6 +18159,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnLogIntegration.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnLogIntegration.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnLogIntegration.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -17434,7 +18226,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnLogIntegration.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -17789,7 +18581,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -18032,6 +18826,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.applyRemovalPolicy"></a>
 
 ```typescript
@@ -18062,6 +18875,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -18117,7 +18942,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -18498,7 +19323,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -18741,6 +19568,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.applyRemovalPolicy"></a>
 
 ```typescript
@@ -18771,6 +19617,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -18826,7 +19684,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -19168,7 +20026,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -19411,6 +20271,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.applyRemovalPolicy"></a>
 
 ```typescript
@@ -19441,6 +20320,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -19496,7 +20387,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -19851,7 +20742,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -20094,6 +20987,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.applyRemovalPolicy"></a>
 
 ```typescript
@@ -20124,6 +21036,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -20179,7 +21103,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -20573,7 +21497,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -20816,6 +21742,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.applyRemovalPolicy"></a>
 
 ```typescript
@@ -20846,6 +21791,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -20901,7 +21858,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -21282,7 +22239,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -21525,6 +22484,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnOrganization.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnOrganization.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnOrganization.applyRemovalPolicy"></a>
 
 ```typescript
@@ -21555,6 +22533,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnOrganization.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnOrganization.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnOrganization.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -21610,7 +22600,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnOrganization.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -21965,7 +22955,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -22208,6 +23200,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.applyRemovalPolicy"></a>
 
 ```typescript
@@ -22238,6 +23249,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -22293,7 +23316,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -22687,7 +23710,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -22930,6 +23955,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.applyRemovalPolicy"></a>
 
 ```typescript
@@ -22960,6 +24004,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -23015,7 +24071,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -23383,7 +24439,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -23626,6 +24684,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.applyRemovalPolicy"></a>
 
 ```typescript
@@ -23656,6 +24733,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -23711,7 +24800,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -24105,7 +25194,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -24348,6 +25439,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.applyRemovalPolicy"></a>
 
 ```typescript
@@ -24378,6 +25488,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -24433,7 +25555,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -24775,7 +25897,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -25018,6 +26142,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.applyRemovalPolicy"></a>
 
 ```typescript
@@ -25048,6 +26191,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -25103,7 +26258,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -25510,7 +26665,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -25753,6 +26910,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.applyRemovalPolicy"></a>
 
 ```typescript
@@ -25783,6 +26959,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -25838,7 +27026,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -26180,7 +27368,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -26423,6 +27613,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnProject.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnProject.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnProject.applyRemovalPolicy"></a>
 
 ```typescript
@@ -26453,6 +27662,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnProject.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnProject.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnProject.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -26508,7 +27729,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProject.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -26889,7 +28110,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -27132,6 +28355,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.applyRemovalPolicy"></a>
 
 ```typescript
@@ -27162,6 +28404,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -27217,7 +28471,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -27611,7 +28865,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -27854,6 +29110,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.applyRemovalPolicy"></a>
 
 ```typescript
@@ -27884,6 +29159,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -27939,7 +29226,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -28294,7 +29581,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -28537,6 +29826,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.applyRemovalPolicy"></a>
 
 ```typescript
@@ -28567,6 +29875,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -28622,7 +29942,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -28990,7 +30310,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -29233,6 +30555,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.applyRemovalPolicy"></a>
 
 ```typescript
@@ -29263,6 +30604,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -29318,7 +30671,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -29712,7 +31065,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -29955,6 +31310,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.applyRemovalPolicy"></a>
 
 ```typescript
@@ -29985,6 +31359,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -30040,7 +31426,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -30460,7 +31846,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -30703,6 +32091,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.applyRemovalPolicy"></a>
 
 ```typescript
@@ -30733,6 +32140,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -30788,7 +32207,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -31182,7 +32601,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -31425,6 +32846,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.applyRemovalPolicy"></a>
 
 ```typescript
@@ -31455,6 +32895,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -31510,7 +32962,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -31891,7 +33343,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -32134,6 +33588,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnSearchIndex.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnSearchIndex.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnSearchIndex.applyRemovalPolicy"></a>
 
 ```typescript
@@ -32164,6 +33637,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnSearchIndex.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnSearchIndex.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnSearchIndex.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -32219,7 +33704,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnSearchIndex.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -32587,7 +34072,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -32830,6 +34317,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnServiceAccount.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnServiceAccount.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnServiceAccount.applyRemovalPolicy"></a>
 
 ```typescript
@@ -32860,6 +34366,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnServiceAccount.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnServiceAccount.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnServiceAccount.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -32915,7 +34433,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnServiceAccount.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -33283,7 +34801,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -33526,6 +35046,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.applyRemovalPolicy"></a>
 
 ```typescript
@@ -33556,6 +35095,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -33611,7 +35162,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -34005,7 +35556,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -34248,6 +35801,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.applyRemovalPolicy"></a>
 
 ```typescript
@@ -34278,6 +35850,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -34333,7 +35917,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -34675,7 +36259,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -34918,6 +36504,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.applyRemovalPolicy"></a>
 
 ```typescript
@@ -34948,6 +36553,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -35003,7 +36620,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -35423,7 +37040,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -35666,6 +37285,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnStreamConnection.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnStreamConnection.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnStreamConnection.applyRemovalPolicy"></a>
 
 ```typescript
@@ -35696,6 +37334,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnStreamConnection.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnStreamConnection.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnStreamConnection.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -35751,7 +37401,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnStreamConnection.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -36093,7 +37743,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -36336,6 +37988,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnStreamInstance.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnStreamInstance.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnStreamInstance.applyRemovalPolicy"></a>
 
 ```typescript
@@ -36366,6 +38037,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnStreamInstance.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnStreamInstance.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnStreamInstance.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -36421,7 +38104,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnStreamInstance.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -36789,7 +38472,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -37032,6 +38717,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.applyRemovalPolicy"></a>
 
 ```typescript
@@ -37062,6 +38766,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -37117,7 +38833,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -37537,7 +39253,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -37780,6 +39498,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.applyRemovalPolicy"></a>
 
 ```typescript
@@ -37810,6 +39547,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -37865,7 +39614,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -38246,7 +39995,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -38489,6 +40240,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.applyRemovalPolicy"></a>
 
 ```typescript
@@ -38519,6 +40289,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -38574,7 +40356,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -38942,7 +40724,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -39185,6 +40969,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnTeams.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnTeams.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnTeams.applyRemovalPolicy"></a>
 
 ```typescript
@@ -39215,6 +41018,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnTeams.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnTeams.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnTeams.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -39270,7 +41085,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnTeams.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -39625,7 +41440,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -39868,6 +41685,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.applyRemovalPolicy"></a>
 
 ```typescript
@@ -39898,6 +41734,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -39953,7 +41801,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -40295,7 +42143,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -40538,6 +42388,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnTrigger.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnTrigger.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnTrigger.applyRemovalPolicy"></a>
 
 ```typescript
@@ -40568,6 +42437,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnTrigger.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnTrigger.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnTrigger.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -40623,7 +42504,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnTrigger.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
@@ -40978,7 +42859,9 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
@@ -41221,6 +43104,25 @@ The value.
 
 ---
 
+##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.applyCrossStackReferenceStrength"></a>
+
+```typescript
+public applyCrossStackReferenceStrength(strength: ReferenceStrength): void
+```
+
+Sets the cross-stack reference strength for this resource.
+
+When set, any cross-stack reference to this resource will use the specified
+strength instead of the global default from the consuming stack's context.
+
+###### `strength`<sup>Required</sup> <a name="strength" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.applyCrossStackReferenceStrength.parameter.strength"></a>
+
+- *Type:* aws-cdk-lib.ReferenceStrength
+
+The reference strength to use for this resource.
+
+---
+
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.applyRemovalPolicy"></a>
 
 ```typescript
@@ -41251,6 +43153,18 @@ can be found in the following link:
 ###### `options`<sup>Optional</sup> <a name="options" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.applyRemovalPolicy.parameter.options"></a>
 
 - *Type:* aws-cdk-lib.RemovalPolicyOptions
+
+---
+
+##### `cfnPropertyName` <a name="cfnPropertyName" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.cfnPropertyName"></a>
+
+```typescript
+public cfnPropertyName(cdkPropertyName: string): string
+```
+
+###### `cdkPropertyName`<sup>Required</sup> <a name="cdkPropertyName" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.cfnPropertyName.parameter.cdkPropertyName"></a>
+
+- *Type:* string
 
 ---
 
@@ -41306,7 +43220,7 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (Stack | CfnResource)[]
+public obtainDependencies(): (CfnResource | Stack)[]
 ```
 
 Retrieves an array of resources this resource depends on.
