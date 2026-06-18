@@ -67,6 +67,9 @@
     "aws-cdk-lib": "^2.260.0",
     "constructs": "^10.5.0"
   },
+  "overrides": {
+    "js-yaml": ">=4.2.0"
+  },
   "keywords": [
     "atlas",
     "aws-cdk",
