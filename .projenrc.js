@@ -137,6 +137,9 @@ project.tasks.tryFind("docgen").updateStep(0, {
   exec: "jsii-docgen -o API.md -r",
   say: "Generating API.md, using -r to include readme content",
 });
+// Force js-yaml >=4.2.0 to fix CVE-2026-53550 (GHSA-h67p-54hq-rp68). @istanbuljs/load-nyc-config
+// pins ^3.13.1 and has no 4.x release yet, so an override is the only fix. Remove once that
+// package updates its own dependency range.
 project.package.addField("overrides", { "js-yaml": "^4.2.0" });
 
 project.synth();
