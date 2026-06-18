@@ -137,4 +137,6 @@ project.tasks.tryFind("docgen").updateStep(0, {
   exec: "jsii-docgen -o API.md -r",
   say: "Generating API.md, using -r to include readme content",
 });
+project.package.addField("overrides", { "js-yaml": "^4.2.0" });
+
 project.synth();
