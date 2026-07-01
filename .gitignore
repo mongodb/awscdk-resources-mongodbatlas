@@ -38,13 +38,13 @@ junit.xml
 !/.prettierignore
 !/.prettierrc.json
 !/test/
-!/tsconfig.dev.json
+!/tsconfig.json
+!/test/tsconfig.json
 !/src/
 /lib
 /dist/
 !/.eslintrc.json
 .jsii
-tsconfig.json
 !/API.md
 !/cdk.json
 cdk.out

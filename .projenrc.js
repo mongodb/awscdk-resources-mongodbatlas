@@ -133,6 +133,10 @@ project.npmignore.exclude(
   "/scripts/",
   "/examples/"
 );
+// typescript-eslint's parserOptions.projectService can't type-check .projenrc.js
+// since it isn't included in any tsconfig; register it as a loose default-project file.
+project.eslint.allowDefaultProjectFiles(".projenrc.js");
+
 project.tasks.tryFind("docgen").updateStep(0, {
   exec: "jsii-docgen -o API.md -r",
   say: "Generating API.md, using -r to include readme content",
