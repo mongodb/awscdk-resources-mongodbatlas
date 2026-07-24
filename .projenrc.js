@@ -151,8 +151,7 @@ project.package.addField("overrides", {
 });
 
 // Newer projen defaults the test tsconfig to isolatedModules:true, which would require reworking
-// the type re-exports in src/index.ts (out of scope for this dependency-security update). Keep it
-// off to preserve the existing build behavior.
+// the type re-exports in src/index.ts
 project.tsconfigDev.file.addOverride("compilerOptions.isolatedModules", false);
 
 project.synth();
