@@ -141,18 +141,21 @@ project.tasks.tryFind("docgen").updateStep(0, {
   exec: "jsii-docgen -o API.md -r",
   say: "Generating API.md, using -r to include readme content",
 });
-// Force js-yaml >=4.3.0 to fix GHSA-52cp-r559-cp3m (quadratic CPU via YAML merge-key chains)
-// in addition to CVE-2026-53550 (GHSA-h67p-54hq-rp68). @istanbuljs/load-nyc-config pins ^3.13.1
-// and has no 4.x release yet, so an override is the only fix. Once that package updates its own
-// dependency range this override becomes a harmless no-op and can be deleted.
-// - ws@7 >=7.5.11 fixes GHSA-96hv-2xvq-fx4p (memory-exhaustion DoS) in the jest-environment-jsdom
-//   transitive dep; scoped to the 7.x line so other majors are untouched.
+// Each override is pinned within the intended major to avoid pulling in breaking new majors while
+// still resolving the advisory:
+// - js-yaml ^4.3.0 fixes GHSA-52cp-r559-cp3m (quadratic CPU via YAML merge-key chains) in addition
+//   to CVE-2026-53550 (GHSA-h67p-54hq-rp68). @istanbuljs/load-nyc-config pins ^3.13.1 and has no 4.x
+//   release yet, so an override is the only fix; ^4.3.0 keeps the whole tree on the 4.x line (its
+//   consumers ask for ^4.1.1/^3.13.1, none want 5.x). Once that package updates its own dependency
+//   range this override becomes a harmless no-op and can be deleted.
+// - ws ^7.5.11 fixes GHSA-96hv-2xvq-fx4p (memory-exhaustion DoS) in the jest-environment-jsdom
+//   transitive dep (which asks for ^7.4.6); scoped to the 7.x line so it isn't bumped to 8.x.
 // - brace-expansion@^1.1.7 -> ^1.1.16 fixes GHSA-3jxr-9vmj-r5cp / GHSA-f886-m6hf-6m8v (DoS) in the
 //   1.x copies pulled in via minimatch@3 (eslint/glob/etc.). The key matches the requested range so
 //   only 1.x consumers are affected; the ^5.0.5 line (via minimatch@10) is already patched at 5.0.7.
 project.package.addField("overrides", {
-  "js-yaml": ">=4.3.0",
-  "ws@7": ">=7.5.11",
+  "js-yaml": "^4.3.0",
+  "ws@7": "^7.5.11",
   "brace-expansion@^1.1.7": "^1.1.16",
 });
 
