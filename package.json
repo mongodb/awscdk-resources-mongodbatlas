@@ -68,9 +68,7 @@
     "constructs": "^10.5.0"
   },
   "overrides": {
-    "js-yaml": "^4.3.0",
-    "ws@7": "^7.5.11",
-    "brace-expansion@^1.1.7": "^1.1.16"
+    "js-yaml": "^4.3.0"
   },
   "keywords": [
     "atlas",
