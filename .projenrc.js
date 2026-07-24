@@ -51,7 +51,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorAddress: "https://www.mongodb.com/",
   description:
     "MongoDB Atlas CDK Construct Library for AWS CloudFormation Resources",
-  cdkVersion: "2.260.0",
+  cdkVersion: "2.262.1",
   constructsVersion: "10.5.0",
   defaultReleaseBranch: "main",
   name: "awscdk-resources-mongodbatlas",
@@ -141,9 +141,24 @@ project.tasks.tryFind("docgen").updateStep(0, {
   exec: "jsii-docgen -o API.md -r",
   say: "Generating API.md, using -r to include readme content",
 });
-// Force js-yaml >=4.2.0 to fix CVE-2026-53550 (GHSA-h67p-54hq-rp68). @istanbuljs/load-nyc-config
-// pins ^3.13.1 and has no 4.x release yet, so an override is the only fix. Once that package
-// updates its own dependency range this override becomes a harmless no-op and can be deleted.
-project.package.addField("overrides", { "js-yaml": ">=4.2.0" });
+// Force js-yaml >=4.3.0 to fix GHSA-52cp-r559-cp3m (quadratic CPU via YAML merge-key chains)
+// in addition to CVE-2026-53550 (GHSA-h67p-54hq-rp68). @istanbuljs/load-nyc-config pins ^3.13.1
+// and has no 4.x release yet, so an override is the only fix. Once that package updates its own
+// dependency range this override becomes a harmless no-op and can be deleted.
+// - ws@7 >=7.5.11 fixes GHSA-96hv-2xvq-fx4p (memory-exhaustion DoS) in the jest-environment-jsdom
+//   transitive dep; scoped to the 7.x line so other majors are untouched.
+// - brace-expansion@^1.1.7 -> ^1.1.16 fixes GHSA-3jxr-9vmj-r5cp / GHSA-f886-m6hf-6m8v (DoS) in the
+//   1.x copies pulled in via minimatch@3 (eslint/glob/etc.). The key matches the requested range so
+//   only 1.x consumers are affected; the ^5.0.5 line (via minimatch@10) is already patched at 5.0.7.
+project.package.addField("overrides", {
+  "js-yaml": ">=4.3.0",
+  "ws@7": ">=7.5.11",
+  "brace-expansion@^1.1.7": "^1.1.16",
+});
+
+// Newer projen defaults the test tsconfig to isolatedModules:true, which would require reworking
+// the type re-exports in src/index.ts (out of scope for this dependency-security update). Keep it
+// off to preserve the existing build behavior.
+project.tsconfigDev.file.addOverride("compilerOptions.isolatedModules", false);
 
 project.synth();
