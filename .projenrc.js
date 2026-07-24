@@ -146,10 +146,6 @@ project.tasks.tryFind("docgen").updateStep(0, {
 // whole tree on the 4.x line (other consumers ask for ^4.1.1, none want 5.x) and also covers
 // GHSA-52cp-r559-cp3m (quadratic CPU via YAML merge-key chains) and CVE-2026-53550
 // (GHSA-h67p-54hq-rp68). Once load-nyc-config updates its own range this override can be deleted.
-//
-// The other advisories (ws GHSA-96hv-2xvq-fx4p; brace-expansion GHSA-3jxr-9vmj-r5cp /
-// GHSA-f886-m6hf-6m8v) need no override: their parents already allow the patched versions, so a
-// refreshed lockfile resolves ws to 7.5.x (>=7.5.11) and brace-expansion to 1.1.16 / 5.0.x.
 project.package.addField("overrides", {
   "js-yaml": "^4.3.0",
 });
