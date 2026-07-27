@@ -7,7 +7,7 @@ jobs:
       contents: write
       issues: write
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           fetch-depth: 0
           ref: main
@@ -26,7 +26,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 21.x
-      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         name: Setup Python
         with:
           python-version: 3.x
@@ -122,7 +122,7 @@ jobs:
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
           node-version: 24.x
-      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
         with:
           python-version: 3.x
       - name: Download build artifacts
@@ -178,7 +178,7 @@ jobs:
         id: extract-version
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
       - name: Log in to MongoDB Docker registry
-        uses: docker/login-action@af1e73f918a031802d376d3c8bbc3fe56130a9b0
+        uses: docker/login-action@abd2ef45e78c5afb21d64d4ca52ee8550d9572c7
         with:
           registry: ${{ secrets.ARTIFACTORY_REGISTRY }}
           username: ${{ secrets.ARTIFACTORY_USER }}
@@ -256,7 +256,7 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REF: ${{ github.ref }}
         run: errout=$(mktemp); gh release create "$(cat dist/releasetag.txt)" -R "${GITHUB_REPOSITORY}" -F dist/changelog.md -t "$(cat dist/releasetag.txt)" --target "${GITHUB_REF}" 2> "$errout" && true; exitcode=$?; if [ $exitcode -ne 0 ] && ! grep -q "Release.tag_name already exists" "$errout"; then cat "$errout"; exit $exitcode; fi
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Generate PURL and SBOM
         run: |
           ./scripts/compliance/gen-purls.sh
