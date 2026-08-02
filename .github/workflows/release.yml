@@ -148,7 +148,7 @@ jobs:
         env:
           APIX_BOT_GPG_PASSPHRASE: ${{ secrets.APIX_BOT_GPG_PASSPHRASE }}
       - name: Upload to PyPI
-        uses: pypa/gh-action-pypi-publish@ba38be9e461d3875417946c167d0b5f3d385a247
+        uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33
         with:
           packages-dir: dist/python/
   release_nuget:
@@ -178,7 +178,7 @@ jobs:
         id: extract-version
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
       - name: Log in to MongoDB Docker registry
-        uses: docker/login-action@abd2ef45e78c5afb21d64d4ca52ee8550d9572c7
+        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f
         with:
           registry: ${{ secrets.ARTIFACTORY_REGISTRY }}
           username: ${{ secrets.ARTIFACTORY_USER }}
