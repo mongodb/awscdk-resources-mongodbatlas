@@ -14,23 +14,17 @@
 
 // L1 Constructors
 
-export {
-  CfnAccessListApiKey,
-  CfnAccessListApiKeyProps,
-} from "./l1-resources/access-list-api-key";
+export { CfnAccessListApiKey } from "./l1-resources/access-list-api-key";
+
+export type { CfnAccessListApiKeyProps } from "./l1-resources/access-list-api-key";
 
 export {
   CfnAlertConfiguration,
-  CfnAlertConfigurationProps,
-  IntegerThresholdView,
   IntegerThresholdViewOperator,
-  Matcher,
   MatcherFieldName,
   MatcherOperator,
-  MetricThresholdView,
   MetricThresholdViewMode,
   MetricThresholdViewOperator,
-  NotificationView,
   NotificationViewDatadogRegion,
   NotificationViewTypeName,
   NotificationViewOpsGenieRegion,
@@ -38,71 +32,97 @@ export {
   NotificationViewSeverity,
 } from "./l1-resources/alert-configuration";
 
-export {
-  CfnApiKey,
-  CfnApiKeyProps,
-  ProjectAssignment,
-} from "./l1-resources/api-key";
+export type {
+  CfnAlertConfigurationProps,
+  IntegerThresholdView,
+  Matcher,
+  MetricThresholdView,
+  NotificationView,
+} from "./l1-resources/alert-configuration";
 
-export { CfnAuditing, CfnAuditingProps } from "./l1-resources/auditing";
+export { CfnApiKey } from "./l1-resources/api-key";
+
+export type { CfnApiKeyProps, ProjectAssignment } from "./l1-resources/api-key";
+
+export { CfnAuditing } from "./l1-resources/auditing";
+
+export type { CfnAuditingProps } from "./l1-resources/auditing";
 
 export {
   CfnBackupCompliancePolicy,
+  OnDemandPolicyItemRetentionUnit,
+  ScheduledPolicyItemRetentionUnit,
+} from "./l1-resources/backup-compliance-policy";
+
+export type {
   CfnBackupCompliancePolicyProps,
   OnDemandPolicyItem,
-  OnDemandPolicyItemRetentionUnit,
   ScheduledPolicyItem,
-  ScheduledPolicyItemRetentionUnit,
 } from "./l1-resources/backup-compliance-policy";
 
 export {
   CfnCloudBackUpRestoreJobs,
-  CfnCloudBackUpRestoreJobsProps,
-  CfnCloudBackUpRestoreJobsPropsLinks,
   CfnCloudBackUpRestoreJobsPropsDeliveryType,
   CfnCloudBackUpRestoreJobsPropsInstanceType,
+} from "./l1-resources/cloud-backup-restore-jobs";
+
+export type {
+  CfnCloudBackUpRestoreJobsProps,
+  CfnCloudBackUpRestoreJobsPropsLinks,
   SynchronousCreationOptions,
 } from "./l1-resources/cloud-backup-restore-jobs";
 
-export {
+export { CfnCloudBackupSchedule } from "./l1-resources/cloud-backup-schedule";
+
+export type {
   ApiAtlasDiskBackupCopySettingView,
   ApiDeleteCopiedBackupsView,
   ApiPolicyItemView,
   ApiPolicyView,
-  CfnCloudBackupSchedule,
   CfnCloudBackupScheduleProps,
   Export,
   Link,
 } from "./l1-resources/cloud-backup-schedule";
 
 export {
-  ApiAtlasDiskBackupShardedClusterSnapshotMemberView,
   ApiAtlasDiskBackupShardedClusterSnapshotMemberViewCloudProvider,
-  ApiAtlasDiskBackupShardedClusterSnapshotView,
   ApiAtlasDiskBackupShardedClusterSnapshotViewFrequencyType,
   ApiAtlasDiskBackupShardedClusterSnapshotViewSnapshotType,
   ApiAtlasDiskBackupShardedClusterSnapshotViewStatus,
   ApiAtlasDiskBackupShardedClusterSnapshotViewType,
   CfnCloudBackupSnapshot,
-  CfnCloudBackupSnapshotProps,
   CfnCloudBackupSnapshotPropsFrequencyType,
   CfnCloudBackupSnapshotPropsSnapshotType,
   CfnCloudBackupSnapshotPropsInstanceType,
 } from "./l1-resources/cloud-backup-snapshot";
 
-export {
-  CfnCloudBackupSnapshotExportBucket,
-  CfnCloudBackupSnapshotExportBucketProps,
-} from "./l1-resources/cloud-backup-snapshot-export-bucket";
+export type {
+  ApiAtlasDiskBackupShardedClusterSnapshotMemberView,
+  ApiAtlasDiskBackupShardedClusterSnapshotView,
+  CfnCloudBackupSnapshotProps,
+} from "./l1-resources/cloud-backup-snapshot";
+
+export { CfnCloudBackupSnapshotExportBucket } from "./l1-resources/cloud-backup-snapshot-export-bucket";
+
+export type { CfnCloudBackupSnapshotExportBucketProps } from "./l1-resources/cloud-backup-snapshot-export-bucket";
 
 export {
   CfnClusterOutageSimulation,
-  CfnClusterOutageSimulationProps,
-  Filter,
   FilterCloudProvider,
 } from "./l1-resources/cluster-outage-simulation";
 
+export type {
+  CfnClusterOutageSimulationProps,
+  Filter,
+} from "./l1-resources/cluster-outage-simulation";
+
 export {
+  CfnCluster,
+  CfnClusterPropsEncryptionAtRestProvider,
+  AdvancedRegionConfigProviderName,
+} from "./l1-resources/cluster";
+
+export type {
   CfnClusterProps,
   ProcessArgs,
   CfnClusterPropsBiConnector,
@@ -114,31 +134,24 @@ export {
   DiskGb,
   Compute,
   AdvancedRegionConfig,
-  CfnCluster,
-  CfnClusterPropsEncryptionAtRestProvider,
-  AdvancedRegionConfigProviderName,
   Tag,
 } from "./l1-resources/cluster";
 
-export {
+export { CfnCustomDbRole } from "./l1-resources/custom-db-role";
+
+export type {
   Action,
-  CfnCustomDbRole,
   CfnCustomDbRoleProps,
   InheritedRole,
   Resource,
 } from "./l1-resources/custom-db-role";
 
-export {
-  CfnCustomDnsConfigurationClusterAws,
-  CfnCustomDnsConfigurationClusterAwsProps,
-} from "./l1-resources/custom-dns-configuration-cluster-aws";
+export { CfnCustomDnsConfigurationClusterAws } from "./l1-resources/custom-dns-configuration-cluster-aws";
+
+export type { CfnCustomDnsConfigurationClusterAwsProps } from "./l1-resources/custom-dns-configuration-cluster-aws";
 
 export {
   CfnDatabaseUser,
-  CfnDatabaseUserProps,
-  LabelDefinition,
-  RoleDefinition,
-  ScopeDefinition,
   CfnDatabaseUserPropsX509Type,
   CfnDatabaseUserPropsAwsiamType,
   CfnDatabaseUserPropsLdapAuthType,
@@ -146,14 +159,23 @@ export {
   ScopeDefinitionType,
 } from "./l1-resources/database-user";
 
-export {
+export type {
+  CfnDatabaseUserProps,
+  LabelDefinition,
+  RoleDefinition,
+  ScopeDefinition,
+} from "./l1-resources/database-user";
+
+export { CfnEncryptionAtRest } from "./l1-resources/encryption-at-rest";
+
+export type {
   AwsKmsConfig,
-  CfnEncryptionAtRest,
   CfnEncryptionAtRestProps,
 } from "./l1-resources/encryption-at-rest";
 
-export {
-  CfnFederatedDatabaseInstance,
+export { CfnFederatedDatabaseInstance } from "./l1-resources/federated-database-instance";
+
+export type {
   CfnFederatedDatabaseInstanceProps,
   CloudProviderConfig,
   DataProcessRegion,
@@ -169,129 +191,135 @@ export {
 
 export {
   CfnFederatedQueryLimit,
-  CfnFederatedQueryLimitProps,
   CfnFederatedQueryLimitPropsLimitName,
 } from "./l1-resources/federated-query-limit";
 
+export type { CfnFederatedQueryLimitProps } from "./l1-resources/federated-query-limit";
+
 export {
   CfnFederatedSettingsIdentityProvider,
-  CfnFederatedSettingsIdentityProviderProps,
   CfnFederatedSettingsIdentityProviderPropsProtocol,
 } from "./l1-resources/federated-settings-identity-provider";
 
-export {
-  CfnFederatedSettingsOrgRoleMapping,
+export type { CfnFederatedSettingsIdentityProviderProps } from "./l1-resources/federated-settings-identity-provider";
+
+export { CfnFederatedSettingsOrgRoleMapping } from "./l1-resources/federated-settings-org-role-mapping";
+
+export type {
   CfnFederatedSettingsOrgRoleMappingProps,
   RoleAssignment,
 } from "./l1-resources/federated-settings-org-role-mapping";
 
-export {
-  CfnFlexCluster,
+export { CfnFlexCluster } from "./l1-resources/flex-cluster";
+
+export type {
   CfnFlexClusterProps,
   ProviderSettings,
   BackupSettings,
-  ConnectionStrings as FlexConnectionStrings, // Conflicts with cluster
-  Tag as FlexTag, // Conflicts with cluster
+  ConnectionStrings as FlexConnectionStrings, // Conflicts with cluster,
+  Tag as FlexTag, // Conflicts with cluster,
 } from "./l1-resources/flex-cluster";
 
-export {
-  CfnGlobalClusterConfig,
+export { CfnGlobalClusterConfig } from "./l1-resources/global-cluster-config";
+
+export type {
   CfnGlobalClusterConfigProps,
   ManagedNamespace,
   ZoneMapping,
 } from "./l1-resources/global-cluster-config";
 
-export {
+export { CfnLdapConfiguration } from "./l1-resources/ldap-configuration";
+
+export type {
   ApiAtlasNdsUserToDnMappingView,
-  CfnLdapConfiguration,
   CfnLdapConfigurationProps,
 } from "./l1-resources/ldap-configuration";
 
-export {
-  CfnLdapVerify,
+export { CfnLdapVerify } from "./l1-resources/ldap-verify";
+
+export type {
   CfnLdapVerifyProps,
   Validation,
 } from "./l1-resources/ldap-verify";
 
-export {
-  CfnLogIntegration,
-  CfnLogIntegrationProps,
-} from "./l1-resources/log-integration";
+export { CfnLogIntegration } from "./l1-resources/log-integration";
 
-export {
-  CfnMaintenanceWindow,
+export type { CfnLogIntegrationProps } from "./l1-resources/log-integration";
+
+export { CfnMaintenanceWindow } from "./l1-resources/maintenance-window";
+
+export type {
   CfnMaintenanceWindowProps,
   CfnMaintenanceWindowPropsProtectedHours,
 } from "./l1-resources/maintenance-window";
 
-export {
-  CfnMongoDbEmployeeAccessGrant,
-  CfnMongoDbEmployeeAccessGrantProps,
-} from "./l1-resources/mongodb-employee-access-grant";
+export { CfnMongoDbEmployeeAccessGrant } from "./l1-resources/mongodb-employee-access-grant";
 
-export {
-  CfnNetworkContainer,
-  CfnNetworkContainerProps,
-} from "./l1-resources/network-container";
+export type { CfnMongoDbEmployeeAccessGrantProps } from "./l1-resources/mongodb-employee-access-grant";
 
-export {
-  CfnNetworkPeering,
-  CfnNetworkPeeringProps,
-} from "./l1-resources/network-peering";
+export { CfnNetworkContainer } from "./l1-resources/network-container";
+
+export type { CfnNetworkContainerProps } from "./l1-resources/network-container";
+
+export { CfnNetworkPeering } from "./l1-resources/network-peering";
+
+export type { CfnNetworkPeeringProps } from "./l1-resources/network-peering";
 
 export {
   CfnOnlineArchive,
-  CfnOnlineArchiveProps,
   CfnOnlineArchivePropsCollectionType,
-  CriteriaView,
   CriteriaViewDateFormat,
   CriteriaViewType,
+  ScheduleViewType,
+} from "./l1-resources/online-archive";
+
+export type {
+  CfnOnlineArchiveProps,
+  CriteriaView,
   PartitionFieldView,
   ScheduleView,
-  ScheduleViewType,
 } from "./l1-resources/online-archive";
 
 export {
   CfnOrgInvitation,
-  CfnOrgInvitationProps,
   CfnOrgInvitationPropsRoles,
 } from "./l1-resources/org-invitation";
 
-export {
-  CfnOrganization,
-  CfnOrganizationProps,
-  ApiKey,
-} from "./l1-resources/organization";
+export type { CfnOrgInvitationProps } from "./l1-resources/org-invitation";
 
-export {
+export { CfnOrganization } from "./l1-resources/organization";
+
+export type { CfnOrganizationProps, ApiKey } from "./l1-resources/organization";
+
+export { CfnPrivateEndpoint } from "./l1-resources/private-endpoint";
+
+export type {
   CfnPrivateEndpointProps,
-  CfnPrivateEndpoint,
   PrivateEndpoint,
 } from "./l1-resources/private-endpoint";
 
-export {
-  CfnPrivateEndpointAwsProps,
-  CfnPrivateEndpointAws,
-} from "./l1-resources/private-endpoint-aws";
+export { CfnPrivateEndpointAws } from "./l1-resources/private-endpoint-aws";
 
-export {
-  CfnPrivateEndPointRegionalMode,
-  CfnPrivateEndPointRegionalModeProps,
-} from "./l1-resources/private-endpoint-regional-mode";
+export type { CfnPrivateEndpointAwsProps } from "./l1-resources/private-endpoint-aws";
+
+export { CfnPrivateEndPointRegionalMode } from "./l1-resources/private-endpoint-regional-mode";
+
+export type { CfnPrivateEndPointRegionalModeProps } from "./l1-resources/private-endpoint-regional-mode";
 
 export {
   CfnPrivateEndpointService,
-  CfnPrivateEndpointServiceProps,
   CfnPrivateEndpointServicePropsCloudProvider,
 } from "./l1-resources/private-endpoint-service";
 
-export {
-  CfnPrivatelinkEndpointServiceDataFederationOnlineArchive,
-  CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps,
-} from "./l1-resources/privatelink-endpoint-service-data-federation-online-archive";
+export type { CfnPrivateEndpointServiceProps } from "./l1-resources/private-endpoint-service";
 
-export {
-  CfnProject,
+export { CfnPrivatelinkEndpointServiceDataFederationOnlineArchive } from "./l1-resources/privatelink-endpoint-service-data-federation-online-archive";
+
+export type { CfnPrivatelinkEndpointServiceDataFederationOnlineArchiveProps } from "./l1-resources/privatelink-endpoint-service-data-federation-online-archive";
+
+export { CfnProject } from "./l1-resources/project";
+
+export type {
   CfnProjectProps,
   ProjectApiKey,
   ProjectSettings,
@@ -300,84 +328,89 @@ export {
 
 export {
   CfnProjectInvitation,
-  CfnProjectInvitationProps,
   CfnProjectInvitationPropsRoles,
 } from "./l1-resources/project-invitation";
 
-export {
+export type { CfnProjectInvitationProps } from "./l1-resources/project-invitation";
+
+export { CfnProjectIpAccessList } from "./l1-resources/project-ip-access-list";
+
+export type {
   AccessListDefinition,
-  CfnProjectIpAccessList,
   CfnProjectIpAccessListProps,
   ListOptions,
 } from "./l1-resources/project-ip-access-list";
 
-export {
-  CfnProjectServiceAccount,
+export { CfnProjectServiceAccount } from "./l1-resources/project-service-account";
+
+export type {
   CfnProjectServiceAccountProps,
   SecretDefinition,
 } from "./l1-resources/project-service-account";
 
-export {
-  CfnProjectServiceAccountAccessListEntry,
-  CfnProjectServiceAccountAccessListEntryProps,
-} from "./l1-resources/project-service-account-access-list-entry";
+export { CfnProjectServiceAccountAccessListEntry } from "./l1-resources/project-service-account-access-list-entry";
 
-export {
-  CfnProjectServiceAccountSecret,
-  CfnProjectServiceAccountSecretProps,
-} from "./l1-resources/project-service-account-secret";
+export type { CfnProjectServiceAccountAccessListEntryProps } from "./l1-resources/project-service-account-access-list-entry";
 
-export {
-  CfnResourcePolicy,
+export { CfnProjectServiceAccountSecret } from "./l1-resources/project-service-account-secret";
+
+export type { CfnProjectServiceAccountSecretProps } from "./l1-resources/project-service-account-secret";
+
+export { CfnResourcePolicy } from "./l1-resources/resource-policy";
+
+export type {
   CfnResourcePolicyProps,
   ApiAtlasPolicy,
   ApiAtlasUserMetadata,
 } from "./l1-resources/resource-policy";
 
-export {
-  CfnSearchDeployment,
+export { CfnSearchDeployment } from "./l1-resources/search-deployment";
+
+export type {
   CfnSearchDeploymentProps,
   ApiSearchDeploymentSpec,
 } from "./l1-resources/search-deployment";
 
-export {
+export { CfnSearchIndex } from "./l1-resources/search-index";
+
+export type {
   ApiAtlasFtsAnalyzersTokenizer,
   ApiAtlasFtsAnalyzersViewManual,
   ApiAtlasFtsMappingsViewManual,
   ApiAtlasFtsSynonymMappingDefinitionView,
-  CfnSearchIndex,
   CfnSearchIndexProps,
   SynonymSource,
   TypeSet,
 } from "./l1-resources/search-index";
 
-export {
-  CfnServiceAccount,
+export { CfnServiceAccount } from "./l1-resources/service-account";
+
+export type {
   CfnServiceAccountProps,
   Secret,
 } from "./l1-resources/service-account";
 
-export {
-  CfnServiceAccountAccessListEntry,
-  CfnServiceAccountAccessListEntryProps,
-} from "./l1-resources/service-account-access-list-entry";
+export { CfnServiceAccountAccessListEntry } from "./l1-resources/service-account-access-list-entry";
 
-export {
-  CfnServiceAccountProjectAssignment,
-  CfnServiceAccountProjectAssignmentProps,
-} from "./l1-resources/service-account-project-assignment";
+export type { CfnServiceAccountAccessListEntryProps } from "./l1-resources/service-account-access-list-entry";
 
-export {
-  CfnServiceAccountSecret,
-  CfnServiceAccountSecretProps,
-} from "./l1-resources/service-account-secret";
+export { CfnServiceAccountProjectAssignment } from "./l1-resources/service-account-project-assignment";
+
+export type { CfnServiceAccountProjectAssignmentProps } from "./l1-resources/service-account-project-assignment";
+
+export { CfnServiceAccountSecret } from "./l1-resources/service-account-secret";
+
+export type { CfnServiceAccountSecretProps } from "./l1-resources/service-account-secret";
 
 export {
   CfnStreamConnection,
-  CfnStreamConnectionProps,
   CfnStreamConnectionPropsType,
-  DbRoleToExecute,
   DbRoleToExecuteType,
+} from "./l1-resources/stream-connection";
+
+export type {
+  CfnStreamConnectionProps,
+  DbRoleToExecute,
   StreamsKafkaAuthentication,
   StreamsKafkaSecurity,
   Networking,
@@ -389,22 +422,27 @@ export {
 export {
   CfnStreamInstance,
   StreamsDataProcessRegionCloudProvider,
+  StreamsConnectionType,
+} from "./l1-resources/stream-instance";
+
+export type {
   CfnStreamInstanceProps,
   StreamsDataProcessRegion,
   StreamConfig,
   StreamsConnection,
-  StreamsConnectionType,
 } from "./l1-resources/stream-instance";
 
-export {
-  CfnStreamPrivatelinkEndpoint,
-  CfnStreamPrivatelinkEndpointProps,
-} from "./l1-resources/stream-privatelink-endpoint";
+export { CfnStreamPrivatelinkEndpoint } from "./l1-resources/stream-privatelink-endpoint";
+
+export type { CfnStreamPrivatelinkEndpointProps } from "./l1-resources/stream-privatelink-endpoint";
 
 export {
   CfnStreamProcessor,
-  CfnStreamProcessorProps,
   CfnStreamProcessorPropsDesiredState,
+} from "./l1-resources/stream-processor";
+
+export type {
+  CfnStreamProcessorProps,
   StreamsOptions,
   StreamsDlq,
   Timeouts,
@@ -412,36 +450,42 @@ export {
 
 export {
   CfnStreamWorkspace,
+  StreamsDataProcessRegionCloudProvider as StreamWorkspaceDataProcessRegionCloudProvider,
+} from "./l1-resources/stream-workspace";
+
+export type {
   CfnStreamWorkspaceProps,
   StreamsDataProcessRegion as StreamWorkspaceDataProcessRegion,
-  StreamsDataProcessRegionCloudProvider as StreamWorkspaceDataProcessRegionCloudProvider,
   StreamConfig as StreamWorkspaceStreamConfig,
 } from "./l1-resources/stream-workspace";
 
 export {
   CfnTeams,
-  CfnTeamsProps,
   CfnTeamsPropsRoleNames,
   AtlasRoleRoleName,
-  AtlasRole,
-  AtlasUser,
 } from "./l1-resources/teams";
+
+export type { CfnTeamsProps, AtlasRole, AtlasUser } from "./l1-resources/teams";
 
 export {
   CfnThirdPartyIntegration,
-  CfnThirdPartyIntegrationProps,
   CfnThirdPartyIntegrationPropsServiceDiscovery,
   CfnThirdPartyIntegrationPropsType,
 } from "./l1-resources/third-party-integration";
 
+export type { CfnThirdPartyIntegrationProps } from "./l1-resources/third-party-integration";
+
 export {
-  AuthConfig,
   AuthConfigOperationType,
   AuthConfigProviders,
   CfnTrigger,
+  DatabaseConfigOperationTypes,
+} from "./l1-resources/trigger";
+
+export type {
+  AuthConfig,
   CfnTriggerProps,
   DatabaseConfig,
-  DatabaseConfigOperationTypes,
   Event,
   EventAwseventbridge,
   EventAwseventbridgeAwsConfig,
@@ -450,8 +494,9 @@ export {
   ScheduleConfig,
 } from "./l1-resources/trigger";
 
-export {
-  CfnX509AuthenticationDatabaseUser,
+export { CfnX509AuthenticationDatabaseUser } from "./l1-resources/x509-authentication-database-user";
+
+export type {
   CfnX509AuthenticationDatabaseUserProps,
   CustomerX509,
 } from "./l1-resources/x509-authentication-database-user";
