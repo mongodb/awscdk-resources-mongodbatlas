@@ -216,8 +216,8 @@ export type {
   CfnFlexClusterProps,
   ProviderSettings,
   BackupSettings,
-  ConnectionStrings as FlexConnectionStrings, // Conflicts with cluster,
-  Tag as FlexTag, // Conflicts with cluster,
+  ConnectionStrings as FlexConnectionStrings, // Conflicts with cluster
+  Tag as FlexTag, // Conflicts with cluster
 } from "./l1-resources/flex-cluster";
 
 export { CfnGlobalClusterConfig } from "./l1-resources/global-cluster-config";
