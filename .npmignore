@@ -19,7 +19,6 @@ dist
 /.github/
 /.vscode/
 /.idea/
-/.projenrc.js
 tsconfig.tsbuildinfo
 /.eslintrc.json
 !.jsii
@@ -43,3 +42,4 @@ cdk.json
 /scripts/
 /examples/
 /.gitattributes
+/.projenrc.js
