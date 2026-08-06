@@ -51,7 +51,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorAddress: "https://www.mongodb.com/",
   description:
     "MongoDB Atlas CDK Construct Library for AWS CloudFormation Resources",
-  cdkVersion: "2.260.0",
+  cdkVersion: "2.262.1",
   constructsVersion: "10.5.0",
   defaultReleaseBranch: "main",
   name: "awscdk-resources-mongodbatlas",
@@ -141,9 +141,17 @@ project.tasks.tryFind("docgen").updateStep(0, {
   exec: "jsii-docgen -o API.md -r",
   say: "Generating API.md, using -r to include readme content",
 });
-// Force js-yaml >=4.2.0 to fix CVE-2026-53550 (GHSA-h67p-54hq-rp68). @istanbuljs/load-nyc-config
-// pins ^3.13.1 and has no 4.x release yet, so an override is the only fix. Once that package
-// updates its own dependency range this override becomes a harmless no-op and can be deleted.
-project.package.addField("overrides", { "js-yaml": ">=4.2.0" });
+// Force js-yaml to ^4.3.0. @istanbuljs/load-nyc-config (via jest/ts-jest) pins ^3.13.1 and has no
+// 4.x release yet, so an override is the only way to move it off the old 3.x line; ^4.3.0 keeps the
+// whole tree on the 4.x line (other consumers ask for ^4.1.1, none want 5.x) and also covers
+// GHSA-52cp-r559-cp3m (quadratic CPU via YAML merge-key chains) and CVE-2026-53550
+// (GHSA-h67p-54hq-rp68). Once load-nyc-config updates its own range this override can be deleted.
+project.package.addField("overrides", {
+  "js-yaml": "^4.3.0",
+});
+
+// Newer projen defaults the test tsconfig to isolatedModules:true, which would require reworking
+// the type re-exports in src/index.ts
+project.tsconfigDev.file.addOverride("compilerOptions.isolatedModules", false);
 
 project.synth();

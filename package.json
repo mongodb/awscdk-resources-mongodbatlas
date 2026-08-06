@@ -43,7 +43,7 @@
     "@types/node": "^16 <= 16.18.78",
     "@typescript-eslint/eslint-plugin": "^8",
     "@typescript-eslint/parser": "^8",
-    "aws-cdk-lib": "2.260.0",
+    "aws-cdk-lib": "2.262.1",
     "commit-and-tag-version": "^12",
     "constructs": "10.5.0",
     "eslint": "^9",
@@ -59,16 +59,16 @@
     "jsii-pacmak": "^1.138.0",
     "jsii-rosetta": "~5.9.0",
     "prettier": "^2.8.8",
-    "projen": "^0.101.4",
+    "projen": "^0.101.14",
     "ts-jest": "^27",
     "typescript": "^5.7.2"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.260.0",
+    "aws-cdk-lib": "^2.262.1",
     "constructs": "^10.5.0"
   },
   "overrides": {
-    "js-yaml": ">=4.2.0"
+    "js-yaml": "^4.3.0"
   },
   "keywords": [
     "atlas",
