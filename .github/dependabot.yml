@@ -13,3 +13,16 @@ updates:
       prefix: "chore"
     reviewers:
       - "mongodb/apix-integrations"
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: sunday
+    groups:
+      npm:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "chore"
+    reviewers:
+      - "mongodb/apix-integrations"
