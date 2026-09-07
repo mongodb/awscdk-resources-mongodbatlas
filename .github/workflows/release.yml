@@ -263,7 +263,7 @@ jobs:
         run: errout=$(mktemp); gh release create "$(cat dist/releasetag.txt)" -R "${GITHUB_REPOSITORY}" -F dist/changelog.md -t "$(cat dist/releasetag.txt)" --target "${GITHUB_REF}" 2> "$errout" && true; exitcode=$?; if [ $exitcode -ne 0 ] && ! grep -q "Release.tag_name already exists" "$errout"; then cat "$errout"; exit $exitcode; fi
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Configure AWS credentials for DevProd Platforms ECR
-        uses: aws-actions/configure-aws-credentials@e6de054238d6b7531b4efff3b6587d9aade6a06c
+        uses: aws-actions/configure-aws-credentials@cbe3b392738ccf3f987d68400dafcf4b0624a56c
         with:
           role-to-assume: ${{ env.ECR_ROLE_ARN }}
           aws-region: us-east-1
@@ -320,7 +320,7 @@ jobs:
             echo "No changes to commit."
           fi
       - name: Upload SBOM as release artifact
-        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64
         with:
           files: compliance/sbom.json
           tag_name: ${{ steps.extract-version.outputs.VERSION }}
