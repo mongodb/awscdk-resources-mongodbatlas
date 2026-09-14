@@ -49,11 +49,11 @@ To change a version range, or to add a dependency projen does not manage, declar
 
 Then run `npx projen` and commit the regenerated files alongside the `.projenrc.js` change.
 
-Do not edit `package.json` or `package-lock.json` by hand. The [check-l1-updated](.github/workflows/code-health.yml) job runs `npx projen build` and fails when the build produces a diff, which reverts any change projen does not know about.
+Do not edit `package.json` or `package-lock.json` by hand. For dependencies where projen knows the version, the next `npx projen build` reverts the edit, and the [check-l1-updated](.github/workflows/code-health.yml) job fails on the resulting diff.
 
 Dependabot is configured in `.github/dependabot.yml` with one block per ecosystem:
 - **github-actions**: Version updates are enabled. The workflow files in `.github/workflows/` are maintained by hand and are not projen output.
-- **npm**: Version updates are disabled with `open-pull-requests-limit: 0`, and only security updates open pull requests. A Dependabot version update edits `package.json` and `package-lock.json` directly, so `npx projen` overwrites it and `check-l1-updated` rejects the pull request.
+- **npm**: Version updates are disabled with `open-pull-requests-limit: 0`, and only security updates open pull requests. Dependabot cannot drive a version-range change here, because every dependency is managed by projen and a range change belongs in `.projenrc.js`.
 
 ### Upgrading Dependencies
 The [Upgrade Dependencies workflow](.github/workflows/upgrade-main.yml) runs `npx projen upgrade` every Tuesday at 9am UTC and opens a pull request on the `upgrade-dependencies` branch. That is the supported path for version bumps, because it updates the lock file and the projen configuration together.
