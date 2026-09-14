@@ -37,12 +37,17 @@ Examples:
 - After 30 more days of no activity we automatically close the issue / PR.
 
 ## Dependency Management
-Dependencies are maintained with [projen](https://projen.io/). The `.projenrc.js` file and the generated `.projen/deps.json` file are the source of truth for the versions this project builds against, and `package.json` plus `package-lock.json` are projen output.
+Dependencies are maintained with [projen](https://projen.io/). Most of the versions this project builds against are projen defaults defined by the `AwsCdkConstructLibrary` project type; `.projen/deps.json` records them, and `package.json` plus `package-lock.json` are projen output.
 
-To change a dependency version:
-1. Edit the version in `.projenrc.js`.
-2. Run `npx projen` to regenerate `package.json`, `package-lock.json`, and the other generated files.
-3. Commit the `.projenrc.js` change together with the regenerated files.
+To bump a dependency to a newer version, run `npx projen upgrade`. It resolves newer versions within the ranges in `.projen/deps.json` and regenerates the lock file, so there is nothing to edit by hand. The weekly workflow runs this for you.
+
+To change a version range, or to add a dependency projen does not manage, declare it in `.projenrc.js` first:
+
+- **Project versions**: `cdkVersion` and `constructsVersion` set the `aws-cdk-lib` and `constructs` versions.
+- **Direct dependencies**: `devDeps` and `peerDeps` add entries to `.projen/deps.json` or override a projen default.
+- **Transitive pins**: `project.package.addField("overrides", ...)` pins a version that a parent dependency would otherwise hold back.
+
+Then run `npx projen` and commit the regenerated files alongside the `.projenrc.js` change.
 
 Do not edit `package.json` or `package-lock.json` by hand. The [check-l1-updated](.github/workflows/code-health.yml) job runs `npx projen build` and fails when the build produces a diff, which reverts any change projen does not know about.
 
