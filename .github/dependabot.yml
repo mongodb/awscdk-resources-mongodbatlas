@@ -11,18 +11,25 @@ updates:
           - "*"
     commit-message:
       prefix: "chore"
-    reviewers:
-      - "mongodb/apix-integrations"
+  # npm dependencies are owned by projen: .projenrc.js and .projen/deps.json are the
+  # source of truth, and the weekly "Upgrade Dependencies" workflow (upgrade-main.yml) runs
+  # "npx projen upgrade" to keep them current. A Dependabot version-update PR edits
+  # generated files, so it is not a supported way to change a version range. For packages
+  # projen pins a version for, the next "npx projen build" reverts the edit and
+  # "check-l1-updated" rejects the PR for the diff.
+  # Keep the ecosystem configured for security advisories only.
   - package-ecosystem: npm
     directory: "/"
     schedule:
       interval: weekly
       day: sunday
+    # 0 disables version updates; security updates are not subject to this limit.
+    open-pull-requests-limit: 0
     groups:
-      npm:
+      npm-security:
+        # Groups default to version updates, so this must be explicit.
+        applies-to: security-updates
         patterns:
           - "*"
     commit-message:
       prefix: "chore"
-    reviewers:
-      - "mongodb/apix-integrations"

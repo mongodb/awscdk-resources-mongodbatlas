@@ -36,6 +36,37 @@ Examples:
 - After 30 days of no activity (no comments or commits are on an issue or PR) we automatically tag it as “stale” and add a message: "This issue has gone 30 days without any activity and meets the project’s definition of ‘stale’. This will be auto-closed if there is no new activity over the next 30 days. If the issue is still relevant and active, you can simply comment with a “bump” to keep it open, or add the “[Status] Not Stale” label. Thanks for keeping our repository healthy!"
 - After 30 more days of no activity we automatically close the issue / PR.
 
+## Dependency Management
+Dependencies are maintained with [projen](https://projen.io/). Most of the versions this project builds against are projen defaults defined by the `AwsCdkConstructLibrary` project type; `.projen/deps.json` records them, and `package.json` plus `package-lock.json` are projen output.
+
+To bump a dependency to a newer version, run `npx projen upgrade`. It resolves newer versions within the ranges in `.projen/deps.json` and regenerates the lock file, so there is nothing to edit by hand. The weekly workflow runs this for you.
+
+To change a version range, or to add a dependency projen does not manage, declare it in `.projenrc.js` first:
+
+- **Project versions**: `cdkVersion` and `constructsVersion` set the `aws-cdk-lib` and `constructs` versions.
+- **Direct dependencies**: `devDeps` and `peerDeps` add entries to `.projen/deps.json` or override a projen default.
+- **Transitive pins**: `project.package.addField("overrides", ...)` pins a version that a parent dependency would otherwise hold back.
+
+Then run `npx projen` and commit the regenerated files alongside the `.projenrc.js` change.
+
+Do not edit `package.json` or `package-lock.json` by hand. For dependencies where projen knows the version, the next `npx projen build` reverts the edit, and the [check-l1-updated](.github/workflows/code-health.yml) job fails on the resulting diff.
+
+Dependabot is configured in `.github/dependabot.yml` with one block per ecosystem:
+- **github-actions**: Version updates are enabled. The workflow files in `.github/workflows/` are maintained by hand and are not projen output.
+- **npm**: Version updates are disabled with `open-pull-requests-limit: 0`, and only security updates open pull requests. Dependabot cannot drive a version-range change here, because every dependency is managed by projen and a range change belongs in `.projenrc.js`.
+
+### Upgrading Dependencies
+The [Upgrade Dependencies workflow](.github/workflows/upgrade-main.yml) runs `npx projen upgrade` every Tuesday at 9am UTC and opens a pull request on the `upgrade-dependencies` branch. That is the supported path for version bumps, because it updates the lock file and the projen configuration together.
+
+To run the same upgrade locally, execute `npx projen upgrade` and commit the regenerated files.
+
+The two version floors in `.projenrc.js` are deliberate, and `npx projen upgrade` will not move them:
+
+- **`cdkVersion`**: Bump it when an advisory is bundled inside `aws-cdk-lib` and an npm override cannot reach it, as in [#611](https://github.com/mongodb/awscdk-resources-mongodbatlas/pull/611) (`2.260.0` to `2.261.0`) and [#581](https://github.com/mongodb/awscdk-resources-mongodbatlas/pull/581) (`2.200.1` to `2.248.0`). It also sets the `aws-cdk-lib` peer floor, so raising it moves every consumer of this library.
+- **`constructsVersion`**: Bump it only when you need an API from a newer `constructs` release. It has changed once, in [#581](https://github.com/mongodb/awscdk-resources-mongodbatlas/pull/581).
+
+A `cdkVersion` bump also regenerates the L1 constructs. `check-l1-updated` re-runs `./scripts/cdk-all.sh` and then `npx projen build`, and fails on the resulting diff, so review and commit that output in the same pull request.
+
 ## Release and Publishing
 ### Manual Release
 1. `projenrc` is set to do manual release.
