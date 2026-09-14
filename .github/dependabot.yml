@@ -26,6 +26,11 @@ updates:
       day: sunday
     # 0 disables version updates; security updates are not subject to this limit.
     open-pull-requests-limit: 0
+    # Cooldown applies to version updates only. It is inert while the limit above is 0,
+    # and is kept so a re-enabled version update cannot pick up a just-published package
+    # on the same day it reaches npm.
+    cooldown:
+      default-days: 7
     groups:
       npm-security:
         # Groups default to version updates, so this must be explicit.
