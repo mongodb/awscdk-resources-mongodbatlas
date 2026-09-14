@@ -60,6 +60,13 @@ The [Upgrade Dependencies workflow](.github/workflows/upgrade-main.yml) runs `np
 
 To run the same upgrade locally, execute `npx projen upgrade` and commit the regenerated files.
 
+The two version floors in `.projenrc.js` are deliberate, and `npx projen upgrade` will not move them:
+
+- **`cdkVersion`**: Bump it when an advisory is bundled inside `aws-cdk-lib` and an npm override cannot reach it, as in [#611](https://github.com/mongodb/awscdk-resources-mongodbatlas/pull/611) (`2.260.0` to `2.261.0`) and [#581](https://github.com/mongodb/awscdk-resources-mongodbatlas/pull/581) (`2.200.1` to `2.248.0`). It also sets the `aws-cdk-lib` peer floor, so raising it moves every consumer of this library.
+- **`constructsVersion`**: Bump it only when you need an API from a newer `constructs` release. It has changed once, in [#581](https://github.com/mongodb/awscdk-resources-mongodbatlas/pull/581).
+
+A `cdkVersion` bump also regenerates the L1 constructs. `check-l1-updated` re-runs `./scripts/cdk-all.sh` and then `npx projen build`, and fails on the resulting diff, so review and commit that output in the same pull request.
+
 ## Release and Publishing
 ### Manual Release
 1. `projenrc` is set to do manual release.
