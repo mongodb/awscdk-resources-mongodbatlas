@@ -11,8 +11,6 @@ updates:
           - "*"
     commit-message:
       prefix: "chore"
-    reviewers:
-      - "mongodb/apix-integrations"
   # npm dependencies are owned by projen: .projenrc.js and .projen/deps.json are the
   # source of truth, and the weekly "Upgrade Dependencies" workflow (upgrade-main.yml) runs
   # "npx projen upgrade" to keep them current. A Dependabot version-update PR edits
@@ -35,5 +33,3 @@ updates:
           - "*"
     commit-message:
       prefix: "chore"
-    reviewers:
-      - "mongodb/apix-integrations"
