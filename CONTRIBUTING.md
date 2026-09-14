@@ -36,6 +36,25 @@ Examples:
 - After 30 days of no activity (no comments or commits are on an issue or PR) we automatically tag it as “stale” and add a message: "This issue has gone 30 days without any activity and meets the project’s definition of ‘stale’. This will be auto-closed if there is no new activity over the next 30 days. If the issue is still relevant and active, you can simply comment with a “bump” to keep it open, or add the “[Status] Not Stale” label. Thanks for keeping our repository healthy!"
 - After 30 more days of no activity we automatically close the issue / PR.
 
+## Dependency Management
+Dependencies are maintained with [projen](https://projen.io/). The `.projenrc.js` file and the generated `.projen/deps.json` file are the source of truth for the versions this project builds against, and `package.json` plus `package-lock.json` are projen output.
+
+To change a dependency version:
+1. Edit the version in `.projenrc.js`.
+2. Run `npx projen` to regenerate `package.json`, `package-lock.json`, and the other generated files.
+3. Commit the `.projenrc.js` change together with the regenerated files.
+
+Do not edit `package.json` or `package-lock.json` by hand. The [check-l1-updated](.github/workflows/code-health.yml) job runs `npx projen build` and fails when the build produces a diff, which reverts any change projen does not know about.
+
+Dependabot is configured in `.github/dependabot.yml` with one block per ecosystem:
+- **github-actions**: Version updates are enabled. The workflow files in `.github/workflows/` are maintained by hand and are not projen output.
+- **npm**: Version updates are disabled with `open-pull-requests-limit: 0`, and only security updates open pull requests. A Dependabot version update edits `package.json` and `package-lock.json` directly, so `npx projen` overwrites it and `check-l1-updated` rejects the pull request.
+
+### Upgrading Dependencies
+The [Upgrade Dependencies workflow](.github/workflows/upgrade-main.yml) runs `npx projen upgrade` every Tuesday at 9am UTC and opens a pull request on the `upgrade-dependencies` branch. That is the supported path for version bumps, because it updates the lock file and the projen configuration together.
+
+To run the same upgrade locally, execute `npx projen upgrade` and commit the regenerated files.
+
 ## Release and Publishing
 ### Manual Release
 1. `projenrc` is set to do manual release.
