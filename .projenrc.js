@@ -51,7 +51,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorAddress: "https://www.mongodb.com/",
   description:
     "MongoDB Atlas CDK Construct Library for AWS CloudFormation Resources",
-  cdkVersion: "2.261.0",
+  cdkVersion: "2.269.0",
   constructsVersion: "10.5.0",
   defaultReleaseBranch: "main",
   name: "awscdk-resources-mongodbatlas",
@@ -137,15 +137,29 @@ project.npmignore.exclude(
 // since it isn't included in any tsconfig; register it as a loose default-project file.
 project.eslint.allowDefaultProjectFiles(".projenrc.js");
 
+// aws-cdk-lib 2.262.0+ auto-registers a built-in CloudFormation template validator that runs
+// inside every app.synth(), which Template.fromStack() calls. Turning it off keeps unit tests
+// fast; real synthesis still validates. The <rootDir>/ prefix is required: Jest resolves
+// setupFiles relative to the package root, not the project root. Needs aws-cdk-lib >= 2.262.1,
+// since 2.262.0 ignored CDK_VALIDATION.
+project.jest.addSetupFile("<rootDir>/test/jest.setup.js");
+
 project.tasks.tryFind("docgen").updateStep(0, {
   exec: "jsii-docgen -o API.md -r",
   say: "Generating API.md, using -r to include readme content",
 });
-// Force js-yaml to ^4.3.1 to fix GHSA-5p4m-2wfm-xmqj and GHSA-52cp-r559-cp3m (both DoS) plus
-// CVE-2026-53550 (GHSA-h67p-54hq-rp68). @istanbuljs/load-nyc-config pins ^3.13.1 and has no 4.x
-// release yet, so an override is the only way to move it off the old 3.x line; ^4.3.1 keeps the
-// whole tree on the 4.x line (other consumers ask for ^4.1.1, none want 5.x). Once load-nyc-config
-// updates its own range this override can be deleted.
-project.package.addField("overrides", { "js-yaml": "^4.3.1" });
+// Force js-yaml to 4.x to fix GHSA-5p4m-2wfm-xmqj, GHSA-52cp-r559-cp3m, CVE-2026-53550
+// (GHSA-h67p-54hq-rp68), and GHSA-2883-xcg3-v3hh (fixed in 4.3.2).
+// @istanbuljs/load-nyc-config pins ^3.13.1 and has no 4.x release yet, so an override is the
+// only way to move it off the old 3.x line; ^4.3.2 keeps the whole tree on the patched 4.x line
+// (other consumers ask for ^4.1.1, none want 5.x). Once load-nyc-config updates its own range
+// this override can be deleted.
+project.package.addField("overrides", { "js-yaml": "^4.3.2" });
+// stream-json stays at 1.9.1 (GHSA-528h-pc64-c93x, DoS in the pick/ignore/filter/replace path
+// filters, fixed in 3.5.0). jsii-rosetta needs the CommonJS entry points (stream-json/Assembler,
+// /Disassembler, /Stringer); 3.x is ESM-only, so an override to ^3.6.0 breaks it, and a nested
+// override to the still-CJS 2.1.2 breaks stream-chain's ^1.6.1 requirement. jsii-rosetta moved
+// to ^3.6.0 in its unreleased 6.0.16-dev line. The vulnerable filters are never imported by
+// jsii-rosetta, so the advisory is not reachable from this repository's build.
 
 project.synth();
