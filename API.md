@@ -864,14 +864,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAccessListApiKey.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -935,7 +936,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -943,8 +944,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.addDependency.parameter.target"></a>
 
@@ -959,6 +961,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.addDependsOn.parameter.target"></a>
 
@@ -1109,6 +1118,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -1225,23 +1261,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -1253,6 +1282,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAccessListApiKey.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -1580,14 +1626,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAlertConfiguration.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -1651,7 +1698,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -1659,8 +1706,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.addDependency.parameter.target"></a>
 
@@ -1675,6 +1723,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.addDependsOn.parameter.target"></a>
 
@@ -1825,6 +1880,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -1941,23 +2023,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -1969,6 +2044,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAlertConfiguration.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -2335,14 +2427,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnApiKey.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -2406,7 +2499,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnApiKey.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnApiKey.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -2414,8 +2507,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnApiKey.addDependency.parameter.target"></a>
 
@@ -2430,6 +2524,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnApiKey.addDependsOn.parameter.target"></a>
 
@@ -2580,6 +2681,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnApiKey.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnApiKey.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnApiKey.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnApiKey.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -2696,23 +2824,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnApiKey.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnApiKey.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnApiKey.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnApiKey.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -2724,6 +2845,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnApiKey.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnApiKey.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnApiKey.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -3077,14 +3215,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnAuditing.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -3148,7 +3287,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnAuditing.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnAuditing.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -3156,8 +3295,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAuditing.addDependency.parameter.target"></a>
 
@@ -3172,6 +3312,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAuditing.addDependsOn.parameter.target"></a>
 
@@ -3322,6 +3469,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnAuditing.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAuditing.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnAuditing.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnAuditing.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -3438,23 +3612,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnAuditing.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnAuditing.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnAuditing.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnAuditing.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -3466,6 +3633,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAuditing.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnAuditing.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnAuditing.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -3819,14 +4003,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -3890,7 +4075,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -3898,8 +4083,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addDependency.parameter.target"></a>
 
@@ -3914,6 +4100,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addDependsOn.parameter.target"></a>
 
@@ -4064,6 +4257,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -4180,23 +4400,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -4208,6 +4421,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnBackupCompliancePolicy.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -4561,14 +4791,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -4632,7 +4863,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -4640,8 +4871,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addDependency.parameter.target"></a>
 
@@ -4656,6 +4888,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addDependsOn.parameter.target"></a>
 
@@ -4806,6 +5045,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -4922,23 +5188,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -4950,6 +5209,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackUpRestoreJobs.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -5368,14 +5644,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -5439,7 +5716,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -5447,8 +5724,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addDependency.parameter.target"></a>
 
@@ -5463,6 +5741,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addDependsOn.parameter.target"></a>
 
@@ -5613,6 +5898,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -5729,23 +6041,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -5757,6 +6062,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSchedule.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -6097,14 +6419,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -6168,7 +6491,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -6176,8 +6499,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addDependency.parameter.target"></a>
 
@@ -6192,6 +6516,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addDependsOn.parameter.target"></a>
 
@@ -6342,6 +6673,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -6458,23 +6816,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -6486,6 +6837,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshot.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -6956,14 +7324,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -7027,7 +7396,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -7035,8 +7404,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addDependency.parameter.target"></a>
 
@@ -7051,6 +7421,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addDependsOn.parameter.target"></a>
 
@@ -7201,6 +7578,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -7317,23 +7721,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -7345,6 +7742,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCloudBackupSnapshotExportBucket.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -7672,14 +8086,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCluster.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -7743,7 +8158,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCluster.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCluster.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -7751,8 +8166,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCluster.addDependency.parameter.target"></a>
 
@@ -7767,6 +8183,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCluster.addDependsOn.parameter.target"></a>
 
@@ -7917,6 +8340,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnCluster.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCluster.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnCluster.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCluster.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -8033,23 +8483,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCluster.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnCluster.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCluster.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCluster.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -8061,6 +8504,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCluster.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnCluster.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCluster.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -8427,14 +8887,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -8498,7 +8959,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -8506,8 +8967,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addDependency.parameter.target"></a>
 
@@ -8522,6 +8984,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addDependsOn.parameter.target"></a>
 
@@ -8672,6 +9141,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -8788,23 +9284,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -8816,6 +9305,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnClusterOutageSimulation.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -9169,14 +9675,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDbRole.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -9240,7 +9747,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -9248,8 +9755,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.addDependency.parameter.target"></a>
 
@@ -9264,6 +9772,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.addDependsOn.parameter.target"></a>
 
@@ -9414,6 +9929,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -9530,23 +10072,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -9558,6 +10093,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCustomDbRole.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -9872,14 +10424,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -9943,7 +10496,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -9951,8 +10504,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addDependency.parameter.target"></a>
 
@@ -9967,6 +10521,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addDependsOn.parameter.target"></a>
 
@@ -10117,6 +10678,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -10233,23 +10821,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -10261,6 +10842,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnCustomDnsConfigurationClusterAws.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -10575,14 +11173,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnDatabaseUser.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -10646,7 +11245,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -10654,8 +11253,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.addDependency.parameter.target"></a>
 
@@ -10670,6 +11270,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.addDependsOn.parameter.target"></a>
 
@@ -10820,6 +11427,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -10936,23 +11570,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -10964,6 +11591,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnDatabaseUser.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -11291,14 +11935,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnEncryptionAtRest.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -11362,7 +12007,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -11370,8 +12015,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addDependency.parameter.target"></a>
 
@@ -11386,6 +12032,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addDependsOn.parameter.target"></a>
 
@@ -11536,6 +12189,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -11652,23 +12332,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -11680,6 +12353,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnEncryptionAtRest.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -12007,14 +12697,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -12078,7 +12769,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -12086,8 +12777,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDependency.parameter.target"></a>
 
@@ -12102,6 +12794,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addDependsOn.parameter.target"></a>
 
@@ -12252,6 +12951,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -12368,23 +13094,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -12396,6 +13115,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedDatabaseInstance.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -12736,14 +13472,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -12807,7 +13544,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -12815,8 +13552,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDependency.parameter.target"></a>
 
@@ -12831,6 +13569,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addDependsOn.parameter.target"></a>
 
@@ -12981,6 +13726,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -13097,23 +13869,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -13125,6 +13890,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedQueryLimit.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -13491,14 +14273,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -13562,7 +14345,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -13570,8 +14353,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addDependency.parameter.target"></a>
 
@@ -13586,6 +14370,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addDependsOn.parameter.target"></a>
 
@@ -13736,6 +14527,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -13852,23 +14670,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -13880,6 +14691,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsIdentityProvider.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -14220,14 +15048,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -14291,7 +15120,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -14299,8 +15128,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addDependency.parameter.target"></a>
 
@@ -14315,6 +15145,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addDependsOn.parameter.target"></a>
 
@@ -14465,6 +15302,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -14581,23 +15445,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -14609,6 +15466,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFederatedSettingsOrgRoleMapping.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -14936,14 +15810,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnFlexCluster.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -15007,7 +15882,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -15015,8 +15890,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addDependency.parameter.target"></a>
 
@@ -15031,6 +15907,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addDependsOn.parameter.target"></a>
 
@@ -15181,6 +16064,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnFlexCluster.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnFlexCluster.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -15297,23 +16207,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnFlexCluster.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnFlexCluster.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnFlexCluster.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnFlexCluster.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -15325,6 +16228,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFlexCluster.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnFlexCluster.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnFlexCluster.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -15717,14 +16637,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -15788,7 +16709,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -15796,8 +16717,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addDependency.parameter.target"></a>
 
@@ -15812,6 +16734,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addDependsOn.parameter.target"></a>
 
@@ -15962,6 +16891,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -16078,23 +17034,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -16106,6 +17055,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnGlobalClusterConfig.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -16433,14 +17399,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapConfiguration.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -16504,7 +17471,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -16512,8 +17479,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.addDependency.parameter.target"></a>
 
@@ -16528,6 +17496,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.addDependsOn.parameter.target"></a>
 
@@ -16678,6 +17653,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -16794,23 +17796,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -16822,6 +17817,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLdapConfiguration.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -17136,14 +18148,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLdapVerify.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -17207,7 +18220,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnLdapVerify.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnLdapVerify.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -17215,8 +18228,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLdapVerify.addDependency.parameter.target"></a>
 
@@ -17231,6 +18245,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLdapVerify.addDependsOn.parameter.target"></a>
 
@@ -17381,6 +18402,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnLdapVerify.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLdapVerify.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnLdapVerify.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnLdapVerify.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -17497,23 +18545,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnLdapVerify.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnLdapVerify.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnLdapVerify.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnLdapVerify.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -17525,6 +18566,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLdapVerify.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnLdapVerify.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLdapVerify.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -17865,14 +18923,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnLogIntegration.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -17936,7 +18995,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnLogIntegration.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnLogIntegration.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -17944,8 +19003,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLogIntegration.addDependency.parameter.target"></a>
 
@@ -17960,6 +19020,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLogIntegration.addDependsOn.parameter.target"></a>
 
@@ -18110,6 +19177,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnLogIntegration.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLogIntegration.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnLogIntegration.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnLogIntegration.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -18226,23 +19320,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnLogIntegration.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnLogIntegration.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnLogIntegration.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnLogIntegration.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -18254,6 +19341,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLogIntegration.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnLogIntegration.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnLogIntegration.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -18581,14 +19685,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMaintenanceWindow.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -18652,7 +19757,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -18660,8 +19765,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addDependency.parameter.target"></a>
 
@@ -18676,6 +19782,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addDependsOn.parameter.target"></a>
 
@@ -18826,6 +19939,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -18942,23 +20082,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -18970,6 +20103,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnMaintenanceWindow.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -19323,14 +20473,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -19394,7 +20545,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -19402,8 +20553,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addDependency.parameter.target"></a>
 
@@ -19418,6 +20570,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addDependsOn.parameter.target"></a>
 
@@ -19568,6 +20727,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -19684,23 +20870,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -19712,6 +20891,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnMongoDbEmployeeAccessGrant.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -20026,14 +21222,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkContainer.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -20097,7 +21294,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -20105,8 +21302,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.addDependency.parameter.target"></a>
 
@@ -20121,6 +21319,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.addDependsOn.parameter.target"></a>
 
@@ -20271,6 +21476,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -20387,23 +21619,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -20415,6 +21640,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnNetworkContainer.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -20742,14 +21984,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnNetworkPeering.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -20813,7 +22056,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -20821,8 +22064,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.addDependency.parameter.target"></a>
 
@@ -20837,6 +22081,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.addDependsOn.parameter.target"></a>
 
@@ -20987,6 +22238,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -21103,23 +22381,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -21131,6 +22402,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnNetworkPeering.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -21497,14 +22785,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOnlineArchive.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -21568,7 +22857,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -21576,8 +22865,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.addDependency.parameter.target"></a>
 
@@ -21592,6 +22882,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.addDependsOn.parameter.target"></a>
 
@@ -21742,6 +23039,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -21858,23 +23182,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -21886,6 +23203,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOnlineArchive.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -22239,14 +23573,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrganization.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -22310,7 +23645,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnOrganization.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnOrganization.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -22318,8 +23653,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOrganization.addDependency.parameter.target"></a>
 
@@ -22334,6 +23670,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOrganization.addDependsOn.parameter.target"></a>
 
@@ -22484,6 +23827,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnOrganization.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOrganization.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnOrganization.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnOrganization.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -22600,23 +23970,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnOrganization.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnOrganization.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnOrganization.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnOrganization.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -22628,6 +23991,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOrganization.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnOrganization.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOrganization.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -22955,14 +24335,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnOrgInvitation.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -23026,7 +24407,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -23034,8 +24415,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.addDependency.parameter.target"></a>
 
@@ -23050,6 +24432,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.addDependsOn.parameter.target"></a>
 
@@ -23200,6 +24589,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -23316,23 +24732,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -23344,6 +24753,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnOrgInvitation.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -23710,14 +25136,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpoint.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -23781,7 +25208,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -23789,8 +25216,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addDependency.parameter.target"></a>
 
@@ -23805,6 +25233,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addDependsOn.parameter.target"></a>
 
@@ -23955,6 +25390,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -24071,23 +25533,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -24099,6 +25554,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpoint.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -24439,14 +25911,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -24510,7 +25983,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -24518,8 +25991,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addDependency.parameter.target"></a>
 
@@ -24534,6 +26008,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addDependsOn.parameter.target"></a>
 
@@ -24684,6 +26165,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -24800,23 +26308,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -24828,6 +26329,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointAws.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -25194,14 +26712,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -25265,7 +26784,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -25273,8 +26792,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addDependency.parameter.target"></a>
 
@@ -25289,6 +26809,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addDependsOn.parameter.target"></a>
 
@@ -25439,6 +26966,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -25555,23 +27109,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -25583,6 +27130,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndPointRegionalMode.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -25897,14 +27461,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivateEndpointService.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -25968,7 +27533,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -25976,8 +27541,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addDependency.parameter.target"></a>
 
@@ -25992,6 +27558,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addDependsOn.parameter.target"></a>
 
@@ -26142,6 +27715,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -26258,23 +27858,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -26286,6 +27879,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivateEndpointService.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -26665,14 +28275,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -26736,7 +28347,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -26744,8 +28355,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDependency.parameter.target"></a>
 
@@ -26760,6 +28372,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addDependsOn.parameter.target"></a>
 
@@ -26910,6 +28529,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -27026,23 +28672,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -27054,6 +28693,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnPrivatelinkEndpointServiceDataFederationOnlineArchive.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -27368,14 +29024,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProject.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProject.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -27439,7 +29096,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnProject.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnProject.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -27447,8 +29104,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProject.addDependency.parameter.target"></a>
 
@@ -27463,6 +29121,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProject.addDependsOn.parameter.target"></a>
 
@@ -27613,6 +29278,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnProject.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProject.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnProject.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnProject.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -27729,23 +29421,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProject.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnProject.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnProject.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnProject.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -27757,6 +29442,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProject.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnProject.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProject.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -28110,14 +29812,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectInvitation.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -28181,7 +29884,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -28189,8 +29892,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.addDependency.parameter.target"></a>
 
@@ -28205,6 +29909,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.addDependsOn.parameter.target"></a>
 
@@ -28355,6 +30066,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -28471,23 +30209,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -28499,6 +30230,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectInvitation.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -28865,14 +30613,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectIpAccessList.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -28936,7 +30685,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -28944,8 +30693,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addDependency.parameter.target"></a>
 
@@ -28960,6 +30710,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addDependsOn.parameter.target"></a>
 
@@ -29110,6 +30867,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -29226,23 +31010,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -29254,6 +31031,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectIpAccessList.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -29581,14 +31375,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccount.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -29652,7 +31447,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -29660,8 +31455,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addDependency.parameter.target"></a>
 
@@ -29676,6 +31472,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addDependsOn.parameter.target"></a>
 
@@ -29826,6 +31629,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -29942,23 +31772,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -29970,6 +31793,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccount.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -30310,14 +32150,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -30381,7 +32222,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -30389,8 +32230,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addDependency.parameter.target"></a>
 
@@ -30405,6 +32247,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addDependsOn.parameter.target"></a>
 
@@ -30555,6 +32404,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -30671,23 +32547,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -30699,6 +32568,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountAccessListEntry.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -31065,14 +32951,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -31136,7 +33023,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -31144,8 +33031,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addDependency.parameter.target"></a>
 
@@ -31160,6 +33048,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addDependsOn.parameter.target"></a>
 
@@ -31310,6 +33205,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -31426,23 +33348,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -31454,6 +33369,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnProjectServiceAccountSecret.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -31846,14 +33778,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnResourcePolicy.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -31917,7 +33850,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -31925,8 +33858,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.addDependency.parameter.target"></a>
 
@@ -31941,6 +33875,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.addDependsOn.parameter.target"></a>
 
@@ -32091,6 +34032,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -32207,23 +34175,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -32235,6 +34196,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnResourcePolicy.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -32601,14 +34579,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchDeployment.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -32672,7 +34651,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -32680,8 +34659,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.addDependency.parameter.target"></a>
 
@@ -32696,6 +34676,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.addDependsOn.parameter.target"></a>
 
@@ -32846,6 +34833,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -32962,23 +34976,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -32990,6 +34997,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnSearchDeployment.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -33343,14 +35367,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnSearchIndex.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -33414,7 +35439,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnSearchIndex.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnSearchIndex.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -33422,8 +35447,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnSearchIndex.addDependency.parameter.target"></a>
 
@@ -33438,6 +35464,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnSearchIndex.addDependsOn.parameter.target"></a>
 
@@ -33588,6 +35621,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnSearchIndex.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnSearchIndex.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnSearchIndex.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnSearchIndex.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -33704,23 +35764,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnSearchIndex.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnSearchIndex.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnSearchIndex.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnSearchIndex.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -33732,6 +35785,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnSearchIndex.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnSearchIndex.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnSearchIndex.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -34072,14 +36142,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccount.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -34143,7 +36214,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccount.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccount.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -34151,8 +36222,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccount.addDependency.parameter.target"></a>
 
@@ -34167,6 +36239,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccount.addDependsOn.parameter.target"></a>
 
@@ -34317,6 +36396,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccount.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccount.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnServiceAccount.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnServiceAccount.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -34433,23 +36539,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnServiceAccount.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnServiceAccount.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccount.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccount.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -34461,6 +36560,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccount.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccount.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccount.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -34801,14 +36917,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -34872,7 +36989,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -34880,8 +36997,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addDependency.parameter.target"></a>
 
@@ -34896,6 +37014,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addDependsOn.parameter.target"></a>
 
@@ -35046,6 +37171,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -35162,23 +37314,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -35190,6 +37335,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountAccessListEntry.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -35556,14 +37718,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -35627,7 +37790,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -35635,8 +37798,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addDependency.parameter.target"></a>
 
@@ -35651,6 +37815,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addDependsOn.parameter.target"></a>
 
@@ -35801,6 +37972,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -35917,23 +38115,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -35945,6 +38136,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountProjectAssignment.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -36259,14 +38467,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnServiceAccountSecret.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -36330,7 +38539,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -36338,8 +38547,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addDependency.parameter.target"></a>
 
@@ -36354,6 +38564,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addDependsOn.parameter.target"></a>
 
@@ -36504,6 +38721,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -36620,23 +38864,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -36648,6 +38885,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnServiceAccountSecret.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -37040,14 +39294,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamConnection.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -37111,7 +39366,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnStreamConnection.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnStreamConnection.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -37119,8 +39374,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamConnection.addDependency.parameter.target"></a>
 
@@ -37135,6 +39391,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamConnection.addDependsOn.parameter.target"></a>
 
@@ -37285,6 +39548,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnStreamConnection.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamConnection.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnStreamConnection.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnStreamConnection.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -37401,23 +39691,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnStreamConnection.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnStreamConnection.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnStreamConnection.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnStreamConnection.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -37429,6 +39712,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamConnection.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnStreamConnection.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamConnection.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -37743,14 +40043,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamInstance.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -37814,7 +40115,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnStreamInstance.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnStreamInstance.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -37822,8 +40123,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamInstance.addDependency.parameter.target"></a>
 
@@ -37838,6 +40140,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamInstance.addDependsOn.parameter.target"></a>
 
@@ -37988,6 +40297,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnStreamInstance.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamInstance.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnStreamInstance.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnStreamInstance.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -38104,23 +40440,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnStreamInstance.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnStreamInstance.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnStreamInstance.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnStreamInstance.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -38132,6 +40461,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamInstance.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnStreamInstance.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamInstance.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -38472,14 +40818,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -38543,7 +40890,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -38551,8 +40898,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addDependency.parameter.target"></a>
 
@@ -38567,6 +40915,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addDependsOn.parameter.target"></a>
 
@@ -38717,6 +41072,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -38833,23 +41215,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -38861,6 +41236,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamPrivatelinkEndpoint.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -39253,14 +41645,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamProcessor.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -39324,7 +41717,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -39332,8 +41725,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.addDependency.parameter.target"></a>
 
@@ -39348,6 +41742,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.addDependsOn.parameter.target"></a>
 
@@ -39498,6 +41899,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -39614,23 +42042,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -39642,6 +42063,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamProcessor.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -39995,14 +42433,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnStreamWorkspace.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -40066,7 +42505,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -40074,8 +42513,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.addDependency.parameter.target"></a>
 
@@ -40090,6 +42530,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.addDependsOn.parameter.target"></a>
 
@@ -40240,6 +42687,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -40356,23 +42830,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -40384,6 +42851,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnStreamWorkspace.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -40724,14 +43208,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTeams.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -40795,7 +43280,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnTeams.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnTeams.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -40803,8 +43288,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnTeams.addDependency.parameter.target"></a>
 
@@ -40819,6 +43305,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnTeams.addDependsOn.parameter.target"></a>
 
@@ -40969,6 +43462,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnTeams.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnTeams.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnTeams.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnTeams.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -41085,23 +43605,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnTeams.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnTeams.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnTeams.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnTeams.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -41113,6 +43626,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnTeams.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnTeams.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnTeams.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -41440,14 +43970,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -41511,7 +44042,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -41519,8 +44050,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addDependency.parameter.target"></a>
 
@@ -41535,6 +44067,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addDependsOn.parameter.target"></a>
 
@@ -41685,6 +44224,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -41801,23 +44367,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -41829,6 +44388,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnThirdPartyIntegration.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -42143,14 +44719,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnTrigger.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -42214,7 +44791,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnTrigger.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnTrigger.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -42222,8 +44799,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnTrigger.addDependency.parameter.target"></a>
 
@@ -42238,6 +44816,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnTrigger.addDependsOn.parameter.target"></a>
 
@@ -42388,6 +44973,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnTrigger.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnTrigger.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnTrigger.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnTrigger.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -42504,23 +45116,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnTrigger.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnTrigger.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnTrigger.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnTrigger.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -42532,6 +45137,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnTrigger.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnTrigger.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnTrigger.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
@@ -42859,14 +45481,15 @@ resource properties.
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addOverride">addOverride</a></code> | Adds an override to the synthesized CloudFormation resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addPropertyDeletionOverride">addPropertyDeletionOverride</a></code> | Adds an override that deletes the value of a property from the resource definition. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addPropertyOverride">addPropertyOverride</a></code> | Adds an override to a resource property. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addResourceDependency">addResourceDependency</a></code> | Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.applyCrossStackReferenceStrength">applyCrossStackReferenceStrength</a></code> | Sets the cross-stack reference strength for this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.applyRemovalPolicy">applyRemovalPolicy</a></code> | Sets the deletion policy of the resource based on the removal policy specified. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.cfnPropertyName">cfnPropertyName</a></code> | *No description.* |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.getAtt">getAtt</a></code> | Returns a token for an runtime attribute of this resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.getMetadata">getMetadata</a></code> | Retrieve a value value from the CloudFormation Resource Metadata. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources this resource depends on. |
-| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.obtainResourceDependencies">obtainResourceDependencies</a></code> | Get a shallow copy of dependencies between this resource and other resources in the same stack. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.obtainDependencies">obtainDependencies</a></code> | Retrieves an array of resources and stacks this resource depends on. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.removeDependency">removeDependency</a></code> | Indicates that this resource no longer depends on another resource. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.removeResourceDependency">removeResourceDependency</a></code> | Indicates that this resource no longer depends on another resource. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.replaceDependency">replaceDependency</a></code> | Replaces one dependency with another. |
 
 ---
@@ -42930,7 +45553,7 @@ The path of the value to delete.
 
 ---
 
-##### `addDependency` <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addDependency"></a>
+##### ~~`addDependency`~~ <a name="addDependency" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addDependency"></a>
 
 ```typescript
 public addDependency(target: CfnResource): void
@@ -42938,8 +45561,9 @@ public addDependency(target: CfnResource): void
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
 
-This can be used for resources across stacks (or nested stack) boundaries
-and the dependency will automatically be transferred to the relevant scope.
+This method has been renamed to `addResourceDependency` to more clearly
+set it apart from `construct.node.addDependency`. See the documentation
+of that function for more details.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addDependency.parameter.target"></a>
 
@@ -42954,6 +45578,13 @@ public addDependsOn(target: CfnResource): void
 ```
 
 Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method has been renamed to `addResourceDependency`, which makes it
+more clear that this method operates at a different level from the
+construct-level `construct.node.addDependency()` mechanism.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addDependsOn.parameter.target"></a>
 
@@ -43104,6 +45735,33 @@ The value.
 
 ---
 
+##### `addResourceDependency` <a name="addResourceDependency" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addResourceDependency"></a>
+
+```typescript
+public addResourceDependency(target: CfnResource, reason?: string): void
+```
+
+Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+
+This can be used for resources across stacks (or nested stack) boundaries
+and the dependency will automatically be transferred to the relevant scope.
+
+This method only adds dependencies between L1 resources. If you are
+looking for a generic construct-to-construct dependency mechanism that works
+for all constructs including L2s, use `construct.node.addDependency` instead.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addResourceDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+###### `reason`<sup>Optional</sup> <a name="reason" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.addResourceDependency.parameter.reason"></a>
+
+- *Type:* string
+
+---
+
 ##### `applyCrossStackReferenceStrength` <a name="applyCrossStackReferenceStrength" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.applyCrossStackReferenceStrength"></a>
 
 ```typescript
@@ -43220,23 +45878,16 @@ node metadata ends up in the Cloud Assembly.)
 ##### `obtainDependencies` <a name="obtainDependencies" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.obtainDependencies"></a>
 
 ```typescript
-public obtainDependencies(): (CfnResource | Stack)[]
+public obtainDependencies(): (Stack | CfnResource)[]
 ```
 
-Retrieves an array of resources this resource depends on.
+Retrieves an array of resources and stacks this resource depends on.
 
-This assembles dependencies on resources across stacks (including nested stacks)
-automatically.
+For resources depended on directly, returns the `CfnResource` object. For
+dependencies on other stacks, returns the `Stack` object. The order of the
+array is not guaranteed.
 
-##### `obtainResourceDependencies` <a name="obtainResourceDependencies" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.obtainResourceDependencies"></a>
-
-```typescript
-public obtainResourceDependencies(): CfnResource[]
-```
-
-Get a shallow copy of dependencies between this resource and other resources in the same stack.
-
-##### `removeDependency` <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.removeDependency"></a>
+##### ~~`removeDependency`~~ <a name="removeDependency" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.removeDependency"></a>
 
 ```typescript
 public removeDependency(target: CfnResource): void
@@ -43248,6 +45899,23 @@ This can be used for resources across stacks (including nested stacks)
 and the dependency will automatically be removed from the relevant scope.
 
 ###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.removeDependency.parameter.target"></a>
+
+- *Type:* aws-cdk-lib.CfnResource
+
+---
+
+##### `removeResourceDependency` <a name="removeResourceDependency" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.removeResourceDependency"></a>
+
+```typescript
+public removeResourceDependency(target: CfnResource): void
+```
+
+Indicates that this resource no longer depends on another resource.
+
+This can be used for resources across stacks (including nested stacks)
+and the dependency will automatically be removed from the relevant scope.
+
+###### `target`<sup>Required</sup> <a name="target" id="awscdk-resources-mongodbatlas.CfnX509AuthenticationDatabaseUser.removeResourceDependency.parameter.target"></a>
 
 - *Type:* aws-cdk-lib.CfnResource
 
