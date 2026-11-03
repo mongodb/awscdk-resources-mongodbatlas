@@ -15,6 +15,7 @@ interface AtlasStackProps {
   readonly region: string;
   readonly ip: string;
   readonly customerMasterKeyArn: string;
+  readonly dbUserPassword: string;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -85,6 +86,9 @@ export class CdkTestingStack extends cdk.Stack {
       },
       accessList: {
         accessList: [{ ipAddress: atlasProps.ip, comment: 'My first IP address' }]
+      },
+      databaseUser: {
+        password: atlasProps.dbUserPassword,
       }
     });
 
@@ -98,11 +102,24 @@ export class CdkTestingStack extends cdk.Stack {
       throw "No context value specified for projId. Please specify via the cdk context."
     }
 
+    const ip = this.node.tryGetContext('ip');
+    if (!ip) {
+      throw "No context value specified for ip. Please specify via the cdk context."
+    }
+
+    const customerMasterKeyArn = this.node.tryGetContext('customerMasterKeyArn');
+    if (!customerMasterKeyArn) {
+      throw "No context value specified for customerMasterKeyArn. Please specify via the cdk context."
+    }
+
+    const dbUserPassword = this.node.tryGetContext('dbUserPassword');
+    if (!dbUserPassword) {
+      throw "No context value specified for dbUserPassword. Please specify via the cdk context."
+    }
+
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const clusterName = this.node.tryGetContext('clusterName') ?? 'test-cluster';
     const region = this.node.tryGetContext('region') ?? "US_EAST_1";
-    const ip = this.node.tryGetContext('ip');
-    const customerMasterKeyArn = this.node.tryGetContext('customerMasterKeyArn');
 
     return {
       projId,
@@ -111,6 +128,7 @@ export class CdkTestingStack extends cdk.Stack {
       region,
       ip,
       customerMasterKeyArn,
+      dbUserPassword,
     }
   }
 }
