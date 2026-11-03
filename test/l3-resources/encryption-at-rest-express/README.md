@@ -10,50 +10,14 @@ These CFN resources must be active in your AWS account while using this construc
 
 ## Manual QA
 ### Prerequisite steps:
-1. Create an Atlas Project 
-2. [Create CloudAccessProvider](https://www.mongodb.com/docs/atlas/reference/api/cloud-provider-access-create-one-role/) role for your project via postman:
-  
-`POST https://cloud-dev.mongodb.com/api/atlas/v1.0/groups/<ATLAS_PROJECT_ID>/cloudProviderAccess`
- - Note `roleId`, `atlasAWSAccountArn` and `atlasAssumedRoleExternalId` from the response. You will be using these in the next steps.
-3. Use `atlasAWSAccountArn`, `atlasAssumedRoleExternalId` from last step to create an IAM role for Atlas in your AWS account as follows:
- ```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "<atlasAWSAccountArn>"
-            },
-            "Action": "sts:AssumeRole",
-            "Condition": {
-                "StringEquals": {
-                    "sts:ExternalId": "atlasAssumedRoleExternalId"
-                }
-            }
-        }
-    ]
-}
-```
-
-
-4. Authorize your newly created IAM role for the `roleId` with Atlas via postman:
-```
-PATCH https://cloud-dev.mongodb.com/api/atlas/v1.0/groups/<ATLAS_PROJECT_ID>/cloudProviderAccess/<roleId>
-
-RequestBody:
-{
-"providerName": "AWS",
-"iamAssumedRoleArn": "<AWS_IAM_ROLE_ARN>"
-}
-```
-
-5. Create a Key in AWS KMS: Follow UI prompts and on `Define key administrative permissions` page under `Key administrators` select your IAM role created in last step.
-6. Once KMS key is created in KMS, note your Key ID, this is your Customer Master Key.
+1. Create an Atlas Project.
+2. Register the Cloud Provider Access role, create the AWS IAM role whose trust policy uses the registration outputs, and authorize the role. You can do all of it in one app with `CfnCloudProviderAccessSetup`, a native `AWS::IAM::Role`, and `CfnCloudProviderAccessAuthorization`; see [cloud-provider-access-full-chain.ts](../../../examples/l1-resources/cloud-provider-access-full-chain.ts). Note the `roleId` the setup resource returns.
+3. Create a Key in AWS KMS: Follow UI prompts and on `Define key administrative permissions` page under `Key administrators` select your IAM role created in the last step.
+4. Once the KMS key is created, note your Key ID. This is your Customer Master Key.
 
 ### Steps to test:
 1. Follow prerequisite steps for testing a CDK construct in [TESTING.md](../../../TESTING.md).
-2. Use `roleID` from prerequisite steps above as role id param for this CDK construct
+2. Use the `roleId` from the setup resource as the role id param for this CDK construct.
 3. Set any additional required configuration options/parameters as per your needs.
 4. Please follow the steps in [TESTING.md](../../../TESTING.md).
 

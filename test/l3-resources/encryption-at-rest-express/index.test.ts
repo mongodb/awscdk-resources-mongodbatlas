@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import { App, Stack } from "aws-cdk-lib";
-import { Template } from "aws-cdk-lib/assertions";
+import { Match, Template } from "aws-cdk-lib/assertions";
 import * as l3 from "../../../src";
 
 const PROJECT_ID = "PROJ_ID";
@@ -34,6 +34,7 @@ const ADMIN_DB = "admin";
 const ROLE_NAME = "atlasAdmin";
 const EBS_VOLUME_TYPE = "STANDARD";
 const IP_ADDRESS = "190.0.0.1";
+const MONGODB_VERSION = "8.0";
 
 test("Encryption at rest express construct should contain default properties", () => {
   const mockApp = new App();
@@ -73,6 +74,7 @@ test("Encryption at rest express construct should contain default properties", (
     ClusterType: "REPLICASET",
     Name: PROJECT_NAME,
     BackupEnabled: BACKUP_ENABLED,
+    MongoDBMajorVersion: Match.absent(),
     ReplicationSpecs: [
       {
         NumShards: 1,
@@ -123,5 +125,30 @@ test("Encryption at rest express construct should contain default properties", (
         IPAddress: IP_ADDRESS,
       },
     ],
+  });
+});
+
+test("Encryption at rest express construct should honor an explicit MongoDB major version", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new l3.AtlasEncryptionAtRestExpress(stack, "testing-stack-version", {
+    cluster: {
+      name: PROJECT_NAME,
+      mongoDbMajorVersion: MONGODB_VERSION,
+    },
+
+    projectId: PROJECT_ID,
+
+    encryptionAtRest: {
+      roleId: ROLE_ID,
+      customerMasterKeyId: CUSTOMER_MASTER_KEY,
+    },
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME_CLUSTER, {
+    MongoDBMajorVersion: MONGODB_VERSION,
   });
 });

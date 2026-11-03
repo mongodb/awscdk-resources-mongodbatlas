@@ -77,7 +77,7 @@ aws cloudformation activate-type \
 
 3. This construnctor supports only [AWS Key Management Service](https://www.mongodb.com/docs/atlas/security-aws-kms/#security-aws-kms). 
 
-4. MongoDB does not support creating and configuring a IAM role via CFN and CDK. **Please follow this guide ([Enable Role-Based Access to Your Encryption Key for a Project](https://www.mongodb.com/docs/atlas/security-aws-kms/#enable-customer-managed-keys-with-aws-kms)) before trying to use this constructor as you must provide** `roleId` **and the** `customerMasterKeyId`.
+4. This constructor needs an Atlas Cloud Provider Access role id and a customer master key id. You can register and authorize the role in the same app with the `CfnCloudProviderAccessSetup` and `CfnCloudProviderAccessAuthorization` L1 constructs, a native `AWS::IAM::Role`, and `CfnEncryptionAtRest`. See [cloud-provider-access-full-chain.ts](../../../examples/l1-resources/cloud-provider-access-full-chain.ts). You can also follow [Enable Role-Based Access to Your Encryption Key for a Project](https://www.mongodb.com/docs/atlas/security-aws-kms/#enable-customer-managed-keys-with-aws-kms) to create the role outside this stack.
 
 
 ## Example: [encryption-at-rest.ts](../../../examples/l3-resources/encryption-at-rest-express.ts)
@@ -148,7 +148,6 @@ The constructor will deploy the following resources using default values:
     - provider: AWS
     - region: us-east-1
     - cluster type: replica-set 
-    - mongogb version: 5.0
     - eligible nodes: 3
     - instance size: M30
     - analytics node: 1
@@ -209,7 +208,6 @@ The constructor will deploy the following resources using default values:
     - provider: AWS
     - region: us-east-1
     - cluster type: replica-set 
-    - mongogb version: 5.0
     - eligible nodes: 3
     - instance size: M30
     - analytics node: 1
