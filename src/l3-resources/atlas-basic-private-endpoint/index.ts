@@ -85,7 +85,7 @@ export class AtlasBasicPrivateEndpoint extends Construct {
       }
     );
 
-    this.awsPrivateEndpoint.addDependency(this.privateEndpointService);
+    this.awsPrivateEndpoint.addResourceDependency(this.privateEndpointService);
 
     this.privateEndpointAws = new CfnPrivateEndpointAws(
       this,
@@ -98,7 +98,7 @@ export class AtlasBasicPrivateEndpoint extends Construct {
       }
     );
 
-    this.privateEndpointAws.addDependency(this.awsPrivateEndpoint);
+    this.privateEndpointAws.addResourceDependency(this.awsPrivateEndpoint);
   }
 }
 
