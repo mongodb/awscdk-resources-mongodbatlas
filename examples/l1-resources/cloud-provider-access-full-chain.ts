@@ -27,18 +27,29 @@ export class CdkTestingStack extends cdk.Stack {
       profile: atlasProps.profile,
     });
 
-    // The customer owns the IAM role, and its trust policy consumes the values
-    // the registration returned.
-    const atlasRole = new iam.Role(this, 'AtlasCloudProviderAccessRole', {
-      assumedBy: new iam.ArnPrincipal(cloudProviderAccessSetup.attrAtlasAWSAccountArn),
-      externalIds: [cloudProviderAccessSetup.attrAtlasAssumedRoleExternalId],
-    });
-
     const encryptionKey = new kms.Key(this, 'AtlasEncryptionKey', {
       enableKeyRotation: true,
       removalPolicy: cdk.RemovalPolicy.RETAIN,
     });
-    encryptionKey.grantEncryptDecrypt(atlasRole);
+
+    // The customer owns the IAM role, and its trust policy consumes the values
+    // the registration returned. Atlas needs kms:DescribeKey, kms:Encrypt and
+    // kms:Decrypt on the key. Keep them in an inline policy so the permissions
+    // are part of the role resource and exist before the role is authorized.
+    const atlasRole = new iam.Role(this, 'AtlasCloudProviderAccessRole', {
+      assumedBy: new iam.ArnPrincipal(cloudProviderAccessSetup.attrAtlasAWSAccountArn),
+      externalIds: [cloudProviderAccessSetup.attrAtlasAssumedRoleExternalId],
+      inlinePolicies: {
+        AtlasEncryptionAtRest: new iam.PolicyDocument({
+          statements: [
+            new iam.PolicyStatement({
+              actions: ['kms:DescribeKey', 'kms:Encrypt', 'kms:Decrypt'],
+              resources: [encryptionKey.keyArn],
+            }),
+          ],
+        }),
+      },
+    });
 
     // Authorize the IAM role ARN against the registration.
     const cloudProviderAccessAuthorization = new CfnCloudProviderAccessAuthorization(this, 'CloudProviderAccessAuthorization', {
