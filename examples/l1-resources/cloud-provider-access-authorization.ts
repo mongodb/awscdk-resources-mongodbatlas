@@ -30,7 +30,14 @@ export class CdkTestingStack extends cdk.Stack {
 
     const profile = this.node.tryGetContext('profile') ?? 'default';
     const roleId = this.node.tryGetContext('roleId');
+    if (!roleId) {
+      throw "No context value specified for roleId. Please specify via the cdk context."
+    }
+
     const iamAssumedRoleArn = this.node.tryGetContext('iamAssumedRoleArn');
+    if (!iamAssumedRoleArn) {
+      throw "No context value specified for iamAssumedRoleArn. Please specify via the cdk context."
+    }
 
     return {
       projId,
