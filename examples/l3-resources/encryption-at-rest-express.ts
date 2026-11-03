@@ -1,4 +1,4 @@
-// This example creates a project and a cluster in Atlas using the L1 resources.
+// This example registers and authorizes the IAM role Atlas assumes, then enables encryption at rest with a customer managed key and creates the cluster, database user and access list with AtlasEncryptionAtRestExpress.
 import * as cdk from 'aws-cdk-lib';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs';
