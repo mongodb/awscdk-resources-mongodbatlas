@@ -152,3 +152,31 @@ test("Encryption at rest express construct should honor an explicit MongoDB majo
     MongoDBMajorVersion: MONGODB_VERSION,
   });
 });
+
+test("Encryption at rest express construct should create the cluster after encryption at rest", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  const encryptionAtRestExpress = new l3.AtlasEncryptionAtRestExpress(
+    stack,
+    "testing-stack-dependency",
+    {
+      cluster: {
+        name: PROJECT_NAME,
+      },
+
+      projectId: PROJECT_ID,
+
+      encryptionAtRest: {
+        roleId: ROLE_ID,
+        customerMasterKeyId: CUSTOMER_MASTER_KEY,
+      },
+    }
+  );
+
+  const template = Template.fromStack(stack);
+
+  template.hasResource(RESOURCE_NAME_CLUSTER, {
+    DependsOn: [stack.getLogicalId(encryptionAtRestExpress.encryptionAtRest)],
+  });
+});

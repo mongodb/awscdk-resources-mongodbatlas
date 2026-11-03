@@ -171,6 +171,9 @@ export class AtlasEncryptionAtRestExpress extends Construct {
         profile: props.profile,
         projectId: props.projectId,
       });
+      // Atlas rejects a cluster that uses an encryption at rest provider before
+      // encryption at rest is enabled for the project.
+      this.cluster.addResourceDependency(this.encryptionAtRest);
     }
 
     if (props.databaseUser) {

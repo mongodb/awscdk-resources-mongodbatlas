@@ -11,13 +11,11 @@ These CFN resources must be active in your AWS account while using this construc
 ## Manual QA
 ### Prerequisite steps:
 1. Create an Atlas Project.
-2. Register the Cloud Provider Access role, create the AWS IAM role whose trust policy uses the registration outputs, and authorize the role. You can do all of it in one app with `CfnCloudProviderAccessSetup`, a native `AWS::IAM::Role`, and `CfnCloudProviderAccessAuthorization`; see [cloud-provider-access-full-chain.ts](../../../examples/l1-resources/cloud-provider-access-full-chain.ts). Note the `roleId` the setup resource returns.
-3. Create a Key in AWS KMS: Follow UI prompts and on `Define key administrative permissions` page under `Key administrators` select your IAM role created in the last step.
-4. Once the KMS key is created, note your Key ID. This is your Customer Master Key.
+2. Create a Key in AWS KMS in the same AWS account and note its Key ARN. This is your Customer Master Key. The key policy must allow this account to delegate key access through IAM, which the default key policy does.
 
 ### Steps to test:
 1. Follow prerequisite steps for testing a CDK construct in [TESTING.md](../../../TESTING.md).
-2. Use the `roleId` from the setup resource as the role id param for this CDK construct.
+2. Use [encryption-at-rest-express.ts](../../../examples/l3-resources/encryption-at-rest-express.ts) with the Key ARN as the `customerMasterKeyArn` context value. The example registers the Cloud Provider Access role with `CfnCloudProviderAccessSetup`, creates the AWS IAM role that Atlas assumes with the KMS permissions it needs, and authorizes it with `CfnCloudProviderAccessAuthorization`.
 3. Set any additional required configuration options/parameters as per your needs.
 4. Please follow the steps in [TESTING.md](../../../TESTING.md).
 
