@@ -106,6 +106,22 @@ export { CfnCloudBackupSnapshotExportBucket } from "./l1-resources/cloud-backup-
 
 export type { CfnCloudBackupSnapshotExportBucketProps } from "./l1-resources/cloud-backup-snapshot-export-bucket";
 
+export { CfnCloudProviderAccessAuthorization } from "./l1-resources/cloud-provider-access-authorization";
+
+export type {
+  CfnCloudProviderAccessAuthorizationProps,
+  FeatureId as CloudProviderAccessAuthorizationFeatureId,
+  FeatureUsage as CloudProviderAccessAuthorizationFeatureUsage,
+} from "./l1-resources/cloud-provider-access-authorization";
+
+export { CfnCloudProviderAccessSetup } from "./l1-resources/cloud-provider-access-setup";
+
+export type {
+  CfnCloudProviderAccessSetupProps,
+  FeatureId as CloudProviderAccessSetupFeatureId,
+  FeatureUsage as CloudProviderAccessSetupFeatureUsage,
+} from "./l1-resources/cloud-provider-access-setup";
+
 export {
   CfnClusterOutageSimulation,
   FilterCloudProvider,
