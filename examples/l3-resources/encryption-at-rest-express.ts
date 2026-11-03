@@ -1,7 +1,12 @@
 // This example creates a project and a cluster in Atlas using the L1 resources.
 import * as cdk from 'aws-cdk-lib';
+import * as iam from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs';
-import { AtlasEncryptionAtRestExpress } from 'awscdk-resources-mongodbatlas';
+import {
+  AtlasEncryptionAtRestExpress,
+  CfnCloudProviderAccessAuthorization,
+  CfnCloudProviderAccessSetup,
+} from 'awscdk-resources-mongodbatlas';
 
 interface AtlasStackProps {
   readonly projId: string;
@@ -9,10 +14,7 @@ interface AtlasStackProps {
   readonly clusterName: string;
   readonly region: string;
   readonly ip: string;
-  readonly vpcId: string;
-  readonly subnetId: string;
-  readonly roleId: string;
-  readonly customerMasterKeyId: string;
+  readonly customerMasterKeyArn: string;
 }
 
 export class CdkTestingStack extends cdk.Stack {
@@ -20,7 +22,37 @@ export class CdkTestingStack extends cdk.Stack {
     super(scope, id, props);
 
     const atlasProps = this.getContextProps();
-    const atlasBasicPrivateEndpointasBasic = new AtlasEncryptionAtRestExpress(this, 'AtlasBasic', {
+
+    // Register the Atlas side of the trust handshake, then authorize the IAM
+    // role that Atlas assumes to use the customer master key.
+    const cloudProviderAccessSetup = new CfnCloudProviderAccessSetup(this, 'CloudProviderAccessSetup', {
+      projectId: atlasProps.projId,
+      profile: atlasProps.profile,
+    });
+
+    const atlasRole = new iam.Role(this, 'AtlasCloudProviderAccessRole', {
+      assumedBy: new iam.ArnPrincipal(cloudProviderAccessSetup.attrAtlasAWSAccountArn),
+      externalIds: [cloudProviderAccessSetup.attrAtlasAssumedRoleExternalId],
+      inlinePolicies: {
+        AtlasEncryptionAtRest: new iam.PolicyDocument({
+          statements: [
+            new iam.PolicyStatement({
+              actions: ['kms:DescribeKey', 'kms:Encrypt', 'kms:Decrypt'],
+              resources: [atlasProps.customerMasterKeyArn],
+            }),
+          ],
+        }),
+      },
+    });
+
+    const cloudProviderAccessAuthorization = new CfnCloudProviderAccessAuthorization(this, 'CloudProviderAccessAuthorization', {
+      projectId: atlasProps.projId,
+      profile: atlasProps.profile,
+      roleId: cloudProviderAccessSetup.attrRoleId,
+      iamAssumedRoleArn: atlasRole.roleArn,
+    });
+
+    const encryptionAtRestExpress = new AtlasEncryptionAtRestExpress(this, 'AtlasBasic', {
       cluster: {
         name: atlasProps.clusterName,
         replicationSpecs: [
@@ -48,13 +80,16 @@ export class CdkTestingStack extends cdk.Stack {
       profile: atlasProps.profile,
       projectId: atlasProps.projId,
       encryptionAtRest: {
-        customerMasterKeyId: atlasProps.customerMasterKeyId,
-        roleId: atlasProps.roleId,
+        customerMasterKeyId: atlasProps.customerMasterKeyArn,
+        roleId: cloudProviderAccessSetup.attrRoleId,
       },
       accessList: {
         accessList: [{ ipAddress: atlasProps.ip, comment: 'My first IP address' }]
       }
     });
+
+    // The role id alone waits for the registration, not for the authorization.
+    encryptionAtRestExpress.encryptionAtRest.node.addDependency(cloudProviderAccessAuthorization);
   }
 
   getContextProps(): AtlasStackProps {
@@ -67,10 +102,7 @@ export class CdkTestingStack extends cdk.Stack {
     const clusterName = this.node.tryGetContext('clusterName') ?? 'test-cluster';
     const region = this.node.tryGetContext('region') ?? "US_EAST_1";
     const ip = this.node.tryGetContext('ip');
-    const vpcId = this.node.tryGetContext('vpcId');
-    const subnetId = this.node.tryGetContext('subnetId');
-    const roleId = this.node.tryGetContext('roleId');
-    const customerMasterKeyId = this.node.tryGetContext('customerMasterKeyId');
+    const customerMasterKeyArn = this.node.tryGetContext('customerMasterKeyArn');
 
     return {
       projId,
@@ -78,10 +110,7 @@ export class CdkTestingStack extends cdk.Stack {
       clusterName,
       region,
       ip,
-      vpcId,
-      subnetId,
-      roleId,
-      customerMasterKeyId
+      customerMasterKeyArn,
     }
   }
 }
