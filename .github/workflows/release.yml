@@ -158,7 +158,10 @@ jobs:
     permissions:
       contents: read
       issues: write
-      id-token: write # Required for Trusted Publishing.
+      id-token: write # Required for NuGet trusted publishing and AWS OIDC.
+    env:
+      ECR_REGISTRY: ${{ vars.ECR_REGISTRY }}
+      ECR_ROLE_ARN: ${{ vars.ECR_ROLE_ARN }}
     steps:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
@@ -177,19 +180,23 @@ jobs:
       - name: Extract Version
         id: extract-version
         run: echo "VERSION=$(cat dist/version.txt)" >> "${GITHUB_OUTPUT}"
-      - name: Log in to MongoDB Docker registry
-        uses: docker/login-action@81c6f93d4bc991e510b342a00b419b3bb4efc5c6
+      - name: Configure AWS credentials for DevProd Platforms ECR
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd
         with:
-          registry: ${{ secrets.ARTIFACTORY_REGISTRY }}
-          username: ${{ secrets.ARTIFACTORY_USER }}
-          password: ${{ secrets.ARTIFACTORY_PASSWORD }}
+          role-to-assume: ${{ env.ECR_ROLE_ARN }}
+          aws-region: us-east-1
+      - name: Authenticate Docker to DevProd Platforms ECR
+        run: |
+          aws ecr get-login-password --region us-east-1 |
+            docker login --username AWS --password-stdin "${ECR_REGISTRY}"
+          docker pull "${ECR_REGISTRY}/release-infrastructure/garasign-jsign"
       - name: Sign NuGet package
         run: |
           docker run \
           -e GRS_CONFIG_USER1_USERNAME="${{ secrets.ARTIFACTORY_SIGN_USER }}" \
           -e GRS_CONFIG_USER1_PASSWORD="${{ secrets.ARTIFACTORY_SIGN_PASSWORD }}" \
           --rm -v "$(pwd)":"$(pwd)" -w "$(pwd)" \
-          "${{ secrets.ARTIFACTORY_REGISTRY }}/${{ secrets.ARTIFACTORY_SIGN_TOOL }}" \
+          "${ECR_REGISTRY}/release-infrastructure/garasign-jsign" \
           /bin/bash -c "jsign --tsaurl http://timestamp.digicert.com -a ${{ secrets.AUTHENTICODE_KEY_NAME }} \
           ./dist/dotnet/MongoDB.AWSCDKResourcesMongoDBAtlas.${{ steps.extract-version.outputs.VERSION }}.nupkg"
       - id: login
@@ -262,6 +269,8 @@ jobs:
           GITHUB_REF: ${{ github.ref }}
         run: errout=$(mktemp); gh release create "$(cat dist/releasetag.txt)" -R "${GITHUB_REPOSITORY}" -F dist/changelog.md -t "$(cat dist/releasetag.txt)" --target "${GITHUB_REF}" 2> "$errout" && true; exitcode=$?; if [ $exitcode -ne 0 ] && ! grep -q "Release.tag_name already exists" "$errout"; then cat "$errout"; exit $exitcode; fi
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
       - name: Configure AWS credentials for DevProd Platforms ECR
         uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd
         with:
@@ -323,6 +332,6 @@ jobs:
         uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64
         with:
           files: compliance/sbom.json
-          tag_name: ${{ steps.extract-version.outputs.VERSION }}
+          tag_name: v${{ steps.extract-version.outputs.VERSION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
