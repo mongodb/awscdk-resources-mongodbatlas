@@ -330,6 +330,6 @@ jobs:
         uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64
         with:
           files: compliance/sbom.json
-          tag_name: ${{ steps.extract-version.outputs.VERSION }}
+          tag_name: v${{ steps.extract-version.outputs.VERSION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
