@@ -10,50 +10,12 @@ These CFN resources must be active in your AWS account while using this construc
 
 ## Manual QA
 ### Prerequisite steps:
-1. Create an Atlas Project 
-2. [Create CloudAccessProvider](https://www.mongodb.com/docs/atlas/reference/api/cloud-provider-access-create-one-role/) role for your project via postman:
-  
-`POST https://cloud-dev.mongodb.com/api/atlas/v1.0/groups/<ATLAS_PROJECT_ID>/cloudProviderAccess`
- - Note `roleId`, `atlasAWSAccountArn` and `atlasAssumedRoleExternalId` from the response. You will be using these in the next steps.
-3. Use `atlasAWSAccountArn`, `atlasAssumedRoleExternalId` from last step to create an IAM role for Atlas in your AWS account as follows:
- ```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "<atlasAWSAccountArn>"
-            },
-            "Action": "sts:AssumeRole",
-            "Condition": {
-                "StringEquals": {
-                    "sts:ExternalId": "atlasAssumedRoleExternalId"
-                }
-            }
-        }
-    ]
-}
-```
-
-
-4. Authorize your newly created IAM role for the `roleId` with Atlas via postman:
-```
-PATCH https://cloud-dev.mongodb.com/api/atlas/v1.0/groups/<ATLAS_PROJECT_ID>/cloudProviderAccess/<roleId>
-
-RequestBody:
-{
-"providerName": "AWS",
-"iamAssumedRoleArn": "<AWS_IAM_ROLE_ARN>"
-}
-```
-
-5. Create a Key in AWS KMS: Follow UI prompts and on `Define key administrative permissions` page under `Key administrators` select your IAM role created in last step.
-6. Once KMS key is created in KMS, note your Key ID, this is your Customer Master Key.
+1. Create an Atlas Project.
+2. Create a Key in AWS KMS in the same AWS account and note its Key ARN. This is your Customer Master Key. The key policy must allow this account to delegate key access through IAM, which the default key policy does.
 
 ### Steps to test:
 1. Follow prerequisite steps for testing a CDK construct in [TESTING.md](../../../TESTING.md).
-2. Use `roleID` from prerequisite steps above as role id param for this CDK construct
+2. Use [encryption-at-rest-express.ts](../../../examples/l3-resources/encryption-at-rest-express.ts) with the Key ARN as the `customerMasterKeyArn` context value. The example registers the Cloud Provider Access role with `CfnCloudProviderAccessSetup`, creates the AWS IAM role that Atlas assumes with the KMS permissions it needs, and authorizes it with `CfnCloudProviderAccessAuthorization`.
 3. Set any additional required configuration options/parameters as per your needs.
 4. Please follow the steps in [TESTING.md](../../../TESTING.md).
 

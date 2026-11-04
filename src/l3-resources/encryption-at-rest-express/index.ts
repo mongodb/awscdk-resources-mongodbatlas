@@ -24,7 +24,6 @@ const NODE_COUNT = 3;
 const NODE_COUNT_ANALYTICS = 1;
 const BACKUP_ENABLED = true;
 const INSTANCE_SIZE = "M30";
-const MONGODB_VERSION = "5.0";
 const ENCRYPTION_AT_REST_PROVIDER =
   atlas.CfnClusterPropsEncryptionAtRestProvider.AWS;
 const REGION = "US_EAST_1";
@@ -52,8 +51,7 @@ function getClusterProps(
   return {
     name:
       inputClusterProps.name || "atlas-cluster-".concat(String(randomNumber())),
-    mongoDbMajorVersion:
-      inputClusterProps.mongoDbMajorVersion || MONGODB_VERSION,
+    mongoDbMajorVersion: inputClusterProps.mongoDbMajorVersion,
     backupEnabled: inputClusterProps.backupEnabled ?? BACKUP_ENABLED,
     diskSizeGb: inputClusterProps.diskSizeGb,
     clusterType: inputClusterProps.clusterType || CLUSTER_TYPE,
@@ -173,6 +171,9 @@ export class AtlasEncryptionAtRestExpress extends Construct {
         profile: props.profile,
         projectId: props.projectId,
       });
+      // Atlas rejects a cluster that uses an encryption at rest provider before
+      // encryption at rest is enabled for the project.
+      this.cluster.addResourceDependency(this.encryptionAtRest);
     }
 
     if (props.databaseUser) {
