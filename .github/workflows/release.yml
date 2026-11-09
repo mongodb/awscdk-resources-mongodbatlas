@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version: 24.x
-      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad
+      - uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78
         name: Setup Java
         with:
           distribution: temurin
@@ -30,7 +30,7 @@ jobs:
         name: Setup Python
         with:
           python-version: 3.x
-      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+      - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73
         name: Setup .NET
         with:
           dotnet-version: 9.0.x
@@ -86,7 +86,7 @@ jobs:
       contents: read
       issues: write
     steps:
-      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad
+      - uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78
         with:
           distribution: temurin
           java-version: 21.x
@@ -166,7 +166,7 @@ jobs:
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version: 24.x
-      - uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+      - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73
         with:
           dotnet-version: 9.0.x
       - name: Download build artifacts
@@ -329,7 +329,7 @@ jobs:
             echo "No changes to commit."
           fi
       - name: Upload SBOM as release artifact
-        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64
+        uses: softprops/action-gh-release@8a0cd651e5b2365bd640854a3fa5dfc70e4875f3
         with:
           files: compliance/sbom.json
           tag_name: v${{ steps.extract-version.outputs.VERSION }}
