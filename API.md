@@ -52431,6 +52431,7 @@ const cfnClusterProps: CfnClusterProps = { ... }
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.profile">profile</a></code> | <code>string</code> | Profile used to provide credentials information, (a secret with the cfn/atlas/profile/{Profile}, is required), if not provided default is used. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.replicationSpecs">replicationSpecs</a></code> | <code><a href="#awscdk-resources-mongodbatlas.AdvancedReplicationSpec">AdvancedReplicationSpec</a>[]</code> | List of settings that configure your cluster regions. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.rootCertType">rootCertType</a></code> | <code>string</code> | Root Certificate Authority that MongoDB Cloud cluster uses. |
+| <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.skipWaitForIdle">skipWaitForIdle</a></code> | <code>boolean</code> | Flag that indicates whether the operation skips waiting for the cluster to reach IDLE before reporting success. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.tags">tags</a></code> | <code><a href="#awscdk-resources-mongodbatlas.Tag">Tag</a>[]</code> | List of settings that configure your cluster regions. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.terminationProtectionEnabled">terminationProtectionEnabled</a></code> | <code>boolean</code> | Flag that indicates whether termination protection is enabled on the cluster. |
 | <code><a href="#awscdk-resources-mongodbatlas.CfnClusterProps.property.versionReleaseSystem">versionReleaseSystem</a></code> | <code>string</code> | Method by which the cluster maintains the MongoDB versions. |
@@ -52654,6 +52655,20 @@ public readonly rootCertType: string;
 Root Certificate Authority that MongoDB Cloud cluster uses.
 
 MongoDB Cloud supports Internet Security Research Group.
+
+---
+
+##### `skipWaitForIdle`<sup>Optional</sup> <a name="skipWaitForIdle" id="awscdk-resources-mongodbatlas.CfnClusterProps.property.skipWaitForIdle"></a>
+
+```typescript
+public readonly skipWaitForIdle: boolean;
+```
+
+- *Type:* boolean
+
+Flag that indicates whether the operation skips waiting for the cluster to reach IDLE before reporting success.
+
+When true, the operation reports success as soon as Atlas accepts the request, while the cluster is still converging. Set this only if your stack exceeds the CloudFormation operation timeout. Atlas failures after the operation reports success are not reported back to CloudFormation.
 
 ---
 

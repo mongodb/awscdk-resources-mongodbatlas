@@ -90,6 +90,19 @@ const clusterRes = new CfnCluster(this, 'ClusterResource', {
 
 ```
 
+## Operation timeout
+
+CloudFormation limits how long a single resource operation can run. The resource type does not set that limit, so the CloudFormation default applies and you cannot override it. Long Atlas changes, such as a shard removal or a storage scale-down, can outlast that limit. When they do, CloudFormation fails the operation and rolls back the stack, which can leave the cluster mid-change.
+
+Set `skipWaitForIdle` to `true` to have the operation report success as soon as Atlas accepts the change, instead of polling until the cluster reaches `IDLE`. Leave `skipWaitForIdle` unset to keep the default behavior of waiting for `IDLE`.
+
+### skipWaitForIdle limitations
+
+- The stack reports success before the change converges, so an Atlas failure after that point goes unreported and anything triggered by the stack completing can reach a cluster that is not ready yet. Confirm the change in Atlas, since drift detection only catches a failed change when you run it and only for properties set in your template.
+- Read-only attributes can lag the change: `attrStateName` reports `CREATING` or `UPDATING` while Atlas is still converging, and on update `attrMongoDBVersion` and the connection strings can be stale.
+- On create, Atlas has not generated connection strings yet, so anything depending on them fails and the stack rolls back.
+- `skipWaitForIdle` cannot be combined with pausing the cluster, so apply the pause in a separate update with `skipWaitForIdle` unset or `false`.
+
 
 ## Flex Clusters
 

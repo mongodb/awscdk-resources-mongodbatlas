@@ -112,6 +112,13 @@ export interface CfnClusterProps {
   readonly pitEnabled?: boolean;
 
   /**
+   * Flag that indicates whether the operation skips waiting for the cluster to reach IDLE before reporting success. When true, the operation reports success as soon as Atlas accepts the request, while the cluster is still converging. Set this only if your stack exceeds the CloudFormation operation timeout. Atlas failures after the operation reports success are not reported back to CloudFormation.
+   *
+   * @schema CfnClusterProps#SkipWaitForIdle
+   */
+  readonly skipWaitForIdle?: boolean;
+
+  /**
    * List of settings that configure your cluster regions. For Global Clusters, each object in the array represents a zone where your clusters nodes deploy. For non-Global replica sets and sharded clusters, this array has one object representing where your clusters nodes deploy.
    *
    * @schema CfnClusterProps#ReplicationSpecs
@@ -173,6 +180,7 @@ export function toJson_CfnClusterProps(
     Name: obj.name,
     Paused: obj.paused,
     PitEnabled: obj.pitEnabled,
+    SkipWaitForIdle: obj.skipWaitForIdle,
     ReplicationSpecs: obj.replicationSpecs?.map((y) =>
       toJson_AdvancedReplicationSpec(y)
     ),
