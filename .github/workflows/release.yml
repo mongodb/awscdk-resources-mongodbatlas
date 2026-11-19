@@ -24,8 +24,6 @@ jobs:
       - uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880
         name: Setup Java
         with:
-          # check-latest resolves the newest 21.x (21.0.13.1+2, which includes the
-          # CVE-2026-114938 fix) instead of the affected build preinstalled on the runner.
           distribution: temurin
           java-version: 21.x
           check-latest: true
@@ -91,8 +89,6 @@ jobs:
     steps:
       - uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880
         with:
-          # check-latest resolves the newest 21.x (21.0.13.1+2, which includes the
-          # CVE-2026-114938 fix) instead of the affected build preinstalled on the runner.
           distribution: temurin
           java-version: 21.x
           check-latest: true
