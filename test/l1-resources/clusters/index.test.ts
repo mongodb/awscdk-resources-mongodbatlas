@@ -99,3 +99,22 @@ test("Cluster construct should contain default properties", () => {
     ],
   });
 });
+
+test("Cluster construct should pass skipWaitForIdle to the resource", () => {
+  const mockApp = new App();
+  const stack = new Stack(mockApp);
+
+  new CfnCluster(stack, "cluster-skip-wait-for-idle-testing-stack", {
+    projectId: PROJECT_ID,
+    name: CLUSTER_NAME,
+    skipWaitForIdle: true,
+  });
+
+  const template = Template.fromStack(stack);
+
+  template.hasResourceProperties(RESOURCE_NAME, {
+    ProjectId: PROJECT_ID,
+    Name: CLUSTER_NAME,
+    SkipWaitForIdle: true,
+  });
+});
